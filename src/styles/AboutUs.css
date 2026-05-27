@@ -1,0 +1,1555 @@
+/* Load Poppins directly from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* ==========================================
+   GLOBAL UTILITIES & SHARED STYLES
+   ========================================== */
+.abt__wrapper {
+  background-color: #ffffff;
+  font-family: 'Poppins', -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.abt__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+/* Category Pill Badges */
+.abt__sec_badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.abt__sec_badge.yellow { background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.25); color: #ca8a04; }
+.abt__sec_badge.cyan { background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); color: #0891b2; }
+.abt__sec_badge.purple { background: rgba(147, 51, 234, 0.08); border: 1px solid rgba(147, 51, 234, 0.25); color: #9333ea; }
+.abt__sec_badge.green { background: rgba(22, 163, 74, 0.08); border: 1px solid rgba(22, 163, 74, 0.25); color: #16a34a; }
+.abt__sec_badge.blue { background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); color: #2563eb; }
+
+/* 
+   ⭐ UNIFIED RADIAL GRADIENT HEADING RULE ⭐
+   Clipped radial gradient applied strictly to all light background headings [1]
+*/
+.abt__heading {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 auto 12px auto;
+  line-height: 1.15;
+  text-align: center;
+
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.abt__sec_subtitle {
+  font-size: 15px;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto 48px auto;
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   1️⃣ HERO SECTION (Radial Gradient Preserved)
+   ========================================== */
+.abt__hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 180px 24px 100px 24px; 
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+}
+
+.abt__hero_pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.01) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.abt__hero_container {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pill Badge */
+.abt__hero_badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 149, 255, 0.04);
+  border: 1px solid rgba(0, 149, 255, 0.15);
+  color: #38bdf8;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700; 
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.abt__badge_dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+.abt__hero_title {
+  color: #ffffff !important;
+  font-size: clamp(2.3rem, 5.2vw, 4.2rem); 
+  font-weight: 850; 
+  line-height: 1.15; 
+  letter-spacing: -0.025em; 
+  margin: 0 auto 20px auto;
+  max-width: 900px;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.abt__hero_title .highlight {
+  color: #38bdf8;
+}
+
+.abt__hero_description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0;
+}
+
+/* ==========================================
+   2️⃣ WHO WE ARE (Symmetrical Alignment Redesign [1])
+   ========================================== */
+.abt__who_section {
+  position: relative;
+  padding: 100px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Ambient Slow-Pulsing Background Glows */
+.abt__bg_blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.blur_animate1 {
+  width: 300px;
+  height: 300px;
+  background: #0057ff;
+  top: -20px;
+  left: -50px;
+  animation: abtGlowFloat 12s ease-in-out infinite;
+}
+
+.blur_animate2 {
+  width: 250px;
+  height: 250px;
+  background: #00bfff;
+  bottom: -40px;
+  right: -30px;
+  animation: abtGlowFloatAlt 15s ease-in-out infinite;
+}
+
+@keyframes abtGlowFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.15); opacity: 0.12; }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes abtGlowFloatAlt {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 20px) scale(1.10); opacity: 0.1; }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Symmetrical alignment container [1] */
+.abt__who_align_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* 
+   Symmetrical crosshair guide lines behind the elements 
+   replicated directly from your graphic blueprint [1]
+*/
+@media (min-width: 993px) {
+  /* Horizontal centerline with arrows [1] */
+  .abt__who_align_container::before {
+    content: '←  →';
+    position: absolute;
+    top: 70px; /* Aligned with the center of the 140px circle */
+    left: 4%;
+    right: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.12);
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+    z-index: 1;
+    padding: 0 4%;
+  }
+
+  /* Vertical centerline [1] */
+  .abt__who_align_container::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left: calc(50% - 130px); /* Offset to the left of the circle [1] */
+    width: 2px;
+    border-left: 2px dashed rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Central Circular Hub (The Red Circle [1]) */
+.abt__who_circle_hub {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid #ea580c; /* Bold brand-orange border [1] */
+  color: #ea580c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(234, 88, 12, 0.12);
+  margin-bottom: -40px; /* Forces overlapping with the green container [1] */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt__who_circle_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.abt__who_circle_inner .abt__sec_badge {
+  position: absolute;
+  top: -24px;
+  margin: 0;
+  background: #ffffff;
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.abt__circle_svg {
+  width: 70px;
+  height: 70px;
+  color: currentColor;
+}
+
+/* Overlapping Pill Container (The Lime Green Pill [1]) */
+.abt__who_pill_container {
+  width: 100%;
+  max-width: 950px;
+  background: #ffffff;
+  border: 2.5px solid #a3e635; /* Lime-green border [1] */
+  border-radius: 30px;
+  padding: 70px 48px 48px 48px; /* Extra top padding accommodates the overlapping circle */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Text Content centering */
+.abt__heading_center {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  text-align: center;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.abt__who_text_center {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Center Column Divider */
+.abt__line_separator {
+  width: 100%;
+  height: 1.5px;
+  background-color: rgba(0, 0, 0, 0.06);
+  margin: 32px 0;
+}
+
+/* Symmetrical Grid of Cards */
+.abt__who_focus_grid_block h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #001b3a;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.abt__wants_grid_center {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Row-wise alignment on PC view [1] */
+  gap: 16px;
+  align-items: stretch; /* Symmetrical height stretching [1] */
+}
+
+/* Individual Centered Card */
+.abt__want_card_center {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.abt__want_icon_badge_center {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.abt__want_text_center {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.45;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* --- 🎨 Focus Theme Color overrides --- */
+.abt__want_card_center.want_cyan {
+  background-color: rgba(6, 182, 212, 0.04);
+  border: 1.5px solid rgba(6, 182, 212, 0.15);
+  color: #0891b2;
+}
+.abt__want_card_center.want_cyan:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 10px 20px rgba(6, 182, 212, 0.1);
+}
+
+.abt__want_card_center.want_purple {
+  background-color: rgba(147, 51, 234, 0.04);
+  border: 1.5px solid rgba(147, 51, 234, 0.15);
+  color: #9333ea;
+}
+.abt__want_card_center.want_purple:hover {
+  transform: translateY(-4px);
+  border-color: rgba(147, 51, 234, 0.4);
+  box-shadow: 0 10px 20px rgba(147, 51, 234, 0.1);
+}
+
+.abt__want_card_center.want_blue {
+  background-color: rgba(37, 99, 235, 0.04);
+  border: 1.5px solid rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+.abt__want_card_center.want_blue:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+}
+
+.abt__want_card_center.want_green {
+  background-color: rgba(16, 185, 129, 0.04);
+  border: 1.5px solid rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+.abt__want_card_center.want_green:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1);
+}
+
+.abt__want_card_center:hover .abt__want_text_center {
+  color: currentColor;
+}
+
+/* Symmetrical Circle Hub Hover */
+.abt__who_circle_hub:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.25);
+}
+
+/* ==========================================
+   Responsive Overrides (Tablet & Mobile)
+   ========================================== */
+@media (max-width: 992px) {
+  .abt__who_align_container {
+    padding: 0;
+  }
+
+  .abt__who_pill_container {
+    padding: 60px 24px 36px 24px;
+  }
+
+  .abt__wants_grid_center {
+    grid-template-columns: repeat(2, 1fr); /* Collapses to 2x2 grid on tablets */
+    gap: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .abt__wants_grid_center {
+    grid-template-columns: 1fr; /* Stacks to single column on mobile */
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+/* ==========================================
+   3️⃣ WHAT MAKES US DIFFERENT
+   ========================================== */
+/* ==========================================
+   3️⃣ WHAT MAKES US DIFFERENT (Bento Asymmetric Redesign [1])
+   ========================================== */
+.abt__different_section {
+  padding: 80px 0;
+  background-color: #f8fafc; /* Alternate soft background */
+}
+
+.abt__different_grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr; /* Elegant asymmetric desktop columns [1] */
+  gap: 32px;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+}
+
+/* Left Box (Advantage timeline card [1]) */
+.abt__different_box.abt__adv_card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 61, 115, 0.05);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  position: relative;
+}
+
+.abt__adv_card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #001b3a;
+  margin: 0 0 28px 0;
+}
+
+.abt__advantages_list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+/* Vertical connection line linking the step indexes [1] */
+.abt__advantages_list::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 17px;
+  width: 1.5px;
+  background-color: rgba(6, 182, 212, 0.15);
+  z-index: 1;
+}
+
+.abt__advantage_item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.abt__advantage_indicator {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #0891b2; /* Cyan border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(6, 182, 212, 0.1);
+}
+
+.abt__adv_index {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0891b2;
+}
+
+.abt__advantage_text {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Right Box (Solutions Card [1]) */
+.abt__different_box.abt__solutions_card {
+  background-color: rgba(6, 182, 212, 0.03);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: left;
+}
+
+.abt__solutions_card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #001b3a;
+  margin: 0 0 28px 0;
+}
+
+/* Grid layout accommodating 5 items cleanly */
+.abt__solutions_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Make the 5th item stretch full width in the 2-column grid for perfect balance [1] */
+.abt__solutions_grid > :nth-child(5) {
+  grid-column: span 2;
+}
+
+/* Custom styled solution badges [1] */
+.abt__solution_badge {
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #ffffff;
+}
+
+.abt__solution_icon {
+  font-size: 18px;
+}
+
+.abt__solution_text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  transition: color 0.3s ease;
+}
+
+/* --- 🎨 Theme 1: Cyan (Fast) --- */
+.abt__solution_badge.sol_cyan {
+  background-color: rgba(6, 182, 212, 0.04);
+  border: 1.5px solid rgba(6, 182, 212, 0.15);
+  color: #0891b2;
+}
+.abt__solution_badge.sol_cyan:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 10px 20px rgba(6, 182, 212, 0.1);
+}
+
+/* --- 🎨 Theme 2: Purple (Secure) --- */
+.abt__solution_badge.sol_purple {
+  background-color: rgba(147, 51, 234, 0.04);
+  border: 1.5px solid rgba(147, 51, 234, 0.15);
+  color: #9333ea;
+}
+.abt__solution_badge.sol_purple:hover {
+  transform: translateY(-4px);
+  border-color: rgba(147, 51, 234, 0.4);
+  box-shadow: 0 10px 20px rgba(147, 51, 234, 0.1);
+}
+
+/* --- 🎨 Theme 3: Green (Scalable) --- */
+.abt__solution_badge.sol_green {
+  background-color: rgba(16, 185, 129, 0.04);
+  border: 1.5px solid rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+.abt__solution_badge.sol_green:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1);
+}
+
+/* --- 🎨 Theme 4: Blue (Search-Optimized) --- */
+.abt__solution_badge.sol_blue {
+  background-color: rgba(37, 99, 235, 0.04);
+  border: 1.5px solid rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+.abt__solution_badge.sol_blue:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+}
+
+/* --- 🎨 Theme 5: Orange (Conversion-focused) --- */
+.abt__solution_badge.sol_orange {
+  background-color: rgba(234, 88, 12, 0.04);
+  border: 1.5px solid rgba(234, 88, 12, 0.15);
+  color: #ea580c;
+}
+.abt__solution_badge.sol_orange:hover {
+  transform: translateY(-4px);
+  border-color: rgba(234, 88, 12, 0.4);
+  box-shadow: 0 10px 20px rgba(234, 88, 12, 0.1);
+}
+
+.abt__solution_badge:hover .abt__solution_text {
+  color: currentColor; /* Highlights text color on hover */
+}
+
+/* ==========================================
+   Responsive Overrides
+   ========================================== */
+@media (max-width: 992px) {
+  .abt__different_grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .abt__solutions_grid {
+    grid-template-columns: 1fr;
+  }
+  .abt__solutions_grid > :nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+
+/* ==========================================
+   4️⃣ WHAT WE DO (Services Grid)
+   ========================================== */
+/* ==========================================
+   4️⃣ WHAT WE DO (Visible Orbit Lines & Colored Nodes [1])
+   ========================================== */
+.abt__services_section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.abt__wheels_grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  max-width: 1150px;
+  margin: 60px auto 40px auto;
+}
+
+.abt__wheel_container {
+  flex: 1;
+  height: 380px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* 
+   Thick, Highly Visible Orbit Line:
+   Raised thickness to 2px and opacity to 0.75 to make the dashed lines stand out [1]
+*/
+.abt__wheel_container::before {
+  content: '';
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: 2px dashed currentColor !important; /* Highly visible dashed border [1] */
+  opacity: 0.75 !important; /* Bold, clear color visibility [1] */
+  pointer-events: none;
+  z-index: 1;
+  animation: abtSpinOrbit 25s linear infinite;
+}
+
+@keyframes abtSpinOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Central Core Hub */
+.abt__wheel_core {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt__wheel_core h5 {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #001b3a;
+  margin: 6px 0 0 0;
+}
+
+.core_icon {
+  font-size: 24px;
+}
+
+/* Orbiting Card Nodes */
+.abt__wheel_node {
+  position: absolute;
+  width: 110px;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  z-index: 2;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Styled Step Number Badges ("Marked Places" [1]) */
+.abt__wheel_node span {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 3px 8px !important;
+  border-radius: 20px !important;
+  display: inline-block !important;
+  margin-bottom: 8px !important;
+}
+
+.abt__wheel_node p {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #475569;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Symmetrical Node Positions */
+.abt__wheel_node.n1 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.abt__wheel_node.n2 {
+  bottom: 10px;
+  left: 10%;
+}
+
+.abt__wheel_node.n3 {
+  bottom: 10px;
+  right: 10%;
+}
+
+/* ==========================================
+   🎨 Distinct Saturated Theme Color Rules [1]
+   ========================================== */
+
+/* 🔵 Wheel 1: Royal Blue Theme */
+.theme_blue { color: #2563eb !important; }
+.theme_blue .abt__wheel_node {
+  background-color: rgba(37, 99, 235, 0.03) !important; /* Soft blue tint */
+  border: 2px solid #2563eb !important; /* Bold, solid blue border */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08) !important;
+}
+.theme_blue .abt__wheel_node span {
+  background-color: #2563eb !important; /* Solid blue badge */
+  color: #ffffff !important;
+}
+
+/* 🟢 Wheel 2: Sky Cyan Theme */
+.theme_cyan { color: #0891b2 !important; }
+.theme_cyan .abt__wheel_node {
+  background-color: rgba(8, 145, 178, 0.03) !important; /* Soft cyan tint */
+  border: 2px solid #0891b2 !important; /* Bold, solid cyan border */
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.08) !important;
+}
+.theme_cyan .abt__wheel_node span {
+  background-color: #0891b2 !important; /* Solid cyan badge */
+  color: #ffffff !important;
+}
+
+/* 🟣 Wheel 3: Amethyst Purple Theme */
+.theme_purple { color: #9333ea !important; }
+.theme_purple .abt__wheel_node {
+  background-color: rgba(147, 51, 234, 0.03) !important; /* Soft purple tint */
+  border: 2px solid #9333ea !important; /* Bold, solid purple border */
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.08) !important;
+}
+.theme_purple .abt__wheel_node span {
+  background-color: #9333ea !important; /* Solid purple badge */
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   Micro-Interaction Hovers
+   ========================================== */
+.abt__wheel_node:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.abt__wheel_container:hover .abt__wheel_core {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px currentColor;
+}
+
+.abt__services_note {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* ==========================================
+   Responsive Collapse (Mobile Stacking)
+   ========================================== */
+@media (max-width: 992px) {
+  .abt__wheels_grid {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .abt__wheel_container {
+    height: auto;
+    width: 100%;
+    max-width: 320px;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto;
+  }
+
+  .abt__wheel_container::before {
+    display: none; 
+  }
+
+  .abt__wheel_nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .abt__wheel_node {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   5️⃣ OUR APPROACH (Process Timeline)
+   ========================================== */
+.abt__approach_section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+}
+
+.abt__approach_timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.abt__approach_step {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.abt__approach_step .abt__step_number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+  margin-bottom: 16px;
+}
+
+.abt__approach_step h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #001b3a;
+  margin: 0 0 6px 0;
+}
+
+.abt__approach_step p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #64748b;
+  max-width: 180px;
+  margin: 0;
+}
+
+.abt__approach_connector {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+  opacity: 0.3;
+  margin-top: 24px;
+}
+
+@media (max-width: 992px) {
+  .abt__approach_timeline { flex-direction: column; gap: 24px; align-items: center; }
+  .abt__approach_connector { display: none; }
+}
+
+
+/* ==========================================
+   6️⃣ FUTURE READY
+   ========================================== */
+.abt__future_section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.abt__future_intro {
+  font-size: 16px;
+  color: #475569;
+  margin-bottom: 40px;
+}
+
+.abt__future_box {
+  background-color: rgba(37, 99, 235, 0.03);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.abt__future_box h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #001b3a;
+  margin: 0 0 20px 0;
+}
+
+.abt__future_list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.abt__future_item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.abt__future_dot {
+  font-size: 10px;
+  color: #2563eb;
+}
+
+.abt__future_item p {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #334155;
+  margin: 0;
+}
+
+
+/* ==========================================
+   7️⃣ WHO WE WORK WITH (Bento Style Cards [1])
+   ========================================== */
+.abt__clients_section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+}
+
+.abt__clients_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.abt__client_card {
+  background: #ffffff;
+  border: 1px solid rgba(234, 179, 8, 0.15); /* Soft yellow accent [1] */
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.abt__client_icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(234, 179, 8, 0.08);
+  color: #ca8a04;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.abt__client_card p {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #001b3a;
+  margin: 0;
+}
+
+
+/* ==========================================
+   8️⃣ OUR VALUES (Glassmorphism Cards [1])
+   ========================================== */
+/* ==========================================
+   8️⃣ OUR VALUES (Split Background Card Redesign [1])
+   ========================================== */
+.abt__values_section_split {
+  position: relative;
+  /* 
+     Creates the split-background effect: 
+     Upper 65% is deep brand navy, bottom 35% is solid cyan [1]
+  */
+  background: linear-gradient(180deg, #001b3a 65%, #0891b2 65%, #0891b2 100%) !important;
+  padding: 100px 20px 140px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.abt__heading_white {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin: 0 auto 12px auto;
+  line-height: 1.15;
+}
+
+.abt__sec_subtitle_white {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 48px auto;
+  line-height: 1.6;
+}
+
+/* 4 overlapping cards grid [1] */
+.abt__values_grid_split {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1150px;
+  margin: 50px auto 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Card (Mirrors the reference layout [1]) */
+.abt__value_card_split {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 44px 24px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  min-height: 280px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Strong drop shadow for card lift [1] */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* solid cyan icon circles matching bottom banner [1] */
+.abt__value_icon_circle_split {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #0891b2;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(8, 145, 178, 0.15);
+}
+
+.abt__value_icon_inner {
+  font-size: 20px;
+}
+
+.abt__value_card_split h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #001b3a;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.abt__value_card_desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #57657a;
+  margin: 0;
+}
+
+/* Underlined meta-link text [1] */
+.abt__value_more_link {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0891b2;
+  border-bottom: 2.5px solid #0891b2;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  margin-top: auto; /* Pushes element to the bottom edge of the card [1] */
+  transition: all 0.3s ease;
+}
+
+/* Micro-Interaction Hovers [1] */
+.abt__value_card_split:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22);
+}
+
+.abt__value_card_split:hover .abt__value_more_link {
+  color: #001b3a;
+  border-bottom-color: #001b3a;
+}
+
+/* Responsive Overrides (Adjusts cleanly on smaller viewports [1]) */
+@media (max-width: 1024px) {
+  .abt__values_grid_split {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .abt__values_section_split {
+    background: #001b3a !important; /* Reverts to solid dark background on mobile [1] */
+    padding: 80px 20px;
+  }
+
+  .abt__values_grid_split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .abt__value_card_split {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    min-height: auto;
+  }
+}
+
+/* ==========================================
+   9️⃣ WHY CHOOSE (Trust Cards)
+   ========================================== */
+
+/* ==========================================
+   9️⃣ WHY CHOOSE (Infographic Wave Style [1])
+   ========================================== */
+.abt__why_section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.abt__why_row_wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 60px auto 0 auto;
+}
+
+.abt__why_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Node Container */
+.abt__why_node {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 190px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+/* 
+   Semicircle Wave Arches:
+   Width matches exact layout margins to align joints natively.
+*/
+.abt__why_arch {
+  position: absolute;
+  top: 40px; /* Aligned with circle vertical center */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Convex over-arches on odd steps (1, 3, 5) */
+.abt__why_node:nth-child(odd) .abt__why_arch {
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid transparent;
+}
+
+/* Concave under-arches on even steps (2, 4) */
+.abt__why_node:nth-child(even) .abt__why_arch {
+  border-bottom: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+  border-top: 3px solid transparent;
+  top: -20px; /* Shift up to connect underneath */
+}
+
+/* Flow Indicators exactly where over/under arches meet [1] */
+.abt__why_node:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -10px;
+  top: 40px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: bold;
+  color: currentColor;
+  z-index: 3;
+}
+
+/* Inner Icon Circle [1] */
+.abt__why_circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt__why_svg {
+  width: 26px;
+  height: 26px;
+  color: currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* Text Block Styling */
+.abt__why_text_block {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+
+.abt__why_meta {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.abt__why_desc_p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #475569;
+  max-width: 170px;
+  margin: 0;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* ==========================================
+   Color Themes (Hexes matching brand guidelines [1])
+   ========================================== */
+.why_blue { color: #2563eb; }    /* Node 1: Blue */
+.why_orange { color: #ea580c; }  /* Node 2: Orange */
+.why_green { color: #10b981; }   /* Node 3: Green */
+.why_purple { color: #8b5cf6; }  /* Node 4: Purple */
+.why_pink { color: #ec4899; }    /* Node 5: Pink */
+
+/* ==========================================
+   Interactive Hover Effects [1]
+   ========================================== */
+.abt__why_node:hover .abt__why_circle {
+  transform: scale(1.1);
+  box-shadow: 0 10px 24px currentColor; /* Glow shadow matching specific color on hover [1] */
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.abt__why_node:hover .abt__why_svg {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.abt__why_node:hover .abt__why_desc_p {
+  color: currentColor; /* Highlight text color on hover [1] */
+}
+
+/* Responsive vertical stacking on mobile and tablet [1] */
+@media (max-width: 992px) {
+  .abt__why_row {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .abt__why_arch {
+    display: none;
+  }
+  .abt__why_node {
+    width: 100%;
+    max-width: 280px;
+    padding: 0;
+  }
+  .abt__why_node:not(:last-child)::after {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: -30px;
+    content: '↓'; /* Arrow flips direction vertical */
+  }
+  .abt__why_text_block {
+    margin-top: 12px;
+  }
+}
+/* ==========================================
+   🔟 FINAL CTA (Conversion Banner [1])
+   ========================================== */
+.abt__cta_section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.abt__cta_banner {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ea580c 0%, #ca8a04 50%, #0891b2 100%); /* Orange-Yellow-Cyan gradient [1] */
+  padding: 60px 40px;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(234, 88, 12, 0.15);
+}
+
+.abt__cta_banner_glow {
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.abt__cta_banner h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.abt__cta_banner p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff !important;
+  max-width: 680px;
+  margin: 0 auto 32px auto;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.abt__cta_buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.abt__cta_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.abt__cta_primary {
+  background-color: #ffffff;
+  color: #ea580c; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.abt__cta_primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.abt__cta_secondary {
+  background-color: transparent;
+  color: #ffffff; 
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.abt__cta_secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.abt__cta_btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.abt__cta_btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .abt__cta_banner h2 { font-size: 24px; }
+  .abt__cta_banner { padding: 40px 24px; }
+  .abt__cta_buttons { flex-direction: column; gap: 12px; }
+  .abt__cta_btn { width: 100%; justify-content: center; }
+}

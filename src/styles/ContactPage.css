@@ -1,0 +1,1088 @@
+/* Load Poppins directly from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* ==========================================
+   GLOBAL UTILITIES & SHARED STYLES
+   ========================================== */
+.cp__wrapper {
+  background-color: #ffffff;
+  font-family: 'Poppins', -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.cp__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Category Pill Badges */
+.cp__section_badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cp__section_badge.yellow { background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.25); color: #ca8a04; }
+.cp__section_badge.cyan { background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); color: #0891b2; }
+.cp__section_badge.blue { background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); color: #2563eb; }
+.cp__section_badge.purple { background: rgba(147, 51, 234, 0.08); border: 1px solid rgba(147, 51, 234, 0.25); color: #9333ea; }
+
+/* 
+   ⭐ UNIFIED RADIAL GRADIENT HEADING RULE ⭐
+   Clipped radial gradient applied strictly to all light background headings [1]
+*/
+.cp__heading {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 auto 12px auto;
+  line-height: 1.15;
+  text-align: center;
+
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.cp__subtitle {
+  font-size: 15px;
+  color: #64748b;
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
+
+
+/* ==========================================
+   1️⃣ HERO SECTION (Radial Gradient Preserved)
+   ========================================== */
+/* ==========================================
+   1️⃣ HERO SECTION (Glow, Colors & Divider [1])
+   ========================================== */
+.cp__hero {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 180px 24px 100px 24px; 
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  
+  /* Your specified radial-gradient background [1] */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+}
+
+.cp__hero_pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.01) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.cp__hero_container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Glowing Pill Badge [1] */
+.cp__hero_badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 149, 255, 0.04);
+  border: 1px solid rgba(0, 149, 255, 0.15);
+  color: #38bdf8; /* Cyan */
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700; 
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.cp__badge_dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* Title Sizing & Spacing [1] */
+.cp__hero_title {
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(2.3rem, 5.2vw, 4.2rem); 
+  font-weight: 850; 
+  line-height: 1.15; 
+  letter-spacing: -0.025em; 
+  max-width: 950px; 
+  margin: 0 auto 24px auto;
+  
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.cp__hero_title .highlight {
+  color: #38bdf8; /* Sky Blue/Cyan highlight */
+}
+
+/* Muted description text [1] */
+.cp__hero_text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto 36px auto;
+}
+
+/* Actions Container */
+.cp__hero_actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  width: auto;
+  margin-bottom: 48px;
+}
+
+/* Primary Button (Pastel Blue with Glow [1]) */
+.cp__hero_cta_primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9cd3f6; 
+  color: #00132c; 
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 25px rgba(154, 211, 245, 0.35);
+}
+
+.cp__hero_cta_primary:hover {
+  background-color: #aae0ff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(154, 211, 245, 0.55);
+}
+
+/* Secondary Button (Outlined White [1]) */
+.cp__hero_cta_secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(154, 211, 245, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cp__hero_cta_secondary .arrow {
+  transition: transform 0.2s ease;
+}
+
+.cp__hero_cta_secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.cp__hero_cta_secondary:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Divider & Trust Footer [1] */
+.cp__hero_divider {
+  width: 100%;
+  max-width: 600px;
+  height: 1.5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+}
+
+.cp__hero_trust {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+/* Desktop Line Breaks */
+.cp__br_desktop {
+  display: inline;
+}
+
+/* Responsive viewports for Tablet and Mobile Stacking */
+@media (max-width: 1024px) {
+  .cp__hero {
+    padding-top: 120px; 
+  }
+  .cp__hero_title {
+    font-size: 34px; 
+    line-height: 1.25;
+    max-width: 720px;
+  }
+  .cp__br_desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cp__hero {
+    padding-top: 100px; 
+  }
+  .cp__hero_title {
+    font-size: 28px !important; 
+    line-height: 1.3 !important;
+    margin: 0 auto 16px auto !important;
+    max-width: 100%;
+  }
+  .cp__br_desktop {
+    display: none;
+  }
+  .cp__hero_text {
+    font-size: 0.95rem;
+    margin: 0 auto 32px auto;
+  }
+  .cp__hero_actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px; 
+    margin: 0 auto 32px auto;
+    gap: 12px;
+  }
+  .cp__hero_cta_primary,
+  .cp__hero_cta_secondary {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================
+   2️⃣ HOW CAN WE HELP (Capabilities Grid)
+   ========================================== */
+/* ==========================================
+   2️⃣ HOW CAN WE HELP (3 Pillared Columns [1])
+   ========================================== */
+.cp__help_section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.cp__services_grid_wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+}
+
+/* Horizontal Connecting Line between Column Nodes [1] */
+.cp__services_connection_line {
+  position: absolute;
+  top: 48px; /* Perfectly aligned vertically with the center of the icon circles */
+  left: 15%;
+  right: 15%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #2563eb 0%, #0891b2 50%, #9333ea 100%);
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.cp__services_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 boxes column-wise [1] */
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Base Pillar Card */
+.cp__pillar_card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+/* Header with custom icons */
+.cp__pillar_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cp__pillar_icon_circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.cp__pillar_svg {
+  width: 24px;
+  height: 24px;
+  color: currentColor;
+}
+
+.cp__pillar_header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #001b3a;
+  margin: 0;
+}
+
+/* Inner List Styles */
+.cp__pillar_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.cp__pillar_list li {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Custom styled dot-check indicators inside the list */
+.cp__pillar_list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 11px;
+  font-weight: 900;
+  color: currentColor;
+}
+
+/* ==========================================
+   🎨 Distinct Theme Styling for the 3 Pillars [1]
+   ========================================== */
+
+/* Theme 1: Tech Blue */
+.cp__pillar_card.theme_blue {
+  border: 1.5px solid rgba(37, 99, 235, 0.15);
+  background-color: rgba(240, 246, 255, 0.5); /* Soft Blue Tint */
+  color: #2563eb;
+}
+.cp__pillar_card.theme_blue:hover {
+  transform: translateY(-6px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.12);
+}
+
+/* Theme 2: Sky Cyan */
+.cp__pillar_card.theme_cyan {
+  border: 1.5px solid rgba(8, 145, 178, 0.15);
+  background-color: rgba(236, 251, 255, 0.5); /* Soft Cyan Tint */
+  color: #0891b2;
+}
+.cp__pillar_card.theme_cyan:hover {
+  transform: translateY(-6px);
+  border-color: rgba(8, 145, 178, 0.4);
+  box-shadow: 0 15px 35px rgba(8, 145, 178, 0.12);
+}
+
+/* Theme 3: Amethyst Purple */
+.cp__pillar_card.theme_purple {
+  border: 1.5px solid rgba(147, 51, 234, 0.15);
+  background-color: rgba(250, 245, 255, 0.5); /* Soft Purple Tint */
+  color: #9333ea;
+}
+.cp__pillar_card.theme_purple:hover {
+  transform: translateY(-6px);
+  border-color: rgba(147, 51, 234, 0.4);
+  box-shadow: 0 15px 35px rgba(147, 51, 234, 0.12);
+}
+
+/* ==========================================
+   Responsive Flow Stacking (Mobile)
+   ========================================== */
+@media (max-width: 992px) {
+  .cp__services_grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on smaller screens */
+    gap: 32px;
+  }
+
+  /* Disable horizontal connection line on mobile */
+  .cp__services_connection_line {
+    display: none;
+  }
+
+  .cp__pillar_card {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   3️⃣ REQUEST CONSULTATION (Workflow steps)
+   ========================================== */
+/* ==========================================
+   3️⃣ REQUEST CONSULTATION (Split Card Style [1])
+   ========================================== */
+.cp__consult_section {
+  position: relative;
+  /* 
+     Creates the split-background effect: 
+     Upper 65% is deep brand navy, bottom 35% is solid cyan [1]
+  */
+  background: linear-gradient(180deg, #001b3a 65%, #0891b2 65%, #0891b2 100%) !important;
+  padding: 100px 20px 140px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.cp__heading_white {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin: 0 auto 12px auto;
+  line-height: 1.15;
+}
+
+.cp__text_white {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Steps overlapping grid [1] */
+.cp__steps_grid_split {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1050px;
+  margin: 50px auto 40px auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Card (Mirrors the image layout [1]) */
+.cp__step_card_split {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 44px 28px 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  min-height: 300px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Strong drop shadow for visual lift [1] */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cp__step_card_split h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #001b3a;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cp__step_card_text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #57657a;
+  margin: 0;
+}
+
+/* solid cyan icon circles matching the split base [1] */
+.cp__step_icon_circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #0891b2;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp__step_svg {
+  width: 22px;
+  height: 22px;
+  color: currentColor;
+}
+
+/* Underlined meta-link text matching the 'MORE' link [1] */
+.cp__step_more_link {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0891b2;
+  border-bottom: 2.5px solid #0891b2;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  margin-top: auto; /* Pushes element to the bottom edge of the card [1] */
+  transition: all 0.3s ease;
+}
+
+/* Micro-Interaction Hovers [1] */
+.cp__step_card_split:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22);
+}
+
+.cp__step_card_split:hover .cp__step_more_link {
+  color: #001b3a;
+  border-bottom-color: #001b3a;
+}
+
+.cp__note_white {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Overrides (Collapses into stacked list on Tablet/Mobile [1]) */
+@media (max-width: 992px) {
+  .cp__consult_section {
+    background: #001b3a !important; /* Reverts to solid dark background on mobile [1] */
+    padding: 80px 20px;
+  }
+
+  .cp__steps_grid_split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cp__step_card_split {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    min-height: auto;
+  }
+}
+
+/* ==========================================
+   4️⃣ CONTACT DETAILS (Direct Access Cards)
+   ========================================== */
+/* ==========================================
+   4️⃣ CONTACT DETAILS (Colorful, Compact [1])
+   ========================================== */
+.cp__details_section {
+  padding: 60px 0; /* Reduced padding to make layout compact and tight */
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.cp__details_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Row-wise 3 column layout on desktop */
+  gap: 20px;
+  max-width: 1050px;
+  margin: 30px auto 0 auto;
+}
+
+/* Base Card structure with link support */
+.cp__details_card {
+  text-decoration: none;
+  border-radius: 16px;
+  padding: 28px 24px; /* Reduced vertical and horizontal inner spacing */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.details_icon_circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.cp__details_svg {
+  width: 22px;
+  height: 22px;
+  color: currentColor;
+}
+
+.cp__details_card h5 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #001b3a;
+  margin: 0;
+}
+
+.cp__details_link {
+  font-size: 13px;
+  font-weight: 700;
+  color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cp__details_desc {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #475569;
+  margin: 0;
+  max-width: 210px;
+}
+
+/* ==========================================
+   🎨 Distinct Theme Colors & Hover States [1]
+   ========================================== */
+
+/* Card 1: Email (Tech Blue) */
+.cp__details_card.card_email {
+  background-color: rgba(37, 99, 235, 0.04);
+  border: 1.5px solid rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+.cp__details_card.card_email:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.08);
+}
+
+/* Card 2: Whatsapp (Ecosystem Green) */
+.cp__details_card.card_whatsapp {
+  background-color: rgba(16, 185, 129, 0.04);
+  border: 1.5px solid rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+.cp__details_card.card_whatsapp:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 25px rgba(16, 185, 129, 0.08);
+}
+
+/* Card 3: Global Delivery (Sky Cyan) */
+.cp__details_card.card_delivery {
+  background-color: rgba(6, 182, 212, 0.04);
+  border: 1.5px solid rgba(6, 182, 212, 0.15);
+  color: #0891b2;
+}
+.cp__details_card.card_delivery:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 12px 25px rgba(6, 182, 212, 0.08);
+}
+
+/* Micro-Interaction Link arrow animations */
+.cp__details_card .arrow {
+  transition: transform 0.2s ease;
+}
+
+.cp__details_card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive vertical stacking for Mobile viewports */
+@media (max-width: 992px) {
+  .cp__details_grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .cp__details_card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ==========================================
+   5️⃣ WHY CONTACT (Trust Authority Grid)
+   ========================================== */
+/* ==========================================
+   5️⃣ WHY CONTACT (5 Connected Circles [1])
+   ========================================== */
+.cp__why_section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+  text-align: center;
+}
+
+.cp__why_row_wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 50px auto 0 auto;
+}
+
+/* Subtle horizontal connecting line [1] */
+.cp__why_connection_line {
+  position: absolute;
+  top: 40px; /* Centered vertically with the 80px node circles */
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  /* Multi-color linear gradient matching the node order [1] */
+  background: linear-gradient(90deg, #2563eb 0%, #ea580c 25%, #10b981 50%, #8b5cf6 75%, #ec4899 100%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.cp__why_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Node Container */
+.cp__why_node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Colored Circular Node [1] */
+.cp__why_circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid currentColor; /* Automatically matches theme color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.cp__why_svg {
+  width: 26px;
+  height: 26px;
+  color: currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* Text styling */
+.cp__why_text_group {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cp__why_meta_label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.cp__why_node_title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #001b3a;
+  line-height: 1.5;
+  max-width: 170px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* ==========================================
+   Color Themes (Hexes matching brand guidelines [1])
+   ========================================== */
+.why_blue { color: #2563eb; }    /* Node 1: Blue */
+.why_orange { color: #ea580c; }  /* Node 2: Orange */
+.why_green { color: #10b981; }   /* Node 3: Green */
+.why_purple { color: #8b5cf6; }  /* Node 4: Purple */
+.why_pink { color: #ec4899; }    /* Node 5: Pink */
+
+/* ==========================================
+   Interactive Hover Effects [1]
+   ========================================== */
+.cp__why_node:hover .cp__why_circle {
+  transform: scale(1.12);
+  box-shadow: 0 10px 24px currentColor; /* Glow shadow matching its specific theme color */
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.cp__why_node:hover .cp__why_svg {
+  transform: rotate(6deg) scale(1.05);
+}
+
+.cp__why_node:hover .cp__why_node_title {
+  color: currentColor; /* Highlight title text to match its theme color on hover */
+}
+
+.cp__why_text {
+  font-weight: 700;
+  color: #001b3a;
+  font-size: 15px;
+  margin-top: 36px;
+}
+
+/* Responsive vertical stacking on mobile and tablet [1] */
+@media (max-width: 992px) {
+  .cp__why_row {
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+  }
+  .cp__why_connection_line {
+    display: none;
+  }
+  .cp__why_node {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+/* ==========================================
+   6️⃣ FAQ SECTION (Glass Accordion)
+   ========================================== */
+.cp__faq_section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.cp__faq_accordion_container {
+  max-width: 750px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cp__faq_item {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cp__faq_item:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.04);
+}
+
+.cp__faq_trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  text-align: left;
+}
+
+.cp__faq_trigger h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #001b3a;
+  margin: 0;
+}
+
+.cp__faq_icon_status {
+  font-size: 18px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.cp__faq_panel {
+  max-height: 0;
+  padding: 0 28px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  text-align: left;
+}
+
+.cp__faq_item.faq_active .cp__faq_panel {
+  max-height: 200px;
+  padding-bottom: 24px;
+  opacity: 1;
+}
+
+
+/* ==========================================
+   7️⃣ FINAL CTA (Conversion Banner)
+   ========================================== */
+.cp__cta_section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.cp__cta_banner {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ea580c 0%, #ca8a04 50%, #0891b2 100%);
+  padding: 60px 40px;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(234, 88, 12, 0.15);
+}
+
+.cp__cta_banner_glow {
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.cp__cta_title_white {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.cp__cta_text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff !important;
+  max-width: 680px;
+  margin: 0 auto 32px auto;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.cp__cta_actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.cp__final_cta_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #ea580c; 
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+}
+
+.cp__final_cta_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cp__final_cta_btn_alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: #ffffff; 
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.cp__final_cta_btn_alt:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.cp__final_cta_btn .arrow,
+.cp__final_cta_btn_alt .arrow {
+  transition: transform 0.2s ease;
+}
+
+.cp__final_cta_btn:hover .arrow,
+.cp__final_cta_btn_alt:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .cp__cta_banner h2 { font-size: 24px; }
+  .cp__cta_banner { padding: 40px 24px; }
+  .cp__cta_actions { flex-direction: column; gap: 12px; }
+  .cp__final_cta_btn, .cp__final_cta_btn_alt { width: 100%; justify-content: center; }
+}

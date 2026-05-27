@@ -1,0 +1,214 @@
+/* hero.css - styles for the hero section under navbar */
+:root{
+  --accent:#205289;
+  --accent-2:#0066ff;
+  --muted:#6b7280;
+  --bg-overlay: rgba(8,15,30,0.04);
+  --container-width: 1400px; 
+  --radius: 12px;
+}
+
+.hero-section{
+  width:100%;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,252,255,1) 100%);
+  padding: calc(40px + 10px) 4% 80px 4%; 
+  box-sizing: border-box;
+  margin-top: 120px;
+}
+
+.hero-inner{
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+/* Left copy */
+.hero-copy{
+  padding: 10px 10px;
+}
+
+.hero-title{
+  font-family: Poppins;          
+  font-size: 18px;
+  line-height: 1.05;
+  color: #00448f !important;
+  margin: 30px 0 30px 0;
+  font-weight: 500 !important;
+  letter-spacing: 3px;
+  margin-top: -10px;
+}
+.hero-title .h1{
+  color: #00448f;
+}
+
+.hero-sub p{
+  color: var(--muted);
+  font-size: 48px;
+  margin: 0;
+  text-transform: capitalize;
+  font-family: Poppins,sans-serif;
+  color: #00448f;
+  font-weight: 600;
+  line-height: 1.4em;
+  text-align: start;
+}
+
+.hero-sub2 p{
+  font-size: 18px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-family: Poppins,sans-serif;
+  color: #00448f;
+  font-weight: 400;
+  line-height: 1.7em;  
+}
+
+/* Website Search Bar Styling */
+.hero-search-form {
+  display: flex;
+  gap: 0;
+  max-width: 700px;
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero-search-input {
+  flex: 1;
+  padding: 16px 24px;
+  font-size: 18px;
+  border: 1px solid #1b034a;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  font-family: Poppins;
+  font-weight: 700;
+  transition: border-color 0.3s ease;
+}
+
+.hero-search-input:focus {
+  border-color: #0052a3;
+  border: 1.5px solid #1b034a;
+}
+
+.hero-search-input::placeholder {
+  color: #aaa;
+  font-weight: 300;
+}
+
+.hero-search-btn {
+  padding: 12px 15px;
+  background: #0052a3;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-family: Poppins;
+}
+
+.hero-search-btn:hover {
+  background: #003d7a;
+  transform: translateY(-1px);
+}
+
+.hero-search-btn:active {
+  transform: translateY(0);
+}
+
+/* short feature list */
+.hero-problems{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Right media (image) */
+.hero-media{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.hero-media img{
+  width:100%;
+  max-width:520px;
+  border-radius: 16px;
+  object-fit:cover;
+  display:block;
+}
+
+/* Accent card / floating decorative */
+.hero-accent {
+  position:absolute;
+  right: calc((100% - var(--container-width))/2 + 20px);
+  top: -30px;
+  width:220px;
+  height:120px;
+  background: linear-gradient(180deg,#fff,#f4f8ff);
+  border-radius:16px;
+  box-shadow: 0 10px 30px rgba(8,18,44,0.06);
+  display:none; 
+}
+
+/* Responsiveness */
+@media (max-width: 1100px){
+  .hero-inner{
+    grid-template-columns: 1fr 420px;
+  }
+  .hero-media img{ max-width:420px; }
+}
+
+@media (max-width: 880px){
+  .hero-inner{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .hero-media{
+    order: -1; 
+  }
+  .hero-section{
+    padding-top: calc(70px + 18px);
+    padding-left: 20px; 
+    padding-right: 20px; 
+  }
+  .hero-media img{ max-width:100%; border-radius:12px; }
+  .hero-cta-row{ flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 768px) {
+  .hero-search-form {
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: none;
+  }
+  .hero-title{
+    margin-top: -40px;
+    padding-top: 0;
+  }
+
+
+  .hero-search-input {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .hero-search-btn {
+    border-radius: 8px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,283 @@
+/* ==========================================================================
+   CANVAS LAYER (FIXES CONTAINER BORDER OVERFLOW)
+   ========================================================================== */
+.whoweare-section {
+  background: #f8fafc !important; 
+  padding: 100px 0 !important; /* Removed side padding to let tracks mask up to the window edges */
+  position: relative;
+  overflow: hidden !important; /* FIX: Hard-clips any elements that wander out of bounds */
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.whoweare-container {
+  max-width: 100%;
+  margin: 0 auto !important;
+  width: 100%;
+  overflow: hidden !important; /* FIX: Stops tech rows from expanding the webpage horizontally */
+}
+
+/* ==========================================================================
+   RESTORED HEADER ENGINE
+   ========================================================================== */
+.whoweare-section .whoweare-header-block {
+  text-align: center !important;
+  max-width: 900px !important;
+  margin: 0 auto 60px auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.whoweare-section .whoweare-main-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 46px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 0 20px 0 !important;
+  text-align: center !important;
+  display: block !important;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.whoweare-section .highlight-text-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block !important;
+}
+
+.whoweare-section .whoweare-sub-description {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #475569 !important;
+  line-height: 1.8 !important;
+  margin: 0 auto 40px auto !important;
+  text-align: center !important;
+  max-width: 850px !important;
+  display: block !important;
+}
+
+.whoweare-section .whoweare-tech-stack-label {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #2563eb !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+  text-align: center !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.whoweare-section .whoweare-tech-stack-label::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 40px !important;
+  height: 3px !important;
+  background: #2563eb !important;
+  border-radius: 2px !important;
+}
+
+/* ==========================================================================
+   INFINITE MARQUEE ENGINE (PERFECT GAPLESS TRANSITION)
+   ========================================================================== */
+.tech-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.tech-scroll-row {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  cursor: grab;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; 
+  
+  /* Modern clean side clipping vignettes */
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.tech-scroll-row::-webkit-scrollbar {
+  display: none !important;
+  height: 0 !important;
+}
+
+.tech-scroll-row {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tech-scroll-row:active { cursor: grabbing; }
+
+.tech-cards-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Speed Controllers mapped to loop exactly at 50% point halfway markers */
+.tech-cards-track-1 { animation: scrollLeftMarqueeLoop 70s linear infinite; }
+.tech-cards-track-2 { animation: scrollRightMarqueeLoop 75s linear infinite; } 
+.tech-cards-track-3 { animation: scrollLeftMarqueeLoop 80s linear infinite; }
+.tech-cards-track-4 { animation: scrollRightMarqueeLoop 65s linear infinite; }
+
+.tech-scroll-row:hover .tech-cards-track,
+.tech-scroll-row:active .tech-cards-track {
+  animation-play-state: paused !important;
+}
+
+/* FIX: Moves exactly to -50% for seamless reset positions */
+@keyframes scrollLeftMarqueeLoop {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes scrollRightMarqueeLoop {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* ==========================================================================
+   UNIFORM RECTANGLE CARDS
+   ========================================================================== */
+.tech-row-item-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-drag: none;
+  
+  width: 210px;
+  height: 64px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.tech-row-item-card:hover {
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.08);
+}
+
+.tech-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tech-svg-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.tech-row-item-card:hover .tech-svg-icon {
+  transform: scale(1.12);
+}
+
+.tech-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tech-row-item-card:hover .tech-label {
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   RESPONSIVE SCALING
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .whoweare-section { padding: 80px 0 !important; }
+}
+
+@media (max-width: 768px) {
+  .whoweare-section { padding: 60px 0 !important; }
+  
+  .tech-row-item-card {
+    width: 180px;
+    height: 56px;
+    padding: 10px 18px;
+    gap: 12px;
+  }
+  .tech-icon-wrapper { width: 30px; height: 30px; }
+  .tech-label { font-size: 13px; }
+}
+
+
+
+/* ==========================================================================
+   INFINITE MARQUEE ENGINE (ULTRA-SLOW SMOOTH SLIDER)
+   ========================================================================== */
+
+/* ... (keep your .tech-rows-container and .tech-scroll-row classes exactly the same) */
+
+.tech-cards-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* FIX: Drastically increased animation times (e.g., 70s -> 240s). 
+   This forces the massive 8x item track to glide at a highly professional, 
+   unrushed pace.
+*/
+.tech-cards-track-1 { animation: scrollLeftMarqueeLoop 240s linear infinite; }
+.tech-cards-track-2 { animation: scrollRightMarqueeLoop 250s linear infinite; } 
+.tech-cards-track-3 { animation: scrollLeftMarqueeLoop 260s linear infinite; }
+.tech-cards-track-4 { animation: scrollRightMarqueeLoop 220s linear infinite; }
+
+.tech-scroll-row:hover .tech-cards-track,
+.tech-scroll-row:active .tech-cards-track {
+  animation-play-state: paused !important;
+}
+
+/* Keep your keyframes exactly the same as before */
+@keyframes scrollLeftMarqueeLoop {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes scrollRightMarqueeLoop {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}

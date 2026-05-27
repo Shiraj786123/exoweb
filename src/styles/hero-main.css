@@ -1,0 +1,567 @@
+/* hero-main.css - High Visibility & Centered Override */
+:root {
+  --text-white: #ffffff;
+  --text-sky: #38bdf8;       
+  --text-muted: #94a3b8;     
+  --badge-bg: rgba(56, 189, 248, 0.12); /* Slightly darker fill for better text contrast */
+  --btn-primary: #0066ff;
+  --btn-primary-hover: #0052cc;
+  --radius: 50px;            
+}
+
+/* The Main Wrapper Box */
+.hero {
+  width: 100%;
+  min-height: 100vh; 
+  display: flex !important;
+  align-items: center !important;     /* Vertically center the content container */
+  justify-content: center !important;   /* Horizontally center the content container */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  
+  /* 🚨 CRITICAL FIX: Pushes the entire hero block safely down past gigantic headers */
+  margin-top: 100px !important; 
+  padding: 60px 4% 120px 4%; 
+  
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The Content Box - Explicit Centering Reset */
+.hero-container {
+  width: 100%;
+  max-width: 950px; 
+  margin: 0 auto;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* 🚨 BIGGER & MORE VISIBLE BADGE LABEL */
+.hero-badge {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--badge-bg) !important;
+  border: 2px solid rgba(56, 189, 248, 0.35) !important; /* Thicker and brighter border */
+  color: var(--text-sky) !important;
+  
+  /* 🌟 ENLARGED SIZING: Boosted width, height scaling, and internal text density */
+  padding: 14px 28px !important;   /* Much larger clickable/visible area */
+  font-size: 16px !important;       /* Scaled font up from 14px */
+  font-weight: 600 !important;       /* Stronger bold visibility */
+  min-width: 320px;                 /* Guarantees a wide premium profile baseline */
+  
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.8px;
+  
+  /* Structural clearance to keep headings below it */
+  margin: 0 auto 40px auto !important; 
+  position: relative !important;
+  z-index: 999 !important; /* Forces it to sit above any background elements */
+}
+
+.badge-dot {
+  color: var(--text-sky);
+  font-size: 12px;
+  animation: pulse 2s infinite; 
+}
+
+/* Premium Main Header Typography styling */
+.hero-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-white); 
+  margin: 0 0 24px 0 !important;
+  letter-spacing: -1px;
+}
+
+/* Text glow target modifier */
+.highlight-text {
+  color: var(--text-sky); 
+  background: linear-gradient(to right, #38bdf8, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Content block text description spacing */
+.hero-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 0 40px 0 !important;
+}
+
+/* Dual layout configurations for primary/secondary buttons */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px !important;
+}
+
+.primary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--btn-primary);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.4);
+}
+
+.primary-btn:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
+}
+
+.secondary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.secondary-btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.secondary-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Subdued Trust branding text styles */
+.hero-trust-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto !important;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* Tablet & Mobile Layout Shifts */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 80px !important; /* Balances spacing configuration for mobile top bars */
+    padding: 40px 24px 80px 24px; 
+    min-height: auto; 
+  }
+  
+  .hero-badge {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+    min-width: auto;
+  }
+
+  .hero-container h1 {
+    font-size: 36px;
+  }
+  
+  .hero-desc {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    gap: 12px;
+  }
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   REPLACE ONLY THE @media (max-width: 768px) BLOCK AT THE BOTTOM OF YOUR FILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    /* 1. Stops forcing full-screen centering on tiny screens */
+    min-height: auto !important; 
+    
+    /* 2. Dramatically cuts down the large gap below your fixed white navbar */
+    padding: 100px 20px 60px 20px !important; 
+    
+    /* 3. Uses flex-start to pull content naturally upward instead of pushing it down */
+    align-items: flex-start !important; 
+  }
+  
+  .hero-container {
+    /* Ensures the inner contents don't try to vertically stretch */
+    justify-content: flex-start !important;
+  }
+  
+  .hero-badge {
+    /* 4. Optimizes the badge size for mobile screens so it scales cleanly */
+    font-size: 13px !important;
+    padding: 10px 20px !important;
+    min-width: auto !important;
+    width: 90% !important; /* Prevents it from looking awkwardly wide on narrow phones */
+    max-width: 320px !important;
+    
+    /* 5. Pulls the badge up closer to the navbar */
+    margin: 0 auto 24px auto !important; 
+  }
+
+  .hero-container h1 {
+    font-size: 32px !important; /* Slightly smaller text to prevent ugly line breaks on mobile */
+    line-height: 1.3 !important;
+    margin: 0 0 16px 0 !important;
+  }
+  
+  .hero-desc {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 32px 0 !important;
+    padding: 0 10px; /* Gives the text a little breathing room on the sides */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 12px;
+    margin-bottom: 36px !important;
+  }
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+
+
+
+/* In the main body of your CSS, update this class: */
+.hero-badge {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--badge-bg) !important;
+  border: 2px solid rgba(56, 189, 248, 0.35) !important;
+  color: var(--text-sky) !important;
+  padding: 14px 28px !important;   
+  font-size: 16px !important;       
+  font-weight: 600 !important;       
+  min-width: 320px;                 
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.8px;
+  margin: 0 auto 40px auto !important; 
+  position: relative !important;
+  
+  /* 🚨 FIXED: Dropped down so it slides UNDER the opened mobile menu drawer */
+  z-index: 1 !important; 
+}
+
+
+
+
+/* hero-main.css - Balanced & Responsive Premium Theme */
+:root {
+  --text-white: #ffffff;
+  --text-sky: #38bdf8;       
+  --text-muted: #94a3b8;     
+  --badge-bg: rgba(56, 189, 248, 0.08); 
+  --btn-primary: #0066ff;
+  --btn-primary-hover: #0052cc;
+  --radius: 50px;            
+}
+
+/* Full screen container featuring absolute vertical and horizontal centering */
+.hero {
+  width: 100%;
+  min-height: 100vh; 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  padding: 140px 4% 100px 4%; 
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Centered layout block */
+.hero-container {
+  width: 100%;
+  max-width: 950px; 
+  margin: 0 auto;
+  text-align: center;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ✅ FIXED PC VIEW: Sleek, compact, and balanced top badge element */
+.hero-badge {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--badge-bg) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important; /* Clean, thin border */
+  color: var(--text-sky) !important;
+  
+  /* Reduced padding and removed min-width so it hugs the text elegantly */
+  padding: 6px 16px !important;   
+  font-size: 13px !important;     /* Clean, crisp size for desktop */
+  font-weight: 500 !important;       
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  
+  margin: 0 auto 28px auto !important; 
+  position: relative !important;
+  z-index: 1 !important; /* Low stack height so the mobile menu covers it */
+}
+
+.badge-dot {
+  color: var(--text-sky);
+  font-size: 8px;
+  animation: pulse 2s infinite; 
+}
+
+/* Premium Main Header Typography styling */
+.hero-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-white); 
+  margin: 0 0 20px 0 !important;
+  letter-spacing: -1px;
+}
+
+/* Text glow target modifier */
+.highlight-text {
+  color: var(--text-sky); 
+  background: linear-gradient(to right, #38bdf8, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Content block text description spacing */
+.hero-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 0 36px 0 !important;
+}
+
+/* Dual layout configurations for primary/secondary buttons */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 44px !important;
+}
+
+.primary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--btn-primary);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.4);
+}
+
+.primary-btn:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
+}
+
+.secondary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.secondary-btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.secondary-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Subdued Trust branding text styles */
+.hero-trust-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto !important;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* ==========================================================================
+   ✅ FIXED MOBILE VIEW: Perfectly scaled down sizes for mobile/tablets
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto !important; 
+    padding: 110px 24px 60px 24px !important; /* Snug spacing under the mobile navbar */
+    align-items: flex-start !important; 
+    margin-top: 0px !important;
+  }
+  
+  .hero-container {
+    justify-content: flex-start !important;
+  }
+  
+  /* Highly optimized mobile pill label */
+  .hero-badge {
+    font-size: 11px !important;       /* Clean small text on mobile viewports */
+    padding: 6px 12px !important;     /* Small height and width footprint */
+    width: auto !important;            /* No awkward stretching */
+    min-width: auto !important;        
+    max-width: 290px !important;
+    margin: 0 auto 20px auto !important; 
+    letter-spacing: 0.3px;
+  }
+
+  .hero-container h1 {
+    font-size: 32px !important; 
+    line-height: 1.3 !important;
+    margin: 0 0 16px 0 !important;
+  }
+  
+  .hero-desc {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 32px 0 !important;
+    padding: 0 6px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 12px;
+    margin-bottom: 36px !important;
+  }
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+
+/* Update ONLY the .hero-badge inside your @media (max-width: 768px) block: */
+@media (max-width: 768px) {
+  
+  .hero-badge {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px !important;
+    
+    /* 1. Forces the text to stay on ONE single line just like PC */
+    white-space: nowrap !important; 
+    
+    /* 2. Slightly smaller text and tighter padding so it fits perfectly on phone screens */
+    font-size: 11px !important; 
+    padding: 6px 14px !important; 
+    
+    /* 3. Reset widths so it shrinks to hug the single line of text beautifully */
+    width: auto !important;
+    min-width: auto !important;
+    max-width: 95% !important; 
+    
+    margin: 0 auto 20px auto !important;
+    letter-spacing: 0.3px;
+  }
+
+  /* Keep the rest of your mobile rules below this... */
+}

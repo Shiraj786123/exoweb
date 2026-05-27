@@ -1,0 +1,526 @@
+/* src/styles/solution.css */
+
+.solution-section {
+  width: 100%;
+  padding: 50px 24px;
+  background: #ffffff !important; /* Pure professional white background */
+  box-sizing: border-box;
+}
+
+.solution-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stack layout areas vertically */
+  align-items: center;    /* ✅ CENTER ALL STRUCTURAL LAYOUT BLOCKS */
+  gap: 24px;              /* Tight, controlled spaces between sections */
+}
+
+/* 1st Line: Headings layout */
+.solution-title-block {
+  text-align: center;     /* ✅ CENTER TITLE & SUBTITLE TEXT */
+  width: 100%;
+  max-width: 800px;       /* Keeps text width clean and readable */
+}
+
+.solution-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0 !important;
+  letter-spacing: -0.5px;
+}
+
+.solution-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #64748b;
+  margin: 0 !important;
+}
+
+/* 2nd Line: Navbar Strip Row */
+.solution-navbar-row {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* ✅ CENTER THE NAVBAR STRIP ACROSS THE SCREEN */
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 20px;
+}
+
+.solution-tabs {
+  display: flex;
+  flex-direction: row !important;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.tab-btn {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: #0f172a;
+}
+
+.tab-btn.active {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+/* ==========================================================================
+   DYNAMIC COLOR ACCENTS PER ACTIVE TAB
+   ========================================================================== */
+.services-grid.theme-ai {
+  --accent-color: #0066ff;
+  --card-bg: #f0f6ff;
+}
+
+.services-grid.theme-ux {
+  --accent-color: #10b981;
+  --card-bg: #ecfdf5;
+}
+
+.services-grid.theme-seo {
+  --accent-color: #7c3aed;
+  --card-bg: #f5f3ff;
+}
+
+/* ==========================================================================
+   3rd Line: 3 RECTANGLE BOXES DISPLAYED ROW-WISE
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards standing side-by-side */
+  gap: 20px; 
+  width: 100%;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(15, 23, 42, 0.02);
+  border-top: 4px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* ✅ CENTER ITEMS INSIDE BOXES */
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.04);
+}
+
+.service-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0 0 20px 0 !important;
+  text-align: center;     /* ✅ CENTER INDIVIDUAL BOX HEADINGS */
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;            /* Allows inner lines to align relative to the box width */
+}
+
+.service-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ✅ CENTER INDIVIDUAL BULLET LIST STRIPS */
+  gap: 8px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-arrow {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Responsive configurations for smaller viewports */
+@media (max-width: 768px) {
+  .solution-section {
+    padding: 40px 16px;
+  }
+  .solution-title {
+    font-size: 26px;
+  }
+  .solution-tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* Stacks vertically on mobile screens safely */
+    gap: 16px;
+  }
+}
+
+
+
+
+
+
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;         /* Centering the list container block inside the card */
+  max-width: 280px;       /* Restricts width so text lines up perfectly to the left */
+  width: 100%;
+}
+
+.service-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start; /* Aligns arrows to the top if text wraps to 2 lines */
+  justify-content: flex-start; /* ✅ FORCE TEXT AND ARROWS TO THE LEFT */
+  gap: 8px;
+  line-height: 1.4;
+  text-align: left;        /* ✅ ALIGN TEXT LEFT */
+}
+
+
+
+
+/* ==========================================================================
+   3rd Line: 3 RECTANGLE BOXES DISPLAYED ROW-WISE (FIXED ROW ALIGNMENT)
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* ✅ Forces exactly 3 equal columns in a row */
+  gap: 16px; /* Tight, controlled gap between columns */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(15, 23, 42, 0.02);
+  border-top: 4px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 24px 20px; /* Reduced padding slightly to ensure items fit perfectly */
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.04);
+}
+
+.service-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px; /* Micro-optimized size so headings don't wrap awkwardly */
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0 0 16px 0 !important;
+  text-align: center;
+  width: 100%;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the whole list block layout inside the card */
+}
+
+.service-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; /* Keeps text pushing left */
+  gap: 8px;
+  line-height: 1.4;
+  text-align: left;
+  width: 100%;
+  max-width: 240px; /* ✅ Keeps the internal text group uniform while staying left-aligned */
+}
+
+.service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-arrow {
+  color: var(--accent-color);
+  font-weight: 700;
+  flex-shrink: 0; /* Prevents the arrow from squeezing if text wraps */
+}
+
+
+
+
+
+
+
+
+
+/* src/styles/solution.css */
+
+.solution-section {
+  width: 100%;
+  min-height: 100vh; /* ✅ FORCES MATCHING HERO FOOTPRINT (Full viewport height) */
+  background: #ffffff !important; /* Pure professional white background */
+  box-sizing: border-box;
+  
+  /* Flex centering vertically alignment */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: 60px 24px; /* Gives safe padding layout buffers for smaller screens */
+}
+
+.solution-container {
+  width: 100%;
+  max-width: 1200px; /* Matches standard premium content grid limits */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 32px; /* Controlled layout spacing between lines */
+}
+
+
+
+
+
+/* src/styles/solution.css */
+
+.solution-section {
+  width: 100%;
+  min-height: 100vh; /* Keeps the full hero viewport size footprint */
+  background: #ffffff !important; 
+  box-sizing: border-box;
+  
+  /* Flex layout configuration */
+  display: flex;
+  flex-direction: column;
+  /* 🚨 THE CRITICAL FIX: Anchor to the top so switching tabs doesn't move headings up/down */
+  align-items: center; 
+  justify-content: flex-start; 
+  
+  /* Adds a fixed professional top padding layout buffer to replace vertical centering */
+  padding: 100px 24px 60px 24px; 
+}
+
+
+
+
+
+/* src/styles/solution.css */
+
+/* Horizontal Tabs Base Configuration */
+.solution-tabs {
+  display: flex;
+  flex-direction: row !important;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.tab-btn {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   DYNAMIC TAB HOVER & ACTIVE COLORS (MATCHING THE GRID BOXES)
+   ========================================================================== */
+
+/* 1. Software Development Tab Themes */
+.tab-btn.hover-ai {
+  --tab-hover-color: #0066ff;
+  --tab-hover-bg: #f0f6ff;
+}
+
+/* 2. Website Development Tab Themes */
+.tab-btn.hover-ux {
+  --tab-hover-color: #10b981;
+  --tab-hover-bg: #ecfdf5;
+}
+
+/* 3. SEO Marketing Tab Themes */
+.tab-btn.hover-seo {
+  --tab-hover-color: #7c3aed;
+  --tab-hover-bg: #f5f3ff;
+}
+
+/* Dynamic Hover Effect state */
+.tab-btn:hover {
+  color: var(--tab-hover-color) !important;
+  background: var(--tab-hover-bg) !important;
+}
+
+/* Dynamic Active/Selected state */
+.tab-btn.active {
+  background: #ffffff !important;
+  color: var(--tab-hover-color) !important; /* Locks in the accent color when selected */
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+
+
+
+
+
+.solution-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px 0 !important;
+  
+  /* ✅ PREMIUM GRADIENT STYLING */
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* ==========================================================================
+   FULLY RESPONSIVE MEDIA QUERIES (FIXED MOBILE BROKEN GRIDS)
+   ========================================================================== */
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .solution-title {
+    font-size: 30px;
+  }
+  
+  .services-grid {
+    gap: 16px;
+  }
+  
+  .service-card {
+    padding: 24px 16px;
+  }
+
+  .service-card-title {
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
+/* Mobile Devices (Phones) */
+@media (max-width: 768px) {
+  .solution-section {
+    padding: 60px 16px 40px 16px; /* Balance top padding nicely on mobile */
+    min-height: auto; /* Let it expand naturally if text is long on small screens */
+  }
+
+  .solution-title {
+    font-size: 24px; /* Scaled down perfectly for mobile screens */
+    padding: 0 10px;
+  }
+  
+  .solution-subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* Smooth horizontal scrollbar for the navigation tabs */
+  .solution-navbar-row {
+    justify-content: flex-start; 
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+    width: 100%;
+  }
+
+  .solution-tabs {
+    display: flex !important;
+    flex-direction: row !important;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  /* 🚨 THE ULTIMATE FIX: Safely break the 3 columns into a single stack */
+  .services-grid {
+    grid-template-columns: 1fr !important; /* Force cards to sit underneath each other */
+    gap: 16px;
+    width: 100%;
+  }
+
+  .service-card {
+    height: auto; /* Let height adapt nicely to the content */
+    padding: 24px 20px;
+    align-items: center;
+  }
+
+  .service-card-title {
+    min-height: auto; /* Reset title heights for the stacked layout */
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .service-list {
+    max-width: 100%; /* Take full container availability */
+  }
+
+  .service-item {
+    font-size: 13.5px;
+    max-width: 100%; /* Stop cutting off strings or text lines */
+  }
+}
+

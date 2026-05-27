@@ -1,0 +1,772 @@
+/* ==========================================================================
+   PROCESS SECTION WRAPPER (LIGHT BACKGROUND OPTIMIZED)
+   ========================================================================== */
+.process-section {
+  background: #ffffff; /* Pristine white background */
+  padding: 120px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.process-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #0f172a; /* Deep slate for high contrast */
+  margin-bottom: 14px;
+  line-height: 1.2;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.process-subtitle {
+  font-size: 1.15rem;
+  color: #0284c7; /* Vibrant brand blue subtitle text */
+  margin-bottom: 80px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   DESKTOP GRID & TIMELINE CONNECTOR WAVE
+   ========================================================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 150px 140px 150px; /* Rows: 1. Top Text, 2. Timeline Wave, 3. Bottom Text */
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Wave wrapper stretching behind row 2 */
+.process-wave-wrapper {
+  position: absolute;
+  grid-row: 2;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.process-wave-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Soft blue connecting wave visible on light background */
+.process-wave-svg path {
+  stroke: rgba(2, 132, 199, 0.25) !important;
+}
+
+/* ==========================================================================
+   GRID PLACEMENTS
+   ========================================================================== */
+.col-pos-1 { grid-column: 1; }
+.col-pos-2 { grid-column: 2; }
+.col-pos-3 { grid-column: 3; }
+.col-pos-4 { grid-column: 4; }
+.col-pos-5 { grid-column: 5; }
+
+.step-circle-container {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.row-pos-top {
+  grid-row: 1;
+  align-self: end;
+  margin-bottom: 15px;
+}
+
+.row-pos-bottom {
+  grid-row: 3;
+  align-self: start;
+  margin-top: 15px;
+}
+
+/* ==========================================================================
+   CONCENTRIC PROCESS CIRCLES
+   ========================================================================== */
+.step-circle-outer {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--step-color); /* concentric color accent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Rotating outer concentric border loop animation */
+.step-circle-outer::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.06); /* Soft subtle ring boundary */
+  border-top-color: var(--step-color); /* Accent top loop */
+  animation: rotateAccentRing 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateAccentRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.step-circle-inner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f8fafc; /* Soft off-white core so white icons are visible */
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 68, 143, 0.1);
+  transition: all 0.3s ease;
+}
+
+.step-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.step-circle-number {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+/* Interactive hovers */
+.step-circle-outer:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--step-color);
+}
+
+.step-circle-outer:hover .step-icon {
+  transform: rotate(12deg) scale(1.05);
+}
+
+/* ==========================================================================
+   TEXT CARD STYLES
+   ========================================================================== */
+.step-text-card {
+  background: #f8fafc; /* Soft light-gray card background for high contrast */
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.step-text-card:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a; /* Slate title text */
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-description {
+  font-size: 0.9rem;
+  color: #475569; /* Balanced description text */
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE TIMELINE STACK)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .process-section {
+    padding: 80px 20px;
+  }
+
+  .process-title {
+    font-size: 32px;
+  }
+
+  .process-subtitle {
+    margin-bottom: 60px;
+  }
+
+  /* Grid changes to 2-column layout (Left: Timeline Line & Circles, Right: Content Cards) */
+  .steps-grid {
+    display: grid !important;
+    grid-template-columns: 100px 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 36px 16px !important;
+  }
+
+  /* Hides horizontal desktop wave path */
+  .process-wave-wrapper {
+    display: none;
+  }
+
+  /* Creates a vertical timeline connecting line down behind the circles */
+  .steps-grid::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 49px; /* Centered precisely behind the 100px column */
+    width: 2px;
+    border-left: 2px dashed rgba(2, 132, 199, 0.25) !important; /* Visible dashed line on mobile */
+    z-index: 1;
+  }
+
+  /* Move all circles to Column 1 */
+  .step-circle-container {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    justify-content: center !important;
+  }
+
+  /* Move all content cards to Column 2 and align left */
+  .step-content-container {
+    grid-column: 2 !important;
+    grid-row: auto !important;
+    align-self: center !important;
+    margin: 0 !important;
+  }
+
+  .step-text-card {
+    text-align: left !important;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .process-title {
+    font-size: 28px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 80px 1fr !important; /* Shrunk line left margin on mobile */
+  }
+
+  .steps-grid::before {
+    left: 39px;
+  }
+
+  .step-circle-outer {
+    width: 80px;
+    height: 80px;
+  }
+
+  .step-circle-inner {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   CONCENTRIC PROCESS CIRCLES - FIXED ICON VISIBILITY
+   ========================================================================== */
+
+.step-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  
+  /* ✅ FORCE VISIBILITY OVERRIDE FOR LIGHT BACKGROUNDS */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  
+  /* ⚡ MAGIC FIX: Converts white/transparent default SVGs to deep corporate slate blue */
+  filter: brightness(0) saturate(100%) invert(9%) sepia(21%) saturate(2200%) hue-rotate(185deg) brightness(96%) contrast(94%);
+}
+
+/* Enhances the icon hover state interaction */
+.step-circle-outer:hover .step-icon {
+  transform: rotate(12deg) scale(1.05);
+  /* Optional: Turns the icon vibrant blue on card hover */
+  filter: brightness(0) saturate(100%) invert(32%) sepia(94%) saturate(2058%) hue-rotate(212deg) brightness(97%) contrast(94%);
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   PROCESS SECTION WRAPPER (MATCHING STYLE SIGNATURE)
+   ========================================================================== */
+.process-section {
+  background: #ffffff; /* Pristine white background */
+  /* ⚡ CHANGED: Reduced padding from 120px to match tight spacing rules */
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.process-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px; /* ⚡ MATCHED: Matches the Success Section size footprint exactly */
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px 0 !important;
+  line-height: 1.2;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  
+  /* ✅ MATCHED COLOR GRADIENT FROM PREVIOUS SECTION */
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.process-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; /* ⚡ MATCHED: Clean typography size to match previous subtitle */
+  color: #64748b !important; /* ✅ MATCHED COLOR: Clean slate gray text signature */
+  font-weight: 500;
+  line-height: 1.5;
+  /* ⚡ CHANGED: Trimmed massive 80px bottom margin to a tight 40px */
+  margin: 0 0 40px 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+
+
+/* ==========================================================================
+   PROCESS SECTION WRAPPER (MAX COMPACT LAYOUT)
+   ========================================================================== */
+.process-section {
+  background: #ffffff; /* Pristine white background */
+  
+  /* ⚡ FIXED: Dropped top padding to 0px to instantly eliminate the gap with the section above */
+  padding: 0px 24px 40px 24px !important; 
+  position: relative;
+  overflow: hidden;
+}
+
+.process-container {
+  max-width: 1400px;
+  /* ⚡ FIXED: Removed any default or hidden top margins pushing down */
+  margin: 0 auto !important; 
+  text-align: center;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   PROCESS SECTION WRAPPER (MAX COMPACT & FULLY RESPONSIVE)
+   ========================================================================== */
+.process-section {
+  background: #ffffff;
+  padding: 0 24px 40px 24px !important; /* Tight top spacing to close section gap */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.process-container {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.process-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px 0 !important;
+  line-height: 1.2;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.process-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #64748b !important;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 40px 0 !important; /* Clean distance before the grid starts */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   DESKTOP GRID ARCHITECTURE (ALL PC SCREENS)
+   ========================================================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 150px 110px 150px; /* Precise height distribution */
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Horizontal connecting wave layout background */
+.process-wave-wrapper {
+  position: absolute;
+  grid-row: 2;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+}
+
+.process-wave-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.process-wave-svg path {
+  stroke: rgba(2, 132, 199, 0.25) !important;
+}
+
+/* Desktop Grid Position Mappings */
+.col-pos-1 { grid-column: 1; }
+.col-pos-2 { grid-column: 2; }
+.col-pos-3 { grid-column: 3; }
+.col-pos-4 { grid-column: 4; }
+.col-pos-5 { grid-column: 5; }
+
+.step-circle-container {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.row-pos-top {
+  grid-row: 1;
+  align-self: end;
+  margin-bottom: 10px;
+}
+
+.row-pos-bottom {
+  grid-row: 3;
+  align-self: start;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   CONCENTRIC PROCESS CIRCLES & ICONS
+   ========================================================================== */
+.step-circle-outer {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--step-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-circle-outer::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-top-color: var(--step-color);
+  animation: rotateAccentRing 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateAccentRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.step-circle-inner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 68, 143, 0.06);
+  transition: all 0.3s ease;
+}
+
+.step-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  /* High contrast filter transformation for transparent/white SVGs */
+  filter: brightness(0) saturate(100%) invert(9%) sepia(21%) saturate(2200%) hue-rotate(185deg) brightness(96%) contrast(94%);
+}
+
+.step-circle-number {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
+
+/* Circle Hover Effects */
+.step-circle-outer:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 20px var(--step-color);
+}
+
+.step-circle-outer:hover .step-icon {
+  transform: rotate(12deg) scale(1.05);
+  filter: brightness(0) saturate(100%) invert(32%) sepia(94%) saturate(2058%) hue-rotate(212deg) brightness(97%) contrast(94%);
+}
+
+/* ==========================================================================
+   TEXT CARD COMPONENTS
+   ========================================================================== */
+.step-text-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.step-text-card:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.05);
+}
+
+.step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.step-description {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVE VIEWPORTS (1024px and down)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .process-section {
+    padding: 0 20px 40px 20px !important;
+  }
+
+  .process-title {
+    font-size: 28px;
+  }
+
+  .process-subtitle {
+    margin-bottom: 40px !important;
+  }
+
+  /* Switches layout to an organized 2-column vertical timeline flow */
+  .steps-grid {
+    display: grid !important;
+    grid-template-columns: 90px 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 24px 16px !important;
+    max-width: 700px;
+  }
+
+  /* Hides horizontal desktop wave connector */
+  .process-wave-wrapper {
+    display: none;
+  }
+
+  /* Renders clean vertical connection track behind circles */
+  .steps-grid::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 44px; /* Perfectly centered alignment */
+    width: 2px;
+    border-left: 2px dashed rgba(2, 132, 199, 0.25) !important;
+    z-index: 1;
+  }
+
+  /* Shifts circles to the left column position track */
+  .step-circle-container {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    justify-content: center !important;
+  }
+
+  /* Shifts text cards to the right column position track */
+  .step-content-container {
+    grid-column: 2 !important;
+    grid-row: auto !important;
+    align-self: center !important;
+    margin: 0 !important;
+  }
+
+  .step-text-card {
+    text-align: left !important;
+    padding: 16px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE SCREEN VIEWPORTS (640px and down)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .process-title {
+    font-size: 24px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 70px 1fr !important; /* Compact margin footprints */
+    gap: 20px 12px !important;
+  }
+
+  .steps-grid::before {
+    left: 34px;
+  }
+
+  .step-circle-outer {
+    width: 70px;
+    height: 70px;
+  }
+
+  .step-circle-outer::after {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+  }
+
+  .step-circle-inner {
+    width: 54px;
+    height: 54px;
+  }
+
+  .step-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .step-title {
+    font-size: 0.9rem;
+  }
+
+  .step-description {
+    font-size: 0.78rem;
+  }
+}

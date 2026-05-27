@@ -1,0 +1,832 @@
+/* Zero Google Imports - Strict Local System Typography (GitHub / Linear Standard) */
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cyber-Midnight JUNKBRANDING Color Scheme */
+  --bg-hero: #07050a;             /* Obsidian Midnight */
+  --bg-page-white: #ffffff;       /* Pure White Background for subsequent sections */
+  --bg-dark-obsidian: #0c0914;    /* Deep dark obsidian for dashboard cards */
+  --bg-terminal-black: #050308;   /* Black background for Diagnostic consoles */
+  
+  /* Glowing Pastel Gradients */
+  --title-gradient: linear-gradient(90deg, #e59fd1 0%, #b2a6f2 50%, #89cbf7 100%);
+  --btn-gradient-cyber: linear-gradient(90deg, #00f0ff 0%, #0080ff 100%);
+  --color-glowing-cyan: #00f0ff;
+  --color-muted-slate: #7f788a;
+  --border-glow: rgba(178, 166, 242, 0.22);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page-white);
+  color: var(--bg-dark-obsidian);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+.aiss__wrapper {
+  background-color: var(--bg-page-white);
+}
+
+/* Gradient text helper */
+.gradient-text {
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Reverted to Obsidian Midnight Theme - Edge-to-Edge Width)
+   ========================================================================== */
+.aiss__hero {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(178, 166, 242, 0.08) 0%, transparent 70%), var(--bg-hero);
+  padding: 140px 24px 100px 24px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.aiss__hero_gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(229, 159, 209, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(137, 203, 247, 0.05) 0%, transparent 50%);
+}
+
+.aiss__hero_container {
+  max-width: 920px; /* Aligns with the section widths of your mock-up layout */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.aiss__hero_label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(178, 166, 242, 0.06);
+  border: 1px solid rgba(178, 166, 242, 0.25);
+  color: #b2a6f2;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 18px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(178, 166, 242, 0.3);
+}
+
+.badge-dot {
+  font-size: 8px;
+  color: #89cbf7;
+}
+
+.aiss__hero_title {
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 auto 20px auto;
+}
+
+.aiss__hero_text {
+  line-height: 1.6;
+  color: var(--color-muted-slate);
+  max-width: 780px;
+  margin: 0 auto 36px auto;
+}
+
+/* Hero Button Containers */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+/* Capsule Pill Button matching button.png */
+.capsule-primary-btn {
+  display: inline-block;
+  background: var(--btn-gradient-cyber);
+  color: #010c1e;
+  padding: 16px 40px;
+  font-weight: 700;
+  border-radius: 99px; /* Capsule pill-shaped */
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35); /* Soft glowing cyan shadow */
+  border: none;
+  outline: none;
+}
+
+.capsule-primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 240, 255, 0.55);
+}
+
+/* Scroll down link styling */
+.hero-scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--color-muted-slate);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero-scroll-link:hover {
+  color: #ffffff;
+}
+
+.scroll-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.hero-scroll-link:hover .scroll-arrow {
+  transform: translateY(3px);
+}
+
+
+/* ==========================================================================
+   2. VERTICAL DARK CARDS (Stacked Vertically on White Page)
+   ========================================================================== */
+.aiss__section_wrapper {
+  background-color: var(--bg-page-white);
+  padding: 40px 24px; 
+}
+
+/* Obsidian dashboard card container */
+.aiss__dark_card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--bg-dark-obsidian);
+  color: #ffffff;
+  border: 1px solid var(--border-glow);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card inner split layouts */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.split-layout.inverted {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.aiss__label {
+  color: #b2a6f2;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.aiss__heading {
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+}
+
+.aiss__description {
+  line-height: 1.6;
+  color: var(--color-muted-slate);
+  margin: 0;
+}
+
+.aiss__description_sub {
+  line-height: 1.5;
+  color: #89cbf7;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* --- WHAT IS GEOMETRIC WIREFRAME --- */
+.visual-column {
+  display: flex;
+  justify-content: center;
+}
+
+.wireframe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-terminal-black);
+  border: 1px solid rgba(178, 166, 242, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.geometric-octahedron {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+}
+
+.glow-node {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.wireframe-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-muted-slate);
+  letter-spacing: 0.08em;
+}
+
+
+/* --- WHO NEEDS LIST VIEW --- */
+.audience-column {
+  width: 100%;
+}
+
+.audience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.audience-row {
+  background: rgba(178, 166, 242, 0.03);
+  border: 1px solid rgba(178, 166, 242, 0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.25s ease;
+}
+
+.audience-row:hover {
+  border-color: #b2a6f2;
+  transform: translateX(4px);
+}
+
+.row-num {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-glowing-cyan);
+}
+
+.row-title {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.row-desc {
+  color: var(--color-muted-slate);
+  flex-grow: 1;
+}
+
+.row-arrow {
+  color: #b2a6f2;
+  font-weight: 800;
+}
+
+
+/* --- FRICTION POINTS (DIAGNOSTIC DISPLAY) --- */
+.friction-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.friction-header-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-muted-slate);
+  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
+  padding-bottom: 12px;
+}
+
+.status-green {
+  color: #8be4af;
+}
+
+.friction-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+}
+
+/* Diagnostic terminal body */
+.terminal-container {
+  background: var(--bg-terminal-black);
+  border: 1px solid rgba(178, 166, 242, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(178, 166, 242, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background-color: #9C2D41; }
+.dot-yellow { background-color: #ebd175; }
+.dot-green { background-color: #8be4af; }
+
+.terminal-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-muted-slate);
+  margin-left: 8px;
+}
+
+.terminal-body {
+  font-family: monospace;
+}
+
+.terminal-body p {
+  margin: 6px 0;
+  font-weight: 700;
+}
+
+.txt-green { color: #8be4af; }
+.txt-red { color: #9C2D41; }
+
+.blink {
+  animation: terminal-blink 1.5s infinite;
+}
+
+@keyframes terminal-blink {
+  50% { opacity: 0.4; }
+}
+
+.friction-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(178, 166, 242, 0.1);
+  padding-bottom: 10px;
+}
+
+.point-name {
+  font-weight: 600;
+}
+
+.point-status {
+  font-weight: 800;
+  color: #ebd175;
+}
+
+
+/* --- SERVICE CATALOG --- */
+.catalog-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.catalog-header-bar {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-muted-slate);
+  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
+  padding-bottom: 12px;
+}
+
+.catalog-split {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 32px;
+}
+
+.mini-terminal {
+  max-height: 180px;
+}
+
+.cognitive-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cognitive-card {
+  background: rgba(178, 166, 242, 0.03);
+  border: 1px solid rgba(178, 166, 242, 0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.card-badge {
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--bg-dark-obsidian);
+  background-color: #89cbf7;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.cognitive-card h4 {
+  font-weight: 800;
+  margin: 0 0 6px 0;
+}
+
+.cognitive-card p {
+  color: var(--color-muted-slate);
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* --- INFINITE TEXT TICKER --- */
+.aiss__ticker_wrap {
+  overflow: hidden;
+  background-color: var(--bg-terminal-black);
+  white-space: nowrap;
+  display: flex;
+  padding: 20px 0;
+  border-top: 1px solid rgba(178, 166, 242, 0.2);
+  border-bottom: 1px solid rgba(178, 166, 242, 0.2);
+}
+
+.aiss__ticker_content {
+  display: inline-flex;
+  align-items: center;
+  animation: ticker-animation 30s linear infinite;
+  gap: 24px;
+}
+
+.aiss__ticker_content span {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #8be4af;
+}
+
+.ticker-dot {
+  color: #e59fd1 !important;
+  font-size: 10px;
+}
+
+@keyframes ticker-animation {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+/* --- SYSTEM COMPARISON --- */
+.comparison-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comparison-header {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-muted-slate);
+  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
+  padding-bottom: 12px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.grid-header {
+  font-weight: 800;
+  color: #b2a6f2;
+  border-bottom: 1px solid rgba(178, 166, 242, 0.1);
+  padding-bottom: 8px;
+}
+
+.grid-cell {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(178, 166, 242, 0.05);
+}
+
+.cell-feature {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.cell-traditional {
+  color: var(--color-muted-slate);
+}
+
+.cell-ai {
+  color: #8be4af;
+  font-weight: 600;
+}
+
+
+/* --- FINAL CTA SECTION --- */
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.cta-left h2 {
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+
+.cta-left p {
+  color: var(--color-muted-slate);
+  margin: 0;
+}
+
+.cta-right-box {
+  background: linear-gradient(135deg, #13101b 0%, #050308 100%);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 24px rgba(0, 240, 255, 0.1);
+}
+
+.box-badge {
+  font-size: 9px;
+  font-weight: 800;
+  color: #ebd175;
+  background-color: rgba(235, 209, 117, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.cta-right-box h3 {
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+
+/* ==========================================================================
+   3. RESPONSIVE TYPOGRAPHY SCALE (CHARTS MAPPED EXACTLY)
+   ========================================================================== */
+
+/* --- A. DESKTOP VIEWPORTS (Default Rules) --- */
+.aiss__hero h1 {
+  font-size: 56px;                  /* Hero Title (H1) Desktop Range: 48px - 72px */
+}
+.section-header h2,
+.aiss__heading,
+.cta-left h2 {
+  font-size: 38px;                  /* Main Heading (H2) Desktop Range: 36px - 48px */
+}
+.aiss__service_title,
+.aiss__faq_question,
+.cta-right-box h3,
+.comparison-grid .grid-header {
+  font-size: 28px;                  /* Section Heading (H3) Desktop Range: 28px - 36px */
+}
+.aiss__hero_text,
+.aiss__description,
+.aiss__description_sub,
+.row-desc,
+.aiss__problem_text,
+.table-row,
+.cognitive-card p,
+.comparison-grid .grid-cell,
+.aiss__cta_text,
+.cta-left p,
+.aiss__faq_answer {
+  font-size: 16px;                  /* Body Text Desktop Range: 16px - 18px */
+}
+.aiss__hero_label,
+.classic-badge,
+.card-badge,
+.problem-number-tag,
+.problem-label,
+.row-num,
+.row-title,
+.box-badge,
+.wireframe-label,
+.aiss__label,
+.friction-header-bar,
+.catalog-header-bar,
+.comparison-header,
+.hero-scroll-link {
+  font-size: 14px;                  /* Small Text Desktop Range: 14px */
+}
+.primary-btn,
+.secondary-btn,
+.capsule-primary-btn,
+.cta-glow-btn {
+  font-size: 15px;                  /* Button Text Desktop Range: 14px - 16px */
+}
+
+/* --- B. TABLET VIEWPORTS (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .aiss__hero h1 {
+    font-size: 44px;                /* Hero Title (H1) Tablet Range: 40px - 56px */
+  }
+  .section-header h2,
+  .aiss__heading,
+  .cta-left h2 {
+    font-size: 32px;                /* Main Heading (H2) Tablet Range: 30px - 40px */
+  }
+  .aiss__service_title,
+  .aiss__faq_question,
+  .cta-right-box h3,
+  .comparison-grid .grid-header {
+    font-size: 24px;                /* Section Heading (H3) Tablet Range: 24px - 30px */
+  }
+  .aiss__hero_text,
+  .aiss__description,
+  .aiss__description_sub,
+  .row-desc,
+  .aiss__problem_text,
+  .table-row,
+  .cognitive-card p,
+  .comparison-grid .grid-cell,
+  .aiss__cta_text,
+  .cta-left p,
+  .aiss__faq_answer {
+    font-size: 15px;                /* Body Text Tablet Range: 15px - 17px */
+  }
+  .aiss__hero_label,
+  .classic-badge,
+  .card-badge,
+  .problem-number-tag,
+  .problem-label,
+  .row-num,
+  .row-title,
+  .box-badge,
+  .wireframe-label,
+  .aiss__label,
+  .friction-header-bar,
+  .catalog-header-bar,
+  .comparison-header,
+  .hero-scroll-link {
+    font-size: 13px;                /* Small Text Tablet Range: 13px */
+  }
+  .primary-btn,
+  .secondary-btn,
+  .capsule-primary-btn,
+  .cta-glow-btn {
+    font-size: 14px;                /* Button Text Tablet Range: 14px - 15px */
+  }
+
+  /* Tablet structural stacking overrides */
+  .split-layout, .split-layout.inverted {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .friction-split, .catalog-split, .cta-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .visual-column {
+    order: -1;
+  }
+}
+
+/* --- C. MOBILE VIEWPORTS (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .aiss__hero h1 {
+    font-size: 34px;                /* Hero Title (H1) Mobile Range: 32px - 42px */
+  }
+  .section-header h2,
+  .aiss__heading,
+  .cta-left h2 {
+    font-size: 28px;                /* Main Heading (H2) Mobile Range: 26px - 34px */
+  }
+  .aiss__service_title,
+  .aiss__faq_question,
+  .cta-right-box h3,
+  .comparison-grid .grid-header {
+    font-size: 20px;                /* Section Heading (H3) Mobile Range: 20px - 26px */
+  }
+  .aiss__hero_text,
+  .aiss__description,
+  .aiss__description_sub,
+  .row-desc,
+  .aiss__problem_text,
+  .table-row,
+  .cognitive-card p,
+  .comparison-grid .grid-cell,
+  .aiss__cta_text,
+  .cta-left p,
+  .aiss__faq_answer {
+    font-size: 14px;                /* Body Text Mobile Range: 14px - 16px */
+  }
+  .aiss__hero_label,
+  .classic-badge,
+  .card-badge,
+  .problem-number-tag,
+  .problem-label,
+  .row-num,
+  .row-title,
+  .box-badge,
+  .wireframe-label,
+  .aiss__label,
+  .friction-header-bar,
+  .catalog-header-bar,
+  .comparison-header,
+  .hero-scroll-link {
+    font-size: 12px;                /* Small Text Mobile Range: 12px - 13px */
+  }
+  .primary-btn,
+  .secondary-btn,
+  .capsule-primary-btn,
+  .cta-glow-btn {
+    font-size: 13px;                /* Button Text Mobile Range: 13px - 14px */
+  }
+
+  /* Mobile Grid conversions */
+  .aiss__hero {
+    padding: 100px 20px 50px 20px;
+  }
+  .aiss__section_wrapper {
+    padding: 24px 16px;
+  }
+  .aiss__dark_card {
+    padding: 24px;
+  }
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .grid-header {
+    display: none;
+  }
+  .cell-feature {
+    background: rgba(178, 166, 242, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 12px;
+  }
+  .audience-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
