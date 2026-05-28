@@ -218,59 +218,46 @@ const SEOServices = () => {
     <div className="seos__wrapper">
       <Navbar />
 
-      {/* 1. HERO SECTION (Dark Theme - Frame-In-Frame Asymmetric Viewport) */}
-      <section className="ecd__hero">
-        <div className="ecd__hero_overlay"></div>
-        <div className="ecd__hero_content_asymmetric">
-          <div className="ecd__hero_text_col">
-            <div className="ecd__hero_badge">
-              <span className="ecd__badge_icon">🔍</span>
-              SEO Services
-            </div>
-            <h1 className="ecd__hero_title">
-              SEO Services That Grow <br />
-              <span className="gradient-text">Visibility, Traffic & Qualified Leads</span>
-            </h1>
-            <p className="ecd__hero_text">
-              We provide professional SEO services designed to help businesses rank higher on Google, 
-              attract qualified traffic, and generate consistent leads. Our approach combines technical 
-              SEO, content optimization, and data-driven strategy to deliver long-term, sustainable results.
-            </p>
-            <div className="hero-buttons">
-              <a href="#contact" className="capsule-primary-btn">
-                Get a Free Audit
-              </a>
-            </div>
-            <p className="ecd__hero_trust_text">
-              TRUSTED BY 120+ BUSINESSES ACROSS THE UK, USA & EUROPE
-            </p>
-          </div>
+{/* 1. HERO SECTION (Centered Single-Column Theme) */}
+<section className="ecd__hero_centered_layout">
+  <div className="ecd__hero_overlay_centered"></div>
+  <div className="ecd__hero_container_centered">
+    
+    {/* Centered Pill Badge (Now completely visible) */}
+    <div className="ecd__badge_pill_centered">
+      <span className="badge_dot_indicator">●</span> SEO SERVICES
+    </div>
 
-          <div className="ecd__hero_visual_col">
-            <div className="ecd__hero_ide_capsule">
-              <div className="ide-header">
-                <span className="ide-dot dot-red"></span>
-                <span className="ide-dot dot-yellow"></span>
-                <span className="ide-dot dot-green"></span>
-                <span className="ide-tab">seo_optimizer.py</span>
-              </div>
-              <svg viewBox="0 0 240 200" className="hero-mockup-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="25" y="45" width="100" height="90" rx="6" fill="var(--bg-terminal-black)" stroke="var(--border-light)" />
-                <circle cx="75" cy="90" r="16" fill="none" stroke="var(--color-pink)" strokeWidth="2" />
-                <path d="M67 90 h16" stroke="var(--color-warm-yellow)" strokeWidth="2" />
-                <rect x="135" y="45" width="80" height="12" rx="4" fill="var(--color-rose)" />
-                <rect x="135" y="63" width="60" height="8" rx="4" fill="var(--color-muted-slate)" opacity="0.6" />
-                <rect x="135" y="77" width="40" height="16" rx="4" fill="var(--color-pink)" />
-                <g className="floating-mini-card">
-                  <rect x="145" y="115" width="70" height="40" rx="6" fill="var(--bg-terminal-black)" stroke="var(--color-orange-coral)" strokeWidth="1" />
-                  <text x="155" y="139" fill="var(--color-warm-yellow)" fontSize="10" fontWeight="800">TRAFFIC +145%</text>
-                </g>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Centered Title */}
+    <h1 className="ecd__hero_title_centered">
+      SEO Services That Grow <br />
+      <span className="highlight_sky_blue">Visibility, Traffic & Leads</span>
+    </h1>
 
+    {/* Centered Subtitle Description */}
+    <p className="ecd__hero_text_centered">
+      We provide professional SEO services designed to help businesses rank higher on Google, 
+      attract qualified traffic, and generate consistent leads. Our approach combines technical 
+      SEO, content optimization, and data-driven strategy to deliver long-term, sustainable results.
+    </p>
+
+    {/* Centered Dual-Button Group */}
+    <div className="ecd__hero_buttons_centered">
+      <a href="#audit" className="ecd__btn_primary_centered">
+        Get Free Audit
+      </a>
+      <a href="#work" className="ecd__btn_secondary_centered">
+        See Our Work ↓
+      </a>
+    </div>
+
+    {/* Small Centered Trust Indicator */}
+    <p className="ecd__hero_trust_text_centered">
+      TRUSTED BY 120+ BUSINESSES ACROSS THE UK, USA & EUROPE
+    </p>
+
+  </div>
+</section>
       {/* 2. OVERVIEW: THE BRUTALIST GALLERY BLOCK (White Theme) */}
       <section className="fswd__section_wrapper ecd-bg-white ecd-brutalist-section">
         <div className="ecd-brutalist-ticker">
@@ -362,30 +349,29 @@ const SEOServices = () => {
         </div>
       </section>
 
-      {/* 5. CAPABILITIES BENTO SERVICES: THE ASYMMETRIC COMIC STRIP (White Theme) */}
-      <section className="fswd__section_wrapper ecd-bg-white">
-        <div className="bento-comic-strip-container">
-          <div className="section-header-centered">
-            <span className="fswd__label" style={{ color: "var(--color-warm-yellow)" }}>Capabilities Bento</span>
-            <h2 className="ecd__section_heading_dark">Our SEO Services</h2>
-          </div>
+     {/* 5. CAPABILITIES BENTO SERVICES: THE ASYMMETRIC COMIC STRIP (White Theme) */}
+<section className="fswd__section_wrapper ecd-bg-white">
+  <div className="bento-comic-strip-container">
+    <div className="section-header-centered">
+      <span className="fswd__label" style={{ color: "var(--color-warm-yellow)" }}>Capabilities Bento</span>
+      <h2 className="ecd__section_heading_dark">Our SEO Services</h2>
+    </div>
 
-          <div className="bento-comic-grid">
-            {bentoServices.map((service, index) => (
-              <div key={index} className={`comic-bento-card ${service.size}`} style={{ "--card-accent": service.accent }}>
-                <div className="card-top-header">
-                  <div className="card-icon-frame" style={{ color: service.accent }}>{service.icon}</div>
-                  <span className="service-badge-tag">{service.category}</span>
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
-                <div className="bento-oversized-index">{service.num}</div>
-              </div>
-            ))}
+    <div className="bento-comic-grid">
+      {bentoServices.map((service, index) => (
+        <div key={index} className={`comic-bento-card ${service.size}`} style={{ "--card-accent": service.accent }}>
+          <div className="card-top-header">
+            <div className="card-icon-frame" style={{ color: service.accent }}>{service.icon}</div>
+            <span className="service-badge-tag">{service.category}</span>
           </div>
+          <h3>{service.title}</h3>
+          <p>{service.desc}</p>
+          <div className="bento-oversized-index">{service.num}</div>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* 6. PLATFORMS SUPPORTED: THE HORIZONTAL PIPELINE STRIP (Soft Blue Theme) */}
       <section className="fswd__section_wrapper ecd-bg-soft-blue">
         <div className="ecd-platforms-strip-container">

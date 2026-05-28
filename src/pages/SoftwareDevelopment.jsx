@@ -177,61 +177,79 @@ const SoftwareDevelopment = () => {
             </p>
           </div>
         </section>
+{/* SERVICES SECTION (Row-Wise Connected Timeline Theme) */}
+<section className="services-section-row-theme">
+  <div className="section-header-row-theme">
+    <span className="section-label-row-theme">Capabilities</span>
+    <h2>Premium Engineering Architectures</h2>
+  </div>
+  
+  <div className="services-timeline-container">
+    {sections.map((section, index) => {
+      // Dynamic colors for the row timelines
+      const rowColors = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
+      const currentAccent = rowColors[index % rowColors.length];
 
-        {/* SERVICES SECTION */}
-        <section className="services-section">
-          <div className="section-header">
-            <span className="section-label">Capabilities</span>
-            <h2>Premium Engineering Architectures</h2>
+      return (
+        <div 
+          className="timeline-row" 
+          key={index} 
+          style={{ '--row-accent': currentAccent }}
+        >
+          {/* Vertical Connecting Node */}
+          <div className="timeline-node">
+            <span className="timeline-dot"></span>
           </div>
-          
-          <div className="services-grid">
-            {sections.map((section, index) => (
-              <div className="card" key={index}>
-                <div className="card-text-col">
-                  <div className="card-meta">
-                    <span className="classic-badge">{section.tag}</span>
-                  </div>
-                  <h2>{section.title}</h2>
-                  <p className="card-desc">{section.desc}</p>
-                  
-                  <ul className="card-list">
-                    {section.items.map((item, i) => (
-                      <li key={i}>
-                        <span className="arrow-bullet">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        </span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
 
-                  <div className="tech-tags">
-                    {section.labels.map((label, idx) => (
-                      <span key={idx} className="tech-tag">{label}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="card-mockup-col">
-                  <div className="mockup-frame">
-                    {section.mockup}
-                  </div>
-                  <button className="link-btn">
-                    Explore Details
-                    <svg className="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </button>
-                </div>
+          {/* Symmetrical Row Card */}
+          <div className="row-card">
+            <div className="card-text-col">
+              <div className="card-meta">
+                <span className="classic-badge-row" style={{ borderColor: currentAccent, color: currentAccent, background: `${currentAccent}10` }}>
+                  {section.tag}
+                </span>
               </div>
-            ))}
-          </div>
-        </section>
+              <h2>{section.title}</h2>
+              <p className="card-desc">{section.desc}</p>
+              
+              <ul className="card-list">
+                {section.items.map((item, i) => (
+                  <li key={i}>
+                    <span className="arrow-bullet" style={{ background: `${currentAccent}20`, color: currentAccent }}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
+              <div className="tech-tags">
+                {section.labels.map((label, idx) => (
+                  <span key={idx} className="tech-tag">{label}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="card-mockup-col">
+              <div className="mockup-frame" style={{ borderColor: `${currentAccent}60` }}>
+                {section.mockup}
+              </div>
+              <button className="link-btn" style={{ '--btn-accent-color': currentAccent }}>
+                Explore Details
+                <svg className="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
         {/* PROCESS SECTION */}
         <section className="process-section">
           <div className="process-container">

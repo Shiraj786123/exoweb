@@ -322,66 +322,154 @@ const AboutUs = () => {
         </div>
       </section>
       {/* 5️⃣ Our Approach */}
-      <section className="abt__approach_section">
+      {/* 5️⃣ Our Approach (Modern Roadmap Step Grid Redesign [1]) */}
+      <section className="abt__approach_section_new">
         <div className="abt__container">
           <span className="abt__sec_badge green">APPROACH</span>
           <h2 className="abt__heading">Our Approach</h2>
-          <p className="abt__sec_subtitle">A transparent, structured process engineered to choices that yield actual business growth.</p>
+          <p className="abt__sec_subtitle">A transparent, structured process engineered to yield actual business growth.</p>
           
-          <div className="abt__approach_timeline">
-            {approach.map((step, index) => (
-              <React.Fragment key={index}>
-                <div className="abt__approach_step">
-                  <div className="abt__step_number">0{step.number}</div>
-                  <h4>{step.title}</h4>
-                  <p>{step.description}</p>
+          {/* Modern 4-Column Roadmap Flow [1] */}
+          <div className="abt__approach_grid_new">
+            {approach.map((step, index) => {
+              // Custom colors matching your other pages [1]
+              const stepColors = ['step_blue', 'step_orange', 'step_green', 'step_purple'];
+              const currentTheme = stepColors[index % stepColors.length];
+              
+              return (
+                <div key={index} className={`abt__approach_card_new ${currentTheme}`}>
+                  {/* Huge translucent background watermark number [1] */}
+                  <div className="abt__step_watermark">0{step.number}</div>
+                  
+                  {/* Top colored accent indicator bar [1] */}
+                  <div className="abt__step_accent_bar"></div>
+                  
+                  {/* Step Content */}
+                  <span className="abt__step_badge_index">STEP 0{step.number}</span>
+                  <h3 className="abt__step_title_new">{step.title}</h3>
+                  <p className="abt__step_desc_new">{step.description}</p>
+                  
+                  {/* Connecting arrow pointing to next step (hidden on the last card) [1] */}
+                  {index < approach.length - 1 && (
+                    <div className="abt__step_connector_arrow">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </div>
+                  )}
                 </div>
-                {index < approach.length - 1 && <div className="abt__approach_connector"></div>}
-              </React.Fragment>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
-
-      {/* 6️⃣ Future Ready */}
+{/* 6️⃣ Built for the Future of Search & AI (Symmetrical Strip Stack Redesign [1]) */}
       <section className="abt__future_section">
         <div className="abt__container">
           <span className="abt__sec_badge blue">FUTURE-PROOF</span>
           <h2 className="abt__heading">Built for the Future of Search & AI</h2>
-          <p className="abt__future_intro">
+          <p className="abt__sec_subtitle">
             Search is changing. AI-generated answers, voice search, and generative engines are 
             redefining brand visibility globally.
           </p>
           
-          <div className="abt__future_box">
-            <h3>ZonzocTech prepares businesses for:</h3>
-            <div className="abt__future_list">
-              {futurePrep.map((item, index) => (
-                <div key={index} className="abt__future_item">
-                  <span className="abt__future_dot">●</span>
-                  <p>{item}</p>
+          {/* Centered Horizontal Strip Stack [1] */}
+          <div className="abt__future_strip_list">
+            {futurePrep.map((item, index) => {
+              // Custom color themes mapped to each row [1]
+              const themes = ['item_blue', 'item_purple', 'item_green', 'item_orange'];
+              const currentTheme = themes[index % themes.length];
+
+              return (
+                <div key={index} className={`abt__future_strip_item ${currentTheme}`}>
+                  <div className="abt__strip_left">
+                    {/* Circle Index Badge [1] */}
+                    <div className="abt__strip_circle">0{index + 1}</div>
+                    <span className="abt__strip_text">{item}</span>
+                  </div>
+                  
+                  {/* Subtle directional chevron icon on the right */}
+                  <span className="abt__strip_arrow_icon">→</span>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* 7️⃣ Who We Work With */}
+      {/* 7️⃣ Who We Work With (Asymmetric Bento Grid Redesign [1]) */}
       <section className="abt__clients_section">
         <div className="abt__container">
           <span className="abt__sec_badge yellow">PARTNERS</span>
           <h2 className="abt__heading">Who We Work With</h2>
           <p className="abt__sec_subtitle">We collaborate with forward-thinking brands ready to eliminate legacy code blocks.</p>
           
-          <div className="abt__clients_grid">
-            {whoWeWorkWith.map((client, index) => (
-              <div key={index} className="abt__client_card">
-                <span className="abt__client_icon">✓</span>
-                <p>{client}</p>
-              </div>
-            ))}
+          {/* Asymmetrical Bento Grid [1] */}
+          <div className="abt__clients_bento_grid">
+            {whoWeWorkWith.map((client, index) => {
+              // Asymmetric size and color mapping [1]
+              const bentoSizes = ['bento_wide', 'bento_normal', 'bento_normal', 'bento_normal', 'bento_normal'];
+              const bentoThemes = ['client_blue', 'client_green', 'client_orange', 'client_purple', 'client_red'];
+              
+              const currentSize = bentoSizes[index % bentoSizes.length];
+              const currentTheme = bentoThemes[index % bentoThemes.length];
+
+              // Custom SVG icons matched to each client tier [1]
+              const clientIcons = [
+                // Node 1: Startup icon (Blue)
+                <svg className="abt__client_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>,
+                // Node 2: E-commerce icon (Green)
+                <svg className="abt__client_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>,
+                // Node 3: Service leads icon (Orange)
+                <svg className="abt__client_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <polyline points="16 11 18 13 22 9" />
+                </svg>,
+                // Node 4: Agencies icon (Purple)
+                <svg className="abt__client_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>,
+                // Node 5: Enterprise Legacy icon (Red)
+                <svg className="abt__client_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              ];
+
+              return (
+                <div key={index} className={`abt__client_bento_card ${currentSize} ${currentTheme}`}>
+                  {/* Top color indicator line [1] */}
+                  <div className="abt__client_accent_bar"></div>
+                  
+                  <div className="abt__client_header">
+                    <div className="abt__client_avatar_circle">
+                      {clientIcons[index]}
+                    </div>
+                    <span className="abt__client_tag">PROFILE 0{index + 1}</span>
+                  </div>
+                  <h3 className="abt__client_title">{client}</h3>
+                  <p className="abt__client_desc">
+                    We deploy custom-engineered digital systems and automated pipelines designed to support this exact brand segment for long-term scalability.
+                  </p>
+                </div>
+              );
+            })}
           </div>
+          
+          <p className="abt__clients_footer">
+            If your growth depends on your digital presence, we can help.
+          </p>
         </div>
       </section>
 

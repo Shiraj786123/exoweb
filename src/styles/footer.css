@@ -45,7 +45,7 @@
   font-size: 0.95rem;
   font-family: Poppins;
   font-weight: 600;
-  color: rgba(255, 255, 255, );
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 1px;
   max-width: 200px;
 }
@@ -102,7 +102,7 @@
   margin-left: 20px;
   font-weight: 600;
   font-family: Poppins;
-  color: rgba(255, 255, 255,);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.0;
   margin-bottom: 30px;
   width: 220px;
@@ -121,30 +121,34 @@
   margin-bottom: 20px;
   line-height: 1.4;
 }
-.phone-button i{
-  padding-right: 10px;
+
+/* FIX: Side-by-side circular contact icons */
+.footer-contact-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
 }
 
-.phone-button {
-  display: block;
-  padding: 16px 6px;
+.contact-icon-btn {
+  width: 44px;
+  height: 44px;
   background: white;
   color: #004480;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-family: Poppins;
-  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  width: 200px;
-  line-height: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.phone-button:hover {
+.contact-icon-btn:hover {
   background: #2d7bc7;
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(45, 123, 199, 0.4);
 }
 
 /* Footer Columns */
@@ -199,7 +203,7 @@
 }
 
 .copyright {
-  color: rgba(255, 255, 255, );
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
   margin-left: 40px;
 }
@@ -342,8 +346,10 @@
     align-items: center;
   }
   
-  .phone-button {
+  /* FIX: Center contact icons on mobile views */
+  .footer-contact-icons {
     margin: 0 auto;
+    justify-content: center;
   }
 }
 
@@ -366,8 +372,8 @@
   .footer-contact-box{
     text-align: center;
   }
-  .phone-button{
-    align-items: center;
+  .footer-contact-icons{
+    justify-content: center;
   }
   .footer-column{
     text-align: center;

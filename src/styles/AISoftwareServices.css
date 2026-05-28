@@ -41,131 +41,176 @@ body {
 }
 
 /* ==========================================================================
-   1. HERO SECTION (Reverted to Obsidian Midnight Theme - Edge-to-Edge Width)
+   1. HERO SECTION (Perfect Center & Symmetrical Grid)
    ========================================================================== */
-.aiss__hero {
+.aiss__hero_centered_layout {
   position: relative;
-  background: radial-gradient(circle at center, rgba(178, 166, 242, 0.08) 0%, transparent 70%), var(--bg-hero);
-  padding: 140px 24px 100px 24px;
-  text-align: center;
-  color: #ffffff;
-  width: 100%;
+  background-color: #001b3a; /* Deep brand navy background */
+  padding: 160px 24px 120px 24px; /* Generous top padding prevents top-label clipping under headers */
+  overflow: visible; 
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.aiss__hero_gradient {
+/* Ambient glow overlay matching your cyber-palette */
+.aiss__hero_overlay_centered {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(229, 159, 209, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(137, 203, 247, 0.05) 0%, transparent 50%);
-}
-
-.aiss__hero_container {
-  max-width: 920px; /* Aligns with the section widths of your mock-up layout */
-  margin: 0 auto;
-  position: relative;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(178, 166, 242, 0.1) 0%, transparent 60%);
+  pointer-events: none;
   z-index: 1;
 }
 
-.aiss__hero_label {
+/* Centered content container (Narrow max-width for premium typographic wrapping) */
+.aiss__hero_container_centered {
+  position: relative;
+  width: 100%;
+  max-width: 980px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Pill Badge (Protected Top Spacing) */
+.aiss__badge_pill_centered {
+  background-color: rgba(178, 166, 242, 0.05);
+  border: 1px solid rgba(178, 166, 242, 0.25);
+  color: #b2a6f2; /* Lavender/purple */
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(178, 166, 242, 0.06);
-  border: 1px solid rgba(178, 166, 242, 0.25);
-  color: #b2a6f2;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 6px 18px;
-  border-radius: 99px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   text-transform: uppercase;
   text-shadow: 0 0 10px rgba(178, 166, 242, 0.3);
 }
 
-.badge-dot {
-  font-size: 8px;
-  color: #89cbf7;
-}
-
-.aiss__hero_title {
+/* Title (Centered, heavy, large scale typography) */
+.aiss__hero_title_centered {
+  font-size: clamp(2.25rem, 5.5vw, 4rem); 
   font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -0.025em;
   color: #ffffff;
-  margin: 0 auto 20px auto;
+  margin: 0 0 24px 0;
+  letter-spacing: -1.5px;
 }
 
-.aiss__hero_text {
-  line-height: 1.6;
-  color: var(--color-muted-slate);
-  max-width: 780px;
+/* Highlighted gradient line below */
+.highlight_sky_blue {
+  background: linear-gradient(135deg, #b2a6f2 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block; 
+  margin-top: 6px;
+}
+
+/* Subtitle Description */
+.aiss__hero_text_centered {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.65;
+  color: #cbd5e1; 
+  max-width: 760px; /* Constrains line length for professional wrapping */
   margin: 0 auto 36px auto;
 }
 
-/* Hero Button Containers */
-.hero-buttons {
+/* Centered Button Wrapper */
+.aiss__hero_buttons_centered {
   display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
-}
-
-/* Capsule Pill Button matching button.png */
-.capsule-primary-btn {
-  display: inline-block;
-  background: var(--btn-gradient-cyber);
-  color: #010c1e;
-  padding: 16px 40px;
-  font-weight: 700;
-  border-radius: 99px; /* Capsule pill-shaped */
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35); /* Soft glowing cyan shadow */
-  border: none;
-  outline: none;
-}
-
-.capsule-primary-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(0, 240, 255, 0.55);
-}
-
-/* Scroll down link styling */
-.hero-scroll-link {
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  color: var(--color-muted-slate);
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Primary Button (Solid Sky Blue with Dark Text) */
+.aiss__btn_primary_centered {
+  background-color: #38bdf8;
+  color: #001b3a;
+  padding: 15px 32px;
+  border-radius: 8px; /* Balanced border-radius */
+  font-weight: 700;
+  font-size: 15.5px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
 }
 
-.hero-scroll-link:hover {
+.aiss__btn_primary_centered:hover {
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.4);
+}
+
+/* Secondary Button (Transparent Outline) */
+.aiss__btn_secondary_centered {
+  background-color: transparent;
   color: #ffffff;
+  padding: 15px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15.5px;
+  text-decoration: none;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scroll-arrow {
-  display: inline-block;
-  transition: transform 0.2s ease;
+.aiss__btn_secondary_centered:hover {
+  background-color: rgba(56, 189, 248, 0.05);
+  border-color: rgba(56, 189, 248, 0.6);
+  transform: translateY(-2px);
 }
 
-.hero-scroll-link:hover .scroll-arrow {
-  transform: translateY(3px);
+/* ==========================================================================
+   RESPONSIVENESS & MOBILE VIEWS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .aiss__hero_centered_layout {
+    padding: 110px 20px 80px 20px; /* Snug top gap on mobile devices */
+  }
+
+  .aiss__hero_title_centered {
+    letter-spacing: -1px;
+  }
+
+  /* Stack button list vertically on smaller screen layouts */
+  .aiss__hero_buttons_centered {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .aiss__btn_primary_centered,
+  .aiss__btn_secondary_centered {
+    width: 100%;
+    max-width: 280px; 
+    box-sizing: border-box;
+    text-align: center;
+  }
 }
 
 
 /* ==========================================================================
-   2. VERTICAL DARK CARDS (Stacked Vertically on White Page)
+   2. VERTICAL DARK CARDS (Sleek Dashboards on White Page)
    ========================================================================== */
 .aiss__section_wrapper {
   background-color: var(--bg-page-white);
-  padding: 40px 24px; 
+  padding: 60px 24px; 
+  box-sizing: border-box;
 }
 
 /* Obsidian dashboard card container */
@@ -175,33 +220,55 @@ body {
   background-color: var(--bg-dark-obsidian);
   color: #ffffff;
   border: 1px solid var(--border-glow);
-  border-radius: 16px;
-  padding: 48px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  padding: 56px 48px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Card inner split layouts */
+/* Dynamic background ambient backlighting */
+.aiss__dark_card::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(137, 203, 247, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.aiss__dark_card::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(178, 166, 242, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Card inner split layout */
 .split-layout {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
   align-items: center;
-}
-
-.split-layout.inverted {
-  grid-template-columns: 0.9fr 1.1fr;
 }
 
 .text-column {
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 
 .aiss__label {
   color: #b2a6f2;
   font-weight: 800;
+  font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   display: block;
@@ -209,62 +276,334 @@ body {
 }
 
 .aiss__heading {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.025em;
   margin: 0 0 16px 0;
+  line-height: 1.25;
+}
+
+/* Tech gradient for title highlights */
+.text_gradient_tech {
+  background: linear-gradient(135deg, #b2a6f2 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .aiss__description {
+  font-size: 15px;
   line-height: 1.6;
   color: var(--color-muted-slate);
-  margin: 0;
+  margin: 0 0 24px 0;
 }
 
-.aiss__description_sub {
+/* Symmetrical feature lists utilizing brand color details */
+.aiss__feature_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aiss__feature_list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
   line-height: 1.5;
-  color: #89cbf7;
-  font-weight: 700;
-  margin: 0;
+  color: #94a3b8;
 }
 
+.aiss__feature_list li strong {
+  color: #ffffff;
+}
 
-/* --- WHAT IS GEOMETRIC WIREFRAME --- */
+.feature_icon {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Neon microglows on list icons */
+.feature_icon.purple_glow { color: #b2a6f2; text-shadow: 0 0 8px rgba(178, 166, 242, 0.6); }
+.feature_icon.cyan_glow   { color: #38bdf8; text-shadow: 0 0 8px rgba(56, 189, 248, 0.6); }
+.feature_icon.gold_glow   { color: #ebd175; text-shadow: 0 0 8px rgba(235, 209, 117, 0.6); }
+
+/* Right visual column styling */
 .visual-column {
   display: flex;
   justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 
+/* Precise tech dashboard wrapper around the SVG */
 .wireframe-container {
+  position: relative;
+  background-color: rgba(11, 19, 41, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  background: var(--bg-terminal-black);
-  border: 1px solid rgba(178, 166, 242, 0.15);
-  border-radius: 12px;
-  padding: 24px;
-  width: 100%;
-  max-width: 280px;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Alignment crosshairs */
+.tech-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+.tech-corner.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.tech-corner.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.tech-corner.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.tech-corner.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+.wireframe-bg-glow {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(137, 203, 247, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Slow rotation animation */
+@keyframes rotateWireframe {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .geometric-octahedron {
   width: 100%;
-  max-width: 160px;
+  max-width: 220px;
   height: auto;
+  display: block;
+  animation: rotateWireframe 12s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Colorful glowing keyframe node animations */
+@keyframes pulseGlow {
+  0% { r: 3.5px; opacity: 0.8; }
+  50% { r: 5px; opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
+  100% { r: 3.5px; opacity: 0.8; }
 }
 
 .glow-node {
-  filter: drop-shadow(0 0 4px currentColor);
+  animation: pulseGlow 3s ease-in-out infinite;
+  transform-origin: center;
 }
+.glow-node:nth-child(even) {
+  animation-delay: 1.5s;
+}
+
+/* Custom indicator color mapping for SVG nodes */
+.nod-pink   { color: #e59fd1; fill: #e59fd1; }
+.nod-cyan   { color: #89cbf7; fill: #89cbf7; }
+.nod-gold   { color: #ebd175; fill: #ebd175; }
+.nod-green  { color: #8be4af; fill: #8be4af; }
+.nod-purple { color: #b2a6f2; fill: #b2a6f2; }
+.nod-white  { color: #ffffff; fill: #ffffff; }
 
 .wireframe-label {
-  font-size: 11px;
+  margin-top: 16px;
+  font-size: 10px;
   font-weight: 800;
-  color: var(--color-muted-slate);
-  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.12em;
 }
 
+/* ==========================================================================
+   RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media (max-width: 992px) {
+  .aiss__section_wrapper {
+    padding: 40px 16px;
+  }
+
+  .aiss__dark_card {
+    padding: 40px 24px;
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr; /* Switch to standard single-column stack */
+    gap: 40px;
+    text-align: center;
+  }
+
+  .text-column {
+    align-items: center;
+  }
+
+  .aiss__feature_list {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 520px;
+  }
+
+  .wireframe-container {
+    margin: 0 auto;
+    max-width: 280px;
+  }
+}
+
+/* ==========================================================================
+   3. WHO NEEDS AI SOFTWARE SECTION (Distinct Midnight Navy Container)
+   ========================================================================== */
+
+/* 
+   Differentiates Section 3 from Section 2 by overriding the obsidian background 
+   with a deep, rich custom midnight-navy & blue gradient
+*/
+.aiss__dark_card.accent-navy-container {
+  background: linear-gradient(135deg, #02091a 0%, #051430 100%) !important;
+  border: 1px solid rgba(137, 203, 247, 0.12);
+  box-shadow: 0 25px 60px rgba(1, 12, 30, 0.4);
+}
+
+/* Custom radial glows inside the midnight-navy card */
+.aiss__dark_card.accent-navy-container::before {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+}
+
+.aiss__dark_card.accent-navy-container::after {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+}
+
+.aiss__description_sub {
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: #38bdf8; /* Highly visible sky-blue lead text */
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Tabular Column List Container */
+.audience-column {
+  width: 100%;
+  z-index: 2;
+}
+
+.audience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* 
+   Symmetrical grid row construction.
+   Guarantees all columns align across rows.
+*/
+.audience-row {
+  display: grid;
+  grid-template-columns: 36px 150px 1fr 30px; /* Aligned widths */
+  gap: 16px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--row-accent); /* Left accent bar matching index color */
+  border-radius: 8px;
+  padding: 14px 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.audience-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--row-accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Number badge utilizing dynamic row accents */
+.row-num {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--row-accent);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 10px var(--row-accent);
+}
+
+/* Aligned row titles */
+.row-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Aligned row descriptions */
+.row-desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #94a3b8; /* Balanced slate text */
+}
+
+/* Responsive arrow interaction */
+.row-arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--row-accent);
+  text-shadow: 0 0 10px var(--row-accent);
+  transition: transform 0.25s ease;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.audience-row:hover .row-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media (max-width: 992px) {
+  .audience-row {
+    grid-template-columns: 36px 130px 1fr 30px; /* Balanced grid on medium viewports */
+  }
+}
+
+@media (max-width: 768px) {
+  .audience-row {
+    grid-template-columns: 1fr; /* Switch to clean stacked layout for mobile screens */
+    gap: 8px;
+    padding: 16px;
+    text-align: left;
+    border-left-width: 3px;
+  }
+
+  .row-num {
+    margin-bottom: 4px;
+  }
+
+  .row-arrow {
+    display: none; /* Hide arrow on mobile view to avoid layout noise */
+  }
+}
 
 /* --- WHO NEEDS LIST VIEW --- */
 .audience-column {
@@ -315,49 +654,66 @@ body {
 }
 
 
-/* --- FRICTION POINTS (DIAGNOSTIC DISPLAY) --- */
+/* ==========================================================================
+   4. FRICTION POINTS (Light Pastel Container Theme)
+   ========================================================================== */
+
+/* 
+   Soft premium gradient container blending light purple, light pink, and light yellow
+*/
+.aiss__dark_card.light-pastel-container {
+  background: linear-gradient(135deg, #f3e8ff 0%, #ffe4e6 50%, #fef9c3 100%) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #0f172a !important; /* Force high-contrast dark text */
+  box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.08);
+}
+
+/* Subtle light ambient glow overlay */
+.aiss__dark_card.light-pastel-container::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 80%);
+}
+
 .friction-layout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
-.friction-header-bar {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--color-muted-slate);
-  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
-  padding-bottom: 12px;
+/* Adjusted Header Bar for Light Theme */
+.light-pastel-container .friction-header-bar {
+  color: #475569; /* Slate 600 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 14px;
 }
 
-.status-green {
-  color: #8be4af;
+.light-pastel-container .status-green {
+  color: #059669; /* Darker emerald green for contrast */
+  text-shadow: none;
 }
 
 .friction-split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 32px;
+  gap: 36px;
+  align-items: center;
 }
 
-/* Diagnostic terminal body */
-.terminal-container {
-  background: var(--bg-terminal-black);
-  border: 1px solid rgba(178, 166, 242, 0.15);
-  border-radius: 10px;
-  padding: 20px;
+/* Dark glass terminal container sits cleanly inside the light card */
+.light-pastel-container .terminal-container {
+  background: #090d16;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .terminal-header {
   display: flex;
   align-items: center;
   gap: 6px;
-  border-bottom: 1px solid rgba(178, 166, 242, 0.1);
-  padding-bottom: 10px;
-  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .dot {
@@ -367,74 +723,198 @@ body {
   display: inline-block;
 }
 
-.dot-red { background-color: #9C2D41; }
-.dot-yellow { background-color: #ebd175; }
-.dot-green { background-color: #8be4af; }
+.dot-red { background-color: #ef4444; }
+.dot-yellow { background-color: #f59e0b; }
+.dot-green { background-color: #10b981; }
 
 .terminal-title {
   font-size: 11px;
   font-weight: 800;
-  color: var(--color-muted-slate);
+  color: #475569;
+  font-family: monospace;
   margin-left: 8px;
 }
 
+/* System prompt typography */
 .terminal-body {
   font-family: monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
 }
 
 .terminal-body p {
-  margin: 6px 0;
+  margin: 8px 0;
   font-weight: 700;
 }
 
-.txt-green { color: #8be4af; }
-.txt-red { color: #9C2D41; }
+.term-prompt {
+  color: #475569; 
+  margin-right: 8px;
+}
 
+.term-alert {
+  margin-right: 6px;
+  font-size: 10px;
+}
+
+.txt-green { color: #10b981; }
+.txt-red { color: #f43f5e; }
+.txt-orange { color: #f59e0b; }
+.txt-purple { color: #c084fc; } /* Muted lavender for dark terminal contrast */
+
+/* Alert signal blinking effect */
 .blink {
   animation: terminal-blink 1.5s infinite;
 }
 
 @keyframes terminal-blink {
-  50% { opacity: 0.4; }
+  50% { opacity: 0.35; }
 }
 
+/* Pain Points Table List */
 .friction-table {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
+  width: 100%;
 }
 
-.table-row {
+.light-pastel-container .table-row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(178, 166, 242, 0.1);
-  padding-bottom: 10px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 12px 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.point-name {
+.light-pastel-container .table-row:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-bottom-color: var(--point-accent);
+  padding-left: 8px; /* Horizontal shift on hover */
+}
+
+.light-pastel-container .point-name {
+  font-size: 14.5px;
   font-weight: 600;
+  color: #1e293b; /* Slate-800 for contrast */
+}
+
+/* Glow indicators aligned with the row status colors */
+.point-status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot-mini {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--point-accent);
+  box-shadow: 0 0 6px var(--point-accent);
+  display: inline-block;
 }
 
 .point-status {
+  font-size: 13.5px;
   font-weight: 800;
-  color: #ebd175;
+  color: var(--point-accent);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.05); /* Soft drop shadow instead of harsh glow */
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
+/* ==========================================================================
+   RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media (max-width: 992px) {
+  .friction-split {
+    grid-template-columns: 1fr; /* Switch to standard single-column stack */
+    gap: 32px;
+  }
 
-/* --- SERVICE CATALOG --- */
-.catalog-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  .terminal-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
-.catalog-header-bar {
+@media (max-width: 480px) {
+  .friction-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .terminal-container {
+    padding: 16px;
+  }
+
+  .terminal-body {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media (max-width: 992px) {
+  .friction-split {
+    grid-template-columns: 1fr; /* Switch to standard single-column stack */
+    gap: 32px;
+  }
+
+  .terminal-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .friction-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .terminal-container {
+    padding: 16px;
+  }
+
+  .terminal-body {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   5. SERVICE CATALOG (Light Yellow Container Theme)
+   ========================================================================== */
+
+/* 
+   Soft premium gradient container blending light yellow and warm amber
+*/
+.aiss__dark_card.light-yellow-container {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%) !important;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #0f172a !important; /* Force high-contrast dark text */
+  box-shadow: 0 25px 50px -12px rgba(251, 191, 36, 0.08);
+}
+
+/* Subtle light glow overlay inside the card */
+.aiss__dark_card.light-yellow-container::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, transparent 80%);
+}
+
+.light-yellow-container .catalog-header-bar {
+  color: #475569; /* Slate 600 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--color-muted-slate);
-  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
   padding-bottom: 12px;
 }
 
@@ -444,7 +924,12 @@ body {
   gap: 32px;
 }
 
-.mini-terminal {
+/* Dark mini-terminal for high-contrast technical display */
+.light-yellow-container .mini-terminal {
+  background: #090d16 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
   max-height: 180px;
 }
 
@@ -454,66 +939,114 @@ body {
   gap: 12px;
 }
 
-.cognitive-card {
-  background: rgba(178, 166, 242, 0.03);
-  border: 1px solid rgba(178, 166, 242, 0.1);
-  border-radius: 8px;
+/* Frosted glass/semi-transparent white card inside the light-yellow backdrop */
+.light-yellow-container .cognitive-card {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px;
   padding: 16px 20px;
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-badge {
+.light-yellow-container .cognitive-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px); /* Tighter hover vertical offset */
+}
+
+/* Dynamic purple/violet complementary badge to pop on the yellow background */
+.light-yellow-container .card-badge {
+  background-color: #6d28d9; /* Deep violet */
+  color: #ffffff;
   font-size: 9px;
   font-weight: 800;
-  color: var(--bg-dark-obsidian);
-  background-color: #89cbf7;
   padding: 4px 8px;
   border-radius: 4px;
   letter-spacing: 0.05em;
 }
 
-.cognitive-card h4 {
+/* Typography contrast overrides */
+.light-yellow-container .cognitive-card h4 {
+  font-size: 15px;
+  color: #0f172a; /* Slate 900 */
   font-weight: 800;
   margin: 0 0 6px 0;
 }
 
-.cognitive-card p {
-  color: var(--color-muted-slate);
+.light-yellow-container .cognitive-card p {
+  font-size: 13.5px;
+  color: #475569; /* Slate 600 */
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
+/* ==========================================================================
+   RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media (max-width: 992px) {
+  .catalog-split {
+    grid-template-columns: 1fr; /* Switch to standard single-column stack */
+    gap: 32px;
+  }
 
-/* --- INFINITE TEXT TICKER --- */
+  .mini-terminal {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .light-yellow-container .cognitive-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+}
+
+/* ==========================================================================
+   6. INFINITE TEXT TICKER (Sleek Red Diagnostic Theme)
+   ========================================================================== */
 .aiss__ticker_wrap {
   overflow: hidden;
-  background-color: var(--bg-terminal-black);
+  background-color: var(--bg-terminal-black); /* Preserves your dark background */
   white-space: nowrap;
   display: flex;
-  padding: 20px 0;
-  border-top: 1px solid rgba(178, 166, 242, 0.2);
-  border-bottom: 1px solid rgba(178, 166, 242, 0.2);
+  padding: 18px 0; /* Snug, professional vertical padding */
+  
+  /* Red-themed border updates to match the new accent palette */
+  border-top: 1px solid rgba(244, 63, 94, 0.15);
+  border-bottom: 1px solid rgba(244, 63, 94, 0.15);
+  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.02);
 }
 
 .aiss__ticker_content {
   display: inline-flex;
   align-items: center;
   animation: ticker-animation 30s linear infinite;
-  gap: 24px;
+  gap: 32px; /* Even spacing between words and dots */
 }
 
+/* Vibrant, high-end neon red text */
 .aiss__ticker_content span {
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: #8be4af;
+  color: #f43f5e; /* Tech Rose/Red-500 */
+  text-shadow: 0 0 8px rgba(244, 63, 94, 0.15);
 }
 
+/* Deep warning red indicator dots */
 .ticker-dot {
-  color: #e59fd1 !important;
-  font-size: 10px;
+  color: #e11d48 !important; /* Saturated deep crimson */
+  font-size: 8px;
+  text-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
 }
 
 @keyframes ticker-animation {
@@ -521,40 +1054,86 @@ body {
   100% { transform: translateX(-100%); }
 }
 
+/* ==========================================================================
+   7. SYSTEM COMPARISON (Symmetrical Purple Container Theme)
+   ========================================================================== */
 
-/* --- SYSTEM COMPARISON --- */
+/* 
+   Differentiates Section 7 by using a rich, deep purple-violet tech gradient
+   with a glowing lavender border accent
+*/
+.aiss__dark_card.accent-purple-container {
+  background: linear-gradient(135deg, #09031c 0%, #1a0b36 100%) !important;
+  border: 1px solid rgba(178, 166, 242, 0.25);
+  box-shadow: 0 25px 60px rgba(26, 11, 54, 0.45);
+}
+
+/* Violet-purple radial glow overlay */
+.aiss__dark_card.accent-purple-container::before {
+  background: radial-gradient(circle, rgba(178, 166, 242, 0.08) 0%, transparent 70%);
+}
+
 .comparison-layout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .comparison-header {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--color-muted-slate);
-  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
+  color: #64748b; /* Muted slate */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding-bottom: 12px;
 }
 
+/* Symmetrical Grid Container */
 .comparison-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Symmetrical row tracks */
+.grid-header-row,
+.comparison-row {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1.5fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1.5fr 1.5fr; /* Aligned column weights */
+  gap: 16px;
   align-items: center;
 }
 
+.grid-header-row {
+  border-bottom: 1px solid rgba(178, 166, 242, 0.15);
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+
 .grid-header {
+  font-size: 14px;
   font-weight: 800;
-  color: #b2a6f2;
-  border-bottom: 1px solid rgba(178, 166, 242, 0.1);
-  padding-bottom: 8px;
+  color: #b2a6f2; /* Soft lavender */
+  letter-spacing: 0.02em;
+}
+
+.comparison-row {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(178, 166, 242, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium row hover transition */
+.comparison-row:hover {
+  background-color: rgba(178, 166, 242, 0.02);
+  border-bottom-color: rgba(178, 166, 242, 0.2);
+  padding-left: 8px; /* Clean horizontal shift on hover */
 }
 
 .grid-cell {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(178, 166, 242, 0.05);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .cell-feature {
@@ -563,14 +1142,79 @@ body {
 }
 
 .cell-traditional {
-  color: var(--color-muted-slate);
+  color: #94a3b8; /* Muted slate */
 }
 
 .cell-ai {
-  color: #8be4af;
+  color: #8be4af; /* Neon emerald green success state */
   font-weight: 600;
+  text-shadow: 0 0 10px rgba(139, 228, 175, 0.15);
 }
 
+/* ==========================================================================
+   RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media (max-width: 992px) {
+  .grid-header-row,
+  .comparison-row {
+    grid-template-columns: 1.2fr 1.4fr 1.4fr; /* Balanced column tracks for tablet views */
+    gap: 12px;
+  }
+}
+
+/* Mobile: Switches wide column grids into standard card listings */
+@media (max-width: 768px) {
+  .grid-header-row {
+    display: none; /* Hidden on mobile to prevent squishing layout */
+  }
+
+  .comparison-row {
+    grid-template-columns: 1fr; /* Switch to vertical single stack */
+    gap: 8px;
+    padding: 16px;
+    background-color: rgba(178, 166, 242, 0.02);
+    border: 1px solid rgba(178, 166, 242, 0.06);
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .comparison-row:hover {
+    padding-left: 16px; /* Disables standard shift to align with mobile container constraints */
+    background-color: rgba(178, 166, 242, 0.04);
+  }
+
+  .grid-cell {
+    padding: 2px 0;
+  }
+
+  .cell-feature {
+    font-size: 15px;
+    border-bottom: 1px solid rgba(178, 166, 242, 0.1);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+
+  /* Automatically injects helper labels for traditional & AI-First columns */
+  .cell-traditional::before {
+    content: "Traditional: ";
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .cell-ai::before {
+    content: "AI-First: ";
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(178, 166, 242, 0.6);
+    display: block;
+    margin-bottom: 2px;
+  }
+}
 
 /* --- FINAL CTA SECTION --- */
 .cta-layout {

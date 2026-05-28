@@ -470,9 +470,6 @@
   }
 }
 /* ==========================================
-   3️⃣ WHAT MAKES US DIFFERENT
-   ========================================== */
-/* ==========================================
    3️⃣ WHAT MAKES US DIFFERENT (Bento Asymmetric Redesign [1])
    ========================================== */
 .abt__different_section {
@@ -925,76 +922,160 @@
 /* ==========================================
    5️⃣ OUR APPROACH (Process Timeline)
    ========================================== */
-.abt__approach_section {
+/* ==========================================
+   5️⃣ OUR APPROACH (Roadmap Step Grid Redesign [1])
+   ========================================== */
+.abt__approach_section_new {
   padding: 80px 0;
   background-color: #f8fafc;
 }
 
-.abt__approach_timeline {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
+.abt__approach_grid_new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Clean 4-column layout on desktop [1] */
+  gap: 24px;
+  max-width: 1150px;
+  margin: 50px auto 0 auto;
   position: relative;
 }
 
-.abt__approach_step {
-  flex: 1;
-  text-align: center;
+/* Individual Card (Mirrors modern SaaS roadmaps [1]) */
+.abt__approach_card_new {
+  background: #ffffff;
+  border: 1px solid rgba(0, 61, 115, 0.05);
+  border-radius: 20px;
+  padding: 40px 24px 32px 24px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  overflow: hidden; /* Clips the watermark number cleanly [1] */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  z-index: 2;
-  position: relative;
+  align-items: flex-start;
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.abt__approach_step .abt__step_number {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
-  margin-bottom: 16px;
+/* Giant background watermark number [1] */
+.abt__step_watermark {
+  position: absolute;
+  bottom: -15px;
+  right: -10px;
+  font-size: 110px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03); /* Soft, low-opacity watermark [1] */
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
-.abt__approach_step h3 {
-  font-size: 16px;
-  font-weight: 700;
+/* Top color accent indicator bar [1] */
+.abt__step_accent_bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: currentColor; /* Inherits the specific theme color [1] */
+}
+
+/* Metadata index tag */
+.abt__step_badge_index {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: currentColor; /* Inherits theme color [1] */
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.abt__step_title_new {
+  font-size: 17px;
+  font-weight: 850;
   color: #001b3a;
-  margin: 0 0 6px 0;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
 }
 
-.abt__approach_step p {
-  font-size: 12px;
-  line-height: 1.5;
-  color: #64748b;
-  max-width: 180px;
+.abt__step_desc_new {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #475569;
   margin: 0;
 }
 
-.abt__approach_connector {
-  flex-grow: 1;
-  height: 2px;
-  background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
-  opacity: 0.3;
-  margin-top: 24px;
+/* Horizontal Floating Connection Arrows [1] */
+.abt__step_connector_arrow {
+  position: absolute;
+  top: 50%;
+  right: -24px; /* Floats exactly in the middle of the card gutter space [1] */
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
-@media (max-width: 992px) {
-  .abt__approach_timeline { flex-direction: column; gap: 24px; align-items: center; }
-  .abt__approach_connector { display: none; }
+.abt__step_connector_arrow svg {
+  width: 14px;
+  height: 14px;
 }
-
 
 /* ==========================================
-   6️⃣ FUTURE READY
+   Step Saturated Theme Colors
+   ========================================== */
+.step_blue { color: #2563eb; }    /* Step 1: Blue */
+.step_orange { color: #ea580c; }  /* Step 2: Orange */
+.step_green { color: #10b981; }   /* Step 3: Green */
+.step_purple { color: #8b5cf6; }  /* Step 4: Purple */
+
+/* ==========================================
+   Micro-Interaction Card Hovers [1]
+   ========================================== */
+.abt__approach_card_new:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  border-color: currentColor; /* Highlights border on hover */
+}
+
+.abt__approach_card_new:hover .abt__step_watermark {
+  color: rgba(0, 0, 0, 0.05); /* Softly darkens watermark on hover */
+}
+
+/* Symmetrical Mobile & Tablet Responsive Flow Stacking [1] */
+@media (max-width: 1024px) {
+  .abt__approach_grid_new {
+    grid-template-columns: repeat(2, 1fr); /* Collapses to 2x2 grid on tablets */
+    gap: 24px;
+  }
+  
+  /* Hide the horizontal float arrows on smaller viewports to prevent layout crowding [1] */
+  .abt__step_connector_arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .abt__approach_grid_new {
+    grid-template-columns: 1fr; /* Stacks to single column on mobile */
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .abt__approach_card_new {
+    padding: 36px 20px 28px 20px;
+  }
+}
+
+/* ==========================================
+   6️⃣ FUTURE READY (Symmetrical Strip Stack [1])
    ========================================== */
 .abt__future_section {
   padding: 80px 0;
@@ -1007,96 +1088,291 @@
   margin-bottom: 40px;
 }
 
-.abt__future_box {
-  background-color: rgba(37, 99, 235, 0.03);
-  border: 1px solid rgba(37, 99, 235, 0.15);
-  border-radius: 20px;
-  padding: 36px;
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.abt__future_box h3 {
-  font-size: 17px;
-  font-weight: 800;
-  color: #001b3a;
-  margin: 0 0 20px 0;
-}
-
-.abt__future_list {
+/* Centered list container [1] */
+.abt__future_strip_list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+  max-width: 800px; /* Condensed width for centered focus [1] */
+  margin: 40px auto 0 auto;
 }
 
-.abt__future_item {
+/* Individual full-width horizontal strip [1] */
+.abt__future_strip_item {
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 61, 115, 0.05);
+  border-radius: 16px;
+  padding: 18px 28px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.abt__future_dot {
-  font-size: 10px;
-  color: #2563eb;
+.abt__strip_left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.abt__future_item p {
-  font-size: 14.5px;
-  font-weight: 500;
-  color: #334155;
-  margin: 0;
+/* Circle Index Badge [1] */
+.abt__strip_circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid currentColor; /* Automatically matches theme color [1] */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: currentColor;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s ease;
 }
 
+.abt__strip_text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #001b3a;
+  transition: color 0.3s ease;
+}
+
+.abt__strip_arrow_icon {
+  font-size: 16px;
+  color: #64748b;
+  font-weight: bold;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
 
 /* ==========================================
-   7️⃣ WHO WE WORK WITH (Bento Style Cards [1])
+   🎨 Theme Color Overrides (Vibrant Accents [1])
+   ========================================== */
+.item_blue { color: #2563eb; }    /* Blue Theme */
+.item_purple { color: #8b5cf6; }  /* Purple Theme */
+.item_green { color: #10b981; }   /* Green Theme */
+.item_orange { color: #ea580c; }  /* Orange Theme */
+
+/* ==========================================
+   Interactive Micro-Slide Hovers [1]
+   ========================================== */
+.abt__future_strip_item:hover {
+  transform: translateX(6px); /* Gently slides right on hover [1] */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.item_blue:hover { 
+  border-color: #2563eb; 
+  background-color: rgba(37, 99, 235, 0.03); 
+}
+.item_purple:hover { 
+  border-color: #8b5cf6; 
+  background-color: rgba(139, 92, 246, 0.03); 
+}
+.item_green:hover { 
+  border-color: #10b981; 
+  background-color: rgba(16, 185, 129, 0.03); 
+}
+.item_orange:hover { 
+  border-color: #ea580c; 
+  background-color: rgba(234, 88, 12, 0.03); 
+}
+
+.abt__future_strip_item:hover .abt__strip_text {
+  color: currentColor; /* Highlight text color on hover [1] */
+}
+
+.abt__future_strip_item:hover .abt__strip_arrow_icon {
+  opacity: 1;
+  transform: translateX(4px);
+  color: currentColor;
+}
+
+/* Responsive Overrides (Symmetrical scaling down to mobile) [1] */
+@media (max-width: 768px) {
+  .abt__future_strip_item {
+    padding: 16px 20px;
+    border-radius: 12px;
+  }
+  
+  .abt__strip_circle {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+  }
+
+  .abt__strip_text {
+    font-size: 13.5px;
+  }
+}
+
+/* ==========================================
+   7️⃣ WHO WE WORK WITH (Asymmetric Bento Grid [1])
    ========================================== */
 .abt__clients_section {
   padding: 80px 0;
   background-color: #f8fafc;
 }
 
-.abt__clients_grid {
+.abt__clients_bento_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr); /* Clean 3 column alignment on PC [1] */
+  gap: 24px;
+  max-width: 1150px;
+  margin: 50px auto 36px auto;
 }
 
-.abt__client_card {
+/* Asymmetric Bento sizing [1] */
+.abt__client_bento_card.bento_wide {
+  grid-column: span 2; /* Spans 2/3 of desktop width [1] */
+}
+.abt__client_bento_card.bento_normal {
+  grid-column: span 1;
+}
+
+/* Base Card structure */
+.abt__client_bento_card {
   background: #ffffff;
-  border: 1px solid rgba(234, 179, 8, 0.15); /* Soft yellow accent [1] */
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.abt__client_icon {
-  width: 28px;
-  height: 28px;
+/* Top color accent indicator line [1] */
+.abt__client_accent_bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: currentColor; /* Matches theme color [1] */
+}
+
+/* Card Header */
+.abt__client_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* solid white circle with theme-colored icon [1] */
+.abt__client_avatar_circle {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: rgba(234, 179, 8, 0.08);
-  color: #ca8a04;
+  background: #ffffff;
+  border: 2.5px solid currentColor;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-.abt__client_card p {
-  font-size: 14.5px;
-  font-weight: 600;
+.abt__client_svg {
+  width: 22px;
+  height: 22px;
+  color: currentColor;
+}
+
+.abt__client_tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.abt__client_title {
+  font-size: 18px;
+  font-weight: 850;
   color: #001b3a;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+.abt__client_desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #475569;
   margin: 0;
 }
 
+/* ==========================================
+   🎨 Step Theme Tints & Borders [1]
+   ========================================== */
+.client_blue { color: #2563eb; }
+.client_green { color: #10b981; }
+.client_orange { color: #ea580c; }
+.client_purple { color: #8b5cf6; }
+.client_red { color: #ef4444; }
+
+/* Translucent matching card backgrounds [1] */
+.abt__client_bento_card.client_blue { background-color: rgba(37, 99, 235, 0.04); border: 1.5px solid rgba(37, 99, 235, 0.15); }
+.abt__client_bento_card.client_green { background-color: rgba(16, 185, 129, 0.04); border: 1.5px solid rgba(16, 185, 129, 0.15); }
+.abt__client_bento_card.client_orange { background-color: rgba(234, 88, 12, 0.04); border: 1.5px solid rgba(234, 88, 12, 0.15); }
+.abt__client_bento_card.client_purple { background-color: rgba(147, 51, 234, 0.04); border: 1.5px solid rgba(147, 51, 234, 0.15); }
+.abt__client_bento_card.client_red { background-color: rgba(239, 68, 68, 0.04); border: 1.5px solid rgba(239, 68, 68, 0.15); }
+
+/* Card Hovers [1] */
+.abt__client_bento_card:hover {
+  transform: translateY(-5px);
+  border-color: currentColor;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.abt__client_bento_card:hover .abt__client_title {
+  color: currentColor; /* Highlights title to match theme color on hover */
+}
+
+.abt__clients_footer {
+  font-size: 15px;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+}
+
+/* Symmetrical Mobile & Tablet Responsive Flow Stacking [1] */
+@media (max-width: 992px) {
+  .abt__clients_bento_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .abt__client_bento_card.bento_wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .abt__clients_bento_grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 30px auto 24px auto;
+  }
+  
+  .abt__client_bento_card.bento_wide {
+    grid-column: span 1;
+  }
+  
+  .abt__client_bento_card {
+    padding: 28px;
+  }
+}
 
 /* ==========================================
    8️⃣ OUR VALUES (Glassmorphism Cards [1])

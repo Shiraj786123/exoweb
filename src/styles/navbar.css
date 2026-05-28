@@ -736,3 +736,96 @@
     background: #0369a1;
   }
 }
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1px; /* Keeps spacing between logo and tagline */
+  
+  /* 
+     Visually shifts ONLY this block to the left.
+     This will not pull or move your main menus.
+  */
+  transform: translateX(-20px); 
+}
+
+
+
+
+.nav-tagline {
+  /* 
+     Pulls the tagline closer to the logo, 
+     overlapping the transparent empty space in the image file.
+  */
+  margin-left: -25px; /* Adjust this value (e.g., -10px, -25px) to get the gap exactly as you want it */
+}
+
+
+
+
+
+/* ==========================================
+   DESKTOP ONLY STYLES (1025px and up)
+   ========================================== */
+@media (min-width: 1025px) {
+  /* Move only on desktop, leaving mobile untouched */
+  .nav-brand {
+    transform: translateX(-20px); 
+  }
+  
+  /* Bring tagline closer to logo only on desktop */
+  .nav-tagline {
+    margin-left: -15px; 
+  }
+}
+
+/* ==========================================
+   MOBILE & TABLET STYLES (1024px and below)
+   ========================================== */
+@media (max-width: 1024px) {
+  /* 
+     1. Hide the tagline on mobile. 
+     There is not enough horizontal space next to the logo, button, and menu.
+  */
+  .nav-tagline {
+    display: none !important;
+  }
+
+  /* 
+     2. Reset any desktop translation or margins 
+     to prevent the logo from shifting off-screen.
+  */
+  .nav-brand {
+    transform: none !important;
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+    padding-left: 4px; /* Safe padding from the left edge */
+  }
+
+  .nav-logo {
+    transform: none !important;
+    margin-left: 0 !important;
+    display: block;
+  }
+
+  /* 
+     3. Ensure the parent navbar container is padded 
+     and spaces items symmetrically.
+  */
+  .nav-container {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  /* 
+     4. Optional: Ensure comfortable spacing between 
+     the "Get a Proposal" button and the hamburger icon.
+  */
+  .contact-btn {
+    margin-right: 12px; 
+  }
+}

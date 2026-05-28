@@ -138,34 +138,38 @@ const Navbar = () => {
       </div>
 
       {/* 2. NAVIGATION BAR SECTION */}
-      <div className="nav-container" ref={navRef}>
-        <div className="nav-brand">
-          <div className="nav-logo" onClick={handleLogoClick}>
-            <Image
-              src={logo}
-              alt="Zonzoctech Logo"
-              width={160}
-              height={80}
-              className="logo-desktop"
-              priority
-            />
-            <Image
-              src={logo}
-              alt="Zonzoctech Logo"
-              width={120}
-              height={60}
-              className="logo-mobile"
-              priority
-            />
-          </div>
+     {/* 2. NAVIGATION BAR SECTION */}
+<div className="nav-container" ref={navRef}>
+  
+  {/* Added style attribute with negative margin-left to shift the block left */}
+  <div className="nav-brand" style={{ marginLeft: "-20px" }}> 
+    <div className="nav-logo" onClick={handleLogoClick}>
+      <Image
+        src={logo}
+        alt="Zonzoctech Logo"
+        width={160}
+        height={80}
+        className="logo-desktop"
+        priority
+      />
+      <Image
+        src={logo}
+        alt="Zonzoctech Logo"
+        width={120}
+        height={60}
+        className="logo-mobile"
+        priority
+      />
+    </div>
 
-          <div className="nav-tagline">
-            <div>Web Intelligences</div>
-            <div>That Drives</div>
-            <div>Revenue®</div>
-          </div>
-        </div>
+    <div className="nav-tagline">
+      <div>Web Intelligences</div>
+      <div>That Drives</div>
+      <div>Revenue®</div>
+    </div>
+  </div>
 
+  {/* 3. NAVIGATION MENUS LIST ... */}
         {/* 3. NAVIGATION MENUS LIST */}
         <nav className={`nav-links ${open ? "open" : ""}`}>
           

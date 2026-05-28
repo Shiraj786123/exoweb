@@ -74,15 +74,25 @@ const Footer = () => {
                 Ready to speak with a marketing expert? Give us a ring
               </h4>
 
-              <a
-                href="https://wa.me/94740309534?text=Hi%20ZonzocTech%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
-                className="phone-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-whatsapp"></i>
-                +94 74 030 9534
-              </a>
+              {/* FIX: Dual, side-by-side circular contact icons */}
+              <div className="footer-contact-icons">
+                <a
+                  href="https://wa.me/94740309534?text=Hi%20ZonzocTech%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
+                  className="contact-icon-btn whatsapp-color"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Chat on WhatsApp"
+                >
+                  <i className="fa-brands fa-whatsapp"></i>
+                </a>
+                <a
+                  href="mailto:info@zonzoctech.com"
+                  className="contact-icon-btn email-color"
+                  title="Email Us"
+                >
+                  <i className="fa-solid fa-envelope"></i>
+                </a>
+              </div>
             </div>
           </div>
 
