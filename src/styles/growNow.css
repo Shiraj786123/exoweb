@@ -1,0 +1,64 @@
+.grow-section {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  background: url("../assets/icons/grow-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.grow-box {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  padding: 60px 40px;
+  border-radius: 28px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.grow-title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.grow-desc {
+  font-size: 18px;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  font-family: "Poppins", sans-serif;
+}
+
+.grow-btn {
+  padding: 14px 32px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #1e3a8a;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.grow-btn:hover {
+  transform: translateY(-3px);
+  background: #f1f5f9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grow-title {
+    font-size: 32px;
+  }
+  .grow-desc {
+    font-size: 16px;
+  }
+  .grow-box {
+    padding: 40px 25px;
+  }
+}

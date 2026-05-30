@@ -1,0 +1,1184 @@
+
+
+
+
+/* --- 1. GLOBAL ROOT BASE & WRAPPER RESET --- */
+.navbar-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 999;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar-wrapper * {
+  box-sizing: border-box;
+}
+
+/* --- 2. TOPBAR SECTION --- */
+.topbar {
+  width: 100%;
+  background: #0f172a; /* Sophisticated slate/dark blue background */
+  color: #cbd5e1;
+  font-size: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.topbar-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%; /* Standardized grid padding for perfect vertical alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.topbar-left span {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-left svg {
+  color: #38bdf8; /* Sleek sky blue accent icon */
+  margin-right: 8px;
+}
+
+.sky-blue {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.topbar-link:hover {
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.wa-btn {
+  color: #22c55e; /* Correct brand WhatsApp Green */
+}
+
+.wa-btn:hover {
+  color: #4ade80;
+}
+
+/* --- 3. MAIN NAVIGATION CONTAINER --- */
+.nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 4%; /* Standardized grid padding matching the topbar precisely */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* BRAND & TAGLINE ALIGNMENT */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Shrunk to pull the divider closer to the logo container */
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-desktop {
+  display: block;
+  object-fit: contain;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.logo-img {
+  width: 180px; /* Sized to sit naturally on the grid */
+  height: auto;
+  object-fit: contain;
+  margin-left: -5px;  /* Nudges the logo left to align with the topbar globe icon */
+  margin-right: -12px; /* Pulls the vertical separator line closely in, cutting transparent whitespace */
+}
+
+.nav-tagline {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-left: 2px solid #0f172a; /* Dark blue separator */
+  padding-left: 8px;             /* Reduced padding so the text starts immediately next to the divider */
+}
+
+/* LINKS WRAPPER */
+.nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* --- 4. DROPDOWN COMPONENT CONTROLS --- */
+.dropdown {
+  position: relative; /* Setup context for compact panels */
+}
+
+.dropdown-wide {
+  position: static; /* Standard static setup for wide panels centering on main container */
+}
+
+/* Dropdown buttons */
+.drop-btn {
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.drop-btn:hover {
+  color: #0284c7;
+}
+
+.arrow-indicator {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .arrow-indicator {
+  transform: rotate(180deg);
+}
+
+/* --- 5. FLOATING COMPONENT CARDS --- */
+
+/* Standard layout properties */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  animation: slideDown 0.25s ease;
+  padding: 24px;
+}
+
+/* WIDE DROPDOWNS (Software Dev, Website Development) */
+.dropdown-wide .dropdown-content {
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 48px);
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.dropdown-column {
+  width: clamp(200px, 18vw, 240px);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #f1f5f9;
+}
+
+.dropdown-column:last-child {
+  border-right: none;
+}
+
+.dropdown-column h4 {
+  margin: 0 0 14px 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #0f172a;
+}
+
+.dropdown-column a {
+  display: block;
+  padding: 6px 0;
+  color: #475569;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 450;
+  transition: all 0.2s ease;
+}
+
+.dropdown-column a:hover {
+  color: #0284c7;
+  padding-left: 6px;
+}
+
+/* COMPACT DROPDOWNS (SEO Marketing, Who We Are) */
+.dropdown-compact .dropdown-content {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  padding: 12px 0;
+}
+
+.dropdown-compact .dropdown-column {
+  width: 100%;
+  padding: 0;
+  border-right: none;
+}
+
+.dropdown-compact .dropdown-column a {
+  padding: 10px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13.5px;
+}
+
+.dropdown-compact .dropdown-column a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-compact .dropdown-column a:hover {
+  background: #f8fafc;
+  padding-left: 24px;
+  color: #0284c7;
+}
+
+/* Show Dropdowns on Desktop Hover/Active state */
+@media (min-width: 1025px) {
+  .dropdown:hover .dropdown-content,
+  .dropdown.active .dropdown-content {
+    display: flex;
+  }
+}
+
+/* --- 6. CALL TO ACTION (Get a Proposal) --- */
+.contact-btn {
+  background: #0284c7;
+  color: #ffffff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  margin-left: 10px;
+}
+
+.contact-btn:hover {
+  background: #0369a1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+/* --- 7. HAMBURGER TOGGLE MENU --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  width: 100%;
+  height: 2.5px;
+  background-color: #0f172a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger animations */
+.rotate1 {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.rotate2 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hide {
+  opacity: 0;
+}
+
+/* --- 8. KEYFRAMES --- */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* --- 9. RESPONSIVE BREAKPOINTS (Desktop sizing variants) --- */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .nav-container {
+    width: 95%;
+    padding: 12px 2.5%;
+  }
+  .nav-tagline {
+    display: none; /* Hide tagline on smaller laptops to avoid overlapping button */
+  }
+  .drop-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .contact-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+/* --- 10. MOBILE & TABLET LAYOUTS (1024px and Below) --- */
+@media (max-width: 1024px) {
+  .topbar {
+    display: none; /* Hide contact topbar on mobile for vertical efficiency */
+  }
+
+  .nav-container {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  /* Structural adjustment */
+  .logo-desktop, .nav-tagline {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+    height: 32px;
+    width: auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Slide-out drawer menu panel */
+  .nav-links {
+    position: fixed;
+    top: 57px; /* Matches navbar height perfectly */
+    left: -100%;
+    width: 300px;
+    height: calc(100vh - 57px);
+    background: #ffffff;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 24px;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  /* Standardizing Accordions inside Mobile drawer */
+  .dropdown {
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .drop-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 4px;
+    font-size: 14px;
+    color: #0f172a;
+  }
+
+  /* Toggle Accordion Content Panel */
+  .dropdown .dropdown-content {
+    display: none;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 16px 0;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    animation: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown-column {
+    width: 100%;
+    padding: 0;
+    border-right: none;
+  }
+
+  .dropdown-column h4 {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 14px 0 6px 0;
+  }
+
+  .dropdown-column a {
+    padding: 8px 12px;
+    font-size: 13.5px;
+    background: #f8fafc;
+    border-radius: 6px;
+    margin-bottom: 4px;
+  }
+
+  .dropdown-column a:hover {
+    padding-left: 16px;
+    background: #f1f5f9;
+  }
+
+  /* Compact dropdown adjustments inside drawer */
+  .dropdown-compact .dropdown-content {
+    width: 100%;
+    padding: 0 0 16px 0;
+  }
+
+  .dropdown-compact .dropdown-column a {
+    border-bottom: none;
+  }
+
+  /* Bottom drawer contact button adjustment */
+  .contact-btn {
+    margin: 24px 0 0 0;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+
+/* --- 10. MOBILE & TABLET LAYOUTS (1024px and Below) --- */
+@media (max-width: 1024px) {
+  
+  /* ... other rules ... */
+
+  .logo-mobile {
+    display: block;
+    height: 55px; /* Increased from 32px to make the logo larger and clearer */
+    width: auto;  /* Keeps the aspect ratio proportional */
+  }
+
+  /* ... other rules ... */
+}
+
+/* --- 7. HAMBURGER TOGGLE MENU --- */
+.hamburger {
+  display: none; /* Hidden on desktop by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: #0284c7; /* Bright brand blue for high visibility */
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger animations */
+.rotate1 {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.rotate2 {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+.hide {
+  opacity: 0;
+}
+/* Hamburger animations - updated offsets to align with the new 22px height */
+.rotate1 {
+  transform: translateY(9.5px) rotate(45deg); /* Adjusted from 8px */
+}
+
+.rotate2 {
+  transform: translateY(-9.5px) rotate(-45deg); /* Adjusted from -8px */
+}
+
+.hide {
+  opacity: 0;
+}
+
+
+
+
+/* --- 10. MOBILE & TABLET LAYOUTS (1024px and Below) --- */
+@media (max-width: 1024px) {
+
+  /* ... other mobile styles ... */
+
+  .hamburger {
+    display: flex !important; /* Forces the hamburger to be visible on mobile */
+  }
+
+  /* ... other mobile styles ... */
+}
+
+
+
+
+/* --- New Global Rule for the Mail Button --- */
+.mobile-mail-btn {
+  display: none; /* Hidden on desktop view */
+}
+
+/* --- 10. MOBILE & TABLET LAYOUTS (1024px and Below) --- */
+@media (max-width: 1024px) {
+  .topbar {
+    display: none; /* Hide contact topbar on mobile */
+  }
+
+  .nav-container {
+    width: 100%;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Structural adjustment */
+  .logo-desktop, .nav-tagline {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+    height: 55px; /* Sized comfortably on mobile */
+    width: auto;
+  }
+
+  .hamburger {
+    display: flex !important; /* Force visibility */
+  }
+
+  /* Slide-out drawer menu panel */
+  .nav-links {
+    position: fixed;
+    top: 79px; /* Matches the tall mobile navbar height to prevent overlapping logo text */
+    left: -100%;
+    width: 300px;
+    height: calc(100vh - 79px); /* Subtract header height for proper scrolling */
+    background: #ffffff;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 24px;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  /* Standardizing Accordions inside Mobile drawer */
+  .dropdown {
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .drop-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 4px;
+    font-size: 14px;
+    color: #0f172a;
+  }
+
+  /* Toggle Accordion Content Panel */
+  .dropdown .dropdown-content {
+    display: none;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 16px 0;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    animation: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown-column {
+    width: 100%;
+    padding: 0;
+    border-right: none;
+  }
+
+  .dropdown-column h4 {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 14px 0 6px 0;
+  }
+
+  .dropdown-column a {
+    padding: 8px 12px;
+    font-size: 13.5px;
+    background: #f8fafc;
+    border-radius: 6px;
+    margin-bottom: 4px;
+  }
+
+  .dropdown-column a:hover {
+    padding-left: 16px;
+    background: #f1f5f9;
+  }
+
+  /* Compact dropdown adjustments inside drawer */
+  .dropdown-compact .dropdown-content {
+    width: 100%;
+    padding: 0 0 16px 0;
+  }
+
+  .dropdown-compact .dropdown-column a {
+    border-bottom: none;
+  }
+
+  /* Styles the proposal button while sitting inside the mobile navbar */
+  .contact-btn {
+    display: inline-block !important; /* Keep it visible outside the mobile drawer */
+    margin: 0 15px 0 auto;           /* Automatically push it next to the hamburger icon */
+    padding: 8px 14px;
+    font-size: 12px;
+    width: auto;                     /* Override the full drawer width style */
+    white-space: nowrap;
+  }
+
+  /* Styles the new mail button at the bottom of your mobile menu drawer */
+  .mobile-mail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0284c7; /* Brand Blue */
+    color: #ffffff;
+    margin: 24px 0 0 0;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  
+  .mobile-mail-btn:hover {
+    background: #0369a1;
+  }
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1px; /* Keeps spacing between logo and tagline */
+  
+  /* 
+     Visually shifts ONLY this block to the left.
+     This will not pull or move your main menus.
+  */
+  transform: translateX(-20px); 
+}
+
+
+
+
+.nav-tagline {
+  /* 
+     Pulls the tagline closer to the logo, 
+     overlapping the transparent empty space in the image file.
+  */
+  margin-left: -25px; /* Adjust this value (e.g., -10px, -25px) to get the gap exactly as you want it */
+}
+
+
+
+
+
+/* ==========================================
+   DESKTOP ONLY STYLES (1025px and up)
+   ========================================== */
+@media (min-width: 1025px) {
+  /* Move only on desktop, leaving mobile untouched */
+  .nav-brand {
+    transform: translateX(-20px); 
+  }
+  
+  /* Bring tagline closer to logo only on desktop */
+  .nav-tagline {
+    margin-left: -15px; 
+  }
+}
+
+/* ==========================================
+   MOBILE & TABLET STYLES (1024px and below)
+   ========================================== */
+@media (max-width: 1024px) {
+  /* 
+     1. Hide the tagline on mobile. 
+     There is not enough horizontal space next to the logo, button, and menu.
+  */
+  .nav-tagline {
+    display: none !important;
+  }
+
+  /* 
+     2. Reset any desktop translation or margins 
+     to prevent the logo from shifting off-screen.
+  */
+  .nav-brand {
+    transform: none !important;
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+    padding-left: 4px; /* Safe padding from the left edge */
+  }
+
+  .nav-logo {
+    transform: none !important;
+    margin-left: 0 !important;
+    display: block;
+  }
+
+  /* 
+     3. Ensure the parent navbar container is padded 
+     and spaces items symmetrically.
+  */
+  .nav-container {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  /* 
+     4. Optional: Ensure comfortable spacing between 
+     the "Get a Proposal" button and the hamburger icon.
+  */
+  .contact-btn {
+    margin-right: 12px; 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   CONDITIONAL HOME BUTTON STYLING
+   ========================================== */
+.nav-home-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit; /* Inherits main body sans-serif font */
+  font-weight: 700;
+  font-size: 13.5px; /* Matches dropdown buttons */
+  color: #1e293b; /* Premium slate color used in your menus */
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover styling on desktop when active as a link */
+.nav-home-btn:hover {
+  color: #2d7bc7; /* Your brand blue hover color */
+}
+
+/* 
+   Active unlinked style (span) when currently on the Home page.
+   Indicates current position and prevents clicking/reload actions.
+*/
+.nav-home-btn.active {
+  color: #2d7bc7; /* Matches brand blue color to indicate active state */
+  cursor: default; /* Changes cursor to standard pointer to indicate non-clickability */
+}
+
+/* Symmetrical desktop spacing */
+@media (min-width: 1025px) {
+  .nav-links {
+    /* Shifts the desktop navigation menus slightly to the right */
+    transform: translateX(25px); 
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Balanced spacing between the active text buttons */
+  }
+}
+
+/* Mobile drawer navigation spacing adjustments */
+@media (max-width: 1024px) {
+  .nav-home-btn {
+    width: 100%;
+    padding: 14px 20px; /* Adapts to full drawer width on mobile */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Mobile divider look */
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   DESKTOP ONLY BRAND LEFT SHIFT (1025px and up)
+   ========================================================================== */
+@media (min-width: 1025px) {
+  .nav-brand {
+    /* 
+       Visually shifts the logo and tagline block together to the left.
+       Using transform ensures the middle links and buttons do not move.
+    */
+    transform: translateX(-39px); /* Adjust this value (e.g., -15px, -30px) as needed */
+  }
+}
+
+
+
+
+
+
+
+/* Small gap */
+.city-name {
+  margin-left: 4px;
+}
+
+/* Medium gap */
+.city-name {
+  margin-left: 8px;
+}
+
+/* Large gap */
+.city-name {
+  margin-left: 16px;
+}
+
+
+
+
+
+
+/* ==========================================================================
+   8. TOPBAR LAYOUT - DESKTOP ONLY (HIDDEN ON MOBILE)
+   ========================================================================== */
+.topbar {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  font-size: 13px;
+  width: 100% !important;
+  z-index: 10005 !important;
+  display: block !important; /* Visible on desktop by default */
+}
+.topbar-inner {
+  /* UPDATED: Increased from 1200px to 1440px to match the navbar container.
+     This instantly moves the left text further to the left (aligning with the logo) 
+     and the right icons further to the right. */
+  max-width: 1280px !important; 
+  
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: flex !important;
+  justify-content: space-between !important; 
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.topbar-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
+
+.topbar-right { 
+  display: flex !important; 
+  align-items: center !important; 
+  gap: 16px; 
+  flex-shrink: 0; 
+}
+
+/* Phone link text style next to email */
+.topbar-phone {
+  color: #00aeef !important; /* Sky Blue */
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  margin-right: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.topbar-phone:hover {
+  opacity: 0.85;
+}
+
+.sky-blue { 
+  color: #00aeef; 
+  font-weight: 600; 
+}
+
+.topbar-link {
+  color: #fff;
+  display: flex !important;
+  align-items: center;
+  cursor: pointer !important;
+  padding: 8px;
+  margin: -8px;
+  transition: opacity 0.25s ease;
+}
+
+.topbar-link:hover {
+  opacity: 0.8;
+}
+
+/* Official brand color for WhatsApp */
+.topbar-link.wa-btn {
+  color: #25d366 !important; 
+}
+
+/* --- Mobile / Tablet Viewports (Hide Topbar completely on mobile/tablets) --- */
+@media (max-width: 1024px) {
+  .topbar {
+    display: none !important; /* Hides the topbar on mobile/tablet to keep mobile layout clean */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   8. TOPBAR LAYOUT - ALIGNED TO EDGES & VISIBLE ON MOBILE
+   ========================================================================== */
+.topbar {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  font-size: 13px;
+  width: 100% !important;
+  z-index: 10005 !important;
+  display: block !important; /* Force topbar to always remain visible */
+}
+
+.topbar-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: flex !important;
+  justify-content: space-between !important; /* Separates left and right on desktop */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.topbar-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
+
+.topbar-right { 
+  display: flex !important; 
+  align-items: center !important; 
+  gap: 16px; 
+  flex-shrink: 0; 
+}
+
+/* Phone link text style next to email */
+.topbar-phone {
+  color: #00aeef !important; /* Sky Blue */
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  margin-right: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.topbar-phone:hover {
+  opacity: 0.85;
+}
+
+.sky-blue { 
+  color: #00aeef; 
+  font-weight: 600; 
+}
+
+.topbar-link {
+  color: #fff;
+  display: flex !important;
+  align-items: center;
+  cursor: pointer !important;
+  padding: 8px;
+  margin: -8px;
+  transition: opacity 0.25s ease;
+}
+
+.topbar-link:hover {
+  opacity: 0.8;
+}
+
+/* Official brand color for WhatsApp */
+.topbar-link.wa-btn {
+  color: #25d366 !important; 
+}
+
+/* --- Mobile / Tablet Viewports (Keeps topbar visible, clean, & perfectly centered) --- */
+@media (max-width: 1024px) {
+  .topbar {
+    display: block !important; /* Keeps topbar visible on mobile */
+  }
+
+  .topbar-inner { 
+    padding: 8px 16px !important; /* Balanced padding */
+    flex-direction: column !important; /* Stack text above contact items */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important; /* Prevents overlapping */
+    text-align: center !important;
+  }
+  
+  .topbar-left {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 11.5px !important; /* Slightly smaller text to prevent line wrapping */
+    line-height: 1.4 !important; /* Fixes overlapping text lines */
+  }
+
+  .topbar-left span {
+    font-size: 11.5px !important;
+    display: inline-block !important;
+  }
+
+  /* Hides globe icon on mobile to give text full horizontal space */
+  .topbar-left svg {
+    display: none !important;
+  }
+
+  .topbar-right { 
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important; /* Snug spacing for phone, mail, and whatsapp icons */
+  }
+
+  .topbar-phone {
+    font-size: 11.5px !important;
+    margin-right: 0 !important; /* Reset desktop margin */
+  }
+}
+
+/* --- Extra Small Mobile Screens (480px and below) --- */
+@media (max-width: 480px) {
+  .topbar-inner {
+    padding: 6px 12px !important;
+    gap: 6px !important;
+  }
+
+  .topbar-left,
+  .topbar-left span { 
+    font-size: 10.5px !important; /* Scaled down for very small screens */
+    line-height: 1.35 !important;
+  }
+
+  .topbar-phone {
+    font-size: 10.5px !important;
+  }
+
+  .topbar-link {
+    padding: 4px !important;
+    margin: -4px !important;
+  }
+}

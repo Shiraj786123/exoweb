@@ -1,0 +1,544 @@
+/* ==========================================================================
+   MAIN LAYOUT ENGINE (50/50 BLOCKS)
+   ========================================================================== */
+.why-choose-section {
+  background: #ffffff !important;
+  padding: 80px 24px !important;
+  /* FIX: Forces margins to zero and uses explicit relative blocks to remove white gap spacing */
+  margin: 0 auto !important;
+  display: block !important;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.why-choose-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 60px;
+  align-items: stretch; /* Forces equal height between left and right sides */
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   LEFT CONTAINER PROFESSIONAL CONTENT TYPOGRAPHY
+   ========================================================================== */
+.why-choose-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically next to the image */
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 0 !important;
+}
+
+.why-choose-tag {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.why-choose-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin: 0 0 20px 0 !important;
+  color: #0f172a;
+}
+
+.why-choose-title .highlight-text {
+  background: linear-gradient(135deg, #2563eb 30%, #1d4ed8 90%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* FIX: Added Colorful Text Accent Engine Styles */
+.why-choose-left .colorful-accent-text {
+  background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 700;
+}
+
+.why-choose-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #475569 !important;
+  line-height: 1.65;
+  margin: 0 0 36px 0 !important;
+  max-width: 540px;
+}
+
+/* ==========================================================================
+   BENEFITS LIST - STABLE ALIGNMENT FIXES
+   ========================================================================== */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Perfect uniform row gaps */
+  width: 100%;
+  max-width: 520px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes labels neatly to the far right */
+  width: 100%;
+  padding: 12px 16px;
+  background: #fafafa; /* Subtle background block for a clean card design */
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 1px solid #f1f5f9;
+}
+
+.benefit-content-left {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Crisp gap between checkmark and list text */
+}
+
+.benefit-icon-box {
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.benefit-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Dynamic Labeled Badges */
+.benefit-label {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.label-blue { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.label-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.label-purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.label-amber { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+/* ==========================================================================
+   RIGHT GRAPHICS PANEL WITH IMMERSIVE FRAME RATIOS
+   ========================================================================== */
+.why-choose-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 500px; /* Matched flawlessly with left side text flow expansion */
+  position: relative;
+}
+
+.hero-main-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; 
+  border-radius: 24px;
+  background: #0f172a;
+  box-shadow: 0 25px 50px -15px rgba(15, 23, 42, 0.25);
+}
+
+/* ==========================================================================
+   FLOATING OVERLAYS (SAFE INSIDE RELATIVE FRAME)
+   ========================================================================== */
+.notification-card {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 20px 40px -6px rgba(15, 23, 42, 0.12);
+  z-index: 10;
+  min-width: 220px;
+  animation: floatUI 4s ease-in-out infinite alternate;
+}
+
+.notification-badge {
+  color: #e67e22;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.notification-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.stats-card {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px;
+  width: 230px;
+  box-shadow: 0 30px 60px -10px rgba(15, 23, 42, 0.45);
+  z-index: 10;
+  border: 1px solid rgba(30, 41, 59, 0.5);
+  animation: floatUI 4s ease-in-out infinite alternate-reverse;
+}
+
+.stats-header h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin: 0 0 12px 0;
+}
+
+.stats-chart {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.growth-line {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.1) drop-shadow(0px 3px 10px rgba(37, 99, 235, 0.4));
+}
+
+.stats-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stats-number {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.stats-growth {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.growth-arrow { color: #10b981; font-size: 12px; }
+.growth-text {
+  font-size: 11px;
+  color: #10b981;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes floatUI {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .why-choose-container { gap: 40px; padding: 0 24px; }
+  .why-choose-title { font-size: 36px; }
+  .hero-image-wrapper { height: 460px; }
+}
+
+@media (max-width: 992px) {
+  .why-choose-container {
+    grid-template-columns: 1fr !important;
+    gap: 50px;
+  }
+  .why-choose-left { align-items: center; text-align: center; }
+  .why-choose-description { margin: 0 auto 32px auto !important; }
+  .benefits-list { margin: 0 auto; }
+  .why-choose-right { max-width: 540px; margin: 0 auto; }
+  .hero-image-wrapper { height: 440px; }
+}
+
+@media (max-width: 576px) {
+  .why-choose-section { padding: 50px 16px !important; }
+  .why-choose-title { font-size: 28px; }
+  .benefit-text { font-size: 14px; }
+  .benefit-label { display: none; }
+  .hero-image-wrapper { height: 340px; }
+}
+
+
+
+
+
+/* ==========================================================================
+   NEW COLORFUL PARAGRAPH ACCENT CALLOUT
+   ========================================================================== */
+.why-choose-left .description-gradient-callout {
+  display: inline;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 50%, #d946ef 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+
+
+
+/* ==========================================================================
+   COMPLETE MOBILE & TABLET MEDIA QUERIES FOR WHY CHOOSE SECTION
+   ========================================================================== */
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 1100px) {
+  .why-choose-container {
+    gap: 40px;
+    padding: 0 16px;
+  }
+  .why-choose-title {
+    font-size: 36px;
+  }
+  .hero-image-wrapper {
+    height: 440px;
+  }
+  .stats-card {
+    width: 200px;
+    padding: 14px;
+    bottom: 15px;
+    left: 15px;
+  }
+  .notification-card {
+    min-width: 190px;
+    padding: 10px 14px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Mobile Devices (Stack Elements Nicely) */
+@media (max-width: 850px) {
+  .why-choose-container {
+    grid-template-columns: 1fr !important; /* Force layout into a single vertical row */
+    gap: 48px;
+  }
+  
+  .why-choose-left {
+    align-items: center;
+    text-align: center;
+    padding: 0 !important;
+  }
+  
+  .why-choose-description {
+    margin: 0 auto 28px auto !important;
+    text-align: center;
+  }
+  
+  .benefits-list {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ENSURES GRAPHICS DONT HIDE: Beautifully centers panel on mobile screens */
+  .why-choose-right {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex !important; /* Keep visible */
+  }
+
+  .hero-image-wrapper {
+    height: 380px; /* Bring height down dynamically to balance viewport aspect ratio */
+  }
+
+  /* Compact responsive scaling for the floating cards over the image */
+  .notification-card {
+    padding: 8px 12px;
+    min-width: 170px;
+  }
+  .notification-badge { font-size: 9px; }
+  .notification-title { font-size: 11px; }
+
+  .stats-card {
+    width: 180px;
+    padding: 12px;
+  }
+  .stats-header h3 { font-size: 10px; margin-bottom: 8px; }
+  .stats-chart { height: 35px; }
+  .stats-number { font-size: 13px; }
+}
+
+/* Extra Small Phones (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .why-choose-section {
+    padding: 48px 12px !important;
+  }
+  
+  .why-choose-title {
+    font-size: 28px;
+  }
+  
+  .benefit-item {
+    padding: 10px 12px;
+  }
+  
+  .benefit-text {
+    font-size: 13.5px;
+  }
+  
+  .benefit-label {
+    display: none; /* Safely hides layout badges on very tiny widths for readability */
+  }
+  
+  .hero-image-wrapper {
+    height: 300px;
+  }
+  
+  .stats-card {
+    width: 155px;
+    padding: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .notification-card {
+    top: 10px;
+    right: 10px;
+    min-width: 150px;
+  }
+}
+
+
+
+
+/* ==========================================================================
+   COMPLETE MOBILE & TABLET MEDIA QUERIES FOR TECHNOLOGY MARQUEE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .whoweare-section { 
+    padding: 80px 0 !important; 
+  }
+  .whoweare-section .whoweare-main-title {
+    font-size: 38px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .whoweare-section { 
+    padding: 60px 0 !important; 
+  }
+  
+  .whoweare-section .whoweare-main-title {
+    font-size: 30px !important;
+    padding: 0 16px;
+  }
+
+  .whoweare-section .whoweare-sub-description {
+    font-size: 14.5px !important;
+    padding: 0 16px;
+    margin-bottom: 30px !important;
+  }
+
+  .tech-rows-container {
+    gap: 14px; /* Compress vertical gap layout for screens */
+  }
+  
+  /* FIX: Compact uniform styling so cards scroll cleanly on mobile devices */
+  .tech-row-item-card {
+    width: 170px;
+    height: 52px;
+    padding: 8px 16px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+  
+  .tech-icon-wrapper { 
+    width: 26px; 
+    height: 26px; 
+  }
+  
+  .tech-label { 
+    font-size: 12.5px; 
+  }
+
+  /* Speeds up track animations slightly for small screens so it feels continuous */
+  .tech-cards-track-1 { animation-duration: 100s; }
+  .tech-cards-track-2 { animation-duration: 105s; }
+  .tech-cards-track-3 { animation-duration: 110s; }
+  .tech-cards-track-4 { animation-duration: 95s; }
+}
+
+@media (max-width: 480px) {
+  .whoweare-section .whoweare-main-title {
+    font-size: 26px !important;
+  }
+  
+  .tech-row-item-card {
+    width: 155px;
+    height: 48px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  
+  .tech-icon-wrapper {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .tech-label {
+    font-size: 12px;
+  }
+}
