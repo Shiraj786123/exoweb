@@ -23,7 +23,7 @@
 /* --- 2. TOPBAR SECTION --- */
 .topbar {
   width: 100%;
-  background: #0f172a; /* Sophisticated slate/dark blue background */
+  background:radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important; 
   color: #cbd5e1;
   font-size: 12px;
   padding: 8px 0;
