@@ -49,7 +49,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         
-        <link rel="icon" href="/zonzotech-favicon.png?v=2" type="image/png" />
+        <link rel="icon" href="/navlogofavicon.png?v=2" type="image/png" />
         
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
