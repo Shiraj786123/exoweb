@@ -152,31 +152,31 @@ const SoftwareDevelopment = () => {
       <Navbar />
       <div className="software-page">
         
-        {/* HERO SECTION */}
-        <section className="hero">
-          <div className="hero-container">
-            <span className="hero-badge">
-              <span className="badge-dot">●</span> AI Web Application Development Agency
-            </span>
-            <h1>
-              End-to-End Software Development <br />
-              <span className="highlight-text">for Modern Businesses</span>
-            </h1>
-            <p className="hero-desc">
-              We build custom AI-powered web applications. From intelligent dashboards 
-              to enterprise cloud integrations — we scale your business growth.
-            </p>
-            <div className="hero-buttons">
-              <button className="primary-btn">Get Free Consultation</button>
-              <button className="secondary-btn">
-                View Portfolio <span className="arrow">→</span>
-              </button>
-            </div>
-            <p className="hero-trust-text">
-              Trusted by 120+ businesses across the UK, USA & Europe
-            </p>
-          </div>
-        </section>
+     {/* HERO SECTION */}
+<section className="hero">
+  <div className="hero-container">
+    <span className="hero-badge">
+      <span className="badge-dot">●</span> Custom Software Development — Batticaloa, Sri Lanka
+    </span>
+    <h1>
+      Custom Software Development <br />
+      <span className="highlight-text">for Batticaloa Businesses</span>
+    </h1>
+    <p className="hero-desc">
+      Business POS, billing apps, inventory tools — we build software that 
+      solves real problems for businesses in Batticaloa and across Eastern Province.
+    </p>
+    <div className="hero-buttons">
+      <button className="primary-btn">Get Free Consultation</button>
+      <button className="secondary-btn">
+        View Portfolio <span className="arrow">→</span>
+      </button>
+    </div>
+    <p className="hero-trust-text">
+      Trusted by 120+ businesses across the UK, USA & Europe
+    </p>
+  </div>
+</section>
 {/* SERVICES SECTION (Row-Wise Connected Timeline Theme) */}
 <section className="services-section-row-theme">
   <div className="section-header-row-theme">

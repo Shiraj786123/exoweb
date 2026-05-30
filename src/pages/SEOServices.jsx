@@ -218,42 +218,41 @@ const SEOServices = () => {
     <div className="seos__wrapper">
       <Navbar />
 
-{/* 1. HERO SECTION (Centered Single-Column Theme) */}
+{/* HERO SECTION */}
 <section className="ecd__hero_centered_layout">
   <div className="ecd__hero_overlay_centered"></div>
   <div className="ecd__hero_container_centered">
     
-    {/* Centered Pill Badge (Now completely visible) */}
+    {/* Local SEO Eyebrow */}
     <div className="ecd__badge_pill_centered">
-      <span className="badge_dot_indicator">●</span> SEO SERVICES
+      <span className="badge_dot_indicator">●</span> Local SEO Services — Batticaloa, Sri Lanka
     </div>
 
-    {/* Centered Title */}
+    {/* Localized H1 */}
     <h1 className="ecd__hero_title_centered">
-      SEO Services That Grow <br />
-      <span className="highlight_sky_blue">Visibility, Traffic & Leads</span>
+      SEO Services for <br />
+      <span className="highlight_sky_blue">Batticaloa & Eastern Province Businesses</span>
     </h1>
 
-    {/* Centered Subtitle Description */}
+    {/* Localized Subtitle */}
     <p className="ecd__hero_text_centered">
-      We provide professional SEO services designed to help businesses rank higher on Google, 
-      attract qualified traffic, and generate consistent leads. Our approach combines technical 
-      SEO, content optimization, and data-driven strategy to deliver long-term, sustainable results.
+      We help businesses in Batticaloa, Kattankudy, and Eastern Province rank higher on Google — 
+      so local customers find you first, not your competitors. Our data-driven approach 
+      turns search visibility into consistent local leads.
     </p>
 
-    {/* Centered Dual-Button Group */}
+    {/* Buttons */}
     <div className="ecd__hero_buttons_centered">
       <a href="#audit" className="ecd__btn_primary_centered">
-        Get Free Audit
+        Get Free SEO Audit
       </a>
       <a href="#work" className="ecd__btn_secondary_centered">
-        See Our Work ↓
+        See Local Results ↓
       </a>
     </div>
 
-    {/* Small Centered Trust Indicator */}
     <p className="ecd__hero_trust_text_centered">
-      TRUSTED BY 120+ BUSINESSES ACROSS THE UK, USA & EUROPE
+      HELPING EASTERN PROVINCE BUSINESSES DOMINATE LOCAL SEARCH
     </p>
 
   </div>

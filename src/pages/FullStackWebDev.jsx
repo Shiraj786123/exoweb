@@ -182,25 +182,24 @@ const FullStackWebDev = () => {
     <div className="fswd__page_wrapper">
       <Navbar />
 
-      {/* 1️⃣ Hero Section (Left intact with standard colors) */}
-      <section className="fswd__hero_section">
-        <div className="fswd__hero_overlay"></div>
-        <div className="fswd__hero_content">
-          <div className="fswd__hero_badge">Full-Stack Development</div>
-          <h1 className="fswd__hero_title">
-            Scalable, Secure <span className="fswd__highlight">Full-Stack Web Development</span> Built for Growth
-          </h1>
-          <p className="fswd__hero_description">
-            We provide full-stack web development services that cover everything from frontend user 
-            experience to backend logic, databases, APIs, and integrations. Whether you need a business 
-            website, web application, or SaaS platform, we build reliable, high-performance solutions 
-            that scale with your business.
-          </p>
-          <a href="#contact" className="fswd__cta_primary">
-            Get a Free Full-Stack Development Consultation
-          </a>
-        </div>
-      </section>
+      {/* HERO SECTION */}
+<section className="fswd__hero_section">
+  <div className="fswd__hero_overlay"></div>
+  <div className="fswd__hero_content">
+    <div className="fswd__hero_badge">Website Development — Batticaloa, Sri Lanka</div>
+    <h1 className="fswd__hero_title">
+      Professional <span className="fswd__highlight">Website Design & Development</span> in Batticaloa
+    </h1>
+    <p className="fswd__hero_description">
+      We build fast, mobile-friendly websites for shops, clinics, schools, and businesses 
+      across Batticaloa, Kattankudy, and the Eastern Province — at prices that make 
+      sense locally.
+    </p>
+    <a href="#contact" className="fswd__cta_primary">
+      Get a Free Website Consultation
+    </a>
+  </div>
+</section>
 
       {/* 2️⃣ What Is Section (Editorial Split Column Layout [1]) */}
       <section className="fswd__what_section">
