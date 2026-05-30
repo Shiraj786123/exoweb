@@ -1289,3 +1289,41 @@ body {
     max-width: calc(50% - 8px); 
   }
 }
+
+
+
+
+
+/* --- HERO BADGE OVERFLOW FIXES --- */
+
+/* 1. Desktop rules (Default) */
+.badge-text-desktop {
+  display: inline !important;
+}
+.badge-text-mobile {
+  display: none !important;
+}
+
+/* 2. Mobile and Tablet rules */
+@media (max-width: 1024px) {
+  .hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 95% !important; /* Prevents it from touching screen edges */
+    width: auto !important; /* Shrinks the pill container to perfectly wrap the text */
+    box-sizing: border-box !important;
+    font-size: 10.5px !important; /* Slightly smaller text for mobile balance */
+    padding: 6px 14px !important;
+    white-space: normal !important; /* Safe fallback to prevent overflow */
+    text-align: center;
+  }
+
+  /* Show mobile-friendly short text, hide long desktop text */
+  .badge-text-desktop {
+    display: none !important;
+  }
+  .badge-text-mobile {
+    display: inline !important;
+  }
+}

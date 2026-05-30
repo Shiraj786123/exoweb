@@ -152,104 +152,118 @@ const SoftwareDevelopment = () => {
       <Navbar />
       <div className="software-page">
         
-     {/* HERO SECTION */}
-<section className="hero">
-  <div className="hero-container">
-    <span className="hero-badge">
-      <span className="badge-dot">●</span> Custom Software Development — Batticaloa, Sri Lanka
-    </span>
-    <h1>
-      Custom Software Development <br />
-      <span className="highlight-text">for Batticaloa Businesses</span>
-    </h1>
-    <p className="hero-desc">
-      Business POS, billing apps, inventory tools — we build software that 
-      solves real problems for businesses in Batticaloa and across Eastern Province.
-    </p>
-    <div className="hero-buttons">
-      <button className="primary-btn">Get Free Consultation</button>
-      <button className="secondary-btn">
-        View Portfolio <span className="arrow">→</span>
-      </button>
-    </div>
-    <p className="hero-trust-text">
-      Trusted by 120+ businesses across the UK, USA & Europe
-    </p>
-  </div>
-</section>
-{/* SERVICES SECTION (Row-Wise Connected Timeline Theme) */}
-<section className="services-section-row-theme">
-  <div className="section-header-row-theme">
-    <span className="section-label-row-theme">Capabilities</span>
-    <h2>Premium Engineering Architectures</h2>
-  </div>
-  
-  <div className="services-timeline-container">
-    {sections.map((section, index) => {
-      // Dynamic colors for the row timelines
-      const rowColors = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
-      const currentAccent = rowColors[index % rowColors.length];
-
-      return (
-        <div 
-          className="timeline-row" 
-          key={index} 
-          style={{ '--row-accent': currentAccent }}
+        {/* HERO SECTION */}
+        <section 
+          className="hero" 
+          style={{ 
+            paddingTop: "190px" // Pushes the container down to clear the fixed mobile header
+          }}
         >
-          {/* Vertical Connecting Node */}
-          <div className="timeline-node">
-            <span className="timeline-dot"></span>
-          </div>
-
-          {/* Symmetrical Row Card */}
-          <div className="row-card">
-            <div className="card-text-col">
-              <div className="card-meta">
-                <span className="classic-badge-row" style={{ borderColor: currentAccent, color: currentAccent, background: `${currentAccent}10` }}>
-                  {section.tag}
-                </span>
-              </div>
-              <h2>{section.title}</h2>
-              <p className="card-desc">{section.desc}</p>
-              
-              <ul className="card-list">
-                {section.items.map((item, i) => (
-                  <li key={i}>
-                    <span className="arrow-bullet" style={{ background: `${currentAccent}20`, color: currentAccent }}>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="tech-tags">
-                {section.labels.map((label, idx) => (
-                  <span key={idx} className="tech-tag">{label}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="card-mockup-col">
-              <div className="mockup-frame" style={{ borderColor: `${currentAccent}60` }}>
-                {section.mockup}
-              </div>
-              <button className="link-btn" style={{ '--btn-accent-color': currentAccent }}>
-                Explore Details
-                <svg className="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
+          <div className="hero-container">
+            <span 
+              className="hero-badge" 
+              style={{ 
+                display: "inline-flex", 
+                alignItems: "center", 
+                marginTop: "10px" 
+              }}
+            >
+              <span className="badge-dot" style={{ marginRight: "6px" }}>●</span> Custom Software Development — Batticaloa, Sri Lanka
+            </span>
+            <h1>
+              Custom Software Development <br />
+              <span className="highlight-text">for Batticaloa Businesses</span>
+            </h1>
+            <p className="hero-desc">
+              Business POS, billing apps, inventory tools — we build software that 
+              solves real problems for businesses in Batticaloa and across Eastern Province.
+            </p>
+            <div className="hero-buttons">
+              <button className="primary-btn">Get Free Consultation</button>
+              <button className="secondary-btn">
+                View Portfolio <span className="arrow">→</span>
               </button>
             </div>
+            <p className="hero-trust-text">
+              Trusted by 120+ businesses across the UK, USA & Europe
+            </p>
           </div>
-        </div>
-      );
-    })}
-  </div>
-</section>
+        </section>
+
+        {/* SERVICES SECTION (Row-Wise Connected Timeline Theme) */}
+        <section className="services-section-row-theme">
+          <div className="section-header-row-theme">
+            <span className="section-label-row-theme">Capabilities</span>
+            <h2>Premium Engineering Architectures</h2>
+          </div>
+          
+          <div className="services-timeline-container">
+            {sections.map((section, index) => {
+              // Dynamic colors for the row timelines
+              const rowColors = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
+              const currentAccent = rowColors[index % rowColors.length];
+
+              return (
+                <div 
+                  className="timeline-row" 
+                  key={index} 
+                  style={{ '--row-accent': currentAccent }}
+                >
+                  {/* Vertical Connecting Node */}
+                  <div className="timeline-node">
+                    <span className="timeline-dot"></span>
+                  </div>
+
+                  {/* Symmetrical Row Card */}
+                  <div className="row-card">
+                    <div className="card-text-col">
+                      <div className="card-meta">
+                        <span className="classic-badge-row" style={{ borderColor: currentAccent, color: currentAccent, background: `${currentAccent}10` }}>
+                          {section.tag}
+                        </span>
+                      </div>
+                      <h2>{section.title}</h2>
+                      <p className="card-desc">{section.desc}</p>
+                      
+                      <ul className="card-list">
+                        {section.items.map((item, i) => (
+                          <li key={i}>
+                            <span className="arrow-bullet" style={{ background: `${currentAccent}20`, color: currentAccent }}>
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                            </span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="tech-tags">
+                        {section.labels.map((label, idx) => (
+                          <span key={idx} className="tech-tag">{label}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="card-mockup-col">
+                      <div className="mockup-frame" style={{ borderColor: `${currentAccent}60` }}>
+                        {section.mockup}
+                      </div>
+                      <button className="link-btn" style={{ '--btn-accent-color': currentAccent }}>
+                        Explore Details
+                        <svg className="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         {/* PROCESS SECTION */}
         <section className="process-section">
           <div className="process-container">
