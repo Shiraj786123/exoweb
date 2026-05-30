@@ -1,12 +1,12 @@
 /* Footer */
 .footer {
-  background:  rgb(141, 134, 134);
+  background:  rgb(172, 172, 172);
   color: #004480;
 }
 
 /* Footer Top - Stats & CTA */
 .footer-top {
- background:  rgb(141, 134, 134);
+ background:  rgb(172, 172, 172);
   padding: 80px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border: none;
