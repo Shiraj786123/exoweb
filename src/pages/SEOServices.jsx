@@ -218,45 +218,66 @@ const SEOServices = () => {
     <div className="seos__wrapper">
       <Navbar />
 
-{/* HERO SECTION */}
-<section className="ecd__hero_centered_layout">
-  <div className="ecd__hero_overlay_centered"></div>
-  <div className="ecd__hero_container_centered">
-    
-    {/* Local SEO Eyebrow */}
-    <div className="ecd__badge_pill_centered">
-      <span className="badge_dot_indicator">●</span> Local SEO Services — Batticaloa, Sri Lanka
-    </div>
+      {/* HERO SECTION */}
+      <section 
+        className="ecd__hero_centered_layout"
+        style={{
+          paddingTop: "190px", // Offsets the fixed header on both desktop and mobile
+          position: "relative"
+        }}
+      >
+        <div className="ecd__hero_overlay_centered"></div>
+        <div className="ecd__hero_container_centered">
+          
+          {/* Local SEO Eyebrow */}
+          <div 
+            className="ecd__badge_pill_centered"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "10px",
+              marginBottom: "16px",
+              maxWidth: "95%",
+              boxSizing: "border-box"
+            }}
+          >
+            <span className="badge_dot_indicator" style={{ marginRight: "6px" }}>●</span>
+            {/* Responsive text spans keep the pill sized clean on mobile and desktop */}
+            <span className="badge-text-desktop">Local SEO Services — Batticaloa, Sri Lanka</span>
+            <span className="badge-text-mobile">Local SEO Services — Batticaloa</span>
+          </div>
 
-    {/* Localized H1 */}
-    <h1 className="ecd__hero_title_centered">
-      SEO Services for <br />
-      <span className="highlight_sky_blue">Batticaloa & Eastern Province Businesses</span>
-    </h1>
+          {/* Localized H1 */}
+          <h1 className="ecd__hero_title_centered">
+            SEO Services for <br />
+            <span className="highlight_sky_blue">Batticaloa & Eastern Province Businesses</span>
+          </h1>
 
-    {/* Localized Subtitle */}
-    <p className="ecd__hero_text_centered">
-      We help businesses in Batticaloa, Kattankudy, and Eastern Province rank higher on Google — 
-      so local customers find you first, not your competitors. Our data-driven approach 
-      turns search visibility into consistent local leads.
-    </p>
+          {/* Localized Subtitle */}
+          <p className="ecd__hero_text_centered">
+            We help businesses in Batticaloa, Kattankudy, and Eastern Province rank higher on Google — 
+            so local customers find you first, not your competitors. Our data-driven approach 
+            turns search visibility into consistent local leads.
+          </p>
 
-    {/* Buttons */}
-    <div className="ecd__hero_buttons_centered">
-      <a href="#audit" className="ecd__btn_primary_centered">
-        Get Free SEO Audit
-      </a>
-      <a href="#work" className="ecd__btn_secondary_centered">
-        See Local Results ↓
-      </a>
-    </div>
+          {/* Buttons */}
+          <div className="ecd__hero_buttons_centered">
+            <a href="#audit" className="ecd__btn_primary_centered">
+              Get Free SEO Audit
+            </a>
+            <a href="#work" className="ecd__btn_secondary_centered">
+              See Local Results ↓
+            </a>
+          </div>
 
-    <p className="ecd__hero_trust_text_centered">
-      HELPING EASTERN PROVINCE BUSINESSES DOMINATE LOCAL SEARCH
-    </p>
+          <p className="ecd__hero_trust_text_centered">
+            HELPING EASTERN PROVINCE BUSINESSES DOMINATE LOCAL SEARCH
+          </p>
 
-  </div>
-</section>
+        </div>
+      </section>
+
       {/* 2. OVERVIEW: THE BRUTALIST GALLERY BLOCK (White Theme) */}
       <section className="fswd__section_wrapper ecd-bg-white ecd-brutalist-section">
         <div className="ecd-brutalist-ticker">
@@ -348,29 +369,30 @@ const SEOServices = () => {
         </div>
       </section>
 
-     {/* 5. CAPABILITIES BENTO SERVICES: THE ASYMMETRIC COMIC STRIP (White Theme) */}
-<section className="fswd__section_wrapper ecd-bg-white">
-  <div className="bento-comic-strip-container">
-    <div className="section-header-centered">
-      <span className="fswd__label" style={{ color: "var(--color-warm-yellow)" }}>Capabilities Bento</span>
-      <h2 className="ecd__section_heading_dark">Our SEO Services</h2>
-    </div>
-
-    <div className="bento-comic-grid">
-      {bentoServices.map((service, index) => (
-        <div key={index} className={`comic-bento-card ${service.size}`} style={{ "--card-accent": service.accent }}>
-          <div className="card-top-header">
-            <div className="card-icon-frame" style={{ color: service.accent }}>{service.icon}</div>
-            <span className="service-badge-tag">{service.category}</span>
+      {/* 5. CAPABILITIES BENTO SERVICES: THE ASYMMETRIC COMIC STRIP (White Theme) */}
+      <section className="fswd__section_wrapper ecd-bg-white">
+        <div className="bento-comic-strip-container">
+          <div className="section-header-centered">
+            <span className="fswd__label" style={{ color: "var(--color-warm-yellow)" }}>Capabilities Bento</span>
+            <h2 className="ecd__section_heading_dark">Our SEO Services</h2>
           </div>
-          <h3>{service.title}</h3>
-          <p>{service.desc}</p>
-          <div className="bento-oversized-index">{service.num}</div>
+
+          <div className="bento-comic-grid">
+            {bentoServices.map((service, index) => (
+              <div key={index} className={`comic-bento-card ${service.size}`} style={{ "--card-accent": service.accent }}>
+                <div className="card-top-header">
+                  <div className="card-icon-frame" style={{ color: service.accent }}>{service.icon}</div>
+                  <span className="service-badge-tag">{service.category}</span>
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <div className="bento-oversized-index">{service.num}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
+
       {/* 6. PLATFORMS SUPPORTED: THE HORIZONTAL PIPELINE STRIP (Soft Blue Theme) */}
       <section className="fswd__section_wrapper ecd-bg-soft-blue">
         <div className="ecd-platforms-strip-container">
@@ -399,9 +421,6 @@ const SEOServices = () => {
       </section>
 
       {/* 7. COMPARISON MATRIX: THE SPLIT-BLADE SCREEN (White Theme) */}
- 
- {/* 7. COMPARISON MATRIX: THE SPLIT-BLADE SCREEN (White Theme) */}
-      {/* 7. COMPARISON MATRIX: THE SPLIT-BLADE SCREEN (White Theme) */}
       <section className="fswd__section_wrapper ecd-bg-white">
         <div className="ecd-split-blade-matrix">
           <div className="section-header-centered">
@@ -416,7 +435,7 @@ const SEOServices = () => {
               {comparison.map((item, index) => (
                 <div key={index} className="ecd-blade-row">
                   <span className="blade-icon-cross">✕</span>
-                  <p>{item.basic}</p> {/* Maps to 'basic' key */}
+                  <p>{item.basic}</p>
                 </div>
               ))}
             </div>
@@ -432,13 +451,13 @@ const SEOServices = () => {
               {comparison.map((item, index) => (
                 <div key={index} className="ecd-blade-row">
                   <span className="blade-icon-check">✓</span>
-                  <p>{item.optimized}</p> {/* Maps to 'optimized' key */}
+                  <p>{item.optimized}</p>
                 </div>
               ))}
             </div>
           </div>
           <p className="ecd__comparison_tagline_dark">
-            For AI-driven visibility, see our <a href="/ai-search-optimization">AI Search Optimization service</a> [1].
+            For AI-driven visibility, see our <a href="/ai-search-optimization">AI Search Optimization service</a>.
           </p>
         </div>
       </section>
@@ -563,8 +582,3 @@ const SEOServices = () => {
 };
 
 export default SEOServices;
-
-
-
-
-
