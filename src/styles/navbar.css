@@ -108,11 +108,7 @@
   gap: 2px; /* Shrunk to pull the divider closer to the logo container */
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
+
 
 .logo-desktop {
   display: block;
@@ -1182,3 +1178,179 @@
     margin: -4px !important;
   }
 }
+
+
+
+
+
+
+
+
+
+/* Ensure the logo image scales correctly within its container */
+.nav-logo img {
+  object-fit: contain; /* Prevents stretching */
+  transition: all 0.3s ease;
+}
+
+/* If your navbar is feeling crowded, add some padding to the nav-brand */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjust spacing between logo and tagline */
+}
+
+/* Increase navbar height if the logo is getting clipped */
+.nav-container {
+  height: 100px; /* Adjust this to fit your new logo height */
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+/* Ensure the container is a flexbox and centers everything vertically */
+.nav-container {
+  display: flex;
+  align-items: center;    /* Keeps everything centered vertically */
+  justify-content: space-between; /* Pushes brand left, nav/button right */
+  padding: 10px 20px;
+  height: auto;           /* Allows the container to grow with the logo */
+}
+
+/* Ensure the nav-brand (logo + tagline) doesn't shrink */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;         /* Prevents the logo from getting squashed */
+  gap: 15px;
+}
+
+/* Ensure the nav-links take available space but don't overflow */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;              /* Adjust gap to ensure it fits */
+  flex-wrap: nowrap;      /* Prevents items from wrapping to a new line */
+}
+
+/* Ensure the button stays on the right */
+.contact-btn {
+  white-space: nowrap;    /* Prevents button text from wrapping */
+  margin-left: 20px;      /* Ensures space between nav items and button */
+}
+
+
+
+
+
+
+/* Container: ensure it stays a clean flex row */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes brand to left, nav items/btn to right */
+  padding: 10px 20px;
+  flex-wrap: nowrap; /* CRITICAL: Prevents items from breaking to a new line */
+}
+
+/* Brand: keep logo and tagline together, don't let them shrink */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Prevents the brand from squishing */
+  gap: 10px;      /* Tighten the gap here */
+}
+
+/* Nav links: let them fill the middle space but remain centered */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;      /* Slightly reduce gap to fit more items */
+  flex-shrink: 1; /* Allow to shrink if necessary */
+}
+
+/* Ensure the button doesn't wrap or shrink */
+.contact-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto; /* Pushes the button to the end of the flex container */
+}
+
+
+
+
+
+
+
+
+
+
+/* Move the logo a little bit to the right */
+.nav-logo {
+  margin-left: 20px; /* Adjust this value (e.g., 10px, 15px) to move right */
+  margin-right: -35px;
+}
+
+/* Move the button a little bit to the left */
+.contact-btn {
+  margin-right: 20px; /* Adjust this value (e.g., 10px, 15px) to move left */
+}
+
+
+
+
+
+
+
+
+
+/* Increase logo size specifically for mobile view */
+@media (max-width: 1024px) {
+  .logo-mobile {
+    height: 70px !important; /* Increase this value (e.g., 70px, 80px) */
+    width: auto !important;
+    display: block !important;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .nav-container {
+    height: 90px; /* Ensure this is taller than your new logo height */
+  }
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+  /* 1. Prevent the logo wrapper from hogging the middle space */
+  .nav-brand {
+    flex: none !important;
+    width: auto !important;
+  }
+
+  /* 2. Ensure the tagline is completely removed from layout space */
+  .nav-tagline {
+    display: none !important;
+  }
+
+  /* 3. Group the button and hamburger on the right with a clean gap */
+  .contact-btn {
+    /* margin-left: auto absorbs the empty space in the middle, pushing 
+       the button and hamburger cleanly to the right */
+    margin-left: auto !important; 
+    
+    /* margin-right creates a perfect gap between the button and the hamburger */
+    margin-right: 16px !important; 
+  }
+}
+
+
+
+

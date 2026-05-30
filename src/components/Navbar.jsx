@@ -1,13 +1,10 @@
-
-
-
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation"; // Next.js route hook
 import Image from "next/image";
 import Link from "next/link";
 import ExpertPopup from "./ExpertPopup";
-import logo from "../assets/navbarimg.png";
+import logo from "../assets/logonew.png";
 
 const DESKTOP_BREAKPOINT = 1024;
 const CLOSE_DELAY_MS = 180;
@@ -17,6 +14,7 @@ const Navbar = () => {
   const [mobileDropdown, setMobileDropdown] = useState(null); // Mobile accordion toggle
   const [activeDropdown, setActiveDropdown] = useState(null); // Desktop dropdown active state
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Proposal popup state
+  const [isMobileView, setIsMobileView] = useState(false); // Track mobile view for inline styles
   const navRef = useRef(null);
   const closeTimerRef = useRef(null);
 
@@ -74,12 +72,16 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
+      setIsMobileView(window.innerWidth <= DESKTOP_BREAKPOINT);
       if (isDesktop()) {
         setMobileDropdown(null);
       } else {
         setActiveDropdown(null);
       }
     };
+
+    // Set initial state on mount to avoid SSR mismatch
+    handleResize();
 
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", handleResize);
@@ -164,24 +166,25 @@ const Navbar = () => {
       {/* 2. NAVIGATION BAR SECTION */}
       <div className="nav-container" ref={navRef}>
         <div className="nav-brand">
-          <div className="nav-logo" onClick={handleLogoClick}>
-            <Image
-              src={logo}
-              alt="Zonzoctech Logo"
-              width={160}
-              height={80}
-              className="logo-desktop"
-              priority
-            />
-            <Image
-              src={logo}
-              alt="Zonzoctech Logo"
-              width={120}
-              height={60}
-              className="logo-mobile"
-              priority
-            />
-          </div>
+         {/* Inside your JSX */}
+<div className="nav-logo" onClick={handleLogoClick}>
+  <Image
+    src={logo}
+    alt="Zonzoctech Logo"
+    width={220} // Increased from 160
+    height={110} // Increased from 80
+    className="logo-desktop"
+    priority
+  />
+  <Image
+    src={logo}
+    alt="Zonzoctech Logo"
+    width={160} // Increased from 120
+    height={80} // Increased from 60
+    className="logo-mobile"
+    priority
+  />
+</div>
 
           <div className="nav-tagline">
             <div>Web Intelligences</div>
@@ -191,8 +194,21 @@ const Navbar = () => {
         </div>
 
         {/* 3. NAVIGATION MENUS LIST */}
-        <nav className={`nav-links ${open ? "open" : ""}`}>
-          
+        <nav 
+          className={`nav-links ${open ? "open" : ""}`}
+          style={
+            isMobileView && open 
+              ? { 
+                  top: "160px", // or "100%"
+                  height: "auto", // Automatically shrinks to fit the content
+                  maxHeight: "calc(100vh - 160px)", // Prevents it from going off-screen
+                  position: "fixed", // or "absolute"
+                  overflowY: "auto", // Allows scrolling if sub-menus are expanded
+                  paddingBottom: "24px" // Clean spacing right below the "Mail Us" button
+                } 
+              : {}
+          }
+        >
           {/* 
              Conditional "Home" Button 
              - Renders as an unlinked <span> when on the Home page (/).

@@ -565,3 +565,21 @@
 
   /* Keep the rest of your mobile rules below this... */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .hero {
+    /* Pushes the entire hero section down on mobile so the badge clears the fixed header */
+    padding-top: 180px !important; 
+  }
+}
