@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import siteLogo from '../assets/icons/newwex.png';
+import Image from 'next/image';
+import siteLogo from '../assets/logonew.png';
 
 const Footer = () => {
   const servicesLinks = [
@@ -45,18 +46,12 @@ const Footer = () => {
       {/* TOP SECTION */}
       <div className="footer-top">
         <div className="footer-top-container">
-
           {/* LEFT SIDE — STATS + BUTTON */}
-         
-
-            {/* BUTTON UNDER BOTH */}
-            
-
+          {/* BUTTON UNDER BOTH */}
           {/* RIGHT SIDE — CTA BOX */}
-         </div>
+        </div>
         
         {/* Full-width line */}
-        
       </div>
 
       {/* MAIN FOOTER CONTENT */}
@@ -64,13 +59,37 @@ const Footer = () => {
         <div className="footer-container">
 
           {/* Branding */}
-          <div className="footer-brand">
-            <div className="footer-logo">
-              <img src={siteLogo} alt="techco" className="logo-text-img" />
+          <div 
+            className="footer-brand" 
+            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+          >
+            {/* 
+              This box acts as the matching frame container for the logo, 
+              aligning its top boundary with the rest of the column headers.
+            */}
+            <div 
+              className="footer-logo" 
+              style={{ 
+                display: 'flex', 
+                justifyContent: 'flex-start', 
+                alignItems: 'center', 
+                width: '100%', 
+                height: '110px', 
+                marginBottom: '0px'
+              }}
+            >
+             <Image
+  src={siteLogo}
+  alt="Zonzoctech Logo"
+  className="logo-text-img"
+  width={320}
+  height={140}
+  priority
+/>
             </div>
 
-            <div className="footer-contact-box">
-              <h4 className="contact-heading">
+            <div className="footer-contact-box" style={{ marginTop: '4px' }}>
+              <h4 className="contact-heading" style={{ marginTop: '0px', marginBottom: '16px' }}>
                 Ready to speak with a marketing expert? Give us a ring
               </h4>
 

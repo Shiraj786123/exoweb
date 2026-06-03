@@ -94,7 +94,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 12px 4%; /* Standardized grid padding matching the topbar precisely */
+  padding: 10px 40px; /* Standardized grid padding matching the topbar precisely */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,6 +113,8 @@
 .logo-desktop {
   display: block;
   object-fit: contain;
+  height:75px;
+ 
 }
 
 .logo-mobile {
@@ -1350,6 +1352,9 @@
     margin-right: 16px !important; 
   }
 }
+
+
+
 
 
 

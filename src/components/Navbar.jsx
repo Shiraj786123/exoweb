@@ -171,7 +171,7 @@ const Navbar = () => {
   <Image
     src={logo}
     alt="Zonzoctech Logo"
-    width={220} // Increased from 160
+    width={210} // Increased from 160
     height={110} // Increased from 80
     className="logo-desktop"
     priority
