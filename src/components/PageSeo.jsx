@@ -1,7 +1,6 @@
 import Head from 'next/head';
+import { SITE_NAME, SITE_URL } from '../lib/siteConfig';
 
-const SITE_NAME = 'Vexoweb';
-const SITE_URL = 'https://vexoweb.lk';
 const DEFAULT_IMAGE = `${SITE_URL}/favicon1.png`;
 
 export default function PageSeo({

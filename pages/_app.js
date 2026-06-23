@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Script from 'next/script';
 
-import { AuthProvider } from '../src/context/AuthContext';
+import { AuthProvider } from '../src/context/AuthContext.jsx';
+import Chatbot from '../src/components/Chatbot';
 
 import '../src/index.css';
 import '../src/App.css';
@@ -42,6 +43,7 @@ import '../src/styles/TermsConditions.css';
 import '../src/styles/UserProfile.css';
 import '../src/styles/WebsiteMaintenance.css';
 import '../src/styles/mobile-responsive.css';
+import '../src/styles/chatbot.css';
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -65,6 +67,7 @@ export default function MyApp({ Component, pageProps }) {
         `}
       </Script>
       <Component {...pageProps} />
+      <Chatbot />
     </AuthProvider>
   );
 }
