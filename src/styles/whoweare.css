@@ -157,7 +157,7 @@
 .tech-rows-container {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 8px;
   width: 100%;
   margin-top: 8px;
   overflow: hidden;
@@ -167,7 +167,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 10px 0;
+  padding: 4px 0;
   mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
 }
@@ -182,7 +182,6 @@
 .tech-cards-track-1 { animation: scrollLeftMarqueeLoop 240s linear infinite; }
 .tech-cards-track-2 { animation: scrollRightMarqueeLoop 250s linear infinite; }
 .tech-cards-track-3 { animation: scrollLeftMarqueeLoop 260s linear infinite; }
-.tech-cards-track-4 { animation: scrollRightMarqueeLoop 220s linear infinite; }
 
 .tech-scroll-row:hover .tech-cards-track,
 .tech-scroll-row:active .tech-cards-track {
@@ -202,7 +201,6 @@
 /* Tech cards — row theme accent colors */
 .tech-scroll-row--lang { --row-accent: #38bdf8; }
 .tech-scroll-row--framework { --row-accent: #6366f1; }
-.tech-scroll-row--data { --row-accent: #10b981; }
 .tech-scroll-row--cloud { --row-accent: #f59e0b; }
 
 .tech-row-item-card {

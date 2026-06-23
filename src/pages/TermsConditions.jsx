@@ -10,9 +10,9 @@ const TermsConditions = () => {
       number: "1",
       title: "Definitions",
       items: [
-        '"Company," "we," "us," "our" refers to ZonzocTech',
+        '"Company," "we," "us," "our" refers to Vexoweb',
         '"Client," "you" refers to any user, visitor, or customer',
-        '"Services" refers to all AI, web development, SEO, automation, consulting, and related services provided by ZonzocTech'
+        '"Services" refers to all AI, web development, SEO, automation, consulting, and related services provided by Vexoweb'
       ]
     },
     {
@@ -29,7 +29,7 @@ const TermsConditions = () => {
     {
       number: "3",
       title: "Services & Engagement",
-      description: "All services provided by ZonzocTech are subject to:",
+      description: "All services provided by Vexoweb are subject to:",
       items: [
         "Project scope and agreement",
         "Timelines and deliverables agreed upon in writing",
@@ -58,7 +58,7 @@ const TermsConditions = () => {
       title: "Intellectual Property",
       description: "Unless otherwise agreed in writing:",
       items: [
-        "ZonzocTech retains ownership of proprietary tools, frameworks, and methodologies",
+        "Vexoweb retains ownership of proprietary tools, frameworks, and methodologies",
         "Upon full payment, clients receive rights to deliverables created specifically for them",
         "Clients may not resell, redistribute, or reuse our work without permission"
       ]
@@ -77,12 +77,12 @@ const TermsConditions = () => {
     {
       number: "8",
       title: "Third-Party Tools & Platforms",
-      text: "We may integrate or recommend third-party platforms such as hosting providers, AI tools, analytics platforms, or APIs. ZonzocTech is not responsible for changes, outages, or policies of third-party services."
+      text: "We may integrate or recommend third-party platforms such as hosting providers, AI tools, analytics platforms, or APIs. Vexoweb is not responsible for changes, outages, or policies of third-party services."
     },
     {
       number: "9",
       title: "Limitation of Liability",
-      description: "To the fullest extent permitted by law, ZonzocTech shall not be liable for:",
+      description: "To the fullest extent permitted by law, Vexoweb shall not be liable for:",
       items: [
         "Indirect or consequential damages",
         "Loss of profits, data, or business",
@@ -109,7 +109,7 @@ const TermsConditions = () => {
     {
       number: "12",
       title: "Changes to Terms",
-      text: "ZonzocTech may update these Terms & Conditions at any time. Continued use of the website or services constitutes acceptance of the updated terms."
+      text: "Vexoweb may update these Terms & Conditions at any time. Continued use of the website or services constitutes acceptance of the updated terms."
     },
     {
       number: "13",
@@ -134,7 +134,7 @@ const TermsConditions = () => {
           <h1 className="tc__title">Terms & Conditions</h1>
           <p className="tc__updated">Last updated: {lastUpdated}</p>
           <p className="tc__intro">
-            Welcome to ZonzocTech. By accessing or using our website zonzoctech.com and our services, 
+            Welcome to Vexoweb. By accessing or using our website vexoweb.lk and our services, 
             you agree to comply with and be bound by the following Terms & Conditions. Please read them carefully.
           </p>
           <div className="tc__warning">
@@ -209,14 +209,14 @@ const TermsConditions = () => {
                         <span className="tc__contact_icon">📧</span>
                         <div>
                           <strong>Email:</strong>
-                          <a href="mailto:info@zonzoctech.com">info@zonzoctech.com</a>
+                          <a href="mailto:info@vexoweb.lk">info@vexoweb.lk</a>
                         </div>
                       </div>
                       <div className="tc__contact_item">
                         <span className="tc__contact_icon">🌐</span>
                         <div>
                           <strong>Website:</strong>
-                          <a href="https://zonzoctech.com">zonzoctech.com</a>
+                          <a href="https://vexoweb.lk">vexoweb.lk</a>
                         </div>
                       </div>
                     </div>
@@ -231,7 +231,7 @@ const TermsConditions = () => {
           <div className="tc__agreement">
             <h3>Your Agreement</h3>
             <p>
-              By using ZonzocTech's website and services, you acknowledge that you have read, understood, 
+              By using Vexoweb's website and services, you acknowledge that you have read, understood, 
               and agree to be bound by these Terms & Conditions. If you have any questions or concerns, 
               please contact us before proceeding.
             </p>

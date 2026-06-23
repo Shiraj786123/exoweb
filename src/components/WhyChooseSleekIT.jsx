@@ -1,5 +1,5 @@
 import React from 'react';
-import blackHandImage from '../assets/icons/ai1.png';
+import heroImage from '../assets/icons/why-choose-vexoweb.png';
 import growthLineImage from '../assets/icons/earning-line.png';
 
 const BENEFITS = [
@@ -55,11 +55,11 @@ const WhyChooseSection = () => {
             <span className="why-choose-tag">Why Partner With Us</span>
 
             <h2 className="why-choose-title">
-              Why Choose <span className="highlight-text">Zonzoctech?</span>
+              Why Choose <span className="highlight-text">Vexoweb?</span>
             </h2>
 
             <p className="why-choose-description">
-              At Zonzoctech, we don&apos;t just build software systems — we architect tomorrow&apos;s
+              At Vexoweb, we don&apos;t just build software systems — we architect tomorrow&apos;s
               digital success structures using{' '}
               <span className="colorful-accent-text">intelligent development frameworks.</span>
             </p>
@@ -108,8 +108,8 @@ const WhyChooseSection = () => {
             </div>
 
             <img
-              src={blackHandImage}
-              alt="Future Systems Engineering"
+              src={heroImage}
+              alt="Vexoweb digital intelligence and software development"
               className="hero-main-image"
             />
           </div>

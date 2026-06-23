@@ -35,8 +35,8 @@ const FORM_PERKS = [
 const CONTACT_LINKS = [
   {
     label: 'Email us',
-    value: 'info@zonzoctech.com',
-    href: 'mailto:info@zonzoctech.com',
+    value: 'info@vexoweb.lk',
+    href: 'mailto:info@vexoweb.lk',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -192,7 +192,7 @@ const ContactSection = ({
 
             {submitStatus === 'error' && (
               <div className="alert alert-error">
-                Something went wrong. Please try again or email info@zonzoctech.com
+                Something went wrong. Please try again or email info@vexoweb.lk
               </div>
             )}
 

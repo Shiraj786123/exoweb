@@ -107,7 +107,7 @@ const AboutUs = () => {
           <div className="abt__hero_badge">
             <span className="abt__badge_dot"></span>
             <span className="hero-badge-text">
-              <span className="hero-badge-accent">About ZonzocTech</span>
+              <span className="hero-badge-accent">About Vexoweb</span>
               <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
             </span>
           </div>
@@ -116,7 +116,7 @@ const AboutUs = () => {
             <span className="highlight-text">Batticaloa</span>
           </h1>
           <p className="abt__hero_description">
-            ZonzocTech is a technology-driven digital solutions company specializing in AI-powered 
+            Vexoweb is a technology-driven digital solutions company specializing in AI-powered 
             web applications, software development, full-stack development, SEO, and AI search optimization. 
             We help businesses build intelligent, performance-focused digital systems that convert.
           </p>
@@ -154,7 +154,7 @@ const AboutUs = () => {
             <div className="abt__who_pill_content">
               <h2 className="abt__heading_center">Our Foundation & Mission</h2>
               <p className="abt__who_text_center">
-                ZonzocTech was founded with a clear mission: <strong>to help businesses grow using 
+                Vexoweb was founded with a clear mission: <strong>to help businesses grow using 
                 modern technology, AI, and data-driven strategies — not hype or shortcuts.</strong> 
                 We don't just "build websites" or "do SEO" — we solve real-world business problems using custom-engineered software systems.
               </p>
@@ -501,7 +501,7 @@ const AboutUs = () => {
       <section className="abt__why_section">
         <div className="abt__container">
           <span className="abt__sec_badge cyan">WHY CHOOSE US</span>
-          <h2 className="abt__heading">Why ZonzocTech?</h2>
+          <h2 className="abt__heading">Why Vexoweb?</h2>
           <p className="abt__sec_subtitle">We focus strictly on clear outcomes, clean code bases, and performance scalability.</p>
           
           <div className="abt__why_row_wrapper">
@@ -579,7 +579,7 @@ const AboutUs = () => {
             <h2>Let's Build Something That Works</h2>
             <p>
               Whether you need an AI-powered application, a high-performing website, or sustainable 
-              growth through search, ZonzocTech is ready to help.
+              growth through search, Vexoweb is ready to help.
             </p>
             <div className="abt__cta_buttons">
               <a href="/contact-us" className="abt__cta_btn abt__cta_primary">

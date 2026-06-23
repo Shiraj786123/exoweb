@@ -123,6 +123,32 @@
   line-height: 1.4;
 }
 
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #0f2744;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-row:hover {
+  color: #00448f;
+}
+
+.footer-contact-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
 .footer-contact-icons {
   display: flex;
   gap: 10px;
@@ -138,9 +164,23 @@
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
-  text-decoration: none;
+  flex-shrink: 0;
   transition: all 0.22s ease;
   border: 1px solid #c5dff0;
+}
+
+.footer-contact-row:hover .contact-icon-btn.whatsapp-color {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+  transform: translateY(-2px);
+}
+
+.footer-contact-row:hover .contact-icon-btn.email-color {
+  background: #00448f;
+  color: #fff;
+  border-color: #00448f;
+  transform: translateY(-2px);
 }
 
 .contact-icon-btn.whatsapp-color:hover {
@@ -363,8 +403,13 @@
     margin-top: 0;
   }
 
-  .footer-contact-icons {
+  .footer-contact-list {
+    align-items: center;
+  }
+
+  .footer-contact-row {
     justify-content: center;
+    max-width: 100%;
   }
 
   /* Link columns — left aligned */

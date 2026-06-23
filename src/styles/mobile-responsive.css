@@ -1485,14 +1485,14 @@ body,
     align-items: center !important;
   }
 
-  /* Line 3 — email and WhatsApp on same row */
+  /* Line 3 — phone, email and WhatsApp */
   .topbar-right {
     width: 100% !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    flex-wrap: nowrap !important;
-    gap: 10px !important;
+    flex-wrap: wrap !important;
+    gap: 8px 10px !important;
   }
 
   .topbar-divider {

@@ -92,7 +92,7 @@ const AISoftwareServices = () => {
         <span className="text_gradient_tech">Built for Enterprise Scale</span>
       </h2>
       <p className="aiss__description">
-        Beyond experimental sandboxes. ZonzocTech builds custom AI software for 
+        Beyond experimental sandboxes. Vexoweb builds custom AI software for 
         enterprise systems, prioritizing architectural stability over off-the-shelf wrappers. 
         We integrate deterministic agentic logic directly into your secure core workflows.
       </p>
@@ -216,7 +216,7 @@ const AISoftwareServices = () => {
           <span className="terminal-title">system_diagnostics.sh</span>
         </div>
         <div className="terminal-body">
-          <p className="txt-green"><span className="term-prompt">$</span> zonzoc_monitor --status</p>
+          <p className="txt-green"><span className="term-prompt">$</span> vexoweb_monitor --status</p>
           <p className="txt-green">[SYSTEM STATUS: ACTIVE]</p>
           <p className="txt-red blink"><span className="term-alert">▲</span> LATENCY DETECTED</p>
           <p className="txt-orange"><span className="term-alert">▲</span> SILOS DETECTED</p>

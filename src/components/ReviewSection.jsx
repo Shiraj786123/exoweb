@@ -20,8 +20,8 @@ const ReviewsSection = () => {
     {
       id: 3,
       text: "Excellent IT resource outsourcing service. They provided highly skilled developers who integrated seamlessly with our team.",
-      name: "Zonzoc Tech",
-      username: "@zonzoc_tech",
+      name: "Vexoweb",
+      username: "@vexoweb",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
     }
   ];

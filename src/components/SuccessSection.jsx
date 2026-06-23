@@ -1,13 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import {
-  FaChartLine,
-  FaGlobe,
-  FaHeart,
-  FaHome,
-  FaPlane,
-  FaShieldAlt,
-  FaShoppingCart,
-} from "react-icons/fa";
 import item1 from "../assets/icons/healthyfit.png";
 import item2 from "../assets/icons/aviation.png";
 import item3 from "../assets/icons/fleet-management.png";
@@ -21,8 +12,6 @@ const SCROLL_SPEED = 42;
 const projects = [
   {
     id: 1,
-    buttonLabel: "Healthy Fit",
-    Icon: FaHeart,
     name: "E-Commerce Website",
     desc: "Shopify-based platform for healthy products with seamless API integration.",
     extra: [
@@ -35,8 +24,6 @@ const projects = [
   },
   {
     id: 2,
-    buttonLabel: "Aviation MS",
-    Icon: FaPlane,
     name: "Aviation Management System",
     desc: "Comprehensive aviation management platform with real-time flight tracking, task management, and crew scheduling.",
     extra: [
@@ -50,8 +37,6 @@ const projects = [
   },
   {
     id: 3,
-    buttonLabel: "Fleet MS",
-    Icon: FaChartLine,
     name: "Fleet Management System",
     desc: "Comprehensive platform for real-time fleet tracking, rider management, and performance analytics.",
     extra: [
@@ -65,8 +50,6 @@ const projects = [
   },
   {
     id: 4,
-    buttonLabel: "Lvita Store",
-    Icon: FaShoppingCart,
     name: "E-Commerce System",
     desc: "Developed the admin portal, vendor portal, user mobile app, and vendor mobile app to manage the system.",
     extra: [
@@ -81,8 +64,6 @@ const projects = [
   },
   {
     id: 5,
-    buttonLabel: "SEO Growth",
-    Icon: FaGlobe,
     name: "Search Engine Optimization",
     desc: "Through comprehensive on-page, technical, and content SEO, we enhanced CookerAndLooker's search presence and authority, driving sustainable organic growth.",
     extra: [
@@ -96,8 +77,6 @@ const projects = [
   },
   {
     id: 6,
-    buttonLabel: "Frau Rauchfrei",
-    Icon: FaShieldAlt,
     name: "Website Maintenance & Web Security",
     desc: "We executed end-to-end website development for frau-rauchfrei.de, implementing strong security protocols, performance optimization, and ongoing protection against vulnerabilities.",
     extra: [
@@ -110,8 +89,6 @@ const projects = [
   },
   {
     id: 7,
-    buttonLabel: "Koning Bamboe",
-    Icon: FaHome,
     name: "Website Development",
     desc: "We completely redesigned and developed koningbamboe.nl with advanced features, enhanced functionality, and significantly improved performance—delivering a faster, smarter, and more scalable digital experience.",
     extra: [
@@ -132,10 +109,6 @@ const SuccessSection = () => {
   const lastFrameRef = useRef(0);
 
   const [offset, setOffset] = useState(0);
-  const [hoveredId, setHoveredId] = useState(null);
-  const [centeredIndex, setCenteredIndex] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const [useTransition, setUseTransition] = useState(false);
   const [metrics, setMetrics] = useState({ cardWidth: 280, gap: 20 });
 
   const loopedProjects = [...projects, ...projects];
@@ -151,28 +124,6 @@ const SuccessSection = () => {
       return ((value % setWidth) + setWidth) % setWidth;
     },
     [getSetWidth]
-  );
-
-  const getCenterOffset = useCallback(
-    (projectIndex, currentOffset) => {
-      const sliderWidth = sliderRef.current?.offsetWidth || 0;
-      const step = metrics.cardWidth + metrics.gap;
-      const centerPosition = sliderWidth / 2 - metrics.cardWidth / 2;
-
-      const candidates = [projectIndex, projectIndex + projects.length].map(
-        (index) => index * step - centerPosition
-      );
-
-      return candidates.reduce((closest, candidate) => {
-        const normalizedCandidate = normalizeOffset(candidate);
-        const normalizedClosest = normalizeOffset(closest);
-        const candidateDistance = Math.abs(normalizedCandidate - currentOffset);
-        const closestDistance = Math.abs(normalizedClosest - currentOffset);
-
-        return candidateDistance < closestDistance ? candidate : closest;
-      });
-    },
-    [metrics.cardWidth, metrics.gap, normalizeOffset]
   );
 
   const measureLayout = useCallback(() => {
@@ -197,13 +148,6 @@ const SuccessSection = () => {
   }, [offset]);
 
   useEffect(() => {
-    if (isPaused) {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-      return undefined;
-    }
-
     const animate = (timestamp) => {
       if (!lastFrameRef.current) {
         lastFrameRef.current = timestamp;
@@ -232,36 +176,7 @@ const SuccessSection = () => {
       }
       lastFrameRef.current = 0;
     };
-  }, [getSetWidth, isPaused, normalizeOffset]);
-
-  const handleButtonEnter = (projectId) => {
-    const projectIndex = projects.findIndex((project) => project.id === projectId);
-    if (projectIndex < 0) return;
-
-    setUseTransition(true);
-    setIsPaused(true);
-    setHoveredId(projectId);
-
-    const targetOffset = normalizeOffset(
-      getCenterOffset(projectIndex, offsetRef.current)
-    );
-    const sliderWidth = sliderRef.current?.offsetWidth || 0;
-    const step = metrics.cardWidth + metrics.gap;
-    const centerPosition = targetOffset + sliderWidth / 2;
-    const physicalIndex = Math.round((centerPosition - metrics.cardWidth / 2) / step);
-
-    offsetRef.current = targetOffset;
-    setOffset(targetOffset);
-    setCenteredIndex(physicalIndex);
-  };
-
-  const handleButtonLeave = () => {
-    setHoveredId(null);
-    setCenteredIndex(null);
-    setUseTransition(false);
-    setIsPaused(false);
-    lastFrameRef.current = 0;
-  };
+  }, [getSetWidth, normalizeOffset]);
 
   return (
     <section className="success-section">
@@ -278,74 +193,40 @@ const SuccessSection = () => {
           </p>
         </div>
 
-        <div className="project-filter-buttons">
-          {projects.map((project) => {
-            const Icon = project.Icon;
-            const isActive = hoveredId === project.id;
-
-            return (
-              <button
-                key={project.id}
-                type="button"
-                className={`project-filter-btn ${isActive ? "active" : ""}`}
-                onMouseEnter={() => handleButtonEnter(project.id)}
-                onMouseLeave={handleButtonLeave}
-                onFocus={() => handleButtonEnter(project.id)}
-                onBlur={handleButtonLeave}
-                aria-label={`Show ${project.buttonLabel} project`}
-              >
-                <span className="project-filter-icon">
-                  <Icon aria-hidden="true" />
-                </span>
-                <span className="project-filter-label">{project.buttonLabel}</span>
-              </button>
-            );
-          })}
-        </div>
-
         <div className="projects-slider" ref={sliderRef}>
           <div
             ref={trackRef}
-            className={`projects-track ${isPaused ? "is-paused" : ""} ${
-              useTransition ? "use-transition" : ""
-            }`}
+            className="projects-track"
             style={{ transform: `translateX(-${offset}px)` }}
           >
-            {loopedProjects.map((project, index) => {
-              const isActiveCard = isPaused && index === centeredIndex;
+            {loopedProjects.map((project, index) => (
+              <div key={`${project.id}-${index}`} className="project-card">
+                <div className="project-img-wrapper">
+                  <img
+                    src={project.img}
+                    alt={project.name}
+                    className="project-img"
+                  />
+                </div>
 
-              return (
-                <div
-                  key={`${project.id}-${index}`}
-                  className={`project-card ${isActiveCard ? "project-card--active" : ""}`}
-                >
-                  <div className="project-img-wrapper">
-                    <img
-                      src={project.img}
-                      alt={project.name}
-                      className="project-img"
-                    />
-                  </div>
+                <div className="project-info">
+                  <h3 className="project-card-title">{project.name}</h3>
+                  <p className="project-card-desc">{project.desc}</p>
 
-                  <div className="project-info">
-                    <h3 className="project-card-title">{project.name}</h3>
-                    <p className="project-card-desc">{project.desc}</p>
-
-                    <div className="project-extra">
-                      {project.extra.map((item, idx) => (
-                        <span
-                          key={idx}
-                          style={{ background: item.Background }}
-                          className="tech-badge"
-                        >
-                          {item.text}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="project-extra">
+                    {project.extra.map((item, idx) => (
+                      <span
+                        key={idx}
+                        style={{ background: item.Background }}
+                        className="tech-badge"
+                      >
+                        {item.text}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>

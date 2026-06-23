@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const CONTACT_EMAIL = "info@zonzoctech.com";
+const CONTACT_EMAIL = "info@vexoweb.lk";
 const WHATSAPP_URL =
   "https://wa.me/94740309534?text=Hi%20Vexoweb%20Team,%20I%20would%20like%20to%20discuss%20a%20project.";
 const BUDGET_MIN = 500;

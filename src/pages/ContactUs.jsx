@@ -108,7 +108,7 @@ const ContactUs = () => {
 
             {submitStatus === "error" && (
               <div className="cu-alert cu-alert--error">
-                Something went wrong. Please try again or email info@zonzoctech.com
+                Something went wrong. Please try again or email info@vexoweb.lk
               </div>
             )}
 

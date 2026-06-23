@@ -447,7 +447,7 @@ const FullStackWebDev = () => {
         <div className="fswd__container">
           <span className="fswd__sec_badge cyan">DIFFERENTIATORS</span>
           <h2 className="fswd__section_heading">
-            Why Choose ZonzocTech for Full-Stack Web Development?
+            Why Choose Vexoweb for Full-Stack Web Development?
           </h2>
           <p className="fswd__section_description">We focus strictly on clear outcomes, clean code bases, and performance scalability.</p>
           

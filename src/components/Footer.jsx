@@ -3,20 +3,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import siteLogo from '../assets/logonew.png';
 
+const CONTACT_EMAIL = 'info@vexoweb.lk';
+const CONTACT_PHONE = '+94 74 030 9534';
+const WHATSAPP_HREF =
+  'https://wa.me/94740309534?text=Hi%20Vexoweb%20Team,%20I%20would%20like%20to%20discuss%20a%20project.';
+
 const Footer = () => {
   const servicesLinks = [
     { label: 'AI Web Application Development', path: '/ai-software-development' },
-    { label: 'AI Software Development', path: '/ai-software-development' },
     { label: 'Full-Stack Web Development', path: '/full-stack-web-development' },
-    { label: 'AI-Powered Website Design', path: '/full-stack-web-development' },
-    { label: 'AI Automation & GPT Integration', path: '/ai-software-development' },
     { label: 'SEO & AI Search Optimization', path: '/seo-services' },
     { label: 'E-commerce Development', path: '/ecommerce-development-optimization' }
   ];
 
   const knowledgebaseLinks = [
     { label: 'Websites That Generate Leads', path: '/full-stack-web-development' },
-    { label: 'AI Chatbots & Virtual Assistants', path: '/ai-software-development' },
     { label: 'Business Process Automation', path: '/ai-software-development' },
     { label: 'E-commerce Growth Optimization', path: '/ecommerce-development-optimization' },
     { label: 'Search Visibility & Traffic Growth', path: '/seo-services' },
@@ -27,8 +28,7 @@ const Footer = () => {
     { label: 'Website Growth Guides', path: '/seo-services' },
     { label: 'AI for Business', path: '/ai-software-development' },
     { label: 'Technical SEO Knowledgebase', path: '/seo-services' },
-    { label: 'Case Studies & Results', path: '/about' },
-    { label: 'AI SEO & Answer Engine Optimization', path: '/seo-services' }
+    { label: 'Case Studies & Results', path: '/about' }
   ];
 
   const exploreLinks = [
@@ -70,24 +70,28 @@ const Footer = () => {
                 Batticaloa, Sri Lanka · We reply within 24 hours
               </p>
 
-              <div className="footer-contact-icons">
+              <div className="footer-contact-list">
                 <a
-                  href="https://wa.me/94740309534?text=Hi%20Vexoweb%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
-                  className="contact-icon-btn whatsapp-color"
+                  href={WHATSAPP_HREF}
+                  className="footer-contact-row"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Chat on WhatsApp"
-                  aria-label="Chat on WhatsApp"
                 >
-                  <i className="fa-brands fa-whatsapp"></i>
+                  <span className="contact-icon-btn whatsapp-color" aria-hidden="true">
+                    <i className="fa-brands fa-whatsapp"></i>
+                  </span>
+                  <span className="footer-contact-text">{CONTACT_PHONE}</span>
                 </a>
                 <a
-                  href="mailto:info@zonzoctech.com"
-                  className="contact-icon-btn email-color"
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="footer-contact-row"
                   title="Email Us"
-                  aria-label="Email Vexoweb"
                 >
-                  <i className="fa-solid fa-envelope"></i>
+                  <span className="contact-icon-btn email-color" aria-hidden="true">
+                    <i className="fa-solid fa-envelope"></i>
+                  </span>
+                  <span className="footer-contact-text">{CONTACT_EMAIL}</span>
                 </a>
               </div>
             </div>

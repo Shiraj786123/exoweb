@@ -14,10 +14,10 @@ const WhoWeAreSection = () => {
           <span className="whoweare__tag">Who We Are</span>
           <h2 id="whoweare-title" className="whoweare-main-title">
             Who We Are &amp; Why Choose{' '}
-            <span className="highlight-text-gradient">Zonzoctech</span>
+            <span className="highlight-text-gradient">Vexoweb</span>
           </h2>
           <p className="whoweare-sub-description">
-            At Zonzoctech, we&apos;re more than just a digital agency—we&apos;re your growth partner.
+            At Vexoweb, we&apos;re more than just a digital agency—we&apos;re your growth partner.
             With over a decade of experience, we specialize in building modern websites,
             boosting visibility through smart SEO, and integrating cutting-edge AI technologies
             to future-proof your business.

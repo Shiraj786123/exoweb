@@ -636,7 +636,7 @@
   }
 
   .tech-rows-container {
-    gap: 14px; /* Compress vertical gap layout for screens */
+    gap: 6px;
   }
   
   /* FIX: Compact uniform styling so cards scroll cleanly on mobile devices */
@@ -661,7 +661,6 @@
   .tech-cards-track-1 { animation-duration: 100s; }
   .tech-cards-track-2 { animation-duration: 105s; }
   .tech-cards-track-3 { animation-duration: 110s; }
-  .tech-cards-track-4 { animation-duration: 95s; }
 }
 
 @media (max-width: 480px) {

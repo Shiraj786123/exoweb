@@ -47,7 +47,7 @@ const ContactPage = () => {
           <div className="cp__hero_badge">
             <span className="cp__badge_dot"></span>
             <span className="hero-badge-text">
-              <span className="hero-badge-accent">Contact ZonzocTech</span>
+              <span className="hero-badge-accent">Contact Vexoweb</span>
               <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
             </span>
           </div>
@@ -224,7 +224,7 @@ const ContactPage = () => {
           <div className="cp__details_grid">
             
             {/* Card 1: Email Us (Royal Blue Theme) */}
-            <a href="mailto:hello@zonzoctech.com" className="cp__details_card card_email">
+            <a href="mailto:info@vexoweb.lk" className="cp__details_card card_email">
               <span className="details_icon_circle">
                 <svg className="cp__details_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -268,7 +268,7 @@ const ContactPage = () => {
       <section className="cp__why_section">
         <div className="cp__container">
           <span className="cp__section_badge purple">TRUST SYSTEM</span>
-          <h2 className="cp__heading">Why Contact ZonzocTech?</h2>
+          <h2 className="cp__heading">Why Contact Vexoweb?</h2>
           
           <div className="cp__why_row_wrapper">
             {/* Subtle horizontal connecting line [1] */}

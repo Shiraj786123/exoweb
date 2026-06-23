@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
     {
       number: "3",
       title: "Cookies & Tracking Technologies",
-      description: "ZonzocTech uses cookies and similar technologies to:",
+      description: "Vexoweb uses cookies and similar technologies to:",
       items: [
         "Understand website usage",
         "Improve performance and functionality",
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
     {
       number: "8",
       title: "Children's Information",
-      text: "ZonzocTech does not knowingly collect personal information from children under the age of 13. If you believe we have collected such data, please contact us and we will remove it promptly."
+      text: "Vexoweb does not knowingly collect personal information from children under the age of 13. If you believe we have collected such data, please contact us and we will remove it promptly."
     },
     {
       number: "9",
@@ -122,9 +122,9 @@ const PrivacyPolicy = () => {
           <h1 className="pp__title">Privacy Policy</h1>
           <p className="pp__updated">Last updated: {lastUpdated}</p>
           <p className="pp__intro">
-            ZonzocTech ("we", "our", "us") respects your privacy and is committed to protecting your 
+            Vexoweb ("we", "our", "us") respects your privacy and is committed to protecting your 
             personal information. This Privacy Policy explains how we collect, use, and protect your 
-            data when you visit zonzoctech.com or use our services.
+            data when you visit vexoweb.lk or use our services.
           </p>
         </div>
       </section>
@@ -197,14 +197,14 @@ const PrivacyPolicy = () => {
                         <span className="pp__contact_icon">📧</span>
                         <div>
                           <strong>Email:</strong>
-                          <a href="mailto:info@zonzoctech.com">info@zonzoctech.com</a>
+                          <a href="mailto:info@vexoweb.lk">info@vexoweb.lk</a>
                         </div>
                       </div>
                       <div className="pp__contact_item">
                         <span className="pp__contact_icon">🌐</span>
                         <div>
                           <strong>Website:</strong>
-                          <a href="https://zonzoctech.com">zonzoctech.com</a>
+                          <a href="https://vexoweb.lk">vexoweb.lk</a>
                         </div>
                       </div>
                     </div>

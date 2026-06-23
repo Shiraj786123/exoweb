@@ -496,7 +496,7 @@ const SEOServices = () => {
         <div className="ecd-modern-mosaic-layout">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-orange-coral)" }}>System Value</span>
-            <h2 className="ecd__section_heading_dark">Why Choose ZonzocTech for SEO?</h2>
+            <h2 className="ecd__section_heading_dark">Why Choose Vexoweb for SEO?</h2>
           </div>
 
           <div className="ecd-mosaic-grid">

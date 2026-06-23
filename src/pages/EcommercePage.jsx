@@ -553,7 +553,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
     <div className="ecd__split_left">
       <div className="ecd__header_content">
         <span className="ecd__sec_badge cyan">WHY WORK WITH US</span>
-        <h2 className="ecd__sec_title">Why Choose ZonzocTech for E-commerce Development?</h2>
+        <h2 className="ecd__sec_title">Why Choose Vexoweb for E-commerce Development?</h2>
         <p className="ecd__sec_subtitle">We reject basic templates. We focus entirely on checkout conversion, custom code stability, and system speed.</p>
         <div className="ecd__why_statement_big">
           We don't just build online stores — we build e-commerce engines.

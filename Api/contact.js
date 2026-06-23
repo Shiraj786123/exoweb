@@ -11,11 +11,11 @@ export default async function handler(req, res) {
   try {
 
     const transporter = nodemailer.createTransport({
-      host: "mail.zonzoctech.com",   // your cPanel mail server
+      host: "mail.vexoweb.lk",
       port: 465,
       secure: true,
       auth: {
-        user: "info@zonzoctech.com",
+        user: "info@vexoweb.lk",
         pass: process.env.EMAIL_PASS
       },
       tls: {
@@ -24,8 +24,8 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: `"Zonzoctech Website" <info@zonzoctech.com>`,
-      to: "info@zonzoctech.com",
+      from: `"Vexoweb Website" <info@vexoweb.lk>`,
+      to: "info@vexoweb.lk",
       subject: `New message from ${name}`,
       html: `
         <h3>New Website Message</h3>
