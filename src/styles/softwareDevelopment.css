@@ -72,7 +72,7 @@
 }
 
 /* Main Heading */
-.software-page .hero h1 {
+.software-page .hero .software__h1 {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -81,7 +81,7 @@
   margin: 0 auto 18px auto;
 }
 
-.software-page .hero h1 .highlight-text {
+.software-page .hero .software__h1 .highlight-text {
   color: var(--accent-hero);
 }
 
@@ -253,7 +253,7 @@ body {
   animation: pulse 2s infinite ease-in-out;
 }
 
-.software-page .hero h1 {
+.software-page .hero .software__h1 {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -262,7 +262,7 @@ body {
   margin: 0 auto 16px auto;
 }
 
-.software-page .hero h1 .highlight-text {
+.software-page .hero .software__h1 .highlight-text {
   color: var(--accent-hero);
 }
 
@@ -355,7 +355,7 @@ body {
   margin-bottom: 6px;
 }
 
-.section-header-row-theme h2 {
+.section-header-row-theme .software__h2 {
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   color: var(--text-dark-primary);
@@ -466,7 +466,7 @@ body {
   border-radius: 4px;
 }
 
-.row-card h2 {
+.row-card .software__h3 {
   font-size: 18px;
   font-weight: 800;
   color: var(--text-dark-primary);
@@ -694,7 +694,7 @@ body {
     gap: 16px;
   }
   
-  .row-card h2 {
+  .row-card .software__h3 {
     font-size: 17px;
   }
   
@@ -884,7 +884,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.step-text-block h3 {
+.step-text-block .software__h4 {
   font-size: 18px;
   font-weight: 800;
   margin: 0 0 8px 0;
@@ -921,7 +921,7 @@ body {
   background: var(--text-dark-primary);
 }
 
-.process-step-node:hover .step-text-block h3 {
+.process-step-node:hover .step-text-block .software__h4 {
   color: var(--step-color);
 }
 
@@ -1054,16 +1054,17 @@ body {
    ========================================================================== */
 
 /* --- A. DESKTOP VIEWPORTS (Default Rules) --- */
-.software-page .hero h1 {
+.software-page .hero .software__h1 {
   font-size: 50px;                  
 }
-.section-header h2,
+.section-header-row-theme .software__h2,
+.process-intro .software__h2,
+.faq-intro .software__h2,
 .cta-box h2 {
   font-size: 34px;                  
 }
-.card h2,
-.step-content h3,
-.process-intro h2 {
+.row-card .software__h3,
+.step-text-block .software__h4 {
   font-size: 24px;                  
 }
 .hero-desc,
@@ -1090,16 +1091,17 @@ body {
 
 /* --- B. TABLET VIEWPORTS (max-width: 1024px) --- */
 @media (max-width: 1024px) {
-  .software-page .hero h1 {
+  .software-page .hero .software__h1 {
     font-size: 40px;                
   }
-  .section-header h2,
+  .section-header-row-theme .software__h2,
+  .process-intro .software__h2,
+  .faq-intro .software__h2,
   .cta-box h2 {
     font-size: 30px;                
   }
-  .card h2,
-  .step-content h3,
-  .process-intro h2 {
+  .row-card .software__h3,
+  .step-text-block .software__h4 {
     font-size: 22px;                
   }
   .services-grid {
@@ -1121,16 +1123,17 @@ body {
 
 /* --- C. MOBILE VIEWPORTS (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .software-page .hero h1 {
+  .software-page .hero .software__h1 {
     font-size: 32px;                
   }
-  .section-header h2,
+  .section-header-row-theme .software__h2,
+  .process-intro .software__h2,
+  .faq-intro .software__h2,
   .cta-box h2 {
     font-size: 26px;                
   }
-  .card h2,
-  .step-content h3,
-  .process-intro h2 {
+  .row-card .software__h3,
+  .step-text-block .software__h4 {
     font-size: 19px;                
   }
   .hero-desc,
@@ -1184,7 +1187,7 @@ body {
   margin-bottom: 40px;
 }
 
-.faq-intro h2 {
+.faq-intro .software__h2 {
   font-weight: 800;
   color: var(--text-dark-primary);
   letter-spacing: -0.02em;
@@ -1234,7 +1237,7 @@ body {
   outline: none;
 }
 
-.faq-header h3 {
+.faq-header .software__h3 {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-dark-primary);
@@ -1244,7 +1247,7 @@ body {
   padding-right: 16px;
 }
 
-.faq-bar.active .faq-header h3 {
+.faq-bar.active .faq-header .software__h3 {
   color: var(--color-purple);
 }
 
@@ -1302,7 +1305,7 @@ body {
   .faq-header {
     padding: 16px 20px;
   }
-  .faq-header h3 {
+  .faq-header .software__h3 {
     font-size: 15px;
   }
   .faq-bar.active .faq-content {

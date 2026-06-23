@@ -81,8 +81,14 @@ body {
   background: linear-gradient(180deg, var(--bg-page-white) 50%, #E5EAF5 50%) !important;
 }
 
+.ecd-bg-dark .seos__h2 {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 /* Base Headings for White/Light Sections */
-.ecd__section_heading_dark {
+.seos__h2 {
   font-size: 38px !important;
   font-weight: 800 !important;
   letter-spacing: -0.025em !important;
@@ -182,7 +188,7 @@ body {
 }
 
 /* Title (Centered, heavy, large scale typography) */
-.ecd__hero_title_centered {
+.seos__h1 {
   font-size: clamp(2.25rem, 5.5vw, 4rem); 
   font-weight: 800;
   line-height: 1.15;
@@ -273,7 +279,7 @@ body {
     padding: calc(var(--site-header-height) + var(--hero-top-gap)) 20px 80px 20px !important;
   }
 
-  .ecd__hero_title_centered {
+  .seos__h1 {
     letter-spacing: -0.02em !important;
     text-align: center !important;
     word-spacing: normal !important;
@@ -337,7 +343,7 @@ body {
   padding: 0 24px;
 }
 
-.ecd-brutalist-serif-heading {
+.seos__h2 {
   font-family: Georgia, serif !important; /* Brutalist Serif style option */
   font-size: 42px !important;
   font-weight: 900 !important;
@@ -446,7 +452,7 @@ body {
   line-height: 1;
 }
 
-.staircase-text h4 {
+.staircase-text .seos__h4 {
   font-size: 18px !important;
   font-weight: 800 !important;
   color: var(--color-slate-charcoal);
@@ -563,7 +569,7 @@ body {
   font-size: 28px;
 }
 
-.ecd-isometric-deck-card h3 {
+.ecd-isometric-deck-card .seos__h3 {
   font-size: 20px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
@@ -698,7 +704,7 @@ body {
   grid-row: 2;
 }
 
-.comic-bento-card h3 {
+.comic-bento-card .seos__h3 {
   font-size: 20px !important;
   font-weight: 800 !important;
   color: #ffffff;
@@ -869,7 +875,7 @@ body {
   margin-bottom: 12px;
 }
 
-.ecd-pipeline-node h4 {
+.ecd-pipeline-node .seos__h4 {
   font-size: 18px !important;
   font-weight: 800 !important;
   color: var(--color-slate-charcoal);
@@ -905,7 +911,7 @@ body {
   transition: var(--transition-smooth);
 }
 
-.ecd-blade-col h4 {
+.ecd-blade-col .seos__h4 {
   font-size: 22px !important;
   font-weight: 900 !important;
   margin: 0 0 32px 0 !important;
@@ -917,7 +923,7 @@ body {
   border-radius: 12px 0 0 12px;
 }
 
-.blade-left-basic h4 {
+.blade-left-basic .seos__h4 {
   color: var(--color-burgundy);
 }
 
@@ -929,7 +935,7 @@ body {
   box-shadow: 0 8px 24px rgba(73, 77, 95, 0.04);
 }
 
-.blade-right-optimized h4 {
+.blade-right-optimized .seos__h4 {
   color: var(--color-pink);
 }
 
@@ -1124,7 +1130,7 @@ body {
   height: 100%;
 }
 
-.track-floating-card h3 {
+.track-floating-card .seos__h3 {
   font-size: 18px !important;
   font-weight: 800 !important;
   color: var(--color-slate-charcoal);
@@ -1177,7 +1183,7 @@ body {
   grid-row: span 2;
 }
 
-.why-bento-large h3 {
+.why-bento-large .seos__h3 {
   font-size: 26px !important;
 }
 
@@ -1209,7 +1215,7 @@ body {
   border-radius: 4px;
 }
 
-.ecd-mosaic-tile h3 {
+.ecd-mosaic-tile .seos__h3 {
   font-weight: 800;
   color: #ffffff;
   margin: 0 0 8px 0;
@@ -1260,7 +1266,7 @@ body {
   outline: none;
 }
 
-.ecd-louver-header h4 {
+.ecd-louver-header .seos__h4 {
   font-size: 18px !important;
   font-weight: 800 !important;
   color: var(--color-slate-charcoal);
@@ -1286,7 +1292,7 @@ body {
   color: var(--color-pink);
 }
 
-.ecd-louver-row-bar.active .ecd-louver-header h4 {
+.ecd-louver-row-bar.active .ecd-louver-header .seos__h4 {
   color: var(--color-pink);
 }
 
@@ -1391,7 +1397,7 @@ body {
    ========================================================================== */
 
 /* --- A. DESKTOP VIEWPORTS (Default Rules) --- */
-.ecd__hero_title {
+.seos__h1 {
   font-size: 72px !important;  
   line-height: 1.1 !important;
   font-weight: 800 !important;
@@ -1400,7 +1406,7 @@ body {
 
 /* --- B. TABLET VIEWPORTS (max-width: 1024px) --- */
 @media (max-width: 1024px) {
-  .ecd__hero_title {
+  .seos__h1 {
     font-size: 52px !important;  
     letter-spacing: -0.02em !important;
   }
@@ -1414,7 +1420,7 @@ body {
   .hero-buttons {
     justify-content: center;
   }
-  .ecd-brutalist-serif-heading {
+  .seos__h2 {
     font-size: 32px !important;
   }
   .ecd-brutalist-stats-row {
@@ -1494,7 +1500,7 @@ body {
 
 /* --- C. MOBILE VIEWPORTS (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .ecd__hero_title {
+  .seos__h1 {
     font-size: 40px !important;  
     line-height: 1.15 !important;
   }

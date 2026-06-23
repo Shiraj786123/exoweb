@@ -12,20 +12,20 @@ export default function HeroSection() {
           <span className="badge-dot">●</span>
           <span className="hero-badge-text">
             <span className="hero-badge-accent">Web &amp; Software Agency</span>
-            <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+            <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
           </span>
         </span>
         
         {/* Localized Main Typography */}
         <h1>
           Web Design & Software Development for Businesses in{" "}
-          <span className="highlight-text">Batticaloa</span>
+          <span className="highlight-text">Eastern Province</span>
         </h1>
         
         {/* Localized Description */}
         <p className="hero-desc">
           From your first website to a full custom software system — Vexoweb helps
-          businesses in Batticaloa, Kattankudy, and across Eastern Province grow online.
+          businesses in Kattankudy and across Eastern Province grow online.
         </p>
         
         {/* Core Call to Actions */}

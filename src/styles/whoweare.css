@@ -84,7 +84,8 @@
   border-radius: 999px;
 }
 
-.whoweare-main-title {
+.whoweare-main-title,
+.whoweare__h2 {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
@@ -117,7 +118,8 @@
   max-width: 780px;
 }
 
-.whoweare-tech-stack-label {
+.whoweare-tech-stack-label,
+.whoweare__h3 {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -129,7 +131,8 @@
   padding-bottom: 12px;
 }
 
-.whoweare-tech-stack-label::after {
+.whoweare-tech-stack-label::after,
+.whoweare__h3::after {
   content: '';
   position: absolute;
   bottom: 0;

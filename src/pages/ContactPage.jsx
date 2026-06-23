@@ -48,13 +48,13 @@ const ContactPage = () => {
             <span className="cp__badge_dot"></span>
             <span className="hero-badge-text">
               <span className="hero-badge-accent">Contact Vexoweb</span>
-              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+              <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
             </span>
           </div>
 
           <h1 className="cp__hero_title">
             Let&apos;s Build Something That Grows Your Business in{" "}
-            <span className="highlight-text">Batticaloa</span>
+            <span className="highlight-text">Eastern Province</span>
           </h1>
 
           {/* Muted Description Text [1] */}

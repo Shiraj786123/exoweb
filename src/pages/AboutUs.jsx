@@ -108,12 +108,12 @@ const AboutUs = () => {
             <span className="abt__badge_dot"></span>
             <span className="hero-badge-text">
               <span className="hero-badge-accent">About Vexoweb</span>
-              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+              <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
             </span>
           </div>
           <h1 className="abt__hero_title">
             Intelligent Digital Solutions for Businesses in{" "}
-            <span className="highlight-text">Batticaloa</span>
+            <span className="highlight-text">Eastern Province</span>
           </h1>
           <p className="abt__hero_description">
             Vexoweb is a technology-driven digital solutions company specializing in AI-powered 

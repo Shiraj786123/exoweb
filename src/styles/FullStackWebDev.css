@@ -39,8 +39,8 @@
    ⭐ UNIFIED RADIAL GRADIENT HEADING RULE ⭐
    Clipped radial gradient applied strictly to all light background headings [1]
 */
-.fswd__section_heading,
-.fswd__ai_heading,
+.fswd__h2,
+.fswd__h2,
 .fswd__cta_heading {
   font-size: clamp(2rem, 5vw, 2.25rem); 
   font-weight: 800;
@@ -119,7 +119,7 @@
   margin-bottom: 28px;
 }
 
-.fswd__hero_title {
+.fswd__h1 {
   color: #ffffff !important;
   font-size: clamp(2.3rem, 5.2vw, 4.2rem); 
   font-weight: 850; 
@@ -171,7 +171,7 @@
   .fswd__hero_section {
     padding-top: calc(var(--site-header-height) + var(--hero-top-gap));
   }
-  .fswd__hero_title {
+  .fswd__h1 {
     font-size: 28px !important;
     line-height: 1.3 !important;
     text-align: center !important;
@@ -204,7 +204,7 @@
   text-align: left;
 }
 
-.fswd__what_content_left .fswd__section_heading {
+.fswd__what_content_left .fswd__h2 {
   text-align: left;
   margin: 0 0 12px 0;
 }
@@ -244,7 +244,7 @@
 
 @media (max-width: 992px) {
   .fswd__what_wrapper { grid-template-columns: 1fr; gap: 32px; }
-  .fswd__what_content_left .fswd__section_heading { text-align: center; }
+  .fswd__what_content_left .fswd__h2 { text-align: center; }
   .fswd__what_content_left .fswd__section_description { text-align: center; }
 }
 
@@ -266,7 +266,7 @@
 }
 
 /* White typography for top dark background area */
-.fswd__section_heading_white {
+.fswd__split_section_split .fswd__h2 {
   font-size: clamp(2rem, 5vw, 2.25rem);
   font-weight: 800;
   letter-spacing: -1px;
@@ -355,7 +355,7 @@
   color: #dc2626; /* Brand red tag */
 }
 
-.fswd__split_title {
+.fswd__h3 {
   font-size: 22px;
   font-weight: 800;
   color: #0f172a; /* Strong contrast Slate-900 */
@@ -514,7 +514,7 @@
   text-transform: uppercase;
 }
 
-.fswd__service_name {
+.fswd__h4 {
   font-size: 18px; 
   font-weight: 800;
   color: #001b3a;
@@ -549,7 +549,7 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
 }
 
-.fswd__service_bento_card:hover .fswd__service_name {
+.fswd__service_bento_card:hover .fswd__h4 {
   color: currentColor;
 }
 
@@ -962,7 +962,7 @@
   z-index: 2;
 }
 
-.fswd__process_step_title {
+.fswd__h4 {
   font-size: 16px; 
   font-weight: 800;
   color: #001b3a;

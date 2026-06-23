@@ -127,14 +127,14 @@ video {
     max-width: 100% !important;
   }
 
-  .software-page .hero h1,
-  .software-page .hero-container h1,
+  .software-page .hero .software__h1,
+  .software-page .hero-container .software__h1,
   .abt__hero_title,
   .cp__hero_title,
-  .ecd__hero_title,
-  .fswd__hero_title,
-  .ecd__hero_title_centered,
-  .aiss__hero_title_centered {
+  .ecd__h1,
+  .fswd__h1,
+  .seos__h1,
+  .aiss__h1 {
     text-align: center !important;
     text-align-last: center !important;
     margin-left: auto !important;
@@ -170,9 +170,9 @@ video {
     white-space: normal !important;
   }
 
-  .ecd__hero_title br,
-  .ecd__hero_title_centered br,
-  .aiss__hero_title_centered br,
+  .ecd__h1 br,
+  .seos__h1 br,
+  .aiss__h1 br,
   .cp__hero_title br,
   .abt__hero_title br {
     display: none !important;
@@ -281,7 +281,7 @@ video {
     padding-top: calc(var(--site-header-height) + var(--hero-top-gap)) !important;
   }
 
-  .software-page .hero h1,
+  .software-page .hero .software__h1,
   .software-page .hero-container h1 {
     font-size: 32px !important;
     line-height: 1.25 !important;
@@ -335,8 +335,8 @@ video {
     padding: calc(var(--site-header-height) + var(--hero-top-gap) + 8px) 16px 60px 16px !important;
   }
 
-  .ecd__hero_title_centered,
-  .aiss__hero_title_centered {
+  .seos__h1,
+  .aiss__h1 {
     font-size: 32px !important;
     line-height: 1.25 !important;
     letter-spacing: -0.02em !important;
@@ -442,7 +442,7 @@ video {
     padding: calc(var(--site-header-height) + var(--hero-top-gap) + 8px) 16px 60px 16px !important;
   }
 
-  .fswd__hero_title {
+  .fswd__h1 {
     font-size: 32px !important;
     line-height: 1.25 !important;
     text-align: center !important;
@@ -469,7 +469,7 @@ video {
     padding: calc(var(--site-header-height) + var(--hero-top-gap) + 8px) 16px 60px 16px !important;
   }
 
-  .ecd__hero_title {
+  .ecd__h1 {
     font-size: 32px !important;
     line-height: 1.25 !important;
     text-align: center !important;
@@ -575,25 +575,26 @@ video {
   .abt__heading_white,
   .cp__heading,
   .cp__section_title,
-  .ecd__sec_title,
-  .ecd__heading,
-  .ecd-brutalist-serif-heading,
-  .ecd__section_heading_dark,
-  .fswd__sec_title,
-  .fswd__section_heading,
-  .fswd__section_heading_white,
-  .aiss__heading,
+  .ecd__h2,
+  .ecd__h2,
+  .seos__h2,
+  .seos__h2,
+  .fswd__h2,
+  .fswd__h2,
+  .fswd__h2,
+  .aiss__h2,
   .section-header-centered h2,
-  .section-header-row-theme h2,
-  .process-intro h2,
-  .faq-intro h2,
+  .section-header-row-theme .software__h2,
+  .process-intro .software__h2,
+  .faq-intro .software__h2,
   .solution-title,
   .home-process__title,
   .process-title,
   .reviews-heading,
   .contact-title,
   .success-title,
-  .whoweare-main-title {
+  .whoweare-main-title,
+  .whoweare__h2 {
     font-size: 24px !important;
     line-height: 1.25 !important;
   }
@@ -1056,20 +1057,20 @@ video {
 
 @media (max-width: 480px) {
   header.navbar-wrapper + section.hero .hero-container h1,
-  .software-page .hero h1,
-  .ecd__hero_title,
-  .ecd__hero_title_centered,
-  .aiss__hero_title_centered,
+  .software-page .hero .software__h1,
+  .ecd__h1,
+  .seos__h1,
+  .aiss__h1,
   .abt__hero_title,
-  .fswd__hero_title,
+  .fswd__h1,
   .cp__hero_title,
   .contactus-heading h1 {
     font-size: 28px !important;
   }
 
-  .ecd__sec_title,
-  .fswd__section_heading,
-  .aiss__heading,
+  .ecd__h2,
+  .fswd__h2,
+  .aiss__h2,
   .abt__heading,
   .cp__heading,
   .solution-title,
@@ -1107,11 +1108,11 @@ video {
    ============================================================================= */
 .abt__hero_title,
 .cp__hero_title,
-.ecd__hero_title,
-.fswd__hero_title,
-.ecd__hero_title_centered,
-.aiss__hero_title_centered,
-.software-page .hero h1,
+.ecd__h1,
+.fswd__h1,
+.seos__h1,
+.aiss__h1,
+.software-page .hero .software__h1,
 .software-page .hero-container h1 {
   color: #ffffff !important;
   -webkit-text-fill-color: initial !important;
@@ -1120,12 +1121,12 @@ video {
 
 .abt__hero_title .highlight-text,
 .cp__hero_title .highlight-text,
-.ecd__hero_title .highlight-text,
-.fswd__hero_title .highlight-text,
-.ecd__hero_title_centered .highlight-text,
-.aiss__hero_title_centered .highlight-text,
-.software-page .hero h1 .highlight-text,
-.software-page .hero-container h1 .highlight-text {
+.ecd__h1 .highlight-text,
+.fswd__h1 .highlight-text,
+.seos__h1 .highlight-text,
+.aiss__h1 .highlight-text,
+.software-page .hero .software__h1 .highlight-text,
+.software-page .hero-container .software__h1 .highlight-text {
   color: #38bdf8 !important;
   -webkit-text-fill-color: #38bdf8 !important;
   background: none !important;
@@ -1212,14 +1213,14 @@ header.navbar-wrapper + section.hero .hero-badge-light {
 /* =============================================================================
    UNIFIED HERO TYPOGRAPHY — match homepage hero
    ============================================================================= */
-.software-page .hero h1,
-.software-page .hero-container h1,
+.software-page .hero .software__h1,
+.software-page .hero-container .software__h1,
 .abt__hero_title,
 .cp__hero_title,
-.ecd__hero_title,
-.fswd__hero_title,
-.ecd__hero_title_centered,
-.aiss__hero_title_centered {
+.ecd__h1,
+.fswd__h1,
+.seos__h1,
+.aiss__h1 {
   font-family: 'Poppins', sans-serif !important;
   font-size: 56px !important;
   font-weight: 700 !important;
@@ -1351,14 +1352,14 @@ header.navbar-wrapper + section.hero .hero-badge .badge-dot,
     flex-shrink: 0 !important;
   }
 
-  .software-page .hero h1,
-  .software-page .hero-container h1,
+  .software-page .hero .software__h1,
+  .software-page .hero-container .software__h1,
   .abt__hero_title,
   .cp__hero_title,
-  .ecd__hero_title,
-  .fswd__hero_title,
-  .ecd__hero_title_centered,
-  .aiss__hero_title_centered {
+  .ecd__h1,
+  .fswd__h1,
+  .seos__h1,
+  .aiss__h1 {
     font-size: 32px !important;
     line-height: 1.2 !important;
     letter-spacing: -0.02em !important;
@@ -1401,14 +1402,14 @@ header.navbar-wrapper + section.hero .hero-badge .badge-dot,
 }
 
 @media (max-width: 480px) {
-  .software-page .hero h1,
-  .software-page .hero-container h1,
+  .software-page .hero .software__h1,
+  .software-page .hero-container .software__h1,
   .abt__hero_title,
   .cp__hero_title,
-  .ecd__hero_title,
-  .fswd__hero_title,
-  .ecd__hero_title_centered,
-  .aiss__hero_title_centered,
+  .ecd__h1,
+  .fswd__h1,
+  .seos__h1,
+  .aiss__h1,
   header.navbar-wrapper + section.hero .hero-container h1 {
     font-size: 28px !important;
   }

@@ -130,12 +130,12 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
             <span className="ecd__badge_dot"></span>
             <span className="hero-badge-text">
               <span className="hero-badge-accent">E-commerce Development</span>
-              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+              <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
             </span>
           </div>
-          <h1 className="ecd__hero_title">
+          <h1 className="ecd__h1">
             High-Performance E-commerce Development &amp; Optimization in{" "}
-            <span className="highlight-text">Batticaloa</span>
+            <span className="highlight-text">Eastern Province</span>
           </h1>
           <p className="ecd__hero_text">
             We provide e-commerce development and optimization services designed to help online stores 
@@ -162,7 +162,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__container ecd__what_wrapper">
           <div className="ecd__content">
             <span className="ecd__label">Modern E-commerce Solutions</span>
-            <h2 className="ecd__heading">
+            <h2 className="ecd__h2">
               Build Faster.<br />Convert Better.<br />Scale Smarter.
             </h2>
             <p className="ecd__description">
@@ -175,15 +175,15 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
           </div>
           <div className="ecd__floating_cards">
             <div className="ecd__glass_card card1">
-              <h3>⚡ Lightning Speed</h3>
+              <h3 className="ecd__h3">⚡ Lightning Speed</h3>
               <p>Fast-loading storefronts that improve retention.</p>
             </div>
             <div className="ecd__glass_card card2">
-              <h3>🛒 Conversion UX</h3>
+              <h3 className="ecd__h3">🛒 Conversion UX</h3>
               <p>Optimized checkout experiences that increase sales.</p>
             </div>
             <div className="ecd__glass_card card3">
-              <h3>📈 SEO Growth</h3>
+              <h3 className="ecd__h3">📈 SEO Growth</h3>
               <p>Scalable architecture designed for organic growth.</p>
             </div>
           </div>
@@ -200,7 +200,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge yellow">TARGET AUDIENCE</span>
-            <h2 className="ecd__sec_title">Who Is This Service For?</h2>
+            <h2 className="ecd__h2">Who Is This Service For?</h2>
             <p className="ecd__sec_subtitle">Designed for ecommerce brands that want more conversions, more customers, and more revenue.</p>
           </div>
           
@@ -216,7 +216,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                 <div key={idx} className={`ecd__bento_card bento_${type} bento_${color}`}>
                   <div className="ecd__bento_accent_line"></div>
                   <span className="ecd__bento_label">AUDIENCE INDEX 0{idx + 1}</span>
-                  <h3 className="ecd__bento_title">{item}</h3>
+                  <h3 className="ecd__h3">{item}</h3>
                   <p className="ecd__bento_desc">We structure dedicated design funnels to support this exact audience segment natively, boosting organic conversions.</p>
                 </div>
               );
@@ -235,7 +235,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge orange">WARNING SIGNALS</span>
-            <h2 className="ecd__sec_title">Problems We Solve for E-commerce Businesses</h2>
+            <h2 className="ecd__h2">Problems We Solve for E-commerce Businesses</h2>
             <p className="ecd__sec_subtitle">If your metrics show these symptoms, code adjustments and conversion funnels are required.</p>
           </div>
 
@@ -246,7 +246,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                   <span className="ecd__pain_icon">{problem.icon}</span>
                   <span className="ecd__pain_label">ALERT ISSUE 0{idx + 1}</span>
                 </div>
-                <h3 className="ecd__pain_title">{problem.text}</h3>
+                <h3 className="ecd__h3">{problem.text}</h3>
                 <p className="ecd__pain_desc">Unoptimized architectures and default platform structures contribute directly to drop-offs. We resolve this natively.</p>
               </div>
             ))}
@@ -263,7 +263,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge purple">SERVICES</span>
-            <h2 className="ecd__sec_title">Our E-commerce Development & Optimization Services</h2>
+            <h2 className="ecd__h2">Our E-commerce Development & Optimization Services</h2>
             <p className="ecd__sec_subtitle">We deliver end-to-end e-commerce development and optimization solutions, including:</p>
           </div>
 
@@ -277,7 +277,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                     <>
                       <div className="ecd__timeline_content">
                         <span className="ecd__timeline_num">{String(idx + 1).padStart(2, '0')}</span>
-                        <h3>{service}</h3>
+                        <h3 className="ecd__h3">{service}</h3>
                         <p>Our engineering team designs custom structural layouts to optimize performance, increase stability, and maximize e-commerce checkout flow natively.</p>
                       </div>
                       <div className="ecd__timeline_node">◉</div>
@@ -289,7 +289,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                       <div className="ecd__timeline_node">◉</div>
                       <div className="ecd__timeline_content">
                         <span className="ecd__timeline_num">{String(idx + 1).padStart(2, '0')}</span>
-                        <h3>{service}</h3>
+                        <h3 className="ecd__h3">{service}</h3>
                         <p>We implement automated workflows, custom asset rendering systems, and schema tags configured strictly for performance and conversion scaling.</p>
                       </div>
                     </>
@@ -311,7 +311,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge cyan">ARCHITECTURE</span>
-            <h2 className="ecd__sec_title">E-commerce System Architecture</h2>
+            <h2 className="ecd__h2">E-commerce System Architecture</h2>
             <p className="ecd__sec_subtitle">We deploy custom-tailored environments configured for high-performance scale.</p>
           </div>
 
@@ -329,7 +329,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                 <div className="ecd__arch_node node_muted">
                   <div className="node_icon_wrapper">👥</div>
                   <div className="node_text_content">
-                    <h5>Community</h5>
+                    <h5 className="ecd__h5">Community</h5>
                     <p>Results, curation & feedback loop</p>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                 <div className="ecd__arch_node node_muted">
                   <div className="node_icon_wrapper">👤</div>
                   <div className="node_text_content">
-                    <h5>Management</h5>
+                    <h5 className="ecd__h5">Management</h5>
                     <p>Performance insights & metrics</p>
                   </div>
                 </div>
@@ -349,14 +349,14 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                     <span className="badge_icon">⚙️</span>
                     <span>HPC / SPEED ENGINE</span>
                   </div>
-                  <h5>{platforms[0]}</h5>
+                  <h5 className="ecd__h5">{platforms[0]}</h5>
                 </div>
 
                 {/* Computational Scientists (Left-Bottom Actor) */}
                 <div className="ecd__arch_actor actor_green">
                   <span className="actor_avatar">🟢</span>
                   <div className="actor_text">
-                    <h5>Computational Scientists</h5>
+                    <h5 className="ecd__h5">Computational Scientists</h5>
                   </div>
                 </div>
               </div>
@@ -366,20 +366,20 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                 {/* Database Node */}
                 <div className="ecd__arch_node node_db theme_purple">
                   <span className="db_cylinder">🛢️</span>
-                  <h5>E-commerce Database</h5>
+                  <h5 className="ecd__h5">E-commerce Database</h5>
                 </div>
 
                 {/* Applications Laptop Node */}
                 <div className="ecd__arch_node node_laptop theme_orange">
                   <span className="laptop_screen">💻</span>
-                  <h5>Applications Core</h5>
+                  <h5 className="ecd__h5">Applications Core</h5>
                 </div>
 
                 {/* Central Software Developers Actor */}
                 <div className="ecd__arch_actor actor_orange">
                   <span className="actor_avatar">🟠</span>
                   <div className="actor_text">
-                    <h5>Software Developers</h5>
+                    <h5 className="ecd__h5">Software Developers</h5>
                     <p>Experimental validation & modeling</p>
                   </div>
                 </div>
@@ -393,7 +393,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                     <span className="badge_icon">⚙️</span>
                     <span>DATA PLATFORM</span>
                   </div>
-                  <h5>{platforms[2]}</h5>
+                  <h5 className="ecd__h5">{platforms[2]}</h5>
                 </div>
 
                 {/* Laboratory / Flexible CMS-Based Node */}
@@ -402,7 +402,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                     <span className="badge_icon">⚙️</span>
                     <span>LABORATORY</span>
                   </div>
-                  <h5>{platforms[1]}</h5>
+                  <h5 className="ecd__h5">{platforms[1]}</h5>
                   <p className="node_mini_desc">{platforms[3]}</p>
                 </div>
 
@@ -410,7 +410,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                 <div className="ecd__arch_actor actor_blue">
                   <span className="actor_avatar">🔵</span>
                   <div className="actor_text">
-                    <h5>Experimental Scientists</h5>
+                    <h5 className="ecd__h5">Experimental Scientists</h5>
                   </div>
                 </div>
               </div>
@@ -430,7 +430,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge green">TRANSFORMATION</span>
-            <h2 className="ecd__sec_title">E-commerce Optimization vs Basic Setup</h2>
+            <h2 className="ecd__h2">E-commerce Optimization vs Basic Setup</h2>
             <p className="ecd__sec_subtitle">See how custom code adjustments and semantic layouts directly translate into checkout revenue.</p>
           </div>
 
@@ -477,7 +477,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge purple">PROCESS SYSTEM</span>
-            <h2 className="ecd__sec_title">Our E-commerce Development Process</h2>
+            <h2 className="ecd__h2">Our E-commerce Development Process</h2>
             <p className="ecd__sec_subtitle">A transparent, data-backed step methodology from audit diagnostics to live launch.</p>
           </div>
 
@@ -534,7 +534,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
 
                   {/* Text Labels */}
                   <span className="ecd__process_label">STEP 0{idx + 1}</span>
-                  <h4 className="ecd__process_step_title">{step.title}</h4>
+                  <h4 className="ecd__h4">{step.title}</h4>
                   <p className="ecd__process_step_desc">{step.description}</p>
                 </div>
               );
@@ -553,7 +553,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
     <div className="ecd__split_left">
       <div className="ecd__header_content">
         <span className="ecd__sec_badge cyan">WHY WORK WITH US</span>
-        <h2 className="ecd__sec_title">Why Choose Vexoweb for E-commerce Development?</h2>
+        <h2 className="ecd__h2">Why Choose Vexoweb for E-commerce Development?</h2>
         <p className="ecd__sec_subtitle">We reject basic templates. We focus entirely on checkout conversion, custom code stability, and system speed.</p>
         <div className="ecd__why_statement_big">
           We don't just build online stores — we build e-commerce engines.
@@ -590,7 +590,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge blue">FAQ</span>
-            <h2 className="ecd__sec_title">Frequently Asked Questions</h2>
+            <h2 className="ecd__h2">Frequently Asked Questions</h2>
             <p className="ecd__sec_subtitle">Everything you need to know about our e-commerce audit, design, and performance optimizations.</p>
           </div>
 
@@ -602,7 +602,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
                 onClick={() => toggleFaq(idx)}
               >
                 <div className="ecd__faq_trigger">
-                  <h4>{faq.question}</h4>
+                  <h4 className="ecd__h4">{faq.question}</h4>
                   <span className="ecd__faq_icon_status">{activeFaq === idx ? '−' : '+'}</span>
                 </div>
                 <div className="ecd__faq_panel">

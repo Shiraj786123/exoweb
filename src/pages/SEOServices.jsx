@@ -240,18 +240,18 @@ const SEOServices = () => {
             <span className="badge_dot_indicator">●</span>
             <span className="hero-badge-text">
               <span className="hero-badge-accent">Local SEO Services</span>
-              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+              <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
             </span>
           </div>
 
-          <h1 className="ecd__hero_title_centered">
+          <h1 className="seos__h1">
             SEO Services for Businesses in{" "}
-            <span className="highlight-text">Batticaloa</span>
+            <span className="highlight-text">Eastern Province</span>
           </h1>
 
           {/* Localized Subtitle */}
           <p className="ecd__hero_text_centered">
-            We help businesses in Batticaloa, Kattankudy, and Eastern Province rank higher on Google — 
+            We help businesses in Kattankudy and across Eastern Province rank higher on Google — 
             so local customers find you first, not your competitors. Our data-driven approach 
             turns search visibility into consistent local leads.
           </p>
@@ -281,7 +281,7 @@ const SEOServices = () => {
         </div>
         <div className="ecd-brutalist-content">
           <span className="fswd__label" style={{ color: "var(--color-burgundy)" }}>Audits</span>
-          <h2 className="ecd-brutalist-serif-heading">What Are SEO Services?</h2>
+          <h2 className="seos__h2">What Are SEO Services?</h2>
           <p className="ecd-brutalist-lead-desc">
             SEO services optimize your codebase and database schema structures so your site ranks higher in organic search pipelines. Unlike temporary PPC models, our indexing setups build sustainable visibility that compounds over time.
           </p>
@@ -302,14 +302,14 @@ const SEOServices = () => {
         <div className="ecd-stepped-audience-layout">
           <div className="ecd-stepped-intro">
             <span className="fswd__label" style={{ color: "var(--color-pink)" }}>Target Profiles</span>
-            <h2 className="ecd__section_heading_dark">Who Is This Service For?</h2>
+            <h2 className="seos__h2">Who Is This Service For?</h2>
             
             <div className="ecd-audience-stairs">
               {staircaseAudience.map((audience, index) => (
                 <div key={index} className="staircase-step" style={{ "--step-index": index, "--step-accent": audience.color }}>
                   <div className="staircase-num">{audience.number}</div>
                   <div className="staircase-text">
-                    <h4>{audience.title}</h4>
+                    <h4 className="seos__h4">{audience.title}</h4>
                     <p>{audience.text}</p>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ const SEOServices = () => {
         <div className="ecd-isometric-problems-layout">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-pink)" }}>Crawl Friction Points</span>
-            <h2 className="fswd__section_heading">Problems We Solve</h2>
+            <h2 className="seos__h2">Problems We Solve</h2>
           </div>
           
           <div className="ecd-isometric-deck">
@@ -350,7 +350,7 @@ const SEOServices = () => {
                   </span>
                   <div className="ecd__isometric_icon">{problem.icon}</div>
                 </div>
-                <h3>{problem.title}</h3>
+                <h3 className="seos__h3">{problem.title}</h3>
                 <p>{problem.text}</p>
               </div>
             ))}
@@ -367,7 +367,7 @@ const SEOServices = () => {
         <div className="bento-comic-strip-container">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-warm-yellow)" }}>Capabilities Bento</span>
-            <h2 className="ecd__section_heading_dark">Our SEO Services</h2>
+            <h2 className="seos__h2">Our SEO Services</h2>
           </div>
 
           <div className="bento-comic-grid">
@@ -377,7 +377,7 @@ const SEOServices = () => {
                   <div className="card-icon-frame" style={{ color: service.accent }}>{service.icon}</div>
                   <span className="service-badge-tag">{service.category}</span>
                 </div>
-                <h3>{service.title}</h3>
+                <h3 className="seos__h3">{service.title}</h3>
                 <p>{service.desc}</p>
                 <div className="bento-oversized-index">{service.num}</div>
               </div>
@@ -391,7 +391,7 @@ const SEOServices = () => {
         <div className="ecd-platforms-strip-container">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-rose)" }}>Integrations</span>
-            <h2 className="ecd__section_heading_dark">Tools & Platforms We Use</h2>
+            <h2 className="seos__h2">Tools & Platforms We Use</h2>
           </div>
 
           <div className="ecd-pipeline-strip-flow">
@@ -404,7 +404,7 @@ const SEOServices = () => {
                     <span className="pipeline-dot-inner"></span>
                   </div>
                   <span className="pipeline-tag" style={{ backgroundColor: plat.color }}>{plat.tag}</span>
-                  <h4>{plat.title}</h4>
+                  <h4 className="seos__h4">{plat.title}</h4>
                   <p>{plat.desc}</p>
                 </div>
               ))}
@@ -418,13 +418,13 @@ const SEOServices = () => {
         <div className="ecd-split-blade-matrix">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-pink)" }}>Comparative Reality</span>
-            <h2 className="ecd__section_heading_dark">SEO vs AI Search Optimization (Important Difference)</h2>
+            <h2 className="seos__h2">SEO vs AI Search Optimization (Important Difference)</h2>
           </div>
 
           <div className="ecd-split-blade-table">
             {/* Left Side: Traditional SEO */}
             <div className="ecd-blade-col blade-left-basic">
-              <h4>Traditional SEO</h4>
+              <h4 className="seos__h4">Traditional SEO</h4>
               {comparison.map((item, index) => (
                 <div key={index} className="ecd-blade-row">
                   <span className="blade-icon-cross">✕</span>
@@ -440,7 +440,7 @@ const SEOServices = () => {
 
             {/* Right Side: AI Search Optimization */}
             <div className="ecd-blade-col blade-right-optimized">
-              <h4>AI Search Optimization</h4>
+              <h4 className="seos__h4">AI Search Optimization</h4>
               {comparison.map((item, index) => (
                 <div key={index} className="ecd-blade-row">
                   <span className="blade-icon-check">✓</span>
@@ -460,7 +460,7 @@ const SEOServices = () => {
         <div className="ecd-alternating-track-container">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-burgundy)" }}>Process Pipeline</span>
-            <h2 className="ecd__section_heading_dark">Our SEO Process</h2>
+            <h2 className="seos__h2">Our SEO Process</h2>
           </div>
 
           <div className="ecd-alternating-timeline">
@@ -481,7 +481,7 @@ const SEOServices = () => {
                       <span className="track-card-index" style={{ backgroundColor: step.color }}>{step.number}</span>
                       <div className="track-card-icon">{step.icon}</div>
                     </div>
-                    <h3>{step.title}</h3>
+                    <h3 className="seos__h3">{step.title}</h3>
                     <p>{step.description}</p>
                   </div>
                 </div>
@@ -496,7 +496,7 @@ const SEOServices = () => {
         <div className="ecd-modern-mosaic-layout">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-orange-coral)" }}>System Value</span>
-            <h2 className="ecd__section_heading_dark">Why Choose Vexoweb for SEO?</h2>
+            <h2 className="seos__h2">Why Choose Vexoweb for SEO?</h2>
           </div>
 
           <div className="ecd-mosaic-grid">
@@ -507,7 +507,7 @@ const SEOServices = () => {
                     0{index + 1}
                   </span>
                 </div>
-                <h3>{mosaic.title}</h3>
+                <h3 className="seos__h3">{mosaic.title}</h3>
                 <p>{mosaic.desc}</p>
               </div>
             ))}
@@ -520,7 +520,7 @@ const SEOServices = () => {
         <div className="ecd-louvers-container">
           <div className="section-header-centered">
             <span className="fswd__label" style={{ color: "var(--color-warm-yellow)" }}>Knowledge Base</span>
-            <h2 className="ecd__section_heading_dark">Frequently Asked Questions</h2>
+            <h2 className="seos__h2">Frequently Asked Questions</h2>
           </div>
 
           <div className="ecd-louvers-list">
@@ -529,7 +529,7 @@ const SEOServices = () => {
               return (
                 <div key={index} className={`ecd-louver-row-bar ${isOpen ? 'active' : ''}`}>
                   <button className="ecd-louver-header" onClick={() => setFaqOpenIndex(isOpen ? null : index)}>
-                    <h4>{faq.question}</h4>
+                    <h4 className="seos__h4">{faq.question}</h4>
                     <div className="ecd-louver-toggle-icon">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="12" y1="5" x2="12" y2="19"></line>

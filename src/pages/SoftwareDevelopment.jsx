@@ -170,16 +170,16 @@ const SoftwareDevelopment = () => {
               <span className="badge-dot">●</span>
               <span className="hero-badge-text">
                 <span className="hero-badge-accent">Custom Software Development</span>
-                <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+                <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
               </span>
             </span>
-            <h1>
+            <h1 className="software__h1">
               Custom Software Development for{" "}
-              <span className="highlight-text">Batticaloa</span> Businesses
+              <span className="highlight-text">Eastern Province</span> Businesses
             </h1>
             <p className="hero-desc">
               Business POS, billing apps, inventory tools — we build software that solves
-              real problems for businesses in Batticaloa and across Eastern Province.
+              real problems for businesses across Eastern Province.
             </p>
             <div className="hero-buttons">
               <button className="primary-btn">Get Free Consultation</button>
@@ -195,7 +195,7 @@ const SoftwareDevelopment = () => {
         <section className="services-section-row-theme">
           <div className="section-header-row-theme">
             <span className="section-label-row-theme">Capabilities</span>
-            <h2>Premium Engineering Architectures</h2>
+            <h2 className="software__h2">Premium Engineering Architectures</h2>
           </div>
           
           <div className="services-timeline-container">
@@ -223,7 +223,7 @@ const SoftwareDevelopment = () => {
                           {section.tag}
                         </span>
                       </div>
-                      <h2>{section.title}</h2>
+                      <h2 className="software__h3">{section.title}</h2>
                       <p className="card-desc">{section.desc}</p>
                       
                       <ul className="card-list">
@@ -270,7 +270,7 @@ const SoftwareDevelopment = () => {
           <div className="process-container">
             <div className="process-intro">
               <span className="section-label">Methodology</span>
-              <h2>A Classic, High-Fidelity Development Process</h2>
+              <h2 className="software__h2">A Classic, High-Fidelity Development Process</h2>
               <p>
                 We execute system engineering with complete predictability. By removing overhead spacing and aligning timelines, each sprint directly translates to business metrics.
               </p>
@@ -354,7 +354,7 @@ const SoftwareDevelopment = () => {
                       </div>
                     </div>
                     <div className="step-text-block">
-                      <h3>{step.title}</h3>
+                      <h3 className="software__h4">{step.title}</h3>
                       <p>{step.desc}</p>
                     </div>
                   </div>
@@ -368,7 +368,7 @@ const SoftwareDevelopment = () => {
         <section className="faq-section">
           <div className="faq-intro">
             <span className="section-label">Common Queries</span>
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="software__h2">Frequently Asked Questions</h2>
           </div>
 
           <div className="faq-container">
@@ -377,7 +377,7 @@ const SoftwareDevelopment = () => {
               return (
                 <div key={index} className={`faq-bar ${isOpen ? 'active' : ''}`}>
                   <button className="faq-header" onClick={() => toggleAccordion(index)}>
-                    <h3>{faq.question}</h3>
+                    <h3 className="software__h3">{faq.question}</h3>
                     <div className="faq-icon-wrapper">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="12" y1="5" x2="12" y2="19"></line>

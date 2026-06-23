@@ -51,13 +51,13 @@ const AISoftwareServices = () => {
       <span className="badge_dot_indicator">●</span>
       <span className="hero-badge-text">
         <span className="hero-badge-accent">AI Software Development</span>
-        <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+        <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
       </span>
     </div>
 
-    <h1 className="aiss__hero_title_centered">
+    <h1 className="aiss__h1">
       AI-Powered Software Development for{" "}
-      <span className="highlight-text">Batticaloa</span> Businesses
+      <span className="highlight-text">Eastern Province</span> Businesses
     </h1>
 
     {/* Centered Subtitle Description */}
@@ -87,7 +87,7 @@ const AISoftwareServices = () => {
     {/* Left Side Column - Detailed Core Messaging */}
     <div className="text-column">
       <span className="aiss__label">What Is AI Software</span>
-      <h2 className="aiss__heading">
+      <h2 className="aiss__h2">
         Smarter Automation, <br />
         <span className="text_gradient_tech">Built for Enterprise Scale</span>
       </h2>
@@ -158,7 +158,7 @@ const AISoftwareServices = () => {
     {/* Left Column: Heading and Subtitle */}
     <div className="text-column">
       <span className="aiss__label">Who Needs AI Software</span>
-      <h2 className="aiss__heading">
+      <h2 className="aiss__h2">
         Does Your Business Suffer From Friction?
       </h2>
       <p className="aiss__description_sub">
@@ -282,7 +282,7 @@ const AISoftwareServices = () => {
           <div key={index} className="cognitive-card">
             <div className="card-badge">{service.type}</div>
             <div className="card-info">
-              <h4>{service.title}</h4>
+              <h4 className="aiss__h4">{service.title}</h4>
               <p>{service.desc}</p>
             </div>
           </div>

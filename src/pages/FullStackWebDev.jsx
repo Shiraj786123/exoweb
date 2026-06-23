@@ -195,16 +195,16 @@ const FullStackWebDev = () => {
       <span className="badge-dot">●</span>
       <span className="hero-badge-text">
         <span className="hero-badge-accent">Website Development</span>
-        <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+        <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
       </span>
     </div>
-    <h1 className="fswd__hero_title">
+    <h1 className="fswd__h1">
       Professional Website Design &amp; Development in{" "}
-      <span className="highlight-text">Batticaloa</span>
+      <span className="highlight-text">Eastern Province</span>
     </h1>
     <p className="fswd__hero_description">
       We build fast, mobile-friendly websites for shops, clinics, schools, and businesses 
-      across Batticaloa, Kattankudy, and the Eastern Province — at prices that make 
+      across Kattankudy and Eastern Province — at prices that make 
       sense locally.
     </p>
     <a href="#contact" className="fswd__cta_primary">
@@ -219,7 +219,7 @@ const FullStackWebDev = () => {
         <div className="fswd__container fswd__what_wrapper">
           <div className="fswd__what_content_left">
             <span className="fswd__sec_badge yellow">DEFINED</span>
-            <h2 className="fswd__section_heading">What Is Full-Stack Web Development?</h2>
+            <h2 className="fswd__h2">What Is Full-Stack Web Development?</h2>
             <p className="fswd__section_description">
               Full-stack web development involves building both the frontend and backend of a website 
               or web application. It ensures seamless communication between user interfaces, servers, 
@@ -242,7 +242,7 @@ const FullStackWebDev = () => {
           <div className="fswd__container">
             
             <span className="fswd__sec_badge yellow">DIAGNOSTIC</span>
-            <h2 className="fswd__section_heading_white">Target Alignment & Problem Solving</h2>
+            <h2 className="fswd__h2">Target Alignment & Problem Solving</h2>
             <p className="fswd__section_description_white">
               We identify system bottlenecks and align frontend capabilities with high-performance backend pipelines.
             </p>
@@ -251,7 +251,7 @@ const FullStackWebDev = () => {
               {/* Left Card: Who Needs It (Overlapping split line [1]) */}
               <div className="fswd__split_card_split split_blue">
                 <span className="fswd__split_tag">TARGET AUDIENCE</span>
-                <h3 className="fswd__split_title">Who Needs Full-Stack Web Development?</h3>
+                <h3 className="fswd__h3">Who Needs Full-Stack Web Development?</h3>
                 <p className="fswd__split_intro">This service is ideal for:</p>
                 <ul className="fswd__check_list">
                   {whoNeeds.map((item, index) => (
@@ -269,7 +269,7 @@ const FullStackWebDev = () => {
               {/* Right Card: Problems We Solve (Overlapping split line [1]) */}
               <div className="fswd__split_card_split split_red">
                 <span className="fswd__split_tag">WARNING SIGNALS</span>
-                <h3 className="fswd__split_title">Problems We Solve</h3>
+                <h3 className="fswd__h3">Problems We Solve</h3>
                 <ul className="fswd__problem_list">
                   {problems.map((item, index) => (
                     <li key={index}>
@@ -290,7 +290,7 @@ const FullStackWebDev = () => {
       <section className="fswd__services_section">
         <div className="fswd__container">
           <span className="fswd__sec_badge purple">CAPABILITIES</span>
-          <h2 className="fswd__section_heading">Our Full-Stack Web Development Services</h2>
+          <h2 className="fswd__h2">Our Full-Stack Web Development Services</h2>
           <p className="fswd__section_description">
             We deliver complete end-to-end full-stack web development, including:
           </p>
@@ -312,7 +312,7 @@ const FullStackWebDev = () => {
                     </div>
                     <span className="fswd__service_bento_index">SERVICE 0{index + 1}</span>
                   </div>
-                  <h4 className="fswd__service_name">{service.title}</h4>
+                  <h4 className="fswd__h4">{service.title}</h4>
                 </div>
               );
             })}
@@ -327,7 +327,7 @@ const FullStackWebDev = () => {
       <section className="fswd__tech_section">
         <div className="fswd__container">
           <span className="fswd__sec_badge cyan">Ecosystem</span>
-          <h2 className="fswd__section_heading">Our Technology Stack</h2>
+          <h2 className="fswd__h2">Our Technology Stack</h2>
           <p className="fswd__section_description">
             We work with modern, proven technologies including:
           </p>
@@ -388,7 +388,7 @@ const FullStackWebDev = () => {
       <section className="fswd__process_section">
         <div className="fswd__container">
           <span className="fswd__sec_badge purple">PROCESS</span>
-          <h2 className="fswd__section_heading">Our Full-Stack Development Process</h2>
+          <h2 className="fswd__h2">Our Full-Stack Development Process</h2>
           <p className="fswd__section_description">A transparent, data-backed step methodology from audit diagnostics to live launch.</p>
           
           <div className="fswd__process_workflow">
@@ -433,7 +433,7 @@ const FullStackWebDev = () => {
                   </div>
 
                   <span className="fswd__process_label">STEP {step.number}</span>
-                  <h4 className="fswd__process_step_title">{step.title}</h4>
+                  <h4 className="fswd__h4">{step.title}</h4>
                   <p className="fswd__process_step_desc">{step.description}</p>
                 </div>
               );
@@ -446,7 +446,7 @@ const FullStackWebDev = () => {
       <section className="fswd__why_section">
         <div className="fswd__container">
           <span className="fswd__sec_badge cyan">DIFFERENTIATORS</span>
-          <h2 className="fswd__section_heading">
+          <h2 className="fswd__h2">
             Why Choose Vexoweb for Full-Stack Web Development?
           </h2>
           <p className="fswd__section_description">We focus strictly on clear outcomes, clean code bases, and performance scalability.</p>
@@ -480,7 +480,7 @@ const FullStackWebDev = () => {
       <section className="fswd__faq_section">
         <div className="fswd__container">
           <span className="fswd__sec_badge blue">FAQ</span>
-          <h2 className="fswd__section_heading">Frequently Asked Questions</h2>
+          <h2 className="fswd__h2">Frequently Asked Questions</h2>
           <p className="fswd__section_description">Everything you need to know about our custom full-stack web development services.</p>
 
           <div className="fswd__faq_accordion_container">

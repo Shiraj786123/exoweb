@@ -26,7 +26,7 @@ const TechnologyStackSection = ({
           {tag ? <span className="whoweare__tag">{tag}</span> : null}
 
           {title ? (
-            <h2 id={`${id}-title`} className="whoweare-main-title">
+            <h2 id={`${id}-title`} className="whoweare__h2">
               {title}
               {titleAccent ? (
                 <span className="highlight-text-gradient">{titleAccent}</span>
@@ -38,7 +38,7 @@ const TechnologyStackSection = ({
             <p className="whoweare-sub-description">{description}</p>
           ) : null}
 
-          <h3 className="whoweare-tech-stack-label">{stackLabel}</h3>
+          <h3 className="whoweare__h3">{stackLabel}</h3>
         </header>
 
         <TechnologyStackMarquee />

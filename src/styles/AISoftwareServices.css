@@ -100,7 +100,7 @@ body {
 }
 
 /* Title (Centered, heavy, large scale typography) */
-.aiss__hero_title_centered {
+.aiss__h1 {
   font-size: clamp(2.25rem, 5.5vw, 4rem); 
   font-weight: 800;
   line-height: 1.15;
@@ -184,7 +184,7 @@ body {
     padding: calc(var(--site-header-height) + var(--hero-top-gap)) 20px 80px 20px !important;
   }
 
-  .aiss__hero_title_centered {
+  .aiss__h1 {
     letter-spacing: -0.02em !important;
     text-align: center !important;
     word-spacing: normal !important;
@@ -277,7 +277,7 @@ body {
   margin-bottom: 12px;
 }
 
-.aiss__heading {
+.aiss__h2 {
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   color: #ffffff;
@@ -973,7 +973,7 @@ body {
 }
 
 /* Typography contrast overrides */
-.light-yellow-container .cognitive-card h4 {
+.light-yellow-container .cognitive-card .aiss__h4 {
   font-size: 15px;
   color: #0f172a; /* Slate 900 */
   font-weight: 800;
@@ -1272,7 +1272,7 @@ body {
   font-size: 56px;                  /* Hero Title (H1) Desktop Range: 48px - 72px */
 }
 .section-header h2,
-.aiss__heading,
+.aiss__h2,
 .cta-left h2 {
   font-size: 38px;                  /* Main Heading (H2) Desktop Range: 36px - 48px */
 }
@@ -1324,7 +1324,7 @@ body {
     font-size: 44px;                /* Hero Title (H1) Tablet Range: 40px - 56px */
   }
   .section-header h2,
-  .aiss__heading,
+  .aiss__h2,
   .cta-left h2 {
     font-size: 32px;                /* Main Heading (H2) Tablet Range: 30px - 40px */
   }
@@ -1390,7 +1390,7 @@ body {
     font-size: 34px;                /* Hero Title (H1) Mobile Range: 32px - 42px */
   }
   .section-header h2,
-  .aiss__heading,
+  .aiss__h2,
   .cta-left h2 {
     font-size: 28px;                /* Main Heading (H2) Mobile Range: 26px - 34px */
   }
