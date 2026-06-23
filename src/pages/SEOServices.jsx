@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
+import HeroTrustText from '../components/HeroTrustText';
+import TechnologyStackSection from '../components/TechnologyStackSection';
+import { SERVICE_CONTACT } from '../content/serviceContactContent';
+import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const SEOServices = () => {
   const [faqOpenIndex, setFaqOpenIndex] = useState(null);
@@ -230,28 +236,17 @@ const SEOServices = () => {
         <div className="ecd__hero_container_centered">
           
           {/* Local SEO Eyebrow */}
-          <div 
-            className="ecd__badge_pill_centered"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginTop: "10px",
-              marginBottom: "16px",
-              maxWidth: "95%",
-              boxSizing: "border-box"
-            }}
-          >
-            <span className="badge_dot_indicator" style={{ marginRight: "6px" }}>●</span>
-            {/* Responsive text spans keep the pill sized clean on mobile and desktop */}
-            <span className="badge-text-desktop">Local SEO Services — Batticaloa, Sri Lanka</span>
-            <span className="badge-text-mobile">Local SEO Services — Batticaloa</span>
+          <div className="ecd__badge_pill_centered">
+            <span className="badge_dot_indicator">●</span>
+            <span className="hero-badge-text">
+              <span className="hero-badge-accent">Local SEO Services</span>
+              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+            </span>
           </div>
 
-          {/* Localized H1 */}
           <h1 className="ecd__hero_title_centered">
-            SEO Services for <br />
-            <span className="highlight_sky_blue">Batticaloa & Eastern Province Businesses</span>
+            SEO Services for Businesses in{" "}
+            <span className="highlight-text">Batticaloa</span>
           </h1>
 
           {/* Localized Subtitle */}
@@ -271,9 +266,7 @@ const SEOServices = () => {
             </a>
           </div>
 
-          <p className="ecd__hero_trust_text_centered">
-            HELPING EASTERN PROVINCE BUSINESSES DOMINATE LOCAL SEARCH
-          </p>
+          <HeroTrustText text={HERO_TRUST_TEXT.seo} />
 
         </div>
       </section>
@@ -556,25 +549,9 @@ const SEOServices = () => {
         </div>
       </section>
 
-      {/* 11. FINAL CTA: THE IMMERSIVE RADIAL BLACK HOLE */}
-      <section className="fswd__section_wrapper ecd-bg-white">
-        <div className="ecd-radial-black-hole-container">
-          <div className="ecd-black-hole-glowing-core"></div>
-          <div className="ecd-black-hole-content">
-            <span className="ecd-black-hole-badge" style={{ color: "var(--color-warm-yellow)" }}>SEO AUDIT</span>
-            <h2>Ready to Grow with SEO?</h2>
-            <p>
-              If you want consistent traffic and leads from search engines, let's start with a clear 
-              SEO strategy.
-            </p>
-            <div className="hero-buttons">
-              <a href="#contact" className="capsule-primary-btn ecd-glowing-cta-btn">
-                Get a Free SEO Audit
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TechnologyStackSection {...SERVICE_TECH_STACK.seo} />
+
+      <ContactSection {...SERVICE_CONTACT.seo} variant="service" />
 
       <Footer />
     </div>

@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
+import HeroTrustText from '../components/HeroTrustText';
+import TechnologyStackSection from '../components/TechnologyStackSection';
+import { SERVICE_CONTACT } from '../content/serviceContactContent';
+import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import aiRobotImage from '../assets/icons/ecd-ai-robot.png';
 
 // Global CSS import removed from here since it is loaded in pages/_app.js [1]
 
@@ -121,12 +128,14 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__hero_container">
           <div className="ecd__hero_badge">
             <span className="ecd__badge_dot"></span>
-            E-commerce Development & Optimization
+            <span className="hero-badge-text">
+              <span className="hero-badge-accent">E-commerce Development</span>
+              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+            </span>
           </div>
           <h1 className="ecd__hero_title">
-            <span className="ecd__nowrap">High&#8209;Performance E&#8209;commerce</span> <br className="ecd__br_desktop" />
-            <span className="ecd__nowrap">Development & Optimization</span> <br className="ecd__br_desktop" />
-            <span className="highlight">That Increases Sales</span>
+            High-Performance E-commerce Development &amp; Optimization in{" "}
+            <span className="highlight-text">Batticaloa</span>
           </h1>
           <p className="ecd__hero_text">
             We provide e-commerce development and optimization services designed to help online stores 
@@ -142,6 +151,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
               View Portfolio <span className="arrow">→</span>
             </a>
           </div>
+          <HeroTrustText text={HERO_TRUST_TEXT.ecommerce} />
         </div>
       </section>
 
@@ -548,6 +558,13 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
         <div className="ecd__why_statement_big">
           We don't just build online stores — we build e-commerce engines.
         </div>
+        <div className="ecd__why_robot_wrap">
+          <img
+            src={aiRobotImage}
+            alt="AI-powered e-commerce automation"
+            className="ecd__why_robot_img"
+          />
+        </div>
       </div>
     </div>
 
@@ -598,19 +615,9 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
       </section>
 
 
-      {/* 🔟 FINAL CTA SECTION: Conversion Gradient Banner */}
-      <section className="ecd__final_cta_section">
-        <div className="ecd__page_container">
-          <div className="ecd__cta_banner">
-            <div className="ecd__cta_banner_glow"></div>
-            <h2>Ready to Grow Your E-commerce Revenue?</h2>
-            <p>If your online store needs better performance, higher conversions, or scalable development, let's talk.</p>
-            <a href="#contact" className="ecd__final_cta_btn">
-              GET A FREE GROWTH AUDIT <span className="arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <TechnologyStackSection {...SERVICE_TECH_STACK.ecommerce} />
+
+      <ContactSection {...SERVICE_CONTACT.ecommerce} variant="service" />
 
       <Footer />
     </div>

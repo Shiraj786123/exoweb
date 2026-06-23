@@ -2,8 +2,8 @@ import { createStaticPage } from '../src/lib/createStaticPage';
 import HomePage from '../src/pages/HomePage';
 
 export default createStaticPage(HomePage, {
-  title: 'AI Web Development, Full-Stack and SEO Experts',
+  title: 'Web Design & Software Development in Batticaloa | Vexoweb',
   description:
-    'ZonzocTech builds AI-powered websites, full-stack applications, SEO strategies, and automation systems that drive traffic, leads, and revenue.',
+    "Vexoweb is Batticaloa's trusted web design & software development agency. We build websites, apps & deliver SEO for businesses in Batticaloa, Kattankudy & Eastern Province.",
   path: '/',
 });

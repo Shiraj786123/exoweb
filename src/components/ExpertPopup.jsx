@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 
+const CONTACT_EMAIL = "info@zonzoctech.com";
+const WHATSAPP_URL =
+  "https://wa.me/94740309534?text=Hi%20Vexoweb%20Team,%20I%20would%20like%20to%20discuss%20a%20project.";
+const BUDGET_MIN = 500;
+const BUDGET_MAX = 65000;
+const BUDGET_STEP = 500;
+
 const ExpertPopup = ({ open, onClose, preSelectedService }) => {
-  const [budget, setBudget] = useState(5000);
+  const [budget, setBudget] = useState(BUDGET_MIN);
   const [selectedService, setSelectedService] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
@@ -63,7 +70,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
           project: ""
         });
         setSelectedService("");
-        setBudget(5000);
+        setBudget(BUDGET_MIN);
           // ✅ ADD HERE
         setTimeout(() => {
         onClose();
@@ -81,8 +88,9 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
 
   if (!open) return null;
 
-  const percentage = ((budget - 5000) / (65000 - 5000)) * 100;
-  const sliderBackground = `linear-gradient(to right, #000 0%, #000 ${percentage}%, #ddd ${percentage}%, #ddd 100%)`;
+  const percentage =
+    ((Number(budget) - BUDGET_MIN) / (BUDGET_MAX - BUDGET_MIN)) * 100;
+  const sliderBackground = `linear-gradient(to right, #00448f 0%, #00448f ${percentage}%, #e2e8f0 ${percentage}%, #e2e8f0 100%)`;
 
   return (
     <div className="popup-overlay" onClick={onClose}>
@@ -90,12 +98,17 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
         <button className="popup-close" onClick={onClose}>×</button>
 
         <div className="popup-left">
+          <div className="popup-left-glow" aria-hidden="true" />
           <div className="popup-left-top">
+            <span className="popup-eyebrow">Vexoweb Experts</span>
             <h3>Speak to Our Experts</h3>
             <p>Let's create your vision together.</p>
 
             <div className="popup-review">
-              <strong>zonzoc</strong>
+              <div className="popup-review-stars" aria-hidden="true">
+                ★★★★★
+              </div>
+              <strong>Vexoweb</strong>
               <p>
                 "Excellent IT resource outsourcing service. They provided highly
                 skilled developers who integrated seamlessly with our team."
@@ -103,18 +116,54 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
             </div>
 
             <div className="contactmedia">
-              <i className="fa-brands fa-linkedin"></i>
-              <i className="fa-brands fa-twitter"></i>
+              <a
+                href="https://www.linkedin.com"
+                className="contactmedia-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+              <a
+                href="https://twitter.com"
+                className="contactmedia-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <i className="fa-brands fa-twitter"></i>
+              </a>
             </div>
           </div>
 
           <div className="popup-contact">
-            <span>
-              <i className="fa-solid fa-envelope"></i> info@zonzoctech.com
-            </span>
-            <span>
-              <i className="fa-brands fa-whatsapp"></i> +94 74 030 9534
-            </span>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="popup-contact-link popup-contact-email"
+            >
+              <span className="popup-contact-icon">
+                <i className="fa-solid fa-envelope"></i>
+              </span>
+              <span className="popup-contact-text">
+                <small>Email us</small>
+                <strong>{CONTACT_EMAIL}</strong>
+              </span>
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              className="popup-contact-link popup-contact-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="popup-contact-icon">
+                <i className="fa-brands fa-whatsapp"></i>
+              </span>
+              <span className="popup-contact-text">
+                <small>Chat on WhatsApp</small>
+                <strong>+94 74 030 9534</strong>
+              </span>
+            </a>
           </div>
         </div>
 
@@ -189,17 +238,21 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
             </select>
 
             <label className="budget-label">
-              Estimated Budget (USD): ${budget.toLocaleString()}
+              Estimated Budget (USD): <span>${Number(budget).toLocaleString()}</span>
             </label>
 
-            <input
-              type="range"
-              min="5000"
-              max="65000"
-              value={budget}
-              onChange={(e) => setBudget(e.target.value)}
-              style={{ background: sliderBackground }}
-            />
+            <div className="budget-slider-wrap">
+              <input
+                type="range"
+                className="budget-slider"
+                min={BUDGET_MIN}
+                max={BUDGET_MAX}
+                step={BUDGET_STEP}
+                value={budget}
+                onChange={(e) => setBudget(Number(e.target.value))}
+                style={{ background: sliderBackground }}
+              />
+            </div>
 
             <textarea
               name="project"

@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import HeroTrustText from '../components/HeroTrustText';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const AboutUs = () => {
   const whoWeWorkWith = [
@@ -31,18 +33,6 @@ const AboutUs = () => {
     { icon: "📈", text: "Scalable" },
     { icon: "🔍", text: "Search-optimized" },
     { icon: "💰", text: "Conversion" }
-  ];
-
-  const services = [
-    "AI Web Application Development",
-    "AI Software Development",
-    "Full-Stack Web Development",
-    "AI Website Design & Development",
-    "SEO Services",
-    "AI Search Optimization (GEO)",
-    "E-commerce Development & Optimization",
-    "AI Automation & Integrations",
-    "Website Performance, Security & Maintenance"
   ];
 
   const approach = [
@@ -116,17 +106,21 @@ const AboutUs = () => {
         <div className="abt__hero_container">
           <div className="abt__hero_badge">
             <span className="abt__badge_dot"></span>
-            ABOUT ZONZOCTECH
+            <span className="hero-badge-text">
+              <span className="hero-badge-accent">About ZonzocTech</span>
+              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+            </span>
           </div>
           <h1 className="abt__hero_title">
-            Intelligent Digital Solutions <br className="abt__br_desktop" />
-            <span className="highlight">That Drive Real Growth</span>
+            Intelligent Digital Solutions for Businesses in{" "}
+            <span className="highlight-text">Batticaloa</span>
           </h1>
           <p className="abt__hero_description">
             ZonzocTech is a technology-driven digital solutions company specializing in AI-powered 
             web applications, software development, full-stack development, SEO, and AI search optimization. 
             We help businesses build intelligent, performance-focused digital systems that convert.
           </p>
+          <HeroTrustText text={HERO_TRUST_TEXT.about} />
         </div>
       </section>
 

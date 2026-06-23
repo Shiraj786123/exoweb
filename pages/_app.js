@@ -41,6 +41,7 @@ import '../src/styles/softwareDevelopment.css';
 import '../src/styles/TermsConditions.css';
 import '../src/styles/UserProfile.css';
 import '../src/styles/WebsiteMaintenance.css';
+import '../src/styles/mobile-responsive.css';
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -50,20 +51,6 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#000000" />
         
         <link rel="icon" href="/navlogofavicon.png?v=2" type="image/png" />
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WCJCWD3FXL"

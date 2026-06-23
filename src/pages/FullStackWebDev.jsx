@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import ContactSection from '../components/ContactSection';
+import HeroTrustText from '../components/HeroTrustText';
+import TechnologyStackSection from '../components/TechnologyStackSection';
+import { SERVICE_CONTACT } from '../content/serviceContactContent';
+import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const FullStackWebDev = () => {
   // FAQ Accordion State
@@ -186,9 +191,16 @@ const FullStackWebDev = () => {
 <section className="fswd__hero_section">
   <div className="fswd__hero_overlay"></div>
   <div className="fswd__hero_content">
-    <div className="fswd__hero_badge">Website Development — Batticaloa, Sri Lanka</div>
+    <div className="fswd__hero_badge">
+      <span className="badge-dot">●</span>
+      <span className="hero-badge-text">
+        <span className="hero-badge-accent">Website Development</span>
+        <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+      </span>
+    </div>
     <h1 className="fswd__hero_title">
-      Professional <span className="fswd__highlight">Website Design & Development</span> in Batticaloa
+      Professional Website Design &amp; Development in{" "}
+      <span className="highlight-text">Batticaloa</span>
     </h1>
     <p className="fswd__hero_description">
       We build fast, mobile-friendly websites for shops, clinics, schools, and businesses 
@@ -198,6 +210,7 @@ const FullStackWebDev = () => {
     <a href="#contact" className="fswd__cta_primary">
       Get a Free Website Consultation
     </a>
+    <HeroTrustText text={HERO_TRUST_TEXT.fullStack} />
   </div>
 </section>
 
@@ -490,24 +503,9 @@ const FullStackWebDev = () => {
         </div>
       </section>
 
-      {/* 🔟 Final CTA (Vibrant Conversion Gradient Banner [1]) */}
-      <section className="fswd__cta_section">
-        <div className="fswd__container">
-          <div className="fswd__cta_banner">
-            <div className="fswd__cta_banner_glow"></div>
-            <h2 className="fswd__cta_heading_white">Ready to Build a Scalable Web Solution?</h2>
-            <p className="fswd__cta_text_white">
-              If you're planning a new web project or want to upgrade an existing system, 
-              let's discuss your requirements.
-            </p>
-            <div className="fswd__cta_actions">
-              <a href="#contact" className="fswd__final_cta_btn">
-                Get a Free Consultation <span className="arrow">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TechnologyStackSection {...SERVICE_TECH_STACK.fullStack} />
+
+      <ContactSection {...SERVICE_CONTACT.fullStack} variant="service" />
 
       <Footer />
     </div>

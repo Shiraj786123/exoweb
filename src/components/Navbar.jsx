@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"; // Next.js route hook
 import Image from "next/image";
 import Link from "next/link";
 import ExpertPopup from "./ExpertPopup";
+import { FaPaperPlane } from "react-icons/fa";
 import logo from "../assets/logonew.png";
 
 const DESKTOP_BREAKPOINT = 1024;
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Proposal popup state
   const [isMobileView, setIsMobileView] = useState(false); // Track mobile view for inline styles
   const navRef = useRef(null);
+  const headerRef = useRef(null);
   const closeTimerRef = useRef(null);
 
   // Hook to detect current active route pathname
@@ -78,6 +80,12 @@ const Navbar = () => {
       } else {
         setActiveDropdown(null);
       }
+      if (headerRef.current) {
+        document.documentElement.style.setProperty(
+          "--mobile-nav-drawer-top",
+          `${headerRef.current.offsetHeight}px`
+        );
+      }
     };
 
     // Set initial state on mount to avoid SSR mismatch
@@ -93,6 +101,23 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header || typeof ResizeObserver === "undefined") return undefined;
+
+    const syncDrawerTop = () => {
+      document.documentElement.style.setProperty(
+        "--mobile-nav-drawer-top",
+        `${header.offsetHeight}px`
+      );
+    };
+
+    syncDrawerTop();
+    const observer = new ResizeObserver(syncDrawerTop);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
+
   // Hover triggers for desktop
   const dropdownHoverProps = (id) => ({
     onMouseEnter: () => openDropdown(id),
@@ -105,49 +130,51 @@ const Navbar = () => {
   };
 
   return (
-    <header className="navbar-wrapper">
+    <header className="navbar-wrapper" ref={headerRef}>
       
     {/* 1. TOPBAR SECTION (Blue contact strip) */}
       <div className="topbar">
         <div className="topbar-inner">
           <div className="topbar-left">
-            <span>
-              <svg 
-                width="14" 
-                height="14" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                style={{ marginRight: '4px', display: 'inline-block', verticalAlign: 'middle' }}
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-              
-              Webdesign & Software Development in{" "}
-              <span className="sky-blue">Batticaloa</span>
-              {" | "}Eastern Province's Digital Partner
+            <span className="topbar-left-content">
+              <span className="topbar-tagline-row1">
+                <svg 
+                  width="14" 
+                  height="14" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2.5" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className="topbar-globe-icon"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+
+                <span className="topbar-tagline-line1">
+                  <span>Webdesign &amp; Software Development in </span>
+                  <span className="sky-blue">Batticaloa</span>
+                  <span className="topbar-inline-divider" aria-hidden="true">|</span>
+                </span>
+              </span>
+              <span className="topbar-tagline-line2">Eastern Province&apos;s Digital Partner</span>
             </span>
           </div>
 
           <div className="topbar-right">
-            {/* Phone link positioned on the right side next to the email icon */}
-            <a href="tel:0740309534" className="topbar-phone" title="Call Us">
-              074 030 9534
-            </a>
-
-            <a href="mailto:info@zonzoctech.com" className="topbar-link" title="Email Us">
+            <a href="mailto:info@zonzoctech.com" className="topbar-link topbar-email" title="Email Us">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
+              <span>info@zonzoctech.com</span>
             </a>
 
-            {/* Official WhatsApp Brand Icon */}
+            <span className="topbar-divider" aria-hidden="true">|</span>
+
             <a href="https://wa.me/94740309534" target="_blank" rel="noopener noreferrer" className="topbar-link wa-btn" title="Chat on WhatsApp">
               <svg 
                 width="14" 
@@ -155,10 +182,10 @@ const Navbar = () => {
                 viewBox="0 0 24 24" 
                 fill="currentColor" 
                 className="wa-icon"
-                style={{ display: 'inline-block', verticalAlign: 'middle' }}
               >
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
+              <span>WhatsApp Us</span>
             </a>
           </div>
         </div>
@@ -171,20 +198,22 @@ const Navbar = () => {
   <Image
     src={logo}
     alt="Zonzoctech Logo"
-    width={210} // Increased from 160
-    height={110} // Increased from 80
+    width={280}
+    height={145}
     className="logo-desktop"
     priority
   />
   <Image
     src={logo}
     alt="Zonzoctech Logo"
-    width={160} // Increased from 120
-    height={80} // Increased from 60
+    width={200}
+    height={100}
     className="logo-mobile"
     priority
   />
 </div>
+
+          <span className="nav-brand-separator" aria-hidden="true" />
 
           <div className="nav-tagline">
             <div>Web Intelligences</div>
@@ -194,21 +223,8 @@ const Navbar = () => {
         </div>
 
         {/* 3. NAVIGATION MENUS LIST */}
-        <nav 
-          className={`nav-links ${open ? "open" : ""}`}
-          style={
-            isMobileView && open 
-              ? { 
-                  top: "160px", // or "100%"
-                  height: "auto", // Automatically shrinks to fit the content
-                  maxHeight: "calc(100vh - 160px)", // Prevents it from going off-screen
-                  position: "fixed", // or "absolute"
-                  overflowY: "auto", // Allows scrolling if sub-menus are expanded
-                  paddingBottom: "24px" // Clean spacing right below the "Mail Us" button
-                } 
-              : {}
-          }
-        >
+        <div className="nav-actions">
+        <nav className={`nav-links ${open ? "open" : ""}`}>
           {/* 
              Conditional "Home" Button 
              - Renders as an unlinked <span> when on the Home page (/).
@@ -387,8 +403,10 @@ const Navbar = () => {
         
         {/* Proposal button */}
         <button className="contact-btn" onClick={() => setIsPopupOpen(true)}>
+          <FaPaperPlane className="contact-btn-icon" aria-hidden="true" />
           Get a Proposal
         </button>
+        </div>
 
         {/* Modal Popup Connection */}
         <ExpertPopup open={isPopupOpen} onClose={() => setIsPopupOpen(false)}/>

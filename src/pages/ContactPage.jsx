@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import HeroTrustText from '../components/HeroTrustText';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const ContactPage = () => {
   // FAQ Accordion State
@@ -9,18 +11,6 @@ const ContactPage = () => {
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
-
-  const services = [
-    "AI Web Application Development",
-    "AI Software Development",
-    "Full-Stack Website Development",
-    "AI Website Design & UX",
-    "SEO Services",
-    "AI Search Optimization (GEO)",
-    "E-commerce Development & Optimization",
-    "AI Automation & Integrations",
-    "Website Performance, Security & Maintenance",
-  ];
 
   const steps = [
     "We review your message",
@@ -56,13 +46,15 @@ const ContactPage = () => {
           {/* Glowing Pill Badge */}
           <div className="cp__hero_badge">
             <span className="cp__badge_dot"></span>
-            CONTACT ZONZOCTECH AGENCY
+            <span className="hero-badge-text">
+              <span className="hero-badge-accent">Contact ZonzocTech</span>
+              <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+            </span>
           </div>
 
-          {/* Two-Tone Title [1] */}
           <h1 className="cp__hero_title">
-            Contact ZonzocTech <br className="cp__br_desktop" />
-            <span className="highlight">To Scale Your Business</span>
+            Let&apos;s Build Something That Grows Your Business in{" "}
+            <span className="highlight-text">Batticaloa</span>
           </h1>
 
           {/* Muted Description Text [1] */}
@@ -83,10 +75,7 @@ const ContactPage = () => {
           {/* Thin Divider Line [1] */}
           <div className="cp__hero_divider"></div>
 
-          {/* Trusted-by Footer [1] */}
-          <div className="cp__hero_trust">
-            TRUSTED BY 120+ BUSINESSES ACROSS THE UK, USA & EUROPE
-          </div>
+          <HeroTrustText text={HERO_TRUST_TEXT.contact} variant="contact" />
 
         </div>
       </section>

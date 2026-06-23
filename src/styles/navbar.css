@@ -2,18 +2,50 @@
 
 
 
+:root {
+  /* Desktop: topbar (~48px) + nav row (120px logo + padding) */
+  --site-header-height: 180px;
+  --mobile-nav-drawer-top: var(--site-header-height);
+  --hero-top-gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    /* Topbar 3 lines (~72px) + nav row (~72px logo + padding) */
+    --site-header-height: 182px;
+    --hero-top-gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --site-header-height: 188px;
+    --hero-top-gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --site-header-height: 192px;
+    --hero-top-gap: 14px;
+  }
+}
+
 /* --- 1. GLOBAL ROOT BASE & WRAPPER RESET --- */
 .navbar-wrapper {
   width: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   background: #ffffff;
-  z-index: 999;
+  z-index: 1000;
   border-bottom: 1px solid #eaeaea;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .navbar-wrapper * {
@@ -46,14 +78,38 @@
   font-weight: 500;
 }
 
-.topbar-left span {
-  display: flex;
+.topbar-left-content {
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  line-height: 1.4;
+}
+
+.topbar-tagline-row1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.topbar-tagline-line1,
+.topbar-tagline-line2 {
+  display: inline;
+}
+
+.topbar-globe-icon {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.topbar-inline-divider {
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0 2px;
 }
 
 .topbar-left svg {
-  color: #38bdf8; /* Sleek sky blue accent icon */
-  margin-right: 8px;
+  color: #38bdf8;
+  margin-right: 0;
 }
 
 .sky-blue {
@@ -64,7 +120,13 @@
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+}
+
+.topbar-divider {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+  line-height: 1;
 }
 
 .topbar-link {
@@ -72,7 +134,8 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -94,27 +157,43 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 40px; /* Standardized grid padding matching the topbar precisely */
+  padding: 10px 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  overflow: visible;
 }
 
 /* BRAND & TAGLINE ALIGNMENT */
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 2px; /* Shrunk to pull the divider closer to the logo container */
+  gap: 10px;
+  flex-shrink: 0;
 }
 
+.nav-logo {
+  flex-shrink: 0;
+  line-height: 0;
+  cursor: pointer;
+}
 
+.nav-brand-separator {
+  flex-shrink: 0;
+  width: 2px;
+  height: 52px;
+  background: #0f172a;
+  align-self: center;
+}
 
 .logo-desktop {
   display: block;
   object-fit: contain;
-  height:75px;
- 
+  height: 120px;
+  width: auto;
+  margin-top: -15px;
+  margin-bottom: -15px;
 }
 
 .logo-mobile {
@@ -133,14 +212,14 @@
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
   color: #111827;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  border-left: 2px solid #0f172a; /* Dark blue separator */
-  padding-left: 8px;             /* Reduced padding so the text starts immediately next to the divider */
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* LINKS WRAPPER */
@@ -148,11 +227,21 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  position: relative;
+  z-index: 1001;
+  overflow: visible;
+}
+
+.nav-actions {
+  position: relative;
+  z-index: 1001;
+  overflow: visible;
 }
 
 /* --- 4. DROPDOWN COMPONENT CONTROLS --- */
 .dropdown {
-  position: relative; /* Setup context for compact panels */
+  position: relative;
+  z-index: 1002;
 }
 
 .dropdown-wide {
@@ -200,7 +289,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
+  z-index: 1010;
   animation: slideDown 0.25s ease;
   padding: 24px;
 }
@@ -306,6 +395,15 @@
   transition: all 0.2s ease;
   font-family: inherit;
   margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contact-btn-icon {
+  font-size: 13px;
+  flex-shrink: 0;
 }
 
 .contact-btn:hover {
@@ -364,8 +462,9 @@
     width: 95%;
     padding: 12px 2.5%;
   }
-  .nav-tagline {
-    display: none; /* Hide tagline on smaller laptops to avoid overlapping button */
+  .nav-tagline,
+  .nav-brand-separator {
+    display: none;
   }
   .drop-btn {
     font-size: 12px;
@@ -379,23 +478,19 @@
 
 /* --- 10. MOBILE & TABLET LAYOUTS (1024px and Below) --- */
 @media (max-width: 1024px) {
-  .topbar {
-    display: none; /* Hide contact topbar on mobile for vertical efficiency */
-  }
-
   .nav-container {
     width: 100%;
     padding: 12px 20px;
   }
 
   /* Structural adjustment */
-  .logo-desktop, .nav-tagline {
+  .logo-desktop, .nav-brand-separator, .nav-tagline {
     display: none;
   }
 
   .logo-mobile {
     display: block;
-    height: 32px;
+    height: 42px;
     width: auto;
   }
 
@@ -403,22 +498,26 @@
     display: flex;
   }
 
-  /* Slide-out drawer menu panel */
+  /* Slide-out drawer menu panel — full screen width */
   .nav-links {
     position: fixed;
-    top: 57px; /* Matches navbar height perfectly */
+    top: var(--mobile-nav-drawer-top, var(--site-header-height));
     left: -100%;
-    width: 300px;
-    height: calc(100vh - 57px);
+    width: 100%;
+    max-width: 100vw;
+    height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height)));
+    max-height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height)));
     background: #ffffff;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 24px;
+    padding: 20px 16px 32px;
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
-    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1010;
+    box-sizing: border-box;
   }
 
   .nav-links.open {
@@ -457,6 +556,23 @@
     display: flex;
   }
 
+  .dropdown-wide .dropdown-content {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    transform: none !important;
+    padding: 0 0 16px 0 !important;
+    gap: 0 !important;
+  }
+
+  .dropdown-wide .dropdown-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    border-right: none !important;
+  }
+
   .dropdown-column {
     width: 100%;
     padding: 0;
@@ -492,14 +608,6 @@
     border-bottom: none;
   }
 
-  /* Bottom drawer contact button adjustment */
-  .contact-btn {
-    margin: 24px 0 0 0;
-    width: 100%;
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
-  }
 }
 
 
@@ -510,8 +618,8 @@
 
   .logo-mobile {
     display: block;
-    height: 55px; /* Increased from 32px to make the logo larger and clearer */
-    width: auto;  /* Keeps the aspect ratio proportional */
+    height: 70px;
+    width: auto;
   }
 
   /* ... other rules ... */
@@ -586,10 +694,6 @@
 
 /* --- 10. MOBILE & TABLET LAYOUTS (1024px and Below) --- */
 @media (max-width: 1024px) {
-  .topbar {
-    display: none; /* Hide contact topbar on mobile */
-  }
-
   .nav-container {
     width: 100%;
     padding: 12px 20px;
@@ -599,13 +703,13 @@
   }
 
   /* Structural adjustment */
-  .logo-desktop, .nav-tagline {
+  .logo-desktop, .nav-brand-separator, .nav-tagline {
     display: none;
   }
 
   .logo-mobile {
     display: block;
-    height: 55px; /* Sized comfortably on mobile */
+    height: 70px;
     width: auto;
   }
 
@@ -613,22 +717,26 @@
     display: flex !important; /* Force visibility */
   }
 
-  /* Slide-out drawer menu panel */
+  /* Slide-out drawer menu panel — full screen width */
   .nav-links {
     position: fixed;
-    top: 79px; /* Matches the tall mobile navbar height to prevent overlapping logo text */
+    top: var(--mobile-nav-drawer-top, var(--site-header-height));
     left: -100%;
-    width: 300px;
-    height: calc(100vh - 79px); /* Subtract header height for proper scrolling */
+    width: 100%;
+    max-width: 100vw;
+    height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height)));
+    max-height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height)));
     background: #ffffff;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 24px;
+    padding: 20px 16px 32px;
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
-    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1010;
+    box-sizing: border-box;
   }
 
   .nav-links.open {
@@ -667,6 +775,23 @@
     display: flex;
   }
 
+  .dropdown-wide .dropdown-content {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    transform: none !important;
+    padding: 0 0 16px 0 !important;
+    gap: 0 !important;
+  }
+
+  .dropdown-wide .dropdown-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    border-right: none !important;
+  }
+
   .dropdown-column {
     width: 100%;
     padding: 0;
@@ -702,14 +827,28 @@
     border-bottom: none;
   }
 
-  /* Styles the proposal button while sitting inside the mobile navbar */
-  .contact-btn {
-    display: inline-block !important; /* Keep it visible outside the mobile drawer */
-    margin: 0 15px 0 auto;           /* Automatically push it next to the hamburger icon */
-    padding: 8px 14px;
-    font-size: 12px;
-    width: auto;                     /* Override the full drawer width style */
+  /* Proposal button in the mobile header bar (outside the drawer) */
+  .nav-actions > .contact-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin: 0 12px 0 auto !important;
+    padding: 8px 12px !important;
+    font-size: 11px !important;
+    width: auto !important;
     white-space: nowrap;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .nav-actions > .contact-btn .contact-btn-icon {
+    font-size: 11px;
+    line-height: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Styles the new mail button at the bottom of your mobile menu drawer */
@@ -738,24 +877,7 @@
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 1px; /* Keeps spacing between logo and tagline */
-  
-  /* 
-     Visually shifts ONLY this block to the left.
-     This will not pull or move your main menus.
-  */
-  transform: translateX(-20px); 
-}
-
-
-
-
-.nav-tagline {
-  /* 
-     Pulls the tagline closer to the logo, 
-     overlapping the transparent empty space in the image file.
-  */
-  margin-left: -25px; /* Adjust this value (e.g., -10px, -25px) to get the gap exactly as you want it */
+  gap: 10px;
 }
 
 
@@ -766,14 +888,27 @@
    DESKTOP ONLY STYLES (1025px and up)
    ========================================== */
 @media (min-width: 1025px) {
-  /* Move only on desktop, leaving mobile untouched */
   .nav-brand {
-    transform: translateX(-20px); 
+    margin-left: 6px;
   }
-  
-  /* Bring tagline closer to logo only on desktop */
-  .nav-tagline {
-    margin-left: -15px; 
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .contact-btn {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -785,7 +920,8 @@
      1. Hide the tagline on mobile. 
      There is not enough horizontal space next to the logo, button, and menu.
   */
-  .nav-tagline {
+  .nav-tagline,
+  .nav-brand-separator {
     display: none !important;
   }
 
@@ -819,13 +955,6 @@
     box-sizing: border-box;
   }
 
-  /* 
-     4. Optional: Ensure comfortable spacing between 
-     the "Get a Proposal" button and the hamburger icon.
-  */
-  .contact-btn {
-    margin-right: 12px; 
-  }
 }
 
 
@@ -874,11 +1003,9 @@
 /* Symmetrical desktop spacing */
 @media (min-width: 1025px) {
   .nav-links {
-    /* Shifts the desktop navigation menus slightly to the right */
-    transform: translateX(25px); 
     display: flex;
     align-items: center;
-    gap: 24px; /* Balanced spacing between the active text buttons */
+    gap: 24px;
   }
 }
 
@@ -898,26 +1025,6 @@
 
 
 
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   DESKTOP ONLY BRAND LEFT SHIFT (1025px and up)
-   ========================================================================== */
-@media (min-width: 1025px) {
-  .nav-brand {
-    /* 
-       Visually shifts the logo and tagline block together to the left.
-       Using transform ensures the middle links and buttons do not move.
-    */
-    transform: translateX(-39px); /* Adjust this value (e.g., -15px, -30px) as needed */
-  }
-}
 
 
 
@@ -957,14 +1064,10 @@
   display: block !important; /* Visible on desktop by default */
 }
 .topbar-inner {
-  /* UPDATED: Increased from 1200px to 1440px to match the navbar container.
-     This instantly moves the left text further to the left (aligning with the logo) 
-     and the right icons further to the right. */
-  max-width: 1280px !important; 
-  
+  max-width: 1400px !important;
   width: 100%;
   margin: 0 auto;
-  padding: 8px 24px;
+  padding: 8px 4% !important;
   display: flex !important;
   justify-content: space-between !important; 
   align-items: center;
@@ -980,22 +1083,8 @@
 .topbar-right { 
   display: flex !important; 
   align-items: center !important; 
-  gap: 16px; 
+  gap: 12px; 
   flex-shrink: 0; 
-}
-
-/* Phone link text style next to email */
-.topbar-phone {
-  color: #00aeef !important; /* Sky Blue */
-  font-weight: 600;
-  font-size: 13px;
-  text-decoration: none;
-  margin-right: 4px;
-  transition: opacity 0.2s ease;
-}
-
-.topbar-phone:hover {
-  opacity: 0.85;
 }
 
 .sky-blue { 
@@ -1005,11 +1094,14 @@
 
 .topbar-link {
   color: #fff;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center;
+  gap: 6px;
   cursor: pointer !important;
-  padding: 8px;
-  margin: -8px;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-size: 13px;
   transition: opacity 0.25s ease;
 }
 
@@ -1022,16 +1114,6 @@
   color: #25d366 !important; 
 }
 
-/* --- Mobile / Tablet Viewports (Hide Topbar completely on mobile/tablets) --- */
-@media (max-width: 1024px) {
-  .topbar {
-    display: none !important; /* Hides the topbar on mobile/tablet to keep mobile layout clean */
-  }
-}
-
-
-
-
 
 
 
@@ -1039,24 +1121,24 @@
 
 
 /* ==========================================================================
-   8. TOPBAR LAYOUT - ALIGNED TO EDGES & VISIBLE ON MOBILE
+   8. TOPBAR LAYOUT - desktop default
    ========================================================================== */
 .topbar {
   background: linear-gradient(135deg, #003070 0%, #00448f 100%);
   color: #fff;
   font-size: 13px;
-  width: 100% !important;
-  z-index: 10005 !important;
-  display: block !important; /* Force topbar to always remain visible */
+  width: 100%;
+  z-index: 10005;
+  display: block;
 }
 
 .topbar-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 8px 24px;
+  padding: 8px 4%;
   display: flex !important;
-  justify-content: space-between !important; /* Separates left and right on desktop */
+  justify-content: space-between !important;
   align-items: center;
   box-sizing: border-box;
 }
@@ -1070,36 +1152,20 @@
 .topbar-right { 
   display: flex !important; 
   align-items: center !important; 
-  gap: 16px; 
+  gap: 12px; 
   flex-shrink: 0; 
-}
-
-/* Phone link text style next to email */
-.topbar-phone {
-  color: #00aeef !important; /* Sky Blue */
-  font-weight: 600;
-  font-size: 13px;
-  text-decoration: none;
-  margin-right: 4px;
-  transition: opacity 0.2s ease;
-}
-
-.topbar-phone:hover {
-  opacity: 0.85;
-}
-
-.sky-blue { 
-  color: #00aeef; 
-  font-weight: 600; 
 }
 
 .topbar-link {
   color: #fff;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center;
+  gap: 6px;
   cursor: pointer !important;
-  padding: 8px;
-  margin: -8px;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-size: 13px;
   transition: opacity 0.25s ease;
 }
 
@@ -1111,78 +1177,6 @@
 .topbar-link.wa-btn {
   color: #25d366 !important; 
 }
-
-/* --- Mobile / Tablet Viewports (Keeps topbar visible, clean, & perfectly centered) --- */
-@media (max-width: 1024px) {
-  .topbar {
-    display: block !important; /* Keeps topbar visible on mobile */
-  }
-
-  .topbar-inner { 
-    padding: 8px 16px !important; /* Balanced padding */
-    flex-direction: column !important; /* Stack text above contact items */
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important; /* Prevents overlapping */
-    text-align: center !important;
-  }
-  
-  .topbar-left {
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    font-size: 11.5px !important; /* Slightly smaller text to prevent line wrapping */
-    line-height: 1.4 !important; /* Fixes overlapping text lines */
-  }
-
-  .topbar-left span {
-    font-size: 11.5px !important;
-    display: inline-block !important;
-  }
-
-  /* Hides globe icon on mobile to give text full horizontal space */
-  .topbar-left svg {
-    display: none !important;
-  }
-
-  .topbar-right { 
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    gap: 12px !important; /* Snug spacing for phone, mail, and whatsapp icons */
-  }
-
-  .topbar-phone {
-    font-size: 11.5px !important;
-    margin-right: 0 !important; /* Reset desktop margin */
-  }
-}
-
-/* --- Extra Small Mobile Screens (480px and below) --- */
-@media (max-width: 480px) {
-  .topbar-inner {
-    padding: 6px 12px !important;
-    gap: 6px !important;
-  }
-
-  .topbar-left,
-  .topbar-left span { 
-    font-size: 10.5px !important; /* Scaled down for very small screens */
-    line-height: 1.35 !important;
-  }
-
-  .topbar-phone {
-    font-size: 10.5px !important;
-  }
-
-  .topbar-link {
-    padding: 4px !important;
-    margin: -4px !important;
-  }
-}
-
-
-
 
 
 
@@ -1202,24 +1196,14 @@
   gap: 15px; /* Adjust spacing between logo and tagline */
 }
 
-/* Increase navbar height if the logo is getting clipped */
-.nav-container {
-  height: 100px; /* Adjust this to fit your new logo height */
-  display: flex;
-  align-items: center;
-}
-
-
-
-
-
 /* Ensure the container is a flexbox and centers everything vertically */
 .nav-container {
   display: flex;
   align-items: center;    /* Keeps everything centered vertically */
   justify-content: space-between; /* Pushes brand left, nav/button right */
-  padding: 10px 20px;
-  height: auto;           /* Allows the container to grow with the logo */
+  padding: 10px 4%;
+  height: auto;
+  overflow: visible;
 }
 
 /* Ensure the nav-brand (logo + tagline) doesn't shrink */
@@ -1254,7 +1238,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* Pushes brand to left, nav items/btn to right */
-  padding: 10px 20px;
+  padding: 10px 4%;
   flex-wrap: nowrap; /* CRITICAL: Prevents items from breaking to a new line */
 }
 
@@ -1278,7 +1262,6 @@
 .contact-btn {
   white-space: nowrap;
   flex-shrink: 0;
-  margin-left: auto; /* Pushes the button to the end of the flex container */
 }
 
 
@@ -1290,19 +1273,9 @@
 
 
 
-/* Move the logo a little bit to the right */
 .nav-logo {
-  margin-left: 20px; /* Adjust this value (e.g., 10px, 15px) to move right */
-  margin-right: -35px;
+  line-height: 0;
 }
-
-/* Move the button a little bit to the left */
-.contact-btn {
-  margin-right: 20px; /* Adjust this value (e.g., 10px, 15px) to move left */
-}
-
-
-
 
 
 
@@ -1312,17 +1285,11 @@
 /* Increase logo size specifically for mobile view */
 @media (max-width: 1024px) {
   .logo-mobile {
-    height: 70px !important; /* Increase this value (e.g., 70px, 80px) */
+    height: 72px !important;
     width: auto !important;
     display: block !important;
-  }
-}
-
-
-
-@media (max-width: 1024px) {
-  .nav-container {
-    height: 90px; /* Ensure this is taller than your new logo height */
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
   }
 }
 
@@ -1331,6 +1298,12 @@
 
 
 @media (max-width: 1024px) {
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
   /* 1. Prevent the logo wrapper from hogging the middle space */
   .nav-brand {
     flex: none !important;
@@ -1338,18 +1311,29 @@
   }
 
   /* 2. Ensure the tagline is completely removed from layout space */
-  .nav-tagline {
+  .nav-tagline,
+  .nav-brand-separator {
     display: none !important;
   }
 
   /* 3. Group the button and hamburger on the right with a clean gap */
-  .contact-btn {
-    /* margin-left: auto absorbs the empty space in the middle, pushing 
-       the button and hamburger cleanly to the right */
-    margin-left: auto !important; 
-    
-    /* margin-right creates a perfect gap between the button and the hamburger */
-    margin-right: 16px !important; 
+  .nav-actions > .contact-btn {
+    margin-left: auto !important;
+    margin-right: 14px !important;
+  }
+}
+
+/* ==========================================================================
+   FINAL MOBILE — drawer offset (topbar layout in mobile-responsive.css)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .nav-links {
+    top: var(--mobile-nav-drawer-top, var(--site-header-height)) !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height))) !important;
+    max-height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height))) !important;
+    box-sizing: border-box !important;
   }
 }
 

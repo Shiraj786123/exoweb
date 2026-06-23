@@ -124,9 +124,12 @@ body {
      Using precise padding ensures the top label is always visible 
      with a beautiful gap below the navbar.
   */
-  padding: 160px 24px 120px 24px; /* Generous 160px top padding clears any header height */
+  padding: calc(var(--site-header-height) + var(--hero-top-gap)) 24px 120px 24px;
   overflow: visible; /* Prevents clipping of absolute glow details or elements */
   box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 /* Ambient glow overlay */
@@ -267,15 +270,13 @@ body {
    ========================================== */
 @media (max-width: 768px) {
   .ecd__hero_centered_layout {
-    /* 
-       FIX: Adjusted padding to keep a clean 110px top gap on mobiles 
-       without taking up too much vertical screen space.
-    */
-    padding: 110px 20px 80px 20px; 
+    padding: calc(var(--site-header-height) + var(--hero-top-gap)) 20px 80px 20px !important;
   }
 
   .ecd__hero_title_centered {
-    letter-spacing: -1px;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
+    word-spacing: normal !important;
   }
 
   .ecd__hero_buttons_centered {

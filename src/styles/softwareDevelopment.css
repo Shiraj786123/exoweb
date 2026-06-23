@@ -1,7 +1,7 @@
 /* ==========================================================================
-   1. HERO SECTION (Full Page & Fixed Navbar Safe)
+   1. HERO SECTION (Full Page & Fixed Navbar Safe) — software page only
    ========================================================================== */
-.hero {
+.software-page .hero {
   position: relative;
   background: radial-gradient(circle at center, rgba(160, 210, 235, 0.15) 0%, transparent 70%), var(--bg-hero);
   
@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.hero-container {
+.software-page .hero-container {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
@@ -29,20 +29,40 @@
   justify-content: center;
 }
 
-/* Badge / Pill Label */
-.hero-badge {
-  display: inline-flex;
+.software-page .hero-badge {
+  display: inline-flex !important;
   align-items: center;
   gap: 8px;
-  background: rgba(160, 210, 235, 0.1);
-  border: 1px solid rgba(160, 210, 235, 0.3);
-  color: var(--accent-hero);
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  background: rgba(56, 189, 248, 0.08) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   padding: 6px 16px;
-  border-radius: 99px;
-  margin-bottom: 24px;
+  font-size: 13px;
+  border-radius: 999px;
+  margin-bottom: 28px;
   text-transform: uppercase;
+  width: fit-content;
+  max-width: 95%;
+  min-width: auto;
+}
+
+.hero-badge-text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hero-badge-accent {
+  color: var(--accent-hero) !important;
+}
+
+.hero-badge-light {
+  color: #ffffff !important;
 }
 
 .badge-dot {
@@ -52,7 +72,7 @@
 }
 
 /* Main Heading */
-.hero h1 {
+.software-page .hero h1 {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -61,12 +81,12 @@
   margin: 0 auto 18px auto;
 }
 
-.hero h1 .highlight-text {
+.software-page .hero h1 .highlight-text {
   color: var(--accent-hero);
 }
 
 /* Subtext */
-.hero-desc {
+.software-page .hero-desc {
   line-height: 1.6;
   color: #cbd5e1;
   max-width: 680px;
@@ -74,28 +94,29 @@
 }
 
 /* Buttons */
-.hero-buttons {
+.software-page .hero-buttons {
   display: flex;
   gap: 16px;
   justify-content: center;
   margin-bottom: 28px;
 }
 
-.primary-btn {
-  background: var(--accent-hero);
-  color: var(--color-dark-slate);
-  border: none;
+.software-page .hero .primary-btn {
+  background: #38bdf8;
+  color: #001b3a;
+  border: 1px solid #38bdf8;
   padding: 13px 26px;
   font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 16px rgba(160, 210, 235, 0.3);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
 }
 
-.primary-btn:hover {
-  background: #c3e5f4;
-  box-shadow: 0 6px 20px rgba(160, 210, 235, 0.5);
+.software-page .hero .primary-btn:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
   transform: translateY(-2px);
 }
 
@@ -120,7 +141,7 @@
 }
 
 /* Trust Text */
-.hero-trust-text {
+.software-page .hero-trust-text {
   color: #94a3b8;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -178,31 +199,52 @@ body {
 /* ==========================================================================
    1. HERO SECTION (Untouched original layout updated with correct contrast)
    ========================================================================== */
-.hero {
+.software-page .hero {
   position: relative;
   background: radial-gradient(circle at center, rgba(160, 210, 235, 0.15) 0%, transparent 70%), var(--bg-hero);
   padding: 100px 24px 70px 24px; /* Slightly compacted padding */
   text-align: center;
 }
 
-.hero-container {
+.software-page .hero-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.hero-badge {
+.software-page .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(160, 210, 235, 0.1);
-  border: 1px solid rgba(160, 210, 235, 0.3);
-  color: var(--accent-hero);
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-weight: 500;
+  letter-spacing: 0.5px;
   padding: 6px 16px;
-  border-radius: 99px;
-  margin-bottom: 20px;
+  font-size: 13px;
+  border-radius: 999px;
+  margin-bottom: 28px;
   text-transform: uppercase;
+  width: fit-content;
+  max-width: 95%;
+  min-width: auto;
+}
+
+.hero-badge-text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hero-badge-accent {
+  color: var(--accent-hero) !important;
+}
+
+.hero-badge-light {
+  color: #ffffff !important;
 }
 
 .badge-dot {
@@ -211,7 +253,7 @@ body {
   animation: pulse 2s infinite ease-in-out;
 }
 
-.hero h1 {
+.software-page .hero h1 {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -220,39 +262,40 @@ body {
   margin: 0 auto 16px auto;
 }
 
-.hero h1 .highlight-text {
+.software-page .hero h1 .highlight-text {
   color: var(--accent-hero);
 }
 
-.hero-desc {
+.software-page .hero-desc {
   line-height: 1.6;
   color: #cbd5e1;
   max-width: 680px;
   margin: 0 auto 28px auto;
 }
 
-.hero-buttons {
+.software-page .hero-buttons {
   display: flex;
   gap: 16px;
   justify-content: center;
   margin-bottom: 24px;
 }
 
-.primary-btn {
-  background: var(--accent-hero);
-  color: var(--color-dark-slate);
-  border: none;
+.software-page .hero .primary-btn {
+  background: #38bdf8;
+  color: #001b3a;
+  border: 1px solid #38bdf8;
   padding: 13px 26px;
   font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 16px rgba(160, 210, 235, 0.3);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
 }
 
-.primary-btn:hover {
-  background: #c3e5f4;
-  box-shadow: 0 6px 20px rgba(160, 210, 235, 0.5);
+.software-page .hero .primary-btn:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
   transform: translateY(-2px);
 }
 
@@ -276,7 +319,7 @@ body {
   transform: translateY(-1px);
 }
 
-.hero-trust-text {
+.software-page .hero-trust-text {
   color: #94a3b8;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -1011,7 +1054,7 @@ body {
    ========================================================================== */
 
 /* --- A. DESKTOP VIEWPORTS (Default Rules) --- */
-.hero h1 {
+.software-page .hero h1 {
   font-size: 50px;                  
 }
 .section-header h2,
@@ -1031,7 +1074,7 @@ body {
 .step-content p {
   font-size: 15px;                  
 }
-.hero-badge,
+.software-page .hero-badge,
 .classic-badge,
 .tech-tag,
 .hero-trust-text,
@@ -1047,7 +1090,7 @@ body {
 
 /* --- B. TABLET VIEWPORTS (max-width: 1024px) --- */
 @media (max-width: 1024px) {
-  .hero h1 {
+  .software-page .hero h1 {
     font-size: 40px;                
   }
   .section-header h2,
@@ -1078,7 +1121,7 @@ body {
 
 /* --- C. MOBILE VIEWPORTS (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .hero h1 {
+  .software-page .hero h1 {
     font-size: 32px;                
   }
   .section-header h2,
@@ -1098,7 +1141,7 @@ body {
   .step-content p {
     font-size: 14px;                
   }
-  .hero {
+  .software-page .hero {
     padding: 80px 20px 40px 20px;
   }
   .services-section,
@@ -1115,7 +1158,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .hero-buttons {
+  .software-page   .software-page .hero-buttons {
     flex-direction: column;
     gap: 10px;
   }
@@ -1306,16 +1349,17 @@ body {
 
 /* 2. Mobile and Tablet rules */
 @media (max-width: 1024px) {
-  .hero-badge {
+  .software-page .hero-badge {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    max-width: 95% !important; /* Prevents it from touching screen edges */
-    width: auto !important; /* Shrinks the pill container to perfectly wrap the text */
+    max-width: calc(100vw - 32px) !important;
+    width: fit-content !important;
     box-sizing: border-box !important;
-    font-size: 10.5px !important; /* Slightly smaller text for mobile balance */
-    padding: 6px 14px !important;
-    white-space: normal !important; /* Safe fallback to prevent overflow */
+    font-size: clamp(8px, 2.35vw, 10px) !important;
+    padding: 4px 10px !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
     text-align: center;
   }
 

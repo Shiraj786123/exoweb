@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const SITE_NAME = 'ZonzocTech';
+const SITE_NAME = 'Vexoweb';
 const SITE_URL = 'https://zonzoctech.com';
 const DEFAULT_IMAGE = `${SITE_URL}/favicon1.png`;
 
@@ -13,7 +13,11 @@ export default function PageSeo({
 }) {
   const canonicalPath = path === '/' ? '' : path;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+  const fullTitle = title
+    ? title.includes(SITE_NAME)
+      ? title
+      : `${title} | ${SITE_NAME}`
+    : SITE_NAME;
 
   return (
     <Head>

@@ -4,6 +4,6 @@ import SEOServices from '../src/pages/SEOServices';
 export default createStaticPage(SEOServices, {
   title: 'SEO Services',
   description:
-    'Drive sustainable growth with technical SEO, on-page optimization, strategy, reporting, and search performance improvements from ZonzocTech.',
+    'Drive sustainable growth with technical SEO, on-page optimization, strategy, reporting, and search performance improvements from Vexoweb.',
   path: '/seo-services',
 });

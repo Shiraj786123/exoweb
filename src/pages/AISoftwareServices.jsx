@@ -1,6 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
+import HeroTrustText from '../components/HeroTrustText';
+import TechnologyStackSection from '../components/TechnologyStackSection';
+import { SERVICE_CONTACT } from '../content/serviceContactContent';
+import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const AISoftwareServices = () => {
   const targetAudience = [
@@ -42,13 +48,16 @@ const AISoftwareServices = () => {
     
     {/* Centered Pill Badge (Protected Top Spacing) */}
     <div className="aiss__badge_pill_centered">
-      <span className="aiss__badge_dot_indicator">🤖</span> AI Software Development Services
+      <span className="badge_dot_indicator">●</span>
+      <span className="hero-badge-text">
+        <span className="hero-badge-accent">AI Software Development</span>
+        <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+      </span>
     </div>
 
-    {/* Centered Title */}
     <h1 className="aiss__hero_title_centered">
-      AI-Powered Web Development Agency <br />
-      <span className="highlight_sky_blue">Trusted by Businesses in the UK & USA</span>
+      AI-Powered Software Development for{" "}
+      <span className="highlight-text">Batticaloa</span> Businesses
     </h1>
 
     {/* Centered Subtitle Description */}
@@ -66,6 +75,8 @@ const AISoftwareServices = () => {
         See Our Work ↓
       </a>
     </div>
+
+    <HeroTrustText text={HERO_TRUST_TEXT.aiSoftware} />
 
   </div>
 </section>
@@ -338,20 +349,9 @@ const AISoftwareServices = () => {
   </div>
 </section>
 
-      {/* 8. FINAL CTA SECTION */}
-      <section className="aiss__section_wrapper">
-        <div className="aiss__dark_card cta-layout">
-          <div className="cta-left">
-            <h2>Ready to Build? →</h2>
-            <p>Request Your Free AI Software Consultation</p>
-          </div>
-          <div className="cta-right-box">
-            <span className="box-badge">Obsidian</span>
-            <h3>Build production-ready intelligence with engineering precision.</h3>
-            <a href="#contact" className="capsule-primary-btn">Request Your Consultation</a>
-          </div>
-        </div>
-      </section>
+      <TechnologyStackSection {...SERVICE_TECH_STACK.aiSoftware} />
+
+      <ContactSection {...SERVICE_CONTACT.aiSoftware} variant="service" />
 
       <Footer />
     </div>

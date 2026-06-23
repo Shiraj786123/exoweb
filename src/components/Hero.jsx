@@ -1,4 +1,6 @@
 import React from 'react';
+import HeroTrustText from './HeroTrustText';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 export default function HeroSection() {
   return (
@@ -7,19 +9,23 @@ export default function HeroSection() {
         
         {/* Localized Eyebrow Badge */}
         <span className="hero-badge">
-          <span className="badge-dot">●</span> Local SEO Services — Batticaloa, Sri Lanka
+          <span className="badge-dot">●</span>
+          <span className="hero-badge-text">
+            <span className="hero-badge-accent">Web &amp; Software Agency</span>
+            <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+          </span>
         </span>
         
         {/* Localized Main Typography */}
         <h1>
-          SEO Services for Batticaloa & <br />
-          <span className="highlight-text">Eastern Province Businesses</span>
+          Web Design & Software Development for Businesses in{" "}
+          <span className="highlight-text">Batticaloa</span>
         </h1>
         
         {/* Localized Description */}
         <p className="hero-desc">
-          We help businesses in Batticaloa, Kattankudy, and Eastern Province rank 
-          higher on Google — so local customers find you first, not your competitors.
+          From your first website to a full custom software system — Vexoweb helps
+          businesses in Batticaloa, Kattankudy, and across Eastern Province grow online.
         </p>
         
         {/* Core Call to Actions */}
@@ -34,9 +40,7 @@ export default function HeroSection() {
         </div>
         
         {/* Subdued Social Proof Divider */}
-        <p className="hero-trust-text">
-          HELPING EASTERN PROVINCE BUSINESSES DOMINATE LOCAL SEARCH
-        </p>
+        <HeroTrustText text={HERO_TRUST_TEXT.home} />
         
       </div>
     </section>

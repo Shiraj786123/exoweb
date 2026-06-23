@@ -5,101 +5,102 @@ import DevelopmentIcon from "../assets/icons/launch.svg";
 import LaunchIcon from "../assets/icons/launch4.svg";
 import SupportIcon from "../assets/icons/support.svg";
 
-// CSS import is removed from here to prevent Next.js resolution errors
-
 const ProcessSection = () => {
   const steps = [
     {
       number: "01",
       title: "Discovery",
-      description: "We listen to your goals and gather key requirements.",
+      description: "We listen to your goals, audience, and requirements to map the right solution.",
       icon: DiscoverIcon,
-      color: "#38bdf8", // Sky blue
+      color: "#38bdf8",
     },
     {
       number: "02",
       title: "Design",
-      description: "UI/UX designs and system architecture tailored to your needs.",
+      description: "UI/UX wireframes and system architecture tailored to your brand and users.",
       icon: StrategyIcon,
-      color: "#f97316", // Orange
+      color: "#6366f1",
     },
     {
       number: "03",
       title: "Development",
-      description: "Agile development of web, mobile, and desktop solutions.",
+      description: "Agile builds for web, mobile, and custom software with regular updates.",
       icon: DevelopmentIcon,
-      color: "#10b981", // Teal
+      color: "#10b981",
     },
     {
       number: "04",
       title: "Launch",
-      description: "Final testing, deployment, and go-live across platforms.",
+      description: "Rigorous testing, deployment, and go-live across all platforms.",
       icon: LaunchIcon,
-      color: "#a855f7", // Purple
+      color: "#f59e0b",
     },
     {
       number: "05",
       title: "Support",
-      description: "Continuous maintenance and updates to ensure success.",
+      description: "Ongoing maintenance, updates, and optimization for lasting success.",
       icon: SupportIcon,
-      color: "#ec4899", // Pink
+      color: "#ec4899",
     },
   ];
 
   return (
-    <section className="process-section">
-      <div className="process-container">
-        <h2 className="process-title">Proven Process – How It Works</h2>
-        <p className="process-subtitle">Our 5-Step Success Blueprint</p>
+    <section className="home-process" aria-labelledby="home-process-title">
+      <div className="home-process__glow home-process__glow--left" aria-hidden="true" />
+      <div className="home-process__glow home-process__glow--right" aria-hidden="true" />
 
-        <div className="steps-grid">
-          {/* Background Connecting Wave (Only visible on Desktop) */}
-          <div className="process-wave-wrapper">
-            <svg className="process-wave-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-              <path 
-                d="M 0,50 C 50,0 150,0 200,50 C 250,100 350,100 400,50 C 450,0 550,0 600,50 C 650,100 750,100 800,50 C 850,0 950,0 1000,50" 
-                fill="none" 
-                stroke="rgba(255, 255, 255, 0.15)" 
-                strokeWidth="3" 
-                strokeDasharray="6,6" 
-              />
-            </svg>
-          </div>
+      <div className="home-process__container">
+        <header className="home-process__header">
+          <span className="home-process__tag">Proven Process</span>
+          <h2 id="home-process-title" className="home-process__title">
+            How We Deliver <span className="home-process__title-accent">Your Project</span>
+          </h2>
+          <p className="home-process__subtitle">
+            A transparent 5-step blueprint — from first conversation to long-term growth.
+          </p>
+        </header>
 
-          {steps.map((step, index) => {
-            const isEven = index % 2 === 0;
-            const colClass = `col-pos-${index + 1}`;
-            
-            return (
-              <React.Fragment key={index}>
-                {/* Circle Row (Concentric outer loop & inner white core) */}
-                <div className={`step-circle-container ${colClass}`}>
-                  <div className="step-circle-outer" style={{ "--step-color": step.color }}>
-                    <div className="step-circle-inner">
-                      <img
-                        src={step.icon}
-                        alt={step.title}
-                        className="step-icon"
-                      />
-                    </div>
-                    {/* Floating Step Number */}
-                    <div className="step-circle-number" style={{ backgroundColor: step.color }}>
-                      {step.number}
-                    </div>
+        <ol className="home-process__track">
+          {steps.map((step, index) => (
+            <li
+              key={step.number}
+              className="home-process__card"
+              style={{ "--step-color": step.color }}
+            >
+              <div className="home-process__card-inner">
+                <div className="home-process__card-head">
+                  <span className="home-process__step-num">{step.number}</span>
+                  <span className="home-process__step-label">Step {index + 1}</span>
+                </div>
+
+                <div className="home-process__icon-ring">
+                  <div className="home-process__icon-core">
+                    <img src={step.icon} alt="" className="home-process__icon" aria-hidden="true" />
                   </div>
                 </div>
 
-                {/* Content Row (Alternates top/bottom on desktop to form the timeline) */}
-                <div className={`step-content-container ${isEven ? 'row-pos-bottom' : 'row-pos-top'} ${colClass}`}>
-                  <div className="step-text-card">
-                    <h3 className="step-title">{step.title}</h3>
-                    <p className="step-description">{step.description}</p>
-                  </div>
+                <div className="home-process__card-body">
+                  <h3 className="home-process__card-title">{step.title}</h3>
+                  <p className="home-process__card-desc">{step.description}</p>
                 </div>
-              </React.Fragment>
-            );
-          })}
-        </div>
+              </div>
+
+              {index < steps.length - 1 && (
+                <span className="home-process__connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" className="home-process__connector-icon">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

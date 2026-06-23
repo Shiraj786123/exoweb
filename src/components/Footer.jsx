@@ -32,7 +32,7 @@ const Footer = () => {
   ];
 
   const exploreLinks = [
-    { label: 'About ZonzocTech', path: '/about' },
+    { label: 'About Vexoweb', path: '/about' },
     { label: 'How We Work', path: '/about' },
     { label: 'Careers', path: '/contact-us' },
     { label: 'Contact Us', path: '/contact-us' },
@@ -42,65 +42,42 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-
-      {/* TOP SECTION */}
-      <div className="footer-top">
-        <div className="footer-top-container">
-          {/* LEFT SIDE — STATS + BUTTON */}
-          {/* BUTTON UNDER BOTH */}
-          {/* RIGHT SIDE — CTA BOX */}
-        </div>
-        
-        {/* Full-width line */}
-      </div>
+      <div className="footer-glow footer-glow-1" aria-hidden="true" />
+      <div className="footer-glow footer-glow-2" aria-hidden="true" />
 
       {/* MAIN FOOTER CONTENT */}
       <div className="footer-main">
         <div className="footer-container">
 
           {/* Branding */}
-          <div 
-            className="footer-brand" 
-            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
-          >
-            {/* 
-              This box acts as the matching frame container for the logo, 
-              aligning its top boundary with the rest of the column headers.
-            */}
-            <div 
-              className="footer-logo" 
-              style={{ 
-                display: 'flex', 
-                justifyContent: 'flex-start', 
-                alignItems: 'center', 
-                width: '100%', 
-                height: '110px', 
-                marginBottom: '0px'
-              }}
-            >
-             <Image
-  src={siteLogo}
-  alt="Zonzoctech Logo"
-  className="logo-text-img"
-  width={320}
-  height={140}
-  priority
-/>
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <Image
+                src={siteLogo}
+                alt="Vexoweb Logo"
+                className="footer-logo-img"
+                width={280}
+                height={145}
+                priority
+              />
             </div>
 
-            <div className="footer-contact-box" style={{ marginTop: '4px' }}>
-              <h4 className="contact-heading" style={{ marginTop: '0px', marginBottom: '16px' }}>
+            <div className="footer-contact-box">
+              <h4 className="contact-heading">
                 Ready to speak with a marketing expert? Give us a ring
               </h4>
+              <p className="footer-cta-sub">
+                Batticaloa, Sri Lanka · We reply within 24 hours
+              </p>
 
-              {/* FIX: Dual, side-by-side circular contact icons */}
               <div className="footer-contact-icons">
                 <a
-                  href="https://wa.me/94740309534?text=Hi%20ZonzocTech%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
+                  href="https://wa.me/94740309534?text=Hi%20Vexoweb%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
                   className="contact-icon-btn whatsapp-color"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Chat on WhatsApp"
+                  aria-label="Chat on WhatsApp"
                 >
                   <i className="fa-brands fa-whatsapp"></i>
                 </a>
@@ -108,6 +85,7 @@ const Footer = () => {
                   href="mailto:info@zonzoctech.com"
                   className="contact-icon-btn email-color"
                   title="Email Us"
+                  aria-label="Email Vexoweb"
                 >
                   <i className="fa-solid fa-envelope"></i>
                 </a>
@@ -163,27 +141,20 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Full-width line before footer bottom */}
-      <div className="line">
-        <hr style={{
-          border: 'none',
-          borderTop: '1px solid rgba(255, 255, 255, 1)',
-          margin: '20px 0',
-          width: '100%'
-        }} />
-      </div>
+      {/* Divider */}
+      <div className="footer-divider" />
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="footer-bottom-container">
           <p className="copyright">
-            Zonzoctech© 2026
+            © 2026 Vexoweb. All rights reserved.
           </p>
           <div className="social-icons">
-            <a href="https://x.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <i className="fa-brands fa-twitter"></i>
             </a>
-            <a href="https://www.linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fa-brands fa-linkedin"></i>
             </a>
           </div>

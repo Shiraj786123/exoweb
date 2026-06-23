@@ -1,772 +1,432 @@
 /* ==========================================================================
-   PROCESS SECTION WRAPPER (LIGHT BACKGROUND OPTIMIZED)
+   HOMEPAGE — PROVEN PROCESS SECTION
+   Scoped as .home-process (avoids .process-section on service pages)
    ========================================================================== */
-.process-section {
-  background: #ffffff; /* Pristine white background */
-  padding: 120px 24px;
+
+.home-process {
   position: relative;
+  width: 100%;
+  padding: 72px 24px 64px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 45%, #ffffff 100%);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-.process-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
+.home-process__glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.process-title {
-  font-size: 48px;
-  font-weight: 800;
-  color: #0f172a; /* Deep slate for high contrast */
-  margin-bottom: 14px;
-  line-height: 1.2;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: -0.01em;
+.home-process__glow--left {
+  top: -120px;
+  left: -140px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
 }
 
-.process-subtitle {
-  font-size: 1.15rem;
-  color: #0284c7; /* Vibrant brand blue subtitle text */
-  margin-bottom: 80px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.home-process__glow--right {
+  bottom: -100px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
 }
 
-/* ==========================================================================
-   DESKTOP GRID & TIMELINE CONNECTOR WAVE
-   ========================================================================== */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 150px 140px 150px; /* Rows: 1. Top Text, 2. Timeline Wave, 3. Bottom Text */
-  align-items: center;
+.home-process__container {
   position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Wave wrapper stretching behind row 2 */
-.process-wave-wrapper {
-  position: absolute;
-  grid-row: 2;
-  grid-column: 1 / -1;
-  width: 100%;
-  height: 100px;
-  z-index: 1;
+/* Header */
+.home-process__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 52px;
 }
 
-.process-wave-svg {
-  width: 100%;
-  height: 100%;
+.home-process__tag {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 999px;
 }
 
-/* Soft blue connecting wave visible on light background */
-.process-wave-svg path {
-  stroke: rgba(2, 132, 199, 0.25) !important;
+.home-process__title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0 0 14px;
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* ==========================================================================
-   GRID PLACEMENTS
-   ========================================================================== */
-.col-pos-1 { grid-column: 1; }
-.col-pos-2 { grid-column: 2; }
-.col-pos-3 { grid-column: 3; }
-.col-pos-4 { grid-column: 4; }
-.col-pos-5 { grid-column: 5; }
+.home-process__title-accent {
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-.step-circle-container {
-  grid-row: 2;
+.home-process__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Steps track */
+.home-process__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
+  align-items: stretch;
   justify-content: center;
-  align-items: center;
+  gap: 0;
+}
+
+.home-process__card {
   position: relative;
-  z-index: 2;
-}
-
-.row-pos-top {
-  grid-row: 1;
-  align-self: end;
-  margin-bottom: 15px;
-}
-
-.row-pos-bottom {
-  grid-row: 3;
-  align-self: start;
-  margin-top: 15px;
-}
-
-/* ==========================================================================
-   CONCENTRIC PROCESS CIRCLES
-   ========================================================================== */
-.step-circle-outer {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid var(--step-color); /* concentric color accent */
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: stretch;
 }
 
-/* Rotating outer concentric border loop animation */
-.step-circle-outer::after {
+.home-process__card-inner::before {
   content: "";
   position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  border-radius: 50%;
-  border: 1px solid rgba(15, 23, 42, 0.06); /* Soft subtle ring boundary */
-  border-top-color: var(--step-color); /* Accent top loop */
-  animation: rotateAccentRing 8s linear infinite;
-  pointer-events: none;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, var(--step-color), color-mix(in srgb, var(--step-color) 60%, #ffffff));
+  opacity: 0.9;
+  transition: left 0.3s ease, right 0.3s ease, height 0.3s ease, opacity 0.3s ease;
 }
 
-@keyframes rotateAccentRing {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.home-process__card-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px 28px;
+  background: #ffffff;
+  border: 1px solid #e8eef5;
+  border-radius: 18px;
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.04),
+    0 12px 28px -8px rgba(37, 99, 235, 0.06);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+  position: relative;
+  height: 100%;
+  min-height: 260px;
+  margin: 0 6px;
+  cursor: default;
 }
 
-.step-circle-inner {
-  width: 70px;
-  height: 70px;
+.home-process__card-body {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-process__card:hover .home-process__card-inner {
+  transform: translateY(-5px);
+  background: color-mix(in srgb, var(--step-color) 7%, #ffffff);
+  border-color: color-mix(in srgb, var(--step-color) 42%, #e8eef5);
+  box-shadow:
+    0 10px 20px -6px color-mix(in srgb, var(--step-color) 22%, transparent),
+    0 4px 12px -2px rgba(15, 23, 42, 0.06);
+}
+
+.home-process__card:hover .home-process__card-inner::before {
+  opacity: 1;
+  height: 4px;
+  left: 0;
+  right: 0;
+  border-radius: 18px 18px 0 0;
+}
+
+.home-process__card:hover .home-process__step-num {
+  color: var(--step-color);
+  transform: scale(1.05);
+}
+
+.home-process__card:hover .home-process__step-label {
+  color: color-mix(in srgb, var(--step-color) 75%, #64748b);
+}
+
+.home-process__card:hover .home-process__card-title {
+  color: color-mix(in srgb, var(--step-color) 85%, #0f172a);
+}
+
+.home-process__card:hover .home-process__icon-ring {
+  transform: scale(1.08);
+  background: color-mix(in srgb, var(--step-color) 22%, #ffffff);
+  border-color: color-mix(in srgb, var(--step-color) 55%, #ffffff);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--step-color) 12%, transparent);
+}
+
+.home-process__card:hover .home-process__icon-core {
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--step-color) 35%, transparent);
+}
+
+.home-process__card:hover .home-process__connector {
+  color: var(--step-color);
+  opacity: 0.85;
+}
+
+.home-process__card-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.home-process__step-num {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--step-color);
+  letter-spacing: -0.02em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home-process__step-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.home-process__icon-ring {
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: #f8fafc; /* Soft off-white core so white icons are visible */
-  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 68, 143, 0.1);
-  transition: all 0.3s ease;
+  margin-bottom: 18px;
+  background: color-mix(in srgb, var(--step-color) 12%, #ffffff);
+  border: 2px solid color-mix(in srgb, var(--step-color) 28%, #ffffff);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.step-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+.home-process__icon-core {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--step-color) 20%, transparent);
+  transition: box-shadow 0.3s ease;
 }
 
-.step-circle-number {
-  position: absolute;
-  bottom: -3px;
-  right: -3px;
+.home-process__icon {
   width: 26px;
   height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 3;
-}
-
-/* Interactive hovers */
-.step-circle-outer:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px var(--step-color);
-}
-
-.step-circle-outer:hover .step-icon {
-  transform: rotate(12deg) scale(1.05);
-}
-
-/* ==========================================================================
-   TEXT CARD STYLES
-   ========================================================================== */
-.step-text-card {
-  background: #f8fafc; /* Soft light-gray card background for high contrast */
-  backdrop-filter: blur(10px);
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-}
-
-.step-text-card:hover {
-  background: #ffffff;
-  border-color: #cbd5e1;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-}
-
-.step-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0f172a; /* Slate title text */
-  margin: 0 0 10px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.step-description {
-  font-size: 0.9rem;
-  color: #475569; /* Balanced description text */
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE TIMELINE STACK)
-   ========================================================================== */
-
-@media (max-width: 1024px) {
-  .process-section {
-    padding: 80px 20px;
-  }
-
-  .process-title {
-    font-size: 32px;
-  }
-
-  .process-subtitle {
-    margin-bottom: 60px;
-  }
-
-  /* Grid changes to 2-column layout (Left: Timeline Line & Circles, Right: Content Cards) */
-  .steps-grid {
-    display: grid !important;
-    grid-template-columns: 100px 1fr !important;
-    grid-template-rows: auto !important;
-    gap: 36px 16px !important;
-  }
-
-  /* Hides horizontal desktop wave path */
-  .process-wave-wrapper {
-    display: none;
-  }
-
-  /* Creates a vertical timeline connecting line down behind the circles */
-  .steps-grid::before {
-    content: "";
-    position: absolute;
-    top: 40px;
-    bottom: 40px;
-    left: 49px; /* Centered precisely behind the 100px column */
-    width: 2px;
-    border-left: 2px dashed rgba(2, 132, 199, 0.25) !important; /* Visible dashed line on mobile */
-    z-index: 1;
-  }
-
-  /* Move all circles to Column 1 */
-  .step-circle-container {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-    justify-content: center !important;
-  }
-
-  /* Move all content cards to Column 2 and align left */
-  .step-content-container {
-    grid-column: 2 !important;
-    grid-row: auto !important;
-    align-self: center !important;
-    margin: 0 !important;
-  }
-
-  .step-text-card {
-    text-align: left !important;
-    padding: 24px;
-  }
-}
-
-@media (max-width: 640px) {
-  .process-title {
-    font-size: 28px;
-  }
-
-  .steps-grid {
-    grid-template-columns: 80px 1fr !important; /* Shrunk line left margin on mobile */
-  }
-
-  .steps-grid::before {
-    left: 39px;
-  }
-
-  .step-circle-outer {
-    width: 80px;
-    height: 80px;
-  }
-
-  .step-circle-inner {
-    width: 60px;
-    height: 60px;
-  }
-
-  .step-icon {
-    width: 26px;
-    height: 26px;
-  }
-}
-
-
-
-
-
-
-
-/* ==========================================================================
-   CONCENTRIC PROCESS CIRCLES - FIXED ICON VISIBILITY
-   ========================================================================== */
-
-.step-icon {
-  width: 32px;
-  height: 32px;
   object-fit: contain;
-  transition: transform 0.3s ease;
-  
-  /* ✅ FORCE VISIBILITY OVERRIDE FOR LIGHT BACKGROUNDS */
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  
-  /* ⚡ MAGIC FIX: Converts white/transparent default SVGs to deep corporate slate blue */
-  filter: brightness(0) saturate(100%) invert(9%) sepia(21%) saturate(2200%) hue-rotate(185deg) brightness(96%) contrast(94%);
+  filter: brightness(0) saturate(100%) invert(32%) sepia(94%) saturate(1200%) hue-rotate(200deg) brightness(95%) contrast(92%);
 }
 
-/* Enhances the icon hover state interaction */
-.step-circle-outer:hover .step-icon {
-  transform: rotate(12deg) scale(1.05);
-  /* Optional: Turns the icon vibrant blue on card hover */
-  filter: brightness(0) saturate(100%) invert(32%) sepia(94%) saturate(2058%) hue-rotate(212deg) brightness(97%) contrast(94%);
-}
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   PROCESS SECTION WRAPPER (MATCHING STYLE SIGNATURE)
-   ========================================================================== */
-.process-section {
-  background: #ffffff; /* Pristine white background */
-  /* ⚡ CHANGED: Reduced padding from 120px to match tight spacing rules */
-  padding: 40px 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.process-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.process-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px; /* ⚡ MATCHED: Matches the Success Section size footprint exactly */
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin: 0 0 12px 0 !important;
-  line-height: 1.2;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  
-  /* ✅ MATCHED COLOR GRADIENT FROM PREVIOUS SECTION */
-  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-
-.process-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px; /* ⚡ MATCHED: Clean typography size to match previous subtitle */
-  color: #64748b !important; /* ✅ MATCHED COLOR: Clean slate gray text signature */
-  font-weight: 500;
-  line-height: 1.5;
-  /* ⚡ CHANGED: Trimmed massive 80px bottom margin to a tight 40px */
-  margin: 0 0 40px 0 !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-
-
-
-/* ==========================================================================
-   PROCESS SECTION WRAPPER (MAX COMPACT LAYOUT)
-   ========================================================================== */
-.process-section {
-  background: #ffffff; /* Pristine white background */
-  
-  /* ⚡ FIXED: Dropped top padding to 0px to instantly eliminate the gap with the section above */
-  padding: 0px 24px 40px 24px !important; 
-  position: relative;
-  overflow: hidden;
-}
-
-.process-container {
-  max-width: 1400px;
-  /* ⚡ FIXED: Removed any default or hidden top margins pushing down */
-  margin: 0 auto !important; 
-  text-align: center;
-}
-
-
-
-
-
-
-
-/* ==========================================================================
-   PROCESS SECTION WRAPPER (MAX COMPACT & FULLY RESPONSIVE)
-   ========================================================================== */
-.process-section {
-  background: #ffffff;
-  padding: 0 24px 40px 24px !important; /* Tight top spacing to close section gap */
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.process-container {
-  max-width: 1200px;
-  margin: 0 auto !important;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.process-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin: 0 0 12px 0 !important;
-  line-height: 1.2;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  
-  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-
-.process-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #64748b !important;
-  font-weight: 500;
-  line-height: 1.5;
-  margin: 0 0 40px 0 !important; /* Clean distance before the grid starts */
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* ==========================================================================
-   DESKTOP GRID ARCHITECTURE (ALL PC SCREENS)
-   ========================================================================== */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 150px 110px 150px; /* Precise height distribution */
-  align-items: center;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Horizontal connecting wave layout background */
-.process-wave-wrapper {
-  position: absolute;
-  grid-row: 2;
-  grid-column: 1 / -1;
-  width: 100%;
-  height: 80px;
-  z-index: 1;
-}
-
-.process-wave-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.process-wave-svg path {
-  stroke: rgba(2, 132, 199, 0.25) !important;
-}
-
-/* Desktop Grid Position Mappings */
-.col-pos-1 { grid-column: 1; }
-.col-pos-2 { grid-column: 2; }
-.col-pos-3 { grid-column: 3; }
-.col-pos-4 { grid-column: 4; }
-.col-pos-5 { grid-column: 5; }
-
-.step-circle-container {
-  grid-row: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.row-pos-top {
-  grid-row: 1;
-  align-self: end;
-  margin-bottom: 10px;
-}
-
-.row-pos-bottom {
-  grid-row: 3;
-  align-self: start;
-  margin-top: 10px;
-}
-
-/* ==========================================================================
-   CONCENTRIC PROCESS CIRCLES & ICONS
-   ========================================================================== */
-.step-circle-outer {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  border: 3px solid var(--step-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.step-circle-outer::after {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  right: -7px;
-  bottom: -7px;
-  border-radius: 50%;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-top-color: var(--step-color);
-  animation: rotateAccentRing 8s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes rotateAccentRing {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.step-circle-inner {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 68, 143, 0.06);
-  transition: all 0.3s ease;
-}
-
-.step-icon {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  /* High contrast filter transformation for transparent/white SVGs */
-  filter: brightness(0) saturate(100%) invert(9%) sepia(21%) saturate(2200%) hue-rotate(185deg) brightness(96%) contrast(94%);
-}
-
-.step-circle-number {
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  z-index: 3;
-}
-
-/* Circle Hover Effects */
-.step-circle-outer:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 20px var(--step-color);
-}
-
-.step-circle-outer:hover .step-icon {
-  transform: rotate(12deg) scale(1.05);
-  filter: brightness(0) saturate(100%) invert(32%) sepia(94%) saturate(2058%) hue-rotate(212deg) brightness(97%) contrast(94%);
-}
-
-/* ==========================================================================
-   TEXT CARD COMPONENTS
-   ========================================================================== */
-.step-text-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-}
-
-.step-text-card:hover {
-  background: #ffffff;
-  border-color: #cbd5e1;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.05);
-}
-
-.step-title {
-  font-size: 0.95rem;
+.home-process__card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 6px 0;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
 }
 
-.step-description {
-  font-size: 0.82rem;
-  color: #475569;
-  line-height: 1.45;
+.home-process__card-desc {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #64748b;
   margin: 0;
 }
 
+/* Connector arrows between cards (desktop) */
+.home-process__connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  color: #cbd5e1;
+  align-self: center;
+  margin: 0 -4px;
+  z-index: 2;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.home-process__connector-icon {
+  width: 20px;
+  height: 20px;
+}
+
 /* ==========================================================================
-   TABLET RESPONSIVE VIEWPORTS (1024px and down)
+   TABLET
    ========================================================================== */
 @media (max-width: 1024px) {
-  .process-section {
-    padding: 0 20px 40px 20px !important;
+  .home-process {
+    padding: 60px 20px 64px;
   }
 
-  .process-title {
-    font-size: 28px;
+  .home-process__track {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
   }
 
-  .process-subtitle {
-    margin-bottom: 40px !important;
+  .home-process__card {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 8px);
   }
 
-  /* Switches layout to an organized 2-column vertical timeline flow */
-  .steps-grid {
-    display: grid !important;
-    grid-template-columns: 90px 1fr !important;
-    grid-template-rows: auto !important;
-    gap: 24px 16px !important;
-    max-width: 700px;
-  }
-
-  /* Hides horizontal desktop wave connector */
-  .process-wave-wrapper {
+  .home-process__connector {
     display: none;
   }
 
-  /* Renders clean vertical connection track behind circles */
-  .steps-grid::before {
-    content: "";
-    position: absolute;
-    top: 30px;
-    bottom: 30px;
-    left: 44px; /* Perfectly centered alignment */
-    width: 2px;
-    border-left: 2px dashed rgba(2, 132, 199, 0.25) !important;
-    z-index: 1;
-  }
-
-  /* Shifts circles to the left column position track */
-  .step-circle-container {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-    justify-content: center !important;
-  }
-
-  /* Shifts text cards to the right column position track */
-  .step-content-container {
-    grid-column: 2 !important;
-    grid-row: auto !important;
-    align-self: center !important;
-    margin: 0 !important;
-  }
-
-  .step-text-card {
-    text-align: left !important;
-    padding: 16px;
+  .home-process__card .home-process__card-inner {
+    margin: 0;
+    min-height: 240px;
   }
 }
 
 /* ==========================================================================
-   MOBILE SCREEN VIEWPORTS (640px and down)
+   MOBILE — vertical timeline
    ========================================================================== */
 @media (max-width: 640px) {
-  .process-title {
-    font-size: 24px;
+  .home-process {
+    padding: 48px 16px 56px;
   }
 
-  .steps-grid {
-    grid-template-columns: 70px 1fr !important; /* Compact margin footprints */
-    gap: 20px 12px !important;
+  .home-process__header {
+    margin-bottom: 36px;
   }
 
-  .steps-grid::before {
-    left: 34px;
+  .home-process__title {
+    font-size: 1.5rem;
   }
 
-  .step-circle-outer {
-    width: 70px;
-    height: 70px;
-  }
-
-  .step-circle-outer::after {
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-  }
-
-  .step-circle-inner {
-    width: 54px;
-    height: 54px;
-  }
-
-  .step-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .step-title {
+  .home-process__subtitle {
     font-size: 0.9rem;
   }
 
-  .step-description {
-    font-size: 0.78rem;
+  .home-process__track {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .home-process__track::before {
+    display: none;
+  }
+
+  .home-process__card {
+    flex: none;
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .home-process__card-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 18px 16px;
+    margin: 0;
+    gap: 14px;
+  }
+
+  .home-process__card-head {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .home-process__step-num {
+    font-size: 1.1rem;
+  }
+
+  .home-process__step-label {
+    font-size: 9px;
+  }
+
+  .home-process__icon-ring {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+  }
+
+  .home-process__icon-core {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-process__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .home-process__card-body {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
+    padding-right: 72px;
+  }
+
+  .home-process__card:hover .home-process__icon-ring {
+    transform: scale(1.04);
+  }
+
+  .home-process__card-inner {
+    min-height: auto;
   }
 }

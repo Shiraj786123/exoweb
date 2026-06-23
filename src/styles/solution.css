@@ -28,9 +28,12 @@
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: #0f172a;
   margin: 0 0 8px 0 !important;
   letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .solution-subtitle {

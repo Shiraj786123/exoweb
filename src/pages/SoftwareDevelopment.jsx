@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
+import HeroTrustText from '../components/HeroTrustText';
+import TechnologyStackSection from '../components/TechnologyStackSection';
+import { SERVICE_CONTACT } from '../content/serviceContactContent';
+import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
+import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const sections = [
   {
@@ -160,23 +166,20 @@ const SoftwareDevelopment = () => {
           }}
         >
           <div className="hero-container">
-            <span 
-              className="hero-badge" 
-              style={{ 
-                display: "inline-flex", 
-                alignItems: "center", 
-                marginTop: "10px" 
-              }}
-            >
-              <span className="badge-dot" style={{ marginRight: "6px" }}>●</span> Custom Software Development — Batticaloa, Sri Lanka
+            <span className="hero-badge">
+              <span className="badge-dot">●</span>
+              <span className="hero-badge-text">
+                <span className="hero-badge-accent">Custom Software Development</span>
+                <span className="hero-badge-light"> — Batticaloa, Sri Lanka</span>
+              </span>
             </span>
             <h1>
-              Custom Software Development <br />
-              <span className="highlight-text">for Batticaloa Businesses</span>
+              Custom Software Development for{" "}
+              <span className="highlight-text">Batticaloa</span> Businesses
             </h1>
             <p className="hero-desc">
-              Business POS, billing apps, inventory tools — we build software that 
-              solves real problems for businesses in Batticaloa and across Eastern Province.
+              Business POS, billing apps, inventory tools — we build software that solves
+              real problems for businesses in Batticaloa and across Eastern Province.
             </p>
             <div className="hero-buttons">
               <button className="primary-btn">Get Free Consultation</button>
@@ -184,9 +187,7 @@ const SoftwareDevelopment = () => {
                 View Portfolio <span className="arrow">→</span>
               </button>
             </div>
-            <p className="hero-trust-text">
-              Trusted by 120+ businesses across the UK, USA & Europe
-            </p>
+            <HeroTrustText text={HERO_TRUST_TEXT.software} />
           </div>
         </section>
 
@@ -393,16 +394,12 @@ const SoftwareDevelopment = () => {
           </div>
         </section>
 
-        {/* CTA SECTION */}
-        <section className="cta-section">
-          <div className="cta-box">
-            <h2>Ready to Build Your Next Product?</h2>
-            <p>Let’s partner together to turn your ideas into secure, scalable digital solutions.</p>
-            <button className="cta-primary-btn">Start Your Project</button>
-          </div>
-        </section>
-
       </div>
+
+      <TechnologyStackSection {...SERVICE_TECH_STACK.software} />
+
+      <ContactSection {...SERVICE_CONTACT.software} variant="service" />
+
       <Footer />
     </>
   );

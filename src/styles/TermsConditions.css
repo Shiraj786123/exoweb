@@ -339,6 +339,10 @@
     margin-top: 2rem;
   }
 
+  .tc__header {
+    padding: 7rem 1rem 2.5rem;
+  }
+
   .tc__section {
     padding: 2rem 1.5rem;
   }
