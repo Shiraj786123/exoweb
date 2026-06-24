@@ -1572,11 +1572,32 @@ body,
     height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height))) !important;
     max-height: calc(100dvh - var(--mobile-nav-drawer-top, var(--site-header-height))) !important;
     box-sizing: border-box !important;
-    padding: 20px 16px 32px !important;
+    padding: 0 !important;
+    align-items: stretch !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-links.open {
     left: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-nav-drawer {
+    display: flex !important;
+    flex-direction: column;
+    width: 100% !important;
+    min-height: auto !important;
+    flex: 1;
+  }
+
+  .mobile-nav-drawer__primary {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    flex-shrink: 0;
   }
 
   .dropdown-wide .dropdown-content {

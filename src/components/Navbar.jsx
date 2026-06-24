@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"; // Next.js route hook
 import Image from "next/image";
 import Link from "next/link";
 import ExpertPopup from "./ExpertPopup";
+import MobileNavDrawer from "./MobileNavDrawer";
 import { FaPaperPlane } from "react-icons/fa";
 import logo from "../assets/logonew.png";
 
@@ -16,12 +17,15 @@ const WHATSAPP_HREF = "https://wa.me/94740309534";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Mobile menu drawer toggle
-  const [mobileDropdown, setMobileDropdown] = useState(null); // Mobile accordion toggle
+  const [mobileDropdown, setMobileDropdown] = useState(null); // Desktop-only legacy (unused on mobile drawer)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileServiceCategory, setMobileServiceCategory] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // Desktop dropdown active state
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Proposal popup state
   const [isMobileView, setIsMobileView] = useState(false); // Track mobile view for inline styles
   const navRef = useRef(null);
   const headerRef = useRef(null);
+  const navLinksRef = useRef(null);
   const closeTimerRef = useRef(null);
 
   // Hook to detect current active route pathname
@@ -63,6 +67,32 @@ const Navbar = () => {
     } else {
       toggleMobileDropdown(id);
     }
+  };
+
+  const closeMobileMenu = () => {
+    setOpen(false);
+    setMobileServicesOpen(false);
+    setMobileServiceCategory(null);
+  };
+
+  const openMobileMenu = () => {
+    setOpen(true);
+    setMobileServicesOpen(true);
+    setMobileServiceCategory(null);
+  };
+
+  useEffect(() => {
+    if (!open) return;
+    requestAnimationFrame(() => {
+      if (navLinksRef.current) {
+        navLinksRef.current.scrollTop = 0;
+      }
+    });
+  }, [open, mobileServiceCategory]);
+
+  const handleOpenConsultation = () => {
+    closeMobileMenu();
+    setIsPopupOpen(true);
   };
 
   const handleLogoClick = () => {
@@ -160,7 +190,7 @@ const Navbar = () => {
 
                 <span className="topbar-tagline-line1">
                   <span>Webdesign &amp; Software Development in </span>
-                  <span className="sky-blue">Batticaloa</span>
+                  <span className="sky-blue">Eastern Province</span>
                   <span className="topbar-inline-divider" aria-hidden="true">|</span>
                 </span>
               </span>
@@ -237,7 +267,8 @@ const Navbar = () => {
 
         {/* 3. NAVIGATION MENUS LIST */}
         <div className="nav-actions">
-        <nav className={`nav-links ${open ? "open" : ""}`}>
+        <nav className={`nav-links ${open ? "open" : ""}`} ref={navLinksRef}>
+          <div className="nav-links-desktop">
           {/* 
              Conditional "Home" Button 
              - Renders as an unlinked <span> when on the Home page (/).
@@ -394,24 +425,21 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* New Mail Contact Button (visible only in mobile drawer instead of Proposal) */}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="mobile-mail-btn">
-            <svg 
-              width="16" 
-              height="16" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.5" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ marginRight: '8px', display: 'inline-block', verticalAlign: 'middle' }}
-            >
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            Mail Us
-          </a>
+          </div>
+
+          <MobileNavDrawer
+            isOpen={open}
+            isHomePage={isHomePage}
+            servicesOpen={mobileServicesOpen}
+            activeCategoryId={mobileServiceCategory}
+            contactEmail={CONTACT_EMAIL}
+            whatsappHref={WHATSAPP_HREF}
+            onToggleServices={() => setMobileServicesOpen((prev) => !prev)}
+            onSelectCategory={setMobileServiceCategory}
+            onBackFromCategory={() => setMobileServiceCategory(null)}
+            onClose={closeMobileMenu}
+            onOpenConsultation={handleOpenConsultation}
+          />
         </nav>
         
         {/* Proposal button */}
@@ -425,7 +453,7 @@ const Navbar = () => {
         <ExpertPopup open={isPopupOpen} onClose={() => setIsPopupOpen(false)}/>
 
         {/* Mobile Hamburger toggle bars */}
-        <div className="hamburger" onClick={() => setOpen((s) => !s)}>
+        <div className="hamburger" onClick={() => (open ? closeMobileMenu() : openMobileMenu())}>
           <span className={open ? "bar rotate1" : "bar"}></span>
           <span className={open ? "bar hide" : "bar"}></span>
           <span className={open ? "bar rotate2" : "bar"}></span>
