@@ -426,7 +426,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
 
 
       {/* 6️⃣ COMPARISON SECTION: Before vs After Transformation UI */}
-      <section className="ecd__compare_section">
+      <section id="case-studies" className="ecd__compare_section">
         <div className="ecd__page_container">
           <div className="ecd__sec_header">
             <span className="ecd__sec_badge green">TRANSFORMATION</span>

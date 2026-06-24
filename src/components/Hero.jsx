@@ -30,13 +30,13 @@ export default function HeroSection() {
         
         {/* Core Call to Actions */}
         <div className="hero-buttons">
-          <button className="primary-btn">
+          <a href="#contact" className="primary-btn">
             Get Free SEO Audit
-          </button>
-          
-          <button className="secondary-btn">
+          </a>
+
+          <a href="#results" className="secondary-btn">
             View Local Results <span className="arrow">→</span>
-          </button>
+          </a>
         </div>
         
         {/* Subdued Social Proof Divider */}

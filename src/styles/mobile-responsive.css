@@ -43,6 +43,24 @@ video {
   height: auto;
 }
 
+/* Anchor targets — clear fixed header when scrolling to sections */
+[id="contact"],
+[id="audit"],
+[id="work"],
+[id="results"],
+[id="case-studies"],
+[id="services"],
+[id="what-is"],
+[id="help"] {
+  scroll-margin-top: calc(var(--site-header-height) + 16px);
+}
+
+a.primary-btn,
+a.secondary-btn,
+a.link-btn {
+  text-decoration: none;
+}
+
 /* --- Fixed header clearance for centered service heroes (all breakpoints) --- */
 .ecd__hero_centered_layout,
 .aiss__hero_centered_layout {

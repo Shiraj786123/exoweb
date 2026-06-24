@@ -182,17 +182,17 @@ const SoftwareDevelopment = () => {
               real problems for businesses across Eastern Province.
             </p>
             <div className="hero-buttons">
-              <button className="primary-btn">Get Free Consultation</button>
-              <button className="secondary-btn">
+              <a href="#contact" className="primary-btn">Get Free Consultation</a>
+              <a href="/#results" className="secondary-btn">
                 View Portfolio <span className="arrow">→</span>
-              </button>
+              </a>
             </div>
             <HeroTrustText text={HERO_TRUST_TEXT.software} />
           </div>
         </section>
 
         {/* SERVICES SECTION (Row-Wise Connected Timeline Theme) */}
-        <section className="services-section-row-theme">
+        <section className="services-section-row-theme" id="services">
           <div className="section-header-row-theme">
             <span className="section-label-row-theme">Capabilities</span>
             <h2 className="software__h2">Premium Engineering Architectures</h2>
@@ -250,13 +250,13 @@ const SoftwareDevelopment = () => {
                       <div className="mockup-frame" style={{ borderColor: `${currentAccent}60` }}>
                         {section.mockup}
                       </div>
-                      <button className="link-btn" style={{ '--btn-accent-color': currentAccent }}>
+                      <a href="#contact" className="link-btn" style={{ '--btn-accent-color': currentAccent }}>
                         Explore Details
                         <svg className="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           <line x1="5" y1="12" x2="19" y2="12" />
                           <polyline points="12 5 19 12 12 19" />
                         </svg>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

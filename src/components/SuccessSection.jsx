@@ -179,7 +179,7 @@ const SuccessSection = () => {
   }, [getSetWidth, normalizeOffset]);
 
   return (
-    <section className="success-section">
+    <section className="success-section" id="results">
       <div className="success-container">
         <div className="success-header">
           <span className="success-tag">PROVEN EXPERTISE</span>

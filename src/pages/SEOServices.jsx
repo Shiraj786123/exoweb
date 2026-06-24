@@ -258,7 +258,7 @@ const SEOServices = () => {
 
           {/* Buttons */}
           <div className="ecd__hero_buttons_centered">
-            <a href="#audit" className="ecd__btn_primary_centered">
+            <a href="#contact" className="ecd__btn_primary_centered">
               Get Free SEO Audit
             </a>
             <a href="#work" className="ecd__btn_secondary_centered">
@@ -272,7 +272,7 @@ const SEOServices = () => {
       </section>
 
       {/* 2. OVERVIEW: THE BRUTALIST GALLERY BLOCK (White Theme) */}
-      <section className="fswd__section_wrapper ecd-bg-white ecd-brutalist-section">
+      <section id="work" className="fswd__section_wrapper ecd-bg-white ecd-brutalist-section">
         <div className="ecd-brutalist-ticker">
           <div className="ticker-wrapper">
             <span>INDEX MATRICES ● ORGANIC TRAFFIC GROWTH ● SEMANTIC ENTITIES ● CORE PERFORMANCE SCHEMAS ● </span>
@@ -450,7 +450,7 @@ const SEOServices = () => {
             </div>
           </div>
           <p className="ecd__comparison_tagline_dark">
-            For AI-driven visibility, see our <a href="/ai-search-optimization">AI Search Optimization service</a>.
+            For AI-driven visibility, see our <a href="/ai-software-development">AI Software Development service</a>.
           </p>
         </div>
       </section>

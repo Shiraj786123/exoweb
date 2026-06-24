@@ -585,7 +585,7 @@ const AboutUs = () => {
               <a href="/contact-us" className="abt__cta_btn abt__cta_primary">
                  Get in Touch <span className="arrow">→</span>
               </a>
-              <a href="#contact" className="abt__cta_btn abt__cta_secondary">
+              <a href="/seo-services#contact" className="abt__cta_btn abt__cta_secondary">
                  Request a Free Audit <span className="arrow">→</span>
               </a>
             </div>

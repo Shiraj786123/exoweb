@@ -1,7 +1,7 @@
 
 /* Zero Google Font Imports - Strictly Local Safe Web Typography (Enterprise Compliance) [1] */
 :root {
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
   /* Dumma Branding Minimal Colors Palette Application */
   --color-ice-blue: #A0D2EB;        /* Light blue highlight */
