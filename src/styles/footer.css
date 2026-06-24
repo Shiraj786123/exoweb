@@ -378,18 +378,19 @@
     row-gap: 32px;
   }
 
-  /* Brand block — centered */
+  /* Brand block — logo centered, contact left-aligned */
   .footer-brand {
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
     gap: 14px;
   }
 
   .footer-logo {
     justify-content: center;
+    align-self: center;
     margin-top: 0;
   }
 
@@ -399,16 +400,18 @@
 
   .footer-contact-box {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     margin-top: 0;
+    text-align: left;
+    align-self: stretch;
   }
 
   .footer-contact-list {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .footer-contact-row {
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 100%;
   }
 
@@ -443,10 +446,14 @@
     row-gap: 28px;
   }
 
-  /* Keep brand centered, columns left on single column stack */
+  /* Keep logo centered, contact + columns left on single column stack */
   .footer-brand {
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .footer-logo {
+    align-self: center;
   }
 
   .footer-column {
