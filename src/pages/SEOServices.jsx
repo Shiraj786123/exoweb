@@ -3,7 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
 import TechnologyStackSection from '../components/TechnologyStackSection';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -234,6 +236,7 @@ const SEOServices = () => {
       >
         <div className="ecd__hero_overlay_centered"></div>
         <div className="ecd__hero_container_centered">
+          <Breadcrumb items={PAGE_BREADCRUMBS.seoServices} className="breadcrumb--centered breadcrumb--on-dark" />
           
           {/* Local SEO Eyebrow */}
           <div className="ecd__badge_pill_centered">

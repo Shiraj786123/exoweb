@@ -1,0 +1,250 @@
+/* ==========================================================================
+   HOME — Services cards (after hero)
+   ========================================================================== */
+
+.home-services {
+  position: relative;
+  background: linear-gradient(180deg, #000f21 0%, #001b3a 45%, #0a2540 100%);
+  padding: 72px 24px 80px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(56, 189, 248, 0.22);
+}
+
+.home-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1200px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.15) 15%,
+    rgba(56, 189, 248, 0.45) 50%,
+    rgba(56, 189, 248, 0.15) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.home-services__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-services__header {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.home-services__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+
+.home-services__subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.home-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.home-services__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 280px;
+  padding: 28px 22px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.55);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-services__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.home-services__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+}
+
+.home-services__icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  flex-shrink: 0;
+}
+
+.home-services__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.home-services__card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+
+.home-services__card-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0 0 auto;
+  flex: 1;
+}
+
+.home-services__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+
+.home-services__link:hover {
+  gap: 10px;
+  opacity: 0.9;
+}
+
+/* Theme: brand blue */
+.home-services__card--brand {
+  border-color: rgba(0, 68, 143, 0.35);
+}
+
+.home-services__card--brand .home-services__icon-wrap {
+  background: rgba(0, 68, 143, 0.25);
+  color: #60a5fa;
+}
+
+.home-services__card--brand .home-services__link {
+  color: #38bdf8;
+}
+
+.home-services__card--brand:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+/* Theme: sky */
+.home-services__card--sky {
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
+.home-services__card--sky .home-services__icon-wrap {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+}
+
+.home-services__card--sky .home-services__link {
+  color: #38bdf8;
+}
+
+.home-services__card--sky:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+/* Theme: featured (mobile apps) */
+.home-services__card--featured {
+  border-color: rgba(74, 222, 128, 0.45);
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.home-services__card--featured .home-services__icon-wrap {
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+}
+
+.home-services__card--featured .home-services__link {
+  color: #4ade80;
+}
+
+.home-services__card--featured:hover {
+  border-color: rgba(74, 222, 128, 0.65);
+  box-shadow: 0 16px 40px rgba(74, 222, 128, 0.12);
+}
+
+/* Theme: warm accent */
+.home-services__card--warm {
+  border-color: rgba(251, 146, 60, 0.28);
+}
+
+.home-services__card--warm .home-services__icon-wrap {
+  background: rgba(251, 146, 60, 0.12);
+  color: #fb923c;
+}
+
+.home-services__card--warm .home-services__link {
+  color: #fb923c;
+}
+
+.home-services__card--warm:hover {
+  border-color: rgba(251, 146, 60, 0.5);
+}
+
+@media (max-width: 1100px) {
+  .home-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-services {
+    padding: 56px 16px 64px;
+  }
+
+  .home-services__header {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .home-services__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .home-services__card {
+    min-height: auto;
+    padding: 24px 20px 20px;
+  }
+}

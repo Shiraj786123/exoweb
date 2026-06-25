@@ -110,7 +110,7 @@ const MobileNavDrawer = ({
               <span>About Us</span>
             </Link>
 
-            <Link href="/contact-us" className="mobile-nav-item" onClick={handleNavClick}>
+            <Link href="/contact" className="mobile-nav-item" onClick={handleNavClick}>
               <FaEnvelope className="mobile-nav-item__icon" aria-hidden="true" />
               <span>Contact Us</span>
             </Link>

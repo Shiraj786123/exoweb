@@ -3,7 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
 import TechnologyStackSection from '../components/TechnologyStackSection';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -188,9 +190,10 @@ const FullStackWebDev = () => {
       <Navbar />
 
       {/* HERO SECTION */}
-<section className="fswd__hero_section">
+<section className="fswd__hero_section fswd__hero_section--top">
   <div className="fswd__hero_overlay"></div>
   <div className="fswd__hero_content">
+    <Breadcrumb items={PAGE_BREADCRUMBS.websiteDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
     <div className="fswd__hero_badge">
       <span className="badge-dot">●</span>
       <span className="hero-badge-text">

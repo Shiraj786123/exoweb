@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Breadcrumb from '../components/Breadcrumb';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 
 const PrivacyPolicy = () => {
   const lastUpdated = "December 20, 2025";
@@ -119,6 +121,7 @@ const PrivacyPolicy = () => {
       {/* Header */}
       <section className="pp__header">
         <div className="pp__container">
+          <Breadcrumb items={PAGE_BREADCRUMBS.privacyPolicy} className="breadcrumb--light" />
           <h1 className="pp__title">Privacy Policy</h1>
           <p className="pp__updated">Last updated: {lastUpdated}</p>
           <p className="pp__intro">
@@ -222,7 +225,7 @@ const PrivacyPolicy = () => {
               We are committed to transparency and protecting your data. If you have any concerns 
               or questions about how we handle your information, please don't hesitate to contact us.
             </p>
-            <a href="/contact-us" className="pp__summary_btn">Contact Us</a>
+            <a href="/contact" className="pp__summary_btn">Contact Us</a>
           </div>
 
         </div>

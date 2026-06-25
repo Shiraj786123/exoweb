@@ -246,10 +246,10 @@ a.link-btn {
 
   header.navbar-wrapper + section.hero .hero-desc {
     font-size: 15px !important;
-    line-height: 1.6 !important;
+    line-height: 1.5 !important;
     max-width: 100% !important;
-    margin-bottom: 28px !important;
-    padding: 0 4px;
+    margin-bottom: 32px !important;
+    padding: 0 6px;
   }
 
   header.navbar-wrapper + section.hero .hero-buttons {
@@ -258,7 +258,7 @@ a.link-btn {
     width: 100% !important;
     max-width: 300px !important;
     gap: 12px !important;
-    margin: 0 auto 28px auto !important;
+    margin: 0 auto 0 auto !important;
   }
 
   header.navbar-wrapper + section.hero .primary-btn,
@@ -315,9 +315,10 @@ a.link-btn {
   .software-page .hero-desc {
     text-align: center !important;
     font-size: 15px !important;
-    line-height: 1.6 !important;
+    line-height: 1.5 !important;
     max-width: 100% !important;
-    margin-bottom: 28px !important;
+    margin-bottom: 32px !important;
+    padding: 0 6px;
   }
 
   .software-page .hero-buttons {
@@ -326,7 +327,7 @@ a.link-btn {
     width: 100% !important;
     max-width: 300px !important;
     gap: 12px !important;
-    margin: 0 auto 28px auto !important;
+    margin: 0 auto 0 auto !important;
   }
 
   .software-page .hero-badge {
@@ -368,8 +369,10 @@ a.link-btn {
   .ecd__hero_text_centered,
   .aiss__hero_text_centered {
     font-size: 15px !important;
-    line-height: 1.6 !important;
+    line-height: 1.5 !important;
     text-align: center !important;
+    margin-bottom: 32px !important;
+    padding: 0 6px;
   }
 
   .ecd__hero_buttons_centered,
@@ -470,6 +473,9 @@ a.link-btn {
 
   .fswd__hero_description {
     font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 32px !important;
+    padding: 0 6px;
     text-align: center !important;
   }
 
@@ -477,7 +483,7 @@ a.link-btn {
   .fswd__cta_primary {
     width: 100% !important;
     max-width: 300px !important;
-    margin: 0 auto !important;
+    margin: 0 auto 0 auto !important;
     justify-content: center !important;
     box-sizing: border-box;
   }
@@ -499,6 +505,9 @@ a.link-btn {
 
   .ecd__hero_text {
     font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 32px !important;
+    padding: 0 6px;
     text-align: center !important;
   }
 
@@ -507,7 +516,7 @@ a.link-btn {
     align-items: center !important;
     width: 100% !important;
     max-width: 300px !important;
-    margin: 0 auto !important;
+    margin: 0 auto 0 auto !important;
     gap: 12px !important;
   }
 
@@ -1270,13 +1279,14 @@ header.navbar-wrapper + section.hero .hero-badge-light {
 .ecd__hero_text,
 .fswd__hero_description,
 .ecd__hero_text_centered,
-.aiss__hero_text_centered {
+.aiss__hero_text_centered,
+header.navbar-wrapper + section.hero .hero-desc {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 19px !important;
+  font-size: 18px !important;
   font-weight: 400 !important;
-  line-height: 1.65 !important;
-  margin: 0 0 40px 0 !important;
-  max-width: 720px !important;
+  line-height: 1.6 !important;
+  margin: 0 0 36px 0 !important;
+  max-width: 700px !important;
 }
 
 /* Hero badges — match homepage compact pill (13px desktop / 11px mobile) */
@@ -1406,10 +1416,12 @@ header.navbar-wrapper + section.hero .hero-badge .badge-dot,
   .ecd__hero_text,
   .fswd__hero_description,
   .ecd__hero_text_centered,
-  .aiss__hero_text_centered {
+  .aiss__hero_text_centered,
+  header.navbar-wrapper + section.hero .hero-desc {
     font-size: 15px !important;
-    line-height: 1.6 !important;
-    margin-bottom: 28px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 32px !important;
+    padding: 0 6px;
   }
 
   .software-page .hero-trust-text,
@@ -1745,4 +1757,67 @@ body,
     line-height: 1 !important;
     flex-shrink: 0 !important;
   }
+}
+
+/* --- Hamburger: equal-width lines (loaded last) --- */
+@media (max-width: 1024px) {
+  header.navbar-wrapper .nav-container .nav-actions .hamburger {
+    display: flex !important;
+    width: 30px !important;
+    height: 18px !important;
+    min-width: 30px !important;
+    flex-shrink: 0 !important;
+  }
+
+  header.navbar-wrapper .nav-container .nav-actions .hamburger svg {
+    display: block !important;
+    width: 30px !important;
+    height: 18px !important;
+  }
+
+  header.navbar-wrapper .nav-container .nav-actions .hamburger .hamburger-line {
+    fill: #00448f !important;
+  }
+}
+
+/* ==========================================================================
+   HERO CTA → TRUST TEXT GAP (all service pages)
+   ========================================================================== */
+.software-page .hero-buttons,
+.ecd__hero_actions,
+.ecd__hero_buttons_centered,
+.aiss__hero_buttons_centered,
+.fswd__cta_primary {
+  margin-bottom: 0 !important;
+}
+
+.hero-trust-text.hero-trust-text--centered,
+.ecd__hero_trust_text_centered,
+.aiss__hero_trust_text_centered,
+.software-page .hero-trust-text {
+  margin-top: 28px !important;
+  margin-bottom: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Hero descriptions — match homepage (18px desktop / 15px mobile) */
+@media (max-width: 768px) {
+  .software-page .hero-desc,
+  .fswd__hero_description,
+  .ecd__hero_text,
+  .ecd__hero_text_centered,
+  .aiss__hero_text_centered,
+  header.navbar-wrapper + section.hero .hero-desc {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 32px !important;
+    padding: 0 6px !important;
+  }
+}
+
+/* Homepage hero — tighter gap between buttons and trust text */
+header.navbar-wrapper + section.hero .hero-trust-text.hero-trust-text--centered,
+header.navbar-wrapper + section.hero .hero-trust-text--centered {
+  margin-top: 16px !important;
 }

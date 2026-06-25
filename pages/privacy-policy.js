@@ -1,9 +1,11 @@
 import { createStaticPage } from '../src/lib/createStaticPage';
 import PrivacyPolicy from '../src/pages/PrivacyPolicy';
+import { PAGE_BREADCRUMBS } from '../src/content/pageBreadcrumbs';
 
 export default createStaticPage(PrivacyPolicy, {
-  title: 'Privacy Policy',
+  title: 'Privacy Policy | Vexoweb',
   description:
-    'Review the Vexoweb privacy policy to understand how we collect, use, and protect personal information across our website and services.',
+    "Vexoweb's privacy policy explaining how we collect, use and protect your information.",
   path: '/privacy-policy',
+  breadcrumb: PAGE_BREADCRUMBS.privacyPolicy,
 });

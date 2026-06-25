@@ -1,9 +1,11 @@
 import { createStaticPage } from '../src/lib/createStaticPage';
 import AboutUs from '../src/pages/AboutUs';
+import { PAGE_BREADCRUMBS } from '../src/content/pageBreadcrumbs';
 
 export default createStaticPage(AboutUs, {
-  title: 'About',
+  title: 'About Vexoweb | Web & Software Team in Batticaloa',
   description:
-    'Learn how Vexoweb combines AI, engineering, SEO, and business strategy to build scalable digital systems that support long-term growth.',
+    'Meet Vexoweb — the Batticaloa-based team building websites, software & SEO for Eastern Province businesses.',
   path: '/about',
+  breadcrumb: PAGE_BREADCRUMBS.about,
 });

@@ -383,7 +383,7 @@
 
 /* --- 6. CALL TO ACTION (Get a Proposal) --- */
 .contact-btn {
-  background: #0284c7;
+  background: #00448f;
   color: #ffffff;
   padding: 10px 18px;
   border: none;
@@ -407,41 +407,66 @@
 }
 
 .contact-btn:hover {
-  background: #0369a1;
+  background: #003a7a;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 68, 143, 0.28);
 }
 
 /* --- 7. HAMBURGER TOGGLE MENU --- */
 .hamburger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
   height: 18px;
+  flex-shrink: 0;
+  align-self: center;
   cursor: pointer;
   z-index: 1001;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  color: #00448f;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.bar {
-  width: 100%;
-  height: 2.5px;
-  background-color: #0f172a;
-  border-radius: 2px;
+.hamburger svg {
+  display: block;
+  width: 30px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.hamburger-line {
+  fill: currentColor;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hamburger animations */
-.rotate1 {
-  transform: translateY(8px) rotate(45deg);
+.hamburger-line--1 {
+  transform-origin: 15px 1.25px;
 }
 
-.rotate2 {
-  transform: translateY(-8px) rotate(-45deg);
+.hamburger-line--2 {
+  transform-origin: 15px 9px;
 }
 
-.hide {
+.hamburger-line--3 {
+  transform-origin: 15px 16.75px;
+}
+
+.hamburger.is-open .hamburger-line--1 {
+  transform: translateY(7.75px) rotate(45deg);
+}
+
+.hamburger.is-open .hamburger-line--2 {
   opacity: 0;
+}
+
+.hamburger.is-open .hamburger-line--3 {
+  transform: translateY(-7.75px) rotate(-45deg);
 }
 
 /* --- 8. KEYFRAMES --- */
@@ -496,6 +521,10 @@
 
   .hamburger {
     display: flex;
+    flex-shrink: 0;
+    align-self: center;
+    width: 30px;
+    height: 18px;
   }
 
   /* Slide-out drawer menu panel — full screen width */
@@ -625,49 +654,7 @@
   /* ... other rules ... */
 }
 
-/* --- 7. HAMBURGER TOGGLE MENU --- */
-.hamburger {
-  display: none; /* Hidden on desktop by default */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.bar {
-  width: 100%;
-  height: 3px;
-  background-color: #0284c7; /* Bright brand blue for high visibility */
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hamburger animations */
-.rotate1 {
-  transform: translateY(9.5px) rotate(45deg);
-}
-
-.rotate2 {
-  transform: translateY(-9.5px) rotate(-45deg);
-}
-
-.hide {
-  opacity: 0;
-}
-/* Hamburger animations - updated offsets to align with the new 22px height */
-.rotate1 {
-  transform: translateY(9.5px) rotate(45deg); /* Adjusted from 8px */
-}
-
-.rotate2 {
-  transform: translateY(-9.5px) rotate(-45deg); /* Adjusted from -8px */
-}
-
-.hide {
-  opacity: 0;
-}
+/* --- 7. HAMBURGER TOGGLE MENU (mobile duplicate block — kept in sync) --- */
 
 
 
@@ -678,7 +665,11 @@
   /* ... other mobile styles ... */
 
   .hamburger {
-    display: flex !important; /* Forces the hamburger to be visible on mobile */
+    display: flex !important;
+    flex-shrink: 0;
+    align-self: center;
+    width: 30px;
+    height: 18px;
   }
 
   /* ... other mobile styles ... */
@@ -714,7 +705,11 @@
   }
 
   .hamburger {
-    display: flex !important; /* Force visibility */
+    display: flex !important;
+    flex-shrink: 0;
+    align-self: center;
+    width: 30px;
+    height: 18px;
   }
 
   /* Slide-out drawer menu panel — full screen width */
@@ -981,14 +976,36 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   padding: 10px 0;
+  line-height: 1;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
+.nav-home-btn__icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+}
+
+.nav-home-btn__label {
+  display: block;
+  line-height: 1;
+}
+
+@media (min-width: 1025px) {
+  .nav-home-btn__icon {
+    transform: translateY(-2px);
+  }
+}
+
 /* Hover styling on desktop when active as a link */
 .nav-home-btn:hover {
-  color: #2d7bc7; /* Your brand blue hover color */
+  color: #00448f;
 }
 
 /* 
@@ -996,7 +1013,7 @@
    Indicates current position and prevents clicking/reload actions.
 */
 .nav-home-btn.active {
-  color: #2d7bc7; /* Matches brand blue color to indicate active state */
+  color: #00448f;
   cursor: default; /* Changes cursor to standard pointer to indicate non-clickability */
 }
 
@@ -1428,7 +1445,7 @@
 }
 
 .mobile-nav-item--active {
-  color: #2563eb;
+  color: #00448f;
 }
 
 .mobile-nav-item--toggle {
@@ -1436,7 +1453,7 @@
 }
 
 .mobile-nav-item--toggle.is-expanded {
-  color: #2563eb;
+  color: #00448f;
 }
 
 .mobile-nav-item__left {
@@ -1448,7 +1465,7 @@
 .mobile-nav-item__icon {
   width: 18px;
   height: 18px;
-  color: #2563eb;
+  color: #00448f;
 }
 
 .mobile-nav-item__chevron {
@@ -1460,7 +1477,7 @@
 
 .mobile-nav-item--toggle.is-expanded .mobile-nav-item__chevron {
   transform: rotate(180deg);
-  color: #2563eb;
+  color: #00448f;
 }
 
 .mobile-service-cards {
@@ -1499,7 +1516,7 @@
   border-radius: 12px;
   background: #ffffff;
   border: 1px solid #dbeafe;
-  color: #2563eb;
+  color: #00448f;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1564,7 +1581,7 @@
 .mobile-contact-row svg {
   width: 16px;
   height: 16px;
-  color: #2563eb;
+  color: #00448f;
 }
 
 .mobile-nav-drawer__trust-box {
@@ -1591,7 +1608,7 @@
   border-radius: 10px;
   background: #ffffff;
   border: 1px solid #dbeafe;
-  color: #2563eb;
+  color: #00448f;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1630,12 +1647,12 @@
   padding: 15px 18px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #00448f 0%, #003566 100%);
   color: #ffffff;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 68, 143, 0.28);
   font-family: inherit;
 }
 
@@ -1684,7 +1701,7 @@
   border: none;
   border-bottom: 1px solid #f1f5f9;
   background: #ffffff;
-  color: #2563eb;
+  color: #00448f;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -1722,7 +1739,7 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #00448f;
 }
 
 .mobile-submenu-link {

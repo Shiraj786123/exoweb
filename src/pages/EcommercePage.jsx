@@ -3,7 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
 import TechnologyStackSection from '../components/TechnologyStackSection';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -126,10 +128,11 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
       <section className="ecd__hero">
         <div className="ecd__hero_pattern"></div>
         <div className="ecd__hero_container">
+          <Breadcrumb items={PAGE_BREADCRUMBS.ecommerceDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
           <div className="ecd__hero_badge">
             <span className="ecd__badge_dot"></span>
             <span className="hero-badge-text">
-              <span className="hero-badge-accent">E-commerce Development</span>
+              <span className="hero-badge-accent">E-Commerce Development</span>
               <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
             </span>
           </div>

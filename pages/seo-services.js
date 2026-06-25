@@ -1,9 +1,11 @@
 import { createStaticPage } from '../src/lib/createStaticPage';
 import SEOServices from '../src/pages/SEOServices';
+import { PAGE_BREADCRUMBS } from '../src/content/pageBreadcrumbs';
 
 export default createStaticPage(SEOServices, {
-  title: 'SEO Services',
+  title: 'SEO Services in Batticaloa & Eastern Province | Vexoweb',
   description:
-    'Drive sustainable growth with technical SEO, on-page optimization, strategy, reporting, and search performance improvements from Vexoweb.',
+    'Local SEO & Google ranking services for businesses in Batticaloa, Kattankudy & the Eastern Province. Get found by more customers.',
   path: '/seo-services',
+  breadcrumb: PAGE_BREADCRUMBS.seoServices,
 });

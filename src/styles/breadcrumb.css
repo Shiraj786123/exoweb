@@ -1,0 +1,158 @@
+/* ==========================================================================
+   BREADCRUMB — service & city pages
+   ========================================================================== */
+
+.breadcrumb {
+  margin: 0 0 14px;
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.breadcrumb__link {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb__link:hover {
+  color: #ffffff;
+}
+
+.breadcrumb__current {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.breadcrumb__sep {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  user-select: none;
+  margin: 0 8px;
+}
+
+/* Light hero / utility headers */
+.breadcrumb--light .breadcrumb__link {
+  color: #00448f;
+}
+
+.breadcrumb--light .breadcrumb__link:hover {
+  color: #002d5c;
+}
+
+.breadcrumb--light .breadcrumb__current {
+  color: #64748b;
+}
+
+.breadcrumb--light .breadcrumb__sep {
+  color: #94a3b8;
+}
+
+.breadcrumb--centered .breadcrumb__list {
+  justify-content: center;
+}
+
+.breadcrumb--on-dark {
+  width: 100%;
+  margin: 0 0 22px;
+}
+
+.breadcrumb--on-dark .breadcrumb__link {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+}
+
+.breadcrumb--on-dark .breadcrumb__link:hover {
+  color: #ffffff;
+}
+
+.breadcrumb--on-dark .breadcrumb__current {
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.breadcrumb--on-dark .breadcrumb__sep {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+}
+
+/* Full-width pill bar — city / dark hero pages (reference layout) */
+.breadcrumb--pill {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 24px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-sizing: border-box;
+}
+
+.breadcrumb--pill .breadcrumb__list {
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.breadcrumb--pill .breadcrumb__link {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.breadcrumb--pill .breadcrumb__link:hover {
+  color: #e0f2fe;
+}
+
+.breadcrumb--pill .breadcrumb__current {
+  color: #7dd3fc;
+  font-weight: 500;
+}
+
+.breadcrumb--pill .breadcrumb__sep {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fswd__hero_content .breadcrumb,
+.aiss__hero_container_centered .breadcrumb,
+.ecd__hero_container_centered .breadcrumb,
+.hero-container .breadcrumb,
+.ecd__hero_container .breadcrumb,
+.abt__hero_container .breadcrumb,
+.cp__hero_container .breadcrumb {
+  width: 100%;
+  align-self: stretch;
+}
+
+/* Center breadcrumbs inside centered hero layouts by default */
+.fswd__hero_content .breadcrumb .breadcrumb__list,
+.aiss__hero_container_centered .breadcrumb .breadcrumb__list,
+.ecd__hero_container_centered .breadcrumb .breadcrumb__list,
+.hero-container .breadcrumb .breadcrumb__list,
+.ecd__hero_container .breadcrumb .breadcrumb__list,
+.abt__hero_container .breadcrumb .breadcrumb__list,
+.cp__hero_container .breadcrumb .breadcrumb__list {
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .breadcrumb__list {
+    font-size: 12px;
+  }
+}

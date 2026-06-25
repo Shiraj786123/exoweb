@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const ContactPage = () => {
@@ -42,6 +44,7 @@ const ContactPage = () => {
       <section className="cp__hero">
         <div className="cp__hero_pattern"></div>
         <div className="cp__hero_container">
+          <Breadcrumb items={PAGE_BREADCRUMBS.contact} className="breadcrumb--centered breadcrumb--on-dark" />
           
           {/* Glowing Pill Badge */}
           <div className="cp__hero_badge">

@@ -34,7 +34,7 @@ export default async function handler(req, res) {
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Company:</b> ${company}</p>
         ${service ? `<p><b>Service:</b> ${service}</p>` : ""}
-        ${budget ? `<p><b>Budget:</b> $${budget}</p>` : ""}
+        ${budget ? `<p><b>Budget:</b> LKR ${Number(budget).toLocaleString('en-LK')}</p>` : ""}
         <p><b>Message:</b></p>
         <p>${message}</p>
       `

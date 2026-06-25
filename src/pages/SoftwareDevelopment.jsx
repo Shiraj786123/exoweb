@@ -3,7 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
 import TechnologyStackSection from '../components/TechnologyStackSection';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -166,6 +168,10 @@ const SoftwareDevelopment = () => {
           }}
         >
           <div className="hero-container">
+            <Breadcrumb
+              items={PAGE_BREADCRUMBS.softwareDevelopment}
+              className="breadcrumb--centered breadcrumb--on-dark"
+            />
             <span className="hero-badge">
               <span className="badge-dot">●</span>
               <span className="hero-badge-text">

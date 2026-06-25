@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Breadcrumb from '../components/Breadcrumb';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 
 const TermsConditions = () => {
   const lastUpdated = "December 20, 2025";
@@ -131,6 +133,7 @@ const TermsConditions = () => {
       {/* Header */}
       <section className="tc__header">
         <div className="tc__container">
+          <Breadcrumb items={PAGE_BREADCRUMBS.termsConditions} className="breadcrumb--light" />
           <h1 className="tc__title">Terms & Conditions</h1>
           <p className="tc__updated">Last updated: {lastUpdated}</p>
           <p className="tc__intro">
@@ -235,7 +238,7 @@ const TermsConditions = () => {
               and agree to be bound by these Terms & Conditions. If you have any questions or concerns, 
               please contact us before proceeding.
             </p>
-            <a href="/contact-us" className="tc__agreement_btn">Contact Us</a>
+            <a href="/contact" className="tc__agreement_btn">Contact Us</a>
           </div>
 
         </div>

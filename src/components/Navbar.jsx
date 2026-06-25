@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ExpertPopup from "./ExpertPopup";
 import MobileNavDrawer from "./MobileNavDrawer";
-import { FaPaperPlane } from "react-icons/fa";
+import { FaHome, FaPaperPlane } from "react-icons/fa";
 import logo from "../assets/logonew.png";
 
 const DESKTOP_BREAKPOINT = 1024;
@@ -277,39 +277,13 @@ const Navbar = () => {
           */}
           {isHomePage ? (
             <span className="nav-home-btn active">
-              <svg 
-                width="15" 
-                height="15" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                style={{ marginRight: '6px', display: 'inline-block', verticalAlign: 'middle' }}
-              >
-                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-              Home
+              <FaHome className="nav-home-btn__icon" aria-hidden="true" />
+              <span className="nav-home-btn__label">Home</span>
             </span>
           ) : (
             <Link href="/" className="nav-home-btn">
-              <svg 
-                width="15" 
-                height="15" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                style={{ marginRight: '6px', display: 'inline-block', verticalAlign: 'middle' }}
-              >
-                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-              Home
+              <FaHome className="nav-home-btn__icon" aria-hidden="true" />
+              <span className="nav-home-btn__label">Home</span>
             </Link>
           )}
           
@@ -330,7 +304,7 @@ const Navbar = () => {
               <div className="dropdown-column">
                 <h4>Custom Software Development</h4>
                 <Link href="/software-development">Enterprise Software Solutions</Link>
-                <Link href="/full-stack-web-development">Custom Web Application Development</Link>
+                <Link href="/website-development">Custom Web Application Development</Link>
               </div>
 
               <div className="dropdown-column">
@@ -341,7 +315,7 @@ const Navbar = () => {
 
               <div className="dropdown-column">
                 <h4>Cloud, Backend &amp; DevOps</h4> 
-                <Link href="/full-stack-web-development">DevOps &amp; Deployment Automation</Link>   
+                <Link href="/website-development">DevOps &amp; Deployment Automation</Link>   
                 <Link href="/ai-software-development">Cloud Solutions</Link>
               </div>
             </div>
@@ -364,20 +338,20 @@ const Navbar = () => {
               <div className="dropdown-column">
                 <h4>Business &amp; Corporate Websites</h4>  
                 <Link href="/seo-services">Landing Page Design</Link>           
-                <Link href="/contact-us">Corporate Website Development</Link>
-                <Link href="/full-stack-web-development">Startup &amp; Small Business Websites</Link>
+                <Link href="/contact">Corporate Website Development</Link>
+                <Link href="/website-development">Startup &amp; Small Business Websites</Link>
               </div>
 
               <div className="dropdown-column">
                 <h4>E-Commerce Development</h4>               
                 <Link href="/seo-services">Payment Gateway Integration</Link>
-                <Link href="/full-stack-web-development">Product &amp; Inventory Management</Link>  
+                <Link href="/website-development">Product &amp; Inventory Management</Link>  
               </div>
 
               <div className="dropdown-column">
                 <h4>UI Development &amp; Performance</h4>
                 <Link href="/ai-software-development">Website Speed Optimization</Link>               
-                <Link href="/full-stack-web-development">HTML, CSS, JavaScript Development</Link>
+                <Link href="/website-development">HTML, CSS, JavaScript Development</Link>
               </div>
             </div>
           </div>
@@ -397,7 +371,7 @@ const Navbar = () => {
 
             <div className="dropdown-content" {...dropdownContentHoverProps}>
               <div className="dropdown-column">
-                <Link href="/ecommerce-development-optimization">Local SEO &amp; Google Business Optimization</Link>
+                <Link href="/ecommerce-development">Local SEO &amp; Google Business Optimization</Link>
                 <Link href="/seo-services">Brand Mentions &amp; Citations</Link>
               </div> 
             </div>
@@ -419,7 +393,7 @@ const Navbar = () => {
             <div className="dropdown-content" {...dropdownContentHoverProps}>
               <div className="dropdown-column">
                 <Link href="/about">About Us</Link>
-                <Link href="/contact-us">Careers</Link>
+                <Link href="/contact">Careers</Link>
                 <Link href="/contact">Contact Info</Link>
               </div>
             </div>
@@ -447,17 +421,25 @@ const Navbar = () => {
           <FaPaperPlane className="contact-btn-icon" aria-hidden="true" />
           Get a Proposal
         </button>
+
+        {/* Mobile Hamburger toggle */}
+        <button
+          type="button"
+          className={`hamburger ${open ? 'is-open' : ''}`}
+          onClick={() => (open ? closeMobileMenu() : openMobileMenu())}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          <svg viewBox="0 0 30 18" width="30" height="18" aria-hidden="true" focusable="false">
+            <rect className="hamburger-line hamburger-line--1" x="0" y="0" width="30" height="2.5" rx="1.25" />
+            <rect className="hamburger-line hamburger-line--2" x="0" y="7.75" width="30" height="2.5" rx="1.25" />
+            <rect className="hamburger-line hamburger-line--3" x="0" y="15.5" width="30" height="2.5" rx="1.25" />
+          </svg>
+        </button>
         </div>
 
         {/* Modal Popup Connection */}
         <ExpertPopup open={isPopupOpen} onClose={() => setIsPopupOpen(false)}/>
-
-        {/* Mobile Hamburger toggle bars */}
-        <div className="hamburger" onClick={() => (open ? closeMobileMenu() : openMobileMenu())}>
-          <span className={open ? "bar rotate1" : "bar"}></span>
-          <span className={open ? "bar hide" : "bar"}></span>
-          <span className={open ? "bar rotate2" : "bar"}></span>
-        </div>
       </div>
     </header>
   );

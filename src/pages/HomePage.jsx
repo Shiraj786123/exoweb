@@ -4,6 +4,8 @@ import ContactSection from '../components/ContactSection';
 import ExpertPopup from '../components/ExpertPopup';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import HomeAreasSection from '../components/HomeAreasSection';
+import HomeServicesSection from '../components/HomeServicesSection';
 import Navbar from '../components/Navbar';
 import ProcessSection from '../components/ProcessSection';
 import ReviewSection from '../components/ReviewSection';
@@ -19,6 +21,9 @@ const HomePage = () => {
     <>
       <Navbar />
       <Hero />
+      <div className="home-hero-separator" aria-hidden="true" />
+      <HomeServicesSection />
+      <HomeAreasSection />
       <Solution />
       <SuccessSection />
       <ProcessSection />

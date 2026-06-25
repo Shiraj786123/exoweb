@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
 const AboutUs = () => {
@@ -104,6 +106,7 @@ const AboutUs = () => {
       <section className="abt__hero">
         <div className="abt__hero_pattern"></div>
         <div className="abt__hero_container">
+          <Breadcrumb items={PAGE_BREADCRUMBS.about} className="breadcrumb--centered breadcrumb--on-dark" />
           <div className="abt__hero_badge">
             <span className="abt__badge_dot"></span>
             <span className="hero-badge-text">
@@ -582,7 +585,7 @@ const AboutUs = () => {
               growth through search, Vexoweb is ready to help.
             </p>
             <div className="abt__cta_buttons">
-              <a href="/contact-us" className="abt__cta_btn abt__cta_primary">
+              <a href="/contact" className="abt__cta_btn abt__cta_primary">
                  Get in Touch <span className="arrow">→</span>
               </a>
               <a href="/seo-services#contact" className="abt__cta_btn abt__cta_secondary">

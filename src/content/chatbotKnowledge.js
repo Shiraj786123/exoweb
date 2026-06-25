@@ -10,10 +10,10 @@ export const QUICK_REPLIES = [
 ];
 
 const SERVICE_LINKS = [
-  { label: 'Full-Stack Web Development', href: '/full-stack-web-development' },
+  { label: 'Website Development', href: '/website-development' },
   { label: 'Software Development', href: '/software-development' },
   { label: 'SEO Services', href: '/seo-services' },
-  { label: 'E-commerce', href: '/ecommerce-development-optimization' },
+  { label: 'E-Commerce Development', href: '/ecommerce-development' },
   { label: 'AI Software', href: '/ai-software-development' },
 ];
 
@@ -47,7 +47,7 @@ const INTENTS = [
     ],
     reply:
       'We build fast, mobile-friendly websites for shops, clinics, schools, and businesses — from landing pages to full custom web apps. Projects are tailored for Eastern Province businesses with local pricing.',
-    links: [{ label: 'View Web Development', href: '/full-stack-web-development' }],
+    links: [{ label: 'View Web Development', href: '/website-development' }],
     quickReplies: ['quote', 'contact'],
   },
   {
@@ -72,7 +72,7 @@ const INTENTS = [
     keywords: ['ecommerce', 'e-commerce', 'online store', 'shopify', 'woocommerce', 'store'],
     reply:
       'We build and optimize e-commerce stores focused on speed, conversions, payments, and SEO — from setup to ongoing performance improvements.',
-    links: [{ label: 'E-commerce Services', href: '/ecommerce-development-optimization' }],
+    links: [{ label: 'E-commerce Services', href: '/ecommerce-development' }],
     quickReplies: ['quote', 'contact'],
   },
   {
@@ -95,8 +95,8 @@ const INTENTS = [
     id: 'pricing',
     keywords: ['price', 'pricing', 'cost', 'how much', 'budget', 'quote', 'estimate', 'rate'],
     reply:
-      'Pricing depends on scope — a simple business website, e-commerce store, and custom software all differ. Share your goals and we will provide a clear quote. You can also request a free consultation.',
-    links: [{ label: 'Contact Us', href: '/contact-us' }],
+      'Pricing depends on scope — a simple business website, e-commerce store, and custom software all differ. Projects typically start from LKR 20,000. Share your goals and we will provide a clear quote. You can also request a free consultation.',
+    links: [{ label: 'Contact Us', href: '/contact' }],
     quickReplies: ['contact'],
     whatsapp: true,
   },

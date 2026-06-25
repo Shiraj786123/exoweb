@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 const CONTACT_EMAIL = "info@vexoweb.lk";
 const WHATSAPP_URL =
   "https://wa.me/94740309534?text=Hi%20Vexoweb%20Team,%20I%20would%20like%20to%20discuss%20a%20project.";
-const BUDGET_MIN = 500;
-const BUDGET_MAX = 65000;
-const BUDGET_STEP = 500;
+const BUDGET_MIN = 20000;
+const BUDGET_MAX = 2000000;
+const BUDGET_STEP = 5000;
 
 const ExpertPopup = ({ open, onClose, preSelectedService }) => {
   const [budget, setBudget] = useState(BUDGET_MIN);
@@ -238,7 +238,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
             </select>
 
             <label className="budget-label">
-              Estimated Budget (USD): <span>${Number(budget).toLocaleString()}</span>
+              Estimated Budget (LKR): <span>Rs. {Number(budget).toLocaleString('en-LK')}</span>
             </label>
 
             <div className="budget-slider-wrap">

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { FaComments, FaPaperPlane, FaRobot, FaTimes, FaWhatsapp } from 'react-icons/fa';
+import { FaPaperPlane, FaRobot, FaTimes, FaWhatsapp } from 'react-icons/fa';
 import {
   CONTACT_EMAIL,
   CONTACT_PHONE,
@@ -23,6 +24,19 @@ function createMessage(role, payload) {
     ...payload,
   };
 }
+
+const CHATBOT_ICON = '/images/chatbot-icon.png';
+
+const ChatbotIcon = ({ className = '', size = 22 }) => (
+  <Image
+    src={CHATBOT_ICON}
+    alt=""
+    width={size}
+    height={size}
+    className={className}
+    aria-hidden="true"
+  />
+);
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,15 +104,6 @@ const Chatbot = () => {
       {isOpen ? (
         <div className="vexoweb-chatbot__panel" role="dialog" aria-label="Vexoweb chat assistant">
           <header className="vexoweb-chatbot__header">
-            <div className="vexoweb-chatbot__header-info">
-              <span className="vexoweb-chatbot__avatar" aria-hidden="true">
-                <FaRobot />
-              </span>
-              <div>
-                <strong>Vexoweb Assistant</strong>
-                <span>Usually replies instantly</span>
-              </div>
-            </div>
             <button
               type="button"
               className="vexoweb-chatbot__close"
@@ -107,6 +112,14 @@ const Chatbot = () => {
             >
               <FaTimes />
             </button>
+
+            <div className="vexoweb-chatbot__header-brand">
+              <span className="vexoweb-chatbot__avatar" aria-hidden="true">
+                <ChatbotIcon size={30} className="vexoweb-chatbot__avatar-icon" />
+              </span>
+              <strong>Vexoweb Assistant</strong>
+              <span>Usually replies instantly</span>
+            </div>
           </header>
 
           <div className="vexoweb-chatbot__messages">
@@ -203,7 +216,7 @@ const Chatbot = () => {
         aria-expanded={isOpen}
         aria-label={isOpen ? 'Close chat assistant' : 'Open chat assistant'}
       >
-        {isOpen ? <FaTimes /> : <FaComments />}
+        {isOpen ? <FaTimes /> : <FaRobot />}
         {!isOpen ? <span className="vexoweb-chatbot__launcher-label">Chat</span> : null}
       </button>
     </div>

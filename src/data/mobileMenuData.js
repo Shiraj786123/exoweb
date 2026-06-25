@@ -8,7 +8,7 @@ export const MOBILE_SERVICE_CATEGORIES = [
         heading: 'Software Development',
         links: [
           { label: 'Enterprise Software Solutions', href: '/software-development' },
-          { label: 'Custom Web Application Development', href: '/full-stack-web-development' },
+          { label: 'Custom Web Application Development', href: '/website-development' },
         ],
       },
       {
@@ -21,7 +21,7 @@ export const MOBILE_SERVICE_CATEGORIES = [
       {
         heading: 'Cloud, Backend & DevOps',
         links: [
-          { label: 'DevOps & Deployment Automation', href: '/full-stack-web-development' },
+          { label: 'DevOps & Deployment Automation', href: '/website-development' },
           { label: 'Cloud Solutions', href: '/ai-software-development' },
         ],
       },
@@ -36,22 +36,22 @@ export const MOBILE_SERVICE_CATEGORIES = [
         heading: 'Business & Corporate Websites',
         links: [
           { label: 'Landing Page Design', href: '/seo-services' },
-          { label: 'Corporate Website Development', href: '/contact-us' },
-          { label: 'Startup & Small Business Websites', href: '/full-stack-web-development' },
+          { label: 'Corporate Website Development', href: '/contact' },
+          { label: 'Startup & Small Business Websites', href: '/website-development' },
         ],
       },
       {
         heading: 'E-Commerce Development',
         links: [
           { label: 'Payment Gateway Integration', href: '/seo-services' },
-          { label: 'Product & Inventory Management', href: '/full-stack-web-development' },
+          { label: 'Product & Inventory Management', href: '/website-development' },
         ],
       },
       {
         heading: 'UI Development & Performance',
         links: [
           { label: 'Website Speed Optimization', href: '/ai-software-development' },
-          { label: 'HTML, CSS, JavaScript Development', href: '/full-stack-web-development' },
+          { label: 'HTML, CSS, JavaScript Development', href: '/website-development' },
         ],
       },
     ],
@@ -64,7 +64,7 @@ export const MOBILE_SERVICE_CATEGORIES = [
       {
         heading: 'SEO Marketing',
         links: [
-          { label: 'Local SEO & Google Business Optimization', href: '/ecommerce-development-optimization' },
+          { label: 'Local SEO & Google Business Optimization', href: '/ecommerce-development' },
           { label: 'Brand Mentions & Citations', href: '/seo-services' },
           { label: 'SEO Services', href: '/seo-services' },
         ],
@@ -79,8 +79,8 @@ export const MOBILE_SERVICE_CATEGORIES = [
       {
         heading: 'E-commerce & Growth',
         links: [
-          { label: 'E-commerce Development & Optimization', href: '/ecommerce-development-optimization' },
-          { label: 'Full-Stack Web Development', href: '/full-stack-web-development' },
+          { label: 'E-Commerce Development', href: '/ecommerce-development' },
+          { label: 'Website Development', href: '/website-development' },
           { label: 'AI Software Development', href: '/ai-software-development' },
         ],
       },

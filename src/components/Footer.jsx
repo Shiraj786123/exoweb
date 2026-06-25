@@ -11,15 +11,16 @@ const WHATSAPP_HREF =
 const Footer = () => {
   const servicesLinks = [
     { label: 'AI Web Application Development', path: '/ai-software-development' },
-    { label: 'Full-Stack Web Development', path: '/full-stack-web-development' },
+    { label: 'Website Development', path: '/website-development' },
     { label: 'SEO & AI Search Optimization', path: '/seo-services' },
-    { label: 'E-commerce Development', path: '/ecommerce-development-optimization' }
+    { label: 'E-Commerce Development', path: '/ecommerce-development' },
+    { label: 'Mobile App Development', path: '/mobile-app-development' },
   ];
 
   const knowledgebaseLinks = [
-    { label: 'Websites That Generate Leads', path: '/full-stack-web-development' },
+    { label: 'Websites That Generate Leads', path: '/website-development' },
     { label: 'Business Process Automation', path: '/ai-software-development' },
-    { label: 'E-commerce Growth Optimization', path: '/ecommerce-development-optimization' },
+    { label: 'E-Commerce Growth Optimization', path: '/ecommerce-development' },
     { label: 'Search Visibility & Traffic Growth', path: '/seo-services' },
     { label: 'Website Speed & Performance Fixes', path: '/seo-services' }
   ];
@@ -34,10 +35,18 @@ const Footer = () => {
   const exploreLinks = [
     { label: 'About Vexoweb', path: '/about' },
     { label: 'How We Work', path: '/about' },
-    { label: 'Careers', path: '/contact-us' },
-    { label: 'Contact Us', path: '/contact-us' },
+    { label: 'Careers', path: '/contact' },
+    { label: 'Contact Us', path: '/contact' },
     { label: 'Privacy Policy', path: '/privacy-policy' },
     { label: 'Terms of Service', path: '/terms-conditions' }
+  ];
+
+  const areasServed = [
+    { label: 'Batticaloa', path: '/web-design-batticaloa' },
+    { label: 'Kattankudy', path: '/web-design-kattankudy' },
+    { label: 'Kalmunai', path: '/web-design-kalmunai' },
+    { label: 'Ampara', path: '/web-design-ampara' },
+    { label: 'Trincomalee', path: '/web-design-trincomalee' },
   ];
 
   return (
@@ -137,6 +146,17 @@ const Footer = () => {
               {exploreLinks.map((link, index) => (
                 <li key={index}>
                   <Link href={link.path}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h4 className="footer-column-title">Areas Served</h4>
+            <ul className="footer-links">
+              {areasServed.map((area) => (
+                <li key={area.label}>
+                  <Link href={area.path}>{area.label}</Link>
                 </li>
               ))}
             </ul>

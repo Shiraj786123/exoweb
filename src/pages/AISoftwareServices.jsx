@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
+import Breadcrumb from '../components/Breadcrumb';
+import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import TechnologyStackSection from '../components/TechnologyStackSection';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
@@ -45,6 +47,7 @@ const AISoftwareServices = () => {
 <section className="aiss__hero_centered_layout">
   <div className="aiss__hero_overlay_centered"></div>
   <div className="aiss__hero_container_centered">
+    <Breadcrumb items={PAGE_BREADCRUMBS.aiSoftwareDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
     
     {/* Centered Pill Badge (Protected Top Spacing) */}
     <div className="aiss__badge_pill_centered">
