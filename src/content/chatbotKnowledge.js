@@ -1,8 +1,9 @@
 export const WELCOME_MESSAGE =
-  "Hi! I'm the Vexoweb assistant. I can help with our services, pricing guidance, timelines, and how to get started. What would you like to know?";
+  "Hi! I'm the Vexoweb assistant. I can help with our services, areas we serve across the Eastern Province, pricing guidance, timelines, and how to get started. What would you like to know?";
 
 export const QUICK_REPLIES = [
   { id: 'services', label: 'Our services' },
+  { id: 'areas', label: 'Areas we serve' },
   { id: 'website', label: 'Website development' },
   { id: 'seo', label: 'SEO services' },
   { id: 'quote', label: 'Get a quote' },
@@ -15,7 +16,47 @@ const SERVICE_LINKS = [
   { label: 'SEO Services', href: '/seo-services' },
   { label: 'E-Commerce Development', href: '/ecommerce-development' },
   { label: 'AI Software', href: '/ai-software-development' },
+  { label: 'Mobile App Development', href: '/mobile-app-development' },
 ];
+
+export const AREAS_SERVED = [
+  {
+    label: 'Batticaloa',
+    href: '/web-design-batticaloa',
+    tag: 'East coast hub',
+  },
+  {
+    label: 'Kattankudy',
+    href: '/web-design-kattankudy',
+    tag: 'Local businesses',
+  },
+  {
+    label: 'Kalmunai',
+    href: '/web-design-kalmunai',
+    tag: 'Retail & services',
+  },
+  {
+    label: 'Ampara',
+    href: '/web-design-ampara',
+    tag: 'Growing market',
+  },
+  {
+    label: 'Trincomalee',
+    href: '/web-design-trincomalee',
+    tag: 'Tourism & trade',
+  },
+];
+
+const AREAS_SERVED_LINKS = [
+  ...AREAS_SERVED.map((area) => ({
+    label: `Web design in ${area.label}`,
+    href: area.href,
+  })),
+  { label: 'SEO across Eastern Province', href: '/seo-services' },
+];
+
+const AREAS_SERVED_REPLY =
+  'Vexoweb is based in Batticaloa and serves businesses across the Eastern Province. We offer on-site support along the east coast, with websites, custom software, mobile apps, and SEO from one local team. Choose your town for area-specific services, or ask about province-wide SEO.';
 
 const INTENTS = [
   {
@@ -108,11 +149,36 @@ const INTENTS = [
     quickReplies: ['quote', 'contact'],
   },
   {
+    id: 'areas',
+    keywords: [
+      'areas we serve',
+      'areas served',
+      'area served',
+      'towns',
+      'town',
+      'cities',
+      'city',
+      'near me',
+      'local area',
+      'eastern province towns',
+      'batticaloa',
+      'kattankudy',
+      'kalmunai',
+      'ampara',
+      'trincomalee',
+      'trinco',
+    ],
+    reply: AREAS_SERVED_REPLY,
+    links: AREAS_SERVED_LINKS,
+    quickReplies: ['website', 'seo', 'contact'],
+  },
+  {
     id: 'location',
-    keywords: ['where', 'location', 'batticaloa', 'eastern province', 'sri lanka', 'kattankudy', 'local'],
+    keywords: ['where', 'location', 'eastern province', 'sri lanka', 'local', 'based'],
     reply:
-      'Vexoweb is based in Eastern Province, Sri Lanka. We work with local businesses and also support clients remotely across the region.',
-    quickReplies: ['services', 'contact'],
+      'Vexoweb is based in Batticaloa, Eastern Province, Sri Lanka. We work with local businesses on-site across the east coast and also support clients remotely across the region.',
+    links: AREAS_SERVED_LINKS,
+    quickReplies: ['areas', 'contact'],
   },
   {
     id: 'contact',
@@ -145,6 +211,7 @@ const INTENTS = [
 
 const QUICK_REPLY_RESPONSES = {
   services: INTENTS.find((i) => i.id === 'services'),
+  areas: INTENTS.find((i) => i.id === 'areas'),
   website: INTENTS.find((i) => i.id === 'website'),
   seo: INTENTS.find((i) => i.id === 'seo'),
   quote: INTENTS.find((i) => i.id === 'pricing'),
@@ -197,7 +264,7 @@ export function getChatbotReply(input) {
 
   return {
     reply:
-      "I'm not sure I understood that. Try asking about websites, SEO, software, pricing, or how to contact us — or tap a quick option below.",
+      "I'm not sure I understood that. Try asking about our services, areas we serve (Batticaloa, Kattankudy, Kalmunai, Ampara, Trincomalee), SEO, pricing, or how to contact us — or tap a quick option below.",
     quickReplies: QUICK_REPLIES.map((q) => q.id),
     whatsapp: true,
   };
