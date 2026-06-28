@@ -42,11 +42,11 @@ const Footer = () => {
   ];
 
   const areasServed = [
-    { label: 'Batticaloa', path: '/web-design-batticaloa' },
-    { label: 'Kattankudy', path: '/web-design-kattankudy' },
-    { label: 'Kalmunai', path: '/web-design-kalmunai' },
-    { label: 'Ampara', path: '/web-design-ampara' },
-    { label: 'Trincomalee', path: '/web-design-trincomalee' },
+    { label: 'Batticaloa', path: '/website-development-batticaloa' },
+    { label: 'Kattankudy', path: '/website-development-kattankudy' },
+    { label: 'Kalmunai', path: '/website-development-kalmunai' },
+    { label: 'Ampara', path: '/website-development-ampara' },
+    { label: 'Trincomalee', path: '/website-development-trincomalee' },
   ];
 
   return (

@@ -5,6 +5,7 @@ import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
+import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 import TechnologyStackSection from '../components/TechnologyStackSection';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
@@ -59,8 +60,7 @@ const AISoftwareServices = () => {
     </div>
 
     <h1 className="aiss__h1">
-      AI-Powered Software Development for{" "}
-      <span className="highlight-text">Eastern Province</span> Businesses
+      {MAIN_SERVICE_SEO.aiSoftwareDevelopment.h1}
     </h1>
 
     {/* Centered Subtitle Description */}

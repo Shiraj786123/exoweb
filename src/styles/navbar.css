@@ -381,6 +381,108 @@
   }
 }
 
+/* --- SERVICES MEGA MENU --- */
+.dropdown-services {
+  position: static;
+}
+
+.services-mega-menu {
+  padding: 28px 20px;
+  gap: 4px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+@media (min-width: 1025px) {
+  .dropdown-services .services-mega-menu {
+    position: fixed;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: var(--mobile-nav-drawer-top, var(--site-header-height));
+    width: min(1060px, calc(100vw - 32px));
+    max-width: 1060px;
+    z-index: 1010;
+  }
+}
+
+.services-mega-menu__item {
+  flex: 1;
+  min-width: 0;
+  max-width: 168px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 10px;
+}
+
+.services-mega-menu__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.services-mega-menu__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.services-mega-menu__title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.services-mega-menu__desc {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #64748b;
+  flex: 1;
+}
+
+.services-mega-menu__link {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.services-mega-menu__link:hover {
+  opacity: 0.8;
+}
+
+.mobile-service-card--link {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  background: #f8fafc;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .dropdown-services .services-mega-menu {
+    width: min(980px, calc(100vw - 24px));
+  }
+
+  .services-mega-menu__item {
+    max-width: 150px;
+  }
+
+  .services-mega-menu__desc {
+    font-size: 11px;
+  }
+}
+
 /* --- 6. CALL TO ACTION (Get a Proposal) --- */
 .contact-btn {
   background: #00448f;
@@ -1015,6 +1117,27 @@
 .nav-home-btn.active {
   color: #00448f;
   cursor: default; /* Changes cursor to standard pointer to indicate non-clickability */
+}
+
+.nav-primary-link {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  padding: 10px 12px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.nav-primary-link:hover {
+  color: #0284c7;
+}
+
+.nav-primary-link.active {
+  color: #00448f;
+  cursor: default;
 }
 
 /* Symmetrical desktop spacing */

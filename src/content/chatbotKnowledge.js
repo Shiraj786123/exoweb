@@ -22,34 +22,34 @@ const SERVICE_LINKS = [
 export const AREAS_SERVED = [
   {
     label: 'Batticaloa',
-    href: '/web-design-batticaloa',
+    href: '/website-development-batticaloa',
     tag: 'East coast hub',
   },
   {
     label: 'Kattankudy',
-    href: '/web-design-kattankudy',
+    href: '/website-development-kattankudy',
     tag: 'Local businesses',
   },
   {
     label: 'Kalmunai',
-    href: '/web-design-kalmunai',
+    href: '/website-development-kalmunai',
     tag: 'Retail & services',
   },
   {
     label: 'Ampara',
-    href: '/web-design-ampara',
+    href: '/website-development-ampara',
     tag: 'Growing market',
   },
   {
     label: 'Trincomalee',
-    href: '/web-design-trincomalee',
+    href: '/website-development-trincomalee',
     tag: 'Tourism & trade',
   },
 ];
 
 const AREAS_SERVED_LINKS = [
   ...AREAS_SERVED.map((area) => ({
-    label: `Web design in ${area.label}`,
+    label: `Website development in ${area.label}`,
     href: area.href,
   })),
   { label: 'SEO across Eastern Province', href: '/seo-services' },

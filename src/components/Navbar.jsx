@@ -5,7 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ExpertPopup from "./ExpertPopup";
 import MobileNavDrawer from "./MobileNavDrawer";
+import ServicesMegaMenuIcon from "./ServicesMegaMenuIcon";
 import { FaHome, FaPaperPlane } from "react-icons/fa";
+import { SERVICES_MENU_ITEMS } from "../data/servicesMenuData";
+import { NAV_PRIMARY_LINKS } from "../data/navLinks";
 import logo from "../assets/logonew.png";
 
 const DESKTOP_BREAKPOINT = 1024;
@@ -19,7 +22,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false); // Mobile menu drawer toggle
   const [mobileDropdown, setMobileDropdown] = useState(null); // Desktop-only legacy (unused on mobile drawer)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileServiceCategory, setMobileServiceCategory] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // Desktop dropdown active state
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Proposal popup state
   const [isMobileView, setIsMobileView] = useState(false); // Track mobile view for inline styles
@@ -72,13 +74,11 @@ const Navbar = () => {
   const closeMobileMenu = () => {
     setOpen(false);
     setMobileServicesOpen(false);
-    setMobileServiceCategory(null);
   };
 
   const openMobileMenu = () => {
     setOpen(true);
     setMobileServicesOpen(true);
-    setMobileServiceCategory(null);
   };
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const Navbar = () => {
         navLinksRef.current.scrollTop = 0;
       }
     });
-  }, [open, mobileServiceCategory]);
+  }, [open]);
 
   const handleOpenConsultation = () => {
     closeMobileMenu();
@@ -287,117 +287,58 @@ const Navbar = () => {
             </Link>
           )}
           
-          {/* Dropdown 1: SOFTWARE DEV (id: 3 - WIDE) */}
+          {/* Services mega menu */}
           <div
-            className={`dropdown dropdown-wide ${mobileDropdown === 3 ? "open" : ""} ${activeDropdown === 3 ? "active" : ""}`}
-            {...dropdownHoverProps(3)}
+            className={`dropdown dropdown-services ${mobileDropdown === 'services' ? "open" : ""} ${activeDropdown === 'services' ? "active" : ""}`}
+            {...dropdownHoverProps('services')}
           >
             <button
               className="drop-btn"
-              onClick={() => handleDropdownButtonClick(3)}
-              aria-expanded={activeDropdown === 3 || mobileDropdown === 3}
+              onClick={() => handleDropdownButtonClick('services')}
+              aria-expanded={activeDropdown === 'services' || mobileDropdown === 'services'}
             >
-              SOFTWARE DEV <span className="arrow-indicator">▾</span>
+              Services <span className="arrow-indicator">▾</span>
             </button>
 
-            <div className="dropdown-content" {...dropdownContentHoverProps}>
-              <div className="dropdown-column">
-                <h4>Custom Software Development</h4>
-                <Link href="/software-development">Enterprise Software Solutions</Link>
-                <Link href="/website-development">Custom Web Application Development</Link>
-              </div>
-
-              <div className="dropdown-column">
-                <h4>Web &amp; Mobile Experiences</h4>
-                <Link href="/seo-services">Android &amp; iOS App Development</Link>  
-                <Link href="/ai-software-development">Responsive Website Development</Link>
-              </div>
-
-              <div className="dropdown-column">
-                <h4>Cloud, Backend &amp; DevOps</h4> 
-                <Link href="/website-development">DevOps &amp; Deployment Automation</Link>   
-                <Link href="/ai-software-development">Cloud Solutions</Link>
-              </div>
+            <div className="dropdown-content services-mega-menu" {...dropdownContentHoverProps}>
+              {SERVICES_MENU_ITEMS.map((service) => (
+                <div key={service.id} className="services-mega-menu__item">
+                  <div
+                    className="services-mega-menu__icon"
+                    style={{ backgroundColor: service.accentBg, color: service.accent }}
+                  >
+                    <ServicesMegaMenuIcon name={service.icon} />
+                  </div>
+                  <h4 className="services-mega-menu__title">{service.title}</h4>
+                  <p className="services-mega-menu__desc">{service.description}</p>
+                  <Link
+                    href={service.href}
+                    className="services-mega-menu__link"
+                    style={{ color: service.accent }}
+                  >
+                    View Details →
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Dropdown 2: WEBSITE DEVELOPMENT (id: 2 - WIDE) */}
-          <div
-            className={`dropdown dropdown-wide ${mobileDropdown === 2 ? "open" : ""} ${activeDropdown === 2 ? "active" : ""}`}
-            {...dropdownHoverProps(2)}
-          >
-            <button
-              className="drop-btn"
-              onClick={() => handleDropdownButtonClick(2)}
-              aria-expanded={activeDropdown === 2 || mobileDropdown === 2}
-            >
-              WEBSITE DEVELOPMENT <span className="arrow-indicator">▾</span>
-            </button>
+          {NAV_PRIMARY_LINKS.map((item) => {
+            const isActive =
+              item.href === '/#results'
+                ? pathname === '/'
+                : pathname === item.href;
 
-            <div className="dropdown-content" {...dropdownContentHoverProps}>
-              <div className="dropdown-column">
-                <h4>Business &amp; Corporate Websites</h4>  
-                <Link href="/seo-services">Landing Page Design</Link>           
-                <Link href="/contact">Corporate Website Development</Link>
-                <Link href="/website-development">Startup &amp; Small Business Websites</Link>
-              </div>
-
-              <div className="dropdown-column">
-                <h4>E-Commerce Development</h4>               
-                <Link href="/seo-services">Payment Gateway Integration</Link>
-                <Link href="/website-development">Product &amp; Inventory Management</Link>  
-              </div>
-
-              <div className="dropdown-column">
-                <h4>UI Development &amp; Performance</h4>
-                <Link href="/ai-software-development">Website Speed Optimization</Link>               
-                <Link href="/website-development">HTML, CSS, JavaScript Development</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Dropdown 3: SEO MARKETING (id: 1 - COMPACT) */}
-          <div
-            className={`dropdown dropdown-compact ${mobileDropdown === 1 ? "open" : ""} ${activeDropdown === 1 ? "active" : ""}`}
-            {...dropdownHoverProps(1)}
-          >
-            <button
-              className="drop-btn"
-              onClick={() => handleDropdownButtonClick(1)}
-              aria-expanded={activeDropdown === 1 || mobileDropdown === 1}
-            >
-              SEO MARKETING <span className="arrow-indicator">▾</span>
-            </button>
-
-            <div className="dropdown-content" {...dropdownContentHoverProps}>
-              <div className="dropdown-column">
-                <Link href="/ecommerce-development">Local SEO &amp; Google Business Optimization</Link>
-                <Link href="/seo-services">Brand Mentions &amp; Citations</Link>
-              </div> 
-            </div>
-          </div>
-
-          {/* Dropdown 4: WHO WE ARE (id: 4 - COMPACT) */}
-          <div
-            className={`dropdown dropdown-compact ${mobileDropdown === 4 ? "open" : ""} ${activeDropdown === 4 ? "active" : ""}`}
-            {...dropdownHoverProps(4)}
-          >
-            <button
-              className="drop-btn"
-              onClick={() => handleDropdownButtonClick(4)}
-              aria-expanded={activeDropdown === 4 || mobileDropdown === 4}
-            >
-              WHO WE ARE <span className="arrow-indicator">▾</span>
-            </button>
-
-            <div className="dropdown-content" {...dropdownContentHoverProps}>
-              <div className="dropdown-column">
-                <Link href="/about">About Us</Link>
-                <Link href="/contact">Careers</Link>
-                <Link href="/contact">Contact Info</Link>
-              </div>
-            </div>
-          </div>
+            return isActive ? (
+              <span key={item.href} className="nav-primary-link active" aria-current="page">
+                {item.label}
+              </span>
+            ) : (
+              <Link key={item.href} href={item.href} className="nav-primary-link">
+                {item.label}
+              </Link>
+            );
+          })}
 
           </div>
 
@@ -405,12 +346,9 @@ const Navbar = () => {
             isOpen={open}
             isHomePage={isHomePage}
             servicesOpen={mobileServicesOpen}
-            activeCategoryId={mobileServiceCategory}
             contactEmail={CONTACT_EMAIL}
             whatsappHref={WHATSAPP_HREF}
             onToggleServices={() => setMobileServicesOpen((prev) => !prev)}
-            onSelectCategory={setMobileServiceCategory}
-            onBackFromCategory={() => setMobileServiceCategory(null)}
             onClose={closeMobileMenu}
             onOpenConsultation={handleOpenConsultation}
           />

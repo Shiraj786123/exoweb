@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { FaArrowRight, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
 
 const AREAS = [
-  { label: 'Batticaloa', href: '/web-design-batticaloa', tag: 'East coast hub', icon: FaMapMarkerAlt },
-  { label: 'Kattankudy', href: '/web-design-kattankudy', tag: 'Local businesses', icon: FaMapMarkerAlt },
-  { label: 'Kalmunai', href: '/web-design-kalmunai', tag: 'Retail & services', icon: FaMapMarkerAlt },
-  { label: 'Ampara', href: '/web-design-ampara', tag: 'Growing market', icon: FaMapMarkerAlt },
-  { label: 'Trincomalee', href: '/web-design-trincomalee', tag: 'Tourism & trade', icon: FaMapMarkerAlt },
+  { label: 'Batticaloa', href: '/website-development-batticaloa', tag: 'East coast hub', icon: FaMapMarkerAlt },
+  { label: 'Kattankudy', href: '/website-development-kattankudy', tag: 'Local businesses', icon: FaMapMarkerAlt },
+  { label: 'Kalmunai', href: '/website-development-kalmunai', tag: 'Retail & services', icon: FaMapMarkerAlt },
+  { label: 'Ampara', href: '/website-development-ampara', tag: 'Growing market', icon: FaMapMarkerAlt },
+  { label: 'Trincomalee', href: '/website-development-trincomalee', tag: 'Tourism & trade', icon: FaMapMarkerAlt },
   {
     label: 'SEO services',
     href: '/seo-services',

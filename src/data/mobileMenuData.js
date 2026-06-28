@@ -1,92 +1,12 @@
-export const MOBILE_SERVICE_CATEGORIES = [
-  {
-    id: 'software',
-    title: 'Software Development',
-    description: 'Enterprise software, web apps & custom systems',
-    sections: [
-      {
-        heading: 'Software Development',
-        links: [
-          { label: 'Enterprise Software Solutions', href: '/software-development' },
-          { label: 'Custom Web Application Development', href: '/website-development' },
-        ],
-      },
-      {
-        heading: 'Web & Mobile Experiences',
-        links: [
-          { label: 'Android & iOS App Development', href: '/seo-services' },
-          { label: 'Responsive Website Development', href: '/ai-software-development' },
-        ],
-      },
-      {
-        heading: 'Cloud, Backend & DevOps',
-        links: [
-          { label: 'DevOps & Deployment Automation', href: '/website-development' },
-          { label: 'Cloud Solutions', href: '/ai-software-development' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'website',
-    title: 'Website Development',
-    description: 'Business websites, landing pages & corporate sites',
-    sections: [
-      {
-        heading: 'Business & Corporate Websites',
-        links: [
-          { label: 'Landing Page Design', href: '/seo-services' },
-          { label: 'Corporate Website Development', href: '/contact' },
-          { label: 'Startup & Small Business Websites', href: '/website-development' },
-        ],
-      },
-      {
-        heading: 'E-Commerce Development',
-        links: [
-          { label: 'Payment Gateway Integration', href: '/seo-services' },
-          { label: 'Product & Inventory Management', href: '/website-development' },
-        ],
-      },
-      {
-        heading: 'UI Development & Performance',
-        links: [
-          { label: 'Website Speed Optimization', href: '/ai-software-development' },
-          { label: 'HTML, CSS, JavaScript Development', href: '/website-development' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'seo',
-    title: 'SEO Marketing',
-    description: 'Rank higher, drive traffic & grow your business',
-    sections: [
-      {
-        heading: 'SEO Marketing',
-        links: [
-          { label: 'Local SEO & Google Business Optimization', href: '/ecommerce-development' },
-          { label: 'Brand Mentions & Citations', href: '/seo-services' },
-          { label: 'SEO Services', href: '/seo-services' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'ecommerce',
-    title: 'E-commerce Solutions',
-    description: 'Online stores, payments & conversion optimization',
-    sections: [
-      {
-        heading: 'E-commerce & Growth',
-        links: [
-          { label: 'E-Commerce Development', href: '/ecommerce-development' },
-          { label: 'Website Development', href: '/website-development' },
-          { label: 'AI Software Development', href: '/ai-software-development' },
-        ],
-      },
-    ],
-  },
-];
+import { SERVICES_MENU_ITEMS } from './servicesMenuData';
+
+/** Mobile services drawer — 6 main services, View Details only. */
+export const MOBILE_SERVICE_CATEGORIES = SERVICES_MENU_ITEMS.map((item) => ({
+  id: item.id,
+  title: item.title,
+  description: item.description,
+  href: item.href,
+}));
 
 export const MOBILE_TRUST_ITEMS = [
   {

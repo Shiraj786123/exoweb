@@ -6,6 +6,7 @@ import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
 import TechnologyStackSection from '../components/TechnologyStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
+import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -137,8 +138,7 @@ const colors = ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B"];
             </span>
           </div>
           <h1 className="ecd__h1">
-            High-Performance E-commerce Development &amp; Optimization in{" "}
-            <span className="highlight-text">Eastern Province</span>
+            {MAIN_SERVICE_SEO.ecommerceDevelopment.h1}
           </h1>
           <p className="ecd__hero_text">
             We provide e-commerce development and optimization services designed to help online stores 

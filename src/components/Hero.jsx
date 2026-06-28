@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroTrustText from './HeroTrustText';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 
 export default function HeroSection() {
   return (
@@ -18,8 +19,7 @@ export default function HeroSection() {
         
         {/* Localized Main Typography */}
         <h1>
-          Web Design & Software Development for Businesses in{" "}
-          <span className="highlight-text">Eastern Province</span>
+          {MAIN_SERVICE_SEO.home.h1}
         </h1>
         
         {/* Localized Description */}

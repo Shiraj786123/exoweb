@@ -1,9 +1,9 @@
 import { createStaticPage } from '../src/lib/createStaticPage';
 import HomePage from '../src/pages/HomePage';
+import { MAIN_SERVICE_SEO } from '../src/content/servicePagesConfig';
 
 export default createStaticPage(HomePage, {
-  title: 'Web Design & Software Development in Batticaloa | Vexoweb',
-  description:
-    "Batticaloa's web design & software agency. Websites, custom software, mobile apps & SEO for businesses across the Eastern Province.",
+  title: MAIN_SERVICE_SEO.home.title,
+  description: MAIN_SERVICE_SEO.home.description,
   path: '/',
 });

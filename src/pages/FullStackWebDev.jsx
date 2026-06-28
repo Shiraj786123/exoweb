@@ -4,8 +4,10 @@ import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import ServiceSubLocations from '../components/ServiceSubLocations';
 import TechnologyStackSection from '../components/TechnologyStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
+import { SERVICE_SUB_LOCATIONS, MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -194,6 +196,7 @@ const FullStackWebDev = () => {
   <div className="fswd__hero_overlay"></div>
   <div className="fswd__hero_content">
     <Breadcrumb items={PAGE_BREADCRUMBS.websiteDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
+    <ServiceSubLocations links={SERVICE_SUB_LOCATIONS.websiteDevelopment} />
     <div className="fswd__hero_badge">
       <span className="badge-dot">●</span>
       <span className="hero-badge-text">
@@ -202,8 +205,7 @@ const FullStackWebDev = () => {
       </span>
     </div>
     <h1 className="fswd__h1">
-      Professional Website Design &amp; Development in{" "}
-      <span className="highlight-text">Eastern Province</span>
+      {MAIN_SERVICE_SEO.websiteDevelopment.h1}
     </h1>
     <p className="fswd__hero_description">
       We build fast, mobile-friendly websites for shops, clinics, schools, and businesses 

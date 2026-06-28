@@ -4,8 +4,10 @@ import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import ServiceSubLocations from '../components/ServiceSubLocations';
 import TechnologyStackSection from '../components/TechnologyStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
+import { SERVICE_SUB_LOCATIONS, MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 import { SERVICE_CONTACT } from '../content/serviceContactContent';
 import { SERVICE_TECH_STACK } from '../content/serviceTechStackContent';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
@@ -172,6 +174,7 @@ const SoftwareDevelopment = () => {
               items={PAGE_BREADCRUMBS.softwareDevelopment}
               className="breadcrumb--centered breadcrumb--on-dark"
             />
+            <ServiceSubLocations links={SERVICE_SUB_LOCATIONS.softwareDevelopment} />
             <span className="hero-badge">
               <span className="badge-dot">●</span>
               <span className="hero-badge-text">
@@ -180,8 +183,7 @@ const SoftwareDevelopment = () => {
               </span>
             </span>
             <h1 className="software__h1">
-              Custom Software Development for{" "}
-              <span className="highlight-text">Eastern Province</span> Businesses
+              {MAIN_SERVICE_SEO.softwareDevelopment.h1}
             </h1>
             <p className="hero-desc">
               Business POS, billing apps, inventory tools — we build software that solves

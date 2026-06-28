@@ -1,11 +1,11 @@
 import { createStaticPage } from '../src/lib/createStaticPage';
 import MobileAppDevelopment from '../src/pages/MobileAppDevelopment';
 import { PAGE_BREADCRUMBS } from '../src/content/pageBreadcrumbs';
+import { MAIN_SERVICE_SEO } from '../src/content/servicePagesConfig';
 
 export default createStaticPage(MobileAppDevelopment, {
-  title: 'Mobile App Development in Batticaloa, Sri Lanka | Vexoweb',
-  description:
-    'Android & iOS mobile application development for businesses in Batticaloa & Sri Lanka. Native & cross-platform apps that perform.',
+  title: MAIN_SERVICE_SEO.mobileAppDevelopment.title,
+  description: MAIN_SERVICE_SEO.mobileAppDevelopment.description,
   path: '/mobile-app-development',
   breadcrumb: PAGE_BREADCRUMBS.mobileAppDevelopment,
 });

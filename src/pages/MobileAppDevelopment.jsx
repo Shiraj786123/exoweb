@@ -1,16 +1,17 @@
 import React from 'react';
-import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb, { BreadcrumbSchema } from '../components/Breadcrumb';
+import ServiceSubLocations from '../components/ServiceSubLocations';
 import {
   CityCtaBand,
   CityProcessSection,
   CityStatsSection,
 } from '../components/CityPageSections';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
+import { SERVICE_SUB_LOCATIONS, MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 import { getCityTypeMeta } from '../content/cityPageEnhancements';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
@@ -88,6 +89,7 @@ const MobileAppDevelopment = () => {
         <div className="fswd__hero_overlay" aria-hidden="true" />
         <div className="fswd__hero_content">
           <Breadcrumb items={breadcrumb} className="breadcrumb--centered breadcrumb--on-dark" />
+          <ServiceSubLocations links={SERVICE_SUB_LOCATIONS.mobileAppDevelopment} />
           <div className="fswd__hero_badge">
             <span className="badge-dot">●</span>
             <span className="hero-badge-text">
@@ -96,8 +98,7 @@ const MobileAppDevelopment = () => {
             </span>
           </div>
           <h1 className="fswd__h1">
-            Mobile App Development for Android &amp; iOS{' '}
-            <span className="highlight-text">Eastern Province</span>
+            {MAIN_SERVICE_SEO.mobileAppDevelopment.h1}
           </h1>
           <p className="fswd__hero_description">
             Android and iOS mobile applications for businesses in Batticaloa and across Sri Lanka —
@@ -264,22 +265,6 @@ const MobileAppDevelopment = () => {
           parentCta: 'Talk to our Batticaloa team',
         }}
       />
-
-      <section className="city-page__related">
-        <div className="city-page__related-inner">
-          <span className="fswd__sec_badge green">LOCAL APPS</span>
-          <h2 className="fswd__h2">Mobile apps in Batticaloa</h2>
-          <p className="fswd__section_description">
-            Looking for app development in a specific town? We serve businesses across the east coast.
-          </p>
-          <div className="city-page__related-grid">
-            <Link href="/mobile-app-development-batticaloa" className="city-page__related-link">
-              Mobile App Development in Batticaloa
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <ContactSection />
       <Footer />

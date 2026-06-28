@@ -1,7 +1,7 @@
 import { CITY_PAGES, CITY_PAGE_SLUGS } from './cityPagesContent';
 
 export const CITY_TYPE_META = {
-  'web-design': {
+  'website-development': {
     stats: [
       { value: '48hr', label: 'Average first draft turnaround' },
       { value: '100%', label: 'Mobile-friendly designs' },
@@ -26,7 +26,7 @@ export const CITY_TYPE_META = {
       { number: '3', title: 'Development', description: 'Fast, secure, mobile-first build with clean code.' },
       { number: '4', title: 'Launch & Support', description: 'Go live with training and ongoing local support.' },
     ],
-    slugPrefix: 'web-design',
+    slugPrefix: 'website-development',
     parentCta: 'Explore all website development services',
   },
   seo: {
@@ -54,7 +54,7 @@ export const CITY_TYPE_META = {
       { number: '3', title: 'Maps & Citations', description: 'Strengthen Google Business and local listings.' },
       { number: '4', title: 'Track & Grow', description: 'Monthly reports and continuous improvement.' },
     ],
-    slugPrefix: 'seo-services',
+    slugPrefix: 'seo',
     parentCta: 'Explore all SEO services',
   },
   software: {
@@ -116,7 +116,7 @@ export const CITY_TYPE_META = {
 };
 
 export function getCityTypeMeta(serviceType) {
-  return CITY_TYPE_META[serviceType] || CITY_TYPE_META['web-design'];
+  return CITY_TYPE_META[serviceType] || CITY_TYPE_META['website-development'];
 }
 
 export function getRelatedCities(serviceType, currentSlug) {
