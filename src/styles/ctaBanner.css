@@ -1,0 +1,98 @@
+/* ==========================================================================
+   SHARED CTA BANNERS — loaded last to win cascade
+   ========================================================================== */
+
+.vexoweb-cta-banner,
+.city-page__cta-card,
+.fswd__cta_banner,
+.cp__cta_banner,
+.abt__cta_banner,
+.ecd__cta_banner,
+.software-page .cta-box {
+  background: linear-gradient(
+    125deg,
+    #f97316 0%,
+    #ea580c 22%,
+    #eab308 48%,
+    #0ea5e9 78%,
+    #06b6d4 100%
+  ) !important;
+  box-shadow:
+    0 24px 48px rgba(234, 88, 12, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset !important;
+}
+
+.city-page__cta-band {
+  padding: 64px 24px 72px !important;
+  background: #ffffff !important;
+}
+
+.city-page__cta-card {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 52px) clamp(24px, 4vw, 40px);
+  border-radius: 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.city-page__cta-title,
+.fswd__cta_heading_white,
+.cp__cta_title_white,
+.abt__cta_banner h2,
+.ecd__cta_title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+}
+
+.city-page__cta-text,
+.fswd__cta_text_white,
+.cp__cta_text_white,
+.abt__cta_banner p,
+.ecd__cta_text {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.city-page__cta-btn--primary,
+.fswd__final_cta_btn,
+.cp__final_cta_btn,
+.abt__cta_btn.abt__cta_primary,
+.abt__cta_primary,
+.ecd__final_cta_btn {
+  background: #ffffff !important;
+  color: #ea580c !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16) !important;
+}
+
+.city-page__cta-btn--primary:hover,
+.fswd__final_cta_btn:hover,
+.cp__final_cta_btn:hover,
+.abt__cta_btn.abt__cta_primary:hover,
+.abt__cta_primary:hover,
+.ecd__final_cta_btn:hover {
+  background: #fff7ed !important;
+  transform: translateY(-3px);
+}
+
+.city-page__cta-btn--ghost,
+.cp__final_cta_btn_alt,
+.abt__cta_btn.abt__cta_secondary,
+.abt__cta_secondary {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.55) !important;
+  border-radius: 999px !important;
+}
+
+.city-page__cta-btn--ghost:hover,
+.cp__final_cta_btn_alt:hover,
+.abt__cta_btn.abt__cta_secondary:hover,
+.abt__cta_secondary:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: #ffffff !important;
+}

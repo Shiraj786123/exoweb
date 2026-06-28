@@ -1291,7 +1291,8 @@
    ========================================== */
 .ecd__split_section {
   padding: 80px 0;
-  background-color: #001b3a;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
 }
 
 .ecd__split_layout {
@@ -1327,15 +1328,15 @@
 }
 
 .ecd__split_section .ecd__sec_header .ecd__h2, .ecd__split_section .ecd__h2, .ecd__trust_section .ecd__h2 {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: #ffffff !important;
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #0f172a !important;
 }
 
 .ecd__split_section .ecd__sec_subtitle {
-  color: #cbd5e1;
+  color: #64748b;
 }
 
 .ecd__why_statement_big {
@@ -1343,7 +1344,7 @@
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.5;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .ecd__why_robot_wrap {

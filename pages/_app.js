@@ -49,6 +49,7 @@ import '../src/styles/UserProfile.css';
 import '../src/styles/WebsiteMaintenance.css';
 import '../src/styles/mobile-responsive.css';
 import '../src/styles/chatbot.css';
+import '../src/styles/ctaBanner.css';
 
 const poppins = Poppins({
   subsets: ['latin'],

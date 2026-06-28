@@ -577,7 +577,7 @@ const AboutUs = () => {
       {/* 🔟 Final CTA */}
       <section className="abt__cta_section">
         <div className="abt__container">
-          <div className="abt__cta_banner">
+          <div className="abt__cta_banner vexoweb-cta-banner">
             <div className="abt__cta_banner_glow"></div>
             <h2>Let's Build Something That Works</h2>
             <p>

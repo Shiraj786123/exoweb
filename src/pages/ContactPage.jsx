@@ -362,7 +362,7 @@ const ContactPage = () => {
       {/* Final CTA (Vibrant Gradient Banner) */}
       <section className="cp__cta_section">
         <div className="cp__container">
-          <div className="cp__cta_banner">
+          <div className="cp__cta_banner vexoweb-cta-banner">
             <div className="cp__cta_banner_glow"></div>
             <h2 className="cp__cta_title_white">Ready to Get Started?</h2>
             <p className="cp__cta_text">

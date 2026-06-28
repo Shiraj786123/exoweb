@@ -177,23 +177,29 @@ export function CityProcessSection({ config, meta }) {
 
 export function CityCtaBand({ config, meta }) {
   return (
-    <section className="city-page__cta-band">
-      <div className="city-page__cta-inner">
-        <h2 className="city-page__cta-title">Ready to grow your business in {config.city}?</h2>
-        <p className="city-page__cta-text">
-          Get a free consultation from our Batticaloa team. We reply within 24 hours with honest
-          advice and a clear next step.
-        </p>
-        <div className="city-page__cta-actions">
-          <a href="#contact" className="city-page__cta-btn city-page__cta-btn--primary">
-            {config.ctaText}
-          </a>
-          <Link
-            href={config.parentService.href}
-            className="city-page__cta-btn city-page__cta-btn--ghost"
-          >
-            {meta.parentCta}
-          </Link>
+    <section className="city-page__cta-band" aria-labelledby="city-cta-heading">
+      <div className="city-page__cta-card vexoweb-cta-banner">
+        <div className="city-page__cta-glow city-page__cta-glow--left" aria-hidden="true" />
+        <div className="city-page__cta-glow city-page__cta-glow--right" aria-hidden="true" />
+        <div className="city-page__cta-inner">
+          <h2 id="city-cta-heading" className="city-page__cta-title">
+            Ready to grow your business in {config.city}?
+          </h2>
+          <p className="city-page__cta-text">
+            Get a free consultation from our Batticaloa team. We reply within 24 hours with honest
+            advice and a clear next step.
+          </p>
+          <div className="city-page__cta-actions">
+            <a href="#contact" className="city-page__cta-btn city-page__cta-btn--primary">
+              {config.ctaText}
+            </a>
+            <Link
+              href={config.parentService.href}
+              className="city-page__cta-btn city-page__cta-btn--ghost"
+            >
+              {meta.parentCta}
+            </Link>
+          </div>
         </div>
       </div>
     </section>
