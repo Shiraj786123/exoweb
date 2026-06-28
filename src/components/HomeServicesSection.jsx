@@ -40,7 +40,7 @@ const SERVICES = [
 
 const HomeServicesSection = () => {
   return (
-    <section className="home-services" aria-labelledby="home-services-heading">
+    <section className="home-services" id="services" aria-labelledby="home-services-heading">
       <div className="home-services__inner">
         <header className="home-services__header">
           <h2 id="home-services-heading" className="home-services__title">

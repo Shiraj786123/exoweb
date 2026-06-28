@@ -1,3 +1,5 @@
+import { SERVICES_BREADCRUMB } from './pageBreadcrumbs';
+
 const WEBSITE_SERVICES = [
   'Custom business website design',
   'Mobile-friendly responsive layouts',
@@ -188,6 +190,7 @@ export function getCityPageBySlug(slug) {
 export function getCityBreadcrumb(config) {
   return [
     { label: 'Home', href: '/' },
+    SERVICES_BREADCRUMB,
     { label: config.parentService.label, href: config.parentService.href },
     { label: config.breadcrumbName },
   ];

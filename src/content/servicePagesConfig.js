@@ -1,26 +1,4 @@
-/** SEO metadata & sub-location links for service pages (per SEO page map). */
-
-export const SERVICE_SUB_LOCATIONS = {
-  websiteDevelopment: [
-    { label: 'Website Development in Batticaloa', href: '/website-development-batticaloa' },
-    { label: 'Website Development in Kattankudy', href: '/website-development-kattankudy' },
-    { label: 'Website Development in Kalmunai', href: '/website-development-kalmunai' },
-    { label: 'Website Development in Ampara', href: '/website-development-ampara' },
-    { label: 'Website Development in Trincomalee', href: '/website-development-trincomalee' },
-  ],
-  softwareDevelopment: [
-    { label: 'Software Development in Batticaloa', href: '/software-development-batticaloa' },
-  ],
-  seoServices: [
-    { label: 'SEO Services in Batticaloa', href: '/seo-batticaloa' },
-    { label: 'SEO Services in Kattankudy', href: '/seo-kattankudy' },
-    { label: 'SEO Services in Kalmunai', href: '/seo-kalmunai' },
-    { label: 'SEO Services in Ampara', href: '/seo-ampara' },
-  ],
-  mobileAppDevelopment: [
-    { label: 'Mobile App Development in Batticaloa', href: '/mobile-app-development-batticaloa' },
-  ],
-};
+/** SEO metadata for service pages (per SEO page map). */
 
 export const MAIN_SERVICE_SEO = {
   home: {

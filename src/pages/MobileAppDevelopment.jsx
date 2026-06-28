@@ -4,14 +4,13 @@ import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb, { BreadcrumbSchema } from '../components/Breadcrumb';
-import ServiceSubLocations from '../components/ServiceSubLocations';
 import {
   CityCtaBand,
   CityProcessSection,
   CityStatsSection,
 } from '../components/CityPageSections';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
-import { SERVICE_SUB_LOCATIONS, MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
+import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
 import { getCityTypeMeta } from '../content/cityPageEnhancements';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
 
@@ -89,7 +88,6 @@ const MobileAppDevelopment = () => {
         <div className="fswd__hero_overlay" aria-hidden="true" />
         <div className="fswd__hero_content">
           <Breadcrumb items={breadcrumb} className="breadcrumb--centered breadcrumb--on-dark" />
-          <ServiceSubLocations links={SERVICE_SUB_LOCATIONS.mobileAppDevelopment} />
           <div className="fswd__hero_badge">
             <span className="badge-dot">●</span>
             <span className="hero-badge-text">
