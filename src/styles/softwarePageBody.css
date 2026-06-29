@@ -1,0 +1,79 @@
+/* Software Development page body */
+
+.soft-ref { background: #fff; color: #0f172a; }
+.soft-ref__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.soft-ref__container--narrow { max-width: 800px; }
+.soft-ref__header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.soft-ref__header--light .soft-ref__title { color: #fff; }
+.soft-ref__header--light .soft-ref__subtitle { color: #94a3b8; }
+.soft-ref__title { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 12px; }
+.soft-ref__subtitle { font-size: 1rem; line-height: 1.6; color: #64748b; margin: 0; }
+.soft-ref__section { padding: 72px 0; }
+.soft-ref__section--alt { background: #f8fafc; }
+
+.soft-ref__stats { padding: 48px 0; background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 50%, #faf5ff 100%); border-bottom: 1px solid #e2e8f0; }
+.soft-ref__stats_row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+.soft-ref__stat strong { display: block; font-size: 2rem; font-weight: 800; line-height: 1.2; }
+.soft-ref__stat span { font-size: 0.875rem; color: #64748b; font-weight: 500; }
+
+.soft-ref__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.soft-ref__service_card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.soft-ref__service_icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+.soft-ref__service_card h3 { font-size: 1rem; font-weight: 700; line-height: 1.35; margin: 0 0 10px; color: #0f172a; }
+.soft-ref__service_card p { font-size: 0.875rem; line-height: 1.6; color: #64748b; margin: 0; flex: 1; }
+.soft-ref__link { display: inline-flex; align-items: center; gap: 4px; margin-top: 20px; font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+
+.soft-ref__benefits { padding: 80px 0; background: linear-gradient(135deg, #0c1a3a 0%, #001b3a 100%); }
+.soft-ref__benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.soft-ref__benefit_icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #c4b5fd; background: rgba(147,51,234,0.15); margin-bottom: 14px; }
+.soft-ref__benefit h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 8px; }
+.soft-ref__benefit p { font-size: 0.85rem; line-height: 1.55; color: #94a3b8; margin: 0; }
+
+.soft-ref__tech_grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 720px; margin: 0 auto; }
+.soft-ref__tech_item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 8px; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 1.5rem; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03); }
+.soft-ref__tech_item span:last-child { font-size: 0.68rem; font-weight: 600; color: #475569; text-align: center; }
+
+.soft-ref__industries { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.soft-ref__industry { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 1.75rem; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03); }
+.soft-ref__industry span { font-size: 0.78rem; font-weight: 600; color: #334155; }
+
+.soft-ref__area_wrap { text-align: center; margin-top: 36px; }
+.soft-ref__area_btn { display: inline-flex; padding: 12px 28px; border-radius: 999px; border: 2px solid #2563eb; color: #2563eb; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s, color 0.2s; }
+.soft-ref__area_btn:hover { background: #2563eb; color: #fff; }
+
+.soft-ref__faq { display: flex; flex-direction: column; gap: 12px; }
+.soft-ref__faq_item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; }
+.soft-ref__faq_item summary { padding: 18px 22px; font-weight: 600; cursor: pointer; list-style: none; }
+.soft-ref__faq_item summary::-webkit-details-marker { display: none; }
+.soft-ref__faq_item p { padding: 0 22px 18px; margin: 0; font-size: 0.875rem; line-height: 1.6; color: #64748b; }
+
+@media (max-width: 1024px) {
+  .soft-ref__services { grid-template-columns: repeat(2, 1fr); }
+  .soft-ref__benefits_grid { grid-template-columns: 1fr; }
+  .soft-ref__industries { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .soft-ref__section { padding: 56px 0; }
+  .soft-ref__stats_row,
+  .soft-ref__services,
+  .soft-ref__industries { grid-template-columns: 1fr; }
+  .soft-ref__tech_grid { grid-template-columns: repeat(2, 1fr); }
+}

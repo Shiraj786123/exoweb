@@ -1,0 +1,104 @@
+/* Mobile App Development page body — zigzag + phone mockups */
+
+.mob-ref { background: #fff; color: #0f172a; }
+.mob-ref__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.mob-ref__container--narrow { max-width: 800px; }
+.mob-ref__header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.mob-ref__title { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 12px; }
+.mob-ref__subtitle { font-size: 1rem; line-height: 1.6; color: #64748b; margin: 0; }
+.mob-ref__section { padding: 72px 0; }
+.mob-ref__section--alt { background: #f8fafc; }
+
+.mob-ref__platforms { padding: 40px 0; border-bottom: 1px solid #e2e8f0; }
+.mob-ref__platforms_label { text-align: center; font-size: 0.9rem; color: #64748b; margin: 0 0 28px; }
+.mob-ref__platforms_row { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+.mob-ref__platform { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 2rem; }
+.mob-ref__platform span:last-child { font-size: 0.85rem; font-weight: 600; color: #475569; }
+
+.mob-ref__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.mob-ref__service { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 22px; box-shadow: 0 4px 16px rgba(15,23,42,0.04); }
+.mob-ref__service_icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px; }
+.mob-ref__service h3 { font-size: 1rem; font-weight: 700; margin: 0 0 8px; }
+.mob-ref__service p { font-size: 0.85rem; line-height: 1.55; color: #64748b; margin: 0 0 16px; }
+.mob-ref__link { font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+
+.mob-ref__highlight { padding: 72px 0; }
+.mob-ref__highlight:nth-child(odd) { background: #fff; }
+.mob-ref__highlight:nth-child(even) { background: #f8fafc; }
+.mob-ref__highlight_inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
+.mob-ref__highlight_content { display: flex; flex-direction: column; justify-content: center; }
+.mob-ref__highlight--reverse .mob-ref__highlight_inner { direction: rtl; }
+.mob-ref__highlight--reverse .mob-ref__highlight_content { direction: ltr; }
+.mob-ref__highlight--reverse .mob-ref__phone { direction: ltr; }
+.mob-ref__highlight_icon { font-size: 2rem; margin-bottom: 16px; }
+.mob-ref__highlight_content h2 { font-size: 1.5rem; font-weight: 800; margin: 0 0 12px; }
+.mob-ref__highlight_content p { font-size: 0.95rem; line-height: 1.65; color: #64748b; margin: 0 0 24px; }
+.mob-ref__cta { display: inline-block; padding: 12px 28px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 0.9rem; text-decoration: none; align-self: flex-start; width: fit-content; }
+
+.mob-ref__phone { display: flex; justify-content: center; align-items: center; align-self: stretch; }
+.mob-ref__phone_frame {
+  width: 268px;
+  max-width: 100%;
+  background: #1e293b;
+  border-radius: 38px;
+  padding: 11px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+}
+.mob-ref__phone_screen {
+  position: relative;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19.5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mob-ref__process { display: flex; gap: 0; position: relative; }
+.mob-ref__process_step { flex: 1; text-align: center; position: relative; padding: 0 8px; }
+.mob-ref__process_ring { width: 44px; height: 44px; border-radius: 50%; border: 3px solid; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 700; font-size: 0.9rem; background: #fff; }
+.mob-ref__process_line { display: none; }
+.mob-ref__process_step h3 { font-size: 0.85rem; font-weight: 700; margin: 0 0 4px; }
+.mob-ref__process_step p { font-size: 0.75rem; line-height: 1.45; color: #64748b; margin: 0; }
+
+.mob-ref__industries { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 36px; }
+.mob-ref__industry { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 10px; text-align: center; font-size: 1.6rem; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.mob-ref__industry span { font-size: 0.75rem; font-weight: 600; color: #334155; }
+
+.mob-ref__tech_row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 32px; }
+.mob-ref__tech_chip { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 999px; font-size: 1.2rem; }
+.mob-ref__tech_chip span:last-child { font-size: 0.8rem; font-weight: 600; color: #475569; }
+
+.mob-ref__area_wrap { text-align: center; padding: 0 4px; }
+.mob-ref__area_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid #ea580c;
+  color: #ea580c;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.mob-ref__faq { display: flex; flex-direction: column; gap: 12px; }
+.mob-ref__faq_item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; }
+.mob-ref__faq_item summary { padding: 18px 22px; font-weight: 600; cursor: pointer; list-style: none; }
+.mob-ref__faq_item summary::-webkit-details-marker { display: none; }
+.mob-ref__faq_item p { padding: 0 22px 18px; margin: 0; font-size: 0.875rem; line-height: 1.6; color: #64748b; }
+
+@media (max-width: 1024px) {
+  .mob-ref__services { grid-template-columns: repeat(2, 1fr); }
+  .mob-ref__highlight_inner { grid-template-columns: 1fr; }
+  .mob-ref__highlight--reverse .mob-ref__highlight_inner { direction: ltr; }
+  .mob-ref__phone_frame { width: 240px; }
+  .mob-ref__process { flex-wrap: wrap; gap: 24px; }
+  .mob-ref__industries { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .mob-ref__services, .mob-ref__industries { grid-template-columns: 1fr; }
+}

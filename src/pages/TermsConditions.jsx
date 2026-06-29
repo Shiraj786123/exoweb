@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
+import HomeTechStackSection from '../components/HomeTechStackSection';
 import Breadcrumb from '../components/Breadcrumb';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 
@@ -244,6 +246,8 @@ const TermsConditions = () => {
         </div>
       </section>
 
+      <HomeTechStackSection />
+      <ContactSection />
       <Footer />
     </div>
   );

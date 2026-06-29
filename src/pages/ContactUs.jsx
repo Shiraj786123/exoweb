@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ContactSection from "../components/ContactSection";
+import HomeTechStackSection from "../components/HomeTechStackSection";
 
 const ContactUs = () => {
   const router = useRouter();
@@ -196,6 +198,8 @@ const ContactUs = () => {
         </div>
       </div>
 
+      <HomeTechStackSection />
+      <ContactSection />
       <Footer />
     </div>
   );

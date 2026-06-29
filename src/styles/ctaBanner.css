@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SHARED CTA BANNERS — loaded last to win cascade
+   SHARED CTA BANNERS — Expert popup palette (navy + sky blue)
    ========================================================================== */
 
 .vexoweb-cta-banner,
@@ -9,17 +9,15 @@
 .abt__cta_banner,
 .ecd__cta_banner,
 .software-page .cta-box {
-  background: linear-gradient(
-    125deg,
-    #f97316 0%,
-    #ea580c 22%,
-    #eab308 48%,
-    #0ea5e9 78%,
-    #06b6d4 100%
+  background: radial-gradient(
+    circle at 20% 0%,
+    #003d73 0%,
+    #001b3a 55%,
+    #000f21 100%
   ) !important;
   box-shadow:
-    0 24px 48px rgba(234, 88, 12, 0.22),
-    0 0 0 1px rgba(255, 255, 255, 0.14) inset !important;
+    0 24px 48px rgba(0, 15, 33, 0.35),
+    0 0 0 1px rgba(56, 189, 248, 0.14) inset !important;
 }
 
 .city-page__cta-band {
@@ -41,7 +39,8 @@
 .fswd__cta_heading_white,
 .cp__cta_title_white,
 .abt__cta_banner h2,
-.ecd__cta_title {
+.ecd__cta_title,
+.city-rich__cta-title {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
   background: none !important;
@@ -53,8 +52,9 @@
 .fswd__cta_text_white,
 .cp__cta_text_white,
 .abt__cta_banner p,
-.ecd__cta_text {
-  color: rgba(255, 255, 255, 0.94) !important;
+.ecd__cta_text,
+.city-rich__cta-text {
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .city-page__cta-btn--primary,
@@ -62,11 +62,13 @@
 .cp__final_cta_btn,
 .abt__cta_btn.abt__cta_primary,
 .abt__cta_primary,
-.ecd__final_cta_btn {
-  background: #ffffff !important;
-  color: #ea580c !important;
+.ecd__final_cta_btn,
+.city-rich__btn--cta {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
   border-radius: 999px !important;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16) !important;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35) !important;
 }
 
 .city-page__cta-btn--primary:hover,
@@ -74,18 +76,21 @@
 .cp__final_cta_btn:hover,
 .abt__cta_btn.abt__cta_primary:hover,
 .abt__cta_primary:hover,
-.ecd__final_cta_btn:hover {
-  background: #fff7ed !important;
+.ecd__final_cta_btn:hover,
+.city-rich__btn--cta:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
   transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(56, 189, 248, 0.4) !important;
 }
 
 .city-page__cta-btn--ghost,
 .cp__final_cta_btn_alt,
 .abt__cta_btn.abt__cta_secondary,
 .abt__cta_secondary {
-  background: rgba(255, 255, 255, 0.14) !important;
+  background: rgba(56, 189, 248, 0.12) !important;
   color: #ffffff !important;
-  border: 2px solid rgba(255, 255, 255, 0.55) !important;
+  border: 2px solid rgba(56, 189, 248, 0.45) !important;
   border-radius: 999px !important;
 }
 
@@ -93,6 +98,6 @@
 .cp__final_cta_btn_alt:hover,
 .abt__cta_btn.abt__cta_secondary:hover,
 .abt__cta_secondary:hover {
-  background: rgba(255, 255, 255, 0.24) !important;
-  border-color: #ffffff !important;
+  background: rgba(56, 189, 248, 0.22) !important;
+  border-color: #38bdf8 !important;
 }

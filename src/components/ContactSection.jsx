@@ -69,7 +69,7 @@ const CONTACT_LINKS = [
 
 const ContactSection = ({
   id = 'contact',
-  variant = 'default',
+  variant = 'proposal',
   eyebrowAccent = HOME_CONTACT.eyebrowAccent,
   eyebrowLight = HOME_CONTACT.eyebrowLight,
   title = HOME_CONTACT.title,
@@ -127,7 +127,7 @@ const ContactSection = ({
   const sectionClass =
     variant === 'service'
       ? 'contact-section contact-section--service'
-      : 'contact-section';
+      : 'contact-section contact-section--proposal';
 
   return (
     <section className={sectionClass} id={id}>

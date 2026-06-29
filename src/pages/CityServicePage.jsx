@@ -11,14 +11,17 @@ import {
   CityProcessSection,
   CityRelatedSection,
   CityServicesGrid,
-  CityStatsSection,
 } from '../components/CityPageSections';
 import { SITE_URL } from '../lib/siteConfig';
 import { getCityBreadcrumb } from '../content/cityPagesContent';
-import { getCityTypeMeta, getRelatedCities } from '../content/cityPageEnhancements';
+import { getRelatedCities, getCityTypeMeta } from '../content/cityPageEnhancements';
+import RichCitySections from '../components/RichCitySections';
+import HomeTechStackSection from '../components/HomeTechStackSection';
+import { getRichCityContent } from '../content/richCityContent';
 
 export default function CityServicePage({ config }) {
   const breadcrumb = getCityBreadcrumb(config);
+  const richSections = getRichCityContent(config.slug);
   const meta = getCityTypeMeta(config.serviceType);
   const related = getRelatedCities(config.serviceType, config.slug);
 
@@ -80,36 +83,20 @@ export default function CityServicePage({ config }) {
         </div>
       </section>
 
-      <CityStatsSection meta={meta} />
+      {richSections ? (
+        <RichCitySections sections={richSections} config={config} />
+      ) : (
+        <>
+          <CityAudienceSection config={config} meta={meta} />
+          <CityServicesGrid config={config} />
+          <CityProcessSection config={config} meta={meta} />
+          <CityCtaBand config={config} meta={meta} />
+        </>
+      )}
 
-      <section className="fswd__what_section">
-        <div className="fswd__container fswd__what_wrapper">
-          <div className="fswd__what_content_left">
-            <span className="fswd__sec_badge cyan">LOCAL EXPERTS</span>
-            <h2 className="fswd__h2">{config.serviceListTitle}</h2>
-            <p className="fswd__section_description">
-              Vexoweb helps {config.city} businesses grow online with practical, results-focused
-              digital services — backed by a local team that understands the Eastern Province market.
-            </p>
-          </div>
-          <div className="fswd__what_box_right">
-            <div className="fswd__callout_box">
-              <span className="fswd__callout_icon">📍</span>
-              <p>
-                Based in Batticaloa, we serve businesses across {config.city} and the wider east
-                coast with websites, software, mobile apps, and SEO — all from one trusted local team.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CityAudienceSection config={config} meta={meta} />
-      <CityServicesGrid config={config} />
-      <CityProcessSection config={config} meta={meta} />
-      <CityCtaBand config={config} meta={meta} />
       <CityRelatedSection config={config} related={related} />
 
+      <HomeTechStackSection />
       <ContactSection />
       <Footer />
     </div>

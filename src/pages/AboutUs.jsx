@@ -1,10 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
 import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import HomeTechStackSection from '../components/HomeTechStackSection';
 
 const AboutUs = () => {
   const whoWeWorkWith = [
@@ -574,6 +576,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+      <HomeTechStackSection />
       {/* 🔟 Final CTA */}
       <section className="abt__cta_section">
         <div className="abt__container">
@@ -596,6 +599,7 @@ const AboutUs = () => {
         </div>
       </section>
 
+      <ContactSection />
       <Footer />
     </div>
   );

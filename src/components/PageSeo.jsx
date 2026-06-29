@@ -10,8 +10,8 @@ export default function PageSeo({
   image = DEFAULT_IMAGE,
   noindex = false,
 }) {
-  const canonicalPath = path === '/' ? '' : path;
-  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+  const normalizedPath = path && path !== '/' ? path.replace(/\/+$/, '') : '';
+  const canonicalUrl = normalizedPath ? `${SITE_URL}${normalizedPath}` : SITE_URL;
   const fullTitle = title
     ? title.includes(SITE_NAME)
       ? title

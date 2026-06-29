@@ -34,13 +34,13 @@ export const MAIN_SERVICE_SEO = {
   aiSoftwareDevelopment: {
     title: 'AI Software Development in Sri Lanka | Vexoweb',
     description:
-      'AI-powered web applications, automation & smart software solutions for businesses in Sri Lanka. Future-proof your operations.',
-    h1: 'AI Software & Web Application Development',
+      'Professional AI software development in Sri Lanka. We build AI chatbots, automation systems, custom AI applications and intelligent business solutions for startups, SMEs and enterprises.',
+    h1: 'Build Smarter. Automate More. Grow Faster with AI.',
   },
   ecommerceDevelopment: {
-    title: 'E-Commerce Website Development Sri Lanka | Vexoweb',
+    title: 'Ecommerce Website Development in Sri Lanka | Vexoweb',
     description:
-      'Build & optimize your online store. Shopify, WooCommerce & custom e-commerce development for Sri Lankan businesses.',
-    h1: 'E-Commerce Website Development & Optimization',
+      'Professional ecommerce website development in Sri Lanka. We build WooCommerce, Shopify and custom online stores that are secure, scalable and designed to increase sales.',
+    h1: 'Ecommerce Website Development in Sri Lanka',
   },
 };
