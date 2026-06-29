@@ -25,37 +25,21 @@ export const AuthProvider = ({ children }) => {
       return;
     }
 
-    const storedUser = localStorage.getItem('user');
-    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
-    if (parsedUser) {
-      setUser(parsedUser);
-    }
-
-    const token = localStorage.getItem('token');
-    if (token && !parsedUser) {
-      loadUser(token);
-      return;
-    }
-
-    setLoading(false);
-  }, []);
-
-  const loadUser = async (token) => {
     try {
-      const res = await axios.get(`${API}/api/users/profile`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setUser(res.data);
-      localStorage.setItem('user', JSON.stringify(res.data));
-    } catch (err) {
-      console.error('Failed to load user:', err);
-      localStorage.removeItem('token');
+      const storedUser = localStorage.getItem('user');
+      if (storedUser?.trim()) {
+        const parsedUser = JSON.parse(storedUser);
+        if (parsedUser && typeof parsedUser === 'object') {
+          setUser(parsedUser);
+        }
+      }
+    } catch {
       localStorage.removeItem('user');
-      setUser(null);
+      localStorage.removeItem('token');
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const login = async (email, password) => {
     try {

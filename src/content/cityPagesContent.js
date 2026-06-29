@@ -51,7 +51,7 @@ function buildWebsiteCity(city, slug, seoTitle, description, heroDesc) {
     description,
     services: WEBSITE_SERVICES,
     serviceListTitle: `Website development services in ${city}`,
-    ctaText: `Get a Free ${city} Website Consultation`,
+    ctaText: 'Get a Free Website Consultation',
     breadcrumbName: `Website Development in ${city}`,
   };
 }
@@ -71,7 +71,7 @@ function buildSeoCity(city, slug, seoTitle, description, heroDesc) {
     description,
     services: SEO_SERVICES,
     serviceListTitle: `SEO services in ${city}`,
-    ctaText: `Get a Free ${city} SEO Audit`,
+    ctaText: 'Get a Free SEO Audit',
     breadcrumbName: `SEO Services in ${city}`,
   };
 }

@@ -68,8 +68,8 @@ const ContactPage = () => {
           </p>
 
           {/* Action Buttons [1] */}
-          <div className="cp__hero_actions">
-            <a href="#contact" className="cp__hero_cta_primary">
+          <div className="cp__hero_actions hero-cta-wrap">
+            <a href="#contact" className="cp__hero_cta_primary hero-cta-btn">
               Get Free Consultation
             </a>
             <a href="#audit" className="cp__hero_cta_secondary">

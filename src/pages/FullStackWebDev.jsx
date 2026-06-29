@@ -31,9 +31,11 @@ const FullStackWebDev = () => (
           website development across the Eastern Province — modern, responsive and SEO-friendly websites
           that help businesses attract more customers and grow online.
         </p>
-        <a href="#contact" className="fswd__cta_primary">
-          Get a Free Website Consultation
-        </a>
+        <div className="hero-cta-wrap">
+          <a href="#contact" className="fswd__cta_primary hero-cta-btn">
+            Get a Free Website Consultation
+          </a>
+        </div>
         <HeroTrustText text={HERO_TRUST_TEXT.fullStack} />
       </div>
     </section>

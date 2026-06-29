@@ -34,9 +34,11 @@ const MobileAppDevelopment = () => {
             and iOS applications that help businesses improve customer engagement, streamline operations and
             accelerate digital growth.
           </p>
-          <a href="#contact" className="fswd__cta_primary">
-            Get a Free App Consultation
-          </a>
+          <div className="hero-cta-wrap">
+            <a href="#contact" className="fswd__cta_primary hero-cta-btn">
+              Get a Free App Consultation
+            </a>
+          </div>
           <HeroTrustText text={HERO_TRUST_TEXT.mobileApp} />
         </div>
       </section>

@@ -76,9 +76,11 @@ export default function CityServicePage({ config }) {
             <span className="highlight-text">{config.h1Accent}</span>
           </h1>
           <p className="fswd__hero_description">{config.heroDesc}</p>
-          <a href="#contact" className="fswd__cta_primary">
-            {config.ctaText}
-          </a>
+          <div className="hero-cta-wrap">
+            <a href="#contact" className="fswd__cta_primary hero-cta-btn">
+              {config.ctaText}
+            </a>
+          </div>
           <HeroTrustText text={`TRUSTED BY BUSINESSES IN ${config.city.toUpperCase()} & THE EASTERN PROVINCE`} />
         </div>
       </section>

@@ -359,8 +359,8 @@ export function RichCityTrust({ section, config }) {
 
   if (isWebDev) {
     return (
-      <SectionShell variant="trust" alt>
-        <SectionHeader title={section.title} subtitle={section.subtitle} align="center" />
+      <SectionShell variant="trust" className="city-rich--trust-webdev">
+        <SectionHeader title={section.title} subtitle={section.subtitle} align="center" light />
         {section.paragraphs?.map((p) => (
           <p key={p.slice(0, 40)} className="city-rich__text city-rich__text--center city-rich__trust-lead">{p}</p>
         ))}

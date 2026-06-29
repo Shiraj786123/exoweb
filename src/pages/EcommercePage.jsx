@@ -31,8 +31,8 @@ const EcommerceDev = () => (
           shopping experience. At Vexoweb, we provide professional ecommerce website development services across
           Sri Lanka — helping businesses build modern online stores that are secure, scalable and designed for growth.
         </p>
-        <div className="ecd__hero_actions">
-          <a href="#contact" className="ecd__hero_cta_primary">
+        <div className="ecd__hero_actions hero-cta-wrap">
+          <a href="#contact" className="ecd__hero_cta_primary hero-cta-btn">
             Get Free Consultation
           </a>
           <a href="#contact" className="ecd__hero_cta_secondary">

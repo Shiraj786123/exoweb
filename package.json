@@ -32,7 +32,8 @@
     "serve:only": "next start",
     "test": "react-scripts test",
     "server": "nodemon server/server.js",
-    "dev": "concurrently \"npm start\" \"npm run server\""
+    "dev": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && concurrently \"npm start\" \"npm run server\"",
+    "dev:clean": "npm run dev"
   },
   "eslintConfig": {
     "extends": [

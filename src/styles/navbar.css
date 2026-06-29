@@ -948,6 +948,22 @@
     justify-content: center;
   }
 
+  @media (max-width: 400px) {
+    .nav-actions > .contact-btn {
+      padding: 8px 10px !important;
+      margin: 0 8px 0 auto !important;
+      min-width: 36px;
+    }
+
+    .nav-actions > .contact-btn .contact-btn-label {
+      display: none;
+    }
+
+    .nav-actions > .contact-btn .contact-btn-icon {
+      font-size: 14px !important;
+    }
+  }
+
   /* Styles the new mail button at the bottom of your mobile menu drawer */
   .mobile-mail-btn {
     display: flex;

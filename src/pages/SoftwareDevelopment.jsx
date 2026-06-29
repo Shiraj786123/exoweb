@@ -29,8 +29,8 @@ const SoftwareDevelopment = () => (
             Looking for reliable software development in the Eastern Province? We develop custom software
             solutions that help businesses automate operations, improve efficiency and accelerate growth.
           </p>
-          <div className="hero-buttons">
-            <a href="#contact" className="primary-btn">Get Free Consultation</a>
+          <div className="hero-buttons hero-cta-wrap">
+            <a href="#contact" className="primary-btn hero-cta-btn">Get Free Consultation</a>
             <a href="/#results" className="secondary-btn">
               View Portfolio <span className="arrow">→</span>
             </a>

@@ -34,8 +34,8 @@ const SEOServices = () => (
           rankings, increase organic website traffic and generate more qualified enquiries through proven
           search engine optimisation strategies.
         </p>
-        <div className="ecd__hero_actions">
-          <a href="#contact" className="ecd__hero_cta_primary">
+        <div className="ecd__hero_actions hero-cta-wrap">
+          <a href="#contact" className="ecd__hero_cta_primary hero-cta-btn">
             Request a Free SEO Audit
           </a>
           <a href="#contact" className="ecd__hero_cta_secondary">

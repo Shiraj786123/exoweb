@@ -254,20 +254,21 @@ a.link-btn {
 
   header.navbar-wrapper + section.hero .hero-buttons {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     gap: 12px !important;
-    margin: 0 auto 0 auto !important;
+    margin: 0 auto !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
   }
 
   header.navbar-wrapper + section.hero .primary-btn,
   header.navbar-wrapper + section.hero .secondary-btn {
     width: 100% !important;
+    max-width: 100% !important;
     justify-content: center !important;
     box-sizing: border-box;
-    padding: 12px 24px !important;
-    font-size: 15px !important;
   }
 
   header.navbar-wrapper + section.hero .hero-trust-text {
@@ -323,11 +324,13 @@ a.link-btn {
 
   .software-page .hero-buttons {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     gap: 12px !important;
-    margin: 0 auto 0 auto !important;
+    margin: 0 auto !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
   }
 
   .software-page .hero-badge {
@@ -378,9 +381,11 @@ a.link-btn {
   .ecd__hero_buttons_centered,
   .aiss__hero_buttons_centered {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 12px !important;
     width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 4px;
   }
 
   .ecd__btn_primary_centered,
@@ -388,10 +393,17 @@ a.link-btn {
   .aiss__btn_primary_centered,
   .aiss__btn_secondary_centered {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     box-sizing: border-box;
     text-align: center;
     justify-content: center;
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    text-wrap: balance;
+    border-radius: 999px !important;
+    min-height: 48px;
   }
 
   /* =========================================================================
@@ -440,18 +452,28 @@ a.link-btn {
 
   .cp__hero_actions {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
     gap: 12px !important;
+    padding: 0 4px;
   }
 
   .cp__hero_cta_primary,
   .cp__hero_cta_secondary {
     width: 100% !important;
+    max-width: 100% !important;
     justify-content: center !important;
     box-sizing: border-box;
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    text-wrap: balance;
+    border-radius: 999px !important;
+    min-height: 48px;
   }
 
   .cp__br_desktop {
@@ -482,10 +504,19 @@ a.link-btn {
   .fswd__hero_actions,
   .fswd__cta_primary {
     width: 100% !important;
-    max-width: 300px !important;
-    margin: 0 auto 0 auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
     justify-content: center !important;
     box-sizing: border-box;
+    align-self: stretch !important;
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    text-wrap: balance;
+    border-radius: 999px !important;
+    min-height: 48px;
   }
 
   .ecd__hero {
@@ -513,18 +544,28 @@ a.link-btn {
 
   .ecd__hero_actions {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
-    max-width: 300px !important;
-    margin: 0 auto 0 auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
     gap: 12px !important;
+    padding: 0 4px;
   }
 
   .ecd__hero_cta_primary,
   .ecd__hero_cta_secondary {
     width: 100% !important;
+    max-width: 100% !important;
     justify-content: center !important;
     box-sizing: border-box;
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    text-wrap: balance;
+    border-radius: 999px !important;
+    min-height: 48px;
   }
 
   .ecd__br_desktop {
@@ -1336,18 +1377,21 @@ header.navbar-wrapper + section.hero .hero-badge .badge-dot,
   letter-spacing: 0.5px !important;
 }
 
-.software-page .hero .primary-btn,
-.software-page .hero .secondary-btn,
-.cp__hero_cta_primary,
-.cp__hero_cta_secondary,
-.ecd__hero_cta_primary,
-.ecd__hero_cta_secondary,
-.fswd__cta_primary,
-.ecd__btn_primary_centered,
-.ecd__btn_secondary_centered,
-.aiss__btn_primary_centered,
-.aiss__btn_secondary_centered {
-  font-size: 16px !important;
+@media (min-width: 769px) {
+  .software-page .hero .primary-btn,
+  .software-page .hero .secondary-btn,
+  .cp__hero_cta_primary,
+  .cp__hero_cta_secondary,
+  .ecd__hero_cta_primary,
+  .ecd__hero_cta_secondary,
+  .fswd__cta_primary,
+  .ecd__btn_primary_centered,
+  .ecd__btn_secondary_centered,
+  .aiss__btn_primary_centered,
+  .aiss__btn_secondary_centered,
+  .hero-cta-btn {
+    font-size: 16px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1443,7 +1487,10 @@ header.navbar-wrapper + section.hero .hero-badge .badge-dot,
   .ecd__btn_secondary_centered,
   .aiss__btn_primary_centered,
   .aiss__btn_secondary_centered {
-    font-size: 15px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    text-wrap: balance;
+    border-radius: 999px !important;
   }
 }
 
@@ -1820,4 +1867,102 @@ body,
 header.navbar-wrapper + section.hero .hero-trust-text.hero-trust-text--centered,
 header.navbar-wrapper + section.hero .hero-trust-text--centered {
   margin-top: 16px !important;
+}
+
+/* ==========================================================================
+   HERO CTA BUTTONS — all pages (city, service, homepage)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .fswd__hero_content,
+  .ecd__hero_container,
+  .ecd__hero_container_centered,
+  .aiss__hero_container_centered,
+  .cp__hero_container,
+  .software-page .hero-container {
+    align-items: stretch !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .fswd__hero_content {
+    padding: 0 4px;
+  }
+
+  .hero-cta-wrap,
+  header.navbar-wrapper + section.hero .hero-buttons,
+  .ecd__hero_actions,
+  .cp__hero_actions,
+  .ecd__hero_buttons_centered,
+  .aiss__hero_buttons_centered,
+  .software-page .hero-buttons {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-cta-btn,
+  .hero-cta-wrap .fswd__cta_primary,
+  .fswd__hero_content > .fswd__cta_primary,
+  .software-page .hero .primary-btn,
+  .cp__hero_cta_primary,
+  .ecd__hero_cta_primary,
+  .ecd__btn_primary_centered,
+  .aiss__btn_primary_centered,
+  header.navbar-wrapper + section.hero .primary-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 13px 18px !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    border-radius: 999px !important;
+    box-sizing: border-box !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    align-self: stretch !important;
+  }
+
+  .cp__hero_cta_secondary,
+  .ecd__hero_cta_secondary,
+  .ecd__btn_secondary_centered,
+  .aiss__btn_secondary_centered,
+  .software-page .hero .secondary-btn,
+  header.navbar-wrapper + section.hero .secondary-btn,
+  .hero-cta-btn-secondary {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 13px 18px !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    border-radius: 999px !important;
+    min-height: 46px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-cta-btn,
+  .hero-cta-wrap .fswd__cta_primary,
+  .fswd__cta_primary,
+  .software-page .hero .primary-btn,
+  .cp__hero_cta_primary,
+  .ecd__hero_cta_primary,
+  .ecd__btn_primary_centered,
+  .aiss__btn_primary_centered,
+  header.navbar-wrapper + section.hero .primary-btn {
+    font-size: 13px !important;
+    padding: 12px 14px !important;
+    line-height: 1.3 !important;
+  }
 }

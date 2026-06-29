@@ -30,8 +30,8 @@ const AISoftwareServices = () => (
           At Vexoweb, we provide professional AI software development services in Sri Lanka — helping businesses
           harness artificial intelligence to improve productivity, reduce costs and deliver better customer experiences.
         </p>
-        <div className="aiss__hero_buttons_centered">
-          <a href="#contact" className="aiss__btn_primary_centered">
+        <div className="aiss__hero_buttons_centered hero-cta-wrap">
+          <a href="#contact" className="aiss__btn_primary_centered hero-cta-btn">
             Get Free AI Consultation
           </a>
           <a href="#contact" className="aiss__btn_secondary_centered">

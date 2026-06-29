@@ -24,7 +24,6 @@ const Navbar = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null); // Desktop dropdown active state
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Proposal popup state
-  const [isMobileView, setIsMobileView] = useState(false); // Track mobile view for inline styles
   const navRef = useRef(null);
   const headerRef = useRef(null);
   const navLinksRef = useRef(null);
@@ -108,7 +107,6 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= DESKTOP_BREAKPOINT);
       if (isDesktop()) {
         setMobileDropdown(null);
       } else {
@@ -357,7 +355,7 @@ const Navbar = () => {
         {/* Proposal button */}
         <button className="contact-btn" onClick={() => setIsPopupOpen(true)}>
           <FaPaperPlane className="contact-btn-icon" aria-hidden="true" />
-          Get a Proposal
+          <span className="contact-btn-label">Get a Proposal</span>
         </button>
 
         {/* Mobile Hamburger toggle */}

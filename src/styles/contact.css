@@ -527,9 +527,10 @@ a.contact-channel-value:hover {
 
   .contact-eyebrow {
     align-self: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     text-align: center;
+    white-space: nowrap;
     max-width: calc(100% - 16px);
   }
 
@@ -560,33 +561,34 @@ a.contact-channel-value:hover {
   }
 
   .contact-eyebrow {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 4px;
-    width: calc(100% - 8px);
-    max-width: 300px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0;
+    width: auto;
+    max-width: calc(100vw - 40px);
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 14px;
-    font-size: 10px;
-    line-height: 1.4;
-    letter-spacing: 0.05em;
+    padding: 7px 12px;
+    font-size: clamp(7px, 2.15vw, 10px);
+    line-height: 1.2;
+    letter-spacing: 0.03em;
     text-align: center;
   }
 
   .contact-eyebrow-accent,
   .contact-eyebrow-light {
-    display: block;
-    width: 100%;
-    text-align: center;
-    white-space: normal;
+    display: inline;
+    width: auto;
+    text-align: inherit;
+    white-space: nowrap;
+    font-size: inherit;
+    letter-spacing: inherit;
   }
 
   .contact-eyebrow-light {
-    font-size: 9px;
-    letter-spacing: 0.04em;
     opacity: 0.92;
   }
 

@@ -29,12 +29,12 @@ export default function HeroSection() {
         </p>
         
         {/* Core Call to Actions */}
-        <div className="hero-buttons">
-          <a href="#contact" className="primary-btn">
+        <div className="hero-buttons hero-cta-wrap">
+          <a href="#contact" className="primary-btn hero-cta-btn">
             Get Free SEO Audit
           </a>
 
-          <a href="#results" className="secondary-btn">
+          <a href="#results" className="secondary-btn hero-cta-btn-secondary">
             View Local Results <span className="arrow">→</span>
           </a>
         </div>
