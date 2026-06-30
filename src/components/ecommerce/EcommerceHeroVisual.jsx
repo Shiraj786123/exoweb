@@ -7,10 +7,10 @@ import productPerfume from '../../assets/mobile/shop/product-perfume.jpg';
 const imgSrc = (img) => img?.src || img;
 
 const PRODUCTS = [
-  { name: 'Wireless Headphones', price: '$129', image: productWatch },
-  { name: 'Running Shoes', price: '$89', image: productSneakers },
-  { name: 'Leather Backpack', price: '$59', image: productBackpack },
-  { name: 'Luxury Perfume', price: '$49', image: productPerfume },
+  { name: 'Wireless Headphones', price: 'LKR 12,900', image: productWatch },
+  { name: 'Running Shoes', price: 'LKR 8,900', image: productSneakers },
+  { name: 'Leather Backpack', price: 'LKR 5,900', image: productBackpack },
+  { name: 'Luxury Perfume', price: 'LKR 4,900', image: productPerfume },
 ];
 
 const EcommerceHeroVisual = () => (

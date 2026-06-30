@@ -2,47 +2,75 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
-import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import WebsiteShowcase from '../components/website/WebsiteShowcase';
 import WebsitePageBody from '../components/WebsitePageBody';
-import HomeTechStackSection from '../components/HomeTechStackSection';
+import WebsiteHeroVisual from '../components/website/WebsiteHeroVisual';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
-import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
-import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import { WEB_HERO } from '../content/websitePageContent';
+import {
+  HiOutlineCog6Tooth,
+  HiOutlineShieldCheck,
+  HiOutlineDevicePhoneMobile,
+} from 'react-icons/hi2';
+
+const heroHighlightIcons = {
+  cog: HiOutlineCog6Tooth,
+  shield: HiOutlineShieldCheck,
+  device: HiOutlineDevicePhoneMobile,
+};
 
 const FullStackWebDev = () => (
-  <div className="fswd__page_wrapper">
+  <div className="ecd__wrapper">
     <Navbar />
 
-    <section className="fswd__hero_section fswd__hero_section--top">
-      <div className="fswd__hero_overlay" aria-hidden="true" />
-      <div className="fswd__hero_content">
-        <Breadcrumb items={PAGE_BREADCRUMBS.websiteDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
-        <div className="fswd__hero_badge">
-          <span className="badge-dot">●</span>
-          <span className="hero-badge-text">
-            <span className="hero-badge-accent">Website Development</span>
-            <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
-          </span>
+    <section className="ecd-hero">
+      <div className="ecd-hero__bg" aria-hidden="true" />
+      <div className="ecd-hero__container">
+        <div className="ecd-hero__content">
+          <Breadcrumb
+            items={PAGE_BREADCRUMBS.websiteDevelopment}
+            className="breadcrumb--on-dark"
+          />
+          <div className="ecd-hero__badge">
+            <span className="ecd-hero__badge_dot" />
+            {WEB_HERO.badge}
+          </div>
+          <h1 className="ecd-hero__h1">
+            {WEB_HERO.h1Line1}{' '}
+            <span className="ecd-hero__highlight">{WEB_HERO.h1Line2}</span>
+          </h1>
+          <p className="ecd-hero__tagline">{WEB_HERO.tagline}</p>
+          <p className="ecd-hero__desc">{WEB_HERO.description}</p>
+          <ul className="ecd-hero__highlights">
+            {WEB_HERO.highlights.map((item) => {
+              const Icon = heroHighlightIcons[item.icon];
+              return (
+                <li key={item.title}>
+                  <span className="ecd-hero__highlight_icon" style={{ color: item.color }}>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span>{item.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="ecd-hero__actions hero-cta-wrap">
+            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+              {WEB_HERO.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href={WEB_HERO.secondaryHref} className="ecd-hero__cta_secondary">
+              {WEB_HERO.secondaryCta}
+            </a>
+          </div>
         </div>
-        <h1 className="fswd__h1">{MAIN_SERVICE_SEO.websiteDevelopment.h1}</h1>
-        <p className="fswd__hero_description">
-          Your website is often the first impression customers have of your business. We provide professional
-          website development across the Eastern Province — modern, responsive and SEO-friendly websites
-          that help businesses attract more customers and grow online.
-        </p>
-        <div className="hero-cta-wrap">
-          <a href="#contact" className="fswd__cta_primary hero-cta-btn">
-            Get a Free Website Consultation
-          </a>
-        </div>
-        <HeroTrustText text={HERO_TRUST_TEXT.fullStack} />
+        <WebsiteHeroVisual />
       </div>
     </section>
 
+    <WebsiteShowcase />
     <WebsitePageBody />
 
-    <HomeTechStackSection />
     <ContactSection />
     <Footer />
   </div>

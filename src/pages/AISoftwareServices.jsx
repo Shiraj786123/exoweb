@@ -2,49 +2,75 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
-import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import AISoftwareShowcase from '../components/ai/AISoftwareShowcase';
 import AISoftwarePageBody from '../components/AISoftwarePageBody';
-import HomeTechStackSection from '../components/HomeTechStackSection';
+import AISoftwareHeroVisual from '../components/ai/AISoftwareHeroVisual';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
-import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
-import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import { AI_HERO } from '../content/aiSoftwarePageContent';
+import {
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineCpuChip,
+  HiOutlineBolt,
+} from 'react-icons/hi2';
+
+const heroHighlightIcons = {
+  chat: HiOutlineChatBubbleLeftRight,
+  cpu: HiOutlineCpuChip,
+  bolt: HiOutlineBolt,
+};
 
 const AISoftwareServices = () => (
   <div className="aiss__wrapper">
     <Navbar />
 
-    <section className="aiss__hero_centered_layout">
-      <div className="aiss__hero_overlay_centered" />
-      <div className="aiss__hero_container_centered">
-        <Breadcrumb items={PAGE_BREADCRUMBS.aiSoftwareDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
-        <div className="aiss__badge_pill_centered">
-          <span className="badge_dot_indicator">●</span>
-          <span className="hero-badge-text">
-            <span className="hero-badge-accent">AI Software Development</span>
-            <span className="hero-badge-light"> — Sri Lanka</span>
-          </span>
+    <section className="aiss-hero">
+      <div className="aiss-hero__bg" aria-hidden="true" />
+      <div className="aiss-hero__container">
+        <div className="aiss-hero__content">
+          <Breadcrumb
+            items={PAGE_BREADCRUMBS.aiSoftwareDevelopment}
+            className="breadcrumb--on-dark"
+          />
+          <div className="aiss-hero__badge">
+            <span className="aiss-hero__badge_dot" />
+            {AI_HERO.badge}
+          </div>
+          <h1 className="aiss-hero__h1">
+            {AI_HERO.h1Line1}{' '}
+            <span className="aiss-hero__highlight">{AI_HERO.h1Line2}</span>
+          </h1>
+          <p className="aiss-hero__tagline">{AI_HERO.tagline}</p>
+          <p className="aiss-hero__desc">{AI_HERO.description}</p>
+          <ul className="aiss-hero__highlights">
+            {AI_HERO.highlights.map((item) => {
+              const Icon = heroHighlightIcons[item.icon];
+              return (
+                <li key={item.title}>
+                  <span className="aiss-hero__highlight_icon" style={{ color: item.color }}>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span>{item.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="aiss-hero__actions hero-cta-wrap">
+            <a href="#contact" className="aiss-hero__cta_primary hero-cta-btn">
+              {AI_HERO.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href={AI_HERO.secondaryHref} className="aiss-hero__cta_secondary">
+              {AI_HERO.secondaryCta}
+            </a>
+          </div>
         </div>
-        <h1 className="aiss__h1">{MAIN_SERVICE_SEO.aiSoftwareDevelopment.h1}</h1>
-        <p className="aiss__hero_text_centered">
-          At Vexoweb, we provide professional AI software development services in Sri Lanka — helping businesses
-          harness artificial intelligence to improve productivity, reduce costs and deliver better customer experiences.
-        </p>
-        <div className="aiss__hero_buttons_centered hero-cta-wrap">
-          <a href="#contact" className="aiss__btn_primary_centered hero-cta-btn">
-            Get Free AI Consultation
-          </a>
-          <a href="#contact" className="aiss__btn_secondary_centered">
-            Explore AI Solutions ↓
-          </a>
-        </div>
-        <HeroTrustText text={HERO_TRUST_TEXT.aiSoftware} />
+        <AISoftwareHeroVisual />
       </div>
     </section>
 
+    <AISoftwareShowcase />
     <AISoftwarePageBody />
 
-    <HomeTechStackSection />
     <ContactSection />
     <Footer />
   </div>

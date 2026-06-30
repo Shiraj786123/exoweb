@@ -1623,3 +1623,193 @@ body {
   font-size: 18px !important;
   flex-shrink: 0;
 }
+
+/* SEO hero visual — ranking & traffic chart mockup */
+.ecd-hero__store--seo {
+  padding-bottom: 12px;
+}
+
+.ecd-hero__seo_metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ecd-hero__seo_metric {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.ecd-hero__seo_metric small {
+  display: block;
+  font-size: 0.55rem;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.ecd-hero__seo_metric strong {
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.ecd-hero__seo_chart {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.ecd-hero__seo_chart_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ecd-hero__seo_chart_header span {
+  font-size: 0.62rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.ecd-hero__seo_chart_header strong {
+  font-size: 0.72rem;
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.ecd-hero__seo_chart_bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 72px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ecd-hero__seo_chart_bar {
+  flex: 1;
+  background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 12px;
+}
+
+.ecd-hero__seo_chart_labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.5rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.ecd-hero__seo_rankings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.ecd-hero__seo_ranking {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  font-size: 0.55rem;
+}
+
+.ecd-hero__seo_ranking_pos {
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.ecd-hero__seo_ranking_kw {
+  color: #475569;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ecd-hero__seo_ranking_chg {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.ecd-hero__phone_search {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ecd-hero__phone_search::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 2px;
+  background: #94a3b8;
+  bottom: -4px;
+  right: -3px;
+  transform: rotate(45deg);
+}
+
+.ecd-hero__phone_hero--seo {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+}
+
+.ecd-hero__seo_phone_results {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ecd-hero__seo_phone_result {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+.ecd-hero__seo_phone_pos {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.ecd-hero__seo_phone_result strong {
+  display: block;
+  font-size: 0.55rem;
+  color: #0f172a;
+}
+
+.ecd-hero__seo_phone_result span {
+  display: block;
+  font-size: 0.5rem;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.ecd-v2__intro_brief > div p {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.ecd-v2__intro_brief > div p:last-child {
+  margin-bottom: 0;
+}

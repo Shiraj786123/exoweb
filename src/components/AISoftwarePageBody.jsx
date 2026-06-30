@@ -1,28 +1,46 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import {
-  HiOutlineChatBubbleLeftRight,
-  HiOutlineRocketLaunch,
-  HiOutlineCog6Tooth,
-  HiOutlineSparkles,
-  HiOutlinePuzzlePiece,
   HiOutlineCpuChip,
-  HiOutlineCircleStack,
-  HiOutlineLightBulb,
+  HiOutlineCheckCircle,
+  HiOutlineGlobeAlt,
   HiOutlineBolt,
-  HiOutlineChartBarSquare,
+  HiOutlineCurrencyDollar,
+  HiOutlineLightBulb,
+  HiOutlineArrowTrendingUp,
+  HiOutlineUserGroup,
+  HiOutlineScale,
+  HiOutlineWrenchScrewdriver,
+  HiOutlineChatBubbleLeftRight,
   HiOutlineHeart,
   HiOutlineShoppingBag,
   HiOutlineBuildingOffice2,
   HiOutlineAcademicCap,
   HiOutlineBanknotes,
   HiOutlineTruck,
-  HiOutlineArrowTrendingUp,
-  HiOutlineCurrencyDollar,
-  HiOutlineUserGroup,
-  HiOutlineScale,
-  HiOutlineTrophy,
-  HiOutlineCheckCircle,
+  HiOutlineCog6Tooth,
+  HiOutlineQuestionMarkCircle,
+  HiOutlineLink,
+  HiOutlineArrowRightCircle,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineMagnifyingGlass,
+  HiOutlineCodeBracket,
+  HiOutlineSparkles,
+  HiOutlineRocketLaunch,
+  HiOutlinePuzzlePiece,
+  HiOutlineClipboardDocumentList,
+  HiOutlineEnvelope,
+  HiOutlineDocumentText,
+  HiOutlineChartBar,
+  HiOutlineLifebuoy,
+  HiOutlineClock,
+  HiOutlineLanguage,
+  HiOutlineFaceSmile,
+  HiOutlineCalendarDays,
+  HiOutlineMegaphone,
+  HiOutlinePhoto,
+  HiOutlineBookOpen,
 } from 'react-icons/hi2';
 import {
   SiPython,
@@ -42,50 +60,133 @@ import {
   SiDocker,
   SiKubernetes,
 } from 'react-icons/si';
-import whyChooseImg from '../assets/icons/ecd-ai-robot.png';
 import {
-  AI_PLATFORMS,
-  AI_SERVICES,
-  AI_TRANSFORM_STEPS,
-  AI_INDUSTRIES,
-  AI_BENEFITS,
+  AI_INTRO,
+  AI_WHY_BUSINESS,
+  AI_CHATBOT_DETAIL,
+  AI_AGENTS_DETAIL,
+  AI_AUTOMATION_DETAIL,
+  AI_GENERATIVE_DETAIL,
+  AI_INTEGRATION_DETAIL,
+  AI_CUSTOM_DETAIL,
+  AI_INDUSTRIES_SECTION,
+  AI_INDUSTRY_TILES,
   AI_TECHNOLOGIES,
-  AI_WHY_CHOOSE,
   AI_TESTIMONIALS,
-} from '../content/aiPageContent';
+  AI_FAQ,
+  AI_RELATED,
+  AI_CTA,
+} from '../content/aiSoftwarePageContent';
+import AISoftwareWhyShowcaseSection from './ai/AISoftwareWhyShowcaseSection';
+import AISoftwareTransformSection from './ai/AISoftwareTransformSection';
 
-const serviceIcons = {
-  chat: HiOutlineChatBubbleLeftRight,
-  agent: HiOutlineRocketLaunch,
-  automation: HiOutlineCog6Tooth,
-  sparkles: HiOutlineSparkles,
-  integration: HiOutlinePuzzlePiece,
-  software: HiOutlineCpuChip,
+const whyBusinessIcons = {
+  'Automate Repetitive Tasks': HiOutlineCog6Tooth,
+  'Improve Customer Support': HiOutlineChatBubbleLeftRight,
+  'Generate Business Insights': HiOutlineChartBar,
+  'Increase Employee Productivity': HiOutlineArrowTrendingUp,
+  'Reduce Operational Expenses': HiOutlineCurrencyDollar,
+  'Improve Decision Making': HiOutlineLightBulb,
+  'Personalise Customer Experiences': HiOutlineUserGroup,
+  'Scale Business Operations': HiOutlineScale,
 };
 
-const transformIcons = {
-  data: HiOutlineCircleStack,
-  brain: HiOutlineLightBulb,
-  bolt: HiOutlineBolt,
-  growth: HiOutlineChartBarSquare,
+const chatbotBenefitIcons = {
+  '24/7 Customer Support': HiOutlineClock,
+  'FAQ & Lead Generation': HiOutlineMegaphone,
+  'Appointment Booking': HiOutlineCalendarDays,
+  'Multilingual Conversations': HiOutlineLanguage,
+  'Lower Support Costs': HiOutlineCurrencyDollar,
+  'Better Customer Satisfaction': HiOutlineFaceSmile,
+};
+
+const chatbotPlatformIcons = {
+  'Business Websites': HiOutlineGlobeAlt,
+  WhatsApp: HiOutlineChatBubbleLeftRight,
+  'Facebook Messenger': HiOutlineChatBubbleLeftRight,
+  Telegram: HiOutlineChatBubbleLeftRight,
+  'Mobile Applications': HiOutlineDevicePhoneMobile,
+  'Internal Systems': HiOutlineBuildingOffice2,
+};
+
+const agentIcons = {
+  'Customer Support Agents': HiOutlineLifebuoy,
+  'Sales AI Agents': HiOutlineMegaphone,
+  'Research Agents': HiOutlineMagnifyingGlass,
+  'Employee Assistants': HiOutlineUserGroup,
+  'Marketing AI Agents': HiOutlineSparkles,
+  'Operations AI Agents': HiOutlineCog6Tooth,
+};
+
+const automationIcons = {
+  'Email Automation': HiOutlineEnvelope,
+  'Customer Follow-Up': HiOutlineChatBubbleLeftRight,
+  'Invoice Processing': HiOutlineDocumentText,
+  'Lead Qualification': HiOutlineMegaphone,
+  'Data Entry Automation': HiOutlineClipboardDocumentList,
+  'Document Processing': HiOutlineDocumentText,
+  'Workflow Automation': HiOutlineCog6Tooth,
+  'CRM Automation': HiOutlineUserGroup,
+  'Reporting Automation': HiOutlineChartBar,
+};
+
+const generativeIcons = {
+  'AI Content Generation': HiOutlineDocumentText,
+  'Document Summarisation': HiOutlineClipboardDocumentList,
+  'Report Generation': HiOutlineChartBar,
+  'AI Email Assistants': HiOutlineEnvelope,
+  'AI Image Generation': HiOutlinePhoto,
+  'AI Code Assistants': HiOutlineCodeBracket,
+  'Knowledge Base Systems': HiOutlineBookOpen,
+  'Business Intelligence': HiOutlineLightBulb,
+};
+
+const integrationIcons = {
+  OpenAI: SiOpenai,
+  'Google Gemini': HiOutlineSparkles,
+  'Anthropic Claude': HiOutlineChatBubbleLeftRight,
+  'Meta Llama': HiOutlineCpuChip,
+  'DeepSeek AI': HiOutlineCodeBracket,
+  'Mistral AI': HiOutlineBolt,
+};
+
+const customIcons = {
+  'Customer Service AI': HiOutlineLifebuoy,
+  'Business Management AI': HiOutlineBuildingOffice2,
+  'Data Analysis AI': HiOutlineChartBar,
+  'Recommendation Engines': HiOutlineSparkles,
+  'Workflow Automation': HiOutlineCog6Tooth,
+  'Knowledge Management': HiOutlineBookOpen,
 };
 
 const industryIcons = {
+  Healthcare: HiOutlineHeart,
+  Retail: HiOutlineShoppingBag,
+  Hospitality: HiOutlineBuildingOffice2,
+  Education: HiOutlineAcademicCap,
+  Finance: HiOutlineBanknotes,
+  Construction: HiOutlineWrenchScrewdriver,
+  Manufacturing: HiOutlineCog6Tooth,
+  Logistics: HiOutlineTruck,
+};
+
+const showcaseIndustryIcons = {
   health: HiOutlineHeart,
   retail: HiOutlineShoppingBag,
   hotel: HiOutlineBuildingOffice2,
   education: HiOutlineAcademicCap,
   finance: HiOutlineBanknotes,
+  construction: HiOutlineWrenchScrewdriver,
+  manufacturing: HiOutlineCog6Tooth,
   logistics: HiOutlineTruck,
 };
 
-const benefitIcons = {
-  productivity: HiOutlineArrowTrendingUp,
-  cost: HiOutlineCurrencyDollar,
-  experience: HiOutlineUserGroup,
-  decisions: HiOutlineLightBulb,
-  scale: HiOutlineScale,
-  competitive: HiOutlineTrophy,
+const relatedIcons = {
+  'Software Development': HiOutlineCodeBracket,
+  'Website Development': HiOutlineGlobeAlt,
+  'Mobile App Development': HiOutlineDevicePhoneMobile,
+  'SEO Services': HiOutlineMagnifyingGlass,
+  'eCommerce Development': HiOutlineShoppingBag,
 };
 
 const techIcons = {
@@ -107,263 +208,331 @@ const techIcons = {
   kubernetes: SiKubernetes,
 };
 
-const SectionHeader = ({ title, subtitle, align = 'center' }) => (
-  <div className={`aiss-ref__header aiss-ref__header--${align}`}>
-    <h2 className="aiss-ref__title">{title}</h2>
-    {subtitle && <p className="aiss-ref__subtitle">{subtitle}</p>}
+const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2', '#dc2626', '#db2777', '#38bdf8'];
+
+const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, variant = 'default', extraClass = '' }) => (
+  <section
+    className={[
+      'aiss-v2__section',
+      variant === 'alt' && 'aiss-v2__section--alt',
+      variant === 'hero' && 'aiss-v2__section--hero',
+      extraClass,
+    ]
+      .filter(Boolean)
+      .join(' ')}
+  >
+    <div className="aiss-v2__container">
+      <div className="aiss-v2__section_head">
+        {Icon && (
+          <div className="aiss-v2__section_icon_wrap" aria-hidden="true">
+            <Icon />
+          </div>
+        )}
+        <div>
+          <h2 className="aiss-v2__title">
+            {title}
+            {titleAccent && (
+              <>
+                {' '}
+                <span className="aiss-v2__title_accent">{titleAccent}</span>
+              </>
+            )}
+          </h2>
+          {subtitle && <p className="aiss-v2__subtitle">{subtitle}</p>}
+        </div>
+      </div>
+      {children}
+    </div>
+  </section>
+);
+
+const Prose = ({ paragraphs, className = '' }) => (
+  <div className={`aiss-v2__prose${className ? ` ${className}` : ''}`}>
+    {paragraphs.map((p) => (
+      <p key={p.slice(0, 48)}>{p}</p>
+    ))}
   </div>
 );
 
-const DashboardMockup = () => (
-  <div className="aiss-ref__dashboard" aria-hidden="true">
-    <div className="aiss-ref__dashboard_top">
-      <span className="aiss-ref__dashboard_dot" />
-      <span className="aiss-ref__dashboard_dot" />
-      <span className="aiss-ref__dashboard_dot" />
-    </div>
-    <div className="aiss-ref__dashboard_body">
-      <div className="aiss-ref__dashboard_stats">
-        <div className="aiss-ref__dashboard_stat">
-          <span>Revenue</span>
-          <strong>+24%</strong>
-        </div>
-        <div className="aiss-ref__dashboard_stat">
-          <span>Efficiency</span>
-          <strong>92%</strong>
-        </div>
+const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAccents }) => {
+  const Icon = iconMap[item.title] || fallbackIcon;
+  const accent = item.color || accents[index % accents.length];
+  return (
+    <article className="aiss-v2__ship_card" style={{ '--ship-accent': accent }}>
+      <span className="aiss-v2__ship_num" style={{ background: accent }}>{index + 1}</span>
+      <div className="aiss-v2__ship_icon" style={{ color: accent }}>
+        <Icon />
       </div>
-      <div className="aiss-ref__dashboard_chart">
-        <div className="aiss-ref__bar" style={{ height: '45%' }} />
-        <div className="aiss-ref__bar" style={{ height: '70%' }} />
-        <div className="aiss-ref__bar" style={{ height: '55%' }} />
-        <div className="aiss-ref__bar" style={{ height: '85%' }} />
-        <div className="aiss-ref__bar" style={{ height: '65%' }} />
-        <div className="aiss-ref__bar" style={{ height: '90%' }} />
-      </div>
-      <div className="aiss-ref__dashboard_ring">
-        <svg viewBox="0 0 80 80">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#e2e8f0" strokeWidth="8" />
-          <circle
-            cx="40"
-            cy="40"
-            r="32"
-            fill="none"
-            stroke="#2563eb"
-            strokeWidth="8"
-            strokeDasharray="160 201"
-            strokeLinecap="round"
-            transform="rotate(-90 40 40)"
-          />
-        </svg>
-        <span>92%</span>
-      </div>
-    </div>
+      <h3>{item.title}</h3>
+      {item.description ? (
+        <p className="aiss-v2__ship_desc">{item.description}</p>
+      ) : null}
+      {item.points ? (
+        <ul className="aiss-v2__ship_points">
+          {item.points.map((point) => (
+            <li key={point}>
+              <HiOutlineCheckCircle aria-hidden="true" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </article>
+  );
+};
+
+const IconPointsRow = ({ items, iconMap, fallbackIcon, cols }) => (
+  <div
+    className={`aiss-v2__ship_row${cols ? ` aiss-v2__ship_row--cols-${cols}` : ''}`}
+    style={cols ? { '--ship-cols': cols } : { '--ship-cols': items.length }}
+  >
+    {items.map((item, index) => (
+      <IconPointsCard
+        key={item.title}
+        item={item}
+        index={index}
+        iconMap={iconMap}
+        fallbackIcon={fallbackIcon}
+      />
+    ))}
   </div>
 );
 
 const AISoftwarePageBody = () => (
-  <div className="aiss-ref">
-    {/* AI platform logos */}
-    <section className="aiss-ref__platforms">
-      <div className="aiss-ref__container">
-        <p className="aiss-ref__platforms_label">We work with the world&apos;s leading AI technologies</p>
-        <div className="aiss-ref__platforms_row">
-          {AI_PLATFORMS.map((platform) => (
-            <span
-              key={platform.name}
-              className="aiss-ref__ai_logo"
-              style={{ color: platform.color }}
-            >
-              {platform.name}
-            </span>
+  <div className="aiss-v2 aiss-v2--details">
+    <section className="aiss-v2__intro_combined">
+      <div className="aiss-v2__details_label">
+        <div className="aiss-v2__container">
+          <span>In-Depth AI Solutions</span>
+          <h2>Everything You Need to Build Intelligent Software</h2>
+          <p>Explore our complete AI development capabilities, integrations, industry solutions and long-term support.</p>
+        </div>
+      </div>
+      <div className="aiss-v2__container">
+        <div className="aiss-v2__intro_brief">
+          <div className="aiss-v2__intro_icon" aria-hidden="true">
+            <HiOutlineCpuChip />
+          </div>
+          <p>{AI_INTRO.summary}</p>
+        </div>
+        <Prose paragraphs={AI_WHY_BUSINESS.intro} className="aiss-v2__prose--center" />
+        <IconPointsRow
+          items={AI_WHY_BUSINESS.items}
+          iconMap={whyBusinessIcons}
+          fallbackIcon={HiOutlineLightBulb}
+          cols={4}
+        />
+        <Prose paragraphs={AI_WHY_BUSINESS.closing} className="aiss-v2__prose--center aiss-v2__prose--closing" />
+      </div>
+    </section>
+
+    <AISoftwareTransformSection />
+
+    <SectionShell icon={HiOutlineChatBubbleLeftRight} title={AI_CHATBOT_DETAIL.title} titleAccent={AI_CHATBOT_DETAIL.titleAccent}>
+      <p className="aiss-v2__center_lead">{AI_CHATBOT_DETAIL.intro}</p>
+      <p className="aiss-v2__label aiss-v2__label--center">{AI_CHATBOT_DETAIL.benefitsLabel}</p>
+      <IconPointsRow
+        items={AI_CHATBOT_DETAIL.benefits}
+        iconMap={chatbotBenefitIcons}
+        fallbackIcon={HiOutlineChatBubbleLeftRight}
+        cols={3}
+      />
+    </SectionShell>
+
+    <SectionShell
+      icon={HiOutlineGlobeAlt}
+      title="Chatbot"
+      titleAccent="Platforms"
+      subtitle={AI_CHATBOT_DETAIL.platformsLabel}
+      variant="hero"
+      extraClass="aiss-v2__section--platforms_break"
+    >
+      <IconPointsRow
+        items={AI_CHATBOT_DETAIL.platforms}
+        iconMap={chatbotPlatformIcons}
+        fallbackIcon={HiOutlineGlobeAlt}
+        cols={3}
+      />
+      <p className="aiss-v2__closing aiss-v2__closing--center aiss-v2__closing--light">{AI_CHATBOT_DETAIL.closing}</p>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineRocketLaunch} title={AI_AGENTS_DETAIL.title} titleAccent={AI_AGENTS_DETAIL.titleAccent} variant="alt">
+      <p className="aiss-v2__center_lead">{AI_AGENTS_DETAIL.intro}</p>
+      <IconPointsRow
+        items={AI_AGENTS_DETAIL.items}
+        iconMap={agentIcons}
+        fallbackIcon={HiOutlineRocketLaunch}
+        cols={3}
+      />
+      <p className="aiss-v2__closing aiss-v2__closing--center">{AI_AGENTS_DETAIL.closing}</p>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineCog6Tooth} title={AI_AUTOMATION_DETAIL.title} titleAccent={AI_AUTOMATION_DETAIL.titleAccent}>
+      <p className="aiss-v2__center_lead">{AI_AUTOMATION_DETAIL.intro}</p>
+      <p className="aiss-v2__label aiss-v2__label--center">{AI_AUTOMATION_DETAIL.solutionsLabel}</p>
+      <IconPointsRow
+        items={AI_AUTOMATION_DETAIL.solutions}
+        iconMap={automationIcons}
+        fallbackIcon={HiOutlineCog6Tooth}
+        cols={3}
+      />
+      <p className="aiss-v2__closing aiss-v2__closing--center">{AI_AUTOMATION_DETAIL.closing}</p>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineSparkles} title={AI_GENERATIVE_DETAIL.title} titleAccent={AI_GENERATIVE_DETAIL.titleAccent} variant="alt">
+      <Prose paragraphs={AI_GENERATIVE_DETAIL.intro} className="aiss-v2__prose--center" />
+      <p className="aiss-v2__label aiss-v2__label--center">{AI_GENERATIVE_DETAIL.servicesLabel}</p>
+      <IconPointsRow
+        items={AI_GENERATIVE_DETAIL.services}
+        iconMap={generativeIcons}
+        fallbackIcon={HiOutlineSparkles}
+        cols={4}
+      />
+      <p className="aiss-v2__closing aiss-v2__closing--center">{AI_GENERATIVE_DETAIL.closing}</p>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlinePuzzlePiece} title={AI_INTEGRATION_DETAIL.title} titleAccent={AI_INTEGRATION_DETAIL.titleAccent} variant="hero">
+      <p className="aiss-v2__center_lead aiss-v2__center_lead--light">{AI_INTEGRATION_DETAIL.intro}</p>
+      <IconPointsRow
+        items={AI_INTEGRATION_DETAIL.platforms}
+        iconMap={integrationIcons}
+        fallbackIcon={HiOutlinePuzzlePiece}
+        cols={3}
+      />
+      <p className="aiss-v2__closing aiss-v2__closing--center aiss-v2__closing--light">{AI_INTEGRATION_DETAIL.closing}</p>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineCodeBracket} title={AI_CUSTOM_DETAIL.title} titleAccent={AI_CUSTOM_DETAIL.titleAccent}>
+      <p className="aiss-v2__center_lead">{AI_CUSTOM_DETAIL.intro}</p>
+      <IconPointsRow
+        items={AI_CUSTOM_DETAIL.items}
+        iconMap={customIcons}
+        fallbackIcon={HiOutlineCodeBracket}
+        cols={3}
+      />
+    </SectionShell>
+
+    <SectionShell
+      icon={HiOutlineBuildingOffice2}
+      title={AI_INDUSTRIES_SECTION.title}
+      titleAccent={AI_INDUSTRIES_SECTION.titleAccent}
+      variant="hero"
+    >
+      <p className="aiss-v2__center_lead aiss-v2__center_lead--light">{AI_INDUSTRIES_SECTION.intro}</p>
+      <div className="aiss-show__mini_grid aiss-show__mini_grid--single-line">
+        {AI_INDUSTRY_TILES.map((industry) => {
+          const Icon = showcaseIndustryIcons[industry.icon];
+          return (
+            <div key={industry.title} className="aiss-show__mini_card">
+              <div className="aiss-show__mini_icon" style={{ color: industry.color }}>
+                <Icon />
+              </div>
+              <span>{industry.title}</span>
+            </div>
+          );
+        })}
+      </div>
+      <IconPointsRow
+        items={AI_INDUSTRIES_SECTION.items}
+        iconMap={industryIcons}
+        fallbackIcon={HiOutlineBuildingOffice2}
+        cols={4}
+      />
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineCpuChip} title="Technologies We Use" variant="alt">
+      <p className="aiss-v2__center_lead">Modern technologies to build intelligent, secure and scalable AI solutions.</p>
+      <div className="aiss-v2__tech_grid">
+        {AI_TECHNOLOGIES.map((tech) => {
+          const Icon = techIcons[tech.icon];
+          return (
+            <div key={tech.name} className="aiss-v2__tech_item" style={{ '--tech-color': tech.color }}>
+              {Icon && <Icon aria-hidden="true" />}
+              <span>{tech.name}</span>
+            </div>
+          );
+        })}
+      </div>
+    </SectionShell>
+
+    <AISoftwareWhyShowcaseSection />
+
+    <SectionShell icon={HiOutlineChatBubbleLeftRight} title={AI_TESTIMONIALS.title}>
+      <div className="aiss-v2__testimonial_grid">
+        {AI_TESTIMONIALS.items.map((item) => (
+          <blockquote key={item.name} className="aiss-v2__testimonial_card">
+            <p>&ldquo;{item.text}&rdquo;</p>
+            <footer className="aiss-v2__testimonial_author">
+              <Image
+                src={item.avatar}
+                alt={item.name}
+                width={56}
+                height={56}
+                className="aiss-v2__testimonial_avatar"
+              />
+              <strong>{item.name}</strong>
+              <span>{item.role}</span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions" variant="alt">
+      <div className="aiss-v2__faq aiss-v2__faq--cols">
+        <div className="aiss-v2__faq_col">
+          {AI_FAQ.slice(0, 5).map((item) => (
+            <details key={item.q} className="aiss-v2__faq_item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+        <div className="aiss-v2__faq_col">
+          {AI_FAQ.slice(5).map((item) => (
+            <details key={item.q} className="aiss-v2__faq_item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
           ))}
         </div>
       </div>
-    </section>
+    </SectionShell>
 
-    {/* What We Build */}
-    <section className="aiss-ref__section">
-      <div className="aiss-ref__container">
-        <SectionHeader
-          title="What We Build"
-          subtitle="Powerful AI Solutions for Modern Businesses"
-        />
-        <div className="aiss-ref__services_grid">
-          {AI_SERVICES.map((service) => {
-            const Icon = serviceIcons[service.icon];
-            return (
-              <article key={service.title} className="aiss-ref__service_card">
-                <div className="aiss-ref__service_icon" style={{ backgroundColor: `${service.color}14`, color: service.color }}>
-                  <Icon />
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <a href="#contact" className="aiss-ref__learn_more">
-                  Learn More <span aria-hidden="true">→</span>
-                </a>
-              </article>
-            );
-          })}
-        </div>
+    <SectionShell icon={HiOutlineLink} title={AI_RELATED.title}>
+      <Prose paragraphs={AI_RELATED.intro} className="aiss-v2__prose--center" />
+      <div className="aiss-v2__related_row">
+        {AI_RELATED.links.map((link) => {
+          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
+          return (
+            <Link key={link.href} href={link.href} className="aiss-v2__related_tile">
+              <div className="aiss-v2__related_tile_icon">
+                <Icon />
+              </div>
+              <span className="aiss-v2__related_tile_label">{link.label}</span>
+              <HiOutlineArrowRightCircle className="aiss-v2__related_tile_arrow" aria-hidden="true" />
+            </Link>
+          );
+        })}
       </div>
-    </section>
+      <p className="aiss-v2__closing aiss-v2__closing--center">{AI_RELATED.closing}</p>
+    </SectionShell>
 
-    {/* How AI Transforms */}
-    <section className="aiss-ref__section aiss-ref__section--alt">
-      <div className="aiss-ref__container">
-        <SectionHeader title="How AI Transforms Your Business" align="left" />
-        <div className="aiss-ref__transform_layout">
-          <div className="aiss-ref__transform_steps">
-            {AI_TRANSFORM_STEPS.map((step, index) => {
-              const Icon = transformIcons[step.icon];
-              return (
-                <div key={step.title} className="aiss-ref__transform_step">
-                  <div className="aiss-ref__transform_icon" style={{ backgroundColor: step.color }}>
-                    <Icon />
-                  </div>
-                  {index < AI_TRANSFORM_STEPS.length - 1 && (
-                    <span className="aiss-ref__transform_arrow" aria-hidden="true">→</span>
-                  )}
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              );
-            })}
+    <section className="aiss-v2__cta_section">
+      <div className="aiss-v2__container">
+        <div className="aiss-v2__cta_compact vexoweb-cta-banner">
+          <div className="aiss-v2__cta_compact_text">
+            <h2 className="aiss-v2__cta_compact_title">{AI_CTA.title}</h2>
+            <p>{AI_CTA.description}</p>
           </div>
-          <DashboardMockup />
-        </div>
-      </div>
-    </section>
-
-    {/* Industries */}
-    <section className="aiss-ref__section">
-      <div className="aiss-ref__container">
-        <SectionHeader
-          title="Industries We Serve"
-          subtitle="AI solutions tailored for every industry"
-        />
-        <div className="aiss-ref__industries_grid">
-          {AI_INDUSTRIES.map((industry) => {
-            const Icon = industryIcons[industry.icon];
-            return (
-              <div key={industry.title} className="aiss-ref__industry_card">
-                <div className="aiss-ref__industry_icon" style={{ color: industry.color }}>
-                  <Icon />
-                </div>
-                <h3>{industry.title}</h3>
-                <p>{industry.description}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div className="aiss-ref__center_btn_wrap">
-          <a href="#contact" className="aiss-ref__btn_outline">
-            View All Industries <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    {/* Key Benefits — dark section */}
-    <section className="aiss-ref__benefits">
-      <div className="aiss-ref__container">
-        <SectionHeader title="Key Benefits of AI for Your Business" />
-        <div className="aiss-ref__benefits_grid">
-          {AI_BENEFITS.map((benefit) => {
-            const Icon = benefitIcons[benefit.icon];
-            return (
-              <div key={benefit.title} className="aiss-ref__benefit_item">
-                <div className="aiss-ref__benefit_icon">
-                  <Icon />
-                </div>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-
-    {/* Technologies + Why Choose */}
-    <section className="aiss-ref__section aiss-ref__section--tech">
-      <div className="aiss-ref__container">
-        <div className="aiss-ref__split">
-          <div className="aiss-ref__split_col">
-            <div className="aiss-ref__split_head">
-              <h2 className="aiss-ref__title">Technologies We Use</h2>
-              <p className="aiss-ref__subtitle aiss-ref__subtitle--left">
-                {AI_WHY_CHOOSE.subtitle}
-              </p>
-            </div>
-            <div className="aiss-ref__tech_grid">
-              {AI_TECHNOLOGIES.map((tech) => {
-                const Icon = techIcons[tech.icon];
-                return (
-                  <div key={tech.name} className="aiss-ref__tech_item">
-                    <span className="aiss-ref__tech_icon" style={{ color: tech.color }}>
-                      <Icon aria-hidden="true" />
-                    </span>
-                    <span className="aiss-ref__tech_label">{tech.name}</span>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="aiss-v2__cta_compact_actions">
+            <a href="#contact" className="aiss-v2__cta_btn_primary">
+              {AI_CTA.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href="#contact" className="aiss-v2__cta_btn_secondary">
+              {AI_CTA.secondaryCta}
+            </a>
           </div>
-          <div className="aiss-ref__split_col aiss-ref__why_col">
-            <div className="aiss-ref__split_head">
-              <h2 className="aiss-ref__title">{AI_WHY_CHOOSE.title}</h2>
-              <p className="aiss-ref__subtitle aiss-ref__subtitle--left aiss-ref__subtitle--invisible" aria-hidden="true">
-                &nbsp;
-              </p>
-            </div>
-            <div className="aiss-ref__why_layout">
-              <ul className="aiss-ref__why_list">
-                {AI_WHY_CHOOSE.bullets.map((item) => (
-                  <li key={item}>
-                    <HiOutlineCheckCircle className="aiss-ref__why_check" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="aiss-ref__why_image">
-                <Image
-                  src={whyChooseImg}
-                  alt="AI development by Vexoweb"
-                  fill
-                  className="aiss-ref__why_image_img"
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Testimonials */}
-    <section className="aiss-ref__section aiss-ref__section--alt">
-      <div className="aiss-ref__container">
-        <SectionHeader title="What Our Clients Say" />
-        <div className="aiss-ref__testimonials">
-          {AI_TESTIMONIALS.map((item) => (
-            <article key={item.name} className="aiss-ref__testimonial_card">
-              <span className="aiss-ref__quote" aria-hidden="true">&ldquo;</span>
-              <p>{item.text}</p>
-              <div className="aiss-ref__testimonial_author">
-                <img src={item.avatar} alt={item.name} loading="lazy" />
-                <div>
-                  <strong>{item.name}</strong>
-                  <span>{item.role}</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="aiss-ref__dots" aria-hidden="true">
-          <span className="aiss-ref__dot aiss-ref__dot--active" />
-          <span className="aiss-ref__dot" />
-          <span className="aiss-ref__dot" />
         </div>
       </div>
     </section>

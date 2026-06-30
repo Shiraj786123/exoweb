@@ -2,50 +2,78 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
-import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import SoftwareShowcase from '../components/software/SoftwareShowcase';
 import SoftwarePageBody from '../components/SoftwarePageBody';
-import HomeTechStackSection from '../components/HomeTechStackSection';
+import SoftwareHeroVisual from '../components/software/SoftwareHeroVisual';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
-import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
-import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import { SOFT_HERO } from '../content/softwarePageContent';
+import {
+  HiOutlineCog6Tooth,
+  HiOutlineShieldCheck,
+  HiOutlineCloud,
+} from 'react-icons/hi2';
+
+const heroHighlightIcons = {
+  cog: HiOutlineCog6Tooth,
+  shield: HiOutlineShieldCheck,
+  cloud: HiOutlineCloud,
+};
 
 const SoftwareDevelopment = () => (
-  <>
+  <div className="ecd__wrapper">
     <Navbar />
-    <div className="software-page">
-      <section className="hero" style={{ paddingTop: '190px' }}>
-        <div className="hero-container">
-          <Breadcrumb items={PAGE_BREADCRUMBS.softwareDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
-          <span className="hero-badge">
-            <span className="badge-dot">●</span>
-            <span className="hero-badge-text">
-              <span className="hero-badge-accent">Custom Software Development</span>
-              <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
-            </span>
-          </span>
-          <h1 className="software__h1">{MAIN_SERVICE_SEO.softwareDevelopment.h1}</h1>
-          <p className="hero-desc">
-            Looking for reliable software development in the Eastern Province? We develop custom software
-            solutions that help businesses automate operations, improve efficiency and accelerate growth.
-          </p>
-          <div className="hero-buttons hero-cta-wrap">
-            <a href="#contact" className="primary-btn hero-cta-btn">Get Free Consultation</a>
-            <a href="/#results" className="secondary-btn">
-              View Portfolio <span className="arrow">→</span>
+
+    <section className="ecd-hero">
+      <div className="ecd-hero__bg" aria-hidden="true" />
+      <div className="ecd-hero__container">
+        <div className="ecd-hero__content">
+          <Breadcrumb
+            items={PAGE_BREADCRUMBS.softwareDevelopment}
+            className="breadcrumb--on-dark"
+          />
+          <div className="ecd-hero__badge">
+            <span className="ecd-hero__badge_dot" />
+            {SOFT_HERO.badge}
+          </div>
+          <h1 className="ecd-hero__h1">
+            {SOFT_HERO.h1Line1}{' '}
+            <span className="ecd-hero__highlight">{SOFT_HERO.h1Line2}</span>
+          </h1>
+          <p className="ecd-hero__tagline">{SOFT_HERO.tagline}</p>
+          <p className="ecd-hero__desc">{SOFT_HERO.description}</p>
+          <ul className="ecd-hero__highlights">
+            {SOFT_HERO.highlights.map((item) => {
+              const Icon = heroHighlightIcons[item.icon];
+              return (
+                <li key={item.title}>
+                  <span className="ecd-hero__highlight_icon" style={{ color: item.color }}>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span>{item.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="ecd-hero__actions hero-cta-wrap">
+            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+              {SOFT_HERO.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href={SOFT_HERO.secondaryHref} className="ecd-hero__cta_secondary">
+              {SOFT_HERO.secondaryCta}
             </a>
           </div>
-          <HeroTrustText text={HERO_TRUST_TEXT.software} />
         </div>
-      </section>
+        <SoftwareHeroVisual />
+      </div>
+    </section>
 
-      <SoftwarePageBody />
-    </div>
+    <SoftwareShowcase />
+    <SoftwarePageBody />
 
-    <HomeTechStackSection />
     <ContactSection />
     <Footer />
-  </>
+  </div>
 );
 
 export default SoftwareDevelopment;

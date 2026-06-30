@@ -1,57 +1,40 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import trustVisualImg from '../assets/icons/web-dev-trust-visual.png';
 import {
-  HiOutlineBuildingOffice2,
-  HiOutlineSquare3Stack3D,
-  HiOutlineClipboardDocumentList,
-  HiOutlineCreditCard,
-  HiOutlineCalendarDays,
-  HiOutlineUserGroup,
-  HiOutlineIdentification,
+  HiOutlineCodeBracket,
   HiOutlineGlobeAlt,
-  HiOutlineCog6Tooth,
-  HiOutlineCurrencyDollar,
-  HiOutlineShieldCheck,
-  HiOutlinePuzzlePiece,
-  HiOutlineSparkles,
+  HiOutlineMapPin,
+  HiOutlineCheckCircle,
+  HiOutlineQuestionMarkCircle,
+  HiOutlineLink,
+  HiOutlineArrowRightCircle,
+  HiOutlineShoppingCart,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineMagnifyingGlass,
+  HiOutlineCpuChip,
   HiOutlineHeart,
+  HiOutlineBuildingOffice2,
   HiOutlineAcademicCap,
-  HiOutlineTruck,
+  HiOutlineCog6Tooth,
   HiOutlineShoppingBag,
-  HiOutlineChartBar,
+  HiOutlineTruck,
+  HiOutlineSparkles,
+  HiOutlineBriefcase,
 } from 'react-icons/hi2';
-import { SiPhp, SiLaravel, SiReact, SiNextdotjs, SiNodedotjs, SiMysql, SiPostgresql } from 'react-icons/si';
-import ServiceProcessSection from './ServiceProcessSection';
 import {
-  SOFT_STATS,
-  SOFT_SERVICES,
-  SOFT_BENEFITS,
-  SOFT_PROCESS,
-  SOFT_TECH,
+  SOFT_DETAILS_LABEL,
+  SOFT_INTRO,
+  SOFT_WHY_CUSTOM,
+  SOFT_EASTERN_PROVINCE,
   SOFT_INDUSTRIES,
+  SOFT_AREAS,
   SOFT_FAQ,
+  SOFT_RELATED,
+  SOFT_CTA,
 } from '../content/softwarePageContent';
-
-const serviceIcons = {
-  business: HiOutlineBuildingOffice2,
-  erp: HiOutlineSquare3Stack3D,
-  inventory: HiOutlineClipboardDocumentList,
-  pos: HiOutlineCreditCard,
-  booking: HiOutlineCalendarDays,
-  crm: HiOutlineUserGroup,
-  hr: HiOutlineIdentification,
-  web: HiOutlineGlobeAlt,
-  analytics: HiOutlineChartBar,
-};
-
-const benefitIcons = {
-  custom: HiOutlineSparkles,
-  automation: HiOutlineCog6Tooth,
-  cost: HiOutlineCurrencyDollar,
-  secure: HiOutlineShieldCheck,
-  integration: HiOutlinePuzzlePiece,
-  value: HiOutlineSparkles,
-};
+import SoftwareWhyShowcaseSection from './software/SoftwareWhyShowcaseSection';
 
 const industryIcons = {
   retail: HiOutlineShoppingBag,
@@ -62,134 +45,226 @@ const industryIcons = {
   logistics: HiOutlineTruck,
 };
 
-const techIcons = {
-  php: SiPhp,
-  laravel: SiLaravel,
-  react: SiReact,
-  next: SiNextdotjs,
-  node: SiNodedotjs,
-  mysql: SiMysql,
-  postgresql: SiPostgresql,
-  api: HiOutlinePuzzlePiece,
+const relatedIcons = {
+  'Website Development': HiOutlineGlobeAlt,
+  'Ecommerce Development': HiOutlineShoppingCart,
+  'Mobile App Development': HiOutlineDevicePhoneMobile,
+  'AI Software Development': HiOutlineCpuChip,
+  'SEO Services': HiOutlineMagnifyingGlass,
 };
 
-const Header = ({ title, subtitle, light }) => (
-  <div className={`soft-ref__header${light ? ' soft-ref__header--light' : ''}`}>
-    <h2 className="soft-ref__title">{title}</h2>
-    {subtitle && <p className="soft-ref__subtitle">{subtitle}</p>}
+const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2', '#db2777', '#6366f1', '#0d9488'];
+
+const SectionVisual = ({ src, alt, className = '' }) => (
+  <div className={`ecd-v2__section_visual${className ? ` ${className}` : ''}`}>
+    <Image src={src} alt={alt} width={420} height={340} className="ecd-v2__section_visual_img" />
+  </div>
+);
+
+const SectionShell = ({
+  icon: Icon,
+  title,
+  titleAccent,
+  subtitle,
+  children,
+  variant = 'default',
+  visual,
+}) => (
+  <section
+    className={[
+      'ecd-v2__section',
+      variant === 'alt' && 'ecd-v2__section--alt',
+      variant === 'hero' && 'ecd-v2__section--hero',
+      visual && 'ecd-v2__section--with_visual',
+    ]
+      .filter(Boolean)
+      .join(' ')}
+  >
+    <div className="ecd-v2__container">
+      <div
+        className={[
+          'ecd-v2__section_head',
+          visual && 'ecd-v2__section_head--with_visual',
+          visual && variant === 'hero' && 'ecd-v2__section_head--hero_visual',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+      >
+        <div className="ecd-v2__section_head_copy">
+          {Icon && (
+            <div className="ecd-v2__section_icon_wrap" aria-hidden="true">
+              <Icon />
+            </div>
+          )}
+          <div>
+            <h2 className="ecd-v2__title">
+              {title}
+              {titleAccent && (
+                <>
+                  {' '}
+                  <span className="ecd-v2__title_accent">{titleAccent}</span>
+                </>
+              )}
+            </h2>
+            {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
+          </div>
+        </div>
+        {visual && (
+          <SectionVisual src={visual.src} alt={visual.alt} className={visual.className} />
+        )}
+      </div>
+      {children}
+    </div>
+  </section>
+);
+
+const Prose = ({ paragraphs, className = '' }) => (
+  <div className={`ecd-v2__prose${className ? ` ${className}` : ''}`}>
+    {paragraphs.map((p) => (
+      <p key={p.slice(0, 48)}>{p}</p>
+    ))}
   </div>
 );
 
 const SoftwarePageBody = () => (
-  <div className="soft-ref">
-    <section className="soft-ref__stats">
-      <div className="soft-ref__container">
-        <div className="soft-ref__stats_row">
-          {SOFT_STATS.map((s) => (
-            <div key={s.label} className="soft-ref__stat">
-              <strong style={{ color: s.color }}>{s.value}</strong>
-              <span>{s.label}</span>
+  <div className="ecd-v2 ecd-v2--details">
+    <div className="ecd-v2__details_label">
+      <div className="ecd-v2__container">
+        <div className="ecd-v2__details_label_inner">
+          <div className="ecd-v2__details_label_copy">
+            <span>{SOFT_DETAILS_LABEL.badge}</span>
+            <h2>{SOFT_DETAILS_LABEL.title}</h2>
+            <p>{SOFT_DETAILS_LABEL.subtitle}</p>
+          </div>
+          <SectionVisual
+            src={trustVisualImg}
+            alt="Professional software development services"
+            className="ecd-v2__section_visual--launch"
+          />
+        </div>
+      </div>
+    </div>
+
+    <section className="ecd-v2__intro ecd-v2__intro--brief">
+      <div className="ecd-v2__container">
+        <div className="ecd-v2__intro_brief">
+          <div className="ecd-v2__intro_icon" aria-hidden="true">
+            <HiOutlineCodeBracket />
+          </div>
+          <p>{SOFT_INTRO.summary}</p>
+        </div>
+      </div>
+    </section>
+
+    <SectionShell
+      icon={HiOutlineSparkles}
+      title={SOFT_WHY_CUSTOM.title}
+      subtitle={SOFT_WHY_CUSTOM.subtitle}
+      variant="alt"
+    >
+      <Prose paragraphs={SOFT_WHY_CUSTOM.intro} className="ecd-v2__prose--center" />
+      <p className="ecd-v2__center_lead">{SOFT_WHY_CUSTOM.listLabel}</p>
+      <ul className="ecd-v2__bullets ecd-v2__bullets--chips">
+        {SOFT_WHY_CUSTOM.bullets.map((bullet) => (
+          <li key={bullet}>
+            <HiOutlineCheckCircle aria-hidden="true" />
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineGlobeAlt} title={SOFT_EASTERN_PROVINCE.title}>
+      <Prose paragraphs={SOFT_EASTERN_PROVINCE.intro} className="ecd-v2__prose--center" />
+    </SectionShell>
+
+    <SectionShell
+      icon={HiOutlineBriefcase}
+      title="Industries We Work With"
+      subtitle="We build custom software for businesses across many industries, including:"
+      variant="alt"
+    >
+      <div className="ecd-v2__ship_row ecd-v2__ship_row--wrap ecd-v2__ship_row--cols-3">
+        {SOFT_INDUSTRIES.map((industry, index) => {
+          const Icon = industryIcons[industry.icon];
+          const accent = shipAccents[index % shipAccents.length];
+          return (
+            <article key={industry.title} className="ecd-v2__ship_card" style={{ '--ship-accent': accent }}>
+              <span className="ecd-v2__ship_num" style={{ background: accent }}>{index + 1}</span>
+              <div className="ecd-v2__ship_icon" style={{ color: accent }}>
+                <Icon />
+              </div>
+              <h3>{industry.title}</h3>
+              <p>{industry.description}</p>
+            </article>
+          );
+        })}
+      </div>
+    </SectionShell>
+
+    <SectionShell icon={HiOutlineMapPin} title="Areas We Serve">
+      <p className="ecd-v2__center_lead">
+        Our software development services are available throughout the Eastern Province, including:
+      </p>
+      <div className="ecd-v2__related_row">
+        {SOFT_AREAS.map((area) => (
+          <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
+            <div className="ecd-v2__related_tile_icon">
+              <HiOutlineMapPin />
             </div>
-          ))}
-        </div>
+            <span className="ecd-v2__related_tile_label">{area.label}</span>
+            <HiOutlineArrowRightCircle className="ecd-v2__related_tile_arrow" aria-hidden="true" />
+          </Link>
+        ))}
       </div>
-    </section>
+    </SectionShell>
 
-    <section className="soft-ref__section">
-      <div className="soft-ref__container">
-        <Header title="Our Software Development Services" subtitle="Custom software solutions built for your business." />
-        <div className="soft-ref__services">
-          {SOFT_SERVICES.map((s) => {
-            const Icon = serviceIcons[s.icon];
-            return (
-              <article key={s.title} className="soft-ref__service_card">
-                <div className="soft-ref__service_icon" style={{ backgroundColor: `${s.color}14`, color: s.color }}>
-                  <Icon />
-                </div>
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-                <a href="#contact" className="soft-ref__link" style={{ color: s.color }}>
-                  Learn More <span aria-hidden="true">→</span>
-                </a>
-              </article>
-            );
-          })}
-        </div>
+    <SoftwareWhyShowcaseSection />
+
+    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions" variant="alt">
+      <div className="ecd-v2__faq">
+        {SOFT_FAQ.map((item) => (
+          <details key={item.q} className="ecd-v2__faq_item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
       </div>
-    </section>
+    </SectionShell>
 
-    <section className="soft-ref__benefits">
-      <div className="soft-ref__container">
-        <Header title="Why Choose Custom Software?" subtitle="Software built specifically for how your business works." light />
-        <div className="soft-ref__benefits_grid">
-          {SOFT_BENEFITS.map((b) => {
-            const Icon = benefitIcons[b.icon];
-            return (
-              <div key={b.title} className="soft-ref__benefit">
-                <div className="soft-ref__benefit_icon"><Icon /></div>
-                <h3>{b.title}</h3>
-                <p>{b.description}</p>
+    <SectionShell icon={HiOutlineLink} title={SOFT_RELATED.title}>
+      <Prose paragraphs={SOFT_RELATED.intro} className="ecd-v2__prose--center" />
+      <div className="ecd-v2__related_row">
+        {SOFT_RELATED.links.map((link) => {
+          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
+          return (
+            <Link key={link.href} href={link.href} className="ecd-v2__related_tile">
+              <div className="ecd-v2__related_tile_icon">
+                <Icon />
               </div>
-            );
-          })}
-        </div>
+              <span className="ecd-v2__related_tile_label">{link.label}</span>
+              <HiOutlineArrowRightCircle className="ecd-v2__related_tile_arrow" aria-hidden="true" />
+            </Link>
+          );
+        })}
       </div>
-    </section>
+      <p className="ecd-v2__closing ecd-v2__closing--center">{SOFT_RELATED.closing}</p>
+    </SectionShell>
 
-    <ServiceProcessSection
-      title="Our Development Process"
-      subtitle="From discovery to deployment and beyond."
-      steps={SOFT_PROCESS}
-      alt
-    />
-
-    <section className="soft-ref__section">
-      <div className="soft-ref__container">
-        <Header title="Technologies We Use" subtitle="Modern, proven technologies for reliable software." />
-        <div className="soft-ref__tech_grid">
-          {SOFT_TECH.map((t) => {
-            const Icon = techIcons[t.icon];
-            return (
-              <div key={t.name} className="soft-ref__tech_item">
-                <span style={{ color: t.color }}><Icon /></span>
-                <span>{t.name}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-
-    <section className="soft-ref__section">
-      <div className="soft-ref__container">
-        <Header title="Industries We Serve" />
-        <div className="soft-ref__industries">
-          {SOFT_INDUSTRIES.map((ind) => {
-            const Icon = industryIcons[ind.icon];
-            return (
-              <div key={ind.title} className="soft-ref__industry">
-                <div style={{ color: ind.color }}><Icon /></div>
-                <span>{ind.title}</span>
-              </div>
-            );
-          })}
-        </div>
-        <div className="soft-ref__area_wrap">
-          <Link href="/software-development-batticaloa" className="soft-ref__area_btn">Software Development in Batticaloa →</Link>
-        </div>
-      </div>
-    </section>
-
-    <section className="soft-ref__section soft-ref__section--alt">
-      <div className="soft-ref__container soft-ref__container--narrow">
-        <Header title="Frequently Asked Questions" />
-        <div className="soft-ref__faq">
-          {SOFT_FAQ.map((item) => (
-            <details key={item.q} className="soft-ref__faq_item">
-              <summary>{item.q}</summary>
-              <p>{item.a}</p>
-            </details>
-          ))}
+    <section className="ecd-v2__cta_section">
+      <div className="ecd-v2__container">
+        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
+          <div className="ecd-v2__cta_compact_text">
+            <h2 className="ecd-v2__cta_compact_title">{SOFT_CTA.title}</h2>
+            {SOFT_CTA.paragraphs.map((p) => (
+              <p key={p.slice(0, 48)}>{p}</p>
+            ))}
+          </div>
+          <div className="ecd-v2__cta_compact_actions">
+            <a href="#contact" className="ecd-v2__cta_btn_primary">
+              {SOFT_CTA.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

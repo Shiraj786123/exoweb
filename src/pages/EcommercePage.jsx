@@ -12,14 +12,12 @@ import {
   HiOutlineCog6Tooth,
   HiOutlineShieldCheck,
   HiOutlineDevicePhoneMobile,
-  HiOutlineChartBar,
 } from 'react-icons/hi2';
 
 const heroHighlightIcons = {
   cog: HiOutlineCog6Tooth,
   shield: HiOutlineShieldCheck,
   device: HiOutlineDevicePhoneMobile,
-  chart: HiOutlineChartBar,
 };
 
 const EcommerceDev = () => (

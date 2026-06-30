@@ -1,5 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import launchGrowImg from '../assets/ecommerce/ecd-launch-grow.png';
+import paymentGatewayImg from '../assets/ecommerce/ecd-payment-gateway.png';
+import shippingDeliveryImg from '../assets/ecommerce/ecd-shipping-delivery.png';
 import {
   HiOutlineShoppingCart,
   HiOutlineCodeBracket,
@@ -123,35 +127,63 @@ const relatedIcons = {
   'Website Maintenance & Support': HiOutlineWrenchScrewdriver,
 };
 
-const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, variant = 'default' }) => (
+const SectionVisual = ({ src, alt, className = '' }) => (
+  <div className={`ecd-v2__section_visual${className ? ` ${className}` : ''}`}>
+    <Image src={src} alt={alt} width={420} height={340} className="ecd-v2__section_visual_img" />
+  </div>
+);
+
+const SectionShell = ({
+  icon: Icon,
+  title,
+  titleAccent,
+  subtitle,
+  children,
+  variant = 'default',
+  visual,
+}) => (
   <section
     className={[
       'ecd-v2__section',
       variant === 'alt' && 'ecd-v2__section--alt',
       variant === 'hero' && 'ecd-v2__section--hero',
+      visual && 'ecd-v2__section--with_visual',
     ]
       .filter(Boolean)
       .join(' ')}
   >
     <div className="ecd-v2__container">
-      <div className="ecd-v2__section_head">
-        {Icon && (
-          <div className="ecd-v2__section_icon_wrap" aria-hidden="true">
-            <Icon />
+      <div
+        className={[
+          'ecd-v2__section_head',
+          visual && 'ecd-v2__section_head--with_visual',
+          visual && variant === 'hero' && 'ecd-v2__section_head--hero_visual',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+      >
+        <div className="ecd-v2__section_head_copy">
+          {Icon && (
+            <div className="ecd-v2__section_icon_wrap" aria-hidden="true">
+              <Icon />
+            </div>
+          )}
+          <div>
+            <h2 className="ecd-v2__title">
+              {title}
+              {titleAccent && (
+                <>
+                  {' '}
+                  <span className="ecd-v2__title_accent">{titleAccent}</span>
+                </>
+              )}
+            </h2>
+            {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
           </div>
-        )}
-        <div>
-          <h2 className="ecd-v2__title">
-            {title}
-            {titleAccent && (
-              <>
-                {' '}
-                <span className="ecd-v2__title_accent">{titleAccent}</span>
-              </>
-            )}
-          </h2>
-          {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
         </div>
+        {visual && (
+          <SectionVisual src={visual.src} alt={visual.alt} className={visual.className} />
+        )}
       </div>
       {children}
     </div>
@@ -213,9 +245,18 @@ const EcommercePageBody = () => (
   <div className="ecd-v2 ecd-v2--details">
     <div className="ecd-v2__details_label">
       <div className="ecd-v2__container">
-        <span>In-Depth Ecommerce Solutions</span>
-        <h2>Everything You Need to Launch &amp; Grow Online</h2>
-        <p>Explore our complete ecommerce development capabilities, platforms, integrations and support services.</p>
+        <div className="ecd-v2__details_label_inner">
+          <div className="ecd-v2__details_label_copy">
+            <span>In-Depth Ecommerce Solutions</span>
+            <h2>Everything You Need to Launch &amp; Grow Online</h2>
+            <p>Explore our complete ecommerce development capabilities, platforms, integrations and support services.</p>
+          </div>
+          <SectionVisual
+            src={launchGrowImg}
+            alt="Online store with mobile shopping and ecommerce growth"
+            className="ecd-v2__section_visual--launch"
+          />
+        </div>
       </div>
     </div>
     {/* Intro — short summary */}
@@ -242,7 +283,15 @@ const EcommercePageBody = () => (
     </SectionShell>
 
     {/* Payment */}
-    <SectionShell icon={HiOutlineCreditCard} title={ECOMMERCE_PAYMENT.title}>
+    <SectionShell
+      icon={HiOutlineCreditCard}
+      title={ECOMMERCE_PAYMENT.title}
+      visual={{
+        src: paymentGatewayImg,
+        alt: 'Secure payment gateway and credit card checkout integration',
+        className: 'ecd-v2__section_visual--payment',
+      }}
+    >
       <Prose paragraphs={ECOMMERCE_PAYMENT.intro} className="ecd-v2__prose--center" />
       <IconPointsRow
         items={ECOMMERCE_PAYMENT.items}
@@ -258,6 +307,11 @@ const EcommercePageBody = () => (
       title={ECOMMERCE_SHIPPING.title}
       titleAccent={ECOMMERCE_SHIPPING.titleAccent}
       variant="hero"
+      visual={{
+        src: shippingDeliveryImg,
+        alt: 'Ecommerce shipping and delivery truck fulfillment',
+        className: 'ecd-v2__section_visual--shipping',
+      }}
     >
       <Prose paragraphs={ECOMMERCE_SHIPPING.intro} className="ecd-v2__prose--center ecd-v2__prose--light" />
       <IconPointsRow

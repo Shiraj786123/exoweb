@@ -376,6 +376,221 @@
   color: #2563eb;
 }
 
+/* Website hero visual variant */
+.ecd-hero__store--website {
+  padding-bottom: 12px;
+}
+
+.ecd-hero__store_banner--website {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.ecd-hero__web_services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 10px 12px 0;
+}
+
+.ecd-hero__web_service {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.ecd-hero__web_service_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--svc-color, #2563eb);
+  flex-shrink: 0;
+}
+
+.ecd-hero__web_cta {
+  margin: 10px 12px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ecd-hero__phone_menu {
+  width: 14px;
+  height: 10px;
+  border-top: 2px solid #94a3b8;
+  border-bottom: 2px solid #94a3b8;
+  box-shadow: 0 4px 0 #94a3b8;
+}
+
+.ecd-hero__phone_hero--website {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.ecd-hero__phone_blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ecd-hero__phone_block {
+  height: 28px;
+  border-radius: 6px;
+  background: #f1f5f9;
+}
+
+.ecd-hero__phone_block--short {
+  width: 70%;
+}
+
+/* Software / ERP dashboard hero visual */
+.ecd-hero__store--software {
+  display: flex;
+  min-height: 200px;
+  background: #f8fafc;
+}
+
+.ecd-hero__sw_nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 8px;
+  background: #0f172a;
+  min-width: 72px;
+}
+
+.ecd-hero__sw_nav_item {
+  font-size: 0.48rem;
+  color: #94a3b8;
+  padding: 4px 6px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.ecd-hero__sw_nav_item--active {
+  background: rgba(37, 99, 235, 0.2);
+  color: #93c5fd;
+}
+
+.ecd-hero__sw_main {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ecd-hero__sw_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ecd-hero__sw_header strong {
+  font-size: 0.62rem;
+  color: #0f172a;
+}
+
+.ecd-hero__sw_header span {
+  font-size: 0.48rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.ecd-hero__sw_metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.ecd-hero__sw_metric {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 8px;
+  border-top: 2px solid var(--metric-color, #2563eb);
+}
+
+.ecd-hero__sw_metric small {
+  display: block;
+  font-size: 0.42rem;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.ecd-hero__sw_metric strong {
+  font-size: 0.58rem;
+  color: #0f172a;
+}
+
+.ecd-hero__sw_chart {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  flex: 1;
+}
+
+.ecd-hero__sw_chart_label {
+  display: block;
+  font-size: 0.46rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.ecd-hero__sw_bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 48px;
+}
+
+.ecd-hero__sw_bar {
+  flex: 1;
+  background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+  border-radius: 3px 3px 0 0;
+  min-height: 8px;
+}
+
+.ecd-hero__phone_hero--software {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.ecd-hero__sw_phone_stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 0 8px 6px;
+}
+
+.ecd-hero__sw_phone_stat {
+  background: #f1f5f9;
+  border-radius: 6px;
+  padding: 6px;
+  text-align: center;
+}
+
+.ecd-hero__sw_phone_stat small {
+  display: block;
+  font-size: 0.44rem;
+  color: #64748b;
+}
+
+.ecd-hero__sw_phone_stat strong {
+  font-size: 0.58rem;
+  color: #0f172a;
+}
+
 .ecd-hero__phone {
   position: absolute;
   right: 0;

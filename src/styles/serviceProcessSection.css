@@ -97,6 +97,7 @@
   margin: 0 0 6px;
   color: #0f172a;
   line-height: 1.25;
+  white-space: nowrap;
 }
 
 .svc-process__desc {
@@ -171,6 +172,7 @@
   .svc-process__heading {
     font-size: 0.88rem;
     text-align: center;
+    white-space: normal;
   }
 
   .svc-process__label {

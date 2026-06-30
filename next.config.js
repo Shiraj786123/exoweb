@@ -4,6 +4,13 @@ const path = require('path');
 const nextConfig = {
   images: {
     disableStaticImages: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+    ],
   },
   outputFileTracingRoot: __dirname,
   async redirects() {

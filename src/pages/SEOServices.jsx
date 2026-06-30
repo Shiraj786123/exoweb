@@ -2,53 +2,75 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
-import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import SEOShowcase from '../components/seo/SEOShowcase';
 import SEOPageBody from '../components/SEOPageBody';
-import HomeTechStackSection from '../components/HomeTechStackSection';
+import SEOHeroVisual from '../components/seo/SEOHeroVisual';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
-import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
-import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import { SEO_HERO } from '../content/seoPageContent';
+import {
+  HiOutlineArrowTrendingUp,
+  HiOutlineGlobeAlt,
+  HiOutlineMapPin,
+} from 'react-icons/hi2';
+
+const heroHighlightIcons = {
+  rank: HiOutlineArrowTrendingUp,
+  traffic: HiOutlineGlobeAlt,
+  local: HiOutlineMapPin,
+};
 
 const SEOServices = () => (
-  <div className="seos__wrapper">
+  <div className="ecd__wrapper">
     <Navbar />
 
-    <section
-      className="ecd__hero_centered_layout"
-      style={{ paddingTop: '190px', position: 'relative' }}
-    >
-      <div className="ecd__hero_overlay_centered" />
-      <div className="ecd__hero_container_centered">
-        <Breadcrumb items={PAGE_BREADCRUMBS.seoServices} className="breadcrumb--centered breadcrumb--on-dark" />
-        <div className="ecd__badge_pill_centered">
-          <span className="badge_dot_indicator">●</span>
-          <span className="hero-badge-text">
-            <span className="hero-badge-accent">SEO Services</span>
-            <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
-          </span>
+    <section className="ecd-hero">
+      <div className="ecd-hero__bg" aria-hidden="true" />
+      <div className="ecd-hero__container">
+        <div className="ecd-hero__content">
+          <Breadcrumb
+            items={PAGE_BREADCRUMBS.seoServices}
+            className="breadcrumb--on-dark"
+          />
+          <div className="ecd-hero__badge">
+            <span className="ecd-hero__badge_dot" />
+            {SEO_HERO.badge}
+          </div>
+          <h1 className="ecd-hero__h1">
+            {SEO_HERO.h1Line1}{' '}
+            <span className="ecd-hero__highlight">{SEO_HERO.h1Line2}</span>
+          </h1>
+          <p className="ecd-hero__tagline">{SEO_HERO.tagline}</p>
+          <p className="ecd-hero__desc">{SEO_HERO.description}</p>
+          <ul className="ecd-hero__highlights">
+            {SEO_HERO.highlights.map((item) => {
+              const Icon = heroHighlightIcons[item.icon];
+              return (
+                <li key={item.title}>
+                  <span className="ecd-hero__highlight_icon" style={{ color: item.color }}>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span>{item.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="ecd-hero__actions hero-cta-wrap">
+            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+              {SEO_HERO.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href={SEO_HERO.secondaryHref} className="ecd-hero__cta_secondary">
+              {SEO_HERO.secondaryCta}
+            </a>
+          </div>
         </div>
-        <h1 className="seos__h1">{MAIN_SERVICE_SEO.seoServices.h1}</h1>
-        <p className="ecd__hero_text_centered">
-          Looking for professional SEO services in the Eastern Province? We help businesses improve Google
-          rankings, increase organic website traffic and generate more qualified enquiries through proven
-          search engine optimisation strategies.
-        </p>
-        <div className="ecd__hero_actions hero-cta-wrap">
-          <a href="#contact" className="ecd__hero_cta_primary hero-cta-btn">
-            Request a Free SEO Audit
-          </a>
-          <a href="#contact" className="ecd__hero_cta_secondary">
-            Talk to Our Team <span className="arrow">→</span>
-          </a>
-        </div>
-        <HeroTrustText text={HERO_TRUST_TEXT.seo} />
+        <SEOHeroVisual />
       </div>
     </section>
 
+    <SEOShowcase />
     <SEOPageBody />
 
-    <HomeTechStackSection />
     <ContactSection />
     <Footer />
   </div>

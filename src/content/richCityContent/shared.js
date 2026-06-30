@@ -47,11 +47,13 @@ export const WEB_DEV_FAQ = [
 
 export const WEB_DEV_WHY_BULLETS = [
   'Custom Website Design',
-  'Mobile Responsive Development',
-  'SEO-Friendly Website Structure',
+  'Mobile Responsive Layout',
+  'SEO-Friendly Structure',
   'Fast Loading Performance',
-  'Secure Website Development',
-  'Conversion-Focused Design',
+  'Secure Development',
+  'Easy Content Management',
+  'Conversion-Focused Pages',
+  'Ongoing Support & Maintenance',
 ];
 
 export const WEB_DEV_TRUST_BULLETS = [

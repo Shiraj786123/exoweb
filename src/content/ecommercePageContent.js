@@ -9,7 +9,6 @@ export const ECOMMERCE_HERO = {
     { title: 'Custom Solutions', icon: 'cog', color: '#2563eb' },
     { title: 'Secure & Reliable', icon: 'shield', color: '#16a34a' },
     { title: 'Mobile Optimized', icon: 'device', color: '#9333ea' },
-    { title: 'SEO Friendly', icon: 'chart', color: '#ea580c' },
   ],
   primaryCta: 'Get a Free Consultation',
   secondaryCta: 'View Our Work',

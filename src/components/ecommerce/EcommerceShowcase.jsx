@@ -182,7 +182,7 @@ const EcommerceShowcase = () => {
     <section className="ecd-show__section ecd-show__section--alt">
       <div className="ecd-show__container">
         <SectionHead title="Powerful Features for a Successful Online Store" />
-        <div className="ecd-show__mini_grid">
+        <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
           {ECOMMERCE_FEATURE_TILES.map((feature) => {
             const Icon = featureIcons[feature.icon];
             return (
@@ -205,7 +205,7 @@ const EcommerceShowcase = () => {
           title="Industries We Serve"
           subtitle="Custom ecommerce solutions for every industry."
         />
-        <div className="ecd-show__mini_grid">
+        <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
           {ECOMMERCE_INDUSTRY_TILES.map((industry) => {
             const Icon = industryIcons[industry.icon];
             return (

@@ -20,7 +20,7 @@ export const WEBSITE_PARENT_SECTIONS = [
     type: 'why',
     title: 'Why Choose Vexoweb for Website Development?',
     subtitle:
-      "We don't just design attractive websites—we build websites that deliver real business results. Every website is developed with performance, security and search engine optimisation in mind.",
+      "We don't just design attractive websites—we build websites that deliver real business results. Every website is developed with performance, security and search engine optimisation in mind, ensuring your business has a strong online presence from day one.",
     listLabel: 'What You Get',
     bullets: WEB_DEV_WHY_BULLETS,
   },
@@ -41,11 +41,11 @@ export const WEBSITE_PARENT_SECTIONS = [
     title: 'Why Businesses Across the Eastern Province Choose Us',
     items: [
       { title: 'Modern & Responsive Design', description: 'Your website will look and perform perfectly on desktops, tablets and smartphones.' },
-      { title: 'SEO-Ready Foundation', description: 'Every website is built using SEO best practices for better Google rankings.' },
-      { title: 'Fast Loading Websites', description: 'We optimise every website for maximum performance and user experience.' },
+      { title: 'SEO-Ready Foundation', description: 'Every website is built using SEO best practices, giving your business a stronger foundation for better Google rankings.' },
+      { title: 'Fast Loading Websites', description: 'Website speed affects both user experience and search rankings. We optimise every website for maximum performance.' },
       { title: 'Secure Development', description: 'We follow secure development practices to protect your website and customer data.' },
-      { title: 'Easy to Manage', description: 'Update your website content with a simple and user-friendly CMS.' },
-      { title: 'Built for Growth', description: 'Your website can grow with additional features, integrations and enhancements.' },
+      { title: 'Easy to Manage', description: 'Update your website content whenever you need with a simple and user-friendly content management system.' },
+      { title: 'Built for Growth', description: 'As your business grows, your website can grow with it through additional features, integrations and future enhancements.' },
     ],
   },
   {
@@ -71,6 +71,10 @@ export const WEBSITE_PARENT_SECTIONS = [
       { title: 'Education', description: 'Schools, tuition centres and training institutes.' },
       { title: 'Construction', description: 'Company profiles showcasing projects and services.' },
       { title: 'Retail Stores', description: 'Business websites and online stores for local retailers.' },
+      { title: 'Professional Services', description: 'Law firms, consultants, accountants and agencies.' },
+      { title: 'Manufacturing', description: 'Industrial and production businesses building credibility online.' },
+      { title: 'Real Estate', description: 'Property listings, developments and agency websites.' },
+      { title: 'Logistics & Transport', description: 'Fleet, freight and delivery companies across the region.' },
     ],
   },
   {
@@ -90,8 +94,8 @@ export const WEBSITE_PARENT_SECTIONS = [
     items: [
       { q: 'How long does it take to build a website?', a: "Most business websites are completed within 2-6 weeks, depending on the project's size and complexity." },
       { q: 'Will my website be mobile friendly?', a: 'Yes. Every website we develop is fully responsive and optimised for all screen sizes.' },
-      { q: 'Is SEO included?', a: 'Yes. Every website includes an SEO-friendly structure, clean URLs, metadata support and technical optimisation.' },
-      { q: 'Can I update my website myself?', a: 'Absolutely. We build websites with an easy-to-use content management system.' },
+      { q: 'Is SEO included?', a: 'Yes. Every website includes an SEO-friendly structure, clean URLs, metadata support, fast loading performance and technical optimisation.' },
+      { q: 'Can I update my website myself?', a: 'Absolutely. We build websites with an easy-to-use content management system so you can manage your content without technical knowledge.' },
       { q: 'Do you provide hosting and maintenance?', a: 'Yes. We offer website hosting, maintenance, security updates and technical support.' },
     ],
   },
