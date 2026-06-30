@@ -25,6 +25,7 @@ import '../src/styles/solution.css';
 import '../src/styles/soMuchMore.css';
 import '../src/styles/EcommercePage.css';
 import '../src/styles/ecommercePageBody.css';
+import '../src/styles/ecommerceShowcase.css';
 import '../src/styles/websitePageBody.css';
 import '../src/styles/softwarePageBody.css';
 import '../src/styles/mobilePageBody.css';

@@ -83,12 +83,12 @@ export const MOB_PROCESS = [
 ];
 
 export const ECOMMERCE_PROCESS = [
-  step(1, 'Consultation', 'chat', '#2563eb', 'We learn your products.', 'We study customers.', 'We define store goals.'),
-  step(2, 'Planning', 'plan', '#16a34a', 'We plan store layout.', 'We map categories.', 'We plan checkout flow.'),
-  step(3, 'Design', 'design', '#9333ea', 'We design your store.', 'We match your brand.', 'We focus on conversions.'),
-  step(4, 'Development', 'code', '#ea580c', 'We build your store.', 'We add all features.', 'We ensure security.'),
-  step(5, 'Testing', 'test', '#2563eb', 'We test payments.', 'We check mobile view.', 'We verify security.'),
-  step(6, 'Launch & Support', 'rocket', '#16a34a', 'We launch your store.', 'We provide maintenance.', 'We offer support.'),
+  { step: 1, title: 'Consultation', icon: 'chat', color: '#2563eb', description: 'We understand your business goals and requirements.' },
+  { step: 2, title: 'Planning', icon: 'plan', color: '#16a34a', description: 'We plan the store structure, features and user experience.' },
+  { step: 3, title: 'Design', icon: 'design', color: '#9333ea', description: 'We create attractive and conversion-focused store design.' },
+  { step: 4, title: 'Development', icon: 'code', color: '#ea580c', description: 'We build a fast, secure and scalable ecommerce website.' },
+  { step: 5, title: 'Testing', icon: 'test', color: '#2563eb', description: 'We test everything thoroughly for a bug-free launch.' },
+  { step: 6, title: 'Launch & Support', icon: 'rocket', color: '#16a34a', description: 'We launch your store and provide ongoing support.' },
 ];
 
 export const SEO_SERVICE_PROCESS = [

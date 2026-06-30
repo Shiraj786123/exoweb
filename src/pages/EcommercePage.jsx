@@ -2,50 +2,77 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
-import HeroTrustText from '../components/HeroTrustText';
 import Breadcrumb from '../components/Breadcrumb';
+import EcommerceShowcase from '../components/ecommerce/EcommerceShowcase';
 import EcommercePageBody from '../components/EcommercePageBody';
-import HomeTechStackSection from '../components/HomeTechStackSection';
+import EcommerceHeroVisual from '../components/ecommerce/EcommerceHeroVisual';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
-import { MAIN_SERVICE_SEO } from '../content/servicePagesConfig';
-import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
+import { ECOMMERCE_HERO } from '../content/ecommercePageContent';
+import {
+  HiOutlineCog6Tooth,
+  HiOutlineShieldCheck,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineChartBar,
+} from 'react-icons/hi2';
+
+const heroHighlightIcons = {
+  cog: HiOutlineCog6Tooth,
+  shield: HiOutlineShieldCheck,
+  device: HiOutlineDevicePhoneMobile,
+  chart: HiOutlineChartBar,
+};
 
 const EcommerceDev = () => (
   <div className="ecd__wrapper">
     <Navbar />
 
-    <section className="ecd__hero">
-      <div className="ecd__hero_pattern" />
-      <div className="ecd__hero_container">
-        <Breadcrumb items={PAGE_BREADCRUMBS.ecommerceDevelopment} className="breadcrumb--centered breadcrumb--on-dark" />
-        <div className="ecd__hero_badge">
-          <span className="ecd__badge_dot" />
-          <span className="hero-badge-text">
-            <span className="hero-badge-accent">Ecommerce Development</span>
-            <span className="hero-badge-light"> — Sri Lanka</span>
-          </span>
+    <section className="ecd-hero">
+      <div className="ecd-hero__bg" aria-hidden="true" />
+      <div className="ecd-hero__container">
+        <div className="ecd-hero__content">
+          <Breadcrumb
+            items={PAGE_BREADCRUMBS.ecommerceDevelopment}
+            className="breadcrumb--on-dark"
+          />
+          <div className="ecd-hero__badge">
+            <span className="ecd-hero__badge_dot" />
+            {ECOMMERCE_HERO.badge}
+          </div>
+          <h1 className="ecd-hero__h1">
+            {ECOMMERCE_HERO.h1Line1}{' '}
+            <span className="ecd-hero__highlight">{ECOMMERCE_HERO.h1Line2}</span>
+          </h1>
+          <p className="ecd-hero__tagline">{ECOMMERCE_HERO.tagline}</p>
+          <p className="ecd-hero__desc">{ECOMMERCE_HERO.description}</p>
+          <ul className="ecd-hero__highlights">
+            {ECOMMERCE_HERO.highlights.map((item) => {
+              const Icon = heroHighlightIcons[item.icon];
+              return (
+                <li key={item.title}>
+                  <span className="ecd-hero__highlight_icon" style={{ color: item.color }}>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span>{item.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="ecd-hero__actions hero-cta-wrap">
+            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+              {ECOMMERCE_HERO.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href={ECOMMERCE_HERO.secondaryHref} className="ecd-hero__cta_secondary">
+              {ECOMMERCE_HERO.secondaryCta}
+            </a>
+          </div>
         </div>
-        <h1 className="ecd__h1">{MAIN_SERVICE_SEO.ecommerceDevelopment.h1}</h1>
-        <p className="ecd__hero_text">
-          The ecommerce industry is growing rapidly, and customers expect a fast, secure and convenient online
-          shopping experience. At Vexoweb, we provide professional ecommerce website development services across
-          Sri Lanka — helping businesses build modern online stores that are secure, scalable and designed for growth.
-        </p>
-        <div className="ecd__hero_actions hero-cta-wrap">
-          <a href="#contact" className="ecd__hero_cta_primary hero-cta-btn">
-            Get Free Consultation
-          </a>
-          <a href="#contact" className="ecd__hero_cta_secondary">
-            View Portfolio <span className="arrow">→</span>
-          </a>
-        </div>
-        <HeroTrustText text={HERO_TRUST_TEXT.ecommerce} />
+        <EcommerceHeroVisual />
       </div>
     </section>
 
+    <EcommerceShowcase />
     <EcommercePageBody />
 
-    <HomeTechStackSection />
     <ContactSection />
     <Footer />
   </div>

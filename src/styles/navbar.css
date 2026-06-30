@@ -3,8 +3,8 @@
 
 
 :root {
-  /* Desktop: topbar (~48px) + nav row (120px logo + padding) */
-  --site-header-height: 180px;
+  /* Desktop: topbar (~48px) + nav row (~72px logo) */
+  --site-header-height: 150px;
   --mobile-nav-drawer-top: var(--site-header-height);
   --hero-top-gap: 24px;
 }
@@ -12,21 +12,21 @@
 @media (max-width: 1024px) {
   :root {
     /* Topbar 3 lines (~72px) + nav row (~72px logo + padding) */
-    --site-header-height: 182px;
+    --site-header-height: 152px;
     --hero-top-gap: 18px;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --site-header-height: 188px;
+    --site-header-height: 158px;
     --hero-top-gap: 16px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --site-header-height: 192px;
+    --site-header-height: 162px;
     --hero-top-gap: 14px;
   }
 }
@@ -157,7 +157,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 4%;
+  padding: 0 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -182,7 +182,7 @@
 .nav-brand-separator {
   flex-shrink: 0;
   width: 2px;
-  height: 52px;
+  height: 48px;
   background: #0f172a;
   align-self: center;
 }
@@ -190,10 +190,10 @@
 .logo-desktop {
   display: block;
   object-fit: contain;
-  height: 120px;
+  height: 96px;
   width: auto;
-  margin-top: -15px;
-  margin-bottom: -15px;
+  margin-top: -12px;
+  margin-bottom: -12px;
 }
 
 .logo-mobile {
@@ -587,7 +587,7 @@
 @media (min-width: 1025px) and (max-width: 1200px) {
   .nav-container {
     width: 95%;
-    padding: 12px 2.5%;
+    padding: 0 2.5%;
   }
   .nav-tagline,
   .nav-brand-separator {
@@ -607,7 +607,7 @@
 @media (max-width: 1024px) {
   .nav-container {
     width: 100%;
-    padding: 12px 20px;
+    padding: 0 20px;
   }
 
   /* Structural adjustment */
@@ -617,7 +617,7 @@
 
   .logo-mobile {
     display: block;
-    height: 42px;
+    height: 36px;
     width: auto;
   }
 
@@ -749,7 +749,7 @@
 
   .logo-mobile {
     display: block;
-    height: 70px;
+    height: 56px;
     width: auto;
   }
 
@@ -789,7 +789,7 @@
 @media (max-width: 1024px) {
   .nav-container {
     width: 100%;
-    padding: 12px 20px;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -802,7 +802,7 @@
 
   .logo-mobile {
     display: block;
-    height: 70px;
+    height: 56px;
     width: auto;
   }
 
@@ -1061,7 +1061,7 @@
      and spaces items symmetrically.
   */
   .nav-container {
-    padding: 10px 16px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1357,7 +1357,7 @@
   display: flex;
   align-items: center;    /* Keeps everything centered vertically */
   justify-content: space-between; /* Pushes brand left, nav/button right */
-  padding: 10px 4%;
+  padding: 0 4%;
   height: auto;
   overflow: visible;
 }
@@ -1394,7 +1394,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* Pushes brand to left, nav items/btn to right */
-  padding: 10px 4%;
+  padding: 0 4%;
   flex-wrap: nowrap; /* CRITICAL: Prevents items from breaking to a new line */
 }
 
@@ -1441,7 +1441,7 @@
 /* Increase logo size specifically for mobile view */
 @media (max-width: 1024px) {
   .logo-mobile {
-    height: 72px !important;
+    height: 56px !important;
     width: auto !important;
     display: block !important;
     margin-top: -10px !important;

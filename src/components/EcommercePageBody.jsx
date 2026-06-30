@@ -1,229 +1,380 @@
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 import {
   HiOutlineShoppingCart,
-  HiOutlineShoppingBag,
   HiOutlineCodeBracket,
   HiOutlineBuildingStorefront,
-  HiOutlineArrowPath,
-  HiOutlineDevicePhoneMobile,
-  HiOutlineShieldCheck,
+  HiOutlineArrowRightCircle,
+  HiOutlineCheckCircle,
+  HiOutlineCreditCard,
+  HiOutlineTruck,
   HiOutlineCube,
-  HiOutlineSquare3Stack3D,
-  HiOutlineClipboardDocumentList,
-  HiOutlineTag,
+  HiOutlineGlobeAlt,
+  HiOutlineMapPin,
   HiOutlineChartBar,
+  HiOutlineHandThumbUp,
+  HiOutlineCurrencyDollar,
+  HiOutlineShieldCheck,
+  HiOutlineRocketLaunch,
+  HiOutlineCalculator,
+  HiOutlineMap,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineBolt,
   HiOutlineMagnifyingGlass,
+  HiOutlineUserCircle,
+  HiOutlineHeart,
+  HiOutlineStar,
+  HiOutlineTag,
+  HiOutlineEnvelope,
+  HiOutlineChartPie,
   HiOutlineSparkles,
   HiOutlineCpuChip,
-  HiOutlineBookOpen,
-  HiOutlineHeart,
-  HiOutlineBuildingOffice2,
-  HiOutlineCheckCircle,
-  HiOutlineBriefcase,
-  HiOutlineClock,
   HiOutlineWrenchScrewdriver,
+  HiOutlineQuestionMarkCircle,
+  HiOutlineLink,
+  HiOutlineClipboardDocumentCheck,
+  HiOutlineClipboardDocumentList,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineLifebuoy,
 } from 'react-icons/hi2';
-import woocommerceIcon from '../assets/icons/woocommerce.svg';
-import shopifyIcon from '../assets/icons/shopify.svg';
-import magentoIcon from '../assets/icons/magento.svg';
-import opencartIcon from '../assets/icons/opencart.svg';
-import whyChooseImg from '../assets/icons/ecd-ai-robot.png';
-import ServiceProcessSection from './ServiceProcessSection';
 import {
-  ECOMMERCE_PLATFORMS,
-  ECOMMERCE_SERVICES,
+  ECOMMERCE_INTRO,
+  ECOMMERCE_WHY_BUSINESS,
+  ECOMMERCE_PAYMENT,
+  ECOMMERCE_SHIPPING,
+  ECOMMERCE_INVENTORY,
+  ECOMMERCE_FEATURES_SECTION,
   ECOMMERCE_FEATURES,
-  ECOMMERCE_INDUSTRIES,
-  ECOMMERCE_PROCESS,
   ECOMMERCE_WHY_CHOOSE,
+  ECOMMERCE_SEO,
+  ECOMMERCE_FAQ,
+  ECOMMERCE_RELATED,
+  ECOMMERCE_CTA,
 } from '../content/ecommercePageContent';
+import EcommerceWhyShowcaseSection from './ecommerce/EcommerceWhyShowcaseSection';
 
-const platformIcons = {
-  woocommerce: woocommerceIcon,
-  shopify: shopifyIcon,
-  magento: magentoIcon,
-  opencart: opencartIcon,
+const whyBusinessIcons = {
+  'Reach More Customers': HiOutlineGlobeAlt,
+  'Grow Revenue & Credibility': HiOutlineChartBar,
+  'Better Customer Experience': HiOutlineHandThumbUp,
+  'Lower Operating Costs': HiOutlineCurrencyDollar,
 };
 
-const serviceIcons = {
-  cart: HiOutlineShoppingCart,
-  bag: HiOutlineShoppingBag,
-  code: HiOutlineCodeBracket,
-  store: HiOutlineBuildingStorefront,
-  refresh: HiOutlineArrowPath,
+const paymentIcons = {
+  'Local Payment Gateways': HiOutlineBuildingStorefront,
+  'International Payments': HiOutlineGlobeAlt,
+  'Secure Checkout': HiOutlineShieldCheck,
+};
+
+const inventoryIcons = {
+  'Product & Stock Control': HiOutlineCube,
+  'Order Processing': HiOutlineClipboardDocumentList,
+  'Reports & Analytics': HiOutlineChartPie,
+};
+
+const shippingIcons = {
+  'Shipping Rate Calculation': HiOutlineCalculator,
+  'Delivery Zone Management': HiOutlineMap,
+  'Courier Integration': HiOutlineTruck,
+  'Order Tracking': HiOutlineMapPin,
+  'Click & Collect': HiOutlineBuildingStorefront,
 };
 
 const featureIcons = {
-  device: HiOutlineDevicePhoneMobile,
-  shield: HiOutlineShieldCheck,
-  box: HiOutlineCube,
-  layers: HiOutlineSquare3Stack3D,
-  clipboard: HiOutlineClipboardDocumentList,
-  tag: HiOutlineTag,
-  chart: HiOutlineChartBar,
-  search: HiOutlineMagnifyingGlass,
+  'Responsive Mobile Design': HiOutlineDevicePhoneMobile,
+  'Fast Loading Speed': HiOutlineBolt,
+  'Product Search & Smart Filters': HiOutlineMagnifyingGlass,
+  'Secure Customer Accounts': HiOutlineUserCircle,
+  'Wishlist Functionality': HiOutlineHeart,
+  'Product Reviews & Ratings': HiOutlineStar,
+  'Discount Coupons & Promotions': HiOutlineTag,
+  'Related Products': HiOutlineShoppingCart,
+  'Email Notifications': HiOutlineEnvelope,
+  'Analytics Dashboard': HiOutlineChartPie,
 };
 
-const industryIcons = {
-  shirt: HiOutlineSparkles,
-  cpu: HiOutlineCpuChip,
-  gem: HiOutlineSparkles,
-  sofa: HiOutlineCube,
-  cart: HiOutlineShoppingCart,
-  heart: HiOutlineHeart,
-  book: HiOutlineBookOpen,
-  building: HiOutlineBuildingOffice2,
+const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2'];
+
+const whyIcons = {
+  'Custom Ecommerce Solutions': HiOutlineCodeBracket,
+  'Experienced Development Team': HiOutlineWrenchScrewdriver,
+  'Mobile-First Development': HiOutlineDevicePhoneMobile,
+  'SEO-Friendly Ecommerce Websites': HiOutlineMagnifyingGlass,
+  'Secure Online Shopping': HiOutlineShieldCheck,
+  'Scalable for Future Growth': HiOutlineChartBar,
+  'Long-Term Technical Support': HiOutlineLifebuoy,
+  'Transparent Communication': HiOutlineChatBubbleLeftRight,
 };
 
-const statIcons = {
-  projects: HiOutlineBriefcase,
-  satisfaction: HiOutlineCheckCircle,
-  support: HiOutlineClock,
-  custom: HiOutlineWrenchScrewdriver,
+const seoIcons = {
+  'Keyword-Optimised Product Pages': HiOutlineTag,
+  'Category Optimisation': HiOutlineClipboardDocumentCheck,
+  'Technical SEO': HiOutlineBolt,
+  'Structured Data': HiOutlineCodeBracket,
+  'Performance Optimisation': HiOutlineRocketLaunch,
 };
 
-const SectionHeader = ({ title, subtitle }) => (
-  <div className="ecd-ref__header">
-    <h2 className="ecd-ref__title">{title}</h2>
-    {subtitle && <p className="ecd-ref__subtitle">{subtitle}</p>}
+const relatedIcons = {
+  'Website Development': HiOutlineGlobeAlt,
+  'Mobile App Development': HiOutlineDevicePhoneMobile,
+  'Software Development': HiOutlineCodeBracket,
+  'AI Software Development': HiOutlineCpuChip,
+  'SEO Services': HiOutlineMagnifyingGlass,
+  'Website Maintenance & Support': HiOutlineWrenchScrewdriver,
+};
+
+const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, variant = 'default' }) => (
+  <section
+    className={[
+      'ecd-v2__section',
+      variant === 'alt' && 'ecd-v2__section--alt',
+      variant === 'hero' && 'ecd-v2__section--hero',
+    ]
+      .filter(Boolean)
+      .join(' ')}
+  >
+    <div className="ecd-v2__container">
+      <div className="ecd-v2__section_head">
+        {Icon && (
+          <div className="ecd-v2__section_icon_wrap" aria-hidden="true">
+            <Icon />
+          </div>
+        )}
+        <div>
+          <h2 className="ecd-v2__title">
+            {title}
+            {titleAccent && (
+              <>
+                {' '}
+                <span className="ecd-v2__title_accent">{titleAccent}</span>
+              </>
+            )}
+          </h2>
+          {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
+        </div>
+      </div>
+      {children}
+    </div>
+  </section>
+);
+
+const Prose = ({ paragraphs, className = '' }) => (
+  <div className={`ecd-v2__prose${className ? ` ${className}` : ''}`}>
+    {paragraphs.map((p) => (
+      <p key={p.slice(0, 48)}>{p}</p>
+    ))}
+  </div>
+);
+
+const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAccents }) => {
+  const Icon = iconMap[item.title] || fallbackIcon;
+  const accent = accents[index % accents.length];
+  return (
+    <article className="ecd-v2__ship_card" style={{ '--ship-accent': accent }}>
+      <span className="ecd-v2__ship_num" style={{ background: accent }}>{index + 1}</span>
+      <div className="ecd-v2__ship_icon" style={{ color: accent }}>
+        <Icon />
+      </div>
+      <h3>{item.title}</h3>
+      {item.description ? (
+        <p>{item.description}</p>
+      ) : (
+        <ul className="ecd-v2__ship_points">
+          {item.points.map((point) => (
+            <li key={point}>
+              <HiOutlineCheckCircle aria-hidden="true" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </article>
+  );
+};
+
+const IconPointsRow = ({ items, iconMap, fallbackIcon, wrap = false, cols }) => (
+  <div
+    className={`ecd-v2__ship_row${wrap ? ' ecd-v2__ship_row--wrap' : ''}${cols ? ` ecd-v2__ship_row--cols-${cols}` : ''}`}
+    style={cols ? { '--ship-cols': cols } : !wrap ? { '--ship-cols': items.length } : undefined}
+  >
+    {items.map((item, index) => (
+      <IconPointsCard
+        key={item.title}
+        item={item}
+        index={index}
+        iconMap={iconMap}
+        fallbackIcon={fallbackIcon}
+      />
+    ))}
   </div>
 );
 
 const EcommercePageBody = () => (
-  <div className="ecd-ref">
-    {/* Platform logos */}
-    <section className="ecd-ref__platforms">
-      <div className="ecd-ref__container">
-        <p className="ecd-ref__platforms_label">We build with the world&apos;s leading ecommerce platforms</p>
-        <div className="ecd-ref__platforms_row">
-          {ECOMMERCE_PLATFORMS.map((platform) => (
-            <div key={platform.name} className="ecd-ref__platform_item">
-              {platform.icon === 'custom' ? (
-                <span className="ecd-ref__platform_custom" aria-hidden="true">
-                  <HiOutlineCodeBracket />
-                </span>
-              ) : (
-                <img src={platformIcons[platform.icon].src || platformIcons[platform.icon]} alt={platform.name} />
-              )}
-              <span>{platform.name}</span>
-            </div>
+  <div className="ecd-v2 ecd-v2--details">
+    <div className="ecd-v2__details_label">
+      <div className="ecd-v2__container">
+        <span>In-Depth Ecommerce Solutions</span>
+        <h2>Everything You Need to Launch &amp; Grow Online</h2>
+        <p>Explore our complete ecommerce development capabilities, platforms, integrations and support services.</p>
+      </div>
+    </div>
+    {/* Intro — short summary */}
+    <section className="ecd-v2__intro ecd-v2__intro--brief">
+      <div className="ecd-v2__container">
+        <div className="ecd-v2__intro_brief">
+          <div className="ecd-v2__intro_icon" aria-hidden="true">
+            <HiOutlineShoppingCart />
+          </div>
+          <p>{ECOMMERCE_INTRO.summary}</p>
+        </div>
+      </div>
+    </section>
+
+    {/* Why every business */}
+    <SectionShell icon={HiOutlineGlobeAlt} title={ECOMMERCE_WHY_BUSINESS.title} variant="alt">
+      <Prose paragraphs={ECOMMERCE_WHY_BUSINESS.intro} className="ecd-v2__prose--center" />
+      <IconPointsRow
+        items={ECOMMERCE_WHY_BUSINESS.items}
+        iconMap={whyBusinessIcons}
+        fallbackIcon={HiOutlineGlobeAlt}
+      />
+      <Prose paragraphs={ECOMMERCE_WHY_BUSINESS.closing} className="ecd-v2__prose--center ecd-v2__prose--closing" />
+    </SectionShell>
+
+    {/* Payment */}
+    <SectionShell icon={HiOutlineCreditCard} title={ECOMMERCE_PAYMENT.title}>
+      <Prose paragraphs={ECOMMERCE_PAYMENT.intro} className="ecd-v2__prose--center" />
+      <IconPointsRow
+        items={ECOMMERCE_PAYMENT.items}
+        iconMap={paymentIcons}
+        fallbackIcon={HiOutlineCreditCard}
+      />
+      <p className="ecd-v2__closing ecd-v2__closing--center">{ECOMMERCE_PAYMENT.closing}</p>
+    </SectionShell>
+
+    {/* Shipping */}
+    <SectionShell
+      icon={HiOutlineTruck}
+      title={ECOMMERCE_SHIPPING.title}
+      titleAccent={ECOMMERCE_SHIPPING.titleAccent}
+      variant="hero"
+    >
+      <Prose paragraphs={ECOMMERCE_SHIPPING.intro} className="ecd-v2__prose--center ecd-v2__prose--light" />
+      <IconPointsRow
+        items={ECOMMERCE_SHIPPING.items}
+        iconMap={shippingIcons}
+        fallbackIcon={HiOutlineTruck}
+      />
+    </SectionShell>
+
+    {/* Inventory */}
+    <SectionShell icon={HiOutlineCube} title={ECOMMERCE_INVENTORY.title}>
+      <Prose paragraphs={ECOMMERCE_INVENTORY.intro} className="ecd-v2__prose--center" />
+      <IconPointsRow
+        items={ECOMMERCE_INVENTORY.items}
+        iconMap={inventoryIcons}
+        fallbackIcon={HiOutlineCube}
+      />
+      <p className="ecd-v2__closing ecd-v2__closing--center">{ECOMMERCE_INVENTORY.closing}</p>
+    </SectionShell>
+
+    {/* Features */}
+    <SectionShell icon={HiOutlineSparkles} title={ECOMMERCE_FEATURES_SECTION.title} variant="alt">
+      <p className="ecd-v2__center_lead">{ECOMMERCE_FEATURES_SECTION.intro}</p>
+      <IconPointsRow
+        items={ECOMMERCE_FEATURES}
+        iconMap={featureIcons}
+        fallbackIcon={HiOutlineSparkles}
+        cols={5}
+      />
+    </SectionShell>
+
+    {/* Why choose */}
+    <SectionShell
+      icon={HiOutlineShieldCheck}
+      title={ECOMMERCE_WHY_CHOOSE.title}
+      titleAccent={ECOMMERCE_WHY_CHOOSE.titleAccent}
+      variant="hero"
+    >
+      <p className="ecd-v2__center_lead ecd-v2__center_lead--light">{ECOMMERCE_WHY_CHOOSE.intro}</p>
+      <IconPointsRow
+        items={ECOMMERCE_WHY_CHOOSE.items}
+        iconMap={whyIcons}
+        fallbackIcon={HiOutlineShieldCheck}
+        cols={4}
+      />
+    </SectionShell>
+
+    {/* SEO */}
+    <SectionShell icon={HiOutlineMagnifyingGlass} title={ECOMMERCE_SEO.title} variant="alt">
+      <Prose paragraphs={ECOMMERCE_SEO.intro} className="ecd-v2__prose--center" />
+      <p className="ecd-v2__center_lead">{ECOMMERCE_SEO.leadIn}</p>
+      <IconPointsRow
+        items={ECOMMERCE_SEO.items}
+        iconMap={seoIcons}
+        fallbackIcon={HiOutlineMagnifyingGlass}
+      />
+    </SectionShell>
+
+    <EcommerceWhyShowcaseSection />
+
+    {/* FAQ */}
+    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions">
+      <div className="ecd-v2__faq ecd-v2__faq--cols">
+        <div className="ecd-v2__faq_col">
+          {ECOMMERCE_FAQ.slice(0, 6).map((item) => (
+            <details key={item.q} className="ecd-v2__faq_item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+        <div className="ecd-v2__faq_col">
+          {ECOMMERCE_FAQ.slice(6).map((item) => (
+            <details key={item.q} className="ecd-v2__faq_item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
           ))}
         </div>
       </div>
-    </section>
+    </SectionShell>
 
-    {/* Services */}
-    <section className="ecd-ref__section">
-      <div className="ecd-ref__container">
-        <SectionHeader
-          title="Our Ecommerce Development Services"
-          subtitle="Complete ecommerce solutions to start, grow and scale your online business."
-        />
-        <div className="ecd-ref__services_grid">
-          {ECOMMERCE_SERVICES.map((service) => {
-            const Icon = serviceIcons[service.icon];
-            return (
-              <article key={service.title} className="ecd-ref__service_card">
-                <div className="ecd-ref__service_icon" style={{ color: service.color }}>
-                  <Icon />
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <a href="#contact" className="ecd-ref__learn_more">
-                  Learn More <span aria-hidden="true">→</span>
-                </a>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-
-    {/* Features */}
-    <section className="ecd-ref__section ecd-ref__section--alt">
-      <div className="ecd-ref__container">
-        <SectionHeader title="Powerful Features for a Successful Online Store" />
-        <div className="ecd-ref__mini_grid">
-          {ECOMMERCE_FEATURES.map((feature) => {
-            const Icon = featureIcons[feature.icon];
-            return (
-              <div key={feature.title} className="ecd-ref__mini_card">
-                <div className="ecd-ref__mini_icon" style={{ color: feature.color }}>
-                  <Icon />
-                </div>
-                <span>{feature.title}</span>
+    {/* Related — row with icons */}
+    <SectionShell icon={HiOutlineLink} title={ECOMMERCE_RELATED.title} variant="alt">
+      <Prose paragraphs={ECOMMERCE_RELATED.intro} className="ecd-v2__prose--center" />
+      <div className="ecd-v2__related_row">
+        {ECOMMERCE_RELATED.links.map((link) => {
+          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
+          return (
+            <Link key={link.href} href={link.href} className="ecd-v2__related_tile">
+              <div className="ecd-v2__related_tile_icon">
+                <Icon />
               </div>
-            );
-          })}
-        </div>
+              <span className="ecd-v2__related_tile_label">{link.label}</span>
+              <HiOutlineArrowRightCircle className="ecd-v2__related_tile_arrow" aria-hidden="true" />
+            </Link>
+          );
+        })}
       </div>
-    </section>
+      <p className="ecd-v2__closing ecd-v2__closing--center">{ECOMMERCE_RELATED.closing}</p>
+    </SectionShell>
 
-    {/* Industries */}
-    <section className="ecd-ref__section">
-      <div className="ecd-ref__container">
-        <SectionHeader
-          title="Industries We Serve"
-          subtitle="Custom ecommerce solutions for every industry."
-        />
-        <div className="ecd-ref__mini_grid">
-          {ECOMMERCE_INDUSTRIES.map((industry) => {
-            const Icon = industryIcons[industry.icon];
-            return (
-              <div key={industry.title} className="ecd-ref__mini_card">
-                <div className="ecd-ref__mini_icon" style={{ color: industry.color }}>
-                  <Icon />
-                </div>
-                <span>{industry.title}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-
-    <ServiceProcessSection
-      title="Our Ecommerce Development Process"
-      subtitle="A simple and effective process to build your dream online store."
-      steps={ECOMMERCE_PROCESS}
-      alt
-    />
-
-    {/* Why Choose */}
-    <section className="ecd-ref__why">
-      <div className="ecd-ref__container">
-        <div className="ecd-ref__why_header">
-          <h2 className="ecd-ref__title">{ECOMMERCE_WHY_CHOOSE.title}</h2>
-          <p className="ecd-ref__subtitle">{ECOMMERCE_WHY_CHOOSE.subtitle}</p>
-        </div>
-        <div className="ecd-ref__why_layout">
-          <ul className="ecd-ref__why_list">
-            {ECOMMERCE_WHY_CHOOSE.bullets.map((item) => (
-              <li key={item}>
-                <HiOutlineCheckCircle className="ecd-ref__why_check" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="ecd-ref__why_image">
-            <Image src={whyChooseImg} alt="Ecommerce development by Vexoweb" width={420} height={480} />
+    {/* Final CTA — compact banner */}
+    <section className="ecd-v2__cta_section">
+      <div className="ecd-v2__container">
+        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
+          <div className="ecd-v2__cta_compact_text">
+            <h2 className="ecd-v2__cta_compact_title">{ECOMMERCE_CTA.title}</h2>
+            <p>{ECOMMERCE_CTA.description}</p>
           </div>
-          <div className="ecd-ref__stats_grid">
-            {ECOMMERCE_WHY_CHOOSE.stats.map((stat) => {
-              const Icon = statIcons[stat.icon];
-              return (
-                <div key={stat.label} className="ecd-ref__stat_card">
-                  <div className="ecd-ref__stat_icon" style={{ color: stat.color }}>
-                    <Icon />
-                  </div>
-                  <div>
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="ecd-v2__cta_compact_actions">
+            <a href="#contact" className="ecd-v2__cta_btn_primary">
+              {ECOMMERCE_CTA.primaryCta} <span aria-hidden="true">→</span>
+            </a>
+            <a href="#contact" className="ecd-v2__cta_btn_secondary">
+              {ECOMMERCE_CTA.secondaryCta}
+            </a>
           </div>
         </div>
       </div>

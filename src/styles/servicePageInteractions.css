@@ -144,14 +144,16 @@
 .web-ref__faq_item,
 .soft-ref__faq_item,
 .mob-ref__faq_item,
-.seo-ref__faq_item {
+.seo-ref__faq_item,
+.ecd-v2__faq_item {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .web-ref__faq_item:hover,
 .soft-ref__faq_item:hover,
 .mob-ref__faq_item:hover,
-.seo-ref__faq_item:hover {
+.seo-ref__faq_item:hover,
+.ecd-v2__faq_item:hover {
   border-color: #94a3b8;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
 }
@@ -159,7 +161,8 @@
 .web-ref__faq_item[open],
 .soft-ref__faq_item[open],
 .mob-ref__faq_item[open],
-.seo-ref__faq_item[open] {
+.seo-ref__faq_item[open],
+.ecd-v2__faq_item[open] {
   border-color: #2563eb;
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
 }
