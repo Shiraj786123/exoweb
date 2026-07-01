@@ -42,24 +42,7 @@ import {
   HiOutlinePhoto,
   HiOutlineBookOpen,
 } from 'react-icons/hi2';
-import {
-  SiPython,
-  SiTensorflow,
-  SiPytorch,
-  SiLangchain,
-  SiOpenai,
-  SiNodedotjs,
-  SiReact,
-  SiFlutter,
-  SiMysql,
-  SiPostgresql,
-  SiMongodb,
-  SiFirebase,
-  SiAmazonwebservices,
-  SiGooglecloud,
-  SiDocker,
-  SiKubernetes,
-} from 'react-icons/si';
+import { SiOpenai } from 'react-icons/si';
 import {
   AI_INTRO,
   AI_WHY_BUSINESS,
@@ -71,7 +54,6 @@ import {
   AI_CUSTOM_DETAIL,
   AI_INDUSTRIES_SECTION,
   AI_INDUSTRY_TILES,
-  AI_TECHNOLOGIES,
   AI_TESTIMONIALS,
   AI_FAQ,
   AI_RELATED,
@@ -79,6 +61,7 @@ import {
 } from '../content/aiSoftwarePageContent';
 import AISoftwareWhyShowcaseSection from './ai/AISoftwareWhyShowcaseSection';
 import AISoftwareTransformSection from './ai/AISoftwareTransformSection';
+import PageBodyCtaSection from './shared/PageBodyCtaSection';
 
 const whyBusinessIcons = {
   'Automate Repetitive Tasks': HiOutlineCog6Tooth,
@@ -189,25 +172,6 @@ const relatedIcons = {
   'eCommerce Development': HiOutlineShoppingBag,
 };
 
-const techIcons = {
-  python: SiPython,
-  tensorflow: SiTensorflow,
-  pytorch: SiPytorch,
-  langchain: SiLangchain,
-  openai: SiOpenai,
-  node: SiNodedotjs,
-  react: SiReact,
-  flutter: SiFlutter,
-  mysql: SiMysql,
-  postgresql: SiPostgresql,
-  mongodb: SiMongodb,
-  firebase: SiFirebase,
-  aws: SiAmazonwebservices,
-  gcloud: SiGooglecloud,
-  docker: SiDocker,
-  kubernetes: SiKubernetes,
-};
-
 const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2', '#dc2626', '#db2777', '#38bdf8'];
 
 const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, variant = 'default', extraClass = '' }) => (
@@ -315,16 +279,21 @@ const AISoftwarePageBody = () => (
           </div>
           <p>{AI_INTRO.summary}</p>
         </div>
-        <Prose paragraphs={AI_WHY_BUSINESS.intro} className="aiss-v2__prose--center" />
-        <IconPointsRow
-          items={AI_WHY_BUSINESS.items}
-          iconMap={whyBusinessIcons}
-          fallbackIcon={HiOutlineLightBulb}
-          cols={4}
-        />
-        <Prose paragraphs={AI_WHY_BUSINESS.closing} className="aiss-v2__prose--center aiss-v2__prose--closing" />
       </div>
     </section>
+
+    <PageBodyCtaSection cta={AI_CTA} classPrefix="ecd-v2" />
+
+    <SectionShell icon={HiOutlineLightBulb} title={AI_WHY_BUSINESS.title} variant="alt">
+      <Prose paragraphs={AI_WHY_BUSINESS.intro} className="aiss-v2__prose--center" />
+      <IconPointsRow
+        items={AI_WHY_BUSINESS.items}
+        iconMap={whyBusinessIcons}
+        fallbackIcon={HiOutlineLightBulb}
+        cols={4}
+      />
+      <Prose paragraphs={AI_WHY_BUSINESS.closing} className="aiss-v2__prose--center aiss-v2__prose--closing" />
+    </SectionShell>
 
     <AISoftwareTransformSection />
 
@@ -440,21 +409,6 @@ const AISoftwarePageBody = () => (
       />
     </SectionShell>
 
-    <SectionShell icon={HiOutlineCpuChip} title="Technologies We Use" variant="alt">
-      <p className="aiss-v2__center_lead">Modern technologies to build intelligent, secure and scalable AI solutions.</p>
-      <div className="aiss-v2__tech_grid">
-        {AI_TECHNOLOGIES.map((tech) => {
-          const Icon = techIcons[tech.icon];
-          return (
-            <div key={tech.name} className="aiss-v2__tech_item" style={{ '--tech-color': tech.color }}>
-              {Icon && <Icon aria-hidden="true" />}
-              <span>{tech.name}</span>
-            </div>
-          );
-        })}
-      </div>
-    </SectionShell>
-
     <AISoftwareWhyShowcaseSection />
 
     <SectionShell icon={HiOutlineChatBubbleLeftRight} title={AI_TESTIMONIALS.title}>
@@ -517,25 +471,6 @@ const AISoftwarePageBody = () => (
       </div>
       <p className="aiss-v2__closing aiss-v2__closing--center">{AI_RELATED.closing}</p>
     </SectionShell>
-
-    <section className="aiss-v2__cta_section">
-      <div className="aiss-v2__container">
-        <div className="aiss-v2__cta_compact vexoweb-cta-banner">
-          <div className="aiss-v2__cta_compact_text">
-            <h2 className="aiss-v2__cta_compact_title">{AI_CTA.title}</h2>
-            <p>{AI_CTA.description}</p>
-          </div>
-          <div className="aiss-v2__cta_compact_actions">
-            <a href="#contact" className="aiss-v2__cta_btn_primary">
-              {AI_CTA.primaryCta} <span aria-hidden="true">→</span>
-            </a>
-            <a href="#contact" className="aiss-v2__cta_btn_secondary">
-              {AI_CTA.secondaryCta}
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 

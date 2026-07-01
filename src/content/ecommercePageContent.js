@@ -123,25 +123,25 @@ export const ECOMMERCE_SERVICE_CARDS = [
 ];
 
 export const ECOMMERCE_FEATURE_TILES = [
-  { title: 'Responsive Design', color: '#2563eb', icon: 'device' },
-  { title: 'Secure Payments', color: '#16a34a', icon: 'shield' },
-  { title: 'Product Management', color: '#9333ea', icon: 'box' },
-  { title: 'Inventory Control', color: '#0891b2', icon: 'layers' },
-  { title: 'Order Management', color: '#ea580c', icon: 'clipboard' },
-  { title: 'Discounts & Coupons', color: '#db2777', icon: 'tag' },
-  { title: 'Reports & Analytics', color: '#16a34a', icon: 'chart' },
-  { title: 'SEO Optimized', color: '#2563eb', icon: 'search' },
+  { title: 'Responsive', color: '#2563eb', icon: 'device' },
+  { title: 'Secure Pay', color: '#16a34a', icon: 'shield' },
+  { title: 'Products', color: '#9333ea', icon: 'box' },
+  { title: 'Inventory', color: '#0891b2', icon: 'layers' },
+  { title: 'Orders', color: '#ea580c', icon: 'clipboard' },
+  { title: 'Discounts', color: '#db2777', icon: 'tag' },
+  { title: 'Analytics', color: '#16a34a', icon: 'chart' },
+  { title: 'SEO Ready', color: '#2563eb', icon: 'search' },
 ];
 
 export const ECOMMERCE_INDUSTRY_TILES = [
-  { title: 'Fashion & Clothing', color: '#9333ea', icon: 'shirt' },
+  { title: 'Fashion', color: '#9333ea', icon: 'shirt' },
   { title: 'Electronics', color: '#2563eb', icon: 'cpu' },
   { title: 'Jewellery', color: '#eab308', icon: 'gem' },
   { title: 'Furniture', color: '#ea580c', icon: 'sofa' },
-  { title: 'Grocery Stores', color: '#16a34a', icon: 'cart' },
-  { title: 'Health & Beauty', color: '#db2777', icon: 'heart' },
-  { title: 'Books & Education', color: '#0891b2', icon: 'book' },
-  { title: 'Wholesale & B2B', color: '#6366f1', icon: 'building' },
+  { title: 'Grocery', color: '#16a34a', icon: 'cart' },
+  { title: 'Beauty', color: '#db2777', icon: 'heart' },
+  { title: 'Education', color: '#0891b2', icon: 'book' },
+  { title: 'Wholesale', color: '#6366f1', icon: 'building' },
 ];
 
 export const ECOMMERCE_PROCESS_SHORT = [

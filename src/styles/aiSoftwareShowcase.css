@@ -275,6 +275,25 @@
   align-items: start;
 }
 
+.aiss-show__service_panel_intro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.aiss-show__service_intro_lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.09) 0%, rgba(56, 189, 248, 0.05) 100%);
+  border-left: 4px solid var(--panel-accent, #2563eb);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
 .aiss-show__service_panel_intro p {
   font-size: 0.92rem;
   line-height: 1.7;
@@ -283,8 +302,13 @@
 }
 
 .aiss-show__service_panel_intro .aiss-show__service_closing {
-  margin-top: 4px !important;
+  margin: 0 !important;
+  padding: 0 4px;
+  font-size: 0.9rem !important;
+  line-height: 1.7 !important;
+  font-weight: 400;
   font-style: italic;
+  color: #64748b !important;
 }
 
 .aiss-show__service_panel_features .aiss-show__service_label {

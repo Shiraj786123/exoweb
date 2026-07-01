@@ -24,6 +24,7 @@ import {
 import { SiWordpress } from 'react-icons/si';
 import { importTechIcon } from '../../data/technologyStack';
 import ServiceProcessSection from '../ServiceProcessSection';
+import ShowcaseServicePanelIntro from '../showcase/ShowcaseServicePanelIntro';
 import {
   WEB_PLATFORMS,
   WEB_SERVICES_INTRO,
@@ -146,10 +147,10 @@ const WebsiteShowcase = () => {
                 style={{ '--panel-accent': WEB_SERVICE_CARDS[openServiceIndex].color }}
               >
                 <div className="ecd-show__service_panel_inner">
-                  <div className="ecd-show__service_panel_intro">
-                    <p>{WEB_SERVICE_DETAILS[openServiceIndex].intro}</p>
-                    <p className="ecd-show__service_closing">{WEB_SERVICE_DETAILS[openServiceIndex].closing}</p>
-                  </div>
+                  <ShowcaseServicePanelIntro
+                    intro={WEB_SERVICE_DETAILS[openServiceIndex].intro}
+                    closing={WEB_SERVICE_DETAILS[openServiceIndex].closing}
+                  />
                   <div className="ecd-show__service_panel_features">
                     <p className="ecd-show__service_label">{WEB_SERVICE_DETAILS[openServiceIndex].includesLabel}</p>
                     <ul className="ecd-show__service_bullets ecd-show__service_bullets--horizontal">

@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import MobileShowcase from '../components/mobile/MobileShowcase';
 import MobilePageBody from '../components/MobilePageBody';
 import MobileHeroVisual from '../components/mobile/MobileHeroVisual';
+import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { MOB_HERO } from '../content/mobilePageContent';
 import {
@@ -71,6 +72,7 @@ const MobileAppDevelopment = () => (
     <MobileShowcase />
     <MobilePageBody />
 
+    <ServiceTechStackSection service="mobile" />
     <ContactSection />
     <Footer />
   </div>

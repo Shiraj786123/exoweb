@@ -24,6 +24,7 @@ import {
   HiOutlineTruck,
 } from 'react-icons/hi2';
 import ServiceProcessSection from '../ServiceProcessSection';
+import ShowcaseServicePanelIntro from '../showcase/ShowcaseServicePanelIntro';
 import ShowcasePlatformStrip from '../showcase/ShowcasePlatformStrip';
 import {
   AI_PLATFORMS,
@@ -133,10 +134,11 @@ const AISoftwareShowcase = () => {
                 style={{ '--panel-accent': AI_SERVICE_CARDS[openServiceIndex].color }}
               >
                 <div className="aiss-show__service_panel_inner">
-                  <div className="aiss-show__service_panel_intro">
-                    <p>{AI_SERVICES[openServiceIndex].intro}</p>
-                    <p className="aiss-show__service_closing">{AI_SERVICES[openServiceIndex].closing}</p>
-                  </div>
+                  <ShowcaseServicePanelIntro
+                    intro={AI_SERVICES[openServiceIndex].intro}
+                    closing={AI_SERVICES[openServiceIndex].closing}
+                    classPrefix="aiss-show"
+                  />
                   <div className="aiss-show__service_panel_features">
                     <p className="aiss-show__service_label">{AI_SERVICES[openServiceIndex].includesLabel}</p>
                     <ul className="aiss-show__service_bullets aiss-show__service_bullets--horizontal">

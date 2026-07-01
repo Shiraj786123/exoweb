@@ -382,11 +382,10 @@ export const SEO_FAQ = [
 
 export const SEO_CTA = {
   title: 'Ready to Grow Your Business with SEO?',
-  paragraphs: [
-    "If you're looking for reliable SEO services in the Eastern Province, Vexoweb is here to help. From technical SEO and Local SEO to content optimisation, we create strategies that improve rankings and generate qualified leads.",
-    'Contact us today for a free SEO consultation.',
-  ],
-  primaryCta: 'Get a Free SEO Consultation',
+  description:
+    'Partner with Vexoweb for reliable SEO services—from technical SEO and Local SEO to content optimisation—that improve rankings, attract qualified leads and grow your business online.',
+  primaryCta: 'Get a Free Consultation',
+  secondaryCta: 'Talk to Our Experts',
 };
 
 export const SEO_RELATED = {

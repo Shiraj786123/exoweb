@@ -23,7 +23,8 @@
 }
 
 .ecd-v2__intro--brief {
-  padding: 32px 0 40px;
+  padding: 32px 0 24px;
+  border-bottom: none;
 }
 
 .ecd-v2__intro_brief {
@@ -257,6 +258,11 @@
   margin-right: auto;
 }
 
+.ecd-v2__center_lead--wide {
+  max-width: 820px;
+  margin-bottom: 20px;
+}
+
 .ecd-v2__prose--closing {
   margin-top: 28px;
 }
@@ -275,6 +281,11 @@
   font-weight: 600;
   color: #1e40af;
   margin-top: 12px;
+}
+
+.ecd-v2__label--center {
+  text-align: center;
+  margin: 8px auto 28px;
 }
 
 .ecd-v2__closing--center {
@@ -335,6 +346,18 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+}
+
+.ecd-v2__benefit_grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ecd-v2__benefit_grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ecd-v2__benefit_grid--cols-3 .ecd-v2__benefit_card:last-child:nth-child(3n + 1) {
+  grid-column: 2;
 }
 
 .ecd-v2__benefit_card {
@@ -870,6 +893,22 @@
   align-items: stretch;
 }
 
+.ecd-v2__related_row--areas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ecd-v2__related_row--areas .ecd-v2__related_tile {
+  flex: unset;
+  width: 100%;
+  min-height: 148px;
+  padding: 20px 14px;
+}
+
 .ecd-v2__related_tile {
   flex: 1;
   min-width: 0;
@@ -1386,7 +1425,8 @@
 
 /* CTA */
 .ecd-v2__cta_section {
-  padding: 0 0 72px;
+  padding: 0 0 48px;
+  background: #ffffff;
 }
 
 .ecd-v2__cta_compact {
@@ -1513,6 +1553,11 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .ecd-v2__benefit_grid--cols-4,
+  .ecd-v2__benefit_grid--cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .ecd-v2__split {
     grid-template-columns: 1fr;
   }
@@ -1545,6 +1590,11 @@
     flex-wrap: wrap;
   }
 
+  .ecd-v2__related_row--areas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+  }
+
   .ecd-v2__related_tile {
     flex: 1 1 calc(33.333% - 10px);
     min-width: 160px;
@@ -1566,9 +1616,20 @@
   }
 
   .ecd-v2__benefit_grid,
+  .ecd-v2__benefit_grid--cols-3,
+  .ecd-v2__benefit_grid--cols-4,
   .ecd-v2__dual_panel,
   .ecd-v2__process_grid {
     grid-template-columns: 1fr;
+  }
+
+  .ecd-v2__benefit_grid--cols-3 .ecd-v2__benefit_card:last-child:nth-child(3n + 1) {
+    grid-column: auto;
+  }
+
+  .ecd-v2__related_row--areas {
+    grid-template-columns: 1fr;
+    max-width: 360px;
   }
 
   .ecd-v2__ship_row:not(.ecd-v2__ship_row--wrap):not([class*="cols-"]),

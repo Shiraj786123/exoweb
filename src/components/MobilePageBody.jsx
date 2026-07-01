@@ -9,7 +9,6 @@ import {
   HiOutlineArrowTrendingUp,
   HiOutlineEye,
   HiOutlineCog6Tooth,
-  HiOutlineHeart,
   HiOutlineCurrencyDollar,
   HiOutlineChartBar,
   HiOutlineShieldCheck,
@@ -21,17 +20,15 @@ import {
   HiOutlineShoppingCart,
   HiOutlineCpuChip,
   HiOutlineMagnifyingGlass,
-  HiOutlineCloud,
   HiOutlinePuzzlePiece,
+  HiOutlineStar,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlinePaintBrush,
+  HiOutlineBolt,
+  HiOutlineLifebuoy,
+  HiOutlineClipboardDocumentList,
+  HiOutlineSquares2X2,
 } from 'react-icons/hi2';
-import {
-  SiFlutter,
-  SiReact,
-  SiKotlin,
-  SiSwift,
-  SiFirebase,
-  SiNodedotjs,
-} from 'react-icons/si';
 import {
   MOB_DETAILS_LABEL,
   MOB_INTRO,
@@ -39,22 +36,49 @@ import {
   MOB_WHY_CHOOSE,
   MOB_EASTERN_PROVINCE,
   MOB_AREAS,
-  MOB_TECH,
   MOB_FAQ,
   MOB_RELATED,
   MOB_CTA,
 } from '../content/mobilePageContent';
 import MobileWhyShowcaseSection from './mobile/MobileWhyShowcaseSection';
+import PageBodyCtaSection from './shared/PageBodyCtaSection';
 
 const whyInvestIcons = {
-  'Improve customer engagement': HiOutlineHeart,
-  'Increase brand visibility': HiOutlineEye,
-  'Automate business processes': HiOutlineCog6Tooth,
-  'Enhance customer experience': HiOutlineArrowTrendingUp,
-  'Generate additional revenue': HiOutlineCurrencyDollar,
-  'Build customer loyalty': HiOutlineHeart,
-  'Access real-time business data': HiOutlineChartBar,
+  engagement: HiOutlineChatBubbleLeftRight,
+  visibility: HiOutlineEye,
+  automation: HiOutlineCog6Tooth,
+  experience: HiOutlineArrowTrendingUp,
+  revenue: HiOutlineCurrencyDollar,
+  loyalty: HiOutlineStar,
+  data: HiOutlineChartBar,
 };
+
+const whyChooseIcons = {
+  custom: HiOutlineDevicePhoneMobile,
+  platforms: HiOutlineSquares2X2,
+  design: HiOutlinePaintBrush,
+  security: HiOutlineShieldCheck,
+  integration: HiOutlinePuzzlePiece,
+  performance: HiOutlineBolt,
+  support: HiOutlineLifebuoy,
+  process: HiOutlineClipboardDocumentList,
+};
+
+const BenefitTiles = ({ items, iconMap, className = '' }) => (
+  <div className={className}>
+    {items.map((benefit) => {
+      const Icon = iconMap[benefit.icon] || HiOutlineCheckCircle;
+      return (
+        <div key={benefit.label} className="ecd-show__mini_card">
+          <div className="ecd-show__mini_icon" style={{ color: benefit.color }}>
+            <Icon aria-hidden="true" />
+          </div>
+          <span>{benefit.label}</span>
+        </div>
+      );
+    })}
+  </div>
+);
 
 const relatedIcons = {
   'Website Development': HiOutlineGlobeAlt,
@@ -62,17 +86,6 @@ const relatedIcons = {
   'Software Development': HiOutlineCodeBracket,
   'AI Software Development': HiOutlineCpuChip,
   'SEO Services': HiOutlineMagnifyingGlass,
-};
-
-const techIcons = {
-  flutter: SiFlutter,
-  react: SiReact,
-  kotlin: SiKotlin,
-  swift: SiSwift,
-  firebase: SiFirebase,
-  node: SiNodedotjs,
-  api: HiOutlinePuzzlePiece,
-  cloud: HiOutlineCloud,
 };
 
 const SectionVisual = ({ src, alt, className = '' }) => (
@@ -177,25 +190,20 @@ const MobilePageBody = () => (
       </div>
     </section>
 
+    <PageBodyCtaSection cta={MOB_CTA} />
+
     <SectionShell icon={HiOutlineArrowTrendingUp} title={MOB_WHY_INVEST.title} subtitle={MOB_WHY_INVEST.subtitle} variant="alt">
-      <div className="ecd-v2__benefit_grid">
-        {MOB_WHY_INVEST.bullets.map((item) => {
-          const Icon = whyInvestIcons[item] || HiOutlineCheckCircle;
-          return (
-            <div key={item} className="ecd-v2__benefit_card">
-              <div className="ecd-v2__benefit_icon">
-                <Icon aria-hidden="true" />
-              </div>
-              <span>{item}</span>
-            </div>
-          );
-        })}
-      </div>
+      <p className="ecd-v2__label ecd-v2__label--center">{MOB_WHY_INVEST.listLabel}</p>
+      <BenefitTiles
+        items={MOB_WHY_INVEST.benefits}
+        iconMap={whyInvestIcons}
+        className="ecd-show__mini_grid ecd-show__mini_grid--cols-7 ecd-show__mini_grid--full-labels"
+      />
     </SectionShell>
 
     <SectionShell icon={HiOutlineMapPin} title={MOB_EASTERN_PROVINCE.title}>
       <Prose paragraphs={MOB_EASTERN_PROVINCE.intro} className="ecd-v2__prose--center" />
-      <div className="ecd-v2__related_row">
+      <div className="ecd-v2__related_row ecd-v2__related_row--areas">
         {MOB_AREAS.map((area) => (
           <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
             <div className="ecd-v2__related_tile_icon">
@@ -215,30 +223,12 @@ const MobilePageBody = () => (
       subtitle={MOB_WHY_CHOOSE.subtitle}
       variant="alt"
     >
-      <p className="ecd-v2__center_lead">{MOB_WHY_CHOOSE.listLabel}</p>
-      <ul className="ecd-v2__bullets ecd-v2__bullets--chips">
-        {MOB_WHY_CHOOSE.bullets.map((item) => (
-          <li key={item}>
-            <HiOutlineCheckCircle aria-hidden="true" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </SectionShell>
-
-    <SectionShell icon={HiOutlineCpuChip} title="Technologies We Use" variant="alt">
-      <p className="ecd-v2__center_lead">Modern technologies to build secure, scalable and high-performance mobile applications.</p>
-      <div className="ecd-v2__tech_grid">
-        {MOB_TECH.map((tech) => {
-          const Icon = techIcons[tech.icon];
-          return (
-            <div key={tech.name} className="ecd-v2__tech_item" style={{ '--tech-color': tech.color }}>
-              {Icon && <Icon aria-hidden="true" />}
-              <span>{tech.name}</span>
-            </div>
-          );
-        })}
-      </div>
+      <p className="ecd-v2__label ecd-v2__label--center">{MOB_WHY_CHOOSE.listLabel}</p>
+      <BenefitTiles
+        items={MOB_WHY_CHOOSE.benefits}
+        iconMap={whyChooseIcons}
+        className="ecd-show__mini_grid ecd-show__mini_grid--single-line ecd-show__mini_grid--full-labels"
+      />
     </SectionShell>
 
     <MobileWhyShowcaseSection />
@@ -272,24 +262,6 @@ const MobilePageBody = () => (
       </div>
       <p className="ecd-v2__closing ecd-v2__closing--center">{MOB_RELATED.closing}</p>
     </SectionShell>
-
-    <section className="ecd-v2__cta_section">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
-          <div className="ecd-v2__cta_compact_text">
-            <h2 className="ecd-v2__cta_compact_title">{MOB_CTA.title}</h2>
-            {MOB_CTA.paragraphs.map((p) => (
-              <p key={p.slice(0, 48)}>{p}</p>
-            ))}
-          </div>
-          <div className="ecd-v2__cta_compact_actions">
-            <a href="#contact" className="ecd-v2__cta_btn_primary">
-              {MOB_CTA.primaryCta} <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 

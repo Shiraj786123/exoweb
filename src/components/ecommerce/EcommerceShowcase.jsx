@@ -25,6 +25,7 @@ import shopifyIcon from '../../assets/icons/shopify.svg';
 import magentoIcon from '../../assets/icons/magento.svg';
 import opencartIcon from '../../assets/icons/opencart.svg';
 import ServiceProcessSection from '../ServiceProcessSection';
+import ShowcaseServicePanelIntro from '../showcase/ShowcaseServicePanelIntro';
 import {
   ECOMMERCE_PLATFORMS,
   ECOMMERCE_SERVICES_INTRO,
@@ -156,10 +157,10 @@ const EcommerceShowcase = () => {
               style={{ '--panel-accent': ECOMMERCE_SERVICE_CARDS[openServiceIndex].color }}
             >
               <div className="ecd-show__service_panel_inner">
-                <div className="ecd-show__service_panel_intro">
-                  <p>{ECOMMERCE_SERVICES[openServiceIndex].intro}</p>
-                  <p className="ecd-show__service_closing">{ECOMMERCE_SERVICES[openServiceIndex].closing}</p>
-                </div>
+                <ShowcaseServicePanelIntro
+                  intro={ECOMMERCE_SERVICES[openServiceIndex].intro}
+                  closing={ECOMMERCE_SERVICES[openServiceIndex].closing}
+                />
                 <div className="ecd-show__service_panel_features">
                   <p className="ecd-show__service_label">{ECOMMERCE_SERVICES[openServiceIndex].includesLabel}</p>
                   <ul className="ecd-show__service_bullets ecd-show__service_bullets--horizontal">

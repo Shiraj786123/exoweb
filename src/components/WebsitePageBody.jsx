@@ -45,6 +45,7 @@ import {
   WEB_CTA,
 } from '../content/websitePageContent';
 import WebsiteWhyShowcaseSection from './website/WebsiteWhyShowcaseSection';
+import PageBodyCtaSection from './shared/PageBodyCtaSection';
 
 const featureIcons = {
   device: HiOutlineDevicePhoneMobile,
@@ -222,6 +223,8 @@ const WebsitePageBody = () => (
       </div>
     </section>
 
+    <PageBodyCtaSection cta={WEB_CTA} />
+
     <SectionShell icon={HiOutlineGlobeAlt} title={WEB_EASTERN_PROVINCE.title} variant="alt">
       <Prose paragraphs={WEB_EASTERN_PROVINCE.intro} className="ecd-v2__prose--center" />
       <IconPointsRow
@@ -323,24 +326,6 @@ const WebsitePageBody = () => (
       </div>
       <p className="ecd-v2__closing ecd-v2__closing--center">{WEB_RELATED.closing}</p>
     </SectionShell>
-
-    <section className="ecd-v2__cta_section">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
-          <div className="ecd-v2__cta_compact_text">
-            <h2 className="ecd-v2__cta_compact_title">{WEB_CTA.title}</h2>
-            {WEB_CTA.paragraphs.map((p) => (
-              <p key={p.slice(0, 48)}>{p}</p>
-            ))}
-          </div>
-          <div className="ecd-v2__cta_compact_actions">
-            <a href="#contact" className="ecd-v2__cta_btn_primary">
-              {WEB_CTA.primaryCta} <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 

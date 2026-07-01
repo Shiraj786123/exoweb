@@ -208,21 +208,18 @@ export const SOFT_WHY_SHOWCASE = {
 
 export const SOFT_WHY_CUSTOM = {
   title: 'Why Choose Custom Software?',
-  subtitle: "Off-the-shelf software often includes features you don't need while missing the ones your business actually requires.",
-  intro: [
-    'Generic software forces your business to adapt to its limitations. Custom software is built around how you already work.',
-    'With a solution designed specifically for your operations, you gain better efficiency, stronger security and software that scales as your business grows.',
-  ],
+  description:
+    "Off-the-shelf software forces your business to adapt to its limitations—often including features you don't need while missing the ones you actually require. Custom software is built around how you already work, delivering better efficiency, stronger security and a solution that scales as your business grows.",
   listLabel: 'Benefits of Custom Software',
-  bullets: [
-    'Built specifically for your business',
-    'Automate repetitive tasks',
-    'Improve employee productivity',
-    'Reduce operational costs',
-    'Secure and scalable architecture',
-    'Easy integration with existing systems',
-    'Cloud-based accessibility',
-    'Long-term business value',
+  benefits: [
+    { label: 'Built for Your Business', icon: 'briefcase', color: '#2563eb' },
+    { label: 'Automate Tasks', icon: 'automation', color: '#16a34a' },
+    { label: 'Boost Productivity', icon: 'productivity', color: '#9333ea' },
+    { label: 'Lower Costs', icon: 'costs', color: '#ea580c' },
+    { label: 'Secure & Scalable', icon: 'security', color: '#0891b2' },
+    { label: 'Easy Integrations', icon: 'integration', color: '#db2777' },
+    { label: 'Cloud Access', icon: 'cloud', color: '#6366f1' },
+    { label: 'Long-Term Value', icon: 'value', color: '#0d9488' },
   ],
 };
 
@@ -275,6 +272,8 @@ export const SOFT_INDUSTRIES = [
 
 export const SOFT_AREAS = [
   { label: 'Software Development in Batticaloa', href: '/software-development-batticaloa' },
+  { label: 'Software Development in Ampara', href: '/contact' },
+  { label: 'Software Development in Trincomalee', href: '/contact' },
 ];
 
 export const SOFT_FAQ = [
@@ -315,11 +314,10 @@ export const SOFT_RELATED = {
 
 export const SOFT_CTA = {
   title: 'Ready to Build Custom Software?',
-  paragraphs: [
-    "If you're looking for professional software development in the Eastern Province, Vexoweb can help you automate operations and support long-term business growth.",
-    'Contact us today for a free consultation.',
-  ],
-  primaryCta: 'Request a Free Consultation',
+  description:
+    'Partner with Vexoweb to build secure, scalable custom software that automates workflows, improves efficiency and helps your business grow across the Eastern Province.',
+  primaryCta: 'Get a Free Consultation',
+  secondaryCta: 'Talk to Our Experts',
 };
 
 export const SOFT_TECH = [

@@ -469,9 +469,8 @@ export const WEB_FAQ = [
 
 export const WEB_CTA = {
   title: 'Ready to Build Your Website?',
-  paragraphs: [
-    'Whether you need a business website, eCommerce store or custom web application, Vexoweb is ready to help your business succeed online.',
-    'Contact us today for a free consultation and discover how a professionally developed website can help your business grow across the Eastern Province.',
-  ],
+  description:
+    'Partner with Vexoweb to build a fast, secure and scalable website that helps you attract customers, generate leads and grow your business online across the Eastern Province.',
   primaryCta: 'Get a Free Consultation',
+  secondaryCta: 'Talk to Our Experts',
 };

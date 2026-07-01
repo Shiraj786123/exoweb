@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import EcommerceShowcase from '../components/ecommerce/EcommerceShowcase';
 import EcommercePageBody from '../components/EcommercePageBody';
 import EcommerceHeroVisual from '../components/ecommerce/EcommerceHeroVisual';
+import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { ECOMMERCE_HERO } from '../content/ecommercePageContent';
 import {
@@ -71,6 +72,7 @@ const EcommerceDev = () => (
     <EcommerceShowcase />
     <EcommercePageBody />
 
+    <ServiceTechStackSection service="ecommerce" />
     <ContactSection />
     <Footer />
   </div>

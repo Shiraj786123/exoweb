@@ -851,6 +851,6 @@ export const AI_CTA = {
   title: 'Ready to Transform Your Business with Artificial Intelligence?',
   description:
     'Partner with Vexoweb to build secure, scalable AI software that automates workflows, improves customer experiences and helps your business grow across Sri Lanka.',
-  primaryCta: 'Free AI Consultation',
+  primaryCta: 'Get a Free Consultation',
   secondaryCta: 'Talk to Our Experts',
 };

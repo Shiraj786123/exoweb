@@ -20,6 +20,7 @@ import {
 } from 'react-icons/hi2';
 import ServiceProcessSection from '../ServiceProcessSection';
 import ShowcasePlatformStrip from '../showcase/ShowcasePlatformStrip';
+import ShowcaseServicePanelIntro from '../showcase/ShowcaseServicePanelIntro';
 import {
   MOB_PLATFORMS,
   MOB_SERVICES_INTRO,
@@ -124,10 +125,10 @@ const MobileShowcase = () => {
                 style={{ '--panel-accent': MOB_SERVICE_CARDS[openServiceIndex].color }}
               >
                 <div className="ecd-show__service_panel_inner">
-                  <div className="ecd-show__service_panel_intro">
-                    <p>{MOB_SERVICE_DETAILS[openServiceIndex].intro}</p>
-                    <p className="ecd-show__service_closing">{MOB_SERVICE_DETAILS[openServiceIndex].closing}</p>
-                  </div>
+                  <ShowcaseServicePanelIntro
+                    intro={MOB_SERVICE_DETAILS[openServiceIndex].intro}
+                    closing={MOB_SERVICE_DETAILS[openServiceIndex].closing}
+                  />
                   <div className="ecd-show__service_panel_features">
                     <p className="ecd-show__service_label">{MOB_SERVICE_DETAILS[openServiceIndex].includesLabel}</p>
                     <ul className="ecd-show__service_bullets ecd-show__service_bullets--horizontal">

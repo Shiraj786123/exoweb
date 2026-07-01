@@ -56,6 +56,7 @@ import {
   ECOMMERCE_CTA,
 } from '../content/ecommercePageContent';
 import EcommerceWhyShowcaseSection from './ecommerce/EcommerceWhyShowcaseSection';
+import PageBodyCtaSection from './shared/PageBodyCtaSection';
 
 const whyBusinessIcons = {
   'Reach More Customers': HiOutlineGlobeAlt,
@@ -271,6 +272,8 @@ const EcommercePageBody = () => (
       </div>
     </section>
 
+    <PageBodyCtaSection cta={ECOMMERCE_CTA} />
+
     {/* Why every business */}
     <SectionShell icon={HiOutlineGlobeAlt} title={ECOMMERCE_WHY_BUSINESS.title} variant="alt">
       <Prose paragraphs={ECOMMERCE_WHY_BUSINESS.intro} className="ecd-v2__prose--center" />
@@ -413,26 +416,6 @@ const EcommercePageBody = () => (
       </div>
       <p className="ecd-v2__closing ecd-v2__closing--center">{ECOMMERCE_RELATED.closing}</p>
     </SectionShell>
-
-    {/* Final CTA — compact banner */}
-    <section className="ecd-v2__cta_section">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
-          <div className="ecd-v2__cta_compact_text">
-            <h2 className="ecd-v2__cta_compact_title">{ECOMMERCE_CTA.title}</h2>
-            <p>{ECOMMERCE_CTA.description}</p>
-          </div>
-          <div className="ecd-v2__cta_compact_actions">
-            <a href="#contact" className="ecd-v2__cta_btn_primary">
-              {ECOMMERCE_CTA.primaryCta} <span aria-hidden="true">→</span>
-            </a>
-            <a href="#contact" className="ecd-v2__cta_btn_secondary">
-              {ECOMMERCE_CTA.secondaryCta}
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 

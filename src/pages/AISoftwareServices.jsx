@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import AISoftwareShowcase from '../components/ai/AISoftwareShowcase';
 import AISoftwarePageBody from '../components/AISoftwarePageBody';
 import AISoftwareHeroVisual from '../components/ai/AISoftwareHeroVisual';
+import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { AI_HERO } from '../content/aiSoftwarePageContent';
 import {
@@ -71,6 +72,7 @@ const AISoftwareServices = () => (
     <AISoftwareShowcase />
     <AISoftwarePageBody />
 
+    <ServiceTechStackSection service="aiSoftware" />
     <ContactSection />
     <Footer />
   </div>

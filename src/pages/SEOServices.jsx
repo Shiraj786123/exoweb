@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import SEOShowcase from '../components/seo/SEOShowcase';
 import SEOPageBody from '../components/SEOPageBody';
 import SEOHeroVisual from '../components/seo/SEOHeroVisual';
+import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SEO_HERO } from '../content/seoPageContent';
 import {
@@ -71,6 +72,7 @@ const SEOServices = () => (
     <SEOShowcase />
     <SEOPageBody />
 
+    <ServiceTechStackSection service="seo" />
     <ContactSection />
     <Footer />
   </div>

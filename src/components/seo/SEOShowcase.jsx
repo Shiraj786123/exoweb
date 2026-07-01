@@ -23,6 +23,7 @@ import {
 } from 'react-icons/hi2';
 import ServiceProcessSection from '../ServiceProcessSection';
 import ShowcasePlatformStrip from '../showcase/ShowcasePlatformStrip';
+import ShowcaseServicePanelIntro from '../showcase/ShowcaseServicePanelIntro';
 import {
   SEO_CHANNELS,
   SEO_SERVICES_INTRO,
@@ -131,10 +132,10 @@ const SEOShowcase = () => {
                 style={{ '--panel-accent': SEO_SERVICE_CARDS[openServiceIndex].color }}
               >
                 <div className="ecd-show__service_panel_inner">
-                  <div className="ecd-show__service_panel_intro">
-                    <p>{SEO_SERVICE_DETAILS[openServiceIndex].intro}</p>
-                    <p className="ecd-show__service_closing">{SEO_SERVICE_DETAILS[openServiceIndex].closing}</p>
-                  </div>
+                  <ShowcaseServicePanelIntro
+                    intro={SEO_SERVICE_DETAILS[openServiceIndex].intro}
+                    closing={SEO_SERVICE_DETAILS[openServiceIndex].closing}
+                  />
                   <div className="ecd-show__service_panel_features">
                     <p className="ecd-show__service_label">{SEO_SERVICE_DETAILS[openServiceIndex].includesLabel}</p>
                     <ul className="ecd-show__service_bullets ecd-show__service_bullets--horizontal">

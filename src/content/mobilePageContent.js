@@ -189,14 +189,15 @@ export const MOB_WHY_SHOWCASE = {
 export const MOB_WHY_INVEST = {
   title: 'Why Invest in a Mobile App?',
   subtitle: 'Mobile applications help businesses connect with customers, improve efficiency and stay competitive.',
-  bullets: [
-    'Improve customer engagement',
-    'Increase brand visibility',
-    'Automate business processes',
-    'Enhance customer experience',
-    'Generate additional revenue',
-    'Build customer loyalty',
-    'Access real-time business data',
+  listLabel: 'Key Benefits of Mobile Apps',
+  benefits: [
+    { label: 'Customer Engagement', icon: 'engagement', color: '#2563eb' },
+    { label: 'Brand Visibility', icon: 'visibility', color: '#16a34a' },
+    { label: 'Automate Processes', icon: 'automation', color: '#9333ea' },
+    { label: 'Better Experience', icon: 'experience', color: '#ea580c' },
+    { label: 'More Revenue', icon: 'revenue', color: '#0891b2' },
+    { label: 'Customer Loyalty', icon: 'loyalty', color: '#db2777' },
+    { label: 'Real-Time Data', icon: 'data', color: '#6366f1' },
   ],
 };
 
@@ -206,15 +207,15 @@ export const MOB_WHY_CHOOSE = {
   subtitle:
     'Every mobile application is designed around your business objectives and user expectations—we build apps that deliver real value from day one.',
   listLabel: 'Why Work With Us?',
-  bullets: [
-    'Custom App Development',
-    'Android & iOS Expertise',
-    'Modern UI/UX Design',
-    'Secure & Scalable Applications',
-    'API & Third-Party Integrations',
-    'High Performance Optimisation',
-    'Ongoing Support & Maintenance',
-    'Transparent Development Process',
+  benefits: [
+    { label: 'Custom Apps', icon: 'custom', color: '#2563eb' },
+    { label: 'Android & iOS', icon: 'platforms', color: '#16a34a' },
+    { label: 'Modern UI/UX', icon: 'design', color: '#9333ea' },
+    { label: 'Secure & Scalable', icon: 'security', color: '#0891b2' },
+    { label: 'API Integrations', icon: 'integration', color: '#db2777' },
+    { label: 'High Performance', icon: 'performance', color: '#ea580c' },
+    { label: 'Ongoing Support', icon: 'support', color: '#6366f1' },
+    { label: 'Transparent Process', icon: 'process', color: '#0d9488' },
   ],
 };
 
@@ -228,6 +229,8 @@ export const MOB_EASTERN_PROVINCE = {
 
 export const MOB_AREAS = [
   { label: 'Mobile App Development in Batticaloa', href: '/mobile-app-development-batticaloa' },
+  { label: 'Mobile App Development in Ampara', href: '/contact' },
+  { label: 'Mobile App Development in Trincomalee', href: '/contact' },
 ];
 
 export const MOB_FAQ = [
@@ -255,11 +258,10 @@ export const MOB_FAQ = [
 
 export const MOB_CTA = {
   title: 'Ready to Build Your Mobile App?',
-  paragraphs: [
-    "Whether you're launching a startup or improving internal operations, Vexoweb can help you build a professional mobile application that delivers real value.",
-    'Contact us today for a free consultation and discover how a custom mobile app can help your business grow across the Eastern Province.',
-  ],
-  primaryCta: 'Request a Free Consultation',
+  description:
+    "Partner with Vexoweb to build a fast, secure and scalable mobile app that helps you engage users, streamline operations and grow your business across the Eastern Province.",
+  primaryCta: 'Get a Free Consultation',
+  secondaryCta: 'Talk to Our Experts',
 };
 
 export const MOB_RELATED = {

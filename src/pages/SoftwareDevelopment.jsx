@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import SoftwareShowcase from '../components/software/SoftwareShowcase';
 import SoftwarePageBody from '../components/SoftwarePageBody';
 import SoftwareHeroVisual from '../components/software/SoftwareHeroVisual';
+import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SOFT_HERO } from '../content/softwarePageContent';
 import {
@@ -71,6 +72,7 @@ const SoftwareDevelopment = () => (
     <SoftwareShowcase />
     <SoftwarePageBody />
 
+    <ServiceTechStackSection service="software" />
     <ContactSection />
     <Footer />
   </div>

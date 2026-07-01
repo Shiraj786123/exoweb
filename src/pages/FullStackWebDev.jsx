@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import WebsiteShowcase from '../components/website/WebsiteShowcase';
 import WebsitePageBody from '../components/WebsitePageBody';
 import WebsiteHeroVisual from '../components/website/WebsiteHeroVisual';
+import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { WEB_HERO } from '../content/websitePageContent';
 import {
@@ -71,6 +72,7 @@ const FullStackWebDev = () => (
     <WebsiteShowcase />
     <WebsitePageBody />
 
+    <ServiceTechStackSection service="website" />
     <ContactSection />
     <Footer />
   </div>

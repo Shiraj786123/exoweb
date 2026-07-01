@@ -29,6 +29,7 @@ import {
   SEO_CTA,
 } from '../content/seoPageContent';
 import SEOWhyShowcaseSection from './seo/SEOWhyShowcaseSection';
+import PageBodyCtaSection from './shared/PageBodyCtaSection';
 import { WHY_SHOWCASE_IMAGES } from '../data/whyShowcaseImages';
 
 const whyChooseIcons = {
@@ -182,6 +183,8 @@ const SEOPageBody = () => (
       </div>
     </section>
 
+    <PageBodyCtaSection cta={SEO_CTA} />
+
     <SectionShell icon={HiOutlineChartBar} title={SEO_WHY_INVEST.title} variant="alt">
       <Prose paragraphs={SEO_WHY_INVEST.intro} className="ecd-v2__prose--center" />
       <p className="ecd-v2__center_lead">{SEO_WHY_INVEST.subtitle}</p>
@@ -254,24 +257,6 @@ const SEOPageBody = () => (
       </div>
       <p className="ecd-v2__closing ecd-v2__closing--center">{SEO_RELATED.closing}</p>
     </SectionShell>
-
-    <section className="ecd-v2__cta_section">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
-          <div className="ecd-v2__cta_compact_text">
-            <h2 className="ecd-v2__cta_compact_title">{SEO_CTA.title}</h2>
-            {SEO_CTA.paragraphs.map((p) => (
-              <p key={p.slice(0, 48)}>{p}</p>
-            ))}
-          </div>
-          <div className="ecd-v2__cta_compact_actions">
-            <a href="#contact" className="ecd-v2__cta_btn_primary">
-              {SEO_CTA.primaryCta} <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 

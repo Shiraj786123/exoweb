@@ -22,6 +22,12 @@ import {
   HiOutlineTruck,
   HiOutlineSparkles,
   HiOutlineBriefcase,
+  HiOutlineArrowTrendingUp,
+  HiOutlineCurrencyDollar,
+  HiOutlineShieldCheck,
+  HiOutlinePuzzlePiece,
+  HiOutlineCloud,
+  HiOutlineChartBar,
 } from 'react-icons/hi2';
 import {
   SOFT_DETAILS_LABEL,
@@ -35,6 +41,18 @@ import {
   SOFT_CTA,
 } from '../content/softwarePageContent';
 import SoftwareWhyShowcaseSection from './software/SoftwareWhyShowcaseSection';
+import PageBodyCtaSection from './shared/PageBodyCtaSection';
+
+const whyCustomIcons = {
+  briefcase: HiOutlineBriefcase,
+  automation: HiOutlineCog6Tooth,
+  productivity: HiOutlineArrowTrendingUp,
+  costs: HiOutlineCurrencyDollar,
+  security: HiOutlineShieldCheck,
+  integration: HiOutlinePuzzlePiece,
+  cloud: HiOutlineCloud,
+  value: HiOutlineChartBar,
+};
 
 const industryIcons = {
   retail: HiOutlineShoppingBag,
@@ -156,22 +174,28 @@ const SoftwarePageBody = () => (
       </div>
     </section>
 
+    <PageBodyCtaSection cta={SOFT_CTA} />
+
     <SectionShell
       icon={HiOutlineSparkles}
       title={SOFT_WHY_CUSTOM.title}
-      subtitle={SOFT_WHY_CUSTOM.subtitle}
       variant="alt"
     >
-      <Prose paragraphs={SOFT_WHY_CUSTOM.intro} className="ecd-v2__prose--center" />
-      <p className="ecd-v2__center_lead">{SOFT_WHY_CUSTOM.listLabel}</p>
-      <ul className="ecd-v2__bullets ecd-v2__bullets--chips">
-        {SOFT_WHY_CUSTOM.bullets.map((bullet) => (
-          <li key={bullet}>
-            <HiOutlineCheckCircle aria-hidden="true" />
-            <span>{bullet}</span>
-          </li>
-        ))}
-      </ul>
+      <p className="ecd-v2__center_lead ecd-v2__center_lead--wide">{SOFT_WHY_CUSTOM.description}</p>
+      <p className="ecd-v2__label ecd-v2__label--center">{SOFT_WHY_CUSTOM.listLabel}</p>
+      <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line ecd-show__mini_grid--full-labels">
+        {SOFT_WHY_CUSTOM.benefits.map((benefit) => {
+          const Icon = whyCustomIcons[benefit.icon] || HiOutlineCheckCircle;
+          return (
+            <div key={benefit.label} className="ecd-show__mini_card">
+              <div className="ecd-show__mini_icon" style={{ color: benefit.color }}>
+                <Icon aria-hidden="true" />
+              </div>
+              <span>{benefit.label}</span>
+            </div>
+          );
+        })}
+      </div>
     </SectionShell>
 
     <SectionShell icon={HiOutlineGlobeAlt} title={SOFT_EASTERN_PROVINCE.title}>
@@ -206,7 +230,7 @@ const SoftwarePageBody = () => (
       <p className="ecd-v2__center_lead">
         Our software development services are available throughout the Eastern Province, including:
       </p>
-      <div className="ecd-v2__related_row">
+      <div className="ecd-v2__related_row ecd-v2__related_row--areas">
         {SOFT_AREAS.map((area) => (
           <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
             <div className="ecd-v2__related_tile_icon">
@@ -250,24 +274,6 @@ const SoftwarePageBody = () => (
       </div>
       <p className="ecd-v2__closing ecd-v2__closing--center">{SOFT_RELATED.closing}</p>
     </SectionShell>
-
-    <section className="ecd-v2__cta_section">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__cta_compact vexoweb-cta-banner">
-          <div className="ecd-v2__cta_compact_text">
-            <h2 className="ecd-v2__cta_compact_title">{SOFT_CTA.title}</h2>
-            {SOFT_CTA.paragraphs.map((p) => (
-              <p key={p.slice(0, 48)}>{p}</p>
-            ))}
-          </div>
-          <div className="ecd-v2__cta_compact_actions">
-            <a href="#contact" className="ecd-v2__cta_btn_primary">
-              {SOFT_CTA.primaryCta} <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 
