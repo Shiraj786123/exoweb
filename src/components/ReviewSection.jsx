@@ -1,4 +1,5 @@
 import React from 'react';
+import { clientAvatarAlt } from '../lib/imageAlt';
 import CountUp from 'react-countup';
 
 const ReviewsSection = () => {
@@ -97,7 +98,7 @@ const ReviewsSection = () => {
               <div className="reviewer-profile">
                 <img 
                   src={review.avatar} 
-                  alt={review.name} 
+                  alt={clientAvatarAlt(review.name, review.username)}
                   className="reviewer-avatar" 
                   loading="lazy" 
                 />

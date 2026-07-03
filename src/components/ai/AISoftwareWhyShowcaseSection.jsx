@@ -7,7 +7,7 @@ const AISoftwareWhyShowcaseSection = () => (
   <WhyShowcaseSection
     content={AI_WHY_SHOWCASE}
     image={WHY_SHOWCASE_IMAGES.ai}
-    imageAlt="AI software development by Vexoweb"
+    imageAlt="AI software development and automation solutions by Vexoweb in Sri Lanka"
   />
 );
 

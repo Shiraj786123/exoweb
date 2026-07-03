@@ -78,7 +78,11 @@ export const ShopAppScreen = () => (
     <div className="mob-screen__cats">
       {SHOP_CATEGORIES.map((c, i) => (
         <div key={c.name} className={i === 0 ? 'is-active' : ''}>
-          <i style={{ backgroundImage: `url(${imgSrc(c.image)})` }} />
+          <i
+            style={{ backgroundImage: `url(${imgSrc(c.image)})` }}
+            role="img"
+            aria-label={`${c.name} shopping category`}
+          />
           <span>{c.name}</span>
         </div>
       ))}
@@ -93,7 +97,7 @@ export const ShopAppScreen = () => (
       {SHOP_PRODUCTS.map((p) => (
         <div key={p.name} className="mob-screen__product">
           <div className="mob-screen__product_img">
-            <img src={imgSrc(p.image)} alt={p.name} />
+            <img src={imgSrc(p.image)} alt={`${p.name} product in mobile shopping app mockup`} />
           </div>
           <span>{p.name}</span>
           <strong>{p.price}</strong>
@@ -112,13 +116,13 @@ export const BizAppScreen = () => (
         <strong>Good morning, Alex</strong>
         <small>Here&apos;s your business today</small>
       </div>
-      <img className="mob-screen__biz_avatar" src={imgSrc(bizAvatar)} alt="Alex" />
+      <img className="mob-screen__biz_avatar" src={imgSrc(bizAvatar)} alt="Business owner profile in Vexoweb mobile app mockup" />
     </div>
     <div className="mob-screen__biz_body">
       <div className="mob-screen__metrics">
         {BIZ_METRICS.map((m) => (
           <div key={m.label}>
-            <img className="mob-screen__metric_icon" src={imgSrc(m.image)} alt="" />
+            <img className="mob-screen__metric_icon" src={imgSrc(m.image)} alt={`${m.label} business metric icon`} />
             <small>{m.label}</small>
             <strong>{m.value}</strong>
           </div>
@@ -136,7 +140,7 @@ export const BizAppScreen = () => (
         <p className="mob-screen__label">Tasks</p>
         {BIZ_TASKS.map((t) => (
           <div key={t.text} className="mob-screen__task">
-            <img src={imgSrc(t.image)} alt="" />
+            <img src={imgSrc(t.image)} alt={`${t.text} task icon`} />
             <span>{t.text}</span>
           </div>
         ))}
@@ -150,21 +154,21 @@ export const SecureAppScreen = () => (
   <div className="mob-screen mob-screen--secure">
     <StatusBar dark />
     <div className="mob-screen__secure_hero">
-      <img className="mob-screen__secure_logo" src={imgSrc(secureLogo)} alt="SecureHub" />
+      <img className="mob-screen__secure_logo" src={imgSrc(secureLogo)} alt="SecureHub enterprise security app logo" />
       <strong>SecureHub</strong>
       <small>Enterprise Protection</small>
     </div>
     <div className="mob-screen__secure_features">
       {SECURE_FEATURES.map((f) => (
         <div key={f.label} className="mob-screen__secure_feat">
-          <img src={imgSrc(f.image)} alt="" />
+          <img src={imgSrc(f.image)} alt={`${f.label} security feature icon`} />
           <span>{f.label}</span>
         </div>
       ))}
     </div>
     <div className="mob-screen__secure_form">
       <div className="mob-screen__secure_welcome">
-        <img src={imgSrc(secureProfile)} alt="" />
+        <img src={imgSrc(secureProfile)} alt="User profile in secure mobile app login mockup" />
         <p>Welcome back</p>
       </div>
       <div className="mob-screen__input">you@company.com</div>

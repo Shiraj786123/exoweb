@@ -149,7 +149,7 @@ const SEOPageBody = () => (
           </div>
           <SectionVisual
             src={seoDetailsVisual}
-            alt="Professional SEO services by Vexoweb"
+            alt="Professional SEO services and Google ranking growth by Vexoweb in Eastern Province, Sri Lanka"
             className="ecd-v2__section_visual--website-details"
             width={1024}
             height={769}

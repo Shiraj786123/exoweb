@@ -143,7 +143,7 @@ const SoftwarePageBody = () => (
           </div>
           <SectionVisual
             src={softDetailsVisual}
-            alt="Professional software development services"
+            alt="Custom software development services by Vexoweb in Eastern Province, Sri Lanka"
             className="ecd-v2__section_visual--website-details"
             width={1024}
             height={769}

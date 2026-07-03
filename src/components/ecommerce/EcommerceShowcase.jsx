@@ -102,7 +102,7 @@ const EcommerceShowcase = () => {
                     <HiOutlineCodeBracket />
                   </span>
                 ) : (
-                  <img src={platformIcons[platform.icon].src || platformIcons[platform.icon]} alt={platform.name} />
+                  <img src={platformIcons[platform.icon].src || platformIcons[platform.icon]} alt={`${platform.name} ecommerce platform logo`} />
                 )}
                 <span>{platform.name}</span>
               </>

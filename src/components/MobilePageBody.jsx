@@ -159,7 +159,7 @@ const MobilePageBody = () => (
           </div>
           <SectionVisual
             src={mobDetailsVisual}
-            alt="Professional mobile app development services"
+            alt="Android and iOS mobile app development services by Vexoweb in Eastern Province, Sri Lanka"
             className="ecd-v2__section_visual--website-details"
             width={1024}
             height={769}

@@ -187,7 +187,7 @@ const ContactUs = () => {
             <div className="cu-astronaut-img-wrap">
               <Image
                 src="/images/contact-astronaut.png"
-                alt="Astronaut testimonial from Irinel Traista"
+                alt="Vexoweb client testimonial illustration on contact page"
                 width={520}
                 height={680}
                 className="cu-astronaut-img"

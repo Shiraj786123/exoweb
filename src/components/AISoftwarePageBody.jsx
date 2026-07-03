@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import aiDetailsVisual from '../assets/ai/ai-details-visual.jpg';
+import { clientAvatarAlt } from '../lib/imageAlt';
 import {
   HiOutlineCpuChip,
   HiOutlineCheckCircle,
@@ -281,7 +282,7 @@ const AISoftwarePageBody = () => (
             </div>
             <SectionVisual
               src={aiDetailsVisual}
-              alt="Professional AI software development services"
+              alt="AI software development and automation services by Vexoweb in Sri Lanka"
               className="ecd-v2__section_visual--website-details"
               width={1024}
               height={769}
@@ -426,7 +427,7 @@ const AISoftwarePageBody = () => (
             <footer className="aiss-v2__testimonial_author">
               <Image
                 src={item.avatar}
-                alt={item.name}
+                alt={clientAvatarAlt(item.name, item.role)}
                 width={56}
                 height={56}
                 className="aiss-v2__testimonial_avatar"

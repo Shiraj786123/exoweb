@@ -6,6 +6,23 @@ import item5 from '../assets/icons/searchengine.jpeg';
 import item6 from '../assets/icons/websitemaintence.jpeg';
 import item7 from '../assets/icons/webdevelopment.jpeg';
 
+export const FEATURED_PORTFOLIO_PROJECT = {
+  id: 0,
+  name: 'Belfiore Jewellery',
+  desc: 'Luxury e-commerce website for bespoke engagement rings and fine jewellery in Hatton Garden, London — GIA-certified collections, appointment booking, and a seamless shopping experience.',
+  href: 'https://www.belfiorejewellery.co.uk/',
+  imgAlt:
+    'Belfiore Jewellery Bel Fiore London logo with luxury sapphire engagement ring — bespoke jewellery e-commerce website built by Vexoweb',
+  extra: [
+    { text: 'WordPress', Background: '#0047ab' },
+    { text: 'WooCommerce', Background: '#7f54b3' },
+    { text: 'Elementor', Background: '#ff6b91' },
+    { text: 'PHP', Background: '#00bfc1' },
+    { text: 'SEO', Background: '#1e8449' },
+  ],
+  img: '/images/portfolio/belfiore-jewellery.png',
+};
+
 export const PORTFOLIO_PROJECTS = [
   {
     id: 1,
@@ -98,5 +115,5 @@ export const PORTFOLIO_PROJECTS = [
   },
 ];
 
-/** First six projects for the portfolio page grid (2 rows × 3 columns). */
+/** Six projects for the portfolio grid (excludes featured Belfiore). */
 export const PORTFOLIO_GRID_PROJECTS = PORTFOLIO_PROJECTS.slice(0, 6);

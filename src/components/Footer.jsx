@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SITE_LOGO_ALT } from '../lib/imageAlt';
 import siteLogo from '../assets/logonew.png';
 
 const CONTACT_EMAIL = 'info@vexoweb.lk';
@@ -56,7 +57,7 @@ const Footer = () => {
             <div className="footer-logo">
               <Image
                 src={siteLogo}
-                alt="Vexoweb Logo"
+                alt={SITE_LOGO_ALT}
                 className="footer-logo-img"
                 width={200}
                 height={100}

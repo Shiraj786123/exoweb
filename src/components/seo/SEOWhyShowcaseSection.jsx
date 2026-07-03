@@ -7,7 +7,7 @@ const SEOWhyShowcaseSection = () => (
   <WhyShowcaseSection
     content={SEO_WHY_SHOWCASE}
     image={WHY_SHOWCASE_IMAGES.seo}
-    imageAlt="SEO services by Vexoweb"
+    imageAlt="Professional SEO and search ranking services by Vexoweb in Eastern Province, Sri Lanka"
   />
 );
 

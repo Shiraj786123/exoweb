@@ -7,7 +7,7 @@ const EcommerceWhyShowcaseSection = () => (
   <WhyShowcaseSection
     content={ECOMMERCE_WHY_SHOWCASE}
     image={WHY_SHOWCASE_IMAGES.ecommerce}
-    imageAlt="Ecommerce development by Vexoweb"
+    imageAlt="Ecommerce website and online store development by Vexoweb in Eastern Province, Sri Lanka"
   />
 );
 

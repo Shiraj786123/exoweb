@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { PORTFOLIO_PROJECTS } from '../content/portfolioProjects';
+import { portfolioProjectAlt } from '../lib/imageAlt';
 
 const SCROLL_SPEED = 42;
 
@@ -107,13 +108,21 @@ const SuccessSection = () => {
                 <div className="project-img-wrapper">
                   <img
                     src={project.img}
-                    alt={project.name}
+                    alt={portfolioProjectAlt(project)}
                     className="project-img"
                   />
                 </div>
 
                 <div className="project-info">
-                  <h3 className="project-card-title">{project.name}</h3>
+                  <h3 className="project-card-title">
+                    {project.href ? (
+                      <a href={project.href} target="_blank" rel="noopener noreferrer">
+                        {project.name}
+                      </a>
+                    ) : (
+                      project.name
+                    )}
+                  </h3>
                   <p className="project-card-desc">{project.desc}</p>
 
                   <div className="project-extra">

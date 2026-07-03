@@ -7,7 +7,7 @@ const MobileWhyShowcaseSection = () => (
   <WhyShowcaseSection
     content={MOB_WHY_SHOWCASE}
     image={WHY_SHOWCASE_IMAGES.mobile}
-    imageAlt="Mobile app development by Vexoweb"
+    imageAlt="Android and iOS mobile app development by Vexoweb in Eastern Province, Sri Lanka"
   />
 );
 

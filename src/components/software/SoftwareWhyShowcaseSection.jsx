@@ -7,7 +7,7 @@ const SoftwareWhyShowcaseSection = () => (
   <WhyShowcaseSection
     content={SOFT_WHY_SHOWCASE}
     image={WHY_SHOWCASE_IMAGES.software}
-    imageAlt="Software development by Vexoweb"
+    imageAlt="Custom software development solutions by Vexoweb in Eastern Province, Sri Lanka"
   />
 );
 

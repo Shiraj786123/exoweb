@@ -1,5 +1,6 @@
 import React from 'react';
 import { importTechIcon } from '../../data/technologyStack';
+import { platformLogoAlt } from '../../lib/imageAlt';
 import { getPlatformBrandIcon } from '../../data/platformBrandIcons';
 import PlatformBrandIcon, { hasPlatformBrand } from './PlatformBrandIcon';
 
@@ -11,7 +12,13 @@ const PlatformItemVisual = ({ item, getIcon }) => {
     } else {
       const src = getPlatformBrandIcon(item.brand);
       if (src) {
-        brandVisual = <img className="ecd-show__platform_brand" src={src} alt="" aria-hidden="true" />;
+        brandVisual = (
+          <img
+            className="ecd-show__platform_brand"
+            src={src}
+            alt={platformLogoAlt(item.name)}
+          />
+        );
       }
     }
   }
@@ -22,7 +29,11 @@ const PlatformItemVisual = ({ item, getIcon }) => {
   return (
     <>
       {brandVisual || (iconSrc ? (
-        <img className="ecd-show__platform_brand" src={iconSrc.src || iconSrc} alt="" aria-hidden="true" />
+        <img
+          className="ecd-show__platform_brand"
+          src={iconSrc.src || iconSrc}
+          alt={platformLogoAlt(item.name)}
+        />
       ) : Icon ? (
         <span className="ecd-show__platform_icon" aria-hidden="true">
           <Icon />

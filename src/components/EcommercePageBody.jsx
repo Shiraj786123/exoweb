@@ -230,7 +230,7 @@ const EcommercePageBody = () => (
           </div>
           <SectionVisual
             src={ecdDetailsVisual}
-            alt="Professional ecommerce development services"
+            alt="Ecommerce website and online store development by Vexoweb in Eastern Province, Sri Lanka"
             className="ecd-v2__section_visual--website-details"
             width={1024}
             height={769}
@@ -283,7 +283,7 @@ const EcommercePageBody = () => (
           </div>
           <SectionVisual
             src={paymentGatewayImg}
-            alt="Vexoweb store payment gateway integration"
+            alt="Vexoweb ecommerce store with secure payment gateway integration"
             className="ecd-v2__section_visual--payment"
           />
         </div>

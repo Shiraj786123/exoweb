@@ -27,14 +27,15 @@ function createMessage(role, payload) {
 
 const CHATBOT_ICON = '/images/chatbot-icon.png';
 
+const CHATBOT_ICON_ALT = 'Vexoweb AI chatbot assistant for website enquiries';
+
 const ChatbotIcon = ({ className = '', size = 22 }) => (
   <Image
     src={CHATBOT_ICON}
-    alt=""
+    alt={CHATBOT_ICON_ALT}
     width={size}
     height={size}
     className={className}
-    aria-hidden="true"
   />
 );
 

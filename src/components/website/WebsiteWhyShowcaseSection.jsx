@@ -7,7 +7,7 @@ const WebsiteWhyShowcaseSection = () => (
   <WhyShowcaseSection
     content={WEB_WHY_SHOWCASE}
     image={WHY_SHOWCASE_IMAGES.website}
-    imageAlt="Website development by Vexoweb"
+    imageAlt="Professional website development services by Vexoweb in Eastern Province, Sri Lanka"
   />
 );
 

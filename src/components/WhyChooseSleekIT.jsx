@@ -96,7 +96,7 @@ const WhyChooseSection = () => {
                 <h3>Annual Client Performance Growth</h3>
               </div>
               <div className="stats-chart">
-                <img src={growthLineImage} alt="Growth Chart" className="growth-line" />
+                <img src={growthLineImage} alt="Business growth chart showing revenue increase for Vexoweb clients" className="growth-line" />
               </div>
               <div className="stats-info">
                 <h4 className="stats-number">120+ Systems Deployed</h4>
@@ -109,7 +109,7 @@ const WhyChooseSection = () => {
 
             <img
               src={heroImage}
-              alt="Vexoweb digital intelligence and software development"
+              alt="Vexoweb digital intelligence, software development and IT services in Batticaloa, Sri Lanka"
               className="hero-main-image"
             />
           </div>

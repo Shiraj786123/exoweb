@@ -239,6 +239,16 @@
   opacity: 1 !important;
 }
 
+.project-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-card-title a:hover {
+  color: #0284c7;
+}
+
 .project-card-desc {
   font-family: 'Poppins', sans-serif !important;
   font-size: 12px !important;

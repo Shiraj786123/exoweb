@@ -3,6 +3,7 @@ import productWatch from '../../assets/mobile/shop/product-watch.jpg';
 import productSneakers from '../../assets/mobile/shop/product-sneakers.jpg';
 import productBackpack from '../../assets/mobile/shop/product-backpack.jpg';
 import productPerfume from '../../assets/mobile/shop/product-perfume.jpg';
+import { ecommerceProductAlt } from '../../lib/imageAlt';
 
 const imgSrc = (img) => img?.src || img;
 
@@ -14,7 +15,7 @@ const PRODUCTS = [
 ];
 
 const EcommerceHeroVisual = () => (
-  <div className="ecd-hero__visual" aria-hidden="true">
+  <div className="ecd-hero__visual">
     <div className="ecd-hero__laptop">
       <div className="ecd-hero__laptop_bar">
         <span />
@@ -34,7 +35,7 @@ const EcommerceHeroVisual = () => (
           {PRODUCTS.map((product) => (
             <div key={product.name} className="ecd-hero__store_item">
               <div className="ecd-hero__store_img">
-                <img src={imgSrc(product.image)} alt="" />
+                <img src={imgSrc(product.image)} alt={ecommerceProductAlt(product.name)} />
               </div>
               <span>{product.name}</span>
               <strong>{product.price}</strong>
@@ -57,7 +58,7 @@ const EcommerceHeroVisual = () => (
         <div className="ecd-hero__phone_products">
           {PRODUCTS.slice(0, 2).map((product) => (
             <div key={product.name} className="ecd-hero__phone_product">
-              <img src={imgSrc(product.image)} alt="" />
+              <img src={imgSrc(product.image)} alt={ecommerceProductAlt(product.name)} />
               <span>{product.name}</span>
             </div>
           ))}

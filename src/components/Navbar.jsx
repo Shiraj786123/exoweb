@@ -9,6 +9,7 @@ import ServicesMegaMenuIcon from "./ServicesMegaMenuIcon";
 import { FaHome, FaPaperPlane } from "react-icons/fa";
 import { SERVICES_MENU_ITEMS } from "../data/servicesMenuData";
 import { NAV_PRIMARY_LINKS } from "../data/navLinks";
+import { SITE_LOGO_ALT } from '../lib/imageAlt';
 import logo from "../assets/logonew.png";
 
 const DESKTOP_BREAKPOINT = 1024;
@@ -257,7 +258,7 @@ const Navbar = () => {
 <div className="nav-logo" onClick={handleLogoClick}>
   <Image
     src={logo}
-    alt="Vexoweb Logo"
+    alt={SITE_LOGO_ALT}
     width={280}
     height={145}
     className="logo-desktop"
@@ -265,7 +266,7 @@ const Navbar = () => {
   />
   <Image
     src={logo}
-    alt="Vexoweb Logo"
+    alt={SITE_LOGO_ALT}
     width={142}
     height={36}
     className="logo-mobile"

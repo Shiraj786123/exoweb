@@ -16,6 +16,7 @@ import {
   getGoogleMapsUrl,
 } from '../content/cityLocalData';
 import { HiOutlineMapPin } from 'react-icons/hi2';
+import { cityImageAlt } from '../lib/imageAlt';
 import { getWebDevIntroRobo, WEB_DEV_TRUST_VISUAL } from '../content/webDevVisuals';
 
 const TRUST_CARD_COLORS = ['#2563eb', '#7c3aed', '#16a34a', '#ea580c', '#0891b2', '#6366f1'];
@@ -79,7 +80,7 @@ function CityLocalMedia({ cityName, showMap = true, tall = false }) {
   return (
     <div className="city-rich__local-media">
       <div className={`city-rich__local-photo${tall ? ' city-rich__local-photo--tall' : ''}`}>
-        <img src={localData.image} alt={localData.imageAlt} loading="lazy" />
+        <img src={localData.image} alt={cityImageAlt(cityName, localData.imageAlt)} loading="lazy" />
         <div className="city-rich__local-badge">
           <HiOutlineMapPin aria-hidden="true" />
           <div>
@@ -478,7 +479,7 @@ export function RichCityServing({ section, config }) {
               <div className="city-rich__serving-v2_banner">
                 <img
                   src={localData.image}
-                  alt={localData.imageAlt}
+                  alt={cityImageAlt(config.city, localData.imageAlt)}
                   className="city-rich__serving-v2_banner_img"
                   loading="lazy"
                 />

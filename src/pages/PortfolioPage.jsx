@@ -5,10 +5,11 @@ import ContactSection from '../components/ContactSection';
 import Breadcrumb from '../components/Breadcrumb';
 import HeroTrustText from '../components/HeroTrustText';
 import PortfolioGrid from '../components/PortfolioGrid';
+import PortfolioFeatured from '../components/PortfolioFeatured';
 import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { HERO_TRUST_TEXT } from '../content/heroTrustContent';
-import { PORTFOLIO_GRID_PROJECTS } from '../content/portfolioProjects';
+import { FEATURED_PORTFOLIO_PROJECT, PORTFOLIO_GRID_PROJECTS } from '../content/portfolioProjects';
 import { PORTFOLIO_HERO, PORTFOLIO_RESULTS } from '../content/portfolioPageContent';
 
 const PortfolioPage = () => (
@@ -59,6 +60,9 @@ const PortfolioPage = () => (
           <p className="success-subtitle">{PORTFOLIO_RESULTS.subtitle}</p>
         </header>
 
+        <PortfolioFeatured project={FEATURED_PORTFOLIO_PROJECT} />
+
+        <h3 className="portfolio-results__grid-title">More Projects</h3>
         <PortfolioGrid projects={PORTFOLIO_GRID_PROJECTS} />
       </div>
     </section>

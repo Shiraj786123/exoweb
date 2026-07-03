@@ -1,5 +1,6 @@
 import React from 'react';
 import { importTechIcon, ROW_THEMES, TECH_STACK_ROWS } from '../data/technologyStack';
+import { techStackAlt } from '../lib/imageAlt';
 
 const TechnologyStackMarquee = () => {
   return (
@@ -28,9 +29,8 @@ const TechnologyStackMarquee = () => {
                   <div className="tech-icon-wrapper">
                     <img
                       src={importTechIcon(tech.icon)}
-                      alt=""
+                      alt={techStackAlt(tech.name)}
                       className="tech-svg-icon"
-                      aria-hidden="true"
                     />
                   </div>
                   <span className="tech-label">{tech.name}</span>

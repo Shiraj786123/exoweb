@@ -1,4 +1,5 @@
 import React from "react";
+import { processStepAlt } from "../lib/imageAlt";
 import DiscoverIcon from "../assets/icons/discover.svg";
 import StrategyIcon from "../assets/icons/strategy.svg";
 import DevelopmentIcon from "../assets/icons/launch.svg";
@@ -76,7 +77,11 @@ const ProcessSection = () => {
 
                 <div className="home-process__icon-ring">
                   <div className="home-process__icon-core">
-                    <img src={step.icon} alt="" className="home-process__icon" aria-hidden="true" />
+                    <img
+                      src={step.icon}
+                      alt={processStepAlt(step.title)}
+                      className="home-process__icon"
+                    />
                   </div>
                 </div>
 
