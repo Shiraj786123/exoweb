@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import SoftwareShowcase from '../components/software/SoftwareShowcase';
 import SoftwarePageBody from '../components/SoftwarePageBody';
 import SoftwareHeroVisual from '../components/software/SoftwareHeroVisual';
+import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SOFT_HERO } from '../content/softwarePageContent';
@@ -37,7 +38,7 @@ const SoftwareDevelopment = () => (
             <span className="ecd-hero__badge_dot" />
             {SOFT_HERO.badge}
           </div>
-          <h1 className="ecd-hero__h1">
+          <h1 className="ecd-h1">
             {SOFT_HERO.h1Line1}{' '}
             <span className="ecd-hero__highlight">{SOFT_HERO.h1Line2}</span>
           </h1>
@@ -57,9 +58,9 @@ const SoftwareDevelopment = () => (
             })}
           </ul>
           <div className="ecd-hero__actions hero-cta-wrap">
-            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+            <ProposalCtaButton className="ecd-hero__cta_primary hero-cta-btn" service="Software Development">
               {SOFT_HERO.primaryCta} <span aria-hidden="true">→</span>
-            </a>
+            </ProposalCtaButton>
             <a href={SOFT_HERO.secondaryHref} className="ecd-hero__cta_secondary">
               {SOFT_HERO.secondaryCta}
             </a>

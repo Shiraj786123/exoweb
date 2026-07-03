@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import EcommerceShowcase from '../components/ecommerce/EcommerceShowcase';
 import EcommercePageBody from '../components/EcommercePageBody';
 import EcommerceHeroVisual from '../components/ecommerce/EcommerceHeroVisual';
+import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { ECOMMERCE_HERO } from '../content/ecommercePageContent';
@@ -37,7 +38,7 @@ const EcommerceDev = () => (
             <span className="ecd-hero__badge_dot" />
             {ECOMMERCE_HERO.badge}
           </div>
-          <h1 className="ecd-hero__h1">
+          <h1 className="ecd-h1">
             {ECOMMERCE_HERO.h1Line1}{' '}
             <span className="ecd-hero__highlight">{ECOMMERCE_HERO.h1Line2}</span>
           </h1>
@@ -57,9 +58,12 @@ const EcommerceDev = () => (
             })}
           </ul>
           <div className="ecd-hero__actions hero-cta-wrap">
-            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+            <ProposalCtaButton
+              className="ecd-hero__cta_primary hero-cta-btn"
+              service="Ecommerce Development"
+            >
               {ECOMMERCE_HERO.primaryCta} <span aria-hidden="true">→</span>
-            </a>
+            </ProposalCtaButton>
             <a href={ECOMMERCE_HERO.secondaryHref} className="ecd-hero__cta_secondary">
               {ECOMMERCE_HERO.secondaryCta}
             </a>

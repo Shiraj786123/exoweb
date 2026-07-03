@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import AISoftwareShowcase from '../components/ai/AISoftwareShowcase';
 import AISoftwarePageBody from '../components/AISoftwarePageBody';
 import AISoftwareHeroVisual from '../components/ai/AISoftwareHeroVisual';
+import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { AI_HERO } from '../content/aiSoftwarePageContent';
@@ -37,7 +38,7 @@ const AISoftwareServices = () => (
             <span className="aiss-hero__badge_dot" />
             {AI_HERO.badge}
           </div>
-          <h1 className="aiss-hero__h1">
+          <h1 className="ecd-h1">
             {AI_HERO.h1Line1}{' '}
             <span className="aiss-hero__highlight">{AI_HERO.h1Line2}</span>
           </h1>
@@ -57,9 +58,9 @@ const AISoftwareServices = () => (
             })}
           </ul>
           <div className="aiss-hero__actions hero-cta-wrap">
-            <a href="#contact" className="aiss-hero__cta_primary hero-cta-btn">
+            <ProposalCtaButton className="aiss-hero__cta_primary hero-cta-btn" service="AI Solutions">
               {AI_HERO.primaryCta} <span aria-hidden="true">→</span>
-            </a>
+            </ProposalCtaButton>
             <a href={AI_HERO.secondaryHref} className="aiss-hero__cta_secondary">
               {AI_HERO.secondaryCta}
             </a>

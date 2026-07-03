@@ -53,7 +53,8 @@ const ProcessSection = () => {
         <header className="home-process__header">
           <span className="home-process__tag">Proven Process</span>
           <h2 id="home-process-title" className="home-process__title">
-            How We Deliver <span className="home-process__title-accent">Your Project</span>
+            <span className="home-process__title-main">How We Deliver Your</span>{' '}
+            <span className="home-process__title-accent">Project</span>
           </h2>
           <p className="home-process__subtitle">
             A transparent 5-step blueprint — from first conversation to long-term growth.

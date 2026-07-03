@@ -23,7 +23,7 @@ const EcommerceHeroVisual = () => (
       </div>
       <div className="ecd-hero__store">
         <div className="ecd-hero__store_header">
-          <strong>VEXO STORE</strong>
+          <strong className="ecd-hero__store_name">Vexoweb store</strong>
           <span>Shop · Cart · Account</span>
         </div>
         <div className="ecd-hero__store_banner">
@@ -47,7 +47,7 @@ const EcommerceHeroVisual = () => (
       <div className="ecd-hero__phone_notch" />
       <div className="ecd-hero__phone_screen">
         <div className="ecd-hero__phone_header">
-          <strong>VEXO</strong>
+          <strong className="ecd-hero__store_name">Vexoweb store</strong>
           <span className="ecd-hero__phone_cart" />
         </div>
         <div className="ecd-hero__phone_hero">

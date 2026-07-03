@@ -22,8 +22,8 @@ import {
   HiOutlineHomeModern,
 } from 'react-icons/hi2';
 import { SiWordpress } from 'react-icons/si';
-import { importTechIcon } from '../../data/technologyStack';
 import ServiceProcessSection from '../ServiceProcessSection';
+import ShowcasePlatformStrip from '../showcase/ShowcasePlatformStrip';
 import ShowcaseServicePanelIntro from '../showcase/ShowcaseServicePanelIntro';
 import {
   WEB_PLATFORMS,
@@ -68,7 +68,7 @@ const industryIcons = {
 
 const SectionHead = ({ title, subtitle }) => (
   <div className="ecd-show__head">
-    <h2 className="ecd-show__title">{title}</h2>
+    <h3 className="ecd-h3">{title}</h3>
     {subtitle && <p className="ecd-show__subtitle">{subtitle}</p>}
   </div>
 );
@@ -82,24 +82,7 @@ const WebsiteShowcase = () => {
 
   return (
     <div className="ecd-show">
-      <section className="ecd-show__platforms">
-        <div className="ecd-show__container">
-          <p className="ecd-show__platforms_label">Built with modern web technologies</p>
-          <div className="ecd-show__platforms_row">
-            {WEB_PLATFORMS.map((platform) => {
-              const iconSrc = importTechIcon(platform.icon);
-              return (
-                <div key={platform.name} className="ecd-show__platform_item">
-                  {iconSrc && (
-                    <img src={iconSrc.src || iconSrc} alt={platform.name} />
-                  )}
-                  <span>{platform.name}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ShowcasePlatformStrip label="Built with modern web technologies" items={WEB_PLATFORMS} />
 
       <section className="ecd-show__section">
         <div className="ecd-show__container">
@@ -119,7 +102,7 @@ const WebsiteShowcase = () => {
                       <div className="ecd-show__service_icon" style={{ color: service.color }}>
                         <Icon />
                       </div>
-                      <h3>{service.title}</h3>
+                      <h5 className="ecd-h5">{service.title}</h5>
                       <p className="ecd-show__service_summary">{service.summary}</p>
                       {detail && (
                         <button
@@ -172,7 +155,7 @@ const WebsiteShowcase = () => {
       <section className="ecd-show__section ecd-show__section--alt">
         <div className="ecd-show__container">
           <SectionHead title="What You Get With Every Website" />
-          <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
+          <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-4 ecd-show__mini_grid--full-labels">
             {WEB_FEATURE_TILES.map((feature) => {
               const Icon = featureIcons[feature.icon];
               return (
@@ -194,7 +177,7 @@ const WebsiteShowcase = () => {
             title="Industries We Serve"
             subtitle="Professional websites for businesses across every industry."
           />
-          <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
+          <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-4 ecd-show__mini_grid--full-labels">
             {WEB_INDUSTRY_TILES.map((industry) => {
               const Icon = industryIcons[industry.icon];
               return (
@@ -214,6 +197,8 @@ const WebsiteShowcase = () => {
         title="Our Website Development Process"
         subtitle="A proven process to deliver your website on time and on budget."
         steps={WEB_PROCESS_SHORT}
+        titleClassName="ecd-h3"
+        titleTag="h3"
         alt
       />
     </div>

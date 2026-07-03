@@ -6,9 +6,9 @@ export const AI_HERO = {
   description:
     'At Vexoweb, we provide professional AI software development services in Sri Lanka, helping startups, SMEs and enterprises harness the power of artificial intelligence to improve productivity, reduce costs and deliver better customer experiences.',
   highlights: [
-    { title: 'Free AI Consultation', icon: 'chat', color: '#38bdf8' },
+    { title: 'AI Consultation', icon: 'chat', color: '#38bdf8' },
     { title: 'Custom AI Solutions', icon: 'cpu', color: '#2563eb' },
-    { title: 'Scalable Business Automation', icon: 'bolt', color: '#16a34a' },
+    { title: 'Business Automation', icon: 'bolt', color: '#16a34a' },
   ],
   primaryCta: 'Free AI Consultation',
   secondaryCta: 'Explore AI Solutions',
@@ -464,12 +464,12 @@ export const AI_TESTIMONIALS = {
 };
 
 export const AI_PLATFORMS = [
-  { name: 'OpenAI', brand: 'openai' },
-  { name: 'Google Gemini', brand: 'gemini' },
-  { name: 'Anthropic Claude', brand: 'anthropic' },
-  { name: 'Meta Llama', brand: 'meta' },
-  { name: 'DeepSeek AI', brand: 'deepseek' },
-  { name: 'Mistral AI', brand: 'mistral' },
+  { name: 'OpenAI', brand: 'openai', href: 'https://openai.com' },
+  { name: 'Google Gemini', brand: 'gemini', href: 'https://gemini.google.com' },
+  { name: 'Anthropic Claude', brand: 'anthropic', href: 'https://www.anthropic.com' },
+  { name: 'Meta Llama', brand: 'meta', href: 'https://www.llama.com' },
+  { name: 'DeepSeek AI', brand: 'deepseek', href: 'https://www.deepseek.com' },
+  { name: 'Mistral AI', brand: 'mistral', href: 'https://mistral.ai' },
 ];
 
 export const AI_SERVICE_CARDS = [
@@ -502,12 +502,6 @@ export const AI_SERVICE_CARDS = [
     summary: 'Integrate powerful AI capabilities into your existing website, software or mobile application.',
     color: '#0891b2',
     icon: 'integration',
-  },
-  {
-    title: 'Custom AI Software',
-    summary: 'Completely customised AI software aligned with your unique business objectives.',
-    color: '#ea580c',
-    icon: 'software',
   },
 ];
 
@@ -593,22 +587,6 @@ export const AI_SERVICES = [
     ],
     closing: 'Whether you\'re building a new AI-powered platform or upgrading an existing application, we help you choose the right AI technology.',
   },
-  {
-    title: 'Custom AI Software Development',
-    intro: 'Every business has unique processes, customers and operational challenges. That\'s why off-the-shelf AI software often fails to deliver the flexibility businesses need.',
-    includesLabel: 'Our custom AI solutions include:',
-    bullets: [
-      'AI Customer Service Platforms',
-      'AI Business Management Systems',
-      'AI Data Analysis Platforms',
-      'AI Recommendation Engines',
-      'AI Workflow Automation',
-      'AI Knowledge Management Systems',
-      'AI Dashboards & Reporting',
-      'Enterprise AI Applications',
-    ],
-    closing: 'At Vexoweb, we specialise in developing completely customised AI software that aligns with your business objectives.',
-  },
 ];
 
 export const AI_FEATURE_TILES = [
@@ -634,13 +612,13 @@ export const AI_INDUSTRY_TILES = [
 ];
 
 export const AI_PROCESS_SHORT = [
-  { step: 1, title: 'Discovery', description: 'We understand your business challenges, workflows and AI opportunities.', icon: 'chat', color: '#2563eb' },
-  { step: 2, title: 'AI Strategy', description: 'We design architecture, workflows, data requirements and technology selection.', icon: 'plan', color: '#16a34a' },
-  { step: 3, title: 'UI & UX Design', description: 'We create intuitive interfaces that make AI systems easy to understand and use.', icon: 'design', color: '#9333ea' },
-  { step: 4, title: 'Development', description: 'We build secure, scalable AI applications using modern frameworks and cloud technologies.', icon: 'code', color: '#ea580c' },
-  { step: 5, title: 'Model Training', description: 'We configure AI with your documents, knowledge bases and business workflows.', icon: 'content', color: '#0891b2' },
-  { step: 6, title: 'Testing & QA', description: 'We verify accuracy, security, performance and user experience before deployment.', icon: 'test', color: '#2563eb' },
-  { step: 7, title: 'Deployment', description: 'We launch your solution and continuously improve performance as your business grows.', icon: 'rocket', color: '#16a34a' },
+  { step: 1, title: 'Discovery', description: 'We learn your challenges, workflows, data needs and AI opportunities during a detailed discovery phase.', icon: 'chat', color: '#2563eb' },
+  { step: 2, title: 'AI Strategy', description: 'We design architecture, data pipelines, model selection and technology for your AI solution roadmap.', icon: 'plan', color: '#16a34a' },
+  { step: 3, title: 'UI/UX Design', description: 'We create intuitive interfaces, clear workflows and dashboards that make AI systems easy to use.', icon: 'design', color: '#9333ea' },
+  { step: 4, title: 'Development', description: 'We build secure, scalable AI apps with modern frameworks, APIs and proven cloud technologies.', icon: 'code', color: '#ea580c' },
+  { step: 5, title: 'Training', description: 'We configure models with your documents, knowledge bases and existing business workflows.', icon: 'content', color: '#0891b2' },
+  { step: 6, title: 'Testing', description: 'We verify accuracy, security, performance, usability and reliability before your solution goes live.', icon: 'test', color: '#2563eb' },
+  { step: 7, title: 'Deployment', description: 'We launch your AI solution and provide updates, improvements and support as your business grows.', icon: 'rocket', color: '#16a34a' },
 ];
 
 export const AI_INDUSTRIES_SECTION = {

@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import WebsiteShowcase from '../components/website/WebsiteShowcase';
 import WebsitePageBody from '../components/WebsitePageBody';
 import WebsiteHeroVisual from '../components/website/WebsiteHeroVisual';
+import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { WEB_HERO } from '../content/websitePageContent';
@@ -37,7 +38,7 @@ const FullStackWebDev = () => (
             <span className="ecd-hero__badge_dot" />
             {WEB_HERO.badge}
           </div>
-          <h1 className="ecd-hero__h1">
+          <h1 className="ecd-h1">
             {WEB_HERO.h1Line1}{' '}
             <span className="ecd-hero__highlight">{WEB_HERO.h1Line2}</span>
           </h1>
@@ -57,9 +58,9 @@ const FullStackWebDev = () => (
             })}
           </ul>
           <div className="ecd-hero__actions hero-cta-wrap">
-            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+            <ProposalCtaButton className="ecd-hero__cta_primary hero-cta-btn" service="Website Development">
               {WEB_HERO.primaryCta} <span aria-hidden="true">→</span>
-            </a>
+            </ProposalCtaButton>
             <a href={WEB_HERO.secondaryHref} className="ecd-hero__cta_secondary">
               {WEB_HERO.secondaryCta}
             </a>

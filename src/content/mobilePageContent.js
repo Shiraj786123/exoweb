@@ -12,7 +12,7 @@ export const MOB_HERO = {
   ],
   primaryCta: 'Request a Free Consultation',
   secondaryCta: 'View Our Portfolio',
-  secondaryHref: '/#results',
+  secondaryHref: '/portfolio',
 };
 
 export const MOB_INTRO = {
@@ -30,10 +30,10 @@ export const MOB_DETAILS_LABEL = {
 };
 
 export const MOB_PLATFORMS = [
-  { name: 'Android', brand: 'android' },
-  { name: 'iOS', brand: 'apple' },
-  { name: 'Flutter', brand: 'flutter' },
-  { name: 'React Native', brand: 'react' },
+  { name: 'Android', brand: 'android', href: 'https://www.android.com' },
+  { name: 'iOS', brand: 'apple', href: 'https://www.apple.com/ios/' },
+  { name: 'Flutter', brand: 'flutter', href: 'https://flutter.dev' },
+  { name: 'React Native', brand: 'react', href: 'https://reactnative.dev' },
 ];
 
 export const MOB_SERVICES_INTRO = {
@@ -159,12 +159,48 @@ export const MOB_INDUSTRY_TILES = [
 ];
 
 export const MOB_PROCESS_SHORT = [
-  { step: 1, title: 'Discovery & Planning', description: 'We understand your business objectives, target audience and application requirements.', icon: 'discovery', color: '#2563eb' },
-  { step: 2, title: 'UI/UX Design', description: 'Our designers create intuitive interfaces for an excellent user experience.', icon: 'design', color: '#9333ea' },
-  { step: 3, title: 'App Development', description: 'We build secure, scalable and feature-rich mobile applications.', icon: 'code', color: '#ea580c' },
-  { step: 4, title: 'Testing & QA', description: 'Thorough testing for performance, usability, security and compatibility.', icon: 'test', color: '#16a34a' },
-  { step: 5, title: 'App Deployment', description: 'We assist with publishing to the Google Play Store and Apple App Store.', icon: 'device', color: '#2563eb' },
-  { step: 6, title: 'Maintenance & Support', description: 'Ongoing updates, performance improvements and technical support after launch.', icon: 'support', color: '#0891b2' },
+  {
+    step: 1,
+    title: 'Discovery',
+    description: 'We learn your business goals, target audience, app scope and requirements during discovery.',
+    icon: 'discovery',
+    color: '#2563eb',
+  },
+  {
+    step: 2,
+    title: 'UI/UX Design',
+    description: 'Our designers craft intuitive layouts, smooth flows and polished interfaces for your mobile app.',
+    icon: 'design',
+    color: '#9333ea',
+  },
+  {
+    step: 3,
+    title: 'Development',
+    description: 'We build secure, scalable apps with modern frameworks, APIs and proven development practices.',
+    icon: 'code',
+    color: '#ea580c',
+  },
+  {
+    step: 4,
+    title: 'Testing',
+    description: 'We test speed, usability, security, compatibility and performance thoroughly before launch.',
+    icon: 'test',
+    color: '#16a34a',
+  },
+  {
+    step: 5,
+    title: 'Deployment',
+    description: 'We publish your app to Google Play and the Apple App Store with full listing and launch support.',
+    icon: 'device',
+    color: '#2563eb',
+  },
+  {
+    step: 6,
+    title: 'Support',
+    description: 'We provide ongoing updates, performance improvements and technical support after launch.',
+    icon: 'support',
+    color: '#0891b2',
+  },
 ];
 
 export const MOB_WHY_SHOWCASE = {
@@ -198,6 +234,7 @@ export const MOB_WHY_INVEST = {
     { label: 'More Revenue', icon: 'revenue', color: '#0891b2' },
     { label: 'Customer Loyalty', icon: 'loyalty', color: '#db2777' },
     { label: 'Real-Time Data', icon: 'data', color: '#6366f1' },
+    { label: 'Market Reach', icon: 'reach', color: '#0d9488' },
   ],
 };
 

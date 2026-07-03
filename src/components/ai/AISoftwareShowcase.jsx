@@ -5,7 +5,6 @@ import {
   HiOutlineCog6Tooth,
   HiOutlineSparkles,
   HiOutlinePuzzlePiece,
-  HiOutlineCpuChip,
   HiOutlineCheckCircle,
   HiOutlineArrowTrendingUp,
   HiOutlineCurrencyDollar,
@@ -42,7 +41,6 @@ const serviceIcons = {
   automation: HiOutlineCog6Tooth,
   sparkles: HiOutlineSparkles,
   integration: HiOutlinePuzzlePiece,
-  software: HiOutlineCpuChip,
 };
 
 const featureIcons = {
@@ -69,7 +67,7 @@ const industryIcons = {
 
 const SectionHead = ({ title, subtitle }) => (
   <div className="aiss-show__head">
-    <h2 className="aiss-show__title">{title}</h2>
+    <h3 className="ecd-h3">{title}</h3>
     {subtitle && <p className="aiss-show__subtitle">{subtitle}</p>}
   </div>
 );
@@ -92,7 +90,7 @@ const AISoftwareShowcase = () => {
             <p key={p} className="aiss-show__services_lead">{p}</p>
           ))}
           <div className="aiss-show__services_wrap">
-            <div className="aiss-show__services_grid aiss-show__services_grid--six">
+            <div className="aiss-show__services_grid">
               {AI_SERVICE_CARDS.map((service, index) => {
                 const Icon = serviceIcons[service.icon];
                 const detail = AI_SERVICES[index];
@@ -106,7 +104,7 @@ const AISoftwareShowcase = () => {
                       <div className="aiss-show__service_icon" style={{ color: service.color }}>
                         <Icon />
                       </div>
-                      <h3>{service.title}</h3>
+                      <h5 className="ecd-h5">{service.title}</h5>
                       <p className="aiss-show__service_summary">{service.summary}</p>
                       {detail && (
                         <button
@@ -160,7 +158,7 @@ const AISoftwareShowcase = () => {
       <section className="aiss-show__section aiss-show__section--alt">
         <div className="aiss-show__container">
           <SectionHead title="Benefits of AI Software for Your Business" />
-          <div className="aiss-show__mini_grid aiss-show__mini_grid--single-line">
+          <div className="aiss-show__mini_grid aiss-show__mini_grid--cols-4 aiss-show__mini_grid--full-labels">
             {AI_FEATURE_TILES.map((feature) => {
               const Icon = featureIcons[feature.icon];
               return (
@@ -179,7 +177,7 @@ const AISoftwareShowcase = () => {
       <section className="aiss-show__section">
         <div className="aiss-show__container">
           <SectionHead title="Industries We Serve" subtitle="Custom AI solutions for every industry." />
-          <div className="aiss-show__mini_grid aiss-show__mini_grid--single-line">
+          <div className="aiss-show__mini_grid aiss-show__mini_grid--cols-4 aiss-show__mini_grid--full-labels">
             {AI_INDUSTRY_TILES.map((industry) => {
               const Icon = industryIcons[industry.icon];
               return (
@@ -199,6 +197,8 @@ const AISoftwareShowcase = () => {
         title="Our AI Development Process"
         subtitle="A structured process to ensure your AI solution delivers measurable results."
         steps={AI_PROCESS_SHORT}
+        titleClassName="ecd-h3"
+        titleTag="h3"
         alt
       />
     </div>

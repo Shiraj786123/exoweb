@@ -42,12 +42,12 @@ export function normalizeCityProcessSteps(steps, variant) {
       icon: step.icon || guessIcon(step.title, index, resolvedVariant),
     };
 
-    if (step.lines?.length) {
-      return { ...base, lines: step.lines };
-    }
-
     if (step.description) {
       return { ...base, description: step.description };
+    }
+
+    if (step.lines?.length) {
+      return { ...base, description: step.lines.join(' ') };
     }
 
     return base;

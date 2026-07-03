@@ -1,14 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import launchGrowImg from '../assets/ecommerce/ecd-launch-grow.png';
+import ecdDetailsVisual from '../assets/ecommerce/ecd-details-visual.jpg';
 import paymentGatewayImg from '../assets/ecommerce/ecd-payment-gateway.png';
-import shippingDeliveryImg from '../assets/ecommerce/ecd-shipping-delivery.png';
 import {
   HiOutlineShoppingCart,
   HiOutlineCodeBracket,
   HiOutlineBuildingStorefront,
-  HiOutlineArrowRightCircle,
   HiOutlineCheckCircle,
   HiOutlineCreditCard,
   HiOutlineTruck,
@@ -32,14 +29,9 @@ import {
   HiOutlineEnvelope,
   HiOutlineChartPie,
   HiOutlineSparkles,
-  HiOutlineCpuChip,
-  HiOutlineWrenchScrewdriver,
   HiOutlineQuestionMarkCircle,
-  HiOutlineLink,
   HiOutlineClipboardDocumentCheck,
   HiOutlineClipboardDocumentList,
-  HiOutlineChatBubbleLeftRight,
-  HiOutlineLifebuoy,
 } from 'react-icons/hi2';
 import {
   ECOMMERCE_INTRO,
@@ -49,14 +41,12 @@ import {
   ECOMMERCE_INVENTORY,
   ECOMMERCE_FEATURES_SECTION,
   ECOMMERCE_FEATURES,
-  ECOMMERCE_WHY_CHOOSE,
   ECOMMERCE_SEO,
   ECOMMERCE_FAQ,
-  ECOMMERCE_RELATED,
   ECOMMERCE_CTA,
 } from '../content/ecommercePageContent';
-import EcommerceWhyShowcaseSection from './ecommerce/EcommerceWhyShowcaseSection';
 import PageBodyCtaSection from './shared/PageBodyCtaSection';
+import IsometricStaircaseFeatures from './shared/IsometricStaircaseFeatures';
 
 const whyBusinessIcons = {
   'Reach More Customers': HiOutlineGlobeAlt,
@@ -86,30 +76,19 @@ const shippingIcons = {
 };
 
 const featureIcons = {
-  'Responsive Mobile Design': HiOutlineDevicePhoneMobile,
-  'Fast Loading Speed': HiOutlineBolt,
-  'Product Search & Smart Filters': HiOutlineMagnifyingGlass,
-  'Secure Customer Accounts': HiOutlineUserCircle,
-  'Wishlist Functionality': HiOutlineHeart,
-  'Product Reviews & Ratings': HiOutlineStar,
-  'Discount Coupons & Promotions': HiOutlineTag,
-  'Related Products': HiOutlineShoppingCart,
-  'Email Notifications': HiOutlineEnvelope,
-  'Analytics Dashboard': HiOutlineChartPie,
+  'Mobile Design': HiOutlineDevicePhoneMobile,
+  'Fast Loading': HiOutlineBolt,
+  'Smart Search': HiOutlineMagnifyingGlass,
+  'Secure Accounts': HiOutlineUserCircle,
+  Wishlist: HiOutlineHeart,
+  'Buyer Reviews': HiOutlineStar,
+  Coupons: HiOutlineTag,
+  'Related Items': HiOutlineShoppingCart,
+  'Email Alerts': HiOutlineEnvelope,
+  Analytics: HiOutlineChartPie,
 };
 
 const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2'];
-
-const whyIcons = {
-  'Custom Ecommerce Solutions': HiOutlineCodeBracket,
-  'Experienced Development Team': HiOutlineWrenchScrewdriver,
-  'Mobile-First Development': HiOutlineDevicePhoneMobile,
-  'SEO-Friendly Ecommerce Websites': HiOutlineMagnifyingGlass,
-  'Secure Online Shopping': HiOutlineShieldCheck,
-  'Scalable for Future Growth': HiOutlineChartBar,
-  'Long-Term Technical Support': HiOutlineLifebuoy,
-  'Transparent Communication': HiOutlineChatBubbleLeftRight,
-};
 
 const seoIcons = {
   'Keyword-Optimised Product Pages': HiOutlineTag,
@@ -119,18 +98,9 @@ const seoIcons = {
   'Performance Optimisation': HiOutlineRocketLaunch,
 };
 
-const relatedIcons = {
-  'Website Development': HiOutlineGlobeAlt,
-  'Mobile App Development': HiOutlineDevicePhoneMobile,
-  'Software Development': HiOutlineCodeBracket,
-  'AI Software Development': HiOutlineCpuChip,
-  'SEO Services': HiOutlineMagnifyingGlass,
-  'Website Maintenance & Support': HiOutlineWrenchScrewdriver,
-};
-
-const SectionVisual = ({ src, alt, className = '' }) => (
+const SectionVisual = ({ src, alt, className = '', width = 420, height = 340 }) => (
   <div className={`ecd-v2__section_visual${className ? ` ${className}` : ''}`}>
-    <Image src={src} alt={alt} width={420} height={340} className="ecd-v2__section_visual_img" />
+    <Image src={src} alt={alt} width={width} height={height} className="ecd-v2__section_visual_img" />
   </div>
 );
 
@@ -142,6 +112,8 @@ const SectionShell = ({
   children,
   variant = 'default',
   visual,
+  titleClassName = 'ecd-h4',
+  TitleTag = 'h4',
 }) => (
   <section
     className={[
@@ -170,7 +142,7 @@ const SectionShell = ({
             </div>
           )}
           <div>
-            <h2 className="ecd-v2__title">
+            <TitleTag className={titleClassName}>
               {title}
               {titleAccent && (
                 <>
@@ -178,7 +150,7 @@ const SectionShell = ({
                   <span className="ecd-v2__title_accent">{titleAccent}</span>
                 </>
               )}
-            </h2>
+            </TitleTag>
             {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
           </div>
         </div>
@@ -199,21 +171,24 @@ const Prose = ({ paragraphs, className = '' }) => (
   </div>
 );
 
-const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAccents }) => {
+const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAccents, pointsLimit }) => {
   const Icon = iconMap[item.title] || fallbackIcon;
   const accent = accents[index % accents.length];
+  const points = pointsLimit && item.points
+    ? item.points.slice(0, pointsLimit)
+    : item.points;
   return (
     <article className="ecd-v2__ship_card" style={{ '--ship-accent': accent }}>
       <span className="ecd-v2__ship_num" style={{ background: accent }}>{index + 1}</span>
       <div className="ecd-v2__ship_icon" style={{ color: accent }}>
         <Icon />
       </div>
-      <h3>{item.title}</h3>
+      <h5 className="ecd-h5">{item.title}</h5>
       {item.description ? (
         <p>{item.description}</p>
       ) : (
         <ul className="ecd-v2__ship_points">
-          {item.points.map((point) => (
+          {points.map((point) => (
             <li key={point}>
               <HiOutlineCheckCircle aria-hidden="true" />
               <span>{point}</span>
@@ -225,9 +200,9 @@ const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAcce
   );
 };
 
-const IconPointsRow = ({ items, iconMap, fallbackIcon, wrap = false, cols }) => (
+const IconPointsRow = ({ items, iconMap, fallbackIcon, wrap = false, cols, className = '', pointsLimit }) => (
   <div
-    className={`ecd-v2__ship_row${wrap ? ' ecd-v2__ship_row--wrap' : ''}${cols ? ` ecd-v2__ship_row--cols-${cols}` : ''}`}
+    className={`ecd-v2__ship_row${wrap ? ' ecd-v2__ship_row--wrap' : ''}${cols ? ` ecd-v2__ship_row--cols-${cols}` : ''}${className ? ` ${className}` : ''}`}
     style={cols ? { '--ship-cols': cols } : !wrap ? { '--ship-cols': items.length } : undefined}
   >
     {items.map((item, index) => (
@@ -237,6 +212,7 @@ const IconPointsRow = ({ items, iconMap, fallbackIcon, wrap = false, cols }) => 
         index={index}
         iconMap={iconMap}
         fallbackIcon={fallbackIcon}
+        pointsLimit={pointsLimit}
       />
     ))}
   </div>
@@ -249,60 +225,71 @@ const EcommercePageBody = () => (
         <div className="ecd-v2__details_label_inner">
           <div className="ecd-v2__details_label_copy">
             <span>In-Depth Ecommerce Solutions</span>
-            <h2>Everything You Need to Launch &amp; Grow Online</h2>
+            <h4 className="ecd-h4">Everything You Need to Launch &amp; Grow Online</h4>
             <p>Explore our complete ecommerce development capabilities, platforms, integrations and support services.</p>
           </div>
           <SectionVisual
-            src={launchGrowImg}
-            alt="Online store with mobile shopping and ecommerce growth"
-            className="ecd-v2__section_visual--launch"
+            src={ecdDetailsVisual}
+            alt="Professional ecommerce development services"
+            className="ecd-v2__section_visual--website-details"
+            width={1024}
+            height={769}
           />
         </div>
       </div>
     </div>
-    {/* Intro — short summary */}
-    <section className="ecd-v2__intro ecd-v2__intro--brief">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__intro_brief">
-          <div className="ecd-v2__intro_icon" aria-hidden="true">
-            <HiOutlineShoppingCart />
-          </div>
-          <p>{ECOMMERCE_INTRO.summary}</p>
-        </div>
-      </div>
-    </section>
-
-    <PageBodyCtaSection cta={ECOMMERCE_CTA} />
+    {/* Intro + CTA */}
+    <PageBodyCtaSection
+      cta={ECOMMERCE_CTA}
+      service="Ecommerce Development"
+      intro={{
+        icon: <HiOutlineShoppingCart />,
+        text: ECOMMERCE_INTRO.summary,
+      }}
+    />
 
     {/* Why every business */}
-    <SectionShell icon={HiOutlineGlobeAlt} title={ECOMMERCE_WHY_BUSINESS.title} variant="alt">
+    <SectionShell
+      icon={HiOutlineGlobeAlt}
+      title={ECOMMERCE_WHY_BUSINESS.title}
+      variant="alt"
+    >
       <Prose paragraphs={ECOMMERCE_WHY_BUSINESS.intro} className="ecd-v2__prose--center" />
       <IconPointsRow
         items={ECOMMERCE_WHY_BUSINESS.items}
         iconMap={whyBusinessIcons}
         fallbackIcon={HiOutlineGlobeAlt}
       />
-      <Prose paragraphs={ECOMMERCE_WHY_BUSINESS.closing} className="ecd-v2__prose--center ecd-v2__prose--closing" />
     </SectionShell>
 
     {/* Payment */}
-    <SectionShell
-      icon={HiOutlineCreditCard}
-      title={ECOMMERCE_PAYMENT.title}
-      visual={{
-        src: paymentGatewayImg,
-        alt: 'Secure payment gateway and credit card checkout integration',
-        className: 'ecd-v2__section_visual--payment',
-      }}
-    >
-      <Prose paragraphs={ECOMMERCE_PAYMENT.intro} className="ecd-v2__prose--center" />
-      <IconPointsRow
-        items={ECOMMERCE_PAYMENT.items}
-        iconMap={paymentIcons}
-        fallbackIcon={HiOutlineCreditCard}
-      />
-      <p className="ecd-v2__closing ecd-v2__closing--center">{ECOMMERCE_PAYMENT.closing}</p>
-    </SectionShell>
+    <section className="ecd-v2__section ecd-v2__section--payment">
+      <div className="ecd-v2__container">
+        <div className="ecd-v2__payment_split">
+          <div className="ecd-v2__payment_split_left">
+            <div className="ecd-v2__payment_split_head">
+              <div className="ecd-v2__section_icon_wrap" aria-hidden="true">
+                <HiOutlineCreditCard />
+              </div>
+              <h4 className="ecd-h4">{ECOMMERCE_PAYMENT.title}</h4>
+            </div>
+            <Prose paragraphs={ECOMMERCE_PAYMENT.intro} />
+            <IconPointsRow
+              className="ecd-v2__ship_row--payment"
+              items={ECOMMERCE_PAYMENT.items}
+              iconMap={paymentIcons}
+              fallbackIcon={HiOutlineCreditCard}
+            />
+          </div>
+          <SectionVisual
+            src={paymentGatewayImg}
+            alt="Vexoweb store payment gateway integration"
+            className="ecd-v2__section_visual--payment"
+          />
+        </div>
+        <p className="ecd-v2__closing ecd-v2__closing--center ecd-v2__closing--payment">{ECOMMERCE_PAYMENT.closing}</p>
+      </div>
+    </section>
 
     {/* Shipping */}
     <SectionShell
@@ -310,13 +297,9 @@ const EcommercePageBody = () => (
       title={ECOMMERCE_SHIPPING.title}
       titleAccent={ECOMMERCE_SHIPPING.titleAccent}
       variant="hero"
-      visual={{
-        src: shippingDeliveryImg,
-        alt: 'Ecommerce shipping and delivery truck fulfillment',
-        className: 'ecd-v2__section_visual--shipping',
-      }}
+      titleClassName="ecd-h4"
+      TitleTag="h4"
     >
-      <Prose paragraphs={ECOMMERCE_SHIPPING.intro} className="ecd-v2__prose--center ecd-v2__prose--light" />
       <IconPointsRow
         items={ECOMMERCE_SHIPPING.items}
         iconMap={shippingIcons}
@@ -325,7 +308,12 @@ const EcommercePageBody = () => (
     </SectionShell>
 
     {/* Inventory */}
-    <SectionShell icon={HiOutlineCube} title={ECOMMERCE_INVENTORY.title}>
+    <SectionShell
+      icon={HiOutlineCube}
+      title={ECOMMERCE_INVENTORY.title}
+      titleClassName="ecd-h4"
+      TitleTag="h4"
+    >
       <Prose paragraphs={ECOMMERCE_INVENTORY.intro} className="ecd-v2__prose--center" />
       <IconPointsRow
         items={ECOMMERCE_INVENTORY.items}
@@ -336,34 +324,30 @@ const EcommercePageBody = () => (
     </SectionShell>
 
     {/* Features */}
-    <SectionShell icon={HiOutlineSparkles} title={ECOMMERCE_FEATURES_SECTION.title} variant="alt">
+    <SectionShell
+      icon={HiOutlineSparkles}
+      title={ECOMMERCE_FEATURES_SECTION.title}
+      variant="alt"
+      titleClassName="ecd-h4"
+      TitleTag="h4"
+    >
       <p className="ecd-v2__center_lead">{ECOMMERCE_FEATURES_SECTION.intro}</p>
-      <IconPointsRow
+      <IsometricStaircaseFeatures
         items={ECOMMERCE_FEATURES}
         iconMap={featureIcons}
         fallbackIcon={HiOutlineSparkles}
-        cols={5}
-      />
-    </SectionShell>
-
-    {/* Why choose */}
-    <SectionShell
-      icon={HiOutlineShieldCheck}
-      title={ECOMMERCE_WHY_CHOOSE.title}
-      titleAccent={ECOMMERCE_WHY_CHOOSE.titleAccent}
-      variant="hero"
-    >
-      <p className="ecd-v2__center_lead ecd-v2__center_lead--light">{ECOMMERCE_WHY_CHOOSE.intro}</p>
-      <IconPointsRow
-        items={ECOMMERCE_WHY_CHOOSE.items}
-        iconMap={whyIcons}
-        fallbackIcon={HiOutlineShieldCheck}
-        cols={4}
+        perRow={5}
       />
     </SectionShell>
 
     {/* SEO */}
-    <SectionShell icon={HiOutlineMagnifyingGlass} title={ECOMMERCE_SEO.title} variant="alt">
+    <SectionShell
+      icon={HiOutlineMagnifyingGlass}
+      title={ECOMMERCE_SEO.title}
+      variant="alt"
+      titleClassName="ecd-h4"
+      TitleTag="h4"
+    >
       <Prose paragraphs={ECOMMERCE_SEO.intro} className="ecd-v2__prose--center" />
       <p className="ecd-v2__center_lead">{ECOMMERCE_SEO.leadIn}</p>
       <IconPointsRow
@@ -373,10 +357,13 @@ const EcommercePageBody = () => (
       />
     </SectionShell>
 
-    <EcommerceWhyShowcaseSection />
-
     {/* FAQ */}
-    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions">
+    <SectionShell
+      icon={HiOutlineQuestionMarkCircle}
+      title="Frequently Asked Questions"
+      titleClassName="ecd-h6"
+      TitleTag="h6"
+    >
       <div className="ecd-v2__faq ecd-v2__faq--cols">
         <div className="ecd-v2__faq_col">
           {ECOMMERCE_FAQ.slice(0, 6).map((item) => (
@@ -395,26 +382,6 @@ const EcommercePageBody = () => (
           ))}
         </div>
       </div>
-    </SectionShell>
-
-    {/* Related — row with icons */}
-    <SectionShell icon={HiOutlineLink} title={ECOMMERCE_RELATED.title} variant="alt">
-      <Prose paragraphs={ECOMMERCE_RELATED.intro} className="ecd-v2__prose--center" />
-      <div className="ecd-v2__related_row">
-        {ECOMMERCE_RELATED.links.map((link) => {
-          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
-          return (
-            <Link key={link.href} href={link.href} className="ecd-v2__related_tile">
-              <div className="ecd-v2__related_tile_icon">
-                <Icon />
-              </div>
-              <span className="ecd-v2__related_tile_label">{link.label}</span>
-              <HiOutlineArrowRightCircle className="ecd-v2__related_tile_arrow" aria-hidden="true" />
-            </Link>
-          );
-        })}
-      </div>
-      <p className="ecd-v2__closing ecd-v2__closing--center">{ECOMMERCE_RELATED.closing}</p>
     </SectionShell>
   </div>
 );

@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import SEOShowcase from '../components/seo/SEOShowcase';
 import SEOPageBody from '../components/SEOPageBody';
 import SEOHeroVisual from '../components/seo/SEOHeroVisual';
+import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { SEO_HERO } from '../content/seoPageContent';
@@ -37,7 +38,7 @@ const SEOServices = () => (
             <span className="ecd-hero__badge_dot" />
             {SEO_HERO.badge}
           </div>
-          <h1 className="ecd-hero__h1">
+          <h1 className="ecd-h1">
             {SEO_HERO.h1Line1}{' '}
             <span className="ecd-hero__highlight">{SEO_HERO.h1Line2}</span>
           </h1>
@@ -57,9 +58,9 @@ const SEOServices = () => (
             })}
           </ul>
           <div className="ecd-hero__actions hero-cta-wrap">
-            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+            <ProposalCtaButton className="ecd-hero__cta_primary hero-cta-btn" service="SEO">
               {SEO_HERO.primaryCta} <span aria-hidden="true">→</span>
-            </a>
+            </ProposalCtaButton>
             <a href={SEO_HERO.secondaryHref} className="ecd-hero__cta_secondary">
               {SEO_HERO.secondaryCta}
             </a>

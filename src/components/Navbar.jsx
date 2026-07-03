@@ -24,6 +24,7 @@ const Navbar = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null); // Desktop dropdown active state
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Proposal popup state
+  const [popupService, setPopupService] = useState("");
   const navRef = useRef(null);
   const headerRef = useRef(null);
   const navLinksRef = useRef(null);
@@ -92,6 +93,24 @@ const Navbar = () => {
   const handleOpenConsultation = () => {
     closeMobileMenu();
     setIsPopupOpen(true);
+  };
+
+  useEffect(() => {
+    const handleOpenProposal = (event) => {
+      const service = event?.detail?.service;
+      if (service) {
+        setPopupService(service);
+      }
+      setIsPopupOpen(true);
+    };
+
+    window.addEventListener("vexoweb:open-proposal", handleOpenProposal);
+    return () => window.removeEventListener("vexoweb:open-proposal", handleOpenProposal);
+  }, []);
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setPopupService("");
   };
 
   const handleLogoClick = () => {
@@ -247,8 +266,8 @@ const Navbar = () => {
   <Image
     src={logo}
     alt="Vexoweb Logo"
-    width={200}
-    height={100}
+    width={142}
+    height={36}
     className="logo-mobile"
     priority
   />
@@ -322,10 +341,7 @@ const Navbar = () => {
           </div>
 
           {NAV_PRIMARY_LINKS.map((item) => {
-            const isActive =
-              item.href === '/#results'
-                ? pathname === '/'
-                : pathname === item.href;
+            const isActive = pathname === item.href;
 
             return isActive ? (
               <span key={item.href} className="nav-primary-link active" aria-current="page">
@@ -355,7 +371,8 @@ const Navbar = () => {
         {/* Proposal button */}
         <button className="contact-btn" onClick={() => setIsPopupOpen(true)}>
           <FaPaperPlane className="contact-btn-icon" aria-hidden="true" />
-          <span className="contact-btn-label">Get a Proposal</span>
+          <span className="contact-btn-label contact-btn-label--full">Get a Proposal</span>
+          <span className="contact-btn-label contact-btn-label--short">Free Proposal</span>
         </button>
 
         {/* Mobile Hamburger toggle */}
@@ -375,7 +392,11 @@ const Navbar = () => {
         </div>
 
         {/* Modal Popup Connection */}
-        <ExpertPopup open={isPopupOpen} onClose={() => setIsPopupOpen(false)}/>
+        <ExpertPopup
+          open={isPopupOpen}
+          onClose={handleClosePopup}
+          preSelectedService={popupService || undefined}
+        />
       </div>
     </header>
   );

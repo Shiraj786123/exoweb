@@ -79,7 +79,7 @@
 
 /* Sections */
 .aiss-v2__section {
-  padding: 72px 0;
+  padding: 48px 0;
 }
 
 .aiss-v2__section--alt {
@@ -91,7 +91,8 @@
   color: #ffffff;
 }
 
-.aiss-v2__section--hero .aiss-v2__title {
+.aiss-v2__section--hero .aiss-v2__title,
+.aiss-v2__section--hero .ecd-h4 {
   background: none !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: #ffffff !important;
@@ -99,7 +100,9 @@
   color: #ffffff !important;
 }
 
-.aiss-v2__section--hero .aiss-v2__title_accent {
+.aiss-v2__section--hero .aiss-v2__title_accent,
+.aiss-v2__section--hero .ecd-h4 .aiss-v2__title_accent,
+.aiss-v2__section--hero .ecd-h4 .ecd-v2__title_accent {
   color: #38bdf8 !important;
   -webkit-text-fill-color: #38bdf8 !important;
 }
@@ -122,7 +125,7 @@
   align-items: center;
   text-align: center;
   gap: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
@@ -169,7 +172,7 @@
   font-size: 0.98rem;
   line-height: 1.75;
   color: #475569;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 }
 
 .aiss-v2__prose--center p,
@@ -440,7 +443,7 @@
   display: grid;
   grid-template-columns: repeat(var(--ship-cols, 3), 1fr);
   gap: 18px;
-  margin-top: 36px;
+  margin-top: 24px;
   align-items: stretch;
 }
 

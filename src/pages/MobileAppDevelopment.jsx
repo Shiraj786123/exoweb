@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import MobileShowcase from '../components/mobile/MobileShowcase';
 import MobilePageBody from '../components/MobilePageBody';
 import MobileHeroVisual from '../components/mobile/MobileHeroVisual';
+import ProposalCtaButton from '../components/shared/ProposalCtaButton';
 import ServiceTechStackSection from '../components/ServiceTechStackSection';
 import { PAGE_BREADCRUMBS } from '../content/pageBreadcrumbs';
 import { MOB_HERO } from '../content/mobilePageContent';
@@ -37,7 +38,7 @@ const MobileAppDevelopment = () => (
             <span className="ecd-hero__badge_dot" />
             {MOB_HERO.badge}
           </div>
-          <h1 className="ecd-hero__h1">
+          <h1 className="ecd-h1">
             {MOB_HERO.h1Line1}{' '}
             <span className="ecd-hero__highlight">{MOB_HERO.h1Line2}</span>
           </h1>
@@ -57,9 +58,9 @@ const MobileAppDevelopment = () => (
             })}
           </ul>
           <div className="ecd-hero__actions hero-cta-wrap">
-            <a href="#contact" className="ecd-hero__cta_primary hero-cta-btn">
+            <ProposalCtaButton className="ecd-hero__cta_primary hero-cta-btn" service="Mobile App Development">
               {MOB_HERO.primaryCta} <span aria-hidden="true">→</span>
-            </a>
+            </ProposalCtaButton>
             <a href={MOB_HERO.secondaryHref} className="ecd-hero__cta_secondary">
               {MOB_HERO.secondaryCta}
             </a>

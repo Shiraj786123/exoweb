@@ -508,6 +508,10 @@
   flex-shrink: 0;
 }
 
+.contact-btn-label--short {
+  display: none;
+}
+
 .contact-btn:hover {
   background: #003a7a;
   transform: translateY(-1px);
@@ -617,8 +621,12 @@
 
   .logo-mobile {
     display: block;
-    height: 36px;
+    height: 38px;
     width: auto;
+    max-width: 142px;
+    margin: 0;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .hamburger {
@@ -924,19 +932,30 @@
     border-bottom: none;
   }
 
-  /* Proposal button in the mobile header bar (outside the drawer) */
+  /* Proposal button — pill style in mobile header bar */
   .nav-actions > .contact-btn {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 6px !important;
-    margin: 0 12px 0 auto !important;
-    padding: 8px 12px !important;
+    margin: 0 !important;
+    padding: 8px 14px !important;
     font-size: 11px !important;
-    width: auto !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    border-radius: 999px !important;
     white-space: nowrap;
-    line-height: 1.2;
+    line-height: 1;
     flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0, 68, 143, 0.2);
+  }
+
+  .nav-actions > .contact-btn .contact-btn-label--full {
+    display: none !important;
+  }
+
+  .nav-actions > .contact-btn .contact-btn-label--short {
+    display: inline !important;
   }
 
   .nav-actions > .contact-btn .contact-btn-icon {
@@ -946,22 +965,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  @media (max-width: 400px) {
-    .nav-actions > .contact-btn {
-      padding: 8px 10px !important;
-      margin: 0 8px 0 auto !important;
-      min-width: 36px;
-    }
-
-    .nav-actions > .contact-btn .contact-btn-label {
-      display: none;
-    }
-
-    .nav-actions > .contact-btn .contact-btn-icon {
-      font-size: 14px !important;
-    }
   }
 
   /* Styles the new mail button at the bottom of your mobile menu drawer */
@@ -1438,14 +1441,16 @@
 
 
 
-/* Increase logo size specifically for mobile view */
+/* Mobile logo — compact, no negative margins */
 @media (max-width: 1024px) {
   .logo-mobile {
-    height: 56px !important;
+    height: 38px !important;
     width: auto !important;
+    max-width: 142px !important;
     display: block !important;
-    margin-top: -10px !important;
-    margin-bottom: -10px !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    object-position: left center !important;
   }
 }
 
@@ -1474,8 +1479,7 @@
 
   /* 3. Group the button and hamburger on the right with a clean gap */
   .nav-actions > .contact-btn {
-    margin-left: auto !important;
-    margin-right: 14px !important;
+    margin: 0 !important;
   }
 }
 

@@ -13,7 +13,7 @@ import {
   CityServicesGrid,
 } from '../components/CityPageSections';
 import { SITE_URL } from '../lib/siteConfig';
-import { getCityBreadcrumb } from '../content/cityPagesContent';
+import { getCityBreadcrumb, getCityHeroLines } from '../content/cityPagesContent';
 import { getRelatedCities, getCityTypeMeta } from '../content/cityPageEnhancements';
 import RichCitySections from '../components/RichCitySections';
 import HomeTechStackSection from '../components/HomeTechStackSection';
@@ -21,6 +21,7 @@ import { getRichCityContent } from '../content/richCityContent';
 
 export default function CityServicePage({ config }) {
   const breadcrumb = getCityBreadcrumb(config);
+  const heroLines = getCityHeroLines(config);
   const richSections = getRichCityContent(config.slug);
   const meta = getCityTypeMeta(config.serviceType);
   const related = getRelatedCities(config.serviceType, config.slug);
@@ -71,10 +72,14 @@ export default function CityServicePage({ config }) {
             </span>
           </div>
           <h1 className="fswd__h1">
-            {config.h1}
-            <br />
-            <span className="highlight-text">{config.h1Accent}</span>
+            <span className="fswd__h1_line">{heroLines.line1}</span>
+            <span className="fswd__h1_line fswd__h1_line--accent highlight-text">
+              {heroLines.line2}
+            </span>
           </h1>
+          {heroLines.tagline ? (
+            <p className="fswd__hero_tagline">{heroLines.tagline}</p>
+          ) : null}
           <p className="fswd__hero_description">{config.heroDesc}</p>
           <div className="hero-cta-wrap">
             <a href="#contact" className="fswd__cta_primary hero-cta-btn">

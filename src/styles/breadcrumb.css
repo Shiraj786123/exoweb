@@ -129,7 +129,7 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Light pill bar — city pages (reference: Home › Services › Service › City) */
+/* Light pill bar — city pages */
 .breadcrumb--pill-light {
   background: linear-gradient(90deg, #fef9f3 0%, #fffbeb 50%, #fef9f3 100%);
   border: 1px solid rgba(251, 191, 36, 0.22);
@@ -156,7 +156,10 @@
 
 .fswd__hero_content .breadcrumb,
 .aiss__hero_container_centered .breadcrumb,
+.aiss-hero__content .breadcrumb,
 .ecd__hero_container_centered .breadcrumb,
+.ecd-hero__content .breadcrumb,
+.portfolio-hero__container .breadcrumb,
 .hero-container .breadcrumb,
 .ecd__hero_container .breadcrumb,
 .abt__hero_container .breadcrumb,
@@ -165,10 +168,17 @@
   align-self: stretch;
 }
 
-/* Center breadcrumbs inside centered hero layouts by default */
+/* Left-align breadcrumbs — service pages only (ecd-hero / aiss-hero) */
+.ecd__wrapper .ecd-hero__content .breadcrumb .breadcrumb__list,
+.aiss__wrapper .aiss-hero__content .breadcrumb .breadcrumb__list {
+  justify-content: flex-start;
+}
+
+/* Center breadcrumbs — city & utility hero layouts */
 .fswd__hero_content .breadcrumb .breadcrumb__list,
 .aiss__hero_container_centered .breadcrumb .breadcrumb__list,
 .ecd__hero_container_centered .breadcrumb .breadcrumb__list,
+.portfolio-hero__container .breadcrumb .breadcrumb__list,
 .hero-container .breadcrumb .breadcrumb__list,
 .ecd__hero_container .breadcrumb .breadcrumb__list,
 .abt__hero_container .breadcrumb .breadcrumb__list,
@@ -176,8 +186,65 @@
   justify-content: center;
 }
 
+@media (max-width: 1024px) {
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .breadcrumb .breadcrumb__list {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .breadcrumb--on-dark {
+    margin-bottom: 16px;
+  }
+
+  .breadcrumb--pill,
+  .breadcrumb--pill-light {
+    padding: 10px 16px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+  }
+
+  .breadcrumb--pill .breadcrumb__list,
+  .breadcrumb--pill-light .breadcrumb__list {
+    justify-content: center;
+    row-gap: 6px;
+  }
+
+  .breadcrumb__sep {
+    margin: 0 5px;
+  }
+}
+
 @media (max-width: 640px) {
   .breadcrumb__list {
     font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .breadcrumb__current {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb__list {
+    font-size: 11px;
+    gap: 4px 2px;
+  }
+
+  .breadcrumb__sep {
+    margin: 0 4px;
+    font-size: 10px;
+  }
+
+  .breadcrumb--pill,
+  .breadcrumb--pill-light {
+    padding: 8px 12px;
   }
 }

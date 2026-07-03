@@ -231,6 +231,9 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
             >
               <option value="">You are interested in</option>
               <option value="Website Development">Website Development</option>
+              <option value="Ecommerce Development">Ecommerce Development</option>
+              <option value="Software Development">Software Development</option>
+              <option value="Mobile App Development">Mobile App Development</option>
               <option value="SEO">SEO</option>
               <option value="Website Growth Audit">Website Growth Audit</option>
               <option value="AI Solutions">AI Solutions</option>

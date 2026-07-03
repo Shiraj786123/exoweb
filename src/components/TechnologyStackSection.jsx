@@ -9,6 +9,8 @@ const TechnologyStackSection = ({
   stackLabel = 'Our Technology Stack',
   variant = 'service',
   id = 'technology-stack',
+  titleClassName = 'whoweare__h2',
+  titleTag: TitleTag = 'h2',
 }) => {
   const sectionClass =
     variant === 'service'
@@ -26,19 +28,19 @@ const TechnologyStackSection = ({
           {tag ? <span className="whoweare__tag">{tag}</span> : null}
 
           {title ? (
-            <h2 id={`${id}-title`} className="whoweare__h2">
+            <TitleTag id={`${id}-title`} className={titleClassName}>
               {title}
               {titleAccent ? (
                 <span className="highlight-text-gradient">{titleAccent}</span>
               ) : null}
-            </h2>
+            </TitleTag>
           ) : null}
 
           {description ? (
             <p className="whoweare-sub-description">{description}</p>
           ) : null}
 
-          <h3 className="whoweare__h3">{stackLabel}</h3>
+          <h5 className="ecd-h5">{stackLabel}</h5>
         </header>
 
         <TechnologyStackMarquee />

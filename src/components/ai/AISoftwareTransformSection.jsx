@@ -36,7 +36,7 @@ const AISoftwareTransformSection = () => (
   <section className="aiss-v2__section aiss-v2__section--alt">
     <div className="aiss-v2__container">
       <div className="aiss-v2__section_head">
-        <h2 className="aiss-v2__title">{AI_TRANSFORM.title}</h2>
+        <h4 className="ecd-h4">{AI_TRANSFORM.title}</h4>
         <p className="aiss-v2__subtitle">{AI_TRANSFORM.subtitle}</p>
       </div>
       <div className="aiss-v2__transform_layout">
@@ -48,7 +48,7 @@ const AISoftwareTransformSection = () => (
                   {index + 1}
                 </div>
                 <div>
-                  <h3>{step.title}</h3>
+                  <h5 className="ecd-h5">{step.title}</h5>
                   <p>{step.description}</p>
                 </div>
               </div>

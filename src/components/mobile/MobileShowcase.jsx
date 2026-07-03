@@ -63,7 +63,7 @@ const industryIcons = {
 
 const SectionHead = ({ title, subtitle }) => (
   <div className="ecd-show__head">
-    <h2 className="ecd-show__title">{title}</h2>
+    <h3 className="ecd-h3">{title}</h3>
     {subtitle && <p className="ecd-show__subtitle">{subtitle}</p>}
   </div>
 );
@@ -97,7 +97,7 @@ const MobileShowcase = () => {
                       <div className="ecd-show__service_icon" style={{ color: service.color }}>
                         <Icon />
                       </div>
-                      <h3>{service.title}</h3>
+                      <h5 className="ecd-h5">{service.title}</h5>
                       <p className="ecd-show__service_summary">{service.summary}</p>
                       {detail && (
                         <button
@@ -150,7 +150,7 @@ const MobileShowcase = () => {
       <section className="ecd-show__section ecd-show__section--alt">
         <div className="ecd-show__container">
           <SectionHead title="What You Get With Every Mobile App" />
-          <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
+          <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-4 ecd-show__mini_grid--full-labels">
             {MOB_FEATURE_TILES.map((feature) => {
               const Icon = featureIcons[feature.icon];
               return (
@@ -172,7 +172,7 @@ const MobileShowcase = () => {
             title="Industries We Serve"
             subtitle="Professional mobile applications for businesses across every industry."
           />
-          <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line ecd-show__mini_grid--cols-6">
+          <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-3 ecd-show__mini_grid--full-labels">
             {MOB_INDUSTRY_TILES.map((industry) => {
               const Icon = industryIcons[industry.icon];
               return (
@@ -192,6 +192,8 @@ const MobileShowcase = () => {
         title="Our Mobile App Development Process"
         subtitle="From idea to App Store launch—a proven process for every project."
         steps={MOB_PROCESS_SHORT}
+        titleClassName="ecd-h3"
+        titleTag="h3"
         alt
       />
     </div>

@@ -1,9 +1,5 @@
 /* Mobile App Development page — ECD layout extras */
 
-.ecd-hero__visual--mobile-app {
-  min-height: 460px;
-}
-
 .ecd-hero__phone--hero-app {
   position: relative;
   right: auto;

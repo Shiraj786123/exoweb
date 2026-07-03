@@ -30,11 +30,11 @@ export const SEO_DETAILS_LABEL = {
 };
 
 export const SEO_CHANNELS = [
-  { name: 'Google Search', brand: 'google' },
-  { name: 'Google Maps', brand: 'googlemaps' },
-  { name: 'Google Analytics', brand: 'googleanalytics' },
-  { name: 'Search Console', brand: 'googlesearchconsole' },
-  { name: 'Google Business', brand: 'googlebusiness' },
+  { name: 'Google Search', brand: 'google', href: 'https://www.google.com' },
+  { name: 'Google Maps', brand: 'googlemaps', href: 'https://maps.google.com' },
+  { name: 'Google Analytics', brand: 'googleanalytics', href: 'https://analytics.google.com' },
+  { name: 'Search Console', brand: 'googlesearchconsole', href: 'https://search.google.com/search-console' },
+  { name: 'Google Business', brand: 'googlebusiness', href: 'https://business.google.com' },
 ];
 
 export const SEO_SERVICES_INTRO = {
@@ -217,6 +217,7 @@ export const SEO_FEATURE_TILES = [
   { title: 'Customer Trust', color: '#0891b2', icon: 'trust' },
   { title: 'Less Ad Spend', color: '#db2777', icon: 'ads' },
   { title: 'Long-Term Growth', color: '#6366f1', icon: 'growth' },
+  { title: 'Local SEO', color: '#0d9488', icon: 'local' },
 ];
 
 export const SEO_INDUSTRY_TILES = [
@@ -229,48 +230,12 @@ export const SEO_INDUSTRY_TILES = [
 ];
 
 export const SEO_PROCESS_SHORT = [
-  {
-    step: 1,
-    title: 'Website Audit',
-    description: 'We audit your site, find SEO issues and identify content gaps.',
-    icon: 'audit',
-    color: '#2563eb',
-  },
-  {
-    step: 2,
-    title: 'Competitor Research',
-    description: 'We study competitors, analyse rankings and find your competitive edge.',
-    icon: 'competitor',
-    color: '#16a34a',
-  },
-  {
-    step: 3,
-    title: 'Keyword Strategy',
-    description: 'We research keywords, match search intent and align with your goals.',
-    icon: 'keyword',
-    color: '#9333ea',
-  },
-  {
-    step: 4,
-    title: 'Website Optimisation',
-    description: 'We fix technical SEO, improve content and strengthen your site structure.',
-    icon: 'optimise',
-    color: '#ea580c',
-  },
-  {
-    step: 5,
-    title: 'Content Strategy',
-    description: 'We plan content, build authority and attract qualified visitors.',
-    icon: 'content',
-    color: '#2563eb',
-  },
-  {
-    step: 6,
-    title: 'Performance Monitoring',
-    description: 'We track rankings, monitor traffic and refine your SEO strategy.',
-    icon: 'monitor',
-    color: '#16a34a',
-  },
+  { step: 1, title: 'Audit', description: 'We audit your website, analyse pages, find SEO issues and uncover content gaps that limit visibility.', icon: 'audit', color: '#2563eb' },
+  { step: 2, title: 'Competitors', description: 'We study competitors, analyse rankings, review keywords and find opportunities to improve your rankings.', icon: 'competitor', color: '#16a34a' },
+  { step: 3, title: 'Keywords', description: 'We research keywords, match search intent, analyse trends and align targets with your business goals.', icon: 'keyword', color: '#9333ea' },
+  { step: 4, title: 'Optimisation', description: 'We fix technical SEO, improve content, strengthen links and optimise your overall website structure.', icon: 'optimise', color: '#ea580c' },
+  { step: 5, title: 'Content', description: 'We plan targeted content, build authority, create pages and attract qualified visitors to your website.', icon: 'content', color: '#2563eb' },
+  { step: 6, title: 'Monitoring', description: 'We track rankings, monitor traffic, analyse reports and refine your SEO strategy for lasting growth.', icon: 'monitor', color: '#16a34a' },
 ];
 
 export const SEO_WHY_SHOWCASE = {

@@ -12,7 +12,7 @@ export const ECOMMERCE_HERO = {
   ],
   primaryCta: 'Get a Free Consultation',
   secondaryCta: 'View Our Work',
-  secondaryHref: '/#results',
+  secondaryHref: '/portfolio',
 };
 
 export const ECOMMERCE_INTRO = {
@@ -24,7 +24,6 @@ export const ECOMMERCE_WHY_BUSINESS = {
   title: 'Why Every Business Needs an Ecommerce Website',
   intro: [
     'Online shopping has become part of everyday life.',
-    'Customers expect businesses to provide convenient online purchasing options that allow them to browse products, compare prices and complete purchases from anywhere.',
     'A professionally developed ecommerce website helps your business:',
   ],
   items: [
@@ -61,10 +60,6 @@ export const ECOMMERCE_WHY_BUSINESS = {
       ],
     },
   ],
-  closing: [
-    'Unlike physical stores, an ecommerce website never closes.',
-    'Your customers can shop anytime using their computer, tablet or smartphone.',
-  ],
 };
 
 export const ECOMMERCE_SERVICES_INTRO = {
@@ -77,10 +72,10 @@ export const ECOMMERCE_SERVICES_INTRO = {
 };
 
 export const ECOMMERCE_PLATFORMS = [
-  { name: 'WooCommerce', icon: 'woocommerce' },
-  { name: 'Shopify', icon: 'shopify' },
-  { name: 'Magento', icon: 'magento' },
-  { name: 'OpenCart', icon: 'opencart' },
+  { name: 'WooCommerce', icon: 'woocommerce', href: 'https://woocommerce.com' },
+  { name: 'Shopify', icon: 'shopify', href: 'https://www.shopify.com' },
+  { name: 'Magento', icon: 'magento', href: 'https://business.adobe.com/products/magento/magento-commerce.html' },
+  { name: 'OpenCart', icon: 'opencart', href: 'https://www.opencart.com' },
   { name: 'Custom Solutions', icon: 'custom' },
 ];
 
@@ -145,12 +140,12 @@ export const ECOMMERCE_INDUSTRY_TILES = [
 ];
 
 export const ECOMMERCE_PROCESS_SHORT = [
-  { step: 1, title: 'Consultation', description: 'We understand your business goals and requirements.', icon: 'chat', color: '#2563eb' },
-  { step: 2, title: 'Planning', description: 'We plan the store structure, features and user experience.', icon: 'plan', color: '#16a34a' },
-  { step: 3, title: 'Design', description: 'We create attractive and conversion-focused store design.', icon: 'design', color: '#9333ea' },
-  { step: 4, title: 'Development', description: 'We build a fast, secure and scalable ecommerce website.', icon: 'code', color: '#ea580c' },
-  { step: 5, title: 'Testing', description: 'We test everything thoroughly for a bug-free launch.', icon: 'test', color: '#2563eb' },
-  { step: 6, title: 'Launch & Support', description: 'We launch your store and provide ongoing support.', icon: 'rocket', color: '#16a34a' },
+  { step: 1, title: 'Consultation', description: 'We learn your business goals, target market, product range and store requirements during consultation.', icon: 'chat', color: '#2563eb' },
+  { step: 2, title: 'Planning', description: 'We plan store structure, key features, checkout flows and user journeys for a smooth shopping experience.', icon: 'plan', color: '#16a34a' },
+  { step: 3, title: 'Design', description: 'We create attractive designs, product layouts, brand styling and pages that focus on driving conversions.', icon: 'design', color: '#9333ea' },
+  { step: 4, title: 'Development', description: 'We build fast, secure online stores with modern technology, payment gateways and reliable integrations.', icon: 'code', color: '#ea580c' },
+  { step: 5, title: 'Testing', description: 'We test payments, checkout, mobile layout, page speed and performance before your store goes live.', icon: 'test', color: '#2563eb' },
+  { step: 6, title: 'Go Live', description: 'We launch your store and provide ongoing updates, optimisation, maintenance and dedicated support.', icon: 'rocket', color: '#16a34a' },
 ];
 
 export const ECOMMERCE_WHY_SHOWCASE = {
@@ -395,7 +390,7 @@ export const ECOMMERCE_FEATURES_SECTION = {
 
 export const ECOMMERCE_FEATURES = [
   {
-    title: 'Responsive Mobile Design',
+    title: 'Mobile Design',
     points: [
       'Fully responsive on all screen sizes',
       'Optimised for smartphones and tablets',
@@ -403,7 +398,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Fast Loading Speed',
+    title: 'Fast Loading',
     points: [
       'Optimised for fast page loads',
       'Better customer satisfaction & SEO',
@@ -411,7 +406,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Product Search & Smart Filters',
+    title: 'Smart Search',
     points: [
       'Advanced search functionality',
       'Category and filter navigation',
@@ -419,7 +414,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Secure Customer Accounts',
+    title: 'Secure Accounts',
     points: [
       'Secure login and registration',
       'Order history and saved addresses',
@@ -427,7 +422,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Wishlist Functionality',
+    title: 'Wishlist',
     points: [
       'Save favourite products for later',
       'Encourage return visits',
@@ -435,7 +430,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Product Reviews & Ratings',
+    title: 'Buyer Reviews',
     points: [
       'Verified buyer reviews',
       'Build customer confidence',
@@ -443,7 +438,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Discount Coupons & Promotions',
+    title: 'Coupons',
     points: [
       'Discount codes and percentage offers',
       'Free shipping promotions',
@@ -451,7 +446,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Related Products',
+    title: 'Related Items',
     points: [
       'Recommended product suggestions',
       'Cross-sell complementary items',
@@ -459,7 +454,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Email Notifications',
+    title: 'Email Alerts',
     points: [
       'Order and payment confirmations',
       'Shipping and delivery updates',
@@ -467,7 +462,7 @@ export const ECOMMERCE_FEATURES = [
     ],
   },
   {
-    title: 'Analytics Dashboard',
+    title: 'Analytics',
     points: [
       'Sales and revenue reporting',
       'Customer behaviour insights',

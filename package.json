@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-sitemap.cjs && next build",
     "serve": "next build && next start",
     "serve:only": "next start",
     "test": "react-scripts test",

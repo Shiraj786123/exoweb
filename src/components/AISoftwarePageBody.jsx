@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import aiDetailsVisual from '../assets/ai/ai-details-visual.jpg';
 import {
   HiOutlineCpuChip,
   HiOutlineCheckCircle,
@@ -21,8 +21,6 @@ import {
   HiOutlineTruck,
   HiOutlineCog6Tooth,
   HiOutlineQuestionMarkCircle,
-  HiOutlineLink,
-  HiOutlineArrowRightCircle,
   HiOutlineDevicePhoneMobile,
   HiOutlineMagnifyingGlass,
   HiOutlineCodeBracket,
@@ -56,12 +54,12 @@ import {
   AI_INDUSTRY_TILES,
   AI_TESTIMONIALS,
   AI_FAQ,
-  AI_RELATED,
   AI_CTA,
 } from '../content/aiSoftwarePageContent';
-import AISoftwareWhyShowcaseSection from './ai/AISoftwareWhyShowcaseSection';
 import AISoftwareTransformSection from './ai/AISoftwareTransformSection';
 import PageBodyCtaSection from './shared/PageBodyCtaSection';
+import ServiceZigzagTimeline from './shared/ServiceZigzagTimeline';
+import HorizontalZigzagInfographic from './shared/HorizontalZigzagInfographic';
 
 const whyBusinessIcons = {
   'Automate Repetitive Tasks': HiOutlineCog6Tooth,
@@ -164,17 +162,19 @@ const showcaseIndustryIcons = {
   logistics: HiOutlineTruck,
 };
 
-const relatedIcons = {
-  'Software Development': HiOutlineCodeBracket,
-  'Website Development': HiOutlineGlobeAlt,
-  'Mobile App Development': HiOutlineDevicePhoneMobile,
-  'SEO Services': HiOutlineMagnifyingGlass,
-  'eCommerce Development': HiOutlineShoppingBag,
-};
-
 const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2', '#dc2626', '#db2777', '#38bdf8'];
 
-const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, variant = 'default', extraClass = '' }) => (
+const SectionShell = ({
+  icon: Icon,
+  title,
+  titleAccent,
+  subtitle,
+  children,
+  variant = 'default',
+  extraClass = '',
+  titleClassName = 'ecd-h4',
+  TitleTag = 'h4',
+}) => (
   <section
     className={[
       'aiss-v2__section',
@@ -193,7 +193,7 @@ const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, vari
           </div>
         )}
         <div>
-          <h2 className="aiss-v2__title">
+          <TitleTag className={titleClassName}>
             {title}
             {titleAccent && (
               <>
@@ -201,13 +201,19 @@ const SectionShell = ({ icon: Icon, title, titleAccent, subtitle, children, vari
                 <span className="aiss-v2__title_accent">{titleAccent}</span>
               </>
             )}
-          </h2>
+          </TitleTag>
           {subtitle && <p className="aiss-v2__subtitle">{subtitle}</p>}
         </div>
       </div>
       {children}
     </div>
   </section>
+);
+
+const SectionVisual = ({ src, alt, className = '', width = 420, height = 340 }) => (
+  <div className={`ecd-v2__section_visual${className ? ` ${className}` : ''}`}>
+    <Image src={src} alt={alt} width={width} height={height} className="ecd-v2__section_visual_img" />
+  </div>
 );
 
 const Prose = ({ paragraphs, className = '' }) => (
@@ -227,7 +233,7 @@ const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAcce
       <div className="aiss-v2__ship_icon" style={{ color: accent }}>
         <Icon />
       </div>
-      <h3>{item.title}</h3>
+      <h5 className="ecd-h5">{item.title}</h5>
       {item.description ? (
         <p className="aiss-v2__ship_desc">{item.description}</p>
       ) : null}
@@ -267,22 +273,32 @@ const AISoftwarePageBody = () => (
     <section className="aiss-v2__intro_combined">
       <div className="aiss-v2__details_label">
         <div className="aiss-v2__container">
-          <span>In-Depth AI Solutions</span>
-          <h2>Everything You Need to Build Intelligent Software</h2>
-          <p>Explore our complete AI development capabilities, integrations, industry solutions and long-term support.</p>
-        </div>
-      </div>
-      <div className="aiss-v2__container">
-        <div className="aiss-v2__intro_brief">
-          <div className="aiss-v2__intro_icon" aria-hidden="true">
-            <HiOutlineCpuChip />
+          <div className="ecd-v2__details_label_inner">
+            <div className="ecd-v2__details_label_copy">
+              <span>In-Depth AI Solutions</span>
+              <h4 className="ecd-h4">Everything You Need to Build Intelligent Software</h4>
+              <p>Explore our complete AI development capabilities, integrations, industry solutions and long-term support.</p>
+            </div>
+            <SectionVisual
+              src={aiDetailsVisual}
+              alt="Professional AI software development services"
+              className="ecd-v2__section_visual--website-details"
+              width={1024}
+              height={769}
+            />
           </div>
-          <p>{AI_INTRO.summary}</p>
         </div>
       </div>
+      <PageBodyCtaSection
+        cta={AI_CTA}
+        classPrefix="ecd-v2"
+        service="AI Solutions"
+        intro={{
+          icon: <HiOutlineCpuChip />,
+          text: AI_INTRO.summary,
+        }}
+      />
     </section>
-
-    <PageBodyCtaSection cta={AI_CTA} classPrefix="ecd-v2" />
 
     <SectionShell icon={HiOutlineLightBulb} title={AI_WHY_BUSINESS.title} variant="alt">
       <Prose paragraphs={AI_WHY_BUSINESS.intro} className="aiss-v2__prose--center" />
@@ -300,11 +316,10 @@ const AISoftwarePageBody = () => (
     <SectionShell icon={HiOutlineChatBubbleLeftRight} title={AI_CHATBOT_DETAIL.title} titleAccent={AI_CHATBOT_DETAIL.titleAccent}>
       <p className="aiss-v2__center_lead">{AI_CHATBOT_DETAIL.intro}</p>
       <p className="aiss-v2__label aiss-v2__label--center">{AI_CHATBOT_DETAIL.benefitsLabel}</p>
-      <IconPointsRow
+      <ServiceZigzagTimeline
         items={AI_CHATBOT_DETAIL.benefits}
         iconMap={chatbotBenefitIcons}
         fallbackIcon={HiOutlineChatBubbleLeftRight}
-        cols={3}
       />
     </SectionShell>
 
@@ -327,11 +342,10 @@ const AISoftwarePageBody = () => (
 
     <SectionShell icon={HiOutlineRocketLaunch} title={AI_AGENTS_DETAIL.title} titleAccent={AI_AGENTS_DETAIL.titleAccent} variant="alt">
       <p className="aiss-v2__center_lead">{AI_AGENTS_DETAIL.intro}</p>
-      <IconPointsRow
+      <HorizontalZigzagInfographic
         items={AI_AGENTS_DETAIL.items}
         iconMap={agentIcons}
         fallbackIcon={HiOutlineRocketLaunch}
-        cols={3}
       />
       <p className="aiss-v2__closing aiss-v2__closing--center">{AI_AGENTS_DETAIL.closing}</p>
     </SectionShell>
@@ -339,34 +353,29 @@ const AISoftwarePageBody = () => (
     <SectionShell icon={HiOutlineCog6Tooth} title={AI_AUTOMATION_DETAIL.title} titleAccent={AI_AUTOMATION_DETAIL.titleAccent}>
       <p className="aiss-v2__center_lead">{AI_AUTOMATION_DETAIL.intro}</p>
       <p className="aiss-v2__label aiss-v2__label--center">{AI_AUTOMATION_DETAIL.solutionsLabel}</p>
-      <IconPointsRow
+      <ServiceZigzagTimeline
         items={AI_AUTOMATION_DETAIL.solutions}
         iconMap={automationIcons}
         fallbackIcon={HiOutlineCog6Tooth}
-        cols={3}
       />
       <p className="aiss-v2__closing aiss-v2__closing--center">{AI_AUTOMATION_DETAIL.closing}</p>
     </SectionShell>
 
     <SectionShell icon={HiOutlineSparkles} title={AI_GENERATIVE_DETAIL.title} titleAccent={AI_GENERATIVE_DETAIL.titleAccent} variant="alt">
-      <Prose paragraphs={AI_GENERATIVE_DETAIL.intro} className="aiss-v2__prose--center" />
-      <p className="aiss-v2__label aiss-v2__label--center">{AI_GENERATIVE_DETAIL.servicesLabel}</p>
       <IconPointsRow
         items={AI_GENERATIVE_DETAIL.services}
         iconMap={generativeIcons}
         fallbackIcon={HiOutlineSparkles}
         cols={4}
       />
-      <p className="aiss-v2__closing aiss-v2__closing--center">{AI_GENERATIVE_DETAIL.closing}</p>
     </SectionShell>
 
     <SectionShell icon={HiOutlinePuzzlePiece} title={AI_INTEGRATION_DETAIL.title} titleAccent={AI_INTEGRATION_DETAIL.titleAccent} variant="hero">
       <p className="aiss-v2__center_lead aiss-v2__center_lead--light">{AI_INTEGRATION_DETAIL.intro}</p>
-      <IconPointsRow
+      <HorizontalZigzagInfographic
         items={AI_INTEGRATION_DETAIL.platforms}
         iconMap={integrationIcons}
         fallbackIcon={HiOutlinePuzzlePiece}
-        cols={3}
       />
       <p className="aiss-v2__closing aiss-v2__closing--center aiss-v2__closing--light">{AI_INTEGRATION_DETAIL.closing}</p>
     </SectionShell>
@@ -388,7 +397,7 @@ const AISoftwarePageBody = () => (
       variant="hero"
     >
       <p className="aiss-v2__center_lead aiss-v2__center_lead--light">{AI_INDUSTRIES_SECTION.intro}</p>
-      <div className="aiss-show__mini_grid aiss-show__mini_grid--single-line">
+      <div className="aiss-show__mini_grid aiss-show__mini_grid--cols-4 aiss-show__mini_grid--full-labels">
         {AI_INDUSTRY_TILES.map((industry) => {
           const Icon = showcaseIndustryIcons[industry.icon];
           return (
@@ -408,8 +417,6 @@ const AISoftwarePageBody = () => (
         cols={4}
       />
     </SectionShell>
-
-    <AISoftwareWhyShowcaseSection />
 
     <SectionShell icon={HiOutlineChatBubbleLeftRight} title={AI_TESTIMONIALS.title}>
       <div className="aiss-v2__testimonial_grid">
@@ -432,7 +439,13 @@ const AISoftwarePageBody = () => (
       </div>
     </SectionShell>
 
-    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions" variant="alt">
+    <SectionShell
+      icon={HiOutlineQuestionMarkCircle}
+      title="Frequently Asked Questions"
+      variant="alt"
+      titleClassName="ecd-h6"
+      TitleTag="h6"
+    >
       <div className="aiss-v2__faq aiss-v2__faq--cols">
         <div className="aiss-v2__faq_col">
           {AI_FAQ.slice(0, 5).map((item) => (
@@ -451,25 +464,6 @@ const AISoftwarePageBody = () => (
           ))}
         </div>
       </div>
-    </SectionShell>
-
-    <SectionShell icon={HiOutlineLink} title={AI_RELATED.title}>
-      <Prose paragraphs={AI_RELATED.intro} className="aiss-v2__prose--center" />
-      <div className="aiss-v2__related_row">
-        {AI_RELATED.links.map((link) => {
-          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
-          return (
-            <Link key={link.href} href={link.href} className="aiss-v2__related_tile">
-              <div className="aiss-v2__related_tile_icon">
-                <Icon />
-              </div>
-              <span className="aiss-v2__related_tile_label">{link.label}</span>
-              <HiOutlineArrowRightCircle className="aiss-v2__related_tile_arrow" aria-hidden="true" />
-            </Link>
-          );
-        })}
-      </div>
-      <p className="aiss-v2__closing aiss-v2__closing--center">{AI_RELATED.closing}</p>
     </SectionShell>
   </div>
 );

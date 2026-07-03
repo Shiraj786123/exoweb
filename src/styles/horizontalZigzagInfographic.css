@@ -1,0 +1,283 @@
+/* Horizontal zigzag business infographic — website service sections */
+
+.hzigzag {
+  position: relative;
+  margin: 32px 0 8px;
+  padding: 0 8px;
+}
+
+.hzigzag__track {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  height: 88px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hzigzag__track_start {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.35);
+}
+
+.hzigzag__track_seg {
+  flex: 1;
+  height: 4px;
+  min-width: 0;
+  background: linear-gradient(90deg, #ec4899 0%, #f59e0b 55%, #a3e635 100%);
+  position: relative;
+}
+
+.hzigzag__track_seg--down {
+  align-self: flex-start;
+  margin-top: 8px;
+  transform: skewY(12deg);
+  transform-origin: left center;
+}
+
+.hzigzag__track_seg--up {
+  align-self: flex-end;
+  margin-bottom: 8px;
+  transform: skewY(-12deg);
+  transform-origin: left center;
+}
+
+.hzigzag__track_arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 14px solid #a3e635;
+  flex-shrink: 0;
+  margin-left: -2px;
+}
+
+.hzigzag__stations {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--hzigzag-count, 4), minmax(0, 1fr));
+  gap: 12px;
+  align-items: center;
+  min-height: 320px;
+}
+
+.hzigzag__station {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: stretch;
+  min-height: 300px;
+}
+
+.hzigzag__slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+}
+
+.hzigzag__slot--top {
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.hzigzag__slot--bottom {
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.hzigzag__node_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 28px;
+}
+
+.hzigzag__stem {
+  position: absolute;
+  width: 2px;
+  background: #1e293b;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.hzigzag__station--top .hzigzag__stem {
+  top: 0;
+  bottom: 50%;
+}
+
+.hzigzag__station--bottom .hzigzag__stem {
+  top: 50%;
+  bottom: 0;
+}
+
+.hzigzag__node {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #1e293b;
+  box-shadow: 0 0 0 2px #fff;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.hzigzag__card {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 240px;
+  min-height: 108px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow:
+    4px 4px 0 rgba(15, 23, 42, 0.08),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.hzigzag__card_icon {
+  width: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hzigzag-gradient);
+  color: #fff;
+  font-size: 1.45rem;
+}
+
+.hzigzag__card_body {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 10px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hzigzag__card_title {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.hzigzag__card_desc {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.hzigzag__card_accent {
+  width: 18px;
+  flex-shrink: 0;
+  background: var(--hzigzag-gradient);
+  transform: skewX(-12deg);
+  margin-right: -4px;
+  opacity: 0.9;
+}
+
+/* Dark hero section variant */
+.ecd-v2__section--hero .hzigzag__card {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.ecd-v2__section--hero .hzigzag__card_body {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.ecd-v2__section--hero .hzigzag__node {
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.4);
+}
+
+.aiss-v2__section--hero .hzigzag__card {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.aiss-v2__section--hero .hzigzag__card_body {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.aiss-v2__section--hero .hzigzag__node {
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .hzigzag__stations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    gap: 20px 16px;
+  }
+
+  .hzigzag__track {
+    display: none;
+  }
+
+  .hzigzag__station {
+    min-height: 0;
+    grid-template-rows: auto;
+  }
+
+  .hzigzag__station--top,
+  .hzigzag__station--bottom {
+    grid-template-rows: auto;
+  }
+
+  .hzigzag__slot--top,
+  .hzigzag__slot--bottom {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .hzigzag__station--top .hzigzag__slot--bottom,
+  .hzigzag__station--bottom .hzigzag__slot--top {
+    display: none;
+  }
+
+  .hzigzag__node_wrap {
+    display: none;
+  }
+
+  .hzigzag__card {
+    max-width: 100%;
+  }
+
+  .hzigzag__card_title {
+    font-size: 0.82rem;
+  }
+
+  .hzigzag__card_desc {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hzigzag__stations {
+    grid-template-columns: 1fr;
+  }
+}

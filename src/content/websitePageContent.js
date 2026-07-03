@@ -12,7 +12,7 @@ export const WEB_HERO = {
   ],
   primaryCta: 'Get a Free Quote',
   secondaryCta: 'View Our Portfolio',
-  secondaryHref: '/#results',
+  secondaryHref: '/portfolio',
 };
 
 export const WEB_INTRO = {
@@ -28,12 +28,12 @@ export const WEB_DETAILS_LABEL = {
 };
 
 export const WEB_PLATFORMS = [
-  { name: 'WordPress', icon: 'wordpress' },
-  { name: 'React', icon: 'react' },
-  { name: 'Next.js', icon: 'next' },
-  { name: 'PHP', icon: 'php' },
-  { name: 'Laravel', icon: 'laravel' },
-  { name: 'Node.js', icon: 'node' },
+  { name: 'WordPress', icon: 'wordpress', href: 'https://wordpress.org' },
+  { name: 'React', icon: 'react', href: 'https://react.dev' },
+  { name: 'Next.js', icon: 'next', href: 'https://nextjs.org' },
+  { name: 'PHP', icon: 'php', href: 'https://www.php.net' },
+  { name: 'Laravel', icon: 'laravel', href: 'https://laravel.com' },
+  { name: 'Node.js', icon: 'node', href: 'https://nodejs.org' },
 ];
 
 export const WEB_SERVICES_INTRO = {
@@ -143,12 +143,12 @@ export const WEB_INDUSTRY_TILES = [
 ];
 
 export const WEB_PROCESS_SHORT = [
-  { step: 1, title: 'Discovery', description: 'We learn about your business, goals and requirements.', icon: 'discovery', color: '#2563eb' },
-  { step: 2, title: 'Planning', description: 'We create the website structure and content strategy.', icon: 'plan', color: '#16a34a' },
-  { step: 3, title: 'Design', description: 'Modern layouts that reflect your brand identity.', icon: 'design', color: '#9333ea' },
-  { step: 4, title: 'Development', description: 'Clean, scalable and secure coding standards.', icon: 'code', color: '#ea580c' },
-  { step: 5, title: 'Testing', description: 'Speed, security, responsiveness and compatibility checks.', icon: 'test', color: '#2563eb' },
-  { step: 6, title: 'Launch & Support', description: 'We launch your site and provide ongoing guidance.', icon: 'rocket', color: '#16a34a' },
+  { step: 1, title: 'Discovery', description: 'We learn your business, goals, audience and website requirements through a detailed discovery phase.', icon: 'discovery', color: '#2563eb' },
+  { step: 2, title: 'Planning', description: 'We create site structure, sitemap, content plan and page flows aligned with your business goals.', icon: 'plan', color: '#16a34a' },
+  { step: 3, title: 'Design', description: 'We craft modern layouts, responsive design, brand styling and user flows that engage every visitor.', icon: 'design', color: '#9333ea' },
+  { step: 4, title: 'Development', description: 'We build with clean code, modern frameworks, secure standards and proven development practices.', icon: 'code', color: '#ea580c' },
+  { step: 5, title: 'Testing', description: 'We test speed, security, responsiveness, browser support and mobile display before every launch.', icon: 'test', color: '#2563eb' },
+  { step: 6, title: 'Go Live', description: 'We launch your website and provide ongoing updates, maintenance and dedicated support.', icon: 'rocket', color: '#16a34a' },
 ];
 
 export const WEB_WHY_SHOWCASE = {

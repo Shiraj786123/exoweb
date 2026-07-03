@@ -25,13 +25,6 @@ const Footer = () => {
     { label: 'Website Speed & Performance Fixes', path: '/seo-services' }
   ];
 
-  const companyLinks = [
-    { label: 'Website Growth Guides', path: '/seo-services' },
-    { label: 'AI for Business', path: '/ai-software-development' },
-    { label: 'Technical SEO Knowledgebase', path: '/seo-services' },
-    { label: 'Case Studies & Results', path: '/about' }
-  ];
-
   const exploreLinks = [
     { label: 'About Vexoweb', path: '/about' },
     { label: 'How We Work', path: '/about' },
@@ -65,8 +58,9 @@ const Footer = () => {
                 src={siteLogo}
                 alt="Vexoweb Logo"
                 className="footer-logo-img"
-                width={280}
-                height={145}
+                width={200}
+                height={100}
+                sizes="(max-width: 768px) 200px, 280px"
                 priority
               />
             </div>
@@ -107,59 +101,50 @@ const Footer = () => {
           </div>
 
           {/* Columns */}
-          <div className="footer-column">
-            <h4 className="footer-column-title">Core Services</h4>
-            <ul className="footer-links">
-              {servicesLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="footer-columns">
+            <div className="footer-column">
+              <h4 className="footer-column-title">Core Services</h4>
+              <ul className="footer-links">
+                {servicesLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.path}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="footer-column">
-            <h4 className="footer-column-title">Solutions by Need</h4>
-            <ul className="footer-links">
-              {knowledgebaseLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="footer-column">
+              <h4 className="footer-column-title">Solutions by Need</h4>
+              <ul className="footer-links">
+                {knowledgebaseLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.path}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="footer-column">
-            <h4 className="footer-column-title">Insights & Resources</h4>
-            <ul className="footer-links">
-              {companyLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="footer-column footer-column--company">
+              <h4 className="footer-column-title">Company</h4>
+              <ul className="footer-links">
+                {exploreLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.path}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="footer-column">
-            <h4 className="footer-column-title">Company</h4>
-            <ul className="footer-links">
-              {exploreLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-column">
-            <h4 className="footer-column-title">Areas Served</h4>
-            <ul className="footer-links">
-              {areasServed.map((area) => (
-                <li key={area.label}>
-                  <Link href={area.path}>{area.label}</Link>
-                </li>
-              ))}
-            </ul>
+            <div className="footer-column footer-column--areas">
+              <h4 className="footer-column-title">Areas Served</h4>
+              <ul className="footer-links">
+                {areasServed.map((area) => (
+                  <li key={area.label}>
+                    <Link href={area.path}>{area.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
         </div>

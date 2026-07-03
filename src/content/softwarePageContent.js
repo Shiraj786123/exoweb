@@ -12,7 +12,7 @@ export const SOFT_HERO = {
   ],
   primaryCta: 'Request a Free Consultation',
   secondaryCta: 'View Our Portfolio',
-  secondaryHref: '/#results',
+  secondaryHref: '/portfolio',
 };
 
 export const SOFT_INTRO = {
@@ -28,14 +28,14 @@ export const SOFT_DETAILS_LABEL = {
 };
 
 export const SOFT_PLATFORMS = [
-  { name: 'PHP & Laravel', brand: 'laravel' },
-  { name: 'React', brand: 'react' },
-  { name: 'Next.js', brand: 'next' },
-  { name: 'Node.js', brand: 'node' },
-  { name: 'MySQL', brand: 'mysql' },
-  { name: 'PostgreSQL', brand: 'postgresql' },
-  { name: 'REST APIs', brand: 'express' },
-  { name: 'Cloud Hosting', brand: 'aws' },
+  { name: 'PHP & Laravel', brand: 'laravel', href: 'https://laravel.com' },
+  { name: 'React', brand: 'react', href: 'https://react.dev' },
+  { name: 'Next.js', brand: 'next', href: 'https://nextjs.org' },
+  { name: 'Node.js', brand: 'node', href: 'https://nodejs.org' },
+  { name: 'MySQL', brand: 'mysql', href: 'https://www.mysql.com' },
+  { name: 'PostgreSQL', brand: 'postgresql', href: 'https://www.postgresql.org' },
+  { name: 'REST APIs', brand: 'express', href: 'https://expressjs.com' },
+  { name: 'Cloud Hosting', brand: 'aws', href: 'https://aws.amazon.com' },
 ];
 
 export const SOFT_SERVICES_INTRO = {
@@ -167,12 +167,12 @@ export const SOFT_INDUSTRY_TILES = [
 ];
 
 export const SOFT_PROCESS_SHORT = [
-  { step: 1, title: 'Discovery', description: 'We learn about your business objectives and operational challenges.', icon: 'discovery', color: '#2563eb' },
-  { step: 2, title: 'Planning', description: 'We design the software architecture and project roadmap.', icon: 'plan', color: '#16a34a' },
-  { step: 3, title: 'UI/UX Design', description: 'We create intuitive interfaces that are easy for your team to use.', icon: 'design', color: '#9333ea' },
-  { step: 4, title: 'Development', description: 'We build secure, scalable and high-performance software.', icon: 'code', color: '#ea580c' },
-  { step: 5, title: 'Testing', description: 'Comprehensive quality assurance, security testing and performance optimisation.', icon: 'test', color: '#2563eb' },
-  { step: 6, title: 'Deployment & Support', description: 'We launch your software and provide ongoing maintenance and enhancements.', icon: 'rocket', color: '#16a34a' },
+  { step: 1, title: 'Discovery', description: 'We learn your objectives, workflows, team processes and operational challenges during discovery.', icon: 'discovery', color: '#2563eb' },
+  { step: 2, title: 'Planning', description: 'We design architecture, feature scope, integrations and a roadmap aligned with your business goals.', icon: 'plan', color: '#16a34a' },
+  { step: 3, title: 'UI/UX Design', description: 'We create intuitive interfaces, clear workflows and dashboards that your team can use every day.', icon: 'design', color: '#9333ea' },
+  { step: 4, title: 'Development', description: 'We build secure, scalable software with modern technology, APIs and proven development practices.', icon: 'code', color: '#ea580c' },
+  { step: 5, title: 'Testing', description: 'We run quality checks, security testing, performance audits and fixes before your software goes live.', icon: 'test', color: '#2563eb' },
+  { step: 6, title: 'Go Live', description: 'We launch your software and provide ongoing maintenance, updates and dedicated technical support.', icon: 'rocket', color: '#16a34a' },
 ];
 
 export const SOFT_PROCESS = [

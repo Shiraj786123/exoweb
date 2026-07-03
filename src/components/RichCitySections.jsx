@@ -294,9 +294,6 @@ export function RichCityServices({ section }) {
               </div>
               <h3 className="city-rich__h3">{item.title}</h3>
               <p>{item.description}</p>
-              <a href="#contact" className="city-rich__learn-more" style={{ color: meta.color }}>
-                Learn More <span aria-hidden="true">→</span>
-              </a>
             </article>
           );
         })}
@@ -420,28 +417,93 @@ export function RichCityTrust({ section, config }) {
 export function RichCityServing({ section, config }) {
   const cityName = config?.city;
   const localData = getCityLocalData(cityName);
+  const mapsLink = localData ? getGoogleMapsUrl(localData.lat, localData.lng, cityName) : null;
+
+  const regionLabel = localData?.location
+    ? localData.location.split(',').slice(1, -1).join(',').trim() || 'Sri Lanka'
+    : 'Sri Lanka';
+
+  const highlights = [
+    { label: 'Local focus', text: `Businesses in ${cityName}` },
+    { label: 'Regional reach', text: regionLabel },
+    { label: 'Dedicated support', text: `${cityName}-based team` },
+  ];
 
   return (
     <SectionShell variant="serving">
-      <div className="city-rich__serving-layout">
-        <div className="city-rich__serving-copy">
-          <SectionHeader title={section.title} align="left" />
-          {section.paragraphs?.map((p) => (
-            <p key={p.slice(0, 40)} className="city-rich__text">{p}</p>
-          ))}
-          <a href="#contact" className="city-rich__btn city-rich__btn--primary">
-            Get a Free Quote
-          </a>
-        </div>
-        {localData ? (
-          <CityLocalMedia cityName={cityName} showMap />
-        ) : (
-          <div className="city-rich__serving-card">
-            {section.paragraphs?.map((p) => (
-              <p key={p.slice(0, 40)} className="city-rich__text">{p}</p>
-            ))}
+      <div className="city-rich__serving-v2">
+        <article className="city-rich__serving-v2_card">
+          <div className="city-rich__serving-v2_body">
+            <div className="city-rich__serving-v2_header">
+              <span className="city-rich__serving-v2_eyebrow">Local coverage</span>
+              <h2 className="city-rich__h2 city-rich__serving-v2_title">{section.title}</h2>
+            </div>
+
+            <div className="city-rich__serving-v2_copy">
+              {section.paragraphs?.map((p) => (
+                <p key={p.slice(0, 40)} className="city-rich__text city-rich__serving-v2_text">
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            <ul className="city-rich__serving-v2_highlights">
+              {highlights.map((item) => (
+                <li key={item.label} className="city-rich__serving-v2_highlight">
+                  <span className="city-rich__serving-v2_highlight_label">{item.label}</span>
+                  <span className="city-rich__serving-v2_highlight_text">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="city-rich__serving-v2_actions">
+              <a href="#contact" className="city-rich__btn city-rich__btn--primary">
+                Get a Free Quote
+              </a>
+              {mapsLink ? (
+                <a
+                  href={mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="city-rich__serving-v2_maps_link"
+                >
+                  View {cityName} on Google Maps <span aria-hidden="true">→</span>
+                </a>
+              ) : null}
+            </div>
           </div>
-        )}
+
+          <div className="city-rich__serving-v2_visual">
+            {localData ? (
+              <div className="city-rich__serving-v2_banner">
+                <img
+                  src={localData.image}
+                  alt={localData.imageAlt}
+                  className="city-rich__serving-v2_banner_img"
+                  loading="lazy"
+                />
+                <div className="city-rich__serving-v2_banner_overlay" aria-hidden="true" />
+                <div className="city-rich__serving-v2_location">
+                  <HiOutlineMapPin aria-hidden="true" />
+                  <div>
+                    <strong>{cityName}</strong>
+                    <span>{localData.location}</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="city-rich__serving-v2_banner city-rich__serving-v2_banner--placeholder">
+                <div className="city-rich__serving-v2_location city-rich__serving-v2_location--static">
+                  <HiOutlineMapPin aria-hidden="true" />
+                  <div>
+                    <strong>{cityName}</strong>
+                    <span>Sri Lanka</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
       </div>
     </SectionShell>
   );

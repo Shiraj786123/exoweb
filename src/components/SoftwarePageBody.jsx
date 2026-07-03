@@ -1,19 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import trustVisualImg from '../assets/icons/web-dev-trust-visual.png';
+import softDetailsVisual from '../assets/software/soft-details-visual.jpg';
 import {
   HiOutlineCodeBracket,
   HiOutlineGlobeAlt,
   HiOutlineMapPin,
   HiOutlineCheckCircle,
   HiOutlineQuestionMarkCircle,
-  HiOutlineLink,
   HiOutlineArrowRightCircle,
-  HiOutlineShoppingCart,
-  HiOutlineDevicePhoneMobile,
-  HiOutlineMagnifyingGlass,
-  HiOutlineCpuChip,
   HiOutlineHeart,
   HiOutlineBuildingOffice2,
   HiOutlineAcademicCap,
@@ -37,10 +32,8 @@ import {
   SOFT_INDUSTRIES,
   SOFT_AREAS,
   SOFT_FAQ,
-  SOFT_RELATED,
   SOFT_CTA,
 } from '../content/softwarePageContent';
-import SoftwareWhyShowcaseSection from './software/SoftwareWhyShowcaseSection';
 import PageBodyCtaSection from './shared/PageBodyCtaSection';
 
 const whyCustomIcons = {
@@ -63,19 +56,11 @@ const industryIcons = {
   logistics: HiOutlineTruck,
 };
 
-const relatedIcons = {
-  'Website Development': HiOutlineGlobeAlt,
-  'Ecommerce Development': HiOutlineShoppingCart,
-  'Mobile App Development': HiOutlineDevicePhoneMobile,
-  'AI Software Development': HiOutlineCpuChip,
-  'SEO Services': HiOutlineMagnifyingGlass,
-};
-
 const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2', '#db2777', '#6366f1', '#0d9488'];
 
-const SectionVisual = ({ src, alt, className = '' }) => (
+const SectionVisual = ({ src, alt, className = '', width = 420, height = 340 }) => (
   <div className={`ecd-v2__section_visual${className ? ` ${className}` : ''}`}>
-    <Image src={src} alt={alt} width={420} height={340} className="ecd-v2__section_visual_img" />
+    <Image src={src} alt={alt} width={width} height={height} className="ecd-v2__section_visual_img" />
   </div>
 );
 
@@ -87,6 +72,8 @@ const SectionShell = ({
   children,
   variant = 'default',
   visual,
+  titleClassName = 'ecd-h4',
+  TitleTag = 'h4',
 }) => (
   <section
     className={[
@@ -115,7 +102,7 @@ const SectionShell = ({
             </div>
           )}
           <div>
-            <h2 className="ecd-v2__title">
+            <TitleTag className={titleClassName}>
               {title}
               {titleAccent && (
                 <>
@@ -123,7 +110,7 @@ const SectionShell = ({
                   <span className="ecd-v2__title_accent">{titleAccent}</span>
                 </>
               )}
-            </h2>
+            </TitleTag>
             {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
           </div>
         </div>
@@ -151,30 +138,28 @@ const SoftwarePageBody = () => (
         <div className="ecd-v2__details_label_inner">
           <div className="ecd-v2__details_label_copy">
             <span>{SOFT_DETAILS_LABEL.badge}</span>
-            <h2>{SOFT_DETAILS_LABEL.title}</h2>
+            <h4 className="ecd-h4">{SOFT_DETAILS_LABEL.title}</h4>
             <p>{SOFT_DETAILS_LABEL.subtitle}</p>
           </div>
           <SectionVisual
-            src={trustVisualImg}
+            src={softDetailsVisual}
             alt="Professional software development services"
-            className="ecd-v2__section_visual--launch"
+            className="ecd-v2__section_visual--website-details"
+            width={1024}
+            height={769}
           />
         </div>
       </div>
     </div>
 
-    <section className="ecd-v2__intro ecd-v2__intro--brief">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__intro_brief">
-          <div className="ecd-v2__intro_icon" aria-hidden="true">
-            <HiOutlineCodeBracket />
-          </div>
-          <p>{SOFT_INTRO.summary}</p>
-        </div>
-      </div>
-    </section>
-
-    <PageBodyCtaSection cta={SOFT_CTA} />
+    <PageBodyCtaSection
+      cta={SOFT_CTA}
+      service="Software Development"
+      intro={{
+        icon: <HiOutlineCodeBracket />,
+        text: SOFT_INTRO.summary,
+      }}
+    />
 
     <SectionShell
       icon={HiOutlineSparkles}
@@ -183,7 +168,7 @@ const SoftwarePageBody = () => (
     >
       <p className="ecd-v2__center_lead ecd-v2__center_lead--wide">{SOFT_WHY_CUSTOM.description}</p>
       <p className="ecd-v2__label ecd-v2__label--center">{SOFT_WHY_CUSTOM.listLabel}</p>
-      <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line ecd-show__mini_grid--full-labels">
+      <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-4 ecd-show__mini_grid--full-labels">
         {SOFT_WHY_CUSTOM.benefits.map((benefit) => {
           const Icon = whyCustomIcons[benefit.icon] || HiOutlineCheckCircle;
           return (
@@ -218,7 +203,7 @@ const SoftwarePageBody = () => (
               <div className="ecd-v2__ship_icon" style={{ color: accent }}>
                 <Icon />
               </div>
-              <h3>{industry.title}</h3>
+              <h5 className="ecd-h5">{industry.title}</h5>
               <p>{industry.description}</p>
             </article>
           );
@@ -243,9 +228,13 @@ const SoftwarePageBody = () => (
       </div>
     </SectionShell>
 
-    <SoftwareWhyShowcaseSection />
-
-    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions" variant="alt">
+    <SectionShell
+      icon={HiOutlineQuestionMarkCircle}
+      title="Frequently Asked Questions"
+      variant="alt"
+      titleClassName="ecd-h6"
+      TitleTag="h6"
+    >
       <div className="ecd-v2__faq">
         {SOFT_FAQ.map((item) => (
           <details key={item.q} className="ecd-v2__faq_item">
@@ -254,25 +243,6 @@ const SoftwarePageBody = () => (
           </details>
         ))}
       </div>
-    </SectionShell>
-
-    <SectionShell icon={HiOutlineLink} title={SOFT_RELATED.title}>
-      <Prose paragraphs={SOFT_RELATED.intro} className="ecd-v2__prose--center" />
-      <div className="ecd-v2__related_row">
-        {SOFT_RELATED.links.map((link) => {
-          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
-          return (
-            <Link key={link.href} href={link.href} className="ecd-v2__related_tile">
-              <div className="ecd-v2__related_tile_icon">
-                <Icon />
-              </div>
-              <span className="ecd-v2__related_tile_label">{link.label}</span>
-              <HiOutlineArrowRightCircle className="ecd-v2__related_tile_arrow" aria-hidden="true" />
-            </Link>
-          );
-        })}
-      </div>
-      <p className="ecd-v2__closing ecd-v2__closing--center">{SOFT_RELATED.closing}</p>
     </SectionShell>
   </div>
 );

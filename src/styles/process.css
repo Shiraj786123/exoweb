@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   padding: 72px 24px 64px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 45%, #ffffff 100%);
+  background: radial-gradient(circle at 50% 0%, #003d73 0%, #001b3a 55%, #000f21 100%);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -26,13 +26,13 @@
 .home-process__glow--left {
   top: -120px;
   left: -140px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
 }
 
 .home-process__glow--right {
   bottom: -100px;
   right: -120px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
 }
 
 .home-process__container {
@@ -58,37 +58,38 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(37, 99, 235, 0.18);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: 999px;
 }
 
-.home-process__title {
+.home-process__title,
+.home-process__title-main {
   font-family: "Poppins", sans-serif;
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.03em;
   margin: 0 0 14px;
-  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
 }
 
 .home-process__title-accent {
-  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #38bdf8 !important;
+  background: none !important;
+  -webkit-text-fill-color: #38bdf8 !important;
+  background-clip: border-box !important;
 }
 
 .home-process__subtitle {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.65;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.78);
   margin: 0;
   font-weight: 400;
 }
@@ -293,7 +294,7 @@
   justify-content: center;
   flex-shrink: 0;
   width: 28px;
-  color: #cbd5e1;
+  color: rgba(255, 255, 255, 0.35);
   align-self: center;
   margin: 0 -4px;
   z-index: 2;

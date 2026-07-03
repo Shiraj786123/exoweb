@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import trustVisualImg from '../assets/icons/web-dev-trust-visual.png';
+import webDetailsVisual from '../assets/website/web-details-visual.jpg';
 import {
   HiOutlineGlobeAlt,
   HiOutlineMagnifyingGlass,
@@ -23,12 +23,10 @@ import {
   HiOutlineTruck,
   HiOutlineCheckCircle,
   HiOutlineQuestionMarkCircle,
-  HiOutlineLink,
   HiOutlineArrowRightCircle,
   HiOutlineMapPin,
-  HiOutlineCodeBracket,
-  HiOutlineShoppingCart,
-  HiOutlineCpuChip,
+  HiOutlineDocumentText,
+  HiOutlineCog6Tooth,
 } from 'react-icons/hi2';
 import {
   WEB_DETAILS_LABEL,
@@ -41,11 +39,10 @@ import {
   WEB_INDUSTRIES,
   WEB_AREAS,
   WEB_FAQ,
-  WEB_RELATED,
   WEB_CTA,
 } from '../content/websitePageContent';
-import WebsiteWhyShowcaseSection from './website/WebsiteWhyShowcaseSection';
 import PageBodyCtaSection from './shared/PageBodyCtaSection';
+import HorizontalZigzagInfographic from './shared/HorizontalZigzagInfographic';
 
 const featureIcons = {
   device: HiOutlineDevicePhoneMobile,
@@ -69,19 +66,17 @@ const industryIcons = {
   logistics: HiOutlineTruck,
 };
 
-const relatedIcons = {
-  'Ecommerce Development': HiOutlineShoppingCart,
-  'SEO Services': HiOutlineMagnifyingGlass,
-  'Software Development': HiOutlineCodeBracket,
-  'Mobile App Development': HiOutlineDevicePhoneMobile,
-  'AI Software Development': HiOutlineCpuChip,
+const seoItemIcons = {
+  'Technical SEO': HiOutlineCog6Tooth,
+  'On-Page SEO': HiOutlineDocumentText,
+  'Local SEO Ready': HiOutlineMapPin,
 };
 
 const shipAccents = ['#2563eb', '#16a34a', '#9333ea', '#ea580c', '#0891b2'];
 
-const SectionVisual = ({ src, alt, className = '' }) => (
+const SectionVisual = ({ src, alt, className = '', width = 420, height = 340 }) => (
   <div className={`ecd-v2__section_visual${className ? ` ${className}` : ''}`}>
-    <Image src={src} alt={alt} width={420} height={340} className="ecd-v2__section_visual_img" />
+    <Image src={src} alt={alt} width={width} height={height} className="ecd-v2__section_visual_img" />
   </div>
 );
 
@@ -93,6 +88,8 @@ const SectionShell = ({
   children,
   variant = 'default',
   visual,
+  titleClassName = 'ecd-h4',
+  TitleTag = 'h4',
 }) => (
   <section
     className={[
@@ -121,7 +118,7 @@ const SectionShell = ({
             </div>
           )}
           <div>
-            <h2 className="ecd-v2__title">
+            <TitleTag className={titleClassName}>
               {title}
               {titleAccent && (
                 <>
@@ -129,7 +126,7 @@ const SectionShell = ({
                   <span className="ecd-v2__title_accent">{titleAccent}</span>
                 </>
               )}
-            </h2>
+            </TitleTag>
             {subtitle && <p className="ecd-v2__subtitle">{subtitle}</p>}
           </div>
         </div>
@@ -159,7 +156,7 @@ const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAcce
       <div className="ecd-v2__ship_icon" style={{ color: accent }}>
         <Icon />
       </div>
-      <h3>{item.title}</h3>
+      <h5 className="ecd-h5">{item.title}</h5>
       {item.description ? (
         <p>{item.description}</p>
       ) : (
@@ -200,38 +197,35 @@ const WebsitePageBody = () => (
         <div className="ecd-v2__details_label_inner">
           <div className="ecd-v2__details_label_copy">
             <span>{WEB_DETAILS_LABEL.badge}</span>
-            <h2>{WEB_DETAILS_LABEL.title}</h2>
+            <h4 className="ecd-h4">{WEB_DETAILS_LABEL.title}</h4>
             <p>{WEB_DETAILS_LABEL.subtitle}</p>
           </div>
           <SectionVisual
-            src={trustVisualImg}
+            src={webDetailsVisual}
             alt="Professional website development services"
-            className="ecd-v2__section_visual--launch"
+            className="ecd-v2__section_visual--website-details"
+            width={1024}
+            height={769}
           />
         </div>
       </div>
     </div>
 
-    <section className="ecd-v2__intro ecd-v2__intro--brief">
-      <div className="ecd-v2__container">
-        <div className="ecd-v2__intro_brief">
-          <div className="ecd-v2__intro_icon" aria-hidden="true">
-            <HiOutlineGlobeAlt />
-          </div>
-          <p>{WEB_INTRO.summary}</p>
-        </div>
-      </div>
-    </section>
-
-    <PageBodyCtaSection cta={WEB_CTA} />
+    <PageBodyCtaSection
+      cta={WEB_CTA}
+      service="Website Development"
+      intro={{
+        icon: <HiOutlineGlobeAlt />,
+        text: WEB_INTRO.summary,
+      }}
+    />
 
     <SectionShell icon={HiOutlineGlobeAlt} title={WEB_EASTERN_PROVINCE.title} variant="alt">
       <Prose paragraphs={WEB_EASTERN_PROVINCE.intro} className="ecd-v2__prose--center" />
-      <IconPointsRow
+      <HorizontalZigzagInfographic
         items={WEB_FEATURES}
         iconMap={featureIcons}
         fallbackIcon={HiOutlineGlobeAlt}
-        cols={3}
       />
     </SectionShell>
 
@@ -248,7 +242,11 @@ const WebsitePageBody = () => (
       variant="hero"
     >
       <Prose paragraphs={WEB_SEO.intro} className="ecd-v2__prose--center ecd-v2__prose--light" />
-      <IconPointsRow items={WEB_SEO.items} iconMap={{}} fallbackIcon={HiOutlineMagnifyingGlass} />
+      <HorizontalZigzagInfographic
+        items={WEB_SEO.items}
+        iconMap={seoItemIcons}
+        fallbackIcon={HiOutlineMagnifyingGlass}
+      />
       <p className="ecd-v2__closing ecd-v2__closing--center ecd-v2__closing--light">{WEB_SEO.closing}</p>
     </SectionShell>
 
@@ -263,7 +261,7 @@ const WebsitePageBody = () => (
       title="Industries We Work With"
       subtitle="We build websites for businesses across many industries, including:"
     >
-      <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line ecd-show__mini_grid--cols-10">
+      <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-5 ecd-show__mini_grid--full-labels">
         {WEB_INDUSTRIES.map((industry) => {
           const Icon = industryIcons[industry.icon];
           return (
@@ -295,9 +293,12 @@ const WebsitePageBody = () => (
       </div>
     </SectionShell>
 
-    <WebsiteWhyShowcaseSection />
-
-    <SectionShell icon={HiOutlineQuestionMarkCircle} title="Frequently Asked Questions">
+    <SectionShell
+      icon={HiOutlineQuestionMarkCircle}
+      title="Frequently Asked Questions"
+      titleClassName="ecd-h6"
+      TitleTag="h6"
+    >
       <div className="ecd-v2__faq">
         {WEB_FAQ.map((item) => (
           <details key={item.q} className="ecd-v2__faq_item">
@@ -306,25 +307,6 @@ const WebsitePageBody = () => (
           </details>
         ))}
       </div>
-    </SectionShell>
-
-    <SectionShell icon={HiOutlineLink} title={WEB_RELATED.title} variant="alt">
-      <Prose paragraphs={WEB_RELATED.intro} className="ecd-v2__prose--center" />
-      <div className="ecd-v2__related_row">
-        {WEB_RELATED.links.map((link) => {
-          const Icon = relatedIcons[link.label] || HiOutlineArrowRightCircle;
-          return (
-            <Link key={link.href} href={link.href} className="ecd-v2__related_tile">
-              <div className="ecd-v2__related_tile_icon">
-                <Icon />
-              </div>
-              <span className="ecd-v2__related_tile_label">{link.label}</span>
-              <HiOutlineArrowRightCircle className="ecd-v2__related_tile_arrow" aria-hidden="true" />
-            </Link>
-          );
-        })}
-      </div>
-      <p className="ecd-v2__closing ecd-v2__closing--center">{WEB_RELATED.closing}</p>
     </SectionShell>
   </div>
 );

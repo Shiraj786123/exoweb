@@ -1,5 +1,3 @@
-import { SERVICES_BREADCRUMB } from './pageBreadcrumbs';
-
 const WEBSITE_SERVICES = [
   'Custom business website design',
   'Mobile-friendly responsive layouts',
@@ -46,7 +44,9 @@ function buildWebsiteCity(city, slug, seoTitle, description, heroDesc) {
     seoTitle,
     eyebrow: 'Website Development',
     h1: `Website Development in ${city}`,
-    h1Accent: `Professional websites for ${city} businesses`,
+    h1Line1: 'Website Development in',
+    h1Line2: city,
+    heroTagline: `Professional websites for ${city} businesses`,
     heroDesc,
     description,
     services: WEBSITE_SERVICES,
@@ -66,7 +66,9 @@ function buildSeoCity(city, slug, seoTitle, description, heroDesc) {
     seoTitle,
     eyebrow: 'SEO Services',
     h1: `SEO Services in ${city}`,
-    h1Accent: `Rank higher and win more local customers`,
+    h1Line1: 'SEO Services in',
+    h1Line2: city,
+    heroTagline: 'Rank higher and win more local customers',
     heroDesc,
     description,
     services: SEO_SERVICES,
@@ -150,7 +152,9 @@ export const CITY_PAGES = {
     seoTitle: 'Software Development Services in Batticaloa | Vexoweb',
     eyebrow: 'Software Development',
     h1: 'Software Development in Batticaloa',
-    h1Accent: 'POS, billing & business systems built locally',
+    h1Line1: 'Software Development in',
+    h1Line2: 'Batticaloa',
+    heroTagline: 'POS, billing & business systems built locally',
     heroDesc:
       'Custom software for Batticaloa businesses — POS, billing, inventory, and booking systems designed around how you actually work.',
     description:
@@ -169,7 +173,9 @@ export const CITY_PAGES = {
     seoTitle: 'Mobile App Development in Batticaloa | Vexoweb',
     eyebrow: 'Mobile App Development',
     h1: 'Mobile App Development in Batticaloa',
-    h1Accent: 'Android & iOS apps for local businesses',
+    h1Line1: 'Mobile App Development in',
+    h1Line2: 'Batticaloa',
+    heroTagline: 'Android & iOS apps for local businesses',
     heroDesc:
       'Android and iOS mobile apps for Batticaloa businesses — native and cross-platform applications that perform in the real world.',
     description:
@@ -190,7 +196,6 @@ export function getCityPageBySlug(slug) {
 export function getCityBreadcrumb(config) {
   return [
     { label: 'Home', href: '/' },
-    SERVICES_BREADCRUMB,
     { label: config.parentService.label, href: config.parentService.href },
     { label: config.breadcrumbName },
   ];
@@ -198,4 +203,18 @@ export function getCityBreadcrumb(config) {
 
 export function getCityPageTitle(config) {
   return config.seoTitle || `${config.h1} | Vexoweb`;
+}
+
+/** Hero heading lines — always 3 lines (service + city + tagline). */
+export function getCityHeroLines(config) {
+  const city = config.city || '';
+  const line1 =
+    config.h1Line1 ||
+    (config.h1 && city ? config.h1.replace(new RegExp(`\\s*${city}\\s*$`), '').trim() : config.h1) ||
+    config.eyebrow ||
+    '';
+  const line2 = config.h1Line2 || city;
+  const tagline = config.heroTagline || config.h1Accent || '';
+
+  return { line1, line2, tagline };
 }

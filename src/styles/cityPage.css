@@ -13,6 +13,32 @@
   align-items: center;
 }
 
+/* Hero heading — 3 lines (match service page: h1 + h1 accent + tagline) */
+.fswd__hero_section--top .fswd__h1_line {
+  display: block;
+}
+
+.fswd__hero_section--top .fswd__h1_line--accent,
+.fswd__hero_section--top .fswd__h1 .highlight-text {
+  color: #38bdf8;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.fswd__hero_section--top .fswd__hero_tagline {
+  display: block;
+  margin: 0 0 18px;
+  padding: 0;
+  color: #38bdf8;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  max-width: 620px;
+}
+
 .city-page__split-single {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

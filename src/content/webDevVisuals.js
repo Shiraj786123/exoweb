@@ -3,7 +3,7 @@ import introAmpara from '../assets/icons/web-dev-robo-ampara.png';
 import introKattankudy from '../assets/icons/web-dev-robo-kattankudy.png';
 import introKalmunai from '../assets/icons/web-dev-robo-kalmunai.png';
 import introTrincomalee from '../assets/icons/web-dev-robo-trincomalee.png';
-import trustVisual from '../assets/icons/web-dev-trust-visual.png';
+import trustVisual from '../assets/city/city-trust-highway-night.png';
 
 export const WEB_DEV_INTRO_ROBO_BY_CITY = {
   Ampara: {
@@ -44,5 +44,5 @@ export const WEB_DEV_ROBO = {
 
 export const WEB_DEV_TRUST_VISUAL = {
   src: trustVisual,
-  alt: 'Professional website development and responsive design by Vexoweb',
+  alt: 'City skyline at night with illuminated highways — representing digital growth for local businesses',
 };

@@ -73,9 +73,9 @@ const industryIcons = {
   building: HiOutlineBuildingOffice2,
 };
 
-const SectionHead = ({ title, subtitle }) => (
+const SectionHead = ({ title, subtitle, headingClass = 'ecd-h3', HeadingTag = 'h3' }) => (
   <div className="ecd-show__head">
-    <h2 className="ecd-show__title">{title}</h2>
+    <HeadingTag className={headingClass}>{title}</HeadingTag>
     {subtitle && <p className="ecd-show__subtitle">{subtitle}</p>}
   </div>
 );
@@ -94,18 +94,40 @@ const EcommerceShowcase = () => {
       <div className="ecd-show__container">
         <p className="ecd-show__platforms_label">We build with the world&apos;s leading ecommerce platforms</p>
         <div className="ecd-show__platforms_row">
-          {ECOMMERCE_PLATFORMS.map((platform) => (
-            <div key={platform.name} className="ecd-show__platform_item">
-              {platform.icon === 'custom' ? (
-                <span className="ecd-show__platform_custom" aria-hidden="true">
-                  <HiOutlineCodeBracket />
-                </span>
-              ) : (
-                <img src={platformIcons[platform.icon].src || platformIcons[platform.icon]} alt={platform.name} />
-              )}
-              <span>{platform.name}</span>
-            </div>
-          ))}
+          {ECOMMERCE_PLATFORMS.map((platform) => {
+            const content = (
+              <>
+                {platform.icon === 'custom' ? (
+                  <span className="ecd-show__platform_custom" aria-hidden="true">
+                    <HiOutlineCodeBracket />
+                  </span>
+                ) : (
+                  <img src={platformIcons[platform.icon].src || platformIcons[platform.icon]} alt={platform.name} />
+                )}
+                <span>{platform.name}</span>
+              </>
+            );
+
+            if (!platform.href) {
+              return (
+                <div key={platform.name} className="ecd-show__platform_item ecd-show__platform_item--static">
+                  {content}
+                </div>
+              );
+            }
+
+            return (
+              <a
+                key={platform.name}
+                href={platform.href}
+                className="ecd-show__platform_item"
+                target={platform.href.startsWith('http') ? '_blank' : undefined}
+                rel={platform.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                {content}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -113,7 +135,10 @@ const EcommerceShowcase = () => {
     {/* Services — 5 cards */}
     <section className="ecd-show__section">
       <div className="ecd-show__container">
-        <SectionHead title={ECOMMERCE_SERVICES_INTRO.title} subtitle={ECOMMERCE_SERVICES_INTRO.subtitle} />
+        <SectionHead
+          title={ECOMMERCE_SERVICES_INTRO.title}
+          subtitle={ECOMMERCE_SERVICES_INTRO.subtitle}
+        />
         <div className="ecd-show__services_wrap">
           <div className="ecd-show__services_grid">
             {ECOMMERCE_SERVICE_CARDS.map((service, index) => {
@@ -129,7 +154,7 @@ const EcommerceShowcase = () => {
                     <div className="ecd-show__service_icon" style={{ color: service.color }}>
                       <Icon />
                     </div>
-                    <h3>{service.title}</h3>
+                    <h5 className="ecd-h5">{service.title}</h5>
                     <p className="ecd-show__service_summary">{service.summary}</p>
                     {detail && (
                       <button
@@ -182,8 +207,10 @@ const EcommerceShowcase = () => {
     {/* Features — 8 tiles */}
     <section className="ecd-show__section ecd-show__section--alt">
       <div className="ecd-show__container">
-        <SectionHead title="Powerful Features for a Successful Online Store" />
-        <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
+        <SectionHead
+          title="Powerful Features for a Successful Online Store"
+        />
+        <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-4 ecd-show__mini_grid--full-labels">
           {ECOMMERCE_FEATURE_TILES.map((feature) => {
             const Icon = featureIcons[feature.icon];
             return (
@@ -206,7 +233,7 @@ const EcommerceShowcase = () => {
           title="Industries We Serve"
           subtitle="Custom ecommerce solutions for every industry."
         />
-        <div className="ecd-show__mini_grid ecd-show__mini_grid--single-line">
+        <div className="ecd-show__mini_grid ecd-show__mini_grid--cols-4 ecd-show__mini_grid--full-labels">
           {ECOMMERCE_INDUSTRY_TILES.map((industry) => {
             const Icon = industryIcons[industry.icon];
             return (
@@ -228,6 +255,8 @@ const EcommerceShowcase = () => {
       subtitle="A simple and effective process to build your dream online store."
       steps={ECOMMERCE_PROCESS_SHORT}
       alt
+      titleClassName="ecd-h3"
+      titleTag="h3"
     />
   </div>
   );
