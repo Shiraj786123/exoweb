@@ -320,12 +320,18 @@ const Navbar = () => {
             <div className="dropdown-content services-mega-menu" {...dropdownContentHoverProps}>
               {SERVICES_MENU_ITEMS.map((service) => (
                 <div key={service.id} className="services-mega-menu__item">
-                  <div
-                    className="services-mega-menu__icon"
-                    style={{ backgroundColor: service.accentBg, color: service.accent }}
+                  <Link
+                    href={service.href}
+                    className="services-mega-menu__icon-link"
+                    aria-label={`${service.title} — view service page`}
                   >
-                    <ServicesMegaMenuIcon name={service.icon} />
-                  </div>
+                    <span
+                      className="services-mega-menu__icon"
+                      style={{ backgroundColor: service.accentBg, color: service.accent }}
+                    >
+                      <ServicesMegaMenuIcon name={service.icon} />
+                    </span>
+                  </Link>
                   <h4 className="services-mega-menu__title">{service.title}</h4>
                   <p className="services-mega-menu__desc">{service.description}</p>
                   <Link
