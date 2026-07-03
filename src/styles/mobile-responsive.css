@@ -126,12 +126,18 @@ a.link-btn {
   .ecd__hero,
   .ecd-hero,
   .aiss-hero,
-  .fswd__hero_section,
   .ecd__hero_centered_layout,
   .aiss__hero_centered_layout {
     display: flex !important;
     align-items: flex-start !important;
     justify-content: flex-start !important;
+    text-align: center !important;
+  }
+
+  .fswd__hero_section--top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
   }
 
@@ -1783,11 +1789,17 @@ body,
   .ecd__hero,
   .ecd-hero,
   .aiss-hero,
-  .fswd__hero_section,
   .ecd__hero_centered_layout,
   .aiss__hero_centered_layout {
     align-items: flex-start !important;
     justify-content: flex-start !important;
+    padding-top: calc(var(--site-header-height) + var(--hero-top-gap) + 8px) !important;
+    margin-top: 0 !important;
+  }
+
+  .fswd__hero_section--top {
+    align-items: center !important;
+    justify-content: center !important;
     padding-top: calc(var(--site-header-height) + var(--hero-top-gap) + 8px) !important;
     margin-top: 0 !important;
   }

@@ -1,8 +1,12 @@
-import { CITY_PAGE_SLUGS, getCityPageBySlug, getCityPageTitle } from '../src/content/cityPagesContent';
+import { CITY_PAGE_SLUGS, getCityPageBySlug, getCityPageTitle, getCityBreadcrumb } from '../src/content/cityPagesContent';
 import PageSeo from '../src/components/PageSeo';
+import JsonLd from '../src/components/JsonLd';
 import CityServicePage from '../src/pages/CityServicePage';
+import { buildCityPageSchema } from '../src/lib/pageSchema';
 
 export default function CityRoutePage({ config }) {
+  const breadcrumb = getCityBreadcrumb(config);
+
   return (
     <>
       <PageSeo
@@ -10,6 +14,7 @@ export default function CityRoutePage({ config }) {
         description={config.description}
         path={config.path}
       />
+      <JsonLd data={buildCityPageSchema(config, breadcrumb)} />
       <CityServicePage config={config} />
     </>
   );

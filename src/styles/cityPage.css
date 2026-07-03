@@ -1,21 +1,38 @@
 /* ==========================================================================
+   CITY PAGES — unified styles
+   ========================================================================== */
+
+@import './FullStackWebDev.css';
+@import './richCity.css';
+
+/* ==========================================================================
    CITY & MOBILE APP PAGES — enhanced sections
    ========================================================================== */
 
 .fswd__hero_section--top {
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   min-height: auto;
   padding: 190px 24px 88px;
+  text-align: center;
 }
 
 .fswd__hero_section--top .fswd__hero_content {
   align-items: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Hero heading — 3 lines (match service page: h1 + h1 accent + tagline) */
+.fswd__hero_section--top .fswd__h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .fswd__hero_section--top .fswd__h1_line {
   display: block;
+  text-align: center;
 }
 
 .fswd__hero_section--top .fswd__h1_line--accent,
@@ -29,7 +46,7 @@
 
 .fswd__hero_section--top .fswd__hero_tagline {
   display: block;
-  margin: 0 0 18px;
+  margin: 0 auto 18px;
   padding: 0;
   color: #38bdf8;
   font-size: 1.05rem;
@@ -37,6 +54,17 @@
   letter-spacing: 0.01em;
   line-height: 1.45;
   max-width: 620px;
+  text-align: center;
+}
+
+.fswd__hero_section--top .fswd__hero_description {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fswd__hero_section--top .hero-cta-wrap {
+  justify-content: center;
 }
 
 .city-page__split-single {
@@ -672,6 +700,8 @@
 @media (max-width: 900px) {
   .fswd__hero_section--top {
     padding: 150px 16px 64px;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .city-journey__layout {

@@ -1,9 +1,8 @@
 import React from 'react';
-import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
-import Breadcrumb, { BreadcrumbSchema } from '../components/Breadcrumb';
+import Breadcrumb from '../components/Breadcrumb';
 import HeroTrustText from '../components/HeroTrustText';
 import {
   CityAudienceSection,
@@ -12,7 +11,6 @@ import {
   CityRelatedSection,
   CityServicesGrid,
 } from '../components/CityPageSections';
-import { SITE_URL } from '../lib/siteConfig';
 import { getCityBreadcrumb, getCityHeroLines } from '../content/cityPagesContent';
 import { getRelatedCities, getCityTypeMeta } from '../content/cityPageEnhancements';
 import RichCitySections from '../components/RichCitySections';
@@ -26,36 +24,9 @@ export default function CityServicePage({ config }) {
   const meta = getCityTypeMeta(config.serviceType);
   const related = getRelatedCities(config.serviceType, config.slug);
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Vexoweb',
-    url: SITE_URL,
-    telephone: '+94740309534',
-    email: 'info@vexoweb.lk',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Batticaloa',
-      addressRegion: 'Eastern Province',
-      addressCountry: 'LK',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: config.city,
-    },
-    description: config.description,
-  };
-
   return (
     <div className="fswd__page_wrapper">
       <Navbar />
-      <BreadcrumbSchema items={breadcrumb} />
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-      </Head>
 
       <section className="fswd__hero_section fswd__hero_section--top">
         <div className="fswd__hero_overlay" aria-hidden="true" />

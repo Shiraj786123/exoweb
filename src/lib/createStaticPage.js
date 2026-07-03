@@ -1,4 +1,5 @@
 import PageSeo from '../components/PageSeo';
+import JsonLd from '../components/JsonLd';
 import { BreadcrumbSchema } from '../components/Breadcrumb';
 
 export function createStaticPage(Component, seo) {
@@ -6,7 +7,11 @@ export function createStaticPage(Component, seo) {
     return (
       <>
         <PageSeo {...seo} />
-        {seo.breadcrumb ? <BreadcrumbSchema items={seo.breadcrumb} /> : null}
+        {seo.schema ? (
+          <JsonLd data={seo.schema} />
+        ) : seo.breadcrumb ? (
+          <BreadcrumbSchema items={seo.breadcrumb} />
+        ) : null}
         <Component />
       </>
     );
