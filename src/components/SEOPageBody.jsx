@@ -122,7 +122,7 @@ const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAcce
 
 const IconPointsRow = ({ items, iconMap, fallbackIcon, cols }) => (
   <div
-    className={`ecd-v2__ship_row ecd-v2__ship_row--wrap${cols ? ` ecd-v2__ship_row--cols-${cols}` : ''}`}
+    className={`ecd-v2__ship_row${cols ? ` ecd-v2__ship_row--cols-${cols}` : ' ecd-v2__ship_row--wrap'}`}
     style={cols ? { '--ship-cols': cols } : undefined}
   >
     {items.map((item, index) => (
@@ -200,7 +200,7 @@ const SEOPageBody = () => (
       <p className="ecd-v2__center_lead">
         Our SEO services are available throughout the Eastern Province, including:
       </p>
-      <div className="ecd-v2__related_row">
+      <div className="ecd-v2__related_row" style={{ '--related-cols': SEO_AREAS.length }}>
         {SEO_AREAS.map((area) => (
           <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
             <div className="ecd-v2__related_tile_icon">

@@ -193,7 +193,7 @@ const SoftwarePageBody = () => (
       subtitle="We build custom software for businesses across many industries, including:"
       variant="alt"
     >
-      <div className="ecd-v2__ship_row ecd-v2__ship_row--wrap ecd-v2__ship_row--cols-3">
+      <div className="ecd-v2__ship_row ecd-v2__ship_row--cols-3">
         {SOFT_INDUSTRIES.map((industry, index) => {
           const Icon = industryIcons[industry.icon];
           const accent = shipAccents[index % shipAccents.length];
@@ -215,7 +215,7 @@ const SoftwarePageBody = () => (
       <p className="ecd-v2__center_lead">
         Our software development services are available throughout the Eastern Province, including:
       </p>
-      <div className="ecd-v2__related_row ecd-v2__related_row--areas">
+      <div className="ecd-v2__related_row ecd-v2__related_row--areas" style={{ '--related-cols': SOFT_AREAS.length }}>
         {SOFT_AREAS.map((area) => (
           <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
             <div className="ecd-v2__related_tile_icon">

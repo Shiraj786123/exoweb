@@ -34,7 +34,7 @@
 }
 
 .ecd-show__section {
-  padding: 48px 0;
+  padding: 64px 0;
 }
 
 .ecd-show__section--alt {
@@ -474,9 +474,12 @@
 
 /* Mini cards — features & industries */
 .ecd-show__mini_grid {
+  margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 16px;
+  column-gap: 20px;
+  row-gap: 24px;
+  align-items: stretch;
 }
 
 .ecd-show__mini_card {
@@ -488,9 +491,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  height: 100%;
   box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
 .ecd-show__section--alt .ecd-show__mini_card {
@@ -515,7 +521,8 @@
 
 .ecd-show__mini_grid--single-line {
   grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 12px;
+  column-gap: 16px;
+  row-gap: 20px;
 }
 
 .ecd-show__mini_grid--single-line .ecd-show__mini_card {
@@ -557,7 +564,8 @@
 
 /* Page body benefit tiles — same label size as ecommerce showcase */
 .ecd-show__mini_grid--full-labels {
-  gap: 12px;
+  column-gap: 16px;
+  row-gap: 20px;
 }
 
 .ecd-show__mini_grid--full-labels .ecd-show__mini_card {
@@ -580,7 +588,8 @@
 /* 4 × 2 grid — full labels, no ellipsis */
 .ecd-show__mini_grid--cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  column-gap: 20px;
+  row-gap: 24px;
 }
 
 .ecd-show__mini_grid--cols-4 .ecd-show__mini_card {
@@ -611,7 +620,8 @@
 /* 5 × 2 grid — ten tiles */
 .ecd-show__mini_grid--cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 14px;
+  column-gap: 18px;
+  row-gap: 22px;
 }
 
 .ecd-show__mini_grid--cols-5 .ecd-show__mini_card {
@@ -642,7 +652,8 @@
 /* 3 × 2 grid — six tiles */
 .ecd-show__mini_grid--cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  column-gap: 20px;
+  row-gap: 24px;
 }
 
 .ecd-show__mini_grid--cols-3 .ecd-show__mini_card {
@@ -982,7 +993,7 @@
 }
 
 .ecd__wrapper .ecd-show .svc-process {
-  padding: 48px 0;
+  padding: 48px 0 88px;
 }
 
 .ecd__wrapper .ecd-show .svc-process__header {
@@ -1024,25 +1035,27 @@
   width: fit-content;
   max-width: 100%;
   align-self: flex-start;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.08);
   border: 1px solid rgba(37, 99, 235, 0.15);
   color: #2563eb;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   white-space: nowrap;
 }
 
-.ecd-v2__details_label_copy h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+.ecd-v2__details_label_copy h2,
+.ecd-v2__details_label_copy .ecd-h4 {
+  font-size: clamp(1.85rem, 3.6vw, 2.5rem);
   font-weight: 800;
   color: #001b3a;
-  margin: 0 0 6px;
-  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   background: none !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: #001b3a !important;
@@ -1132,13 +1145,15 @@
 .ecd-v2__payment_split_left .ecd-v2__ship_row--payment {
   width: 100%;
   margin-top: 4px;
-  gap: 14px;
+  column-gap: 20px;
+  row-gap: 24px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .ecd-v2__section--payment .ecd-v2__ship_row--payment .ecd-v2__ship_card {
   min-height: 0;
-  height: 100%;
+  height: auto;
   padding: 22px 16px 18px;
 }
 
@@ -1149,18 +1164,19 @@
   margin-bottom: 10px;
 }
 
-.ecd-v2__section--payment .ecd-v2__ship_row--payment .ecd-v2__ship_card h3 {
-  font-size: 0.88rem;
-  margin-bottom: 8px;
+.ecd-v2__section--payment .ecd-v2__ship_row--payment .ecd-v2__ship_card h3,
+.ecd-v2__section--payment .ecd-v2__ship_row--payment .ecd-v2__ship_card .ecd-h5 {
+  font-size: 0.98rem;
+  margin-bottom: 10px;
 }
 
 .ecd-v2__section--payment .ecd-v2__ship_row--payment .ecd-v2__ship_points {
-  gap: 6px;
+  gap: 8px;
 }
 
 .ecd-v2__section--payment .ecd-v2__ship_row--payment .ecd-v2__ship_points li {
-  font-size: 0.78rem;
-  line-height: 1.45;
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
 .ecd-v2__closing--payment {
@@ -1213,11 +1229,11 @@
 }
 
 .ecd-v2__details_label_copy p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #001b3a;
   margin: 0;
   max-width: none;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .ecd-v2__section_visual--launch,
@@ -1266,7 +1282,8 @@
 @media (max-width: 1100px) {
   .ecd-show__services_grid:not(.ecd-show__services_grid--six):not(.ecd-show__services_grid--seven):not(.ecd-show__services_grid--eight) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+    column-gap: 0;
+    row-gap: 14px;
   }
 
   .ecd-show__services_grid--six .ecd-show__service_card:nth-child(6n) {
@@ -1283,7 +1300,7 @@
   }
 
   .ecd-show__service_card:nth-child(n + 4) {
-    border-bottom: none;
+    border-bottom: 1px solid #e2e8f0;
   }
 
   .ecd-show__service_panel_inner {
@@ -1298,6 +1315,8 @@
   .ecd-show__mini_grid,
   .ecd-show__mini_grid--wrap {
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 18px;
+    row-gap: 22px;
   }
 
   .ecd-show__mini_grid--cols-5 {
@@ -1407,6 +1426,8 @@
 
   .ecd-show__mini_grid {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 20px;
   }
 
   .ecd-show__mini_grid--cols-10 {

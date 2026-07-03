@@ -6,7 +6,7 @@
 .home-process {
   position: relative;
   width: 100%;
-  padding: 72px 24px 64px;
+  padding: 80px 24px;
   background: radial-gradient(circle at 50% 0%, #003d73 0%, #001b3a 55%, #000f21 100%);
   overflow: hidden;
   box-sizing: border-box;
@@ -46,7 +46,7 @@
 .home-process__header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 52px;
+  margin: 0 auto 48px;
 }
 
 .home-process__tag {
@@ -94,23 +94,20 @@
   font-weight: 400;
 }
 
-/* Steps track */
+/* Steps track — 5 equal cards + connectors via display:contents */
 .home-process__track {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
   align-items: stretch;
-  justify-content: center;
-  gap: 0;
+  column-gap: 0;
+  row-gap: 0;
 }
 
 .home-process__card {
-  position: relative;
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  align-items: stretch;
+  display: contents;
 }
 
 .home-process__card-inner::before {
@@ -127,12 +124,11 @@
 }
 
 .home-process__card-inner {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 24px 16px 28px;
+  padding: 28px 16px;
   background: #ffffff;
   border: 1px solid #e8eef5;
   border-radius: 18px;
@@ -146,8 +142,9 @@
     background 0.3s ease;
   position: relative;
   height: 100%;
-  min-height: 260px;
-  margin: 0 6px;
+  min-height: 288px;
+  min-width: 0;
+  box-sizing: border-box;
   cursor: default;
 }
 
@@ -156,9 +153,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.home-process__card:hover .home-process__card-inner {
+.home-process__card-inner:hover {
   transform: translateY(-5px);
   background: color-mix(in srgb, var(--step-color) 7%, #ffffff);
   border-color: color-mix(in srgb, var(--step-color) 42%, #e8eef5);
@@ -167,7 +165,7 @@
     0 4px 12px -2px rgba(15, 23, 42, 0.06);
 }
 
-.home-process__card:hover .home-process__card-inner::before {
+.home-process__card-inner:hover::before {
   opacity: 1;
   height: 4px;
   left: 0;
@@ -175,31 +173,31 @@
   border-radius: 18px 18px 0 0;
 }
 
-.home-process__card:hover .home-process__step-num {
+.home-process__card-inner:hover .home-process__step-num {
   color: var(--step-color);
   transform: scale(1.05);
 }
 
-.home-process__card:hover .home-process__step-label {
+.home-process__card-inner:hover .home-process__step-label {
   color: color-mix(in srgb, var(--step-color) 75%, #64748b);
 }
 
-.home-process__card:hover .home-process__card-title {
+.home-process__card-inner:hover .home-process__card-title {
   color: color-mix(in srgb, var(--step-color) 85%, #0f172a);
 }
 
-.home-process__card:hover .home-process__icon-ring {
+.home-process__card-inner:hover .home-process__icon-ring {
   transform: scale(1.08);
   background: color-mix(in srgb, var(--step-color) 22%, #ffffff);
   border-color: color-mix(in srgb, var(--step-color) 55%, #ffffff);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--step-color) 12%, transparent);
 }
 
-.home-process__card:hover .home-process__icon-core {
+.home-process__card-inner:hover .home-process__icon-core {
   box-shadow: 0 6px 16px color-mix(in srgb, var(--step-color) 35%, transparent);
 }
 
-.home-process__card:hover .home-process__connector {
+.home-process__card-inner:hover + .home-process__connector {
   color: var(--step-color);
   opacity: 0.85;
 }
@@ -209,7 +207,8 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .home-process__step-num {
@@ -233,13 +232,14 @@
 }
 
 .home-process__icon-ring {
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
   background: color-mix(in srgb, var(--step-color) 12%, #ffffff);
   border: 2px solid color-mix(in srgb, var(--step-color) 28%, #ffffff);
   transition:
@@ -270,10 +270,10 @@
 
 .home-process__card-title {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   transition: color 0.3s ease;
@@ -281,10 +281,11 @@
 
 .home-process__card-desc {
   font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.84rem;
   line-height: 1.55;
   color: #64748b;
   margin: 0;
+  flex: 1;
 }
 
 /* Connector arrows between cards (desktop) */
@@ -293,10 +294,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 28px;
-  color: rgba(255, 255, 255, 0.35);
+  width: 24px;
+  color: rgba(255, 255, 255, 0.4);
   align-self: center;
-  margin: 0 -4px;
   z-index: 2;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
@@ -311,27 +311,33 @@
    ========================================================================== */
 @media (max-width: 1024px) {
   .home-process {
-    padding: 60px 20px 64px;
+    padding: 64px 20px;
   }
 
   .home-process__track {
+    display: flex;
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
   }
 
   .home-process__card {
-    flex: 1 1 calc(50% - 16px);
+    display: flex;
+    flex: 1 1 calc(50% - 12px);
     max-width: calc(50% - 8px);
+    min-width: 0;
+    align-items: stretch;
   }
 
   .home-process__connector {
     display: none;
   }
 
-  .home-process__card .home-process__card-inner {
+  .home-process__card-inner {
+    flex: 1;
+    width: 100%;
+    min-height: 260px;
     margin: 0;
-    min-height: 240px;
   }
 }
 
@@ -340,11 +346,11 @@
    ========================================================================== */
 @media (max-width: 640px) {
   .home-process {
-    padding: 48px 16px 56px;
+    padding: 56px 16px;
   }
 
   .home-process__header {
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
 
   .home-process__title {
@@ -366,6 +372,7 @@
   }
 
   .home-process__card {
+    display: flex;
     flex: none;
     max-width: 100%;
     padding-left: 0;
@@ -423,7 +430,7 @@
     padding-right: 72px;
   }
 
-  .home-process__card:hover .home-process__icon-ring {
+  .home-process__card-inner:hover .home-process__icon-ring {
     transform: scale(1.04);
   }
 

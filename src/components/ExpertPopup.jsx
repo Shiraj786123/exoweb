@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaLinkedin, FaTwitter, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const CONTACT_EMAIL = "info@vexoweb.lk";
 const WHATSAPP_URL =
@@ -123,7 +124,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <i className="fa-brands fa-linkedin"></i>
+                <FaLinkedin />
               </a>
               <a
                 href="https://twitter.com"
@@ -132,7 +133,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <i className="fa-brands fa-twitter"></i>
+                <FaTwitter />
               </a>
             </div>
           </div>
@@ -143,7 +144,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
               className="popup-contact-link popup-contact-email"
             >
               <span className="popup-contact-icon">
-                <i className="fa-solid fa-envelope"></i>
+                <FaEnvelope />
               </span>
               <span className="popup-contact-text">
                 <small>Email us</small>
@@ -157,7 +158,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
               rel="noopener noreferrer"
             >
               <span className="popup-contact-icon">
-                <i className="fa-brands fa-whatsapp"></i>
+                <FaWhatsapp />
               </span>
               <span className="popup-contact-text">
                 <small>Chat on WhatsApp</small>

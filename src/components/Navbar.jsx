@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation"; // Next.js route hook
 import Image from "next/image";
 import Link from "next/link";
-import ExpertPopup from "./ExpertPopup";
+import dynamic from 'next/dynamic';
 import MobileNavDrawer from "./MobileNavDrawer";
 import ServicesMegaMenuIcon from "./ServicesMegaMenuIcon";
 import { FaHome, FaPaperPlane } from "react-icons/fa";
@@ -11,6 +11,8 @@ import { SERVICES_MENU_ITEMS } from "../data/servicesMenuData";
 import { NAV_PRIMARY_LINKS } from "../data/navLinks";
 import { SITE_LOGO_ALT } from '../lib/imageAlt';
 import logo from "../assets/logonew.png";
+
+const ExpertPopup = dynamic(() => import('./ExpertPopup'), { ssr: false });
 
 const DESKTOP_BREAKPOINT = 1024;
 const CLOSE_DELAY_MS = 180;

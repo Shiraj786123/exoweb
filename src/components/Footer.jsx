@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaWhatsapp, FaEnvelope, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { SITE_LOGO_ALT } from '../lib/imageAlt';
 import siteLogo from '../assets/logonew.png';
 
@@ -83,7 +84,7 @@ const Footer = () => {
                   title="Chat on WhatsApp"
                 >
                   <span className="contact-icon-btn whatsapp-color" aria-hidden="true">
-                    <i className="fa-brands fa-whatsapp"></i>
+                    <FaWhatsapp />
                   </span>
                   <span className="footer-contact-text">{CONTACT_PHONE}</span>
                 </a>
@@ -93,7 +94,7 @@ const Footer = () => {
                   title="Email Us"
                 >
                   <span className="contact-icon-btn email-color" aria-hidden="true">
-                    <i className="fa-solid fa-envelope"></i>
+                    <FaEnvelope />
                   </span>
                   <span className="footer-contact-text">{CONTACT_EMAIL}</span>
                 </a>
@@ -162,10 +163,10 @@ const Footer = () => {
           </p>
           <div className="social-icons">
             <a href="https://x.com" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <i className="fa-brands fa-twitter"></i>
+              <FaTwitter />
             </a>
             <a href="https://www.linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i className="fa-brands fa-linkedin"></i>
+              <FaLinkedin />
             </a>
           </div>
         </div>

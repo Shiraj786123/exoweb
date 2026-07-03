@@ -272,7 +272,7 @@
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #001b3a;
+  color: #003d73;
   line-height: 1.25;
   padding-right: 36px;
 }
@@ -571,6 +571,7 @@ input[type="range"].budget-slider::-moz-range-thumb:hover,
   .popup-right h2 {
     font-size: 22px;
     padding-right: 28px;
+    color: #003d73;
   }
 
   .form-grid {

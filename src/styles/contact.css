@@ -300,12 +300,12 @@ a.contact-channel-value:hover {
 .form-card-title {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #38bdf8 !important;
+  color: #003d73 !important;
   margin: 0 0 18px 0;
   line-height: 1.25;
   letter-spacing: -0.02em;
   background: none !important;
-  -webkit-text-fill-color: #38bdf8 !important;
+  -webkit-text-fill-color: #003d73 !important;
   background-clip: border-box !important;
 }
 

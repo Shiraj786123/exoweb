@@ -210,9 +210,18 @@
     text-align: center;
   }
 
+  .ecd-v2__related_row,
+  .ecd-v2__related_row--areas,
+  .aiss-v2__related_row,
+  .aiss-v2__related_row--areas {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .ecd-v2__related_tile,
   .aiss-v2__related_tile {
-    flex: 1 1 100%;
     min-width: 0;
   }
 
@@ -318,7 +327,8 @@
   .aiss-show__mini_grid--cols-3,
   .aiss-show__mini_grid--full-labels {
     grid-template-columns: 1fr;
-    gap: 8px;
+    column-gap: 16px;
+    row-gap: 20px;
   }
 
   .ecd-v2__ship_row--cols-3,
@@ -328,6 +338,8 @@
   .aiss-v2__ship_row--cols-4,
   .aiss-v2__ship_row--cols-5 {
     grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 24px;
   }
 
   .ecd-v2__seo_tile,
@@ -344,7 +356,8 @@
 
   .hzigzag__stations {
     grid-template-columns: 1fr;
-    gap: 14px;
+    column-gap: 16px;
+    row-gap: 20px;
   }
 
   .ecd-v2__benefit_card,

@@ -175,7 +175,7 @@ const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAcce
 
 const IconPointsRow = ({ items, iconMap, fallbackIcon, wrap = false, cols }) => (
   <div
-    className={`ecd-v2__ship_row${wrap ? ' ecd-v2__ship_row--wrap' : ''}${cols ? ` ecd-v2__ship_row--cols-${cols}` : ''}`}
+    className={`ecd-v2__ship_row${cols ? ` ecd-v2__ship_row--cols-${cols}` : wrap ? ' ecd-v2__ship_row--wrap' : ''}`}
     style={cols ? { '--ship-cols': cols } : !wrap ? { '--ship-cols': items.length } : undefined}
   >
     {items.map((item, index) => (
@@ -280,7 +280,7 @@ const WebsitePageBody = () => (
       <p className="ecd-v2__center_lead">
         Our website development services are available throughout the Eastern Province, including:
       </p>
-      <div className="ecd-v2__related_row">
+      <div className="ecd-v2__related_row" style={{ '--related-cols': WEB_AREAS.length }}>
         {WEB_AREAS.map((area) => (
           <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
             <div className="ecd-v2__related_tile_icon">

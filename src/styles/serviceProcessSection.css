@@ -1,7 +1,7 @@
 /* Shared service page process section */
 
 .svc-process {
-  padding: 72px 0;
+  padding: 72px 0 96px;
   background: #fff;
 }
 
@@ -131,7 +131,7 @@
 
 /* Grid cards — dark step panels */
 .svc-process--grid {
-  padding: 48px 0;
+  padding: 48px 0 88px;
   background: radial-gradient(circle at 50% 0%, #0c2447 0%, #071428 55%, #040d1a 100%);
 }
 
@@ -164,7 +164,8 @@
 .svc-process__grid {
   display: grid;
   grid-template-columns: repeat(var(--process-cols, 6), minmax(0, 1fr));
-  gap: 12px;
+  column-gap: 16px;
+  row-gap: 24px;
   align-items: stretch;
 }
 
@@ -251,20 +252,26 @@
 
   .svc-process__grid {
     grid-template-columns: repeat(min(var(--process-cols, 6), 4), minmax(0, 1fr));
-    gap: 14px;
+    column-gap: 16px;
+    row-gap: 22px;
   }
 }
 
 @media (max-width: 768px) {
   .svc-process__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    column-gap: 14px;
+    row-gap: 20px;
   }
 }
 
 @media (max-width: 640px) {
   .svc-process {
-    padding: 56px 0;
+    padding: 56px 0 72px;
+  }
+
+  .svc-process--grid {
+    padding-bottom: 72px;
   }
 
   .svc-process__container {

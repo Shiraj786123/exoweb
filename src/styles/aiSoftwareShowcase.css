@@ -34,7 +34,7 @@
 }
 
 .aiss-show__section {
-  padding: 48px 0;
+  padding: 64px 0;
 }
 
 .aiss-show__section--alt {
@@ -348,9 +348,12 @@
 
 /* Mini cards — features & industries */
 .aiss-show__mini_grid {
+  margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 16px;
+  column-gap: 20px;
+  row-gap: 24px;
+  align-items: stretch;
 }
 
 .aiss-show__mini_card {
@@ -362,9 +365,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  height: 100%;
   box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
 .aiss-show__section--alt .aiss-show__mini_card {
@@ -389,7 +395,8 @@
 
 .aiss-show__mini_grid--single-line {
   grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 12px;
+  column-gap: 16px;
+  row-gap: 20px;
 }
 
 .aiss-show__mini_grid--single-line .aiss-show__mini_card {
@@ -421,7 +428,8 @@
 
 /* Benefit / industry tiles — match ecommerce label size */
 .aiss-show__mini_grid--full-labels {
-  gap: 12px;
+  column-gap: 16px;
+  row-gap: 20px;
 }
 
 .aiss-show__mini_grid--full-labels .aiss-show__mini_card {
@@ -448,7 +456,8 @@
 /* 4 × 2 grid */
 .aiss-show__mini_grid--cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  column-gap: 20px;
+  row-gap: 24px;
 }
 
 .aiss-show__mini_grid--cols-4 .aiss-show__mini_card {
@@ -479,7 +488,8 @@
 /* 3 × 2 grid */
 .aiss-show__mini_grid--cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  column-gap: 20px;
+  row-gap: 24px;
 }
 
 .aiss-show__mini_grid--cols-3 .aiss-show__mini_card span {
@@ -730,20 +740,22 @@
   text-align: left;
 }
 
-.aiss-v2__details_label .ecd-v2__details_label_copy h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+.aiss-v2__details_label .ecd-v2__details_label_copy h2,
+.aiss-v2__details_label .ecd-v2__details_label_copy .ecd-h4 {
+  font-size: clamp(1.85rem, 3.6vw, 2.5rem);
   font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 10px;
-  letter-spacing: -0.02em;
+  color: #001b3a;
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
 }
 
 .aiss-v2__details_label .ecd-v2__details_label_copy p {
-  font-size: 1rem;
-  color: #64748b;
+  font-size: 1.1rem;
+  color: #334155;
   margin: 0;
   max-width: none;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .aiss-v2__intro_combined {
@@ -772,7 +784,7 @@
 
 .aiss__wrapper .aiss-show .svc-process,
 .aiss__wrapper .ecd-show .svc-process {
-  padding: 48px 0;
+  padding: 48px 0 88px;
 }
 
 .aiss__wrapper .aiss-show .svc-process__header,
@@ -784,7 +796,8 @@
 @media (max-width: 1100px) {
   .aiss-show__services_grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+    column-gap: 0;
+    row-gap: 14px;
   }
 
   .aiss-show__service_card {
@@ -797,7 +810,7 @@
   }
 
   .aiss-show__service_card:nth-child(n + 4) {
-    border-bottom: none;
+    border-bottom: 1px solid #e2e8f0;
   }
 
   .aiss-show__service_panel_inner {
@@ -812,6 +825,8 @@
   .aiss-show__mini_grid,
   .aiss-show__mini_grid--single-line {
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 18px;
+    row-gap: 22px;
   }
 
   .aiss-show__mini_grid--single-line .aiss-show__mini_card {
@@ -884,6 +899,8 @@
 
   .aiss-show__mini_grid {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 20px;
   }
 
   .aiss-show__mini_grid--single-line {

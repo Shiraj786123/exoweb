@@ -193,7 +193,7 @@ const MobilePageBody = () => (
 
     <SectionShell icon={HiOutlineMapPin} title={MOB_EASTERN_PROVINCE.title}>
       <Prose paragraphs={MOB_EASTERN_PROVINCE.intro} className="ecd-v2__prose--center" />
-      <div className="ecd-v2__related_row ecd-v2__related_row--areas">
+      <div className="ecd-v2__related_row ecd-v2__related_row--areas" style={{ '--related-cols': MOB_AREAS.length }}>
         {MOB_AREAS.map((area) => (
           <Link key={area.href} href={area.href} className="ecd-v2__related_tile">
             <div className="ecd-v2__related_tile_icon">

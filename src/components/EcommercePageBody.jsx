@@ -202,7 +202,7 @@ const IconPointsCard = ({ item, index, iconMap, fallbackIcon, accents = shipAcce
 
 const IconPointsRow = ({ items, iconMap, fallbackIcon, wrap = false, cols, className = '', pointsLimit }) => (
   <div
-    className={`ecd-v2__ship_row${wrap ? ' ecd-v2__ship_row--wrap' : ''}${cols ? ` ecd-v2__ship_row--cols-${cols}` : ''}${className ? ` ${className}` : ''}`}
+    className={`ecd-v2__ship_row${cols ? ` ecd-v2__ship_row--cols-${cols}` : wrap ? ' ecd-v2__ship_row--wrap' : ''}${className ? ` ${className}` : ''}`}
     style={cols ? { '--ship-cols': cols } : !wrap ? { '--ship-cols': items.length } : undefined}
   >
     {items.map((item, index) => (
