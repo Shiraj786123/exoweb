@@ -1,13 +1,7 @@
 import React from 'react';
 
-const CARD_GRADIENTS = [
-  'linear-gradient(145deg, #0d9488 0%, #22d3ee 100%)',
-  'linear-gradient(145deg, #7c3aed 0%, #db2777 100%)',
-  'linear-gradient(145deg, #ec4899 0%, #f59e0b 100%)',
-  'linear-gradient(145deg, #16a34a 0%, #a3e635 100%)',
-  'linear-gradient(145deg, #2563eb 0%, #38bdf8 100%)',
-  'linear-gradient(145deg, #ea580c 0%, #fbbf24 100%)',
-];
+const SKY_BLUE_GRADIENT = 'linear-gradient(145deg, #0284c7 0%, #38bdf8 100%)';
+const SKY_BLUE_ACCENT = '#38bdf8';
 
 const getTitle = (item) => item.title || item.label || '';
 
@@ -24,18 +18,15 @@ const resolveIcon = (item, iconMap, fallbackIcon) => {
   return fallbackIcon;
 };
 
-const InfographicCard = ({ item, index, iconMap, fallbackIcon, gradients = CARD_GRADIENTS }) => {
+const InfographicCard = ({ item, index, iconMap, fallbackIcon }) => {
   const Icon = resolveIcon(item, iconMap, fallbackIcon);
   const title = getTitle(item);
   const description = getDescription(item);
-  const gradient = item.gradient
-    || (item.color ? `linear-gradient(145deg, ${item.color} 0%, color-mix(in srgb, ${item.color} 72%, #ffffff) 100%)` : gradients[index % gradients.length]);
-  const accent = item.color || '#2563eb';
 
   return (
     <article
       className="hzigzag__card"
-      style={{ '--hzigzag-gradient': gradient, '--hzigzag-accent': accent }}
+      style={{ '--hzigzag-gradient': SKY_BLUE_GRADIENT, '--hzigzag-accent': SKY_BLUE_ACCENT }}
     >
       <div className="hzigzag__card_icon" aria-hidden="true">
         {Icon ? <Icon /> : null}

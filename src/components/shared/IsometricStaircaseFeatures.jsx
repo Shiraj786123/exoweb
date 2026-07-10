@@ -1,15 +1,10 @@
 import React from 'react';
 
-const CUBE_PALETTE = [
-  { front: '#2563eb', top: '#60a5fa', side: '#1d4ed8' },
-  { front: '#9333ea', top: '#c084fc', side: '#7e22ce' },
-  { front: '#0891b2', top: '#22d3ee', side: '#0e7490' },
-  { front: '#1e3a8a', top: '#3b82f6', side: '#172554' },
-  { front: '#16a34a', top: '#4ade80', side: '#15803d' },
-  { front: '#ea580c', top: '#fb923c', side: '#c2410c' },
-  { front: '#db2777', top: '#f472b6', side: '#be185d' },
-  { front: '#6366f1', top: '#a5b4fc', side: '#4338ca' },
-];
+const SKY_BLUE_CUBE = {
+  front: '#0284c7',
+  top: '#7dd3fc',
+  side: '#0369a1',
+};
 
 const getTitle = (item) => item.title || item.label || '';
 
@@ -51,7 +46,6 @@ const IsometricStaircaseFeatures = ({
         >
           {rowItems.map((item, indexInRow) => {
             const globalIndex = rowIndex * rowSize + indexInRow;
-            const colors = CUBE_PALETTE[globalIndex % CUBE_PALETTE.length];
             const Icon = resolveIcon(item, iconMap, FallbackIcon);
             const title = getTitle(item);
             const description = getDescription(item);
@@ -62,9 +56,9 @@ const IsometricStaircaseFeatures = ({
                 key={title || globalIndex}
                 className="iso-staircase__step"
                 style={{
-                  '--iso-front': colors.front,
-                  '--iso-top': colors.top,
-                  '--iso-side': colors.side,
+                  '--iso-front': SKY_BLUE_CUBE.front,
+                  '--iso-top': SKY_BLUE_CUBE.top,
+                  '--iso-side': SKY_BLUE_CUBE.side,
                   '--iso-step': stepOffset,
                 }}
               >

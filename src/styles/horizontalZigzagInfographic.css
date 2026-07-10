@@ -23,16 +23,16 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.35);
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.35);
 }
 
 .hzigzag__track_seg {
   flex: 1;
   height: 4px;
   min-width: 0;
-  background: linear-gradient(90deg, #ec4899 0%, #f59e0b 55%, #a3e635 100%);
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 55%, #7dd3fc 100%);
   position: relative;
 }
 
@@ -55,7 +55,7 @@
   height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-left: 14px solid #a3e635;
+  border-left: 14px solid #38bdf8;
   flex-shrink: 0;
   margin-left: -2px;
 }
@@ -164,10 +164,13 @@
 .hzigzag__card_body {
   flex: 1;
   min-width: 0;
-  padding: 12px 12px 12px 14px;
+  padding: 12px 16px 18px 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  background: #fff;
 }
 
 .hzigzag__card_title {
@@ -185,15 +188,20 @@
   font-size: clamp(0.84rem, 0.9vw, 0.88rem);
   line-height: 1.55;
   color: #475569;
+  max-width: 100%;
 }
 
 .hzigzag__card_accent {
-  width: 18px;
-  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52px;
+  height: 52px;
   background: var(--hzigzag-gradient);
-  transform: skewX(-12deg);
-  margin-right: -4px;
-  opacity: 0.9;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Dark hero section variant */

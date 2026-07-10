@@ -1,17 +1,6 @@
 import React from 'react';
 
-export const ZIGZAG_ACCENTS = [
-  '#7c3aed',
-  '#dc2626',
-  '#ca8a04',
-  '#14b8a6',
-  '#38bdf8',
-  '#1d4ed8',
-  '#2563eb',
-  '#16a34a',
-  '#9333ea',
-  '#ea580c',
-];
+export const SKY_BLUE_ACCENT = '#38bdf8';
 
 const padStep = (index) => String(index + 1).padStart(2, '0');
 
@@ -30,13 +19,12 @@ const resolveIcon = (item, iconMap, fallbackIcon) => {
   return fallbackIcon;
 };
 
-const ServiceZigzagTimeline = ({ items, iconMap = {}, fallbackIcon: FallbackIcon, accents = ZIGZAG_ACCENTS }) => {
+const ServiceZigzagTimeline = ({ items, iconMap = {}, fallbackIcon: FallbackIcon }) => {
   if (!items?.length) return null;
 
   return (
     <div className="svc-zigzag">
       {items.map((item, index) => {
-        const accent = item.color || accents[index % accents.length];
         const Icon = resolveIcon(item, iconMap, FallbackIcon);
         const title = getTitle(item);
         const description = getDescription(item);
@@ -46,7 +34,7 @@ const ServiceZigzagTimeline = ({ items, iconMap = {}, fallbackIcon: FallbackIcon
           <div
             key={title || index}
             className={`svc-zigzag__row${isLeft ? ' svc-zigzag__row--left' : ' svc-zigzag__row--right'}`}
-            style={{ '--zigzag-accent': accent }}
+            style={{ '--zigzag-accent': SKY_BLUE_ACCENT }}
           >
             {isLeft ? (
               <>

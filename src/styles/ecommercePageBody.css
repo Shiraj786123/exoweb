@@ -183,6 +183,14 @@
   background: #f8fafc;
 }
 
+.ecd-v2__section--features {
+  padding-bottom: 44px;
+}
+
+.ecd-v2__section--features + .ecd-v2__section {
+  padding-top: 44px;
+}
+
 .ecd-v2__section--hero {
   background: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%);
   color: #ffffff;
@@ -1755,6 +1763,14 @@ button.ecd-v2__cta_btn_primary {
 @media (max-width: 768px) {
   .ecd-v2__section {
     padding: 56px 0;
+  }
+
+  .ecd-v2__section--features {
+    padding-bottom: 36px;
+  }
+
+  .ecd-v2__section--features + .ecd-v2__section {
+    padding-top: 36px;
   }
 
   .ecd-v2__section--hero {

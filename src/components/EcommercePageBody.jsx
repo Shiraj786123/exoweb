@@ -114,6 +114,7 @@ const SectionShell = ({
   visual,
   titleClassName = 'ecd-h4',
   TitleTag = 'h4',
+  className = '',
 }) => (
   <section
     className={[
@@ -121,6 +122,7 @@ const SectionShell = ({
       variant === 'alt' && 'ecd-v2__section--alt',
       variant === 'hero' && 'ecd-v2__section--hero',
       visual && 'ecd-v2__section--with_visual',
+      className,
     ]
       .filter(Boolean)
       .join(' ')}
@@ -330,6 +332,7 @@ const EcommercePageBody = () => (
       variant="alt"
       titleClassName="ecd-h4"
       TitleTag="h4"
+      className="ecd-v2__section--features"
     >
       <p className="ecd-v2__center_lead">{ECOMMERCE_FEATURES_SECTION.intro}</p>
       <IsometricStaircaseFeatures

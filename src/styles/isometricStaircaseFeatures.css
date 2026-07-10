@@ -41,16 +41,17 @@
 }
 
 .iso-staircase--straight {
-  gap: 28px;
+  gap: 22px;
   max-width: 1200px;
-  margin-top: 20px;
-  padding: 0 8px 16px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding: 0 8px 4px;
   overflow: visible;
 }
 
 .iso-staircase--straight .iso-staircase__row {
   min-width: 0;
-  padding: 20px 4px 12px;
+  padding: 12px 4px 4px;
   align-items: start;
   column-gap: 20px;
 }
@@ -212,7 +213,7 @@
   margin: 0 0 6px;
   font-size: 0.98rem;
   font-weight: 600;
-  color: var(--iso-front);
+  color: #38bdf8;
   letter-spacing: 0;
 }
 
