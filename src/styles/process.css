@@ -342,64 +342,64 @@
 }
 
 /* ==========================================================================
-   MOBILE — vertical timeline
+   MOBILE — stacked cards
    ========================================================================== */
 @media (max-width: 640px) {
   .home-process {
-    padding: 56px 16px;
+    padding: 48px 16px;
   }
 
   .home-process__header {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
-  .home-process__title {
-    font-size: 1.5rem;
+  .home-process__title,
+  .home-process__title-main {
+    font-size: 1.45rem;
   }
 
   .home-process__subtitle {
     font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .home-process__track {
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
-  }
-
-  .home-process__track::before {
-    display: none;
+    gap: 14px;
   }
 
   .home-process__card {
     display: flex;
     flex: none;
     max-width: 100%;
-    padding-left: 0;
-    margin-bottom: 0;
+    width: 100%;
   }
 
   .home-process__card-inner {
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
-    padding: 18px 16px;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 18px;
     margin: 0;
-    gap: 14px;
+    gap: 0;
+    min-height: auto;
   }
 
   .home-process__card-head {
-    position: absolute;
-    top: 12px;
-    right: 14px;
+    position: static;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin: 0;
+    margin-bottom: 14px;
+    width: 100%;
   }
 
   .home-process__step-num {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .home-process__step-label {
@@ -408,14 +408,14 @@
 
   .home-process__icon-ring {
     flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    margin: 0;
+    width: 60px;
+    height: 60px;
+    margin: 0 0 14px;
   }
 
   .home-process__icon-core {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
   }
 
   .home-process__icon {
@@ -426,15 +426,22 @@
   .home-process__card-body {
     flex: 1;
     min-width: 0;
-    padding-top: 4px;
-    padding-right: 72px;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .home-process__card-title {
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+  }
+
+  .home-process__card-desc {
+    font-size: 0.84rem;
+    line-height: 1.55;
   }
 
   .home-process__card-inner:hover .home-process__icon-ring {
     transform: scale(1.04);
-  }
-
-  .home-process__card-inner {
-    min-height: auto;
   }
 }

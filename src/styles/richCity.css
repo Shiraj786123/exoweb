@@ -526,15 +526,19 @@
 }
 
 .city-rich__trust-balanced {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: row;
   align-items: stretch;
+  gap: 24px;
+}
+
+.city-rich__trust-balanced > * {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .city-rich__trust-visual {
   position: relative;
-  height: 100%;
   min-height: 420px;
   border-radius: 16px;
   overflow: hidden;
@@ -576,7 +580,6 @@
 }
 
 .city-rich__trust-panel--vibrant {
-  height: 100%;
   min-height: 420px;
   background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%);
   border: 1px solid rgba(56, 189, 248, 0.2);
@@ -584,29 +587,40 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
+  gap: 20px;
   padding: 28px;
+  border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .city-rich__trust-panel--vibrant .city-rich__h3 {
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   font-size: 1.35rem;
+  text-align: center;
 }
 
 .city-rich__trust-feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  align-content: start;
   gap: 12px;
-  flex: 1;
+  width: 100%;
 }
 
 .city-rich__trust-feature-card {
   background: rgba(255, 255, 255, 0.97);
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 12px 14px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   gap: 12px;
+  align-self: start;
+  height: auto;
+  min-height: 0;
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -629,10 +643,10 @@
 
 .city-rich__trust-feature-text {
   font-size: 0.875rem;
-  line-height: 1.45;
+  line-height: 1.4;
   color: #1e293b;
   font-weight: 600;
-  padding-top: 2px;
+  padding-top: 0;
 }
 
 .city-rich__trust-panel--colorful .city-rich__h3 {
@@ -1270,11 +1284,20 @@
 @media (max-width: 1024px) {
   .city-rich__intro-layout,
   .city-rich__trust-layout,
-  .city-rich__trust-balanced,
   .city-rich__local-layout,
   .city-rich__serving-layout {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+
+  .city-rich__trust-balanced {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .city-rich__trust-balanced > * {
+    flex: none;
+    width: 100%;
   }
 
   .city-rich__serving-v2_card {
@@ -1300,8 +1323,6 @@
   .city-rich__trust-visual {
     min-height: 320px;
   }
-
-  .city-rich__trust-feature-grid,
 
   .city-rich__why-grid,
   .city-rich__why-grid--six {

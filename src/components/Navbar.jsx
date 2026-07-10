@@ -10,17 +10,18 @@ import { FaHome, FaPaperPlane } from "react-icons/fa";
 import { SERVICES_MENU_ITEMS } from "../data/servicesMenuData";
 import { NAV_PRIMARY_LINKS } from "../data/navLinks";
 import { SITE_LOGO_ALT } from '../lib/imageAlt';
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+  WHATSAPP_HREF,
+} from '../lib/contactInfo';
 import logo from "../assets/logonew.png";
 
 const ExpertPopup = dynamic(() => import('./ExpertPopup'), { ssr: false });
 
 const DESKTOP_BREAKPOINT = 1024;
 const CLOSE_DELAY_MS = 180;
-const CONTACT_EMAIL = "info@vexoweb.lk";
-const CONTACT_PHONE = "+94 74 030 9534";
-const CONTACT_PHONE_HREF = "tel:+94740309534";
-const WHATSAPP_HREF = "https://wa.me/94740309534";
-
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Mobile menu drawer toggle
   const [mobileDropdown, setMobileDropdown] = useState(null); // Desktop-only legacy (unused on mobile drawer)
@@ -220,10 +221,20 @@ const Navbar = () => {
 
           <div className="topbar-right">
             <a href={CONTACT_PHONE_HREF} className="topbar-link topbar-phone" title="Call Us">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              <span>{CONTACT_PHONE}</span>
+              <span className="topbar-phone-text">{CONTACT_PHONE_DISPLAY}</span>
             </a>
 
             <span className="topbar-divider" aria-hidden="true">|</span>
@@ -269,8 +280,8 @@ const Navbar = () => {
   <Image
     src={logo}
     alt={SITE_LOGO_ALT}
-    width={142}
-    height={36}
+    width={200}
+    height={200}
     className="logo-mobile"
     priority
   />

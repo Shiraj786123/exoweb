@@ -210,22 +210,22 @@ export const SEO_SERVICE_DETAILS = [
 ];
 
 export const SEO_FEATURE_TILES = [
-  { title: 'Higher Rankings', color: '#2563eb', icon: 'rank' },
-  { title: 'More Traffic', color: '#16a34a', icon: 'traffic' },
-  { title: 'More Enquiries', color: '#9333ea', icon: 'leads' },
-  { title: 'Brand Visibility', color: '#ea580c', icon: 'visibility' },
-  { title: 'Customer Trust', color: '#0891b2', icon: 'trust' },
-  { title: 'Less Ad Spend', color: '#db2777', icon: 'ads' },
-  { title: 'Long-Term Growth', color: '#6366f1', icon: 'growth' },
+  { title: 'Rankings', color: '#2563eb', icon: 'rank' },
+  { title: 'Traffic', color: '#16a34a', icon: 'traffic' },
+  { title: 'Leads', color: '#9333ea', icon: 'leads' },
+  { title: 'Visibility', color: '#ea580c', icon: 'visibility' },
+  { title: 'Trust', color: '#0891b2', icon: 'trust' },
+  { title: 'Ad Savings', color: '#db2777', icon: 'ads' },
+  { title: 'Growth', color: '#6366f1', icon: 'growth' },
   { title: 'Local SEO', color: '#0d9488', icon: 'local' },
 ];
 
 export const SEO_INDUSTRY_TILES = [
-  { title: 'Local Business', color: '#2563eb', icon: 'local' },
+  { title: 'Local Biz', color: '#2563eb', icon: 'local' },
   { title: 'eCommerce', color: '#9333ea', icon: 'ecommerce' },
   { title: 'Healthcare', color: '#dc2626', icon: 'health' },
   { title: 'Hospitality', color: '#0891b2', icon: 'hotel' },
-  { title: 'Professional', color: '#6366f1', icon: 'professional' },
+  { title: 'Services', color: '#6366f1', icon: 'professional' },
   { title: 'Education', color: '#16a34a', icon: 'education' },
 ];
 

@@ -142,11 +142,11 @@ export const MOB_FEATURE_TILES = [
   { title: 'Native Speed', color: '#2563eb', icon: 'speed' },
   { title: 'Push Alerts', color: '#16a34a', icon: 'bell' },
   { title: 'Secure Login', color: '#9333ea', icon: 'shield' },
-  { title: 'API Integration', color: '#ea580c', icon: 'api' },
+  { title: 'API Connect', color: '#ea580c', icon: 'api' },
   { title: 'Offline Mode', color: '#0891b2', icon: 'offline' },
-  { title: 'App Store Ready', color: '#db2777', icon: 'store' },
-  { title: 'Real-Time Sync', color: '#6366f1', icon: 'sync' },
-  { title: 'Ongoing Support', color: '#0d9488', icon: 'support' },
+  { title: 'App Store', color: '#db2777', icon: 'store' },
+  { title: 'Live Sync', color: '#6366f1', icon: 'sync' },
+  { title: 'Support', color: '#0d9488', icon: 'support' },
 ];
 
 export const MOB_INDUSTRY_TILES = [
@@ -154,8 +154,8 @@ export const MOB_INDUSTRY_TILES = [
   { title: 'Hospitality', color: '#0891b2', icon: 'hotel' },
   { title: 'Retail', color: '#9333ea', icon: 'retail' },
   { title: 'Education', color: '#2563eb', icon: 'education' },
-  { title: 'Food Delivery', color: '#ea580c', icon: 'food' },
-  { title: 'Professional', color: '#6366f1', icon: 'services' },
+  { title: 'Delivery', color: '#ea580c', icon: 'food' },
+  { title: 'Services', color: '#6366f1', icon: 'services' },
 ];
 
 export const MOB_PROCESS_SHORT = [
@@ -227,14 +227,14 @@ export const MOB_WHY_INVEST = {
   subtitle: 'Mobile applications help businesses connect with customers, improve efficiency and stay competitive.',
   listLabel: 'Key Benefits of Mobile Apps',
   benefits: [
-    { label: 'Customer Engagement', icon: 'engagement', color: '#2563eb' },
-    { label: 'Brand Visibility', icon: 'visibility', color: '#16a34a' },
-    { label: 'Automate Processes', icon: 'automation', color: '#9333ea' },
-    { label: 'Better Experience', icon: 'experience', color: '#ea580c' },
-    { label: 'More Revenue', icon: 'revenue', color: '#0891b2' },
-    { label: 'Customer Loyalty', icon: 'loyalty', color: '#db2777' },
-    { label: 'Real-Time Data', icon: 'data', color: '#6366f1' },
-    { label: 'Market Reach', icon: 'reach', color: '#0d9488' },
+    { label: 'Engagement', icon: 'engagement', color: '#2563eb' },
+    { label: 'Visibility', icon: 'visibility', color: '#16a34a' },
+    { label: 'Automation', icon: 'automation', color: '#9333ea' },
+    { label: 'Experience', icon: 'experience', color: '#ea580c' },
+    { label: 'Revenue', icon: 'revenue', color: '#0891b2' },
+    { label: 'Loyalty', icon: 'loyalty', color: '#db2777' },
+    { label: 'Live Data', icon: 'data', color: '#6366f1' },
+    { label: 'Reach', icon: 'reach', color: '#0d9488' },
   ],
 };
 
@@ -248,11 +248,11 @@ export const MOB_WHY_CHOOSE = {
     { label: 'Custom Apps', icon: 'custom', color: '#2563eb' },
     { label: 'Android & iOS', icon: 'platforms', color: '#16a34a' },
     { label: 'Modern UI/UX', icon: 'design', color: '#9333ea' },
-    { label: 'Secure & Scalable', icon: 'security', color: '#0891b2' },
-    { label: 'API Integrations', icon: 'integration', color: '#db2777' },
-    { label: 'High Performance', icon: 'performance', color: '#ea580c' },
-    { label: 'Ongoing Support', icon: 'support', color: '#6366f1' },
-    { label: 'Transparent Process', icon: 'process', color: '#0d9488' },
+    { label: 'Secure Scale', icon: 'security', color: '#0891b2' },
+    { label: 'API Connect', icon: 'integration', color: '#db2777' },
+    { label: 'Performance', icon: 'performance', color: '#ea580c' },
+    { label: 'Support', icon: 'support', color: '#6366f1' },
+    { label: 'Transparent', icon: 'process', color: '#0d9488' },
   ],
 };
 

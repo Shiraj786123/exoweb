@@ -147,14 +147,14 @@ export const SOFT_SERVICE_DETAILS = [
 ];
 
 export const SOFT_FEATURE_TILES = [
-  { title: 'Built for Business', color: '#2563eb', icon: 'custom' },
+  { title: 'Custom Built', color: '#2563eb', icon: 'custom' },
   { title: 'Automation', color: '#16a34a', icon: 'automation' },
   { title: 'Productivity', color: '#ea580c', icon: 'productivity' },
-  { title: 'Reduce Costs', color: '#9333ea', icon: 'cost' },
-  { title: 'Secure & Scalable', color: '#0891b2', icon: 'shield' },
-  { title: 'Easy Integration', color: '#db2777', icon: 'integration' },
+  { title: 'Low Cost', color: '#9333ea', icon: 'cost' },
+  { title: 'Secure Scale', color: '#0891b2', icon: 'shield' },
+  { title: 'Integration', color: '#db2777', icon: 'integration' },
   { title: 'Cloud Access', color: '#6366f1', icon: 'cloud' },
-  { title: 'Long-Term Value', color: '#0d9488', icon: 'value' },
+  { title: 'Long Value', color: '#0d9488', icon: 'value' },
 ];
 
 export const SOFT_INDUSTRY_TILES = [
@@ -162,7 +162,7 @@ export const SOFT_INDUSTRY_TILES = [
   { title: 'Hospitality', color: '#0891b2', icon: 'hotel' },
   { title: 'Healthcare', color: '#dc2626', icon: 'health' },
   { title: 'Education', color: '#2563eb', icon: 'education' },
-  { title: 'Manufacturing', color: '#78716c', icon: 'factory' },
+  { title: 'Factory', color: '#78716c', icon: 'factory' },
   { title: 'Logistics', color: '#ea580c', icon: 'logistics' },
 ];
 
@@ -212,14 +212,14 @@ export const SOFT_WHY_CUSTOM = {
     "Off-the-shelf software forces your business to adapt to its limitations—often including features you don't need while missing the ones you actually require. Custom software is built around how you already work, delivering better efficiency, stronger security and a solution that scales as your business grows.",
   listLabel: 'Benefits of Custom Software',
   benefits: [
-    { label: 'Built for Your Business', icon: 'briefcase', color: '#2563eb' },
-    { label: 'Automate Tasks', icon: 'automation', color: '#16a34a' },
-    { label: 'Boost Productivity', icon: 'productivity', color: '#9333ea' },
-    { label: 'Lower Costs', icon: 'costs', color: '#ea580c' },
-    { label: 'Secure & Scalable', icon: 'security', color: '#0891b2' },
-    { label: 'Easy Integrations', icon: 'integration', color: '#db2777' },
+    { label: 'Custom Built', icon: 'briefcase', color: '#2563eb' },
+    { label: 'Automation', icon: 'automation', color: '#16a34a' },
+    { label: 'Productivity', icon: 'productivity', color: '#9333ea' },
+    { label: 'Low Cost', icon: 'costs', color: '#ea580c' },
+    { label: 'Secure Scale', icon: 'security', color: '#0891b2' },
+    { label: 'Integration', icon: 'integration', color: '#db2777' },
     { label: 'Cloud Access', icon: 'cloud', color: '#6366f1' },
-    { label: 'Long-Term Value', icon: 'value', color: '#0d9488' },
+    { label: 'Long Value', icon: 'value', color: '#0d9488' },
   ],
 };
 

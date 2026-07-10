@@ -336,6 +336,7 @@ const EcommercePageBody = () => (
         items={ECOMMERCE_FEATURES}
         iconMap={featureIcons}
         fallbackIcon={HiOutlineSparkles}
+        straight
         perRow={5}
       />
     </SectionShell>

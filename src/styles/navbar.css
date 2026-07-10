@@ -144,6 +144,28 @@
   transform: translateY(-1px);
 }
 
+/* Phone link — system font + lining nums for stable digits at every zoom level */
+.topbar-phone {
+  flex-shrink: 0;
+  color: inherit;
+  text-decoration: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+.topbar-phone-text {
+  white-space: nowrap;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
 .wa-btn {
   color: #22c55e; /* Correct brand WhatsApp Green */
 }
@@ -634,10 +656,10 @@
 
   .logo-mobile {
     display: block;
-    height: 38px;
+    height: 80px;
     width: auto;
-    max-width: 142px;
-    margin: 0;
+    max-width: none;
+    margin: -18px 0;
     object-fit: contain;
     object-position: left center;
   }
@@ -770,8 +792,9 @@
 
   .logo-mobile {
     display: block;
-    height: 56px;
+    height: 80px;
     width: auto;
+    margin: -18px 0;
   }
 
   /* ... other rules ... */
@@ -823,8 +846,9 @@
 
   .logo-mobile {
     display: block;
-    height: 56px;
+    height: 80px;
     width: auto;
+    margin: -18px 0;
   }
 
   .hamburger {
@@ -1454,14 +1478,19 @@
 
 
 
-/* Mobile logo — compact, no negative margins */
+/* Mobile logo — scaled like desktop to offset square image padding */
 @media (max-width: 1024px) {
+  .nav-logo {
+    height: 44px;
+    overflow: visible;
+  }
+
   .logo-mobile {
-    height: 38px !important;
+    height: 80px !important;
     width: auto !important;
-    max-width: 142px !important;
+    max-width: none !important;
     display: block !important;
-    margin: 0 !important;
+    margin: -18px 0 !important;
     object-fit: contain !important;
     object-position: left center !important;
   }

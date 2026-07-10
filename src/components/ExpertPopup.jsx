@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { FaLinkedin, FaTwitter, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const CONTACT_EMAIL = "info@vexoweb.lk";
@@ -23,6 +24,17 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
   });
 
   useEffect(() => {
+    if (!open) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open, onClose]);
+
+  useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
       if (preSelectedService) {
@@ -31,6 +43,10 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
     } else {
       document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [open, preSelectedService]);
 
   const handleInputChange = (e) => {
@@ -44,12 +60,12 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-  const data = {
-    ...formData,
-    message: formData.project,   // 🔥 FIX HERE
-    service: selectedService,
-    budget: budget
-  };
+    const data = {
+      ...formData,
+      message: formData.project,
+      service: selectedService,
+      budget: budget
+    };
 
     try {
       const res = await fetch("/api/contact", {
@@ -87,54 +103,62 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
     setIsSubmitting(false);
   };
 
-  if (!open) return null;
-
   const percentage =
     ((Number(budget) - BUDGET_MIN) / (BUDGET_MAX - BUDGET_MIN)) * 100;
   const sliderBackground = `linear-gradient(to right, #00448f 0%, #00448f ${percentage}%, #e2e8f0 ${percentage}%, #e2e8f0 100%)`;
 
-  return (
-    <div className="popup-overlay" onClick={onClose}>
-      <div className="popup-container" onClick={(e) => e.stopPropagation()}>
-        <button className="popup-close" onClick={onClose}>×</button>
+  if (!open || typeof document === "undefined") return null;
+
+  return createPortal(
+    <div className="popup-overlay" onClick={onClose} role="presentation">
+      <div
+        className="popup-container"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="expert-popup-title"
+      >
+        <button type="button" className="popup-close" onClick={onClose} aria-label="Close popup">×</button>
 
         <div className="popup-left">
           <div className="popup-left-glow" aria-hidden="true" />
-          <div className="popup-left-top">
-            <span className="popup-eyebrow">Vexoweb Experts</span>
-            <h3>Speak to Our Experts</h3>
-            <p>Let's create your vision together.</p>
+          <div className="popup-left-scroll">
+            <div className="popup-left-top">
+              <span className="popup-eyebrow">Vexoweb Experts</span>
+              <h3>Speak to Our Experts</h3>
+              <p>Let's create your vision together.</p>
 
-            <div className="popup-review">
-              <div className="popup-review-stars" aria-hidden="true">
-                ★★★★★
+              <div className="popup-review">
+                <div className="popup-review-stars" aria-hidden="true">
+                  ★★★★★
+                </div>
+                <strong>Vexoweb</strong>
+                <p>
+                  "Excellent IT resource outsourcing service. They provided highly
+                  skilled developers who integrated seamlessly with our team."
+                </p>
               </div>
-              <strong>Vexoweb</strong>
-              <p>
-                "Excellent IT resource outsourcing service. They provided highly
-                skilled developers who integrated seamlessly with our team."
-              </p>
-            </div>
 
-            <div className="contactmedia">
-              <a
-                href="https://www.linkedin.com"
-                className="contactmedia-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://twitter.com"
-                className="contactmedia-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <FaTwitter />
-              </a>
+              <div className="contactmedia">
+                <a
+                  href="https://www.linkedin.com"
+                  className="contactmedia-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  className="contactmedia-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -169,12 +193,12 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
         </div>
 
         <div className="popup-right">
-          <h2>Let's Build Something Incredible Together</h2>
-          <p className="popup-subtext">
-            Tell us what you're looking for and our experts will get back to you.
-          </p>
+          <div className="popup-right-header">
+            <h2 id="expert-popup-title">Let's Build Something Incredible Together</h2>
+            <p className="popup-subtext">
+              Tell us what you're looking for and our experts will get back to you.
+            </p>
 
-            {/* Success / Error Messages */}
             {submitStatus === "success" && (
               <div className="alert alert-success">
                 ✓ Message sent successfully! We'll contact you soon.
@@ -185,9 +209,10 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
                 ✗ Failed to send message. Please try again.
               </div>
             )}
+          </div>
 
-          <form className="popup-form" onSubmit={handleSubmit}>
-
+          <form id="expert-popup-form" className="popup-form" onSubmit={handleSubmit}>
+            <div className="popup-form-body">
             <div className="form-grid">
               <input
                 type="text"
@@ -260,26 +285,28 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
 
             <textarea
               name="project"
+              className="popup-form-message"
               placeholder="Tell us about the project"
               value={formData.project}
               onChange={handleInputChange}
               required
             />
+            </div>
+          </form>
 
             <div className="popup-actions">
               <button type="button" className="cancel-btn" onClick={onClose}>
                 Cancel
               </button>
 
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="submit-btn" form="expert-popup-form" disabled={isSubmitting}>
                 {isSubmitting ? "SENDING..." : "Submit"}
               </button>
             </div>
-
-          </form>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

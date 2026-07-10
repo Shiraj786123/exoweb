@@ -609,6 +609,10 @@ a.contact-channel-value:hover {
     gap: 12px;
   }
 
+  .contact-form {
+    gap: 14px;
+  }
+
   .contact-title {
     font-size: 1.85rem;
   }

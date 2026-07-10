@@ -61,8 +61,8 @@ const Footer = () => {
                 alt={SITE_LOGO_ALT}
                 className="footer-logo-img"
                 width={200}
-                height={100}
-                sizes="(max-width: 768px) 200px, 280px"
+                height={200}
+                sizes="(max-width: 1024px) 200px, 280px"
                 priority
               />
             </div>

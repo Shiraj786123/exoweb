@@ -1591,18 +1591,43 @@
 
   .aiss-v2__cta_compact {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 28px 24px;
+    align-items: center;
+    padding: 28px 20px;
     text-align: center;
+    gap: 20px;
+  }
+
+  .aiss-v2__cta_compact_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .aiss-v2__cta_compact_text p {
     max-width: none;
+    text-align: center;
   }
 
   .aiss-v2__cta_compact_actions {
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .aiss-v2__cta_btn_primary,
+  .aiss-v2__cta_btn_secondary,
+  button.aiss-v2__cta_btn_primary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 46px;
+    box-sizing: border-box;
   }
 
   .aiss-v2__ship_card {

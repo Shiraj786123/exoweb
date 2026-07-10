@@ -591,13 +591,13 @@ export const AI_SERVICES = [
 
 export const AI_FEATURE_TILES = [
   { title: 'Productivity', icon: 'productivity', color: '#2563eb' },
-  { title: 'Lower Costs', icon: 'cost', color: '#16a34a' },
+  { title: 'Low Cost', icon: 'cost', color: '#16a34a' },
   { title: 'Better CX', icon: 'experience', color: '#9333ea' },
-  { title: 'Smarter Decisions', icon: 'decisions', color: '#ea580c' },
-  { title: 'Scale Faster', icon: 'scale', color: '#0891b2' },
-  { title: 'Improve Accuracy', icon: 'accuracy', color: '#dc2626' },
-  { title: 'Competitive Edge', icon: 'competitive', color: '#db2777' },
-  { title: 'Future-Proof', icon: 'future', color: '#38bdf8' },
+  { title: 'Smart Data', icon: 'decisions', color: '#ea580c' },
+  { title: 'Scale Fast', icon: 'scale', color: '#0891b2' },
+  { title: 'Accuracy', icon: 'accuracy', color: '#dc2626' },
+  { title: 'Edge', icon: 'competitive', color: '#db2777' },
+  { title: 'Future Proof', icon: 'future', color: '#38bdf8' },
 ];
 
 export const AI_INDUSTRY_TILES = [
@@ -606,8 +606,8 @@ export const AI_INDUSTRY_TILES = [
   { title: 'Hospitality', icon: 'hotel', color: '#0891b2' },
   { title: 'Education', icon: 'education', color: '#2563eb' },
   { title: 'Finance', icon: 'finance', color: '#16a34a' },
-  { title: 'Construction', icon: 'construction', color: '#ea580c' },
-  { title: 'Manufacturing', icon: 'manufacturing', color: '#64748b' },
+  { title: 'Build', icon: 'construction', color: '#ea580c' },
+  { title: 'Factory', icon: 'manufacturing', color: '#64748b' },
   { title: 'Logistics', icon: 'logistics', color: '#38bdf8' },
 ];
 

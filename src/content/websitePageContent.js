@@ -122,24 +122,24 @@ export const WEB_SERVICE_DETAILS = [
 
 export const WEB_FEATURE_TILES = [
   { title: 'Custom Design', color: '#2563eb', icon: 'design' },
-  { title: 'Mobile Responsive', color: '#16a34a', icon: 'device' },
-  { title: 'SEO Optimized', color: '#ea580c', icon: 'search' },
-  { title: 'Fast Performance', color: '#9333ea', icon: 'speed' },
-  { title: 'Secure Coding', color: '#0891b2', icon: 'shield' },
+  { title: 'Responsive', color: '#16a34a', icon: 'device' },
+  { title: 'SEO Ready', color: '#ea580c', icon: 'search' },
+  { title: 'Fast Speed', color: '#9333ea', icon: 'speed' },
+  { title: 'Secure Code', color: '#0891b2', icon: 'shield' },
   { title: 'Easy CMS', color: '#db2777', icon: 'edit' },
-  { title: 'Conversion Ready', color: '#6366f1', icon: 'growth' },
-  { title: 'Ongoing Support', color: '#0d9488', icon: 'support' },
+  { title: 'Conversion', color: '#6366f1', icon: 'growth' },
+  { title: 'Support', color: '#0d9488', icon: 'support' },
 ];
 
 export const WEB_INDUSTRY_TILES = [
   { title: 'Healthcare', color: '#dc2626', icon: 'health' },
   { title: 'Hospitality', color: '#0891b2', icon: 'hotel' },
-  { title: 'Restaurants', color: '#ea580c', icon: 'food' },
+  { title: 'Dining', color: '#ea580c', icon: 'food' },
   { title: 'Education', color: '#2563eb', icon: 'education' },
-  { title: 'Construction', color: '#78716c', icon: 'build' },
+  { title: 'Build', color: '#78716c', icon: 'build' },
   { title: 'Retail', color: '#9333ea', icon: 'retail' },
-  { title: 'Professional', color: '#6366f1', icon: 'professional' },
-  { title: 'Real Estate', color: '#16a34a', icon: 'realestate' },
+  { title: 'Services', color: '#6366f1', icon: 'professional' },
+  { title: 'Property', color: '#16a34a', icon: 'realestate' },
 ];
 
 export const WEB_PROCESS_SHORT = [
@@ -426,13 +426,13 @@ export const WEB_PROCESS = [
 export const WEB_INDUSTRIES = [
   { title: 'Healthcare', color: '#dc2626', icon: 'health' },
   { title: 'Hospitality', color: '#0891b2', icon: 'hotel' },
-  { title: 'Restaurants', color: '#ea580c', icon: 'food' },
+  { title: 'Dining', color: '#ea580c', icon: 'food' },
   { title: 'Education', color: '#2563eb', icon: 'education' },
-  { title: 'Construction', color: '#78716c', icon: 'build' },
+  { title: 'Build', color: '#78716c', icon: 'build' },
   { title: 'Retail', color: '#9333ea', icon: 'retail' },
-  { title: 'Professional', color: '#6366f1', icon: 'professional' },
-  { title: 'Manufacturing', color: '#475569', icon: 'manufacturing' },
-  { title: 'Real Estate', color: '#16a34a', icon: 'realestate' },
+  { title: 'Services', color: '#6366f1', icon: 'professional' },
+  { title: 'Factory', color: '#475569', icon: 'manufacturing' },
+  { title: 'Property', color: '#16a34a', icon: 'realestate' },
   { title: 'Logistics', color: '#0d9488', icon: 'logistics' },
 ];
 

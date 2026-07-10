@@ -26,16 +26,23 @@ const resolveIcon = (item, iconMap, fallbackIcon) => {
   return fallbackIcon;
 };
 
-const IsometricStaircaseFeatures = ({ items, iconMap = {}, fallbackIcon: FallbackIcon, perRow = 5 }) => {
+const IsometricStaircaseFeatures = ({
+  items,
+  iconMap = {},
+  fallbackIcon: FallbackIcon,
+  perRow,
+  straight = false,
+}) => {
   if (!items?.length) return null;
 
+  const rowSize = perRow ?? (straight ? items.length : 5);
   const rows = [];
-  for (let i = 0; i < items.length; i += perRow) {
-    rows.push(items.slice(i, i + perRow));
+  for (let i = 0; i < items.length; i += rowSize) {
+    rows.push(items.slice(i, i + rowSize));
   }
 
   return (
-    <div className="iso-staircase">
+    <div className={`iso-staircase${straight ? ' iso-staircase--straight' : ''}`}>
       {rows.map((rowItems, rowIndex) => (
         <div
           key={`row-${rowIndex}`}
@@ -43,11 +50,12 @@ const IsometricStaircaseFeatures = ({ items, iconMap = {}, fallbackIcon: Fallbac
           style={{ '--iso-cols': rowItems.length }}
         >
           {rowItems.map((item, indexInRow) => {
-            const globalIndex = rowIndex * perRow + indexInRow;
+            const globalIndex = rowIndex * rowSize + indexInRow;
             const colors = CUBE_PALETTE[globalIndex % CUBE_PALETTE.length];
             const Icon = resolveIcon(item, iconMap, FallbackIcon);
             const title = getTitle(item);
             const description = getDescription(item);
+            const stepOffset = straight ? 0 : indexInRow;
 
             return (
               <article
@@ -57,7 +65,7 @@ const IsometricStaircaseFeatures = ({ items, iconMap = {}, fallbackIcon: Fallbac
                   '--iso-front': colors.front,
                   '--iso-top': colors.top,
                   '--iso-side': colors.side,
-                  '--iso-step': indexInRow,
+                  '--iso-step': stepOffset,
                 }}
               >
                 <div className="iso-staircase__cube_wrap" aria-hidden="true">
