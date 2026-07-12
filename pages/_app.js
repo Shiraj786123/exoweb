@@ -1,0 +1,69 @@
+import Head from 'next/head';
+import Script from 'next/script';
+import dynamic from 'next/dynamic';
+import { Poppins } from 'next/font/google';
+
+import '../src/index.css';
+import '../src/App.css';
+import '../src/styles/navbar.css';
+import '../src/styles/footer.css';
+import '../src/styles/breadcrumb.css';
+import '../src/styles/contact.css';
+import '../src/styles/ExpertPopup.css';
+import '../src/styles/mobile-responsive.css';
+import '../src/styles/chatbot.css';
+import '../src/styles/ctaBanner.css';
+import '../src/styles/hero-main.css';
+import '../src/styles/homeServices.css';
+import '../src/styles/homeAreas.css';
+import '../src/styles/process.css';
+import '../src/styles/Review.css';
+import '../src/styles/solution.css';
+import '../src/styles/soMuchMore.css';
+import '../src/styles/successsection.css';
+import '../src/styles/whoweare.css';
+import '../src/styles/WhyChoose.css';
+import '../src/styles/growNow.css';
+import '../src/styles/servicePage.css';
+import '../src/styles/cityPage.css';
+import '../src/styles/PortfolioPage.css';
+import '../src/styles/AboutUs.css';
+import '../src/styles/ContactPage.css';
+import '../src/styles/PrivacyPolicy.css';
+import '../src/styles/TermsConditions.css';
+
+const Chatbot = dynamic(() => import('../src/components/Chatbot'), { ssr: false });
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+  preload: true,
+});
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <div className={poppins.className}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="icon" href="/navlogofavicon.png?v=2" type="image/png" />
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-WCJCWD3FXL"
+        strategy="lazyOnload"
+      />
+      <Script id="google-analytics" strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-WCJCWD3FXL');
+        `}
+      </Script>
+      <Component {...pageProps} />
+      <Chatbot />
+    </div>
+  );
+}

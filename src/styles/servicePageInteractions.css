@@ -1,0 +1,263 @@
+/* Shared hover & interaction effects for service page bodies */
+
+/* ── Cards ── */
+.web-ref__service_card,
+.web-ref__feature_card,
+.web-ref__industry_card,
+.soft-ref__service_card,
+.soft-ref__industry,
+.soft-ref__tech_item,
+.mob-ref__service,
+.mob-ref__industry,
+.mob-ref__tech_chip,
+.seo-ref__service,
+.seo-ref__industry,
+.ecd-ref__service_card,
+.ecd-ref__mini_card,
+.ecd-ref__industry_card,
+.aiss-ref__service_card,
+.aiss-ref__industry_card,
+.aiss-ref__tech_item,
+.aiss-ref__testimonial_card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.web-ref__service_card:hover,
+.soft-ref__service_card:hover,
+.mob-ref__service:hover,
+.seo-ref__service:hover,
+.ecd-ref__service_card:hover,
+.aiss-ref__service_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1);
+}
+
+.web-ref__feature_card:hover,
+.web-ref__industry_card:hover,
+.soft-ref__industry:hover,
+.mob-ref__industry:hover,
+.seo-ref__industry:hover,
+.ecd-ref__mini_card:hover,
+.aiss-ref__industry_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+  border-color: #cbd5e1;
+}
+
+.soft-ref__tech_item:hover,
+.aiss-ref__tech_item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border-color: #94a3b8;
+}
+
+.mob-ref__tech_chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
+}
+
+.aiss-ref__testimonial_card:hover,
+.seo-ref__service:hover {
+  border-color: #cbd5e1;
+}
+
+/* ── Text links ── */
+.web-ref__link,
+.soft-ref__link,
+.mob-ref__link,
+.seo-ref__link,
+.ecd-ref__learn_more,
+.aiss-ref__learn_more {
+  transition: gap 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+
+.web-ref__link:hover,
+.soft-ref__link:hover,
+.mob-ref__link:hover,
+.seo-ref__link:hover,
+.ecd-ref__learn_more:hover,
+.aiss-ref__learn_more:hover {
+  gap: 8px;
+  opacity: 0.85;
+}
+
+/* ── Pill / outline buttons ── */
+.web-ref__area_pill,
+.soft-ref__area_btn,
+.mob-ref__area_btn,
+.seo-ref__area_pill,
+.aiss-ref__btn_outline {
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.web-ref__area_pill:hover,
+.soft-ref__area_btn:hover,
+.aiss-ref__btn_outline:hover {
+  transform: translateY(-2px);
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+.mob-ref__area_btn:hover,
+.seo-ref__area_pill:hover {
+  transform: translateY(-2px);
+}
+
+.seo-ref__area_pill:hover {
+  background: #16a34a;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.2);
+}
+
+.mob-ref__area_btn:hover {
+  background: #ea580c;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.25);
+}
+
+/* ── Solid CTA buttons ── */
+.mob-ref__cta {
+  align-self: flex-start;
+  width: fit-content;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.mob-ref__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18);
+  filter: brightness(1.06);
+}
+
+/* ── Phone showcase ── */
+.mob-ref__phone_frame {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mob-ref__highlight:hover .mob-ref__phone_frame {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 32px 70px rgba(15, 23, 42, 0.28);
+}
+
+/* ── FAQ accordions ── */
+.web-ref__faq_item,
+.soft-ref__faq_item,
+.mob-ref__faq_item,
+.seo-ref__faq_item,
+.ecd-v2__faq_item {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.web-ref__faq_item:hover,
+.soft-ref__faq_item:hover,
+.mob-ref__faq_item:hover,
+.seo-ref__faq_item:hover,
+.ecd-v2__faq_item:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.web-ref__faq_item[open],
+.soft-ref__faq_item[open],
+.mob-ref__faq_item[open],
+.seo-ref__faq_item[open],
+.ecd-v2__faq_item[open] {
+  border-color: #2563eb;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+}
+
+/* ── Platform / logo rows ── */
+.web-ref__platform_item,
+.mob-ref__platform,
+.ecd-ref__platform_item,
+.aiss-ref__ai_logo {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.web-ref__platform_item:hover,
+.mob-ref__platform:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.ecd-ref__platform_item:hover {
+  transform: translateY(-2px);
+}
+
+.aiss-ref__ai_logo:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* ── Process steps ── */
+.web-ref__process_step,
+.svc-process__step,
+.seo-ref__process_step,
+.ecd-ref__process_step,
+.aiss-ref__process_step {
+  transition: transform 0.2s ease;
+}
+
+.web-ref__process_step:hover,
+.svc-process__step:hover,
+.seo-ref__process_step:hover,
+.ecd-ref__process_step:hover,
+.aiss-ref__process_step:hover {
+  transform: translateY(-3px);
+}
+
+.mob-ref__process_step:hover .mob-ref__process_ring {
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+
+.mob-ref__process_ring {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ── Stats banners ── */
+.soft-ref__stat,
+.seo-ref__metric {
+  transition: transform 0.2s ease;
+}
+
+.soft-ref__stat:hover,
+.seo-ref__metric:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Mobile: area / city pill buttons ── */
+@media (max-width: 640px) {
+  .mob-ref__area_wrap,
+  .soft-ref__area_wrap,
+  .web-ref__areas,
+  .seo-ref__areas,
+  .city-rich__areas-grid,
+  .city-page__related-grid {
+    width: 100%;
+    padding: 0 4px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mob-ref__area_btn,
+  .soft-ref__area_btn,
+  .web-ref__area_pill,
+  .seo-ref__area_pill,
+  .city-rich__area-link,
+  .city-page__related-link {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 14px 18px;
+    font-size: 0.84rem;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+}

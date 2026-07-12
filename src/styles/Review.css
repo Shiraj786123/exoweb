@@ -1,0 +1,285 @@
+/* --- 1. SECTION SETUP & HEADER --- */
+.reviews-section {
+  background-color: #f8fafc; /* Professional, soft off-white slate background */
+  padding: 100px 24px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.reviews-section * {
+  box-sizing: border-box;
+}
+
+.reviews-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Centered Header Box */
+.reviews-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.reviews-subheading {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0284c7; /* Brand Blue */
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.reviews-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reviews-lead-text {
+  font-size: 1.05rem;
+  color: #475569; /* Slate-600 */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- 2. THE REVIEWS GRID --- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Balanced 4-column desktop grid */
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* --- 3. RATING SUMMARY CARD (Left Anchor) --- */
+.rating-summary-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Elegant Dark Slate Card */
+  border-radius: 16px;
+  padding: 40px 30px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.rating-score-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.rating-number {
+  font-size: 4.5rem; /* Resized to look integrated and balanced */
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.rating-max {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-left: 4px;
+}
+
+.rating-stars-large {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.star-large {
+  width: 24px;
+  height: 24px;
+}
+
+.rating-count-badge {
+  border-top: 1px dashed rgba(148, 163, 184, 0.3);
+  padding-top: 24px;
+  width: 100%;
+}
+
+.rating-count-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0 0 6px 0;
+}
+
+.highlight-blue {
+  color: #38bdf8; /* Soft blue highlight */
+}
+
+.rating-source {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* --- 4. INDIVIDUAL TESTIMONIAL CARD --- */
+.review-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #cbd5e1; /* Flat top design accent */
+  transition: background 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.review-card:hover .card-top-accent {
+  background: #0284c7; /* Glow brand blue on card hover */
+}
+
+.quote-badge {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  font-size: 5rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+  color: #f1f5f9;
+  user-select: none;
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+  z-index: 2;
+}
+
+.star-small {
+  width: 16px;
+  height: 16px;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.7;
+  margin: 0;
+  flex-grow: 1;
+  z-index: 2;
+}
+
+/* Reviewer Profile Block */
+.reviewer-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+  margin-top: auto;
+  z-index: 2;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.reviewer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.reviewer-username {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* --- 5. RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet & Smaller Laptops (1024px to 1280px) */
+@media (max-width: 1280px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr); /* Converts to clean 2x2 grid */
+    gap: 20px;
+  }
+}
+
+/* Small Tablets (768px to 1023px) */
+@media (max-width: 1023px) {
+  .reviews-section {
+    padding: 80px 20px;
+  }
+
+  .reviews-heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile Screens (767px and below) */
+@media (max-width: 767px) {
+  .reviews-section {
+    padding: 60px 16px;
+  }
+
+  .reviews-container {
+    gap: 36px;
+  }
+
+  .reviews-heading {
+    font-size: 2rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr; /* Stacks nicely vertically */
+    gap: 16px;
+  }
+
+  .rating-summary-card {
+    padding: 32px 20px;
+  }
+
+  .rating-number {
+    font-size: 3.8rem;
+  }
+
+  .review-card {
+    padding: 28px 24px;
+  }
+}

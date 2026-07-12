@@ -1,0 +1,103 @@
+/* Mobile App Development page — ECD layout extras */
+
+.ecd-hero__phone--hero-app {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  width: 220px;
+  padding: 12px 10px 14px;
+  border-radius: 32px;
+}
+
+.ecd-hero__phone_screen--app {
+  padding: 8px;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.ecd-hero__phone_hero--mobile {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.ecd-hero__phone_hero--mobile small {
+  display: block;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2px;
+}
+
+.ecd-hero__phone_hero--mobile strong {
+  display: block;
+  font-size: 0.72rem;
+  color: #ffffff;
+}
+
+.ecd-hero__mob_features {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.ecd-hero__mob_feature {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 5px 4px;
+  border-radius: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.ecd-hero__mob_feature_dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--feat-color, #2563eb);
+  flex-shrink: 0;
+}
+
+.ecd-hero__phone_products--mobile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.ecd-hero__phone_products--mobile .ecd-hero__phone_product span {
+  font-size: 0.48rem;
+  line-height: 1.2;
+}
+
+.ecd-hero__phone_products--mobile .ecd-hero__phone_product strong {
+  display: block;
+  font-size: 0.46rem;
+  color: #2563eb;
+  margin-top: 1px;
+}
+
+.ecd-v2__intro_brief p + p {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .ecd-hero__phone--hero-app {
+    width: 200px;
+  }
+
+  .ecd-hero__phone_screen--app {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ecd-show__mini_grid--cols-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

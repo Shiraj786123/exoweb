@@ -1,0 +1,393 @@
+/* hero-main.css - Modernized Dark Premium Hero Section */
+:root {
+  --text-white: #ffffff;
+  --text-sky: #38bdf8;       /* Vibrant Sky Blue for high contrast */
+  --text-muted: #94a3b8;     /* Clean slate gray for descriptions */
+  --badge-bg: rgba(56, 189, 248, 0.1); /* Subtle sky-blue tint */
+  --btn-primary: #0066ff;
+  --btn-primary-hover: #0052cc;
+  --radius: 50px;            /* Sleek pill shapes for modern UI */
+}
+
+/* Hero Wrapper with custom requested radial gradient */
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Requested premium dark radial gradient */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  padding: 120px 4% 80px 4%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Centered Container Layout */
+.hero-container {
+  max-width: 900px; /* Kept tight to look premium and readable when centered */
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Premium Floating Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--badge-bg);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--text-sky);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.badge-dot {
+  color: var(--text-sky);
+  font-size: 10px;
+  /* Smooth pulse effect for active agency indicator */
+  animation: pulse 2s infinite; 
+}
+
+/* White and Sky Blue Headings */
+.hero-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-white); /* Base heading color */
+  margin: 0 0 20px 0;
+  letter-spacing: -1px;
+}
+
+/* Target for "for Modern Businesses" */
+.highlight-text {
+  color: var(--text-sky); /* Highlight color */
+  background: linear-gradient(to right, #38bdf8, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Soft Muted Description text */
+.hero-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 0 35px 0;
+}
+
+/* Action Button Container */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Primary "Get Free Consultation" Button */
+.primary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--btn-primary);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.4);
+}
+
+.primary-btn:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
+}
+
+/* Secondary "View Portfolio" Button */
+.secondary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.secondary-btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.secondary-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Bottom Social Proof / Trust Element */
+.hero-trust-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* Clean Responsiveness Breakpoints */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 24px 60px 24px;
+  }
+  
+  .hero-container h1 {
+    font-size: 38px;
+  }
+  
+  .hero-desc {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 12px;
+  }
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+/* hero-main.css - Premium Dark Radial Gradient Theme */
+:root {
+  --text-white: #ffffff;
+  --text-sky: #38bdf8;       
+  --text-muted: #94a3b8;     
+  --badge-bg: rgba(56, 189, 248, 0.1); 
+  --btn-primary: #0066ff;
+  --btn-primary-hover: #0052cc;
+  --radius: 50px;            
+}
+
+/* Full screen container featuring your exact radial gradient styling */
+.hero {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Your exact background color gradient specification */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  padding: 140px 4% 100px 4%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Centered layout block */
+.hero-container {
+  max-width: 950px; 
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Elegant floating target badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--badge-bg);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--text-sky);
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+}
+
+.badge-dot {
+  color: var(--text-sky);
+  font-size: 10px;
+  animation: pulse 2s infinite; 
+}
+
+/* Premium Main Header Typography styling */
+.hero-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-white); 
+  margin: 0 0 24px 0;
+  letter-spacing: -1px;
+}
+
+/* Text glow target modifier */
+.highlight-text {
+  color: var(--text-sky); 
+  background: linear-gradient(to right, #38bdf8, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Content block text description spacing */
+.hero-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 0 40px 0;
+}
+
+/* Dual layout configurations for primary/secondary buttons */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.primary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--btn-primary);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.4);
+}
+
+.primary-btn:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
+}
+
+.secondary-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.secondary-btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.secondary-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Subdued Trust branding text styles */
+.hero-trust-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  width: 100%;
+  max-width: 440px;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* Tablet & Mobile Layout Shifts */
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 24px 80px 24px;
+  }
+  
+  .hero-container h1 {
+    font-size: 36px;
+  }
+  
+  .hero-desc {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    gap: 12px;
+  }
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+

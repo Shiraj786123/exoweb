@@ -1,0 +1,5 @@
+{
+  "watch": ["server"],
+  "ignore": [".next", "node_modules", "src", "pages", "public"],
+  "ext": "js,json"
+}

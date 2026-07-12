@@ -1,0 +1,79 @@
+/* SEO Services page body — metrics + growth chart layout */
+
+.seo-ref { background: #fff; color: #0f172a; }
+.seo-ref__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.seo-ref__container--narrow { max-width: 800px; }
+.seo-ref__header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.seo-ref__header--light .seo-ref__title { color: #fff; }
+.seo-ref__header--light .seo-ref__subtitle { color: #94a3b8; }
+.seo-ref__title { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 12px; }
+.seo-ref__subtitle { font-size: 1rem; line-height: 1.6; color: #64748b; margin: 0; }
+.seo-ref__section { padding: 72px 0; }
+.seo-ref__section--alt { background: #f8fafc; }
+
+.seo-ref__metrics { padding: 48px 0; background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #faf5ff 100%); border-bottom: 1px solid #e2e8f0; }
+.seo-ref__metrics_row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+.seo-ref__metric strong { display: block; font-size: 2.25rem; font-weight: 800; line-height: 1.2; }
+.seo-ref__metric span { font-size: 0.875rem; color: #64748b; font-weight: 500; }
+
+.seo-ref__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.seo-ref__service { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 20px; box-shadow: 0 4px 16px rgba(15,23,42,0.04); transition: transform 0.25s; display: flex; flex-direction: column; }
+.seo-ref__service:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15,23,42,0.08); }
+.seo-ref__service_icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 14px; }
+.seo-ref__service h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 8px; line-height: 1.35; }
+.seo-ref__service p { font-size: 0.82rem; line-height: 1.55; color: #64748b; margin: 0; flex: 1; }
+.seo-ref__link { display: inline-block; margin-top: 14px; font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+
+.seo-ref__benefits { padding: 80px 0; background: linear-gradient(135deg, #0c1a3a 0%, #001b3a 100%); }
+.seo-ref__benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.seo-ref__benefit_icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #86efac; background: rgba(34,197,94,0.15); margin-bottom: 14px; }
+.seo-ref__benefit h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 8px; }
+.seo-ref__benefit p { font-size: 0.85rem; line-height: 1.55; color: #94a3b8; margin: 0; }
+
+.seo-ref__split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+.seo-ref__chart { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(15,23,42,0.06); }
+.seo-ref__chart_header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.seo-ref__chart_header span { font-size: 0.85rem; color: #64748b; font-weight: 500; }
+.seo-ref__chart_header strong { font-size: 1.25rem; color: #16a34a; font-weight: 800; }
+.seo-ref__chart_bars { display: flex; align-items: flex-end; gap: 12px; height: 140px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; }
+.seo-ref__chart_bar { flex: 1; background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%); border-radius: 6px 6px 0 0; min-height: 20px; }
+.seo-ref__chart_labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.7rem; color: #94a3b8; font-weight: 600; }
+
+.seo-ref__why_list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.seo-ref__why_list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; line-height: 1.5; color: #334155; }
+.seo-ref__why_check { flex-shrink: 0; font-size: 1.3rem; color: #16a34a; margin-top: 1px; }
+
+.seo-ref__process { display: flex; gap: 8px; }
+.seo-ref__process_step { flex: 1; text-align: center; position: relative; }
+.seo-ref__process_dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; color: #fff; font-weight: 700; font-size: 0.9rem; }
+.seo-ref__process_arrow { position: absolute; top: 18px; right: -8px; color: #cbd5e1; }
+.seo-ref__process_step h3 { font-size: 0.85rem; font-weight: 700; margin: 0 0 4px; }
+.seo-ref__process_step p { font-size: 0.75rem; line-height: 1.45; color: #64748b; margin: 0; }
+
+.seo-ref__industries { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 48px; }
+.seo-ref__industry { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 10px; text-align: center; font-size: 1.6rem; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.seo-ref__industry span { font-size: 0.75rem; font-weight: 600; color: #334155; }
+
+.seo-ref__areas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.seo-ref__area_pill { padding: 10px 22px; border-radius: 999px; border: 1.5px solid #16a34a; color: #16a34a; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, color 0.2s; }
+.seo-ref__area_pill:hover { background: #16a34a; color: #fff; }
+
+.seo-ref__faq { display: flex; flex-direction: column; gap: 12px; }
+.seo-ref__faq_item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; }
+.seo-ref__faq_item summary { padding: 18px 22px; font-weight: 600; cursor: pointer; list-style: none; }
+.seo-ref__faq_item summary::-webkit-details-marker { display: none; }
+.seo-ref__faq_item p { padding: 0 22px 18px; margin: 0; font-size: 0.875rem; line-height: 1.6; color: #64748b; }
+
+@media (max-width: 1024px) {
+  .seo-ref__benefits_grid, .seo-ref__split { grid-template-columns: 1fr; }
+  .seo-ref__industries { grid-template-columns: repeat(3, 1fr); }
+  .seo-ref__process { flex-direction: column; gap: 24px; }
+  .seo-ref__process_arrow { display: none; }
+}
+@media (max-width: 768px) {
+  .seo-ref__services { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .seo-ref__metrics_row, .seo-ref__services, .seo-ref__industries { grid-template-columns: 1fr; }
+}

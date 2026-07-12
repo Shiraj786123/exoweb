@@ -1,0 +1,343 @@
+/* Horizontal zigzag business infographic — website service sections */
+
+.hzigzag {
+  position: relative;
+  margin: 32px 0 8px;
+  padding: 0 8px;
+}
+
+.hzigzag__track {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  height: 88px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hzigzag__track_start {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.35);
+}
+
+.hzigzag__track_seg {
+  flex: 1;
+  height: 4px;
+  min-width: 0;
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 55%, #7dd3fc 100%);
+  position: relative;
+}
+
+.hzigzag__track_seg--down {
+  align-self: flex-start;
+  margin-top: 8px;
+  transform: skewY(12deg);
+  transform-origin: left center;
+}
+
+.hzigzag__track_seg--up {
+  align-self: flex-end;
+  margin-bottom: 8px;
+  transform: skewY(-12deg);
+  transform-origin: left center;
+}
+
+.hzigzag__track_arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 14px solid #38bdf8;
+  flex-shrink: 0;
+  margin-left: -2px;
+}
+
+.hzigzag__stations {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--hzigzag-count, 4), minmax(0, 1fr));
+  grid-template-rows: auto auto auto;
+  column-gap: 24px;
+  align-items: stretch;
+}
+
+.hzigzag__station {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  align-items: stretch;
+}
+
+.hzigzag__slot {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  padding: 2px 0;
+}
+
+.hzigzag__slot--top {
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+.hzigzag__slot--bottom {
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+/* Collapse empty slots so they don't add height */
+.hzigzag__station--top .hzigzag__slot--bottom,
+.hzigzag__station--bottom .hzigzag__slot--top {
+  padding: 0;
+  min-height: 0;
+}
+
+.hzigzag__node_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 28px;
+}
+
+.hzigzag__stem {
+  position: absolute;
+  width: 2px;
+  background: #1e293b;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.hzigzag__station--top .hzigzag__stem {
+  top: 0;
+  bottom: 50%;
+}
+
+.hzigzag__station--bottom .hzigzag__stem {
+  top: 50%;
+  bottom: 0;
+}
+
+.hzigzag__node {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #1e293b;
+  box-shadow: 0 0 0 2px #fff;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.hzigzag__card {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 268px;
+  height: 100%;
+  align-self: stretch;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow:
+    4px 4px 0 rgba(15, 23, 42, 0.08),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.hzigzag__card_icon {
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  background: var(--hzigzag-gradient);
+  color: #fff;
+  font-size: 1.55rem;
+}
+
+.hzigzag__card_body {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 7px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+.hzigzag__card_title {
+  margin: 0;
+  font-size: clamp(0.88rem, 0.95vw, 0.92rem);
+  font-weight: 800;
+  line-height: 1.3;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.hzigzag__card_desc {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.05vw, 1.02rem);
+  line-height: 1.55;
+  color: #334155;
+  max-width: 100%;
+}
+
+.hzigzag__card_points {
+  margin: 0;
+  padding: 0 0 0 16px;
+  list-style: disc;
+  font-size: clamp(0.9rem, 0.98vw, 0.96rem);
+  line-height: 1.5;
+  color: #475569;
+}
+
+.hzigzag__card_points li {
+  margin-bottom: 4px;
+}
+
+.hzigzag__card_points li:last-child {
+  margin-bottom: 0;
+}
+
+.hzigzag__card_accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--hzigzag-gradient);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dark hero section variant */
+.ecd-v2__section--hero .hzigzag__card {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.ecd-v2__section--hero .hzigzag__card_body {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.ecd-v2__section--hero .hzigzag__node {
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.4);
+}
+
+.aiss-v2__section--hero .hzigzag__card {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.aiss-v2__section--hero .hzigzag__card_body {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.aiss-v2__section--hero .hzigzag__node {
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .hzigzag__stations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    align-items: stretch;
+    min-height: 0;
+    gap: 20px 16px;
+  }
+
+  .hzigzag__track {
+    display: none;
+  }
+
+  .hzigzag__station {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    grid-row: auto;
+    height: 100%;
+  }
+
+  .hzigzag__station--top,
+  .hzigzag__station--bottom {
+    grid-template-rows: auto;
+  }
+
+  .hzigzag__slot--top,
+  .hzigzag__slot--bottom {
+    flex: 1;
+    padding: 0;
+    align-items: stretch;
+    height: auto;
+  }
+
+  .hzigzag__station--top .hzigzag__slot--bottom,
+  .hzigzag__station--bottom .hzigzag__slot--top {
+    display: none;
+  }
+
+  .hzigzag__node_wrap {
+    display: none;
+  }
+
+  .hzigzag__card {
+    max-width: 100%;
+    height: 100%;
+    flex: 1;
+  }
+
+  .hzigzag__card_title {
+    font-size: 0.92rem;
+  }
+
+  .hzigzag__card_desc {
+    font-size: 0.98rem;
+  }
+
+  .hzigzag__card_points {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hzigzag__stations {
+    grid-template-columns: 1fr;
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+
+  .hzigzag__card_desc {
+    font-size: 1rem;
+  }
+
+  .hzigzag__card_points {
+    font-size: 0.95rem;
+  }
+}
