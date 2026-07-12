@@ -1,5 +1,0 @@
-{"sessionId":"911938","hypothesisId":"A","location":"AuthContext.jsx:useEffect","message":"localStorage user read","data":{"hasValue":false,"length":0,"trimmedEmpty":true},"timestamp":1782721160365,"runId":"post-fix"}
-{"sessionId":"911938","hypothesisId":"E","location":"pages/_app.js:debug","message":"__NEXT_DATA__ presence","data":{"hasElement":true,"textLength":1331,"isEmpty":false},"timestamp":1782721160367,"runId":"post-fix"}
-{"sessionId":"911938","hypothesisId":"E","location":"pages/_app.js:debug","message":"__NEXT_DATA__ parse ok","data":{"textLength":1331},"timestamp":1782721160368,"runId":"post-fix"}
-{"sessionId":"911938","hypothesisId":"A","location":"AuthContext.jsx:useEffect","message":"localStorage user read","data":{"hasValue":false,"length":0,"trimmedEmpty":true},"timestamp":1782721211107,"runId":"post-fix"}
-{"sessionId":"911938","hypothesisId":"B","location":"pages/_app.js:debug","message":"next data fetch","data":{"url":"/_next/data/development/website-development-batticaloa.json?slug=website-development-batticaloa","status":500,"bodyLength":4857,"isEmpty":false},"timestamp":1782721211552,"runId":"post-fix"}
