@@ -132,6 +132,7 @@ const TermsConditions = () => {
     <div className="tc__wrapper">
       <Navbar />
 
+      <main id="main-content">
       {/* Header */}
       <section className="tc__header">
         <div className="tc__container">
@@ -248,6 +249,7 @@ const TermsConditions = () => {
 
       <HomeTechStackSection />
       <ContactSection />
+      </main>
       <Footer />
     </div>
   );

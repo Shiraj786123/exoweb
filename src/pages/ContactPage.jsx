@@ -41,6 +41,7 @@ const ContactPage = () => {
     <div className="cp__wrapper">
       <Navbar />
 
+      <main id="main-content">
       {/* Hero Section (Preserved brand radial gradient colors) */}
      {/* 1️⃣ Hero Section (Styled exactly as requested [1]) */}
       <section className="cp__hero">
@@ -382,6 +383,7 @@ const ContactPage = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

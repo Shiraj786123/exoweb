@@ -253,7 +253,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #94a3b8;
+  color: #475569;
   line-height: 1.35;
   white-space: nowrap;
   overflow: hidden;
@@ -262,7 +262,7 @@
 }
 
 .home-areas__card:hover .home-areas__card-hint {
-  color: #64748b;
+  color: #334155;
 }
 
 .home-areas__card-action {
@@ -275,12 +275,12 @@
   height: 34px;
   padding: 0 12px;
   border-radius: 999px;
-  background: #f1f5f9;
+  background: #e2e8f0;
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #64748b;
+  color: #1e293b;
   white-space: nowrap;
   box-sizing: border-box;
   transition: background 0.25s ease, color 0.25s ease;

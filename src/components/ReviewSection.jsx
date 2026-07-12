@@ -103,7 +103,7 @@ const ReviewsSection = () => {
                   loading="lazy" 
                 />
                 <div className="reviewer-details">
-                  <h4 className="reviewer-name">{review.name}</h4>
+                  <p className="reviewer-name">{review.name}</p>
                   <span className="reviewer-username">{review.username}</span>
                 </div>
               </div>

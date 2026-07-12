@@ -22,17 +22,19 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <div className="home-hero-separator" aria-hidden="true" />
-      <HomeServicesSection />
-      <HomeAreasSection />
-      <Solution />
-      <SuccessSection />
-      <ProcessSection />
-      <WhoWeAre />
-      <WhyChooseSleekIT />
-      <ContactSection />
-      <ReviewSection />
+      <main id="main-content">
+        <Hero />
+        <div className="home-hero-separator" aria-hidden="true" />
+        <HomeServicesSection />
+        <HomeAreasSection />
+        <Solution />
+        <SuccessSection />
+        <ProcessSection />
+        <WhoWeAre />
+        <WhyChooseSleekIT />
+        <ContactSection />
+        <ReviewSection />
+      </main>
       <Footer />
       <ExpertPopup open={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>

@@ -70,6 +70,7 @@ export default function ServicePage({ serviceId }) {
     <div className={t.wrapper}>
       <Navbar />
 
+      <main id="main-content">
       <section className={t.hero}>
         <div className={t.heroBg} aria-hidden="true" />
         <div className={t.heroContainer}>
@@ -119,6 +120,7 @@ export default function ServicePage({ serviceId }) {
 
       <ServiceTechStackSection service={techStackKey} />
       <ContactSection />
+      </main>
       <Footer />
     </div>
   );

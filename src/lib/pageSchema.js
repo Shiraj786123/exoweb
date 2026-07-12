@@ -9,6 +9,8 @@ export const VEXOWEB_LOCAL_BUSINESS = {
   url: SITE_URL,
   telephone: '+94740309534',
   email: 'info@vexoweb.lk',
+  image: `${SITE_URL}/favicon1.png`,
+  logo: `${SITE_URL}/navlogofavicon.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Batticaloa',

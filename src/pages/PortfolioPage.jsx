@@ -16,6 +16,7 @@ const PortfolioPage = () => (
   <div className="portfolio__wrapper">
     <Navbar />
 
+    <main id="main-content">
     <section className="portfolio-hero">
       <div className="portfolio-hero__bg" aria-hidden="true" />
       <div className="portfolio-hero__container">
@@ -68,6 +69,7 @@ const PortfolioPage = () => (
     </section>
 
     <ContactSection />
+    </main>
     <Footer />
   </div>
 );

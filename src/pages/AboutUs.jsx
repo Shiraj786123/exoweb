@@ -104,6 +104,7 @@ const AboutUs = () => {
     <div className="abt__wrapper">
       <Navbar />
 
+      <main id="main-content">
       {/* 1️⃣ Hero Section */}
       <section className="abt__hero">
         <div className="abt__hero_pattern"></div>
@@ -600,6 +601,7 @@ const AboutUs = () => {
       </section>
 
       <ContactSection />
+      </main>
       <Footer />
     </div>
   );

@@ -28,6 +28,7 @@ export default function CityServicePage({ config }) {
     <div className="fswd__page_wrapper">
       <Navbar />
 
+      <main id="main-content">
       <section className="fswd__hero_section fswd__hero_section--top">
         <div className="fswd__hero_overlay" aria-hidden="true" />
         <div className="fswd__hero_content">
@@ -76,6 +77,7 @@ export default function CityServicePage({ config }) {
 
       <HomeTechStackSection />
       <ContactSection />
+      </main>
       <Footer />
     </div>
   );

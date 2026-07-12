@@ -36,7 +36,11 @@ const MobileNavDrawer = ({
   };
 
   return (
-    <nav className={`mobile-nav-drawer ${isOpen ? 'is-open' : ''}`} aria-hidden={!isOpen}>
+    <nav
+      className={`mobile-nav-drawer ${isOpen ? 'is-open' : ''}`}
+      aria-hidden={!isOpen}
+      inert={!isOpen ? true : undefined}
+    >
       <div className="mobile-nav-drawer__primary">
         {isHomePage ? (
           <span className="mobile-nav-item mobile-nav-item--active">

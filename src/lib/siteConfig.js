@@ -14,6 +14,7 @@ export const CORE_SITEMAP_ROUTES = [
   '/ecommerce-development',
   '/ai-software-development',
   '/mobile-app-development',
+  '/portfolio',
   '/privacy-policy',
   '/terms-conditions',
 ];

@@ -11,7 +11,11 @@ export default function HeroSection() {
           <span className="hero-badge__dot" aria-hidden="true" />
           <span className="hero-badge-text">
             <span className="hero-badge-accent">Web &amp; Software Agency</span>
-            <span className="hero-badge-light"> — Eastern Province, Sri Lanka</span>
+            <span className="hero-badge-sep" aria-hidden="true">
+              {' '}
+              —{' '}
+            </span>
+            <span className="hero-badge-light">Eastern Province, Sri Lanka</span>
           </span>
         </div>
 

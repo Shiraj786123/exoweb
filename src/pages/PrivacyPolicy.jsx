@@ -120,6 +120,7 @@ const PrivacyPolicy = () => {
     <div className="pp__wrapper">
       <Navbar />
 
+      <main id="main-content">
       {/* Header */}
       <section className="pp__header">
         <div className="pp__container">
@@ -235,6 +236,7 @@ const PrivacyPolicy = () => {
 
       <HomeTechStackSection />
       <ContactSection />
+      </main>
       <Footer />
     </div>
   );
