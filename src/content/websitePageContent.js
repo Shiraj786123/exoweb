@@ -337,41 +337,67 @@ export const WEB_SERVICES = [
 export const WEB_FEATURES = [
   {
     title: 'Modern & Responsive Design',
-    description: 'Your website will look and perform perfectly on desktops, tablets and smartphones.',
+    description: 'Your website will look and perform perfectly on every device.',
+    points: [
+      'Fluid layouts for desktop, tablet and mobile',
+      'Touch-friendly navigation on smartphones',
+      'Consistent branding across all screen sizes',
+    ],
     color: '#2563eb',
     icon: 'device',
   },
   {
     title: 'SEO-Ready Foundation',
-    description:
-      'Every website is built using SEO best practices, giving your business a stronger foundation for better Google rankings.',
+    description: 'Built-in SEO best practices from day one.',
+    points: [
+      'Clean structure for better Google indexing',
+      'Optimised headings, metadata and URLs',
+      'Stronger foundation for organic traffic growth',
+    ],
     color: '#16a34a',
     icon: 'search',
   },
   {
     title: 'Fast Loading Websites',
-    description:
-      'Website speed affects both user experience and search rankings. We optimise every website for maximum performance.',
+    description: 'Speed that improves user experience and search rankings.',
+    points: [
+      'Optimised images, code and hosting setup',
+      'Faster pages that reduce visitor drop-off',
+      'Better Core Web Vitals performance',
+    ],
     color: '#ea580c',
     icon: 'speed',
   },
   {
     title: 'Secure Development',
-    description: 'We follow secure development practices to protect your website and customer data.',
+    description: 'Protection for your website and customer data.',
+    points: [
+      'Secure coding and update practices',
+      'SSL, form protection and safe integrations',
+      'Reduced risk from common web threats',
+    ],
     color: '#9333ea',
     icon: 'shield',
   },
   {
     title: 'Easy to Manage',
-    description:
-      'Update your website content whenever you need with a simple and user-friendly content management system.',
+    description: 'Update your website without technical hassle.',
+    points: [
+      'Simple content management system',
+      'Edit pages, images and text yourself',
+      'No developer needed for routine updates',
+    ],
     color: '#0891b2',
     icon: 'edit',
   },
   {
     title: 'Built for Growth',
-    description:
-      'As your business grows, your website can grow with it through additional features, integrations and future enhancements.',
+    description: 'A website that scales as your business grows.',
+    points: [
+      'Room for new pages, features and integrations',
+      'Flexible architecture for future expansion',
+      'Support for marketing and sales growth',
+    ],
     color: '#db2777',
     icon: 'growth',
   },

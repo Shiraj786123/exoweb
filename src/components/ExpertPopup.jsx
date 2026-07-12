@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { FaLinkedin, FaTwitter, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
@@ -9,18 +9,32 @@ const BUDGET_MIN = 20000;
 const BUDGET_MAX = 2000000;
 const BUDGET_STEP = 5000;
 
+const SERVICE_OPTIONS = [
+  "Website Development",
+  "Ecommerce Development",
+  "Software Development",
+  "Mobile App Development",
+  "SEO",
+  "Website Growth Audit",
+  "AI Solutions",
+  "UI/UX Design",
+];
+
 const ExpertPopup = ({ open, onClose, preSelectedService }) => {
   const [budget, setBudget] = useState(BUDGET_MIN);
   const [selectedService, setSelectedService] = useState("");
+  const [serviceOpen, setServiceOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
+  const serviceSelectRef = useRef(null);
+  const closeBtnRef = useRef(null);
 
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     phone: "",
     email: "",
-    project: ""
+    project: "",
   });
 
   useEffect(() => {
@@ -31,6 +45,8 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
     };
 
     document.addEventListener("keydown", handleKeyDown);
+    closeBtnRef.current?.focus();
+
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [open, onClose]);
 
@@ -42,6 +58,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
       }
     } else {
       document.body.style.overflow = "auto";
+      setServiceOpen(false);
     }
 
     return () => {
@@ -49,55 +66,71 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
     };
   }, [open, preSelectedService]);
 
+  useEffect(() => {
+    if (!serviceOpen) return undefined;
+
+    const handlePointerDown = (event) => {
+      if (serviceSelectRef.current && !serviceSelectRef.current.contains(event.target)) {
+        setServiceOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => document.removeEventListener("mousedown", handlePointerDown);
+  }, [serviceOpen]);
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!selectedService) {
+      setServiceOpen(true);
+      return;
+    }
     setIsSubmitting(true);
+    setSubmitStatus("");
 
     const data = {
       ...formData,
       message: formData.project,
       service: selectedService,
-      budget: budget
+      budget: budget,
     };
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
 
       if (res.ok) {
         setSubmitStatus("success");
-      
         setFormData({
           name: "",
           company: "",
           phone: "",
           email: "",
-          project: ""
+          project: "",
         });
         setSelectedService("");
         setBudget(BUDGET_MIN);
-          // ✅ ADD HERE
         setTimeout(() => {
-        onClose();
-        setSubmitStatus("");
+          onClose();
+          setSubmitStatus("");
         }, 2500);
       } else {
         setSubmitStatus("error");
       }
-    }catch (error) {
-        setSubmitStatus("error");
+    } catch (error) {
+      setSubmitStatus("error");
     }
 
     setIsSubmitting(false);
@@ -112,21 +145,30 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
   return createPortal(
     <div className="popup-overlay" onClick={onClose} role="presentation">
       <div
-        className="popup-container"
+        className={`popup-container${serviceOpen ? " popup-container--service-open" : ""}`}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="expert-popup-title"
       >
-        <button type="button" className="popup-close" onClick={onClose} aria-label="Close popup">×</button>
+        <button
+          ref={closeBtnRef}
+          type="button"
+          className="popup-close"
+          onClick={onClose}
+          aria-label="Close popup"
+        >
+          ×
+        </button>
 
         <div className="popup-left">
           <div className="popup-left-glow" aria-hidden="true" />
+
           <div className="popup-left-scroll">
             <div className="popup-left-top">
               <span className="popup-eyebrow">Vexoweb Experts</span>
               <h3>Speak to Our Experts</h3>
-              <p>Let's create your vision together.</p>
+              <p className="popup-left-lead">Let's create your vision together.</p>
 
               <div className="popup-review">
                 <div className="popup-review-stars" aria-hidden="true">
@@ -150,7 +192,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
                   <FaLinkedin />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com"
                   className="contactmedia-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -167,7 +209,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
               href={`mailto:${CONTACT_EMAIL}`}
               className="popup-contact-link popup-contact-email"
             >
-              <span className="popup-contact-icon">
+              <span className="popup-contact-icon" aria-hidden="true">
                 <FaEnvelope />
               </span>
               <span className="popup-contact-text">
@@ -181,7 +223,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="popup-contact-icon">
+              <span className="popup-contact-icon" aria-hidden="true">
                 <FaWhatsapp />
               </span>
               <span className="popup-contact-text">
@@ -200,12 +242,12 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
             </p>
 
             {submitStatus === "success" && (
-              <div className="alert alert-success">
+              <div className="alert alert-success" role="status">
                 ✓ Message sent successfully! We'll contact you soon.
               </div>
             )}
             {submitStatus === "error" && (
-              <div className="alert alert-error">
+              <div className="alert alert-error" role="alert">
                 ✗ Failed to send message. Please try again.
               </div>
             )}
@@ -213,96 +255,160 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
 
           <form id="expert-popup-form" className="popup-form" onSubmit={handleSubmit}>
             <div className="popup-form-body">
-            <div className="form-grid">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name*"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
+              <div
+                className={`popup-service-select${serviceOpen ? " is-open" : ""}`}
+                ref={serviceSelectRef}
+              >
+                <button
+                  type="button"
+                  className={`popup-service-select__trigger${serviceOpen ? " is-open" : ""}${selectedService ? " has-value" : ""}`}
+                  onClick={() => {
+                    setServiceOpen((prev) => {
+                      const next = !prev;
+                      if (next) {
+                        requestAnimationFrame(() => {
+                          serviceSelectRef.current?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest",
+                          });
+                        });
+                      }
+                      return next;
+                    });
+                  }}
+                  aria-haspopup="listbox"
+                  aria-expanded={serviceOpen}
+                  aria-label="Select a service"
+                >
+                  <span>{selectedService || "You are interested in"}</span>
+                  <span className="popup-service-select__chevron" aria-hidden="true" />
+                </button>
+                {serviceOpen ? (
+                  <ul
+                    className="popup-service-select__menu"
+                    role="listbox"
+                    aria-label="Select a service"
+                  >
+                    {SERVICE_OPTIONS.map((service) => (
+                      <li key={service}>
+                        <button
+                          type="button"
+                          role="option"
+                          aria-selected={selectedService === service}
+                          className={selectedService === service ? "is-selected" : ""}
+                          onClick={() => {
+                            setSelectedService(service);
+                            setServiceOpen(false);
+                          }}
+                        >
+                          {service}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                <input type="hidden" name="service" value={selectedService} required />
+              </div>
 
-              <input
-                type="text"
-                name="company"
-                placeholder="Company / Organization"
-                value={formData.company}
-                onChange={handleInputChange}
-              />
+              <div className="form-grid">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name*"
+                  aria-label="Your Name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  autoComplete="name"
+                />
 
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number*"
-                value={formData.phone}
-                onChange={handleInputChange}
-                required
-              />
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company / Organization"
+                  aria-label="Company or Organization"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  autoComplete="organization"
+                />
 
-              <input
-                type="email"
-                name="email"
-                placeholder="Email*"
-                value={formData.email}
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number*"
+                  aria-label="Phone Number"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  autoComplete="tel"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  aria-label="Email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  autoComplete="email"
+                />
+              </div>
+
+              <div className="budget-block">
+                <label className="budget-label" htmlFor="expert-budget-slider">
+                  Estimated Budget (LKR):{" "}
+                  <span>Rs. {Number(budget).toLocaleString("en-LK")}</span>
+                </label>
+
+                <div className="budget-slider-wrap">
+                  <input
+                    id="expert-budget-slider"
+                    type="range"
+                    className="budget-slider"
+                    min={BUDGET_MIN}
+                    max={BUDGET_MAX}
+                    step={BUDGET_STEP}
+                    value={budget}
+                    onChange={(e) => setBudget(Number(e.target.value))}
+                    style={{ background: sliderBackground }}
+                    aria-valuemin={BUDGET_MIN}
+                    aria-valuemax={BUDGET_MAX}
+                    aria-valuenow={budget}
+                    aria-valuetext={`Rs. ${Number(budget).toLocaleString("en-LK")}`}
+                  />
+                </div>
+
+                <div className="budget-range" aria-hidden="true">
+                  <span>Rs. 20,000</span>
+                  <span>Rs. 2,000,000</span>
+                </div>
+              </div>
+
+              <textarea
+                name="project"
+                className="popup-form-message"
+                placeholder="Tell us about the project"
+                aria-label="Tell us about the project"
+                value={formData.project}
                 onChange={handleInputChange}
                 required
               />
             </div>
-
-            <select
-              value={selectedService}
-              onChange={(e) => setSelectedService(e.target.value)}
-              required
-            >
-              <option value="">You are interested in</option>
-              <option value="Website Development">Website Development</option>
-              <option value="Ecommerce Development">Ecommerce Development</option>
-              <option value="Software Development">Software Development</option>
-              <option value="Mobile App Development">Mobile App Development</option>
-              <option value="SEO">SEO</option>
-              <option value="Website Growth Audit">Website Growth Audit</option>
-              <option value="AI Solutions">AI Solutions</option>
-              <option value="UI/UX Design">UI/UX Design</option>
-            </select>
-
-            <label className="budget-label">
-              Estimated Budget (LKR): <span>Rs. {Number(budget).toLocaleString('en-LK')}</span>
-            </label>
-
-            <div className="budget-slider-wrap">
-              <input
-                type="range"
-                className="budget-slider"
-                min={BUDGET_MIN}
-                max={BUDGET_MAX}
-                step={BUDGET_STEP}
-                value={budget}
-                onChange={(e) => setBudget(Number(e.target.value))}
-                style={{ background: sliderBackground }}
-              />
-            </div>
-
-            <textarea
-              name="project"
-              className="popup-form-message"
-              placeholder="Tell us about the project"
-              value={formData.project}
-              onChange={handleInputChange}
-              required
-            />
-            </div>
-          </form>
 
             <div className="popup-actions">
               <button type="button" className="cancel-btn" onClick={onClose}>
                 Cancel
               </button>
-
-              <button type="submit" className="submit-btn" form="expert-popup-form" disabled={isSubmitting}>
-                {isSubmitting ? "SENDING..." : "Submit"}
+              <button
+                type="submit"
+                className="submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
             </div>
+          </form>
         </div>
       </div>
     </div>,

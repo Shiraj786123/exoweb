@@ -5,12 +5,6 @@ const SKY_BLUE_ACCENT = '#38bdf8';
 
 const getTitle = (item) => item.title || item.label || '';
 
-const getDescription = (item) => {
-  if (item.description) return item.description;
-  if (item.points?.length) return item.points.join('. ') + '.';
-  return '';
-};
-
 const resolveIcon = (item, iconMap, fallbackIcon) => {
   if (item.icon && iconMap[item.icon]) return iconMap[item.icon];
   const title = getTitle(item);
@@ -21,7 +15,7 @@ const resolveIcon = (item, iconMap, fallbackIcon) => {
 const InfographicCard = ({ item, index, iconMap, fallbackIcon }) => {
   const Icon = resolveIcon(item, iconMap, fallbackIcon);
   const title = getTitle(item);
-  const description = getDescription(item);
+  const points = item.points?.length ? item.points : null;
 
   return (
     <article
@@ -33,7 +27,14 @@ const InfographicCard = ({ item, index, iconMap, fallbackIcon }) => {
       </div>
       <div className="hzigzag__card_body">
         <h5 className="ecd-h5 hzigzag__card_title">{title}</h5>
-        {description ? <p className="hzigzag__card_desc">{description}</p> : null}
+        {item.description ? <p className="hzigzag__card_desc">{item.description}</p> : null}
+        {points ? (
+          <ul className="hzigzag__card_points">
+            {points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
       <div className="hzigzag__card_accent" aria-hidden="true" />
     </article>
